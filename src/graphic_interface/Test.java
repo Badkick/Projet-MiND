@@ -1,4 +1,4 @@
-package package1;
+package graphic_interface;
 
 public class Test {
 	//test
