@@ -16,10 +16,15 @@ public class Conteneur extends JPanel {
 	// CONSTRUCTEURS //
 	
 	public Conteneur(int width, int height) {
-		this.setSize(width, height);
+		this.setTaille(width, height);
 	}
 	
-	public Conteneur() {}
+	public Conteneur(Dimension dim)
+	{
+		this.setTaille(dim);
+	}
+	
+	public Conteneur() {super();}
 
 	// GETTERS //
 	
@@ -39,21 +44,21 @@ public class Conteneur extends JPanel {
 	// SETTERS //
 	
 	public void setHeight(int height) {
-		this.setSize(this.getWidth(), height);
+		this.setTaille(this.getWidth(), height);
 	}
 
 	public void setWidth(int width) {
-		this.setSize(width, this.getHeight());
+		this.setTaille(width, this.getHeight());
 	}
 	
-	public void setSize(int width, int height)
+	public void setTaille(int width, int height)
 	{
 		this.height = height;
 		this.width = width;
 		this.setPreferredSize(new Dimension(width, height));
 	}
 	
-	public void setSize(Dimension dim)
+	public void setTaille(Dimension dim)
 	{
 		this.height = (int) dim.getHeight();
 		this.width = (int) dim.getWidth();

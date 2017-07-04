@@ -4,7 +4,6 @@ import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JPanel;
 
 public class TestFenetreConteneurs {
 
@@ -16,10 +15,10 @@ public class TestFenetreConteneurs {
 		ConteneurAvecImage conteneur1 = new ConteneurAvecImage(0,0,img);
 		ConteneurAvecImage conteneur2 = new ConteneurAvecImage(0,0,img);
 		FenetreModele fen = new FenetreModele(conteneur1);
-		conteneur1.setSize(fen.getSize());
-		conteneur2.setSize(fen.getSize());
-		JPanel carte1 = new JPanel();
-		JPanel carte2 = new JPanel();
+		conteneur1.setTaille(fen.getSize());
+		conteneur2.setTaille(fen.getSize());
+		Conteneur carte1 = new Conteneur(fen.getSize());
+		Conteneur carte2 = new Conteneur(fen.getSize());
 		Bouton bouton1 = new Bouton("Changer de Panel", new Dimension(200, 50));
 		Bouton bouton2 = new Bouton("Changer de Panel22", new Dimension(200, 50));
 
@@ -39,14 +38,12 @@ public class TestFenetreConteneurs {
 			}
 		});
 
-		carte1.setPreferredSize(fen.getSize());
 		carte1.setOpaque(false);
 		ConteneurAvecImage vide1 = new ConteneurAvecImage(240,360,img2);
 		carte1.add(bouton1);
 		carte1.add(vide1);
 		conteneur1.add(carte1);
 
-		carte2.setPreferredSize(fen.getSize());
 		carte2.setOpaque(false);
 		ConteneurAvecImage vide2 = new ConteneurAvecImage(200,200,img3);
 		carte2.add(bouton2);
