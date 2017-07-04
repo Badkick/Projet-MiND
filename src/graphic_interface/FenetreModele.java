@@ -7,9 +7,9 @@ import javax.swing.JPanel;
 
 public class FenetreModele extends JFrame {
 
-	private ConteneurPrincipal conteneur;// le conteneur principal (JContentPane)
+	private Conteneur conteneur;// le conteneur principal (JContentPane)
 	
-	public FenetreModele(ConteneurPrincipal pane) {
+	public FenetreModele(Conteneur pane) {
 		this.conteneur = pane;
 		this.configurationBasique();		
 		this.setContentPane(this.getConteneur());
@@ -18,14 +18,14 @@ public class FenetreModele extends JFrame {
 	
 	// GETTERS //
 
-	public ConteneurPrincipal getConteneur() {
+	public Conteneur getConteneur() {
 		return this.conteneur;
 	}
 
 	
 	// SETTERS //
 	
-	public void setConteneur(ConteneurPrincipal conteneur) {
+	public void setConteneur(Conteneur conteneur) {
 		this.conteneur = conteneur;
 		this.setContentPane(conteneur);
 		this.revalidate();
@@ -36,7 +36,7 @@ public class FenetreModele extends JFrame {
 	
 	public void configurationBasique()
 	{
-		this.setSize(800, 600); // taille de la fenêtre
+		this.setSize(1000, 700); // taille de la fenêtre
 		this.setTitle("Fenêtre modèle"); // titre de la fenêtre
 		this.setLocationRelativeTo(null); // fenêtre au centre
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // arrêter le programme lors de la fermeture de la fenêtre
