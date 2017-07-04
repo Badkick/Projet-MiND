@@ -16,14 +16,17 @@ import javax.swing.JButton;
 
 public class Bouton extends JButton implements MouseListener {
 
-	/**
-	 * 
-	 */
+	// VARIABLES DE CLASSE //
+	
 	private static final long serialVersionUID = 1L;
 	private String name = "Bouton";
 	private Image img;
+	private Color couleurTexte;
 
-	public Bouton(String nom, Dimension dim)
+	// CONSTRUCTEURS //
+	
+	// constructeur de base
+	public Bouton(String nom, Dimension dim, Color couleurTexte)
 	{
 		this.setText(nom);
 		this.name = nom;
@@ -38,28 +41,54 @@ public class Bouton extends JButton implements MouseListener {
 		//Dès qu'un événement de la souris sera intercepté, il en sera averti
 		this.addMouseListener(this);
 	}
-
-	public void paintComponent(Graphics g)
+	
+	public Bouton(String nom, Dimension dim)
 	{
-		Font police = new Font("Tahoma",Font.BOLD,16);
-		g.setFont(police);
-		Graphics2D g2d = (Graphics2D)g;
-		g2d.setColor(Color.BLACK);
-		g2d.drawImage(img, 0, 0, this.getWidth(), this.getHeight(), this);
-		g2d.drawString(this.name, this.getWidth() /2 - (int)(this.name.length()*4.5), (this.getHeight() / 2) +6);
-
+		this(nom,dim,Color.BLACK);
 	}
+	
 
+	
+
+	// SETTERS //
+	
 	public void setName(String nom)
 	{
 		this.name = nom;
 	}
+	
+	public void setCouleurTexte(Color couleur)
+	{
+		this.couleurTexte = couleur;
+	}
+	
+	// GETTERS //
 
 	public String getName()
 	{
 		return this.name;
 	}
+	
+	public Color getCouleurTexte()
+	{
+		return this.couleurTexte;
+	}
+	
+	// METHODES //
+	
+	// appelée à chaque fois qu'une action sur le bouton sera effectuée
+		public void paintComponent(Graphics g)
+		{
+			Font police = new Font("Tahoma",Font.BOLD,16);
+			g.setFont(police);
+			Graphics2D g2d = (Graphics2D)g;
+			g2d.setColor(this.getCouleurTexte());
+			g2d.drawImage(img, 0, 0, this.getWidth(), this.getHeight(), this);
+			g2d.drawString(this.name, this.getWidth() /2 - (int)(this.name.length()*4.5), (this.getHeight() / 2) +6);
+		}
 
+	// LISTENERS //	
+		
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		// TODO Auto-generated method stub
