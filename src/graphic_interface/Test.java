@@ -30,8 +30,6 @@ public class Test {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				fen.setConteneur(conteneur2);
-				bouton1.repaint();
-				bouton2.repaint();
 			}
 		});
 
@@ -40,8 +38,6 @@ public class Test {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				fen.setConteneur(conteneur1);
-				bouton1.repaint();
-				bouton2.repaint();
 			}
 		});
 
