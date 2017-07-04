@@ -2,9 +2,6 @@ package graphic_interface;
 
 import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.LayoutManager;
-
-import javax.swing.JPanel;
 
 public class ConteneurAvecImage extends Conteneur{
 	

@@ -1,9 +1,6 @@
 package graphic_interface;
 
-import java.awt.Dimension;
-
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 
 public class FenetreModele extends JFrame {
 

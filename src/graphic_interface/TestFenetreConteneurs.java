@@ -1,32 +1,18 @@
 package graphic_interface;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 public class TestFenetreConteneurs {
 
 	public static void main(String[] args) {
-		Image img=null; 
-		Image img2=null; 
-		Image img3=null;
-		try {
-			img = ImageIO.read(new File("background.jpg"));
-			img2 = ImageIO.read(new File("tardis.jpg"));
-			img3 = ImageIO.read(new File("pb.jpg"));
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
+		Image img=Images.importerImage("background.jpg");
+		Image img2=Images.importerImage("tardis.jpg"); 
+		Image img3=Images.importerImage("pb.jpg");
+
 		ConteneurAvecImage conteneur1 = new ConteneurAvecImage(0,0,img);
 		ConteneurAvecImage conteneur2 = new ConteneurAvecImage(0,0,img);
 		FenetreModele fen = new FenetreModele(conteneur1);

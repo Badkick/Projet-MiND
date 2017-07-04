@@ -9,9 +9,6 @@ import java.awt.Image;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.File;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
 import javax.swing.JButton;
 
 public class Bouton extends JButton implements MouseListener {
@@ -36,13 +33,9 @@ public class Bouton extends JButton implements MouseListener {
 		this.name = nom;
 		this.police = police;
 		this.setPreferredSize(dim);
-		try {
-			img_repos = ImageIO.read(new File("img_repos.png"));
-			img_clic = ImageIO.read(new File("img_clic.png"));
-			img_survol = ImageIO.read(new File("img_survol.png"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		img_repos = Images.importerImage("img_repos.png");
+		img_clic = Images.importerImage("img_clic.png");
+		img_survol = Images.importerImage("img_survol.png");
 
 		this.img = img_repos;
 
@@ -83,56 +76,32 @@ public class Bouton extends JButton implements MouseListener {
 
 	public void setImgRepos(File fichier)
 	{
-		try {
-			img_repos = ImageIO.read(fichier);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		img_repos = Images.importerImage(fichier);
 	}
 
 	public void setImgRepos(String chemin)
 	{
-		try {
-			img_repos = ImageIO.read(new File(chemin));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		img_repos = Images.importerImage(chemin);
 	}
 
 	public void setImgClic(File fichier)
 	{
-		try {
-			img_clic = ImageIO.read(fichier);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		img_clic = Images.importerImage(fichier);
 	}
 
 	public void setImgClic(String chemin)
 	{
-		try {
-			img_clic = ImageIO.read(new File(chemin));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		img_clic = Images.importerImage(chemin);
 	}
 
 	public void setImgSurvol(File fichier)
 	{
-		try {
-			img_survol = ImageIO.read(fichier);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		img_survol = Images.importerImage(fichier);
 	}
 
 	public void setImgSurvol(String chemin)
 	{
-		try {
-			img_survol = ImageIO.read(new File(chemin));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		img_survol = Images.importerImage(chemin);
 	}
 
 
