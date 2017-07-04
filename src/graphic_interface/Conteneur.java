@@ -36,7 +36,7 @@ public class Conteneur extends JPanel {
 		return width;
 	}
 	
-	public Dimension getSize()
+	public Dimension getTaille()
 	{
 		return new Dimension(this.getWidth(),this.getHeight());
 	}
