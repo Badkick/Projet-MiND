@@ -1,8 +1,11 @@
 package graphic_interface;
 
-import javax.swing.JPanel;
-
-public class ConteneurPrincipal extends JPanel {
+public class ConteneurPrincipal extends Conteneur {
+	
+	public ConteneurPrincipal(int width, int height)
+	{
+		super(width,height);
+	}
 	
 	public ConteneurPrincipal() {}
 
