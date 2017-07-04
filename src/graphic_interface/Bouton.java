@@ -189,7 +189,7 @@ public class Bouton extends JButton implements MouseListener {
 
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
-		// TODO Auto-generated method stub
+		// CLIC SIMPLE (GAUCHE)
 
 	}
 
@@ -208,7 +208,7 @@ public class Bouton extends JButton implements MouseListener {
 
 	@Override
 	public void mousePressed(MouseEvent arg0) {
-		// CLIC GAUCHE
+		// CLIC GAUCHE (RESTER APPUYE)
 		img=this.getImgClic();
 	}
 
