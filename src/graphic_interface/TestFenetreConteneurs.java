@@ -4,10 +4,8 @@ import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
 
 import javax.swing.GroupLayout;
-import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class TestFenetreConteneurs {
 
@@ -70,9 +68,10 @@ public class TestFenetreConteneurs {
 			
 		case GROUP_LAYOUT:
 			
-			Bouton b1 = new Bouton("Créer une étude",new Dimension(200,100));
-			Bouton b2 = new Bouton("Poursuivre une étude", new Dimension(200,100));
-			Bouton b3 = new Bouton("Quitter", new Dimension(200,100));
+			Bouton b1 = new Bouton("Nouvelle étude",new Dimension(200,100));
+			Bouton b2 = new Bouton("Consulter les études", new Dimension(200,100));
+			Bouton b3 = new Bouton("Continuer", new Dimension(200,100));
+			Bouton b4 = new Bouton("Quitter", new Dimension(200,100));
 			
 			GroupLayout layout = new GroupLayout(carte1);
 			carte1.setLayout(layout);
@@ -82,33 +81,48 @@ public class TestFenetreConteneurs {
 			
 			layout.setHorizontalGroup(
 					layout.createSequentialGroup()
-						.addGap(100)
-						.addComponent(b1)
-						.addGap(100)
-						.addComponent(b2)
-						.addGap(100)
-						.addComponent(b3)
+						.addGap(230)
+						.addGroup(layout.createParallelGroup(GroupLayout.Alignment.CENTER)
+								.addComponent(b1)
+								.addGap(50)
+								.addComponent(b2))
+						.addGap(120)
+						.addGroup(layout.createParallelGroup(GroupLayout.Alignment.CENTER)
+								.addComponent(b3)
+								.addGap(50)
+								.addComponent(b4))
 					);
 			
 			layout.setVerticalGroup(
 					layout.createSequentialGroup()
-						.addPreferredGap(ComponentPlacement.UNRELATED)
+						.addGap(105)
 						.addGroup(layout.createParallelGroup(GroupLayout.Alignment.CENTER)
-							.addGap(560)
+							.addGap(200)
 							.addComponent(b1)
-							.addComponent(b2)
+							.addGap(50)
 							.addComponent(b3))
+						.addGap(50)
+						.addGroup(layout.createParallelGroup(GroupLayout.Alignment.CENTER)
+							.addComponent(b2)
+							.addGap(50)
+							.addComponent(b4))
 					);
+			
+			b4.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					System.exit(0);					
+				}
+			});
 			
 			b3.addActionListener(new ActionListener() {
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					System.exit(0);
-					
+					conteneur1.setImg(Images.importerImage("tardis.jpg"));					
 				}
 			});
-			
 			conteneur1.add(carte1);
 			
 			break;

@@ -38,8 +38,9 @@ public class Fenetre extends JFrame {
 	public void configurationBasique()
 	{
 		this.setSize(1000, 700); // taille de la fenêtre
-		this.setTitle("Fenêtre"); // titre de la fenêtre
+		this.setTitle("Projet MiND"); // titre de la fenêtre
 		this.setLocationRelativeTo(null); // fenêtre au centre
+		this.setIconImage(Images.importerImage("icon_tardis.png"));
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // arrêter le programme lors de la fermeture de la fenêtre
 		this.setResizable(false); // fenêtre non recadrable
 	}

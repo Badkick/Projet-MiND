@@ -12,11 +12,15 @@ public class BarreMenu extends JMenuBar {
 
 	private JMenu menuFichier = new JMenu("Fichier");
 
-
 	private JMenuItem quitter = new JMenuItem("Quitter");
 	private JMenuItem nouvelleEtude = new JMenuItem("Nouvelle étude");
 	private JMenuItem exporterEtude = new JMenuItem("Exporter l'étude en cours");
-	private JMenuItem importerEtude = new JMenuItem("Importer une étude");
+	private JMenuItem importerEtude = new JMenuItem("Ouvrir une étude");
+	
+	
+	private JMenu menuParametres = new JMenu("Paramètres");
+	
+	private JMenuItem preferences = new JMenuItem("Préférences");
 
 
 	public BarreMenu() {	
@@ -25,7 +29,10 @@ public class BarreMenu extends JMenuBar {
 		this.configExporterEtude();
 		this.configQuitter();
 
+		this.configPreferences();
+		
 		this.add(menuFichier);
+		this.add(menuParametres);
 	}
 
 	private void configQuitter()
@@ -57,6 +64,12 @@ public class BarreMenu extends JMenuBar {
 	{
 		this.importerEtude.setIcon(Images.importerIcone("icon_import.png"));
 		this.menuFichier.add(importerEtude);
+	}
+	
+	private void configPreferences()
+	{
+		this.preferences.setIcon(Images.importerIcone("icon_preferences.png"));
+		this.menuParametres.add(preferences);
 	}
 
 }

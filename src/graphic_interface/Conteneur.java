@@ -1,7 +1,6 @@
 package graphic_interface;
 
 
-import java.awt.Component;
 import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.List;
@@ -90,7 +89,6 @@ public class Conteneur extends JPanel {
 	
 	// METHODES //
 	
-	// revalide les boutons (les remet à la bonne couleur)
 
 
 }

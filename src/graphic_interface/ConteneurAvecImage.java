@@ -33,9 +33,10 @@ public class ConteneurAvecImage extends Conteneur{
 	
 	// SETTERS //
 	
-	public void setIimg(Image img)
+	public void setImg(Image img)
 	{
 		this.img = img;
+		this.repaint();
 	}
 	
 	// METHODES //
