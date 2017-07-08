@@ -49,7 +49,7 @@ public class BarreMenu extends JMenuBar {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.exit(0);				
+				Communication.quitter();				
 			}
 		});
 		this.menuFichier.add(quitter);
