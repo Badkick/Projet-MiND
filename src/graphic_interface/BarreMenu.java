@@ -21,8 +21,8 @@ public class BarreMenu extends JMenuBar {
 
 	public BarreMenu() {	
 		this.configNouvelleEtude();
-		this.configExporterEtude();
 		this.configImporterEtude();
+		this.configExporterEtude();
 		this.configQuitter();
 
 		this.add(menuFichier);

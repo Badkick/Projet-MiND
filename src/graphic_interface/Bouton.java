@@ -34,7 +34,8 @@ public class Bouton extends JButton implements MouseListener {
 		this.name = nom;
 		this.police = police;
 		this.setPreferredSize(dim);
-		img_repos = Images.importerImage("img_repos.png");
+		this.setMaximumSize(dim);
+		img_repos = Images.importerImage("img_repos_2.png");
 		img_clic = Images.importerImage("img_clic.png");
 		img_survol = Images.importerImage("img_survol.png");
 
