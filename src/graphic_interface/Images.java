@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 
 public abstract class Images {
 
@@ -24,17 +25,13 @@ public abstract class Images {
 		return img;
 	}
 	
+	// importe l'image correspondant au File fichier
 	public static Image importerImage(File fichier)
 	{
-		Image img=null;
-		try {
-			img = ImageIO.read(fichier);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return img;
+		return importerImage(fichier.getPath());
 	}
 	
+	// importe l'image dans chemin (à partir de la racine du projet)
 	public static Image importerImage(String chemin)
 	{
 		Image img=null;
@@ -44,5 +41,29 @@ public abstract class Images {
 			e.printStackTrace();
 		}
 		return img;
+	}
+	
+	// importe une icône à partir du File fichier en 16x16
+	public static ImageIcon importerIcone(File fichier)
+	{
+		return importerIcone(fichier.getPath());
+	}
+	
+	// importe une icône à partir du chemin en 16x16
+	public static ImageIcon importerIcone(String chemin)
+	{
+		return importerIcone(chemin,16,16);
+	}
+	
+	//importe une icône à partir du chemin, et la redimensionne comme choisi
+	public static ImageIcon importerIcone(String chemin, int width, int height)
+	{
+		return new ImageIcon(Images.scaleImage(Images.importerImage(chemin), width, height));
+	}
+	
+	//importe une icône à partir du File fichier, et la redimensionne comme choisi
+	public static ImageIcon importerIcone(File fichier, int width, int height)
+	{
+		return importerIcone(fichier.getPath(), width, height);
 	}
 }

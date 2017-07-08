@@ -51,6 +51,7 @@ public class TestFenetreConteneurs {
 		conteneur2.add(carte2);
 
 		fen.setConteneur(conteneur1);
+		fen.setJMenuBar(new BarreMenu());
 
 		fen.setVisible(true);
 	}
