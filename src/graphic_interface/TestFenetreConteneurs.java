@@ -69,7 +69,7 @@ public class TestFenetreConteneurs {
 		case GROUP_LAYOUT:
 			
 			Bouton b1 = new Bouton("Nouvelle étude",new Dimension(200,100),theme);
-			Bouton b2 = new Bouton("Consulter les études", new Dimension(200,100),theme);
+			Bouton b2 = new Bouton("                  Consulter les études", new Dimension(200,100),theme);
 			Bouton b3 = new Bouton("Continuer", new Dimension(200,100),theme);
 			Bouton b4 = new Bouton("Quitter", new Dimension(200,100),theme);
 			
