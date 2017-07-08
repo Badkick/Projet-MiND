@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.MouseInfo;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.File;
@@ -150,6 +151,12 @@ public class Bouton extends JButton implements MouseListener {
 		g2d.setColor(this.getCouleurTexte());
 		g2d.drawImage(img, 0, 0, this.getWidth(), this.getHeight(), this);
 		g2d.drawString(this.name, this.getWidth() /2 - (int)(this.name.length()*4.5), (this.getHeight() / 2) +6);
+	}
+	
+	// met la couleur du bouton sur repos quand cette méthode est appelée
+	public void updateCouleur()
+	{
+		img = this.getImgRepos();
 	}
 
 

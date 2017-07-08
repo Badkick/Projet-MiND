@@ -7,6 +7,6 @@ public class ConteneurPrincipal extends Conteneur {
 		super(width,height);
 	}
 	
-	public ConteneurPrincipal() {}
+	public ConteneurPrincipal() {super();}
 
 }

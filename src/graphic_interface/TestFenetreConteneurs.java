@@ -14,7 +14,7 @@ public class TestFenetreConteneurs {
 
 		ConteneurAvecImage conteneur1 = new ConteneurAvecImage(0,0,img);
 		ConteneurAvecImage conteneur2 = new ConteneurAvecImage(0,0,img);
-		FenetreModele fen = new FenetreModele(conteneur1);
+		Fenetre fen = new Fenetre(conteneur1);
 		conteneur1.setTaille(fen.getSize());
 		conteneur2.setTaille(fen.getSize());
 		Conteneur carte1 = new Conteneur(fen.getSize());

@@ -1,14 +1,17 @@
 package graphic_interface;
 
+
+import java.util.List;
+
 import javax.swing.JFrame;
 
-public class FenetreModele extends JFrame {
+public class Fenetre extends JFrame {
 
 	private Conteneur conteneur;// le conteneur principal (JContentPane)
 	
-	public FenetreModele(Conteneur pane) {
+	public Fenetre(Conteneur pane) {
 		this.conteneur = pane;
-		this.configurationBasique();		
+		this.configurationBasique();
 		this.setContentPane(this.getConteneur());
 	}
 
@@ -25,6 +28,7 @@ public class FenetreModele extends JFrame {
 	public void setConteneur(Conteneur conteneur) {
 		this.conteneur = conteneur;
 		this.setContentPane(conteneur);
+		this.revaliderBoutons();
 		this.revalidate();
 	}
 
@@ -34,10 +38,16 @@ public class FenetreModele extends JFrame {
 	public void configurationBasique()
 	{
 		this.setSize(1000, 700); // taille de la fenêtre
-		this.setTitle("Fenêtre modèle"); // titre de la fenêtre
+		this.setTitle("Fenêtre"); // titre de la fenêtre
 		this.setLocationRelativeTo(null); // fenêtre au centre
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // arrêter le programme lors de la fermeture de la fenêtre
 		this.setResizable(false); // fenêtre non recadrable
+	}
+	
+	public void revaliderBoutons()
+	{
+		List<Bouton> boutons = conteneur.getBoutons(true);
+		for(Bouton b : boutons) b.updateCouleur();
 	}
 	
 }
