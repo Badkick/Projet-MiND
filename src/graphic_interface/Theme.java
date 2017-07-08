@@ -9,7 +9,7 @@ import javax.swing.ImageIcon;
 
 public enum Theme {
 	
-	CLASSIC("Classic",0,new Font("Tahoma",Font.BOLD,16),Color.BLACK);
+	CLASSIC("Classic",0,new Font("Tahoma",Font.PLAIN,16),Color.BLACK);
 
 	// VARIABLES DE CLASSE //
 	
@@ -117,17 +117,17 @@ public enum Theme {
 
 	private void uploadImages()
 	{
-		this.background = Images.importerImage(this.getNom()+File.separator+"main_background.png");
-		this.icone = Images.importerImage(this.getNom()+File.separator+"main_icon.png");
+		this.background = Images.importerImage("themes"+File.separator+this.getNom()+File.separator+"main_background.png");
+		this.icone = Images.importerImage("themes"+File.separator+this.getNom()+File.separator+"main_icon.png");
 		
-		this.bRepos = Images.importerImage(this.getNom()+File.separator+"button_repos.png");
-		this.bSurvol = Images.importerImage(this.getNom()+File.separator+"button_survol.png");
-		this.bClic = Images.importerImage(this.getNom()+File.separator+"button_clic.png");
+		this.bRepos = Images.importerImage("themes"+File.separator+this.getNom()+File.separator+"button_repos.png");
+		this.bSurvol = Images.importerImage("themes"+File.separator+this.getNom()+File.separator+"button_survol.png");
+		this.bClic = Images.importerImage("themes"+File.separator+this.getNom()+File.separator+"button_clic.png");
 		
-		this.nouveau = Images.importerIcone(this.getNom()+File.separator+"icon_new_doc.png");
-		this.importation = Images.importerIcone(this.getNom()+File.separator+"icon_import.png");
-		this.exportation = Images.importerIcone(this.getNom()+File.separator+"icon_export.png");
-		this.settings = Images.importerIcone(this.getNom()+File.separator+"icon_settings.png");
-		this.quitter = Images.importerIcone(this.getNom()+File.separator+"icon_quit.png");
+		this.nouveau = Images.importerIcone("themes"+File.separator+this.getNom()+File.separator+"icon_new_doc.png");
+		this.importation = Images.importerIcone("themes"+File.separator+this.getNom()+File.separator+"icon_import.png");
+		this.exportation = Images.importerIcone("themes"+File.separator+this.getNom()+File.separator+"icon_export.png");
+		this.settings = Images.importerIcone("themes"+File.separator+this.getNom()+File.separator+"icon_settings.png");
+		this.quitter = Images.importerIcone("themes"+File.separator+this.getNom()+File.separator+"icon_quit.png");
 	}
 }

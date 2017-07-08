@@ -25,6 +25,11 @@ public class BarreMenu extends JMenuBar {
 
 
 	public BarreMenu(Theme theme) {	
+		this.menuFichier.setForeground(theme.getCouleurTexte());
+		this.menuFichier.setFont(theme.getPolice());
+		this.menuParametres.setForeground(theme.getCouleurTexte());
+		this.menuParametres.setFont(theme.getPolice());
+		
 		this.configNouvelleEtude(theme);
 		this.configImporterEtude(theme);
 		this.configExporterEtude(theme);
@@ -38,6 +43,7 @@ public class BarreMenu extends JMenuBar {
 
 	private void configQuitter(Theme theme)
 	{
+		this.quitter.setFont(theme.getPolice());
 		this.quitter.setIcon(theme.getQuitter());
 		this.quitter.addActionListener(new ActionListener() {
 			
@@ -51,24 +57,28 @@ public class BarreMenu extends JMenuBar {
 	
 	private void configNouvelleEtude(Theme theme)
 	{
+		this.nouvelleEtude.setFont(theme.getPolice());
 		this.nouvelleEtude.setIcon(theme.getNouveau());
 		this.menuFichier.add(nouvelleEtude);
 	}
 	
 	private void configExporterEtude(Theme theme)
 	{
+		this.exporterEtude.setFont(theme.getPolice());
 		this.exporterEtude.setIcon(theme.getExportation());
 		this.menuFichier.add(exporterEtude);
 	}
 	
 	private void configImporterEtude(Theme theme)
 	{
+		this.importerEtude.setFont(theme.getPolice());
 		this.importerEtude.setIcon(theme.getImportation());
 		this.menuFichier.add(importerEtude);
 	}
 	
 	private void configPreferences(Theme theme)
 	{
+		this.preferences.setFont(theme.getPolice());
 		this.preferences.setIcon(theme.getSettings());
 		this.menuParametres.add(preferences);
 	}
