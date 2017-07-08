@@ -36,7 +36,7 @@ public abstract class Images {
 	{
 		Image img=null;
 		try {
-			img = ImageIO.read(new File(chemin));
+			img = ImageIO.read(new File(getChemin(chemin)));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -58,12 +58,17 @@ public abstract class Images {
 	//importe une icône à partir du chemin, et la redimensionne comme choisi
 	public static ImageIcon importerIcone(String chemin, int width, int height)
 	{
-		return new ImageIcon(Images.scaleImage(Images.importerImage(chemin), width, height));
+		return new ImageIcon(Images.scaleImage(importerImage(chemin), width, height));
 	}
 	
 	//importe une icône à partir du File fichier, et la redimensionne comme choisi
 	public static ImageIcon importerIcone(File fichier, int width, int height)
 	{
 		return importerIcone(fichier.getPath(), width, height);
+	}
+	
+	private static String getChemin(String chemin)
+	{
+		return "images"+File.separator+chemin;
 	}
 }
