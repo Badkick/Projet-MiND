@@ -17,6 +17,7 @@ public class Bouton extends JButton implements MouseListener {
 	// VARIABLES DE CLASSE //
 
 	private static final long serialVersionUID = 1L;
+	private Theme theme;
 	private String name = "Bouton";
 	private Image img;
 	private Image img_repos;
@@ -28,32 +29,23 @@ public class Bouton extends JButton implements MouseListener {
 	// CONSTRUCTEURS //
 
 	// constructeur de base
-	public Bouton(String nom, Font police, Dimension dim, Color couleurTexte)
+	public Bouton(String nom, Dimension dim, Theme theme)
 	{
 		this.setText(nom);
 		this.name = nom;
-		this.police = police;
+		this.police = theme.getPolice();
+		this.couleurTexte = theme.getCouleurTexte();
 		this.setPreferredSize(dim);
 		this.setMaximumSize(dim);
-		img_repos = Images.importerImage("img_repos_2.png");
-		img_clic = Images.importerImage("img_clic.png");
-		img_survol = Images.importerImage("img_survol.png");
+		img_repos = theme.getBRepos();
+		img_clic = theme.getBClic();
+		img_survol = theme.getBSurvol();
 
 		this.img = img_repos;
 
 		//Grâce à cette instruction, notre objet va s'écouter
 		//Dès qu'un événement de la souris sera intercepté, il en sera averti
 		this.addMouseListener(this);
-	}
-
-	public Bouton(String nom, Dimension dim)
-	{
-		this(nom,new Font("Tahoma",Font.BOLD,16),dim,Color.BLACK);
-	}
-
-	public Bouton(String nom,Font police,Dimension dim)
-	{
-		this(nom,police,dim,Color.BLACK);
 	}
 
 
@@ -138,6 +130,11 @@ public class Bouton extends JButton implements MouseListener {
 	public Image getImgSurvol()
 	{
 		return this.img_survol;
+	}
+	
+	public Theme getTheme()
+	{
+		return this.theme;
 	}
 
 

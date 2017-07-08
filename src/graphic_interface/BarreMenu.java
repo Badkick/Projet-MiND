@@ -3,12 +3,13 @@ package graphic_interface;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.ImageIcon;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
 public class BarreMenu extends JMenuBar {
+	
+	
 
 	private JMenu menuFichier = new JMenu("Fichier");
 
@@ -23,21 +24,21 @@ public class BarreMenu extends JMenuBar {
 	private JMenuItem preferences = new JMenuItem("Préférences");
 
 
-	public BarreMenu() {	
-		this.configNouvelleEtude();
-		this.configImporterEtude();
-		this.configExporterEtude();
-		this.configQuitter();
+	public BarreMenu(Theme theme) {	
+		this.configNouvelleEtude(theme);
+		this.configImporterEtude(theme);
+		this.configExporterEtude(theme);
+		this.configQuitter(theme);
 
-		this.configPreferences();
+		this.configPreferences(theme);
 		
 		this.add(menuFichier);
 		this.add(menuParametres);
 	}
 
-	private void configQuitter()
+	private void configQuitter(Theme theme)
 	{
-		this.quitter.setIcon(Images.importerIcone("icon_quit.png"));
+		this.quitter.setIcon(theme.getQuitter());
 		this.quitter.addActionListener(new ActionListener() {
 			
 			@Override
@@ -48,27 +49,27 @@ public class BarreMenu extends JMenuBar {
 		this.menuFichier.add(quitter);
 	}
 	
-	private void configNouvelleEtude()
+	private void configNouvelleEtude(Theme theme)
 	{
-		this.nouvelleEtude.setIcon(Images.importerIcone("icon_new_doc.png"));
+		this.nouvelleEtude.setIcon(theme.getNouveau());
 		this.menuFichier.add(nouvelleEtude);
 	}
 	
-	private void configExporterEtude()
+	private void configExporterEtude(Theme theme)
 	{
-		this.exporterEtude.setIcon(Images.importerIcone("icon_export.png"));
+		this.exporterEtude.setIcon(theme.getExportation());
 		this.menuFichier.add(exporterEtude);
 	}
 	
-	private void configImporterEtude()
+	private void configImporterEtude(Theme theme)
 	{
-		this.importerEtude.setIcon(Images.importerIcone("icon_import.png"));
+		this.importerEtude.setIcon(theme.getImportation());
 		this.menuFichier.add(importerEtude);
 	}
 	
-	private void configPreferences()
+	private void configPreferences(Theme theme)
 	{
-		this.preferences.setIcon(Images.importerIcone("icon_preferences.png"));
+		this.preferences.setIcon(theme.getSettings());
 		this.menuParametres.add(preferences);
 	}
 

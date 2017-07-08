@@ -55,6 +55,12 @@ public abstract class Images {
 		return importerIcone(chemin,16,16);
 	}
 	
+	// importe une icône à partir d'une image
+	public static ImageIcon importerIcone(Image img)
+	{
+		return new ImageIcon(Images.scaleImage(img, 16, 16));
+	}
+	
 	//importe une icône à partir du chemin, et la redimensionne comme choisi
 	public static ImageIcon importerIcone(String chemin, int width, int height)
 	{
@@ -71,4 +77,5 @@ public abstract class Images {
 	{
 		return "images"+File.separator+chemin;
 	}
+	
 }

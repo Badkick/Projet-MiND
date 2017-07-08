@@ -9,9 +9,9 @@ public class Fenetre extends JFrame {
 
 	private Conteneur conteneur;// le conteneur principal (JContentPane)
 	
-	public Fenetre(Conteneur pane) {
+	public Fenetre(Conteneur pane, Theme theme) {
 		this.conteneur = pane;
-		this.configurationBasique();
+		this.configurationBasique(theme);
 		this.setContentPane(this.getConteneur());
 	}
 
@@ -35,12 +35,12 @@ public class Fenetre extends JFrame {
 
 	// METHODES //
 	
-	public void configurationBasique()
+	public void configurationBasique(Theme theme)
 	{
 		this.setSize(1000, 700); // taille de la fenêtre
 		this.setTitle("Projet MiND"); // titre de la fenêtre
 		this.setLocationRelativeTo(null); // fenêtre au centre
-		this.setIconImage(Images.importerImage("icon_tardis.png"));
+		this.setIconImage(theme.getIcone());
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // arrêter le programme lors de la fermeture de la fenêtre
 		this.setResizable(false); // fenêtre non recadrable
 	}

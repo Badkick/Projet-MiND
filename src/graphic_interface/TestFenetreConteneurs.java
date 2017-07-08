@@ -13,14 +13,14 @@ public class TestFenetreConteneurs {
 	public final static int SWITCH_CONTENEURS = 0;
 	public final static int GROUP_LAYOUT = 1;
 
-	public TestFenetreConteneurs(int type) {
-		Image img=Images.importerImage("background.jpg");
+	public TestFenetreConteneurs(int type, Theme theme) {
+		Image img=theme.getBackground();
 		Image img2=Images.importerImage("tardis.jpg"); 
 		Image img3=Images.importerImage("pb.jpg");
 		
 		ConteneurAvecImage conteneur1 = new ConteneurAvecImage(0,0,img);
 		
-		Fenetre fen = new Fenetre(conteneur1);
+		Fenetre fen = new Fenetre(conteneur1,theme);
 		conteneur1.setTaille(fen.getSize());
 		Conteneur carte1 = new Conteneur(fen.getSize());
 		carte1.setOpaque(false);
@@ -34,8 +34,8 @@ public class TestFenetreConteneurs {
 			conteneur2.setTaille(fen.getSize());
 			
 			Conteneur carte2 = new Conteneur(fen.getSize());
-			Bouton bouton1 = new Bouton("Changer de Panel", new Dimension(200, 50));
-			Bouton bouton2 = new Bouton("Changer de Panel22", new Dimension(200, 50));
+			Bouton bouton1 = new Bouton("Changer de Panel", new Dimension(200, 50),theme);
+			Bouton bouton2 = new Bouton("Changer de Panel22", new Dimension(200, 50),theme);
 
 			bouton1.addActionListener(new ActionListener() {
 
@@ -68,10 +68,10 @@ public class TestFenetreConteneurs {
 			
 		case GROUP_LAYOUT:
 			
-			Bouton b1 = new Bouton("Nouvelle étude",new Dimension(200,100));
-			Bouton b2 = new Bouton("Consulter les études", new Dimension(200,100));
-			Bouton b3 = new Bouton("Continuer", new Dimension(200,100));
-			Bouton b4 = new Bouton("Quitter", new Dimension(200,100));
+			Bouton b1 = new Bouton("Nouvelle étude",new Dimension(200,100),theme);
+			Bouton b2 = new Bouton("Consulter les études", new Dimension(200,100),theme);
+			Bouton b3 = new Bouton("Continuer", new Dimension(200,100),theme);
+			Bouton b4 = new Bouton("Quitter", new Dimension(200,100),theme);
 			
 			GroupLayout layout = new GroupLayout(carte1);
 			carte1.setLayout(layout);
@@ -116,20 +116,14 @@ public class TestFenetreConteneurs {
 				}
 			});
 			
-			b3.addActionListener(new ActionListener() {
-				
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					conteneur1.setImg(Images.importerImage("tardis.jpg"));					
-				}
-			});
+
 			conteneur1.add(carte1);
 			
 			break;
 		}
 		
 		fen.setConteneur(conteneur1);
-		fen.setJMenuBar(new BarreMenu());
+		fen.setJMenuBar(new BarreMenu(theme));
 		fen.setVisible(true);
 	}
 
