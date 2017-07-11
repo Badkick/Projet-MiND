@@ -38,21 +38,9 @@ public class TestFenetreConteneurs {
 			Bouton bouton1 = new Bouton("Changer de Panel", new Dimension(200, 50),theme);
 			Bouton bouton2 = new Bouton("Changer de Panel22", new Dimension(200, 50),theme);
 
-			bouton1.addActionListener(new ActionListener() {
+			bouton1.addActionListener(new ChangerConteneur(fen, conteneur2));
 
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					fen.setConteneur(conteneur2);
-				}
-			});
-
-			bouton2.addActionListener(new ActionListener() {
-
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					fen.setConteneur(conteneur1);
-				}
-			});
+			bouton2.addActionListener(new ChangerConteneur(fen, conteneur1));
 
 			ConteneurAvecImage vide1 = new ConteneurAvecImage(240,360,img2);
 			carte1.add(bouton1);
@@ -72,6 +60,10 @@ public class TestFenetreConteneurs {
 			Bouton bouton_nouveau = new Bouton("Nouvelle étude",new Dimension(200,100),theme);
 			Bouton bouton_liste = new Bouton("Liste des études", new Dimension(200,100),theme);
 			Bouton bouton_quitter = new Bouton("Quitter", new Dimension(200,100),theme);
+			
+			bouton_nouveau.setToolTipText("Crée une nouvelle étude.");
+			bouton_liste.setToolTipText("Affiche la liste des études : permet l'édition d'une étude et l'affichage des études terminées.");
+			bouton_quitter.setToolTipText("Quitte le logiciel.");
 
 			GroupLayout layout = new GroupLayout(carte1);
 			carte1.setLayout(layout);
