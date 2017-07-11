@@ -69,9 +69,9 @@ public class TestFenetreConteneurs {
 
 		case GROUP_LAYOUT:
 
-			Bouton b1 = new Bouton("Nouvelle étude",new Dimension(200,100),theme);
-			Bouton b2 = new Bouton("Liste des études", new Dimension(200,100),theme);
-			Bouton b4 = new Bouton("Quitter", new Dimension(200,100),theme);
+			Bouton bouton_nouveau = new Bouton("Nouvelle étude",new Dimension(200,100),theme);
+			Bouton bouton_liste = new Bouton("Liste des études", new Dimension(200,100),theme);
+			Bouton bouton_quitter = new Bouton("Quitter", new Dimension(200,100),theme);
 
 			GroupLayout layout = new GroupLayout(carte1);
 			carte1.setLayout(layout);
@@ -84,12 +84,12 @@ public class TestFenetreConteneurs {
 					.addGap(235)
 					.addGroup(layout.createParallelGroup()
 							.addGroup(layout.createSequentialGroup()
-									.addComponent(b1)
+									.addComponent(bouton_nouveau)
 									.addGap(130)
-									.addComponent(b2))
+									.addComponent(bouton_liste))
 							.addGroup(layout.createSequentialGroup()
 									.addGap(165)
-									.addComponent(b4)))
+									.addComponent(bouton_quitter)))
 					);
 
 			layout.setVerticalGroup(
@@ -97,13 +97,13 @@ public class TestFenetreConteneurs {
 					.addGap(140)
 					.addGroup(layout.createParallelGroup(GroupLayout.Alignment.CENTER)
 							.addGap(200)
-							.addComponent(b1)
-							.addComponent(b2))
+							.addComponent(bouton_nouveau)
+							.addComponent(bouton_liste))
 					.addGap(30)
-					.addComponent(b4)
+					.addComponent(bouton_quitter)
 					);
 
-			b4.addActionListener(new ActionListener() {
+			bouton_quitter.addActionListener(new ActionListener() {
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
