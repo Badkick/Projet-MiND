@@ -148,7 +148,7 @@ public class Bouton extends JButton implements MouseListener {
 		Graphics2D g2d = (Graphics2D)g;
 		g2d.setColor(this.getCouleurTexte());
 		g2d.drawImage(img, 0, 0, this.getWidth(), this.getHeight(), this);
-		g2d.drawString(this.name, this.getWidth() /2 - (int)(this.name.length()*4.2), (this.getHeight() / 2) +6);
+		g2d.drawString(this.name, this.getWidth() /2 - (int)(this.name.length()*4.2)+7, (this.getHeight() / 2) +6);
 	}
 	
 	// met la couleur du bouton sur repos quand cette méthode est appelée
