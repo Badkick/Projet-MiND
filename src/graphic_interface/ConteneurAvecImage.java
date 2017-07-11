@@ -1,5 +1,6 @@
 package graphic_interface;
 
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
 
@@ -22,6 +23,16 @@ public class ConteneurAvecImage extends Conteneur{
 	public ConteneurAvecImage(int width, int height, Image img)
 	{
 		this(width,height,img,true);
+	}
+	
+	public ConteneurAvecImage(Dimension dim, Image img)
+	{
+		this((int)dim.getWidth(),(int)dim.getHeight(),img,true);
+	}
+	
+	public ConteneurAvecImage(Dimension dim, Image img,boolean remplissage)
+	{
+		this((int)dim.getWidth(),(int)dim.getHeight(),img,remplissage);
 	}
 	
 	// GETTERS //

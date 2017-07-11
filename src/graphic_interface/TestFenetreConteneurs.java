@@ -30,9 +30,7 @@ public class TestFenetreConteneurs {
 		{
 		case SWITCH_CONTENEURS:
 
-			ConteneurAvecImage conteneur2 = new ConteneurAvecImage(0,0,img);
-
-			conteneur2.setTaille(fen.getSize());
+			ConteneurAvecImage conteneur2 = new ConteneurAvecImage(fen.getSize(),img);
 
 			Conteneur carte2 = new Conteneur(fen.getSize());
 			Bouton bouton1 = new Bouton("Changer de Panel", new Dimension(200, 50),theme);
