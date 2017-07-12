@@ -55,6 +55,8 @@ public class TestFenetreConteneurs {
 
 		case GROUP_LAYOUT:
 
+			ConteneurListeEtudes liste = new ConteneurListeEtudes(fen.getSize(), img, theme, conteneur1,fen);
+			
 			Bouton bouton_nouveau = new Bouton("Nouvelle étude",new Dimension(200,100),theme);
 			Bouton bouton_liste = new Bouton("Liste des études", new Dimension(200,100),theme);
 			Bouton bouton_quitter = new Bouton("Quitter", new Dimension(200,100),theme);
@@ -100,6 +102,8 @@ public class TestFenetreConteneurs {
 					Communication.quitter();					
 				}
 			});
+			
+			bouton_liste.addActionListener(new ChangerConteneur(fen, liste));
 
 
 			conteneur1.add(carte1);

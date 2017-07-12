@@ -36,6 +36,9 @@ public enum Theme {
 	private Font police;
 	private Color couleurTexte;
 	
+	// sélection d'une étude
+	private Image selectionEtude;
+	
 	// CONSTRUCTEURS //
 	
 	private Theme(String nom, int id,Font police, Color couleurTexte)
@@ -113,21 +116,33 @@ public enum Theme {
 		return this.couleurTexte;
 	}
 	
+	public Image getSelectionEtude()
+	{
+		return this.selectionEtude;
+	}
+	
 	// METHODES //
 
 	private void uploadImages()
 	{
-		this.background = Images.importerImage("themes"+File.separator+this.getNom()+File.separator+"main_background.png");
-		this.icone = Images.importerImage("themes"+File.separator+this.getNom()+File.separator+"main_icon.png");
+		this.background = Images.importerImage(chemin()+"main_background.png");
+		this.icone = Images.importerImage(chemin()+"main_icon.png");
 		
-		this.bRepos = Images.importerImage("themes"+File.separator+this.getNom()+File.separator+"button_repos.png");
-		this.bSurvol = Images.importerImage("themes"+File.separator+this.getNom()+File.separator+"button_survol.png");
-		this.bClic = Images.importerImage("themes"+File.separator+this.getNom()+File.separator+"button_clic.png");
+		this.bRepos = Images.importerImage(chemin()+"button_repos.png");
+		this.bSurvol = Images.importerImage(chemin()+"button_survol.png");
+		this.bClic = Images.importerImage(chemin()+"button_clic.png");
 		
-		this.nouveau = Images.importerIcone("themes"+File.separator+this.getNom()+File.separator+"icon_new_doc.png");
-		this.importation = Images.importerIcone("themes"+File.separator+this.getNom()+File.separator+"icon_import.png");
-		this.exportation = Images.importerIcone("themes"+File.separator+this.getNom()+File.separator+"icon_export.png");
-		this.settings = Images.importerIcone("themes"+File.separator+this.getNom()+File.separator+"icon_settings.png");
-		this.quitter = Images.importerIcone("themes"+File.separator+this.getNom()+File.separator+"icon_quit.png");
+		this.nouveau = Images.importerIcone(chemin()+"icon_new_doc.png");
+		this.importation = Images.importerIcone(chemin()+"icon_import.png");
+		this.exportation = Images.importerIcone(chemin()+"icon_export.png");
+		this.settings = Images.importerIcone(chemin()+"icon_settings.png");
+		this.quitter = Images.importerIcone(chemin()+"icon_quit.png");
+		
+		this.selectionEtude = Images.importerImage(chemin()+"select_etude.png");
+	}
+	
+	private String chemin()
+	{
+		return "themes"+File.separator+this.getNom()+File.separator;
 	}
 }
