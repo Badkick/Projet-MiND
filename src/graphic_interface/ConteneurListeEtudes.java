@@ -31,7 +31,7 @@ public class ConteneurListeEtudes extends ConteneurAvecImage {
 		this.theme = theme;
 		this.precedent = precedent;
 		this.fen = fen;
-		this.etudes = new ArrayList<BoutonEtude>();
+		this.etudes = this.importerEtudes();
 		this.conteneur = new Conteneur(width,height);
 		this.conteneur_etudes = new Conteneur();
 		this.scroll = new JScrollPane(this.conteneur_etudes);
@@ -108,9 +108,9 @@ public class ConteneurListeEtudes extends ConteneurAvecImage {
 	
 	// METHODES //
 
+	// initialise le conteneur
 	private void initialiser()
 	{
-		for(int i=0;i<1000;i++) this.getEtudes().add(new BoutonEtude(this.getTheme(),String.valueOf(i))); //test
 		
 		this.getLayout().setAutoCreateGaps(true);
 		this.getLayout().setAutoCreateContainerGaps(true);
@@ -146,6 +146,7 @@ public class ConteneurListeEtudes extends ConteneurAvecImage {
 		this.initialiserListe();
 	}
 	
+	// initialise le conteneur à l'intérieur du Scroll Pane (y ajoute tous les BoutonEtude de etudes)
 	private void initialiserListe()
 	{
 		if(!this.getEtudes().isEmpty())
@@ -153,5 +154,15 @@ public class ConteneurListeEtudes extends ConteneurAvecImage {
 			this.getConteneurEtudes().setTaille(BoutonEtude.LARGEUR, (BoutonEtude.HAUTEUR+5)*this.getEtudes().size());
 			for(BoutonEtude e : this.getEtudes()) this.getConteneurEtudes().add(e);
 		}
+	}
+	
+	// importe les études enregistrées
+	private List<BoutonEtude> importerEtudes()
+	{
+		List<BoutonEtude> liste = new ArrayList<BoutonEtude>();
+		
+		for(int i=0;i<1000;i++) liste.add(new BoutonEtude(this.getTheme(),String.valueOf(i))); // test
+		
+		return liste;
 	}
 }
