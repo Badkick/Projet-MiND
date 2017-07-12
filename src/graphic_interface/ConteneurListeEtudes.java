@@ -26,8 +26,8 @@ public class ConteneurListeEtudes extends ConteneurAvecImage {
 	
 	// CONSTRUCTEURS //
 	
-	public ConteneurListeEtudes(int width, int height, Image img, boolean remplissage, Theme theme, Conteneur precedent, Fenetre fen) {
-		super(width, height, img, remplissage);
+	public ConteneurListeEtudes(int width, int height, Theme theme, Conteneur precedent, Fenetre fen) {
+		super(width, height, theme.getBackground(), true);
 		this.theme = theme;
 		this.precedent = precedent;
 		this.fen = fen;
@@ -45,17 +45,10 @@ public class ConteneurListeEtudes extends ConteneurAvecImage {
 		this.add(conteneur);
 	}
 
-	public ConteneurListeEtudes(int width, int height, Image img, Theme theme, Conteneur precedent, Fenetre fen) {
-		this(width, height, img,true,theme,precedent,fen);
+	public ConteneurListeEtudes(Dimension dim, Theme theme, Conteneur precedent, Fenetre fen) {
+		this((int)dim.getWidth(),(int)dim.getHeight(),theme,precedent,fen);
 	}
 
-	public ConteneurListeEtudes(Dimension dim, Image img, Theme theme, Conteneur precedent, Fenetre fen) {
-		this((int)dim.getWidth(),(int)dim.getHeight(), img,true,theme,precedent,fen);
-	}
-
-	public ConteneurListeEtudes(Dimension dim, Image img, boolean remplissage, Theme theme, Conteneur precedent, Fenetre fen) {
-		this((int)dim.getWidth(),(int)dim.getHeight(), img,remplissage,theme,precedent,fen);
-	}
 	
 	// GETTERS //
 	
