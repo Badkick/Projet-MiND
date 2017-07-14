@@ -4,28 +4,45 @@ public class Schema4 {
 
 	// VARIABLES INSTANCE //
 	
-	private Consensus consensus;
-	private Negociation negociation;
-	private Opposition opposition;
+	private Consensus mtn_consensus;
+	private Consensus apr_consensus;
 	
+	private Negociation mtn_negociation;
+	private Negociation apr_negociation;
+	
+	private Opposition mtn_opposition;
+	private Opposition apr_opposition;
+
 	// CONSTRUCTEUR //
 	
-	public Schema4(Consensus consensus, Negociation negociation, Opposition opposition) {
-		this.consensus = consensus;
-		this.negociation = negociation;
-		this.opposition = opposition;
+
+	public Schema4(Consensus mtn_consensus, Consensus apr_consensus, Negociation mtn_negociation, Negociation apr_negociation, Opposition mtn_opposition, Opposition apr_opposition) {
+		this.mtn_consensus = mtn_consensus;
+		this.apr_consensus = apr_consensus;
+		this.mtn_negociation = mtn_negociation;
+		this.apr_negociation = apr_negociation;
+		this.mtn_opposition = mtn_opposition;
+		this.apr_opposition = apr_opposition;
 	}
 	
 	// GETTERS //
-	
-	public Consensus getConsensus() {
-		return consensus;
+
+	public Consensus getMtn_consensus() {
+		return mtn_consensus;
 	}
-	public Negociation getNegociation() {
-		return negociation;
+	public Consensus getApr_consensus() {
+		return apr_consensus;
 	}
-	public Opposition getOpposition() {
-		return opposition;
+	public Negociation getMtn_negociation() {
+		return mtn_negociation;
 	}
-	
+	public Negociation getApr_negociation() {
+		return apr_negociation;
+	}
+	public Opposition getMtn_opposition() {
+		return mtn_opposition;
+	}
+	public Opposition getApr_opposition() {
+		return apr_opposition;
+	}
 }
