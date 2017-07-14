@@ -1,8 +1,6 @@
 package graphic_interface;
 
-import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Image;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -97,7 +95,6 @@ public class ConteneurListeEtudes extends ConteneurAvecImage {
 		return this.etudes;
 	}
 	
-	// SETTERS //
 	
 	// METHODES //
 

@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.GroupLayout;
+import javax.swing.JOptionPane;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class FenetreAccueil {
@@ -67,6 +68,26 @@ public class FenetreAccueil {
 		});
 
 		bouton_liste.addActionListener(new ChangerConteneur(fenetre_principale, liste));
+
+		bouton_nouveau.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String nom = "";
+				try{
+					nom = JOptionPane.showInputDialog(null, "Quel nom voulez-vous donner à cette étude ?","Nom de l'étude",JOptionPane.PLAIN_MESSAGE);
+					if(nom.equals(null) || nom.equals("") || nom==null) nom = "";
+					} catch(java.lang.NullPointerException ex) {
+						nom = "";
+					}
+				if(!nom.equals(""))
+				{
+					ConteneurNouvelleEtude nouvelle_etude = new ConteneurNouvelleEtude(fenetre_principale.getSize(), theme, conteneur_principal, fenetre_principale,nom);
+					fenetre_principale.setConteneur(nouvelle_etude,"Projet MiND - "+nom);
+				}
+
+			}
+		});
 
 		conteneur_principal.add(conteneur_menu);
 

@@ -39,6 +39,16 @@ public enum Theme {
 	// sélection d'une étude
 	private Image selectionEtude;
 	
+	// tabs
+	private Image tab;
+	private Image schema1;
+	private Image schema2;
+	private Image schema3;
+	private Image schema4;
+	private Image schema5;
+	private Image schema6;
+	private Image[] schemas = new Image[6];
+	
 	// CONSTRUCTEURS //
 	
 	private Theme(String nom, int id,Font police, Color couleurTexte)
@@ -121,6 +131,46 @@ public enum Theme {
 		return this.selectionEtude;
 	}
 	
+	public Image getTab()
+	{
+		return this.tab;
+	}
+	
+	public Image getSchema1()
+	{
+		return this.schema1;
+	}
+	
+	public Image getSchema2()
+	{
+		return this.schema2;
+	}
+	
+	public Image getSchema3()
+	{
+		return this.schema3;
+	}
+	
+	public Image getSchema4()
+	{
+		return this.schema4;
+	}
+	
+	public Image getSchema5()
+	{
+		return this.schema5;
+	}
+	
+	public Image getSchema6()
+	{
+		return this.schema6;
+	}
+	
+	public Image[] getSchemas()
+	{
+		return this.schemas;
+	}
+	
 	// METHODES //
 
 	private void uploadImages()
@@ -139,6 +189,21 @@ public enum Theme {
 		this.quitter = Images.importerIcone(chemin()+"icon_quit.png");
 		
 		this.selectionEtude = Images.importerImage(chemin()+"select_etude.png");
+		
+		this.tab = Images.importerImage(chemin()+"tab.png");
+		this.schema1 = Images.importerImage(chemin()+"schema1.png");
+		this.schema2 = Images.importerImage(chemin()+"schema2.png");
+		this.schema3 = Images.importerImage(chemin()+"schema3.png");
+		this.schema4 = Images.importerImage(chemin()+"schema4.png");
+		this.schema5 = Images.importerImage(chemin()+"schema5.png");
+		this.schema6 = Images.importerImage(chemin()+"schema6.png");
+		
+		this.schemas[0] = this.getSchema1();
+		this.schemas[1] = this.getSchema2();
+		this.schemas[2] = this.getSchema3();
+		this.schemas[3] = this.getSchema4();
+		this.schemas[4] = this.getSchema5();
+		this.schemas[5] = this.getSchema6();
 	}
 	
 	private String chemin()

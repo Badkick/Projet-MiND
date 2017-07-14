@@ -33,6 +33,11 @@ public class Fenetre extends JFrame {
 		this.revaliderBoutons();
 		this.revalidate();
 	}
+	
+	public void setConteneur(Conteneur conteneur, String titre) {
+		this.setConteneur(conteneur);
+		this.setTitle(titre);
+	}
 
 
 	// METHODES //

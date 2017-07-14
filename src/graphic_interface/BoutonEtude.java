@@ -114,10 +114,8 @@ public class BoutonEtude extends ConteneurAvecImage {
 
 	public void paintComponent(Graphics g)
 	{
-		g.setFont(this.getTheme().getPolice());
 		Graphics2D g2d = (Graphics2D)g;
 		g2d.setColor(this.getTheme().getCouleurTexte());
 		g2d.drawImage(this.getImg(), 0, 0, this.getWidth(), this.getHeight(), this);
-		//g2d.drawString(this.getNom(), 20, (this.getHeight() / 2) +6);
 	}
 }
