@@ -7,12 +7,12 @@ public class Schema2 {
 	private Structure mtn_principale;
 	private Structure apr_principale;
 	
-	private StructureNotee[] mtn_notees = new StructureNotee[4];
-	private StructureNotee[] apr_notees = new StructureNotee[4];
+	private ElementNote<Structure>[] mtn_notees = new ElementNote[4];
+	private ElementNote<Structure>[] apr_notees = new ElementNote[4];
 	
 	// CONSTRUCTEUR //
 	
-	public Schema2(Structure mtn_principale, Structure apr_principale, StructureNotee[] mtn_notees, StructureNotee[] apr_notees)
+	public Schema2(Structure mtn_principale, Structure apr_principale, ElementNote<Structure>[] mtn_notees, ElementNote<Structure>[] apr_notees)
 	{
 		this.mtn_principale = mtn_principale;
 		this.apr_principale = apr_principale;
@@ -34,11 +34,11 @@ public class Schema2 {
 		return apr_principale;
 	}
 
-	public StructureNotee[] getMtn_notees() {
+	public ElementNote<Structure>[] getMtn_notees() {
 		return mtn_notees;
 	}
 
-	public StructureNotee[] getApr_notees() {
+	public ElementNote<Structure>[] getApr_notees() {
 		return apr_notees;
 	}
 	
