@@ -9,7 +9,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 
 	// VARIABLES INSTANCE //
 
-	// vaeiables générales
+	// variables générales
 	private Theme theme;
 	private int typeSchema; // le type du schéma : de 1 à 6
 	private GroupLayout layout;
@@ -55,6 +55,9 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			break;
 		case 6:
 
+			break;
+		default:
+			System.out.println("Mauvais cas : "+type);
 			break;
 		}
 	}

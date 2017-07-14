@@ -9,8 +9,8 @@ public class TabGraphe extends JTabbedPane {
 	// VARIABLES DE CLASSE //
 	private Theme theme;
 	
-	private ConteneurAvecImage conteneur_maintenant;
-	private ConteneurAvecImage conteneur_apres;
+	private ConteneurSchema conteneur_maintenant;
+	private ConteneurSchema conteneur_apres;
 	private Conteneur conteneur_comment;
 	private Conteneur conteneur_apercu;
 	
@@ -18,8 +18,8 @@ public class TabGraphe extends JTabbedPane {
 	
 	public TabGraphe(int i, Theme theme) {
 		super();
-		this.conteneur_maintenant = new ConteneurAvecImage(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR,theme.getSchemas()[i]);
-		this.conteneur_apres = new ConteneurAvecImage(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR,theme.getSchemas()[i]);
+		this.conteneur_maintenant = new ConteneurSchema(i+1,ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR,theme);
+		this.conteneur_apres = new ConteneurSchema(i+1,ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR,theme);
 		this.conteneur_comment = new Conteneur(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
 		this.conteneur_apercu = new Conteneur(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
 		
@@ -45,11 +45,11 @@ public class TabGraphe extends JTabbedPane {
 		return this.theme;
 	}
 
-	public ConteneurAvecImage getConteneur_maintenant() {
+	public ConteneurSchema getConteneur_maintenant() {
 		return conteneur_maintenant;
 	}
 
-	public ConteneurAvecImage getConteneur_apres() {
+	public ConteneurSchema getConteneur_apres() {
 		return conteneur_apres;
 	}
 
