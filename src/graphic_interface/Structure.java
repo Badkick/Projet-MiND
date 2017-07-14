@@ -1,6 +1,6 @@
 package graphic_interface;
 
-public enum Structure implements ElementPouvantEtreNote{
+public enum Structure implements ElementPouvantEtreNote{ // pour schéma 2
 	
 	SIMPLE_MARCHE("simple_marche",1),
 	PROFESSIONNELLE("professionnelle",2),
@@ -25,6 +25,4 @@ public enum Structure implements ElementPouvantEtreNote{
 	{
 		return this.numero;
 	}
-
-
 }

@@ -41,6 +41,4 @@ public class Schema3 {
 	public ElementNote<Organisation>[] getApr_notees() {
 		return apr_notees;
 	}
-
-
 }

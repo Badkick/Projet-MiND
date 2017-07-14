@@ -1,6 +1,6 @@
 package graphic_interface;
 
-public class ElementNote<E extends ElementPouvantEtreNote> {
+public class ElementNote<E extends ElementPouvantEtreNote> { // pour schémas 2 et 3
 
 	private static final int NOTE_MIN = 1;
 	private static final int NOTE_MAX = 10;
