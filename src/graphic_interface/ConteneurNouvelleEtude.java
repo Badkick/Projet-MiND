@@ -1,8 +1,11 @@
 package graphic_interface;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.GroupLayout;
 import javax.swing.JOptionPane;
@@ -15,6 +18,8 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 
 	public static Dimension TAILLE_GRAND_CONTENEUR= new Dimension(972,570);
 	public static Dimension TAILLE_PETIT_CONTENEUR= new Dimension(972,540);
+	private static boolean MAINTENANT = true;
+	private static boolean APRES = false;
 	private static int NB_ONGLETS = 6;
 	private final String[] titres_tabs = {"Contraintes d'envirmt.","Structures d'organisation","Organisation du travail","Relations entre acteurs","Identités collectives","Mondes sociaux"};
 
@@ -28,7 +33,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 	private boolean saved = true;
 	private String nom;
 	private Etude etude;
-	
+
 	// boutons
 	private Bouton bouton_back_menu;
 	private Bouton bouton_save;
@@ -106,7 +111,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 	{
 		return this.saved;
 	}
-	
+
 	public String getNom()
 	{
 		return this.nom;
@@ -141,6 +146,14 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 		this.bouton_delete = new Bouton("Supprimer l'étude", new Dimension(180, 50), theme);
 		this.bouton_exporter = new Bouton("Présenter l'étude", new Dimension(180, 50), theme);
 
+		this.bouton_exporter.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				System.out.println(getConteneurSchema(1,MAINTENANT));
+			}
+		});
 
 		this.getBoutonBack().addActionListener(this.isSaved() ? new ChangerConteneur(this.getFenetre(),this.getPrecedent()) : new ChangerConteneur(this.getFenetre(),this.getPrecedent(),"Voulez-vous vraiment revenir à l'écran d'accueil ? \n Attention, vous perdrez les données non enregistrées."));
 	}
@@ -198,5 +211,11 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 			this.onglets[i].add(tab_graphes[i]);
 			this.onglets[i].setOpaque(false);
 		}
+	}
+
+	// pour récupérer le conteneur dans lequel il y a l'image : on pourra ainsi récupérer les boutons et les zones de texte ! A appeler à l'aide des boolean MAINTENANT et APRES.
+	public ConteneurSchema getConteneurSchema(int type, boolean maintenant)
+	{
+		return maintenant ? ((TabGraphe)((Conteneur)this.getTabs().getComponentAt(type-1)).getComponents()[0]).getConteneur_maintenant() : ((TabGraphe)((Conteneur)this.getTabs().getComponentAt(type-1)).getComponents()[0]).getConteneur_apres();
 	}
 }
