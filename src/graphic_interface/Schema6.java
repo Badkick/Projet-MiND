@@ -23,4 +23,15 @@ public class Schema6 {
 	public Entreprise getApr() {
 		return apr;
 	}
+	
+	// SETTERS //
+
+	public void setMtn(Entreprise mtn) {
+		this.mtn = mtn;
+	}
+
+	public void setApr(Entreprise apr) {
+		this.apr = apr;
+	}
+	
 }

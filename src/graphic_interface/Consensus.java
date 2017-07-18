@@ -30,4 +30,18 @@ public class Consensus {
 	public Pourcentage getPacte() {
 		return pacte;
 	}
+	
+	// SETTERS //
+
+	public void setImportance(Pourcentage importance) {
+		this.importance = importance;
+	}
+
+	public void setConsensus(Pourcentage consensus) {
+		this.consensus = consensus;
+	}
+
+	public void setPacte(Pourcentage pacte) {
+		this.pacte = pacte;
+	}
 }

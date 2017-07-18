@@ -33,4 +33,22 @@ public class Opposition {
 		return antagonisme;
 	}
 
+	// SETTERS //
+	
+	public void setImportance(Pourcentage importance) {
+		this.importance = importance;
+	}
+
+	public void setDomination(Pourcentage domination) {
+		this.domination = domination;
+	}
+
+	public void setContrePouvoir(Pourcentage contrePouvoir) {
+		this.contrePouvoir = contrePouvoir;
+	}
+
+	public void setAntagonisme(Pourcentage antagonisme) {
+		this.antagonisme = antagonisme;
+	}
+
 }

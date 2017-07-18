@@ -28,4 +28,18 @@ public class Negociation {
 	public Pourcentage getTransformation() {
 		return transformation;
 	}
+	
+	// SETTERS //
+
+	public void setImportance(Pourcentage importance) {
+		this.importance = importance;
+	}
+
+	public void setAjustement(Pourcentage ajustement) {
+		this.ajustement = ajustement;
+	}
+
+	public void setTransformation(Pourcentage transformation) {
+		this.transformation = transformation;
+	}
 }

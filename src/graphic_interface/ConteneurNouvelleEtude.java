@@ -46,12 +46,13 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 
 	// CONSTRUCTEURS //
 
-	public ConteneurNouvelleEtude(int width, int height, Theme theme, Conteneur precedent, Fenetre fen, String nom) {
+	public ConteneurNouvelleEtude(int width, int height, Theme theme, Conteneur precedent, Fenetre fen, String nom, Etude etude) {
 		super(width, height, theme.getBackground());
 		this.theme = theme;
 		this.precedent = precedent;
 		this.fen = fen;
 		this.nom = nom;
+		this.etude = etude;
 		this.conteneur = new Conteneur(width, height);
 		//UIManager.put("TabbedPane.contentOpaque", false); // pour rendre les tab transparents
 		this.tabs = new JTabbedPane();
@@ -62,8 +63,8 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 		this.add(conteneur);
 	}
 
-	public ConteneurNouvelleEtude(Dimension dim, Theme theme, Conteneur precedent, Fenetre fen, String nom) {
-		this((int)dim.getWidth(),(int)dim.getHeight(),theme,precedent,fen,nom);
+	public ConteneurNouvelleEtude(Dimension dim, Theme theme, Conteneur precedent, Fenetre fen, String nom, Etude etude) {
+		this((int)dim.getWidth(),(int)dim.getHeight(),theme,precedent,fen,nom,etude);
 	}
 
 	// GETTERS //
@@ -115,6 +116,11 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 	public String getNom()
 	{
 		return this.nom;
+	}
+	
+	public Etude getEtude()
+	{
+		return this.etude;
 	}
 
 	// SETTERS //

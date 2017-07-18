@@ -92,6 +92,56 @@ public class Schema5 {
 	public Pourcentage getApr_entrepreneuriale() {
 		return apr_entrepreneuriale;
 	}
+
+	// SETTERS //
+	
+	public void setMtn_reglementaire(Pourcentage mtn_reglementaire) {
+		this.mtn_reglementaire = mtn_reglementaire;
+	}
+
+	public void setApr_reglementaire(Pourcentage apr_reglementaire) {
+		this.apr_reglementaire = apr_reglementaire;
+	}
+
+	public void setMtn_mobilite(Pourcentage mtn_mobilite) {
+		this.mtn_mobilite = mtn_mobilite;
+	}
+
+	public void setApr_mobilite(Pourcentage apr_mobilite) {
+		this.apr_mobilite = apr_mobilite;
+	}
+
+	public void setMtn_pro_service_public(Pourcentage mtn_pro_service_public) {
+		this.mtn_pro_service_public = mtn_pro_service_public;
+	}
+
+	public void setApr_pro_service_public(Pourcentage apr_pro_service_public) {
+		this.apr_pro_service_public = apr_pro_service_public;
+	}
+
+	public void setMtn_professionnelle(Pourcentage mtn_professionnelle) {
+		this.mtn_professionnelle = mtn_professionnelle;
+	}
+
+	public void setApr_professionnelle(Pourcentage apr_professionnelle) {
+		this.apr_professionnelle = apr_professionnelle;
+	}
+
+	public void setMtn_communautaire(Pourcentage mtn_communautaire) {
+		this.mtn_communautaire = mtn_communautaire;
+	}
+
+	public void setApr_communautaire(Pourcentage apr_communautaire) {
+		this.apr_communautaire = apr_communautaire;
+	}
+
+	public void setMtn_entrepreneuriale(Pourcentage mtn_entrepreneuriale) {
+		this.mtn_entrepreneuriale = mtn_entrepreneuriale;
+	}
+
+	public void setApr_entrepreneuriale(Pourcentage apr_entrepreneuriale) {
+		this.apr_entrepreneuriale = apr_entrepreneuriale;
+	}
 	
 	
 }

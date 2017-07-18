@@ -57,6 +57,47 @@ public class Schema1 {
 		return apr_mena_mar;
 	}
 
+	// SETTERS //
+
+	public void setMtn_contr_tech(Pourcentage mtn_contr_tech) {
+		this.mtn_contr_tech = mtn_contr_tech;
+	}
+
+
+	public void setApr_contr_tech(Pourcentage apr_contr_tech) {
+		this.apr_contr_tech = apr_contr_tech;
+	}
+
+
+	public void setMtn_press_envir(Pourcentage mtn_press_envir) {
+		this.mtn_press_envir = mtn_press_envir;
+	}
+
+
+	public void setApr_press_envir(Pourcentage apr_press_envir) {
+		this.apr_press_envir = apr_press_envir;
+	}
+
+
+	public void setMtn_etabl_prot(Pourcentage mtn_etabl_prot) {
+		this.mtn_etabl_prot = mtn_etabl_prot;
+	}
+
+
+	public void setApr_etabl_prot(Pourcentage apr_etabl_prot) {
+		this.apr_etabl_prot = apr_etabl_prot;
+	}
+
+
+	public void setMtn_mena_mar(Pourcentage mtn_mena_mar) {
+		this.mtn_mena_mar = mtn_mena_mar;
+	}
+
+
+	public void setApr_mena_mar(Pourcentage apr_mena_mar) {
+		this.apr_mena_mar = apr_mena_mar;
+	}
+
 	
 
 }

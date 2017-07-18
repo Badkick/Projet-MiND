@@ -41,4 +41,22 @@ public class Schema3 {
 	public ElementNote<Organisation>[] getApr_notees() {
 		return apr_notees;
 	}
+	
+	// SETTERS //
+
+	public void setMtn_principale(Organisation mtn_principale) {
+		this.mtn_principale = mtn_principale;
+	}
+
+	public void setApr_principale(Organisation apr_principale) {
+		this.apr_principale = apr_principale;
+	}
+
+	public void setMtn_notees(ElementNote<Organisation>[] mtn_notees) {
+		for(int i=0;i<mtn_notees.length;i++) this.mtn_notees[i] = mtn_notees[i];
+	}
+
+	public void setApr_notees(ElementNote<Organisation>[] apr_notees) {
+		for(int i=0;i<apr_notees.length;i++) this.apr_notees[i] = apr_notees[i];
+	}
 }

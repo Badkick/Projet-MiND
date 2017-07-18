@@ -23,6 +23,11 @@ public class Etude {
 		this.s6 = s6;
 	}
 	
+	public Etude()
+	{
+		
+	}
+	
 	// GETTERS //
 
 	public Schema1 getS1() {
@@ -47,6 +52,32 @@ public class Etude {
 
 	public Schema6 getS6() {
 		return s6;
+	}
+
+	// SETTERS //
+	
+	public void setS1(Schema1 s1) {
+		this.s1 = s1;
+	}
+
+	public void setS2(Schema2 s2) {
+		this.s2 = s2;
+	}
+
+	public void setS3(Schema3 s3) {
+		this.s3 = s3;
+	}
+
+	public void setS4(Schema4 s4) {
+		this.s4 = s4;
+	}
+
+	public void setS5(Schema5 s5) {
+		this.s5 = s5;
+	}
+
+	public void setS6(Schema6 s6) {
+		this.s6 = s6;
 	}
 	
 	

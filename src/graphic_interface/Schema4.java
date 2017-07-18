@@ -45,4 +45,30 @@ public class Schema4 {
 	public Opposition getApr_opposition() {
 		return apr_opposition;
 	}
+
+	// SETTERS //
+	
+	public void setMtn_consensus(Consensus mtn_consensus) {
+		this.mtn_consensus = mtn_consensus;
+	}
+
+	public void setApr_consensus(Consensus apr_consensus) {
+		this.apr_consensus = apr_consensus;
+	}
+
+	public void setMtn_negociation(Negociation mtn_negociation) {
+		this.mtn_negociation = mtn_negociation;
+	}
+
+	public void setApr_negociation(Negociation apr_negociation) {
+		this.apr_negociation = apr_negociation;
+	}
+
+	public void setMtn_opposition(Opposition mtn_opposition) {
+		this.mtn_opposition = mtn_opposition;
+	}
+
+	public void setApr_opposition(Opposition apr_opposition) {
+		this.apr_opposition = apr_opposition;
+	}
 }
