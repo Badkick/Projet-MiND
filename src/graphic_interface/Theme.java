@@ -35,6 +35,7 @@ public enum Theme {
 	// police
 	private Font police;
 	private Color couleurTexte;
+	private Font policeExplications;
 	
 	// sélection d'une étude
 	private Image selectionEtude;
@@ -56,6 +57,7 @@ public enum Theme {
 		this.nom = nom;
 		this.id = id;
 		this.police = police;
+		this.policeExplications = new Font("Tahoma", Font.PLAIN, 20);
 		this.couleurTexte = couleurTexte;
 		
 		this.uploadImages();
@@ -169,6 +171,11 @@ public enum Theme {
 	public Image[] getSchemas()
 	{
 		return this.schemas;
+	}
+	
+	public Font getPoliceExplications()
+	{
+		return this.policeExplications;
 	}
 	
 	// METHODES //
