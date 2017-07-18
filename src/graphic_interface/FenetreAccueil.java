@@ -82,7 +82,7 @@ public class FenetreAccueil {
 					}
 				if(!nom.equals(""))
 				{
-					ConteneurNouvelleEtude nouvelle_etude = new ConteneurNouvelleEtude(fenetre_principale.getSize(), theme, conteneur_principal, fenetre_principale,nom,null);
+					ConteneurNouvelleEtude nouvelle_etude = new ConteneurNouvelleEtude(fenetre_principale.getSize(), theme, conteneur_principal, fenetre_principale,nom,new Etude());
 					fenetre_principale.setConteneur(nouvelle_etude,"Projet MiND - "+nom);
 				}
 
