@@ -1,9 +1,7 @@
 package graphic_interface;
 
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Dimension;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -16,7 +14,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import javax.swing.GroupLayout;
-import javax.swing.JOptionPane;
 import javax.swing.JTabbedPane;
 import javax.swing.UIManager;
 
@@ -305,7 +302,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 		for(int i=0;i<NB_ONGLETS;i++)
 		{
 			this.onglets[i] = new Conteneur(TAILLE_GRAND_CONTENEUR);
-			tab_graphes[i] = new TabGraphe(i, theme);
+			tab_graphes[i] = new TabGraphe(i+1, theme);
 			this.onglets[i].add(tab_graphes[i]);
 			this.onglets[i].setOpaque(false);
 		}
