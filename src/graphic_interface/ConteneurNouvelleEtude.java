@@ -27,6 +27,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 	private GroupLayout layout;
 	private boolean saved = true;
 	private String nom;
+	private Etude etude;
 	
 	// boutons
 	private Bouton bouton_back_menu;
