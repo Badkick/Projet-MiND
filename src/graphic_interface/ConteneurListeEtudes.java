@@ -1,6 +1,7 @@
 package graphic_interface;
 
 import java.awt.Dimension;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -150,8 +151,10 @@ public class ConteneurListeEtudes extends ConteneurAvecImage {
 	private List<BoutonEtude> importerEtudes()
 	{
 		List<BoutonEtude> liste = new ArrayList<BoutonEtude>();
+		File file=new File("saves");
+		String[] nom_etudes=file.list();
 		
-		for(int i=0;i<1000;i++) liste.add(new BoutonEtude(this.getTheme(),String.valueOf(i))); // test
+		for(int i=0;i<nom_etudes.length;i++) liste.add(new BoutonEtude(this.getTheme(),nom_etudes[i]));
 		
 		return liste;
 	}
