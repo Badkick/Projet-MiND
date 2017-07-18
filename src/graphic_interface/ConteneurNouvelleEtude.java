@@ -6,6 +6,14 @@ import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.net.URI;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.List;
 
 import javax.swing.GroupLayout;
 import javax.swing.JOptionPane;
@@ -110,7 +118,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 
 	public boolean isSaved()
 	{
-		return this.saved;
+		return this.saved;		
 	}
 
 	public String getNom()
@@ -151,7 +159,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 		this.bouton_save = new Bouton("Sauvegarder l'étude", new Dimension(180, 50), theme);
 		this.bouton_delete = new Bouton("Supprimer l'étude", new Dimension(180, 50), theme);
 		this.bouton_exporter = new Bouton("Présenter l'étude", new Dimension(180, 50), theme);
-
+		
 		this.bouton_exporter.addActionListener(new ActionListener() {
 
 			@Override
@@ -159,6 +167,90 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 				// TODO Auto-generated method stub
 				System.out.println(getConteneurSchema(1,MAINTENANT));
 			}
+		});
+		
+		this.bouton_delete.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
+		
+		this.getBoutonSave().addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				Etude save=getEtude();
+				String repertoire=getNom();
+
+				save();
+				
+				/*try {
+					Files.createDirectories(Paths.get("saves\\"+repertoire));
+				} catch (IOException e7) {
+					// TODO Auto-generated catch block
+					e7.printStackTrace();
+				}
+				
+				List<String> lignes_contraintes=Arrays.asList(String.valueOf(save.getS1().getMtn_contr_tech().get()),String.valueOf(save.getS1().getApr_contr_tech().get()),String.valueOf(save.getS1().getMtn_press_envir().get()),String.valueOf(save.getS1().getApr_press_envir().get()),String.valueOf(save.getS1().getMtn_etabl_prot().get()),String.valueOf(save.getS1().getApr_etabl_prot().get()),String.valueOf(save.getS1().getMtn_mena_mar().get()),String.valueOf(save.getS1().getApr_mena_mar().get()));
+				Path fichier_contraintes=Paths.get("saves\\"+repertoire+"\\Contraintes.txt");
+				try {
+					Files.write(fichier_contraintes, lignes_contraintes,Charset.forName("UTF-8"));
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+				List<String> lignes_structures=Arrays.asList(save.getS2().getMtn_principale().getNom(),save.getS2().getApr_principale().getNom(),save.getS2().getMtn_notees()[0].getElement().getNom(),String.valueOf(save.getS2().getMtn_notees()[0].getNote()),save.getS2().getApr_notees()[0].getElement().getNom(),String.valueOf(save.getS2().getApr_notees()[0].getNote()),save.getS2().getMtn_notees()[1].getElement().getNom(),String.valueOf(save.getS2().getMtn_notees()[1].getNote()),save.getS2().getApr_notees()[1].getElement().getNom(),String.valueOf(save.getS2().getApr_notees()[1].getNote()),save.getS2().getMtn_notees()[2].getElement().getNom(),String.valueOf(save.getS2().getMtn_notees()[2].getNote()),save.getS2().getApr_notees()[2].getElement().getNom(),String.valueOf(save.getS2().getApr_notees()[2].getNote()),save.getS2().getMtn_notees()[3].getElement().getNom(),String.valueOf(save.getS2().getMtn_notees()[3].getNote()),save.getS2().getApr_notees()[3].getElement().getNom(),String.valueOf(save.getS2().getApr_notees()[3].getNote()));
+				Path fichier_structures=Paths.get("saves\\"+repertoire+"Structures.txt");
+				try {
+					Files.write(fichier_structures, lignes_structures,Charset.forName("UTF-8"));
+				} catch (IOException e2) {
+					// TODO Auto-generated catch block
+					e2.printStackTrace();
+				}
+				
+				List<String> lignes_organisation=Arrays.asList(save.getS3().getMtn_principale().getNom(),save.getS3().getApr_principale().getNom(),save.getS3().getMtn_notees()[0].getElement().getNom(),String.valueOf(save.getS3().getMtn_notees()[0].getNote()),save.getS3().getApr_notees()[0].getElement().getNom(),String.valueOf(save.getS3().getApr_notees()[0].getNote()),save.getS3().getMtn_notees()[1].getElement().getNom(),String.valueOf(save.getS3().getMtn_notees()[1].getNote()),save.getS3().getApr_notees()[1].getElement().getNom(),String.valueOf(save.getS3().getApr_notees()[1].getNote()),save.getS3().getMtn_notees()[2].getElement().getNom(),String.valueOf(save.getS3().getMtn_notees()[2].getNote()),save.getS3().getApr_notees()[2].getElement().getNom(),String.valueOf(save.getS3().getApr_notees()[2].getNote()),save.getS3().getMtn_notees()[3].getElement().getNom(),String.valueOf(save.getS3().getMtn_notees()[3].getNote()),save.getS3().getApr_notees()[3].getElement().getNom(),String.valueOf(save.getS3().getApr_notees()[3].getNote()));
+				Path fichier_organisation=Paths.get("saves\\"+repertoire+"Organisations.txt");
+				try {
+					Files.write(fichier_organisation, lignes_organisation,Charset.forName("UTF-8"));
+				} catch (IOException e3) {
+					// TODO Auto-generated catch block
+					e3.printStackTrace();
+				}
+				
+				List<String> lignes_relations=Arrays.asList(String.valueOf(save.getS4().getMtn_consensus().getImportance().get()),String.valueOf(save.getS4().getMtn_consensus().getConsensus().get()),String.valueOf(save.getS4().getMtn_consensus().getPacte().get()),String.valueOf(save.getS4().getApr_consensus().getImportance().get()),String.valueOf(save.getS4().getApr_consensus().getConsensus().get()),String.valueOf(save.getS4().getApr_consensus().getPacte().get()),String.valueOf(save.getS4().getMtn_negociation().getImportance().get()),String.valueOf(save.getS4().getMtn_negociation().getAjustement().get()),String.valueOf(save.getS4().getMtn_negociation().getTransformation().get()),String.valueOf(save.getS4().getApr_negociation().getImportance().get()),String.valueOf(save.getS4().getApr_negociation().getAjustement().get()),String.valueOf(save.getS4().getApr_negociation().getTransformation().get()),String.valueOf(save.getS4().getMtn_opposition().getImportance().get()),String.valueOf(save.getS4().getMtn_opposition().getDomination().get()),String.valueOf(save.getS4().getMtn_opposition().getContrePouvoir().get()),String.valueOf(save.getS4().getMtn_opposition().getAntagonisme().get()),String.valueOf(save.getS4().getApr_opposition().getImportance().get()),String.valueOf(save.getS4().getApr_opposition().getDomination().get()),String.valueOf(save.getS4().getApr_opposition().getContrePouvoir().get()),String.valueOf(save.getS4().getApr_opposition().getAntagonisme().get()));
+				Path fichier_relations=Paths.get("saves\\"+repertoire+"Relations.txt");
+				try {
+					Files.write(fichier_relations, lignes_relations,Charset.forName("UTF-8"));
+				} catch (IOException e4) {
+					// TODO Auto-generated catch block
+					e4.printStackTrace();
+				}
+				
+				List<String> lignes_identites=Arrays.asList(String.valueOf(save.getS5().getMtn_reglementaire().get()),String.valueOf(save.getS5().getApr_reglementaire().get()),String.valueOf(save.getS5().getMtn_mobilite().get()),String.valueOf(save.getS5().getApr_mobilite().get()),String.valueOf(save.getS5().getMtn_pro_service_public().get()),String.valueOf(save.getS5().getApr_pro_service_public().get()),String.valueOf(save.getS5().getMtn_professionnelle().get()),String.valueOf(save.getS5().getApr_professionnelle().get()),String.valueOf(save.getS5().getMtn_communautaire().get()),String.valueOf(save.getS5().getApr_communautaire().get()),String.valueOf(save.getS5().getMtn_entrepreneuriale().get()),String.valueOf(save.getS5().getApr_entrepreneuriale().get()));
+				Path fichier_identites=Paths.get("saves\\"+repertoire+"Identites.txt");
+				try {
+					Files.write(fichier_identites, lignes_identites,Charset.forName("UTF-8"));
+				} catch (IOException e5) {
+					// TODO Auto-generated catch block
+					e5.printStackTrace();
+				}
+				
+				List<String> lignes_mondes=Arrays.asList(save.getS6().getMtn().getNom(),save.getS6().getApr().getNom());
+				Path fichier_mondes=Paths.get("saves\\"+repertoire+"Mondes.txt");
+				try {
+					Files.write(fichier_mondes, lignes_mondes,Charset.forName("UTF-8"));
+				} catch (IOException e6) {
+					// TODO Auto-generated catch block
+					e6.printStackTrace();
+				}*/
+			}
+
 		});
 
 		this.getBoutonBack().addActionListener(this.isSaved() ? new ChangerConteneur(this.getFenetre(),this.getPrecedent()) : new ChangerConteneur(this.getFenetre(),this.getPrecedent(),"Voulez-vous vraiment revenir à l'écran d'accueil ? \n Attention, vous perdrez les données non enregistrées."));
