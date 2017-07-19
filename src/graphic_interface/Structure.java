@@ -28,7 +28,7 @@ public enum Structure implements ElementPouvantEtreNote{ // pour schéma 2
 	
 	public static Structure getByName(String nom){
 		for(Structure e:Structure.values()){
-			if(nom==e.getNom()){
+			if(nom.equals(e.getNom())){
 				return e;
 			}
 		}return null;

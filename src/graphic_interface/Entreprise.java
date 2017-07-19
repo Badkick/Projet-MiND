@@ -26,7 +26,7 @@ public enum Entreprise {
 	
 	public static Entreprise getByName(String nom){
 		for(Entreprise e:Entreprise.values()){
-			if(nom==e.getNom()){
+			if(nom.equals(e.getNom())){
 				return e;
 			}
 		}return null;

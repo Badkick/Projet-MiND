@@ -29,7 +29,7 @@ public enum Organisation implements ElementPouvantEtreNote { // pour schéma 3
 	
 	public static Organisation getByName(String nom){
 		for(Organisation e:Organisation.values()){
-			if(nom==e.getNom()){
+			if(nom.equals(e.getNom())){
 				return e;
 			}
 		}return null;
