@@ -25,4 +25,12 @@ public enum Structure implements ElementPouvantEtreNote{ // pour schéma 2
 	{
 		return this.numero;
 	}
+	
+	public static Structure getByName(String nom){
+		for(Structure e:Structure.values()){
+			if(nom==e.getNom()){
+				return e;
+			}
+		}return null;
+	}
 }

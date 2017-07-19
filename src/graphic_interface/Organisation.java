@@ -26,4 +26,12 @@ public enum Organisation implements ElementPouvantEtreNote { // pour schéma 3
 	{
 		return this.numero;
 	}
+	
+	public static Organisation getByName(String nom){
+		for(Organisation e:Organisation.values()){
+			if(nom==e.getNom()){
+				return e;
+			}
+		}return null;
+	}
 }

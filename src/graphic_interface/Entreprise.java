@@ -24,5 +24,12 @@ public enum Entreprise {
 		return numero;
 	}
 	
+	public static Entreprise getByName(String nom){
+		for(Entreprise e:Entreprise.values()){
+			if(nom==e.getNom()){
+				return e;
+			}
+		}return null;
+	}
 	
 }
