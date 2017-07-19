@@ -123,7 +123,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 	{
 		return this.nom;
 	}
-	
+
 	public Etude getEtude()
 	{
 		return this.etude;
@@ -157,7 +157,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 		this.bouton_save = new Bouton("Sauvegarder l'étude", new Dimension(180, 50), theme);
 		this.bouton_delete = new Bouton("Supprimer l'étude", new Dimension(180, 50), theme);
 		this.bouton_exporter = new Bouton("Présenter l'étude", new Dimension(180, 50), theme);
-		
+
 		this.bouton_exporter.addActionListener(new ActionListener() {
 
 			@Override
@@ -166,35 +166,36 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 				System.out.println(getConteneurSchema(1,MAINTENANT));
 			}
 		});
-		
+
 		this.bouton_delete.addActionListener(new ActionListener(){
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				if(Communication.messageAttentionChoix("Vous êtes sur le point de supprimer cette étude. Confirmez-vous cette requête ?")==0){
-					File etude=new File("saves//"+getNom());
-					if(etude.exists()){
+				File etude=new File("saves"+File.separator+getNom());
+				if(etude.exists()){
+					if(Communication.messageAttentionChoix("Vous êtes sur le point de supprimer cette étude. Confirmez-vous cette requête ?")==0){
 						String[] donnees=etude.list();
 						for(String s:donnees){
 							File currentFile = new File(etude.getPath(),s);
 							currentFile.delete();
 						}
 						etude.delete();
-					}else{
-					Communication.messageErreur("L'étude a déjà été supprimée ou n'a jamais été sauvegardée");
 					}
-				new ChangerConteneur(getFenetre(),getPrecedent());//ne fonctionne pas bizarrement mais est-ce vraiment nécessaire ?
+					getFenetre().setConteneur(getPrecedent());//ne fonctionne pas bizarrement mais est-ce vraiment nécessaire ?
+				}
+				else{
+					Communication.messageErreur("L'étude a déjà été supprimée ou n'a jamais été sauvegardée");
 				}
 			}
-			
+
 		});
-		
+
 		this.getBoutonSave().addActionListener(new ActionListener(){
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+
 				Etude save=getEtude();
 				String repertoire=getNom();
 
@@ -214,7 +215,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-				
+
 				List<String> lignes_structures=Arrays.asList(save.getS2().getMtn_principale().getNom(),save.getS2().getApr_principale().getNom(),save.getS2().getMtn_notees()[0].getElement().getNom(),String.valueOf(save.getS2().getMtn_notees()[0].getNote()),save.getS2().getApr_notees()[0].getElement().getNom(),String.valueOf(save.getS2().getApr_notees()[0].getNote()),save.getS2().getMtn_notees()[1].getElement().getNom(),String.valueOf(save.getS2().getMtn_notees()[1].getNote()),save.getS2().getApr_notees()[1].getElement().getNom(),String.valueOf(save.getS2().getApr_notees()[1].getNote()),save.getS2().getMtn_notees()[2].getElement().getNom(),String.valueOf(save.getS2().getMtn_notees()[2].getNote()),save.getS2().getApr_notees()[2].getElement().getNom(),String.valueOf(save.getS2().getApr_notees()[2].getNote()),save.getS2().getMtn_notees()[3].getElement().getNom(),String.valueOf(save.getS2().getMtn_notees()[3].getNote()),save.getS2().getApr_notees()[3].getElement().getNom(),String.valueOf(save.getS2().getApr_notees()[3].getNote()));
 				Path fichier_structures=Paths.get("saves\\"+repertoire+"Structures.txt");
 				try {
@@ -223,7 +224,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 					// TODO Auto-generated catch block
 					e2.printStackTrace();
 				}
-				
+
 				List<String> lignes_organisation=Arrays.asList(save.getS3().getMtn_principale().getNom(),save.getS3().getApr_principale().getNom(),save.getS3().getMtn_notees()[0].getElement().getNom(),String.valueOf(save.getS3().getMtn_notees()[0].getNote()),save.getS3().getApr_notees()[0].getElement().getNom(),String.valueOf(save.getS3().getApr_notees()[0].getNote()),save.getS3().getMtn_notees()[1].getElement().getNom(),String.valueOf(save.getS3().getMtn_notees()[1].getNote()),save.getS3().getApr_notees()[1].getElement().getNom(),String.valueOf(save.getS3().getApr_notees()[1].getNote()),save.getS3().getMtn_notees()[2].getElement().getNom(),String.valueOf(save.getS3().getMtn_notees()[2].getNote()),save.getS3().getApr_notees()[2].getElement().getNom(),String.valueOf(save.getS3().getApr_notees()[2].getNote()),save.getS3().getMtn_notees()[3].getElement().getNom(),String.valueOf(save.getS3().getMtn_notees()[3].getNote()),save.getS3().getApr_notees()[3].getElement().getNom(),String.valueOf(save.getS3().getApr_notees()[3].getNote()));
 				Path fichier_organisation=Paths.get("saves\\"+repertoire+"Organisations.txt");
 				try {
@@ -232,7 +233,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 					// TODO Auto-generated catch block
 					e3.printStackTrace();
 				}
-				
+
 				List<String> lignes_relations=Arrays.asList(String.valueOf(save.getS4().getMtn_consensus().getImportance().get()),String.valueOf(save.getS4().getMtn_consensus().getConsensus().get()),String.valueOf(save.getS4().getMtn_consensus().getPacte().get()),String.valueOf(save.getS4().getApr_consensus().getImportance().get()),String.valueOf(save.getS4().getApr_consensus().getConsensus().get()),String.valueOf(save.getS4().getApr_consensus().getPacte().get()),String.valueOf(save.getS4().getMtn_negociation().getImportance().get()),String.valueOf(save.getS4().getMtn_negociation().getAjustement().get()),String.valueOf(save.getS4().getMtn_negociation().getTransformation().get()),String.valueOf(save.getS4().getApr_negociation().getImportance().get()),String.valueOf(save.getS4().getApr_negociation().getAjustement().get()),String.valueOf(save.getS4().getApr_negociation().getTransformation().get()),String.valueOf(save.getS4().getMtn_opposition().getImportance().get()),String.valueOf(save.getS4().getMtn_opposition().getDomination().get()),String.valueOf(save.getS4().getMtn_opposition().getContrePouvoir().get()),String.valueOf(save.getS4().getMtn_opposition().getAntagonisme().get()),String.valueOf(save.getS4().getApr_opposition().getImportance().get()),String.valueOf(save.getS4().getApr_opposition().getDomination().get()),String.valueOf(save.getS4().getApr_opposition().getContrePouvoir().get()),String.valueOf(save.getS4().getApr_opposition().getAntagonisme().get()));
 				Path fichier_relations=Paths.get("saves\\"+repertoire+"Relations.txt");
 				try {
@@ -241,7 +242,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 					// TODO Auto-generated catch block
 					e4.printStackTrace();
 				}
-				
+
 				List<String> lignes_identites=Arrays.asList(String.valueOf(save.getS5().getMtn_reglementaire().get()),String.valueOf(save.getS5().getApr_reglementaire().get()),String.valueOf(save.getS5().getMtn_mobilite().get()),String.valueOf(save.getS5().getApr_mobilite().get()),String.valueOf(save.getS5().getMtn_pro_service_public().get()),String.valueOf(save.getS5().getApr_pro_service_public().get()),String.valueOf(save.getS5().getMtn_professionnelle().get()),String.valueOf(save.getS5().getApr_professionnelle().get()),String.valueOf(save.getS5().getMtn_communautaire().get()),String.valueOf(save.getS5().getApr_communautaire().get()),String.valueOf(save.getS5().getMtn_entrepreneuriale().get()),String.valueOf(save.getS5().getApr_entrepreneuriale().get()));
 				Path fichier_identites=Paths.get("saves\\"+repertoire+"Identites.txt");
 				try {
@@ -250,7 +251,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 					// TODO Auto-generated catch block
 					e5.printStackTrace();
 				}
-				
+
 				List<String> lignes_mondes=Arrays.asList(save.getS6().getMtn().getNom(),save.getS6().getApr().getNom());
 				Path fichier_mondes=Paths.get("saves\\"+repertoire+"Mondes.txt");
 				try {
@@ -259,7 +260,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 					// TODO Auto-generated catch block
 					e6.printStackTrace();
 				}*/
-				
+
 			}
 
 		});
