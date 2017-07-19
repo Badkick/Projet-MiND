@@ -113,6 +113,11 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 	{
 		return this.bouton_delete;
 	}
+	
+	public Bouton getBoutonExporter()
+	{
+		return this.bouton_exporter;
+	}
 
 	public boolean isSaved()
 	{
@@ -158,7 +163,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 		this.bouton_delete = new Bouton("Supprimer l'étude", new Dimension(180, 50), theme);
 		this.bouton_exporter = new Bouton("Présenter l'étude", new Dimension(180, 50), theme);
 
-		this.bouton_exporter.addActionListener(new ActionListener() {
+		this.getBoutonExporter().addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -167,7 +172,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 			}
 		});
 
-		this.bouton_delete.addActionListener(new ActionListener(){
+		this.getBoutonDelete().addActionListener(new ActionListener(){
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -181,11 +186,11 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 							currentFile.delete();
 						}
 						etude.delete();
+						getFenetre().setConteneur(getPrecedent());
 					}
-					getFenetre().setConteneur(getPrecedent());//ne fonctionne pas bizarrement mais est-ce vraiment nécessaire ?
 				}
 				else{
-					Communication.messageErreur("L'étude a déjà été supprimée ou n'a jamais été sauvegardée");
+					Communication.messageErreur("L'étude a déjà été supprimée ou n'a jamais été sauvegardée.");
 				}
 			}
 
@@ -198,10 +203,12 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 
 				Etude save=getEtude();
 				String repertoire=getNom();
+				
+				Communication.messageInformatif("Sauvegarde effectuée avec succès !");
 
 				save();
 				try {
-					Files.createDirectories(Paths.get("saves\\"+repertoire));
+					Files.createDirectories(Paths.get("saves"+File.separator+repertoire));
 				} catch (IOException e7) {
 					// TODO Auto-generated catch block
 					e7.printStackTrace();
