@@ -36,7 +36,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 	private JTabbedPane tabs;
 	private Conteneur conteneur;
 	private GroupLayout layout;
-	private boolean saved=true;
+	private boolean saved=false;
 	private String nom;
 	private Etude etude;
 
@@ -181,8 +181,8 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 							currentFile.delete();
 						}
 						etude.delete();
+						getFenetre().setConteneur(getPrecedent());
 					}
-					getFenetre().setConteneur(getPrecedent());//ne fonctionne pas bizarrement mais est-ce vraiment nécessaire ?
 				}
 				else{
 					Communication.messageErreur("L'étude a déjà été supprimée ou n'a jamais été sauvegardée");
@@ -201,14 +201,14 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 
 				save();
 				try {
-					Files.createDirectories(Paths.get("saves\\"+repertoire));
+					Files.createDirectories(Paths.get("saves"+File.separator+repertoire));
 				} catch (IOException e7) {
 					// TODO Auto-generated catch block
 					e7.printStackTrace();
 				}
 				/*
 				List<String> lignes_contraintes=Arrays.asList(String.valueOf(save.getS1().getMtn_contr_tech().get()),String.valueOf(save.getS1().getApr_contr_tech().get()),String.valueOf(save.getS1().getMtn_press_envir().get()),String.valueOf(save.getS1().getApr_press_envir().get()),String.valueOf(save.getS1().getMtn_etabl_prot().get()),String.valueOf(save.getS1().getApr_etabl_prot().get()),String.valueOf(save.getS1().getMtn_mena_mar().get()),String.valueOf(save.getS1().getApr_mena_mar().get()));
-				Path fichier_contraintes=Paths.get("saves\\"+repertoire+"\\Contraintes.txt");
+				Path fichier_contraintes=Paths.get("saves"+File.separator+repertoire+File.separator+"Contraintes.txt");
 				try {
 					Files.write(fichier_contraintes, lignes_contraintes,Charset.forName("UTF-8"));
 				} catch (IOException e1) {
@@ -217,7 +217,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 				}
 
 				List<String> lignes_structures=Arrays.asList(save.getS2().getMtn_principale().getNom(),save.getS2().getApr_principale().getNom(),save.getS2().getMtn_notees()[0].getElement().getNom(),String.valueOf(save.getS2().getMtn_notees()[0].getNote()),save.getS2().getApr_notees()[0].getElement().getNom(),String.valueOf(save.getS2().getApr_notees()[0].getNote()),save.getS2().getMtn_notees()[1].getElement().getNom(),String.valueOf(save.getS2().getMtn_notees()[1].getNote()),save.getS2().getApr_notees()[1].getElement().getNom(),String.valueOf(save.getS2().getApr_notees()[1].getNote()),save.getS2().getMtn_notees()[2].getElement().getNom(),String.valueOf(save.getS2().getMtn_notees()[2].getNote()),save.getS2().getApr_notees()[2].getElement().getNom(),String.valueOf(save.getS2().getApr_notees()[2].getNote()),save.getS2().getMtn_notees()[3].getElement().getNom(),String.valueOf(save.getS2().getMtn_notees()[3].getNote()),save.getS2().getApr_notees()[3].getElement().getNom(),String.valueOf(save.getS2().getApr_notees()[3].getNote()));
-				Path fichier_structures=Paths.get("saves\\"+repertoire+"Structures.txt");
+				Path fichier_structures=Paths.get("saves"+File.separator+repertoire+File.separator+"Structures.txt");
 				try {
 					Files.write(fichier_structures, lignes_structures,Charset.forName("UTF-8"));
 				} catch (IOException e2) {
@@ -226,7 +226,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 				}
 
 				List<String> lignes_organisation=Arrays.asList(save.getS3().getMtn_principale().getNom(),save.getS3().getApr_principale().getNom(),save.getS3().getMtn_notees()[0].getElement().getNom(),String.valueOf(save.getS3().getMtn_notees()[0].getNote()),save.getS3().getApr_notees()[0].getElement().getNom(),String.valueOf(save.getS3().getApr_notees()[0].getNote()),save.getS3().getMtn_notees()[1].getElement().getNom(),String.valueOf(save.getS3().getMtn_notees()[1].getNote()),save.getS3().getApr_notees()[1].getElement().getNom(),String.valueOf(save.getS3().getApr_notees()[1].getNote()),save.getS3().getMtn_notees()[2].getElement().getNom(),String.valueOf(save.getS3().getMtn_notees()[2].getNote()),save.getS3().getApr_notees()[2].getElement().getNom(),String.valueOf(save.getS3().getApr_notees()[2].getNote()),save.getS3().getMtn_notees()[3].getElement().getNom(),String.valueOf(save.getS3().getMtn_notees()[3].getNote()),save.getS3().getApr_notees()[3].getElement().getNom(),String.valueOf(save.getS3().getApr_notees()[3].getNote()));
-				Path fichier_organisation=Paths.get("saves\\"+repertoire+"Organisations.txt");
+				Path fichier_organisation=Paths.get("saves"+File.separator+repertoire+File.separator+"Organisations.txt");
 				try {
 					Files.write(fichier_organisation, lignes_organisation,Charset.forName("UTF-8"));
 				} catch (IOException e3) {
@@ -235,7 +235,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 				}
 
 				List<String> lignes_relations=Arrays.asList(String.valueOf(save.getS4().getMtn_consensus().getImportance().get()),String.valueOf(save.getS4().getMtn_consensus().getConsensus().get()),String.valueOf(save.getS4().getMtn_consensus().getPacte().get()),String.valueOf(save.getS4().getApr_consensus().getImportance().get()),String.valueOf(save.getS4().getApr_consensus().getConsensus().get()),String.valueOf(save.getS4().getApr_consensus().getPacte().get()),String.valueOf(save.getS4().getMtn_negociation().getImportance().get()),String.valueOf(save.getS4().getMtn_negociation().getAjustement().get()),String.valueOf(save.getS4().getMtn_negociation().getTransformation().get()),String.valueOf(save.getS4().getApr_negociation().getImportance().get()),String.valueOf(save.getS4().getApr_negociation().getAjustement().get()),String.valueOf(save.getS4().getApr_negociation().getTransformation().get()),String.valueOf(save.getS4().getMtn_opposition().getImportance().get()),String.valueOf(save.getS4().getMtn_opposition().getDomination().get()),String.valueOf(save.getS4().getMtn_opposition().getContrePouvoir().get()),String.valueOf(save.getS4().getMtn_opposition().getAntagonisme().get()),String.valueOf(save.getS4().getApr_opposition().getImportance().get()),String.valueOf(save.getS4().getApr_opposition().getDomination().get()),String.valueOf(save.getS4().getApr_opposition().getContrePouvoir().get()),String.valueOf(save.getS4().getApr_opposition().getAntagonisme().get()));
-				Path fichier_relations=Paths.get("saves\\"+repertoire+"Relations.txt");
+				Path fichier_relations=Paths.get("saves"+File.separator+repertoire+File.separator+"Relations.txt");
 				try {
 					Files.write(fichier_relations, lignes_relations,Charset.forName("UTF-8"));
 				} catch (IOException e4) {
@@ -244,7 +244,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 				}
 
 				List<String> lignes_identites=Arrays.asList(String.valueOf(save.getS5().getMtn_reglementaire().get()),String.valueOf(save.getS5().getApr_reglementaire().get()),String.valueOf(save.getS5().getMtn_mobilite().get()),String.valueOf(save.getS5().getApr_mobilite().get()),String.valueOf(save.getS5().getMtn_pro_service_public().get()),String.valueOf(save.getS5().getApr_pro_service_public().get()),String.valueOf(save.getS5().getMtn_professionnelle().get()),String.valueOf(save.getS5().getApr_professionnelle().get()),String.valueOf(save.getS5().getMtn_communautaire().get()),String.valueOf(save.getS5().getApr_communautaire().get()),String.valueOf(save.getS5().getMtn_entrepreneuriale().get()),String.valueOf(save.getS5().getApr_entrepreneuriale().get()));
-				Path fichier_identites=Paths.get("saves\\"+repertoire+"Identites.txt");
+				Path fichier_identites=Paths.get("saves"+File.separator+repertoire+File.separator"Identites.txt");
 				try {
 					Files.write(fichier_identites, lignes_identites,Charset.forName("UTF-8"));
 				} catch (IOException e5) {
@@ -253,7 +253,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 				}
 
 				List<String> lignes_mondes=Arrays.asList(save.getS6().getMtn().getNom(),save.getS6().getApr().getNom());
-				Path fichier_mondes=Paths.get("saves\\"+repertoire+"Mondes.txt");
+				Path fichier_mondes=Paths.get("saves"+File.separator+repertoire+File.separator"Mondes.txt");
 				try {
 					Files.write(fichier_mondes, lignes_mondes,Charset.forName("UTF-8"));
 				} catch (IOException e6) {
@@ -265,7 +265,21 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 
 		});
 
-		this.getBoutonBack().addActionListener(this.isSaved() ? new ChangerConteneur(this.getFenetre(),this.getPrecedent()) : new ChangerConteneur(this.getFenetre(),this.getPrecedent(),"Voulez-vous vraiment revenir à l'écran d'accueil ? \n Attention, vous perdrez les données non enregistrées."));
+		//this.getBoutonBack().addActionListener(this.isSaved() ? new ChangerConteneur(this.getFenetre(),this.getPrecedent()) : new ChangerConteneur(this.getFenetre(),this.getPrecedent(),"Voulez-vous vraiment revenir à l'écran d'accueil ? \n Attention, vous perdrez les données non enregistrées."));
+		this.getBoutonBack().addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(isSaved()){
+					getFenetre().setConteneur(getPrecedent());
+				}else{
+					if(Communication.messageAttentionChoix("Voulez-vous vraiment revenir à l'écran d'accueil ? \n Attention, vous perdrez les données non enregistrées.")==0){
+						getFenetre().setConteneur(getPrecedent());
+					}
+				}
+			}
+			
+		});
 	}
 
 	private void initialiserLayout()
