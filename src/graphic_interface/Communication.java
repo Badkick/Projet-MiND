@@ -48,10 +48,22 @@ public class Communication {
 	{
 		return messageAttentionChoix("Attention", message);
 	}
-	
+
 	// Affiche une fenêtre demandant d'entrer du texte.
 	public static String entrerDuTexte(String titre, String message)
 	{
 		return JOptionPane.showInputDialog(null,message,titre,JOptionPane.PLAIN_MESSAGE);
+	}
+
+	// Affiche un message informatif.
+	public static void messageInformatif(String titre, String message)
+	{
+		JOptionPane.showMessageDialog(null, message, titre, JOptionPane.INFORMATION_MESSAGE);
+	}
+
+	// Affiche un message informatif avec le titre "Information".
+	public static void messageInformatif(String message)
+	{
+		messageInformatif("Information", message);
 	}
 }
