@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.nio.charset.Charset;
@@ -35,7 +36,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 	private JTabbedPane tabs;
 	private Conteneur conteneur;
 	private GroupLayout layout;
-	private boolean saved = true;
+	private boolean saved=true;
 	private String nom;
 	private Etude etude;
 
@@ -171,7 +172,20 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				
+				if(Communication.messageAttentionChoix("Vous êtes sur le point de supprimer cette étude. Confirmez-vous cette requête ?")==0){
+					File etude=new File("saves//"+getNom());
+					if(etude.exists()){
+						String[] donnees=etude.list();
+						for(String s:donnees){
+							File currentFile = new File(etude.getPath(),s);
+							currentFile.delete();
+						}
+						etude.delete();
+					}else{
+					Communication.messageErreur("L'étude a déjà été supprimée ou n'a jamais été sauvegardée");
+					}
+				new ChangerConteneur(getFenetre(),getPrecedent());//ne fonctionne pas bizarrement mais est-ce vraiment nécessaire ?
+				}
 			}
 			
 		});
@@ -185,14 +199,13 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 				String repertoire=getNom();
 
 				save();
-				
-				/*try {
+				try {
 					Files.createDirectories(Paths.get("saves\\"+repertoire));
 				} catch (IOException e7) {
 					// TODO Auto-generated catch block
 					e7.printStackTrace();
 				}
-				
+				/*
 				List<String> lignes_contraintes=Arrays.asList(String.valueOf(save.getS1().getMtn_contr_tech().get()),String.valueOf(save.getS1().getApr_contr_tech().get()),String.valueOf(save.getS1().getMtn_press_envir().get()),String.valueOf(save.getS1().getApr_press_envir().get()),String.valueOf(save.getS1().getMtn_etabl_prot().get()),String.valueOf(save.getS1().getApr_etabl_prot().get()),String.valueOf(save.getS1().getMtn_mena_mar().get()),String.valueOf(save.getS1().getApr_mena_mar().get()));
 				Path fichier_contraintes=Paths.get("saves\\"+repertoire+"\\Contraintes.txt");
 				try {
@@ -246,6 +259,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 					// TODO Auto-generated catch block
 					e6.printStackTrace();
 				}*/
+				
 			}
 
 		});
