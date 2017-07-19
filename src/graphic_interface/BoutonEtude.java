@@ -6,6 +6,7 @@ import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -25,10 +26,11 @@ public class BoutonEtude extends ConteneurAvecImage {
 	private String nom = "";
 	private Bouton editer;
 	private Bouton presenter;
+	private Fenetre fenetre;
 	
 	// CONTRUCTEURS //
 
-	public BoutonEtude(Theme theme, String nom) {
+	public BoutonEtude(Theme theme, String nom,Fenetre fenetre) {
 		super(LARGEUR, HAUTEUR, theme.getSelectionEtude());
 		this.theme = theme;
 		this.nom = nom/*+" Bonjour je suis Hugo et j'habite à Villeneuve les Béziers, une ville bien pourrie askip."*/;	
@@ -43,6 +45,7 @@ public class BoutonEtude extends ConteneurAvecImage {
 		this.conteneur_nom.setToolTipText(this.getNom());
 		this.editer = new Bouton("Modifier", new Dimension(100, 50), theme);
 		this.presenter = new Bouton("Présentation", new Dimension(100, 50), theme);
+		this.fenetre=fenetre;
 		
 		GroupLayout layout = new GroupLayout(this);
 		this.setLayout(layout);
@@ -65,6 +68,7 @@ public class BoutonEtude extends ConteneurAvecImage {
 				.addComponent(this.editer)
 				.addComponent(this.presenter)
 				);		
+		this.initialiserBoutons();
 	}
 
 
@@ -95,7 +99,10 @@ public class BoutonEtude extends ConteneurAvecImage {
 	{
 		return this.conteneur_nom;
 	}
-
+	
+	public Fenetre getFenetre(){
+		return this.fenetre;
+	}
 
 	// SETTERS //
 	
@@ -131,7 +138,7 @@ public class BoutonEtude extends ConteneurAvecImage {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				
-				String contraintes="saves\\"+getNom()+"\\Contraintes.txt";
+				String contraintes="saves"+File.separator+getNom()+File.separator+"Contraintes.txt";
 				Schema1 schema1=null;
 				try {
 					BufferedReader aLire_1 = new BufferedReader(new FileReader(contraintes));
@@ -150,7 +157,7 @@ public class BoutonEtude extends ConteneurAvecImage {
 					System.out.println("Une operation sur le fichier Contraintes a leve l'exception "+e1);
 				}
 				
-				String structures="saves\\"+getNom()+"\\Structures.txt";
+				String structures="saves"+File.separator+getNom()+File.separator+"Structures.txt";
 				Schema2 schema2=null;
 				try {
 					BufferedReader aLire_2 = new BufferedReader(new FileReader(structures));
@@ -167,10 +174,10 @@ public class BoutonEtude extends ConteneurAvecImage {
 					
 				}
 				catch (IOException e2){
-					System.out.println("Une operation sur le fichier Contraintes a leve l'exception "+e2);
+					System.out.println("Une operation sur le fichier Structures a leve l'exception "+e2);
 				}
 				
-				String organisations="saves\\"+getNom()+"\\Organisations.txt";
+				String organisations="saves"+File.separator+getNom()+File.separator+"Organisations.txt";
 				Schema3 schema3=null;
 				try {
 					BufferedReader aLire_3 = new BufferedReader(new FileReader(organisations));
@@ -186,10 +193,10 @@ public class BoutonEtude extends ConteneurAvecImage {
 					schema3=new Schema3(org_1,org_2,mtn_notees,apr_notees);
 				}
 				catch (IOException e3){
-					System.out.println("Une operation sur le fichier Contraintes a leve l'exception "+e3);
+					System.out.println("Une operation sur le fichier Organisations a leve l'exception "+e3);
 				}
 				
-				String relations="saves\\"+getNom()+"\\Relations.txt";
+				String relations="saves"+File.separator+getNom()+File.separator+"Relations.txt";
 				Schema4 schema4=null;
 				try {
 					BufferedReader aLire_4 = new BufferedReader(new FileReader(relations));
@@ -205,10 +212,10 @@ public class BoutonEtude extends ConteneurAvecImage {
 					
 				}
 				catch (IOException e4){
-					System.out.println("Une operation sur le fichier Contraintes a leve l'exception "+e4);
+					System.out.println("Une operation sur le fichier Relations a leve l'exception "+e4);
 				}
 				
-				String identites="saves\\"+getNom()+"\\Identites.txt";
+				String identites="saves"+File.separator+getNom()+File.separator+"Identites.txt";
 				Schema5 schema5=null;
 				try {
 					BufferedReader aLire_5 = new BufferedReader(new FileReader(identites));
@@ -229,10 +236,10 @@ public class BoutonEtude extends ConteneurAvecImage {
 					
 				}
 				catch (IOException e5){
-					System.out.println("Une operation sur le fichier Contraintes a leve l'exception "+e5);
+					System.out.println("Une operation sur le fichier Identites a leve l'exception "+e5);
 				}
 				
-				String mondes="saves\\"+getNom()+"\\Mondes.txt";
+				String mondes="saves"+File.separator+getNom()+File.separator+"Mondes.txt";
 				Schema6 schema6=null;
 				try {
 					BufferedReader aLire_6 = new BufferedReader(new FileReader(mondes));
@@ -244,14 +251,29 @@ public class BoutonEtude extends ConteneurAvecImage {
 					
 				}
 				catch (IOException e6){
-					System.out.println("Une operation sur le fichier Contraintes a leve l'exception "+e6);
+					System.out.println("Une operation sur le fichier Mondes a leve l'exception "+e6);
 				}
 				
 				Etude etude=new Etude(schema1,schema2,schema3,schema4,schema5,schema6);
-				//ouvrir l'étude
-				
+				ConteneurAvecImage conteneur_principal = new ConteneurAvecImage(0,0,getTheme().getBackground());
+				ConteneurListeEtudes liste = new ConteneurListeEtudes(getFenetre().getSize(), getTheme(), conteneur_principal, getFenetre());
+				conteneur_principal.setTaille(getFenetre().getSize());
+				ConteneurNouvelleEtude nouvelle_etude = new ConteneurNouvelleEtude(getFenetre().getSize(), getTheme(), liste, getFenetre(),getNom(),etude);
+				getFenetre().setConteneur(nouvelle_etude,"Projet MiND - "+getNom());
+			}
+			
+		});
+		
+
+		this.getPresenter().addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				//méthode à ajouter pour le powerpoint
 			}
 			
 		});
 	}
+
 }
