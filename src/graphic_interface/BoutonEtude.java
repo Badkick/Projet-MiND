@@ -45,6 +45,8 @@ public class BoutonEtude extends ConteneurAvecImage {
 		this.editer = new Bouton("Modifier", new Dimension(100, 50), theme);
 		this.presenter = new Bouton("Présentation", new Dimension(100, 50), theme);
 		
+		this.editer.addActionListener(new ChargerEtude(this.getNom(),theme));
+		
 		GroupLayout layout = new GroupLayout(this);
 		this.setLayout(layout);
 		

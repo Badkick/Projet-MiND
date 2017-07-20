@@ -21,9 +21,7 @@ public class FenetreAccueil {
 		conteneur_principal.setTaille(fenetre_principale.getSize());
 		Conteneur conteneur_menu = new Conteneur(fenetre_principale.getSize());
 		conteneur_menu.setOpaque(false);
-
-		ConteneurListeEtudes liste = new ConteneurListeEtudes(fenetre_principale.getSize(), theme, conteneur_principal, fenetre_principale);
-
+		
 		Bouton bouton_nouveau = new Bouton("Nouvelle étude",new Dimension(200,100),theme);
 		Bouton bouton_liste = new Bouton("Liste des études", new Dimension(200,100),theme);
 		Bouton bouton_quitter = new Bouton("Quitter", new Dimension(200,100),theme);
@@ -71,7 +69,7 @@ public class FenetreAccueil {
 			}
 		});
 
-		bouton_liste.addActionListener(new ChangerConteneur(fenetre_principale, liste));
+		bouton_liste.addActionListener(new ChangerConteneur(fenetre_principale, new ConteneurListeEtudes(fenetre_principale.getSize(), theme, conteneur_principal, fenetre_principale)));
 
 		bouton_nouveau.addActionListener(new ActionListener() {
 
@@ -96,7 +94,6 @@ public class FenetreAccueil {
 		conteneur_principal.add(conteneur_menu);
 
 		fenetre_principale.setConteneur(conteneur_principal);
-		//fen.setJMenuBar(new BarreMenu(theme));
 		fenetre_principale.setVisible(true);
 	}
 	
