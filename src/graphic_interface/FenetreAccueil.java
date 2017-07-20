@@ -25,7 +25,9 @@ public class FenetreAccueil {
 		Bouton bouton_nouveau = new Bouton("Nouvelle étude",new Dimension(200,100),theme);
 		Bouton bouton_liste = new Bouton("Liste des études", new Dimension(200,100),theme);
 		Bouton bouton_quitter = new Bouton("Quitter", new Dimension(200,100),theme);
-
+		
+		ConteneurListeEtudes liste = new ConteneurListeEtudes(fenetre_principale.getSize(), theme, conteneur_principal, fenetre_principale);
+		
 		bouton_nouveau.setToolTipText("Crée une nouvelle étude.");
 		bouton_liste.setToolTipText("Affiche la liste des études : permet l'édition d'une étude et l'affichage des études terminées.");
 		bouton_quitter.setToolTipText("Quitte le logiciel.");
@@ -69,7 +71,14 @@ public class FenetreAccueil {
 			}
 		});
 
-		bouton_liste.addActionListener(new ChangerConteneur(fenetre_principale, new ConteneurListeEtudes(fenetre_principale.getSize(), theme, conteneur_principal, fenetre_principale)));
+		bouton_liste.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				liste.initialiserListe();
+				fenetre_principale.setConteneur(liste);
+			}
+		});
 
 		bouton_nouveau.addActionListener(new ActionListener() {
 

@@ -7,13 +7,15 @@ import javax.swing.JOptionPane;
 
 public class ChangerConteneur implements ActionListener {
 
+	public static String TITRE_INITIAL = "Projet MiND";
+	
 	private Fenetre fen;
 	private Conteneur con;
 	
 	private boolean messageErreur;
 	private String titre;
 	private String message;
-	private String titre_fen = "Projet MiND";
+	private String titre_fen = TITRE_INITIAL;
 	
 	
 	public ChangerConteneur(Fenetre fen, Conteneur con, String titre, String message)

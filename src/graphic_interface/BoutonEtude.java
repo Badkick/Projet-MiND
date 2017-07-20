@@ -32,16 +32,16 @@ public class BoutonEtude extends ConteneurAvecImage {
 	public BoutonEtude(Theme theme, String nom) {
 		super(LARGEUR, HAUTEUR, theme.getSelectionEtude());
 		this.theme = theme;
-		this.nom = nom/*+" Bonjour je suis Hugo et j'habite à Villeneuve les Béziers, une ville bien pourrie askip."*/;	
+		this.nom = nom;	
 		this.conteneur_nom = new JLabel();
 		this.conteneur_nom.setOpaque(false);
-		this.conteneur_nom.setText(this.nom);
+		this.conteneur_nom.setText(nom);
 		this.conteneur_nom.setPreferredSize(new Dimension((int)(LARGEUR / 2), HAUTEUR-20));
 		this.conteneur_nom.setMinimumSize(new Dimension((int)(LARGEUR / 2), HAUTEUR-20));
 		this.conteneur_nom.setMaximumSize(new Dimension((int)(LARGEUR / 2), HAUTEUR-20));
 		this.conteneur_nom.setFont(this.getTheme().getPolice());
 		this.conteneur_nom.setForeground(this.getTheme().getCouleurTexte());
-		this.conteneur_nom.setToolTipText(this.getNom());
+		this.conteneur_nom.setToolTipText(nom);
 		this.editer = new Bouton("Modifier", new Dimension(100, 50), theme);
 		this.presenter = new Bouton("Présentation", new Dimension(100, 50), theme);
 		

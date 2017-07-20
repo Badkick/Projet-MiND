@@ -186,6 +186,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 							currentFile.delete();
 						}
 						etude.delete();
+						getFenetre().setTitle(ChangerConteneur.TITRE_INITIAL);
 						getFenetre().setConteneur(getPrecedent());
 					}
 				}
@@ -203,12 +204,11 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 
 				Etude save=getEtude();
 				String repertoire=getNom();
-				
-				Communication.messageInformatif("Sauvegarde effectuée avec succès !");
 
 				save();
 				try {
 					Files.createDirectories(Paths.get("saves"+File.separator+repertoire));
+					Communication.messageInformatif("Sauvegarde effectuée avec succès !");
 				} catch (IOException e7) {
 					// TODO Auto-generated catch block
 					e7.printStackTrace();
@@ -278,9 +278,11 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(isSaved()){
+					getFenetre().setTitle(ChangerConteneur.TITRE_INITIAL);
 					getFenetre().setConteneur(getPrecedent());
 				}else{
 					if(Communication.messageAttentionChoix("Voulez-vous vraiment revenir à l'écran d'accueil ? \n Attention, vous perdrez les données non enregistrées.")==0){
+						getFenetre().setTitle(ChangerConteneur.TITRE_INITIAL);
 						getFenetre().setConteneur(getPrecedent());
 					}
 				}

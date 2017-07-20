@@ -30,7 +30,6 @@ public class ConteneurListeEtudes extends ConteneurAvecImage {
 		this.theme = theme;
 		this.precedent = precedent;
 		this.fen = fen;
-		this.etudes = this.importerEtudes();
 		this.conteneur = new Conteneur(width,height);
 		this.conteneur_etudes = new Conteneur();
 		this.scroll = new JScrollPane(this.conteneur_etudes);
@@ -95,7 +94,13 @@ public class ConteneurListeEtudes extends ConteneurAvecImage {
 	{
 		return this.etudes;
 	}
-
+	
+	// SETTERS //
+	
+	public void setEtudes(List<BoutonEtude> etudes)
+	{
+		this.etudes = etudes;
+	}
 
 	// METHODES //
 
@@ -137,8 +142,10 @@ public class ConteneurListeEtudes extends ConteneurAvecImage {
 	}
 
 	// initialise le conteneur à l'intérieur du Scroll Pane (y ajoute tous les BoutonEtude de etudes)
-	private void initialiserListe()
+	public void initialiserListe()
 	{
+		this.getConteneurEtudes().removeAll();
+		this.setEtudes(this.importerEtudes());
 		if(!this.getEtudes().isEmpty())
 		{
 			this.getConteneurEtudes().setTaille(BoutonEtude.LARGEUR, (BoutonEtude.HAUTEUR+5)*this.getEtudes().size());
@@ -155,7 +162,9 @@ public class ConteneurListeEtudes extends ConteneurAvecImage {
 		List<BoutonEtude> liste = new ArrayList<BoutonEtude>();
 		File file=new File("saves");
 		String[] nom_etudes=file.list();
-		for(int i=0;i<nom_etudes.length;i++) liste.add(new BoutonEtude(this.getTheme(),nom_etudes[i]));
+		for(String nom : nom_etudes) {
+			liste.add(new BoutonEtude(this.getTheme(),nom));
+		}
 		return liste;
 	}
 }
