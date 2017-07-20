@@ -156,9 +156,7 @@ public class ConteneurListeEtudes extends ConteneurAvecImage {
 		List<BoutonEtude> liste = new ArrayList<BoutonEtude>();
 		File file=new File("saves");
 		String[] nom_etudes=file.list();
-		
 		for(int i=0;i<nom_etudes.length;i++) liste.add(new BoutonEtude(this.getTheme(),nom_etudes[i]));
-		
 		return liste;
 	}
 }
