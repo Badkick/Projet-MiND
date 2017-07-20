@@ -272,7 +272,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 
 		});
 
-		//this.getBoutonBack().addActionListener(this.isSaved() ? new ChangerConteneur(this.getFenetre(),this.getPrecedent()) : new ChangerConteneur(this.getFenetre(),this.getPrecedent(),"Voulez-vous vraiment revenir à l'écran d'accueil ? \n Attention, vous perdrez les données non enregistrées."));
+	
 		this.getBoutonBack().addActionListener(new ActionListener(){
 
 			@Override
