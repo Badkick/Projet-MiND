@@ -33,7 +33,7 @@ public class BoutonEtude extends ConteneurAvecImage {
 	public BoutonEtude(Theme theme, String nom,Fenetre fenetre) {
 		super(LARGEUR, HAUTEUR, theme.getSelectionEtude());
 		this.theme = theme;
-		this.nom = nom/*+" Bonjour je suis Hugo et j'habite à Villeneuve les Béziers, une ville bien pourrie askip."*/;	
+		this.nom = nom;	
 		this.conteneur_nom = new JLabel();
 		this.conteneur_nom.setOpaque(false);
 		this.conteneur_nom.setText(this.nom);
