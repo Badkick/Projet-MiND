@@ -9,12 +9,15 @@ import javax.swing.GroupLayout;
 import javax.swing.JOptionPane;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
+
 public class FenetreAccueil {
 
-
+	public static ConteneurAvecImage conteneur_principal;
+	public static Fenetre fenetre_principale;
+	
 	public FenetreAccueil(Theme theme) {
-		ConteneurAvecImage conteneur_principal = new ConteneurAvecImage(0,0,theme.getBackground());
-		Fenetre fenetre_principale = new Fenetre(conteneur_principal,theme);
+		conteneur_principal = new ConteneurAvecImage(0,0,theme.getBackground());
+		fenetre_principale = new Fenetre(conteneur_principal,theme);
 		conteneur_principal.setTaille(fenetre_principale.getSize());
 		Conteneur conteneur_menu = new Conteneur(fenetre_principale.getSize());
 		conteneur_menu.setOpaque(false);
@@ -58,6 +61,7 @@ public class FenetreAccueil {
 				.addGap(30)
 				.addComponent(bouton_quitter)
 				);
+		
 
 		bouton_quitter.addActionListener(new ActionListener() {
 
@@ -95,5 +99,6 @@ public class FenetreAccueil {
 		//fen.setJMenuBar(new BarreMenu(theme));
 		fenetre_principale.setVisible(true);
 	}
+	
 
 }
