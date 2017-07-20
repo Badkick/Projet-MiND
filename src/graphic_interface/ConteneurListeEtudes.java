@@ -144,7 +144,7 @@ public class ConteneurListeEtudes extends ConteneurAvecImage {
 			this.getConteneurEtudes().setTaille(BoutonEtude.LARGEUR, (BoutonEtude.HAUTEUR+5)*this.getEtudes().size());
 			for(BoutonEtude e : this.getEtudes())
 			{
-				e.getPresenter().addActionListener(new ChargerEtude()); // MAXENCE (pour ajouter ce qui chargera l'étude) FORTEMENT RECOMMANDE : voir dans la classe chargerEtude
+				e.getEditer().addActionListener(new ChargerEtude(e.getNom(),e.getTheme())); // MAXENCE (pour ajouter ce qui chargera l'étude) FORTEMENT RECOMMANDE : voir dans la classe chargerEtude
 				this.getConteneurEtudes().add(e);
 			}
 		}
@@ -156,15 +156,7 @@ public class ConteneurListeEtudes extends ConteneurAvecImage {
 		List<BoutonEtude> liste = new ArrayList<BoutonEtude>();
 		File file=new File("saves");
 		String[] nom_etudes=file.list();
-<<<<<<< HEAD
-		
-		for(int i=0;i<nom_etudes.length;i++) liste.add(new BoutonEtude(this.getTheme(),nom_etudes[i],getFenetre()));
-		
-=======
-
 		for(int i=0;i<nom_etudes.length;i++) liste.add(new BoutonEtude(this.getTheme(),nom_etudes[i]));
-
->>>>>>> c2b56c7577bb5e8b23688bef0d1e437a035d7077
 		return liste;
 	}
 }
