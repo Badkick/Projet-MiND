@@ -25,13 +25,6 @@ public enum Theme {
 	private Image bSurvol;
 	private Image bClic;
 	
-	// menus
-	private ImageIcon nouveau;
-	private ImageIcon importation;
-	private ImageIcon exportation;
-	private ImageIcon settings;
-	private ImageIcon quitter;
-	
 	// police
 	private Font police;
 	private Color couleurTexte;
@@ -96,26 +89,6 @@ public enum Theme {
 	public Image getIcone()
 	{
 		return this.icone;
-	}
-	
-	public ImageIcon getNouveau() {
-		return nouveau;
-	}
-
-	public ImageIcon getImportation() {
-		return importation;
-	}
-
-	public ImageIcon getExportation() {
-		return exportation;
-	}
-
-	public ImageIcon getSettings() {
-		return settings;
-	}
-
-	public ImageIcon getQuitter() {
-		return quitter;
 	}
 	
 	public Font getPolice()
@@ -188,12 +161,6 @@ public enum Theme {
 		this.bRepos = Images.importerImage(chemin()+"button_repos.png");
 		this.bSurvol = Images.importerImage(chemin()+"button_survol.png");
 		this.bClic = Images.importerImage(chemin()+"button_clic.png");
-		
-		this.nouveau = Images.importerIcone(chemin()+"icon_new_doc.png");
-		this.importation = Images.importerIcone(chemin()+"icon_import.png");
-		this.exportation = Images.importerIcone(chemin()+"icon_export.png");
-		this.settings = Images.importerIcone(chemin()+"icon_settings.png");
-		this.quitter = Images.importerIcone(chemin()+"icon_quit.png");
 		
 		this.selectionEtude = Images.importerImage(chemin()+"select_etude.png");
 		
