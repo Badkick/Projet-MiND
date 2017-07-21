@@ -1,6 +1,8 @@
 package graphic_interface;
 
 import java.awt.Color;
+import java.awt.event.ComponentEvent;
+import java.awt.event.ComponentListener;
 
 import javax.swing.JLabel;
 import javax.swing.JTabbedPane;
@@ -20,6 +22,7 @@ public class TabGraphe extends JTabbedPane {
 
 	private ConteneurSchema conteneur_maintenant;
 	private ConteneurSchema conteneur_apres;
+	private ConteneurSchema conteneur_risque;
 	private Conteneur conteneur_comment;
 	private Conteneur conteneur_apercu;
 
@@ -29,6 +32,7 @@ public class TabGraphe extends JTabbedPane {
 		super();
 		this.conteneur_maintenant = new ConteneurSchema(type,ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR,theme);
 		this.conteneur_apres = new ConteneurSchema(type,ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR,theme);
+		this.conteneur_risque = new ConteneurSchema(type,ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR,theme);
 		this.conteneur_comment = new Conteneur(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
 		this.conteneur_apercu = new Conteneur(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
 
@@ -38,6 +42,7 @@ public class TabGraphe extends JTabbedPane {
 
 		this.add("Maintenant",this.conteneur_maintenant);
 		this.add("Après",this.conteneur_apres);
+		this.add("Risque", this.conteneur_risque);
 		this.add("Comment remplir ?",this.conteneur_comment);
 		this.add("Aperçu",this.conteneur_apercu);
 
@@ -45,8 +50,14 @@ public class TabGraphe extends JTabbedPane {
 		this.getTabComponentAt(0).setForeground(Color.red);
 		this.setTabComponentAt(1, new CustomTab("Après",theme));
 		this.getTabComponentAt(1).setForeground(Color.red);
-		this.setTabComponentAt(2, new CustomTab("Comment remplir ?",theme));
-		this.setTabComponentAt(3, new CustomTab("Aperçu",theme));
+		this.setTabComponentAt(2, new CustomTab("Risque",theme));
+		this.getTabComponentAt(2).setForeground(Color.red);
+		this.setTabComponentAt(3, new CustomTab("Comment remplir ?",theme));
+		this.setTabComponentAt(4, new CustomTab("Aperçu",theme));
+		
+		this.conteneur_maintenant.addComponentListener(new Verification100PourCent(Verification100PourCent.SCHEMA1, this.conteneur_maintenant, (CustomTab) this.getTabComponentAt(0)));
+		this.conteneur_apres.addComponentListener(new Verification100PourCent(Verification100PourCent.SCHEMA1, this.conteneur_apres, (CustomTab) this.getTabComponentAt(1)));
+		this.conteneur_risque.addComponentListener(new Verification100PourCent(Verification100PourCent.SCHEMA1, this.conteneur_risque, (CustomTab) this.getTabComponentAt(2)));
 	}
 
 	// GETTERS //
@@ -62,6 +73,11 @@ public class TabGraphe extends JTabbedPane {
 
 	public ConteneurSchema getConteneur_apres() {
 		return conteneur_apres;
+	}
+	
+	public ConteneurSchema getConteneur_risque()
+	{
+		return this.conteneur_risque;
 	}
 
 	public Conteneur getConteneur_comment() {

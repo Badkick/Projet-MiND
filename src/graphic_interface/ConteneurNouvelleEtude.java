@@ -24,8 +24,9 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 
 	public static Dimension TAILLE_GRAND_CONTENEUR= new Dimension(972,570);
 	public static Dimension TAILLE_PETIT_CONTENEUR= new Dimension(972,540);
-	private static boolean MAINTENANT = true;
-	private static boolean APRES = false;
+	private static int MAINTENANT = 0;
+	private static int APRES = 1;
+	private static int RISQUE = 2;
 	private static int NB_ONGLETS = 6;
 	private final String[] titres_tabs = {"Contraintes d'envirmt.","Structures d'organisation","Organisation du travail","Relations entre acteurs","Identités collectives","Mondes sociaux"};
 
@@ -347,8 +348,8 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 	}
 
 	// pour récupérer le conteneur dans lequel il y a l'image : on pourra ainsi récupérer les boutons et les zones de texte ! A appeler à l'aide des boolean MAINTENANT et APRES.
-	public ConteneurSchema getConteneurSchema(int type, boolean maintenant)
+	public ConteneurSchema getConteneurSchema(int type, int mode)
 	{
-		return maintenant ? ((TabGraphe)((Conteneur)this.getTabs().getComponentAt(type-1)).getComponents()[0]).getConteneur_maintenant() : ((TabGraphe)((Conteneur)this.getTabs().getComponentAt(type-1)).getComponents()[0]).getConteneur_apres();
+		return mode==0 ? ((TabGraphe)((Conteneur)this.getTabs().getComponentAt(type-1)).getComponents()[0]).getConteneur_maintenant() :(mode==1 ? ((TabGraphe)((Conteneur)this.getTabs().getComponentAt(type-1)).getComponents()[0]).getConteneur_apres() : ((TabGraphe)((Conteneur)this.getTabs().getComponentAt(type-1)).getComponents()[0]).getConteneur_risque());
 	}
 }

@@ -6,29 +6,39 @@ public class Schema1 {
 
 	private Pourcentage mtn_contr_tech;
 	private Pourcentage apr_contr_tech;
+	private Pourcentage ris_contr_tech;
 
 	private Pourcentage mtn_press_envir;
 	private Pourcentage apr_press_envir;
+	private Pourcentage ris_press_envir;
 
 	private Pourcentage mtn_etabl_prot;
 	private Pourcentage apr_etabl_prot;
+	private Pourcentage ris_etabl_prot;
 
 	private Pourcentage mtn_mena_mar;
 	private Pourcentage apr_mena_mar;
+	private Pourcentage ris_mena_mar;
 
 	// CONSTRUCTEUR //
 
-	public Schema1(Pourcentage mtn_contr_tech, Pourcentage apr_contr_tech, Pourcentage mtn_press_envir, Pourcentage apr_press_envir, Pourcentage mtn_etabl_prot, Pourcentage apr_etabl_prot, Pourcentage mtn_mena_mar, Pourcentage apr_mena_mar) {
+	public Schema1(Pourcentage mtn_contr_tech, Pourcentage apr_contr_tech, Pourcentage ris_contr_tech,
+			Pourcentage mtn_press_envir, Pourcentage apr_press_envir, Pourcentage ris_press_envir,
+			Pourcentage mtn_etabl_prot, Pourcentage apr_etabl_prot, Pourcentage ris_etabl_prot,
+			Pourcentage mtn_mena_mar, Pourcentage apr_mena_mar, Pourcentage ris_mena_mar) {
 		this.mtn_contr_tech = mtn_contr_tech;
 		this.apr_contr_tech = apr_contr_tech;
+		this.ris_contr_tech = ris_contr_tech;
 		this.mtn_press_envir = mtn_press_envir;
 		this.apr_press_envir = apr_press_envir;
+		this.ris_press_envir = ris_press_envir;
 		this.mtn_etabl_prot = mtn_etabl_prot;
 		this.apr_etabl_prot = apr_etabl_prot;
+		this.ris_etabl_prot = ris_etabl_prot;
 		this.mtn_mena_mar = mtn_mena_mar;
 		this.apr_mena_mar = apr_mena_mar;
+		this.ris_mena_mar = ris_mena_mar;
 	}
-
 
 	// GETTERS //
 
@@ -56,44 +66,54 @@ public class Schema1 {
 	public Pourcentage getApr_mena_mar() {
 		return apr_mena_mar;
 	}
+	public Pourcentage getRis_contr_tech() {
+		return ris_contr_tech;
+	}
+	public Pourcentage getRis_press_envir() {
+		return ris_press_envir;
+	}
+	public Pourcentage getRis_etabl_prot() {
+		return ris_etabl_prot;
+	}
+	public Pourcentage getRis_mena_mar() {
+		return ris_mena_mar;
+	}
 
 	// SETTERS //
 
+	public void setRis_contr_tech(Pourcentage ris_contr_tech) {
+		this.ris_contr_tech = ris_contr_tech;
+	}
+	public void setRis_press_envir(Pourcentage ris_press_envir) {
+		this.ris_press_envir = ris_press_envir;
+	}
+	public void setRis_etabl_prot(Pourcentage ris_etabl_prot) {
+		this.ris_etabl_prot = ris_etabl_prot;
+	}
+	public void setRis_mena_mar(Pourcentage ris_mena_mar) {
+		this.ris_mena_mar = ris_mena_mar;
+	}
 	public void setMtn_contr_tech(Pourcentage mtn_contr_tech) {
 		this.mtn_contr_tech = mtn_contr_tech;
 	}
-
-
 	public void setApr_contr_tech(Pourcentage apr_contr_tech) {
 		this.apr_contr_tech = apr_contr_tech;
 	}
-
-
 	public void setMtn_press_envir(Pourcentage mtn_press_envir) {
 		this.mtn_press_envir = mtn_press_envir;
 	}
-
-
 	public void setApr_press_envir(Pourcentage apr_press_envir) {
 		this.apr_press_envir = apr_press_envir;
 	}
-
-
 	public void setMtn_etabl_prot(Pourcentage mtn_etabl_prot) {
 		this.mtn_etabl_prot = mtn_etabl_prot;
 	}
-
-
 	public void setApr_etabl_prot(Pourcentage apr_etabl_prot) {
 		this.apr_etabl_prot = apr_etabl_prot;
 	}
-
-
 	public void setMtn_mena_mar(Pourcentage mtn_mena_mar) {
 		this.mtn_mena_mar = mtn_mena_mar;
 	}
-
-
 	public void setApr_mena_mar(Pourcentage apr_mena_mar) {
 		this.apr_mena_mar = apr_mena_mar;
 	}

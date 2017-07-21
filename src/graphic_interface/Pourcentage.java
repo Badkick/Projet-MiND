@@ -2,24 +2,19 @@ package graphic_interface;
 
 public class Pourcentage {
 
-	private int valeur;
+	private float valeur;
 	
-	public Pourcentage(int val)
+	public Pourcentage(float val)
 	{
 		this.setVal(val);
 	}
 	
-	public Pourcentage(float val)
-	{
-		this.setVal((int)val);
-	}
-	
-	public void setVal(int val)
+	public void setVal(float val)
 	{
 		this.valeur = (val<0 ? 0 : (val>100 ? 100 : val));
 	}
 	
-	public int get()
+	public float get()
 	{
 		return this.valeur;
 	}
