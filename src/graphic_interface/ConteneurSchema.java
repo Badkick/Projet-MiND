@@ -134,13 +134,13 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			
 			this.layout.setHorizontalGroup(
 					this.layout.createSequentialGroup()
-					.addGap(360)
+					.addGap(430)
 					.addGroup(this.layout.createParallelGroup()
 							.addComponent(contr_tech)
 							.addGap(100)
 							.addComponent(etabl_prot)
 							)
-					.addGap(330)
+					.addGap(345)
 					.addGroup(this.layout.createParallelGroup()
 							.addComponent(mena_mar)
 							.addGap(100)
@@ -150,13 +150,13 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			
 			this.layout.setVerticalGroup(
 					this.layout.createSequentialGroup()
-					.addGap(80)
+					.addGap(107)
 					.addGroup(this.layout.createParallelGroup()
 							.addComponent(contr_tech)
 							.addGap(100)
 							.addComponent(mena_mar)
 							)
-					.addGap(170)
+					.addGap(110)
 					.addGroup(this.layout.createParallelGroup()
 							.addComponent(etabl_prot)
 							.addGap(100)
