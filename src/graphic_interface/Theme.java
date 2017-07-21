@@ -26,6 +26,9 @@ public enum Theme {
 	private Image bSurvol;
 	private Image bClic;
 	
+	private Image bSchema2Repos;
+	private Image bSchema2Survol;
+	
 	// police
 	private Font police;
 	private Color couleurTexte;
@@ -87,6 +90,14 @@ public enum Theme {
 		return this.bClic;
 	}
 	
+	public Image getbSchema2Repos() {
+		return this.bSchema2Repos;
+	}
+
+	public Image getbSchema2Survol() {
+		return this.bSchema2Survol;
+	}
+
 	public Image getIcone()
 	{
 		return this.icone;
@@ -162,6 +173,9 @@ public enum Theme {
 		this.bRepos = Images.importerImage(chemin()+"button_repos.png");
 		this.bSurvol = Images.importerImage(chemin()+"button_survol.png");
 		this.bClic = Images.importerImage(chemin()+"button_clic.png");
+		
+		this.bSchema2Repos = Images.importerImage(chemin()+"button_schema2_repos.png");
+		this.bSchema2Survol = Images.importerImage(chemin()+"button_schema2_survol.png");
 		
 		this.selectionEtude = Images.importerImage(chemin()+"select_etude.png");
 		

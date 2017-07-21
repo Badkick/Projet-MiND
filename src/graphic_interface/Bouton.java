@@ -77,6 +77,11 @@ public class Bouton extends JButton implements MouseListener {
 	{
 		img_repos = Images.importerImage(chemin);
 	}
+	
+	public void setImgRepos(Image image)
+	{
+		this.img_repos = image;
+	}
 
 	public void setImgClic(File fichier)
 	{
@@ -87,6 +92,10 @@ public class Bouton extends JButton implements MouseListener {
 	{
 		img_clic = Images.importerImage(chemin);
 	}
+	public void setImgClic(Image image)
+	{
+		this.img_clic = image;
+	}
 
 	public void setImgSurvol(File fichier)
 	{
@@ -96,6 +105,11 @@ public class Bouton extends JButton implements MouseListener {
 	public void setImgSurvol(String chemin)
 	{
 		img_survol = Images.importerImage(chemin);
+	}
+	
+	public void setImgSurvol(Image image)
+	{
+		this.img_survol = image;
 	}
 
 

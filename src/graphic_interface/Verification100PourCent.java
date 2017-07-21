@@ -6,7 +6,7 @@ import java.awt.event.ComponentListener;
 
 public class Verification100PourCent implements ComponentListener {
 
-	public static final int SCHEMA1 = 0;
+	public static final int SCHEMA1 = 1;
 	
 	private int type;
 	private ConteneurSchema conteneur;

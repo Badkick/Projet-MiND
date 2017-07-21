@@ -82,6 +82,12 @@ public class ConteneurSchema extends ConteneurAvecImage {
 		            percentEditFormatter));
 	
 	// cas 2
+	
+	private Bouton b_simple_marche;
+	private Bouton b_professionnelle;
+	private Bouton b_mecaniste;
+	private Bouton b_simple_centralisee;
+	private Bouton b_entrepreneuriale;
 
 	// cas 3
 
@@ -165,7 +171,31 @@ public class ConteneurSchema extends ConteneurAvecImage {
 					);
 			break;
 		case 2:
-
+			this.b_simple_marche = new Bouton("Structure SIMPLE DE MARCHE",new Dimension(100,50),theme);
+			this.b_professionnelle = new Bouton("Structure PROFESSIONNELLE",new Dimension(100,50),theme);
+			this.b_mecaniste = new Bouton("Structure MECANISTE",new Dimension(100,50),theme);
+			this.b_simple_centralisee = new Bouton("Structure SIMPLE CENTRALISEE",new Dimension(100,50),theme);
+			this.b_entrepreneuriale = new Bouton("Structure ENTREPRENEURIALE",new Dimension(100,50),theme);
+			
+			this.b_entrepreneuriale.setImgRepos(theme.getbSchema2Repos());
+			this.b_entrepreneuriale.setImgSurvol(theme.getbSchema2Survol());
+			this.b_entrepreneuriale.setImgClic(theme.getbSchema2Survol());
+			
+			this.b_simple_marche.setImgRepos(theme.getbSchema2Repos());
+			this.b_simple_marche.setImgSurvol(theme.getbSchema2Survol());
+			this.b_simple_marche.setImgClic(theme.getbSchema2Survol());
+			
+			this.b_professionnelle.setImgRepos(theme.getbSchema2Repos());
+			this.b_professionnelle.setImgSurvol(theme.getbSchema2Survol());
+			this.b_professionnelle.setImgClic(theme.getbSchema2Survol());
+			
+			this.b_mecaniste.setImgRepos(theme.getbSchema2Repos());
+			this.b_mecaniste.setImgSurvol(theme.getbSchema2Survol());
+			this.b_mecaniste.setImgClic(theme.getbSchema2Survol());
+			
+			this.b_simple_centralisee.setImgRepos(theme.getbSchema2Repos());
+			this.b_simple_centralisee.setImgSurvol(theme.getbSchema2Survol());
+			this.b_simple_centralisee.setImgClic(theme.getbSchema2Survol());
 			break;
 		case 3:
 

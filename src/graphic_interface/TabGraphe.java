@@ -55,9 +55,9 @@ public class TabGraphe extends JTabbedPane {
 		this.setTabComponentAt(3, new CustomTab("Comment remplir ?",theme));
 		this.setTabComponentAt(4, new CustomTab("Aperçu",theme));
 		
-		this.conteneur_maintenant.addComponentListener(new Verification100PourCent(Verification100PourCent.SCHEMA1, this.conteneur_maintenant, (CustomTab) this.getTabComponentAt(0)));
-		this.conteneur_apres.addComponentListener(new Verification100PourCent(Verification100PourCent.SCHEMA1, this.conteneur_apres, (CustomTab) this.getTabComponentAt(1)));
-		this.conteneur_risque.addComponentListener(new Verification100PourCent(Verification100PourCent.SCHEMA1, this.conteneur_risque, (CustomTab) this.getTabComponentAt(2)));
+		this.conteneur_maintenant.addComponentListener(new Verification100PourCent(type, this.conteneur_maintenant, (CustomTab) this.getTabComponentAt(0)));
+		this.conteneur_apres.addComponentListener(new Verification100PourCent(type, this.conteneur_apres, (CustomTab) this.getTabComponentAt(1)));
+		this.conteneur_risque.addComponentListener(new Verification100PourCent(type, this.conteneur_risque, (CustomTab) this.getTabComponentAt(2)));
 	}
 
 	// GETTERS //
