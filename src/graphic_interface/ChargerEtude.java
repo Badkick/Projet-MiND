@@ -26,14 +26,18 @@ public class ChargerEtude implements ActionListener {
 			BufferedReader aLire_1 = new BufferedReader(new FileReader(contraintes));
 			Pourcentage p_1=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
 			Pourcentage p_2=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
+			Pourcentage r_1=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
 			Pourcentage p_3=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
 			Pourcentage p_4=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
+			Pourcentage r_2=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
 			Pourcentage p_5=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
 			Pourcentage p_6=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
+			Pourcentage r_3=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
 			Pourcentage p_7=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
 			Pourcentage p_8=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
+			Pourcentage r_4=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
 			aLire_1.close();
-			schema1=new Schema1(p_1,p_2,p_3,p_4,p_5,p_6,p_7,p_8,null,null,null,null);
+			schema1=new Schema1(p_1,p_2,r_1,p_3,p_4,r_2,p_5,p_6,r_3,p_7,p_8,r_4);
 		}
 		catch (IOException e1){
 			System.out.println("Une operation sur le fichier Contraintes a leve l'exception "+e1);
@@ -45,14 +49,17 @@ public class ChargerEtude implements ActionListener {
 			BufferedReader aLire_2 = new BufferedReader(new FileReader(structures));
 			Structure st_1=Structure.getByName(aLire_2.readLine());
 			Structure st_2=Structure.getByName(aLire_2.readLine());
+			Structure r_1=Structure.getByName(aLire_2.readLine());
 			ElementNote<Structure>[] mtn_notees = new ElementNote[4];
 			ElementNote<Structure>[] apr_notees = new ElementNote[4];
+			ElementNote<Structure>[] ris_notees = new ElementNote[4];
 			for(int i=0;i<4;i++){
 				mtn_notees[i]=new ElementNote(Structure.getByName(aLire_2.readLine()),Integer.valueOf(aLire_2.readLine()));
 				apr_notees[i]=new ElementNote(Structure.getByName(aLire_2.readLine()),Integer.valueOf(aLire_2.readLine()));
+				ris_notees[i]=new ElementNote(Structure.getByName(aLire_2.readLine()),Integer.valueOf(aLire_2.readLine()));
 			}
 			aLire_2.close();
-			schema2=new Schema2(st_1,st_2,null,mtn_notees,apr_notees,null);
+			schema2=new Schema2(st_1,st_2,r_1,mtn_notees,apr_notees,ris_notees);
 			
 		}
 		catch (IOException e2){
