@@ -37,7 +37,7 @@ public class ChargerEtude implements ActionListener {
 			Pourcentage p_8=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
 			Pourcentage r_4=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
 			aLire_1.close();
-			schema1=new Schema1(p_1,p_2,r_1,p_3,p_4,r_2,p_5,p_6,r_3,p_7,p_8,r_4);
+			schema1=new Schema1(p_1,p_2,r_1,p_3,p_4,r_2,p_5,p_6,r_3,p_7,p_8,r_4,null);
 		}
 		catch (IOException e1){
 			System.out.println("Une operation sur le fichier Contraintes a leve l'exception "+e1);
@@ -150,6 +150,7 @@ public class ChargerEtude implements ActionListener {
 		ConteneurAvecImage conteneur_principal = new ConteneurAvecImage(0,0,theme.getBackground());
 		conteneur_principal.setTaille(FenetreAccueil.fenetre_principale.getSize());
 		ConteneurNouvelleEtude nouvelle_etude = new ConteneurNouvelleEtude(FenetreAccueil.fenetre_principale.getSize(), theme, FenetreAccueil.conteneur_principal, FenetreAccueil.fenetre_principale,nom,etude);
+		nouvelle_etude.save();
 		FenetreAccueil.fenetre_principale.setConteneur(nouvelle_etude,"Projet MiND - "+nom);
 	}
 

@@ -19,13 +19,15 @@ public class Schema1 {
 	private Pourcentage mtn_mena_mar;
 	private Pourcentage apr_mena_mar;
 	private Pourcentage ris_mena_mar;
+	
+	private String commentaire_risque;
 
 	// CONSTRUCTEUR //
 
 	public Schema1(Pourcentage mtn_contr_tech, Pourcentage apr_contr_tech, Pourcentage ris_contr_tech,
 			Pourcentage mtn_press_envir, Pourcentage apr_press_envir, Pourcentage ris_press_envir,
 			Pourcentage mtn_etabl_prot, Pourcentage apr_etabl_prot, Pourcentage ris_etabl_prot,
-			Pourcentage mtn_mena_mar, Pourcentage apr_mena_mar, Pourcentage ris_mena_mar) {
+			Pourcentage mtn_mena_mar, Pourcentage apr_mena_mar, Pourcentage ris_mena_mar, String commentaire_risque) {
 		this.mtn_contr_tech = mtn_contr_tech;
 		this.apr_contr_tech = apr_contr_tech;
 		this.ris_contr_tech = ris_contr_tech;
@@ -38,6 +40,7 @@ public class Schema1 {
 		this.mtn_mena_mar = mtn_mena_mar;
 		this.apr_mena_mar = apr_mena_mar;
 		this.ris_mena_mar = ris_mena_mar;
+		this.commentaire_risque = commentaire_risque;
 	}
 
 	// GETTERS //
@@ -78,6 +81,9 @@ public class Schema1 {
 	public Pourcentage getRis_mena_mar() {
 		return ris_mena_mar;
 	}
+	public String getCommentaire_risque() {
+		return this.commentaire_risque;
+	}
 
 	// SETTERS //
 
@@ -116,6 +122,9 @@ public class Schema1 {
 	}
 	public void setApr_mena_mar(Pourcentage apr_mena_mar) {
 		this.apr_mena_mar = apr_mena_mar;
+	}
+	public void setCommentaire_risque(String commentaire_risque) {
+		this.commentaire_risque = commentaire_risque;
 	}
 
 	
