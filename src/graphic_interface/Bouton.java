@@ -37,6 +37,7 @@ public class Bouton extends JButton implements MouseListener {
 		this.couleurTexte = theme.getCouleurTexte();
 		this.setPreferredSize(dim);
 		this.setMaximumSize(dim);
+		this.setMinimumSize(dim);
 		img_repos = theme.getBRepos();
 		img_clic = theme.getBClic();
 		img_survol = theme.getBSurvol();
@@ -162,7 +163,8 @@ public class Bouton extends JButton implements MouseListener {
 		Graphics2D g2d = (Graphics2D)g;
 		g2d.setColor(this.getCouleurTexte());
 		g2d.drawImage(img, 0, 0, this.getWidth(), this.getHeight(), this);
-		g2d.drawString(this.name, this.getWidth() /2 - (int)(this.name.length()*4.2)+7, (this.getHeight() / 2) +6);
+		int y = (this.getHeight()-(g2d.getFontMetrics().getAscent()+g2d.getFontMetrics().getDescent())*this.name.split("\n").length)/2;
+		for (String line : this.name.split("\n")) g2d.drawString(line, (this.getWidth()-g2d.getFontMetrics().stringWidth(line))/2, y += g2d.getFontMetrics().getAscent());
 	}
 	
 	// met la couleur du bouton sur repos quand cette méthode est appelée
