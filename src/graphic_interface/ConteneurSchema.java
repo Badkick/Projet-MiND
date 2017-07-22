@@ -9,6 +9,8 @@ import java.text.ParseException;
 import javax.swing.GroupLayout;
 import javax.swing.JFormattedTextField;
 import javax.swing.JTextField;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.text.DefaultFormatterFactory;
 import javax.swing.text.NumberFormatter;
 
@@ -342,7 +344,6 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	}
 
 	// METHODES //
-
 
 
 }
