@@ -6,21 +6,25 @@ public class Schema3 {
 
 	private Organisation mtn_principale;
 	private Organisation apr_principale;
+	private Organisation ris_principale;
 
 	private ElementNote<Organisation>[] mtn_notees = new ElementNote[4];
 	private ElementNote<Organisation>[] apr_notees = new ElementNote[4];
+	private ElementNote<Organisation>[] ris_notees = new ElementNote[4];
 
 	// CONSTRUCTEUR //
 
-	public Schema3(Organisation mtn_principale, Organisation apr_principale, ElementNote<Organisation>[] mtn_notees, ElementNote<Organisation>[] apr_notees)
+	public Schema3(Organisation mtn_principale, Organisation apr_principale, Organisation ris_principale, ElementNote<Organisation>[] mtn_notees, ElementNote<Organisation>[] apr_notees, ElementNote<Organisation>[] ris_notees)
 	{
 		this.mtn_principale = mtn_principale;
 		this.apr_principale = apr_principale;
+		this.ris_principale = ris_principale;
 
 		for(int i=0;i<4;i++)
 		{
 			this.mtn_notees[i] = mtn_notees[i];
 			this.apr_notees[i] = apr_notees[i];
+			this.ris_notees[i] = ris_notees[i];
 		}
 	}
 
@@ -33,6 +37,10 @@ public class Schema3 {
 	public Organisation getApr_principale() {
 		return apr_principale;
 	}
+	
+	public Organisation getRis_principale() {
+		return ris_principale;
+	}
 
 	public ElementNote<Organisation>[] getMtn_notees() {
 		return mtn_notees;
@@ -40,6 +48,10 @@ public class Schema3 {
 
 	public ElementNote<Organisation>[] getApr_notees() {
 		return apr_notees;
+	}
+	
+	public ElementNote<Organisation>[] getRis_notees() {
+		return ris_notees;
 	}
 	
 	// SETTERS //
@@ -51,6 +63,10 @@ public class Schema3 {
 	public void setApr_principale(Organisation apr_principale) {
 		this.apr_principale = apr_principale;
 	}
+	
+	public void setRis_principale(Organisation ris_principale) {
+		this.ris_principale=ris_principale;
+	}
 
 	public void setMtn_notees(ElementNote<Organisation>[] mtn_notees) {
 		for(int i=0;i<mtn_notees.length;i++) this.mtn_notees[i] = mtn_notees[i];
@@ -58,5 +74,9 @@ public class Schema3 {
 
 	public void setApr_notees(ElementNote<Organisation>[] apr_notees) {
 		for(int i=0;i<apr_notees.length;i++) this.apr_notees[i] = apr_notees[i];
+	}
+	
+	public void setRis_notees(ElementNote<Organisation>[] ris_notees) {
+		for(int i=0;i<ris_notees.length;i++) this.ris_notees[i] = ris_notees[i];
 	}
 }

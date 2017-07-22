@@ -72,14 +72,17 @@ public class ChargerEtude implements ActionListener {
 			BufferedReader aLire_3 = new BufferedReader(new FileReader(organisations));
 			Organisation org_1=Organisation.getByName(aLire_3.readLine());
 			Organisation org_2=Organisation.getByName(aLire_3.readLine());
+			Organisation r_1=Organisation.getByName(aLire_3.readLine());
 			ElementNote<Organisation>[] mtn_notees = new ElementNote[4];
 			ElementNote<Organisation>[] apr_notees = new ElementNote[4];
+			ElementNote<Organisation>[] ris_notees = new ElementNote[4];
 			for(int i=0;i<4;i++){
 				mtn_notees[i]=new ElementNote(Organisation.getByName(aLire_3.readLine()),Integer.valueOf(aLire_3.readLine()));
 				apr_notees[i]=new ElementNote(Organisation.getByName(aLire_3.readLine()),Integer.valueOf(aLire_3.readLine()));
+				ris_notees[i]=new ElementNote(Organisation.getByName(aLire_3.readLine()),Integer.valueOf(aLire_3.readLine()));
 			}
 			aLire_3.close();
-			schema3=new Schema3(org_1,org_2,mtn_notees,apr_notees);
+			schema3=new Schema3(org_1,org_2,r_1,mtn_notees,apr_notees,ris_notees);
 		}
 		catch (IOException e3){
 			System.out.println("Une operation sur le fichier Organisations a leve l'exception "+e3);
