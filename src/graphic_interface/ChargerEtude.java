@@ -36,8 +36,9 @@ public class ChargerEtude implements ActionListener {
 			Pourcentage p_7=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
 			Pourcentage p_8=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
 			Pourcentage r_4=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
+			String risque=aLire_1.readLine();
 			aLire_1.close();
-			schema1=new Schema1(p_1,p_2,r_1,p_3,p_4,r_2,p_5,p_6,r_3,p_7,p_8,r_4,null);
+			schema1=new Schema1(p_1,p_2,r_1,p_3,p_4,r_2,p_5,p_6,r_3,p_7,p_8,r_4,risque);
 		}
 		catch (IOException e1){
 			System.out.println("Une operation sur le fichier Contraintes a leve l'exception "+e1);
