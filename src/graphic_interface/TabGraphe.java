@@ -29,7 +29,7 @@ public class TabGraphe extends JTabbedPane {
 	private ConteneurSchema conteneur_risque;
 	private Conteneur conteneur_comment;
 	private Conteneur conteneur_apercu;
-	private ConteneurSchema conteneur_risque_schema1;
+	private Conteneur conteneur_risque_schema1;
 	
 	private JTextField zoneTexte;
 
@@ -69,7 +69,7 @@ public class TabGraphe extends JTabbedPane {
 		else
 		{
 			this.conteneur_apercu=new ApercuSchema1(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR,theme,null);
-			this.conteneur_risque_schema1 = new ConteneurSchema(type,ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR,theme);
+			this.conteneur_risque_schema1 = new Conteneur(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
 			this.add("Maintenant",this.conteneur_maintenant);
 			this.add("Après",this.conteneur_apres);
 			this.add("Encore après", this.conteneur_risque);
