@@ -234,8 +234,8 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 					// TODO Auto-generated catch block
 					e3.printStackTrace();
 				}
-/*
-				List<String> lignes_relations=Arrays.asList(String.valueOf(save.getS4().getMtn_consensus().getImportance().get()),String.valueOf(save.getS4().getMtn_consensus().getConsensus().get()),String.valueOf(save.getS4().getMtn_consensus().getPacte().get()),String.valueOf(save.getS4().getApr_consensus().getImportance().get()),String.valueOf(save.getS4().getApr_consensus().getConsensus().get()),String.valueOf(save.getS4().getApr_consensus().getPacte().get()),String.valueOf(save.getS4().getMtn_negociation().getImportance().get()),String.valueOf(save.getS4().getMtn_negociation().getAjustement().get()),String.valueOf(save.getS4().getMtn_negociation().getTransformation().get()),String.valueOf(save.getS4().getApr_negociation().getImportance().get()),String.valueOf(save.getS4().getApr_negociation().getAjustement().get()),String.valueOf(save.getS4().getApr_negociation().getTransformation().get()),String.valueOf(save.getS4().getMtn_opposition().getImportance().get()),String.valueOf(save.getS4().getMtn_opposition().getDomination().get()),String.valueOf(save.getS4().getMtn_opposition().getContrePouvoir().get()),String.valueOf(save.getS4().getMtn_opposition().getAntagonisme().get()),String.valueOf(save.getS4().getApr_opposition().getImportance().get()),String.valueOf(save.getS4().getApr_opposition().getDomination().get()),String.valueOf(save.getS4().getApr_opposition().getContrePouvoir().get()),String.valueOf(save.getS4().getApr_opposition().getAntagonisme().get()));
+
+				List<String> lignes_relations=Arrays.asList(String.valueOf(save.getS4().getMtn_consensus().getImportance().get()),String.valueOf(save.getS4().getMtn_consensus().getConsensus().get()),String.valueOf(save.getS4().getMtn_consensus().getPacte().get()),String.valueOf(save.getS4().getApr_consensus().getImportance().get()),String.valueOf(save.getS4().getApr_consensus().getConsensus().get()),String.valueOf(save.getS4().getApr_consensus().getPacte().get()),String.valueOf(save.getS4().getRis_consensus().getImportance().get()),String.valueOf(save.getS4().getRis_consensus().getConsensus().get()),String.valueOf(save.getS4().getRis_consensus().getPacte().get()),String.valueOf(save.getS4().getMtn_negociation().getImportance().get()),String.valueOf(save.getS4().getMtn_negociation().getAjustement().get()),String.valueOf(save.getS4().getMtn_negociation().getTransformation().get()),String.valueOf(save.getS4().getApr_negociation().getImportance().get()),String.valueOf(save.getS4().getApr_negociation().getAjustement().get()),String.valueOf(save.getS4().getApr_negociation().getTransformation().get()),String.valueOf(save.getS4().getRis_negociation().getImportance().get()),String.valueOf(save.getS4().getRis_negociation().getAjustement().get()),String.valueOf(save.getS4().getRis_negociation().getTransformation().get()),String.valueOf(save.getS4().getMtn_opposition().getImportance().get()),String.valueOf(save.getS4().getMtn_opposition().getDomination().get()),String.valueOf(save.getS4().getMtn_opposition().getContrePouvoir().get()),String.valueOf(save.getS4().getMtn_opposition().getAntagonisme().get()),String.valueOf(save.getS4().getApr_opposition().getImportance().get()),String.valueOf(save.getS4().getApr_opposition().getDomination().get()),String.valueOf(save.getS4().getApr_opposition().getContrePouvoir().get()),String.valueOf(save.getS4().getApr_opposition().getAntagonisme().get()),String.valueOf(save.getS4().getRis_opposition().getImportance().get()),String.valueOf(save.getS4().getRis_opposition().getDomination().get()),String.valueOf(save.getS4().getRis_opposition().getContrePouvoir().get()),String.valueOf(save.getS4().getRis_opposition().getAntagonisme().get()));
 				Path fichier_relations=Paths.get("saves"+File.separator+repertoire+File.separator+"Relations.txt");
 				try {
 					Files.write(fichier_relations, lignes_relations,Charset.forName("UTF-8"));
@@ -244,8 +244,8 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 					e4.printStackTrace();
 				}
 
-				List<String> lignes_identites=Arrays.asList(String.valueOf(save.getS5().getMtn_reglementaire().get()),String.valueOf(save.getS5().getApr_reglementaire().get()),String.valueOf(save.getS5().getMtn_mobilite().get()),String.valueOf(save.getS5().getApr_mobilite().get()),String.valueOf(save.getS5().getMtn_pro_service_public().get()),String.valueOf(save.getS5().getApr_pro_service_public().get()),String.valueOf(save.getS5().getMtn_professionnelle().get()),String.valueOf(save.getS5().getApr_professionnelle().get()),String.valueOf(save.getS5().getMtn_communautaire().get()),String.valueOf(save.getS5().getApr_communautaire().get()),String.valueOf(save.getS5().getMtn_entrepreneuriale().get()),String.valueOf(save.getS5().getApr_entrepreneuriale().get()));
-				Path fichier_identites=Paths.get("saves"+File.separator+repertoire+File.separator"Identites.txt");
+				List<String> lignes_identites=Arrays.asList(String.valueOf(save.getS5().getMtn_reglementaire().get()),String.valueOf(save.getS5().getApr_reglementaire().get()),String.valueOf(save.getS5().getRis_reglementaire().get()),String.valueOf(save.getS5().getMtn_mobilite().get()),String.valueOf(save.getS5().getApr_mobilite().get()),String.valueOf(save.getS5().getRis_mobilite().get()),String.valueOf(save.getS5().getMtn_pro_service_public().get()),String.valueOf(save.getS5().getApr_pro_service_public().get()),String.valueOf(save.getS5().getRis_pro_service_public().get()),String.valueOf(save.getS5().getMtn_professionnelle().get()),String.valueOf(save.getS5().getApr_professionnelle().get()),String.valueOf(save.getS5().getRis_professionnelle().get()),String.valueOf(save.getS5().getMtn_communautaire().get()),String.valueOf(save.getS5().getApr_communautaire().get()),String.valueOf(save.getS5().getRis_communautaire().get()),String.valueOf(save.getS5().getMtn_entrepreneuriale().get()),String.valueOf(save.getS5().getApr_entrepreneuriale().get()),String.valueOf(save.getS5().getRis_entrepreneuriale().get()));
+				Path fichier_identites=Paths.get("saves"+File.separator+repertoire+File.separator+"Identites.txt");
 				try {
 					Files.write(fichier_identites, lignes_identites,Charset.forName("UTF-8"));
 				} catch (IOException e5) {
@@ -253,14 +253,14 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 					e5.printStackTrace();
 				}
 
-				List<String> lignes_mondes=Arrays.asList(save.getS6().getMtn().getNom(),save.getS6().getApr().getNom());
-				Path fichier_mondes=Paths.get("saves"+File.separator+repertoire+File.separator"Mondes.txt");
+				List<String> lignes_mondes=Arrays.asList(save.getS6().getMtn().getNom(),save.getS6().getApr().getNom(),save.getS6().getRis().getNom());
+				Path fichier_mondes=Paths.get("saves"+File.separator+repertoire+File.separator+"Mondes.txt");
 				try {
 					Files.write(fichier_mondes, lignes_mondes,Charset.forName("UTF-8"));
 				} catch (IOException e6) {
 					// TODO Auto-generated catch block
 					e6.printStackTrace();
-				}*/
+				}//*/
 
 			}
 

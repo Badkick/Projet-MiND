@@ -95,13 +95,16 @@ public class ChargerEtude implements ActionListener {
 			BufferedReader aLire_4 = new BufferedReader(new FileReader(relations));
 			Consensus cons_1=new Consensus(new Pourcentage(Integer.valueOf(aLire_4.readLine())),new Pourcentage(Integer.valueOf(aLire_4.readLine())),new Pourcentage(Integer.valueOf(aLire_4.readLine())));
 			Consensus cons_2=new Consensus(new Pourcentage(Integer.valueOf(aLire_4.readLine())),new Pourcentage(Integer.valueOf(aLire_4.readLine())),new Pourcentage(Integer.valueOf(aLire_4.readLine())));
+			Consensus ris_1=new Consensus(new Pourcentage(Integer.valueOf(aLire_4.readLine())),new Pourcentage(Integer.valueOf(aLire_4.readLine())),new Pourcentage(Integer.valueOf(aLire_4.readLine())));
 			Negociation nego_1=new Negociation(new Pourcentage(Integer.valueOf(aLire_4.readLine())),new Pourcentage(Integer.valueOf(aLire_4.readLine())),new Pourcentage(Integer.valueOf(aLire_4.readLine())));
 			Negociation nego_2=new Negociation(new Pourcentage(Integer.valueOf(aLire_4.readLine())),new Pourcentage(Integer.valueOf(aLire_4.readLine())),new Pourcentage(Integer.valueOf(aLire_4.readLine())));
+			Negociation ris_2=new Negociation(new Pourcentage(Integer.valueOf(aLire_4.readLine())),new Pourcentage(Integer.valueOf(aLire_4.readLine())),new Pourcentage(Integer.valueOf(aLire_4.readLine())));
 			Opposition opp_1=new Opposition(new Pourcentage(Integer.valueOf(aLire_4.readLine())),new Pourcentage(Integer.valueOf(aLire_4.readLine())),new Pourcentage(Integer.valueOf(aLire_4.readLine())),new Pourcentage(Integer.valueOf(aLire_4.readLine())));
 			Opposition opp_2=new Opposition(new Pourcentage(Integer.valueOf(aLire_4.readLine())),new Pourcentage(Integer.valueOf(aLire_4.readLine())),new Pourcentage(Integer.valueOf(aLire_4.readLine())),new Pourcentage(Integer.valueOf(aLire_4.readLine())));
+			Opposition ris_3=new Opposition(new Pourcentage(Integer.valueOf(aLire_4.readLine())),new Pourcentage(Integer.valueOf(aLire_4.readLine())),new Pourcentage(Integer.valueOf(aLire_4.readLine())),new Pourcentage(Integer.valueOf(aLire_4.readLine())));
 			
 			aLire_4.close();
-			schema4=new Schema4(cons_1,cons_2,null, nego_1,nego_2,null, opp_1,opp_2, null);
+			schema4=new Schema4(cons_1,cons_2,ris_1, nego_1,nego_2,ris_2, opp_1,opp_2, ris_3);
 			
 		}
 		catch (IOException e4){
@@ -124,8 +127,15 @@ public class ChargerEtude implements ActionListener {
 			Pourcentage p_10=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
 			Pourcentage p_11=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
 			Pourcentage p_12=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
-			schema5=new Schema5(p_1,p_2,p_3,p_4,p_5,p_6,p_7,p_8,p_9,p_10,p_11,p_12, null, null, null, null, null, null);
+			Pourcentage p_13=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
+			Pourcentage p_14=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
+			Pourcentage p_15=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
+			Pourcentage p_16=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
+			Pourcentage p_17=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
+			Pourcentage p_18=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
+			
 			aLire_5.close();
+			schema5=new Schema5(p_1,p_2,p_3,p_4,p_5,p_6,p_7,p_8,p_9,p_10,p_11,p_12, p_13, p_14, p_15, p_16, p_17, p_18);
 			
 		}
 		catch (IOException e5){
@@ -138,9 +148,10 @@ public class ChargerEtude implements ActionListener {
 			BufferedReader aLire_6 = new BufferedReader(new FileReader(mondes));
 			Entreprise e_1=Entreprise.getByName(aLire_6.readLine());
 			Entreprise e_2=Entreprise.getByName(aLire_6.readLine());
+			Entreprise e_3=Entreprise.getByName(aLire_6.readLine());
 			
 			aLire_6.close();
-			schema6=new Schema6(e_1,e_2,null);
+			schema6=new Schema6(e_1,e_2,e_3);
 			
 		}
 		catch (IOException e6){
@@ -153,6 +164,7 @@ public class ChargerEtude implements ActionListener {
 		ConteneurNouvelleEtude nouvelle_etude = new ConteneurNouvelleEtude(FenetreAccueil.fenetre_principale.getSize(), theme, FenetreAccueil.conteneur_principal, FenetreAccueil.fenetre_principale,nom);
 		nouvelle_etude.save();
 		FenetreAccueil.fenetre_principale.setConteneur(nouvelle_etude,"Projet MiND - "+nom);
+		System.out.println(String.valueOf(FenetreAccueil.etude.getS1().getApr_contr_tech().get()));
 	}
 
 }
