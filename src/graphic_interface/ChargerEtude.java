@@ -101,7 +101,7 @@ public class ChargerEtude implements ActionListener {
 			Opposition opp_2=new Opposition(new Pourcentage(Integer.valueOf(aLire_4.readLine())),new Pourcentage(Integer.valueOf(aLire_4.readLine())),new Pourcentage(Integer.valueOf(aLire_4.readLine())),new Pourcentage(Integer.valueOf(aLire_4.readLine())));
 			
 			aLire_4.close();
-			schema4=new Schema4(cons_1,cons_2,nego_1,nego_2,opp_1,opp_2);
+			schema4=new Schema4(cons_1,cons_2,null, nego_1,nego_2,null, opp_1,opp_2, null);
 			
 		}
 		catch (IOException e4){
@@ -124,7 +124,7 @@ public class ChargerEtude implements ActionListener {
 			Pourcentage p_10=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
 			Pourcentage p_11=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
 			Pourcentage p_12=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
-			schema5=new Schema5(p_1,p_2,p_3,p_4,p_5,p_6,p_7,p_8,p_9,p_10,p_11,p_12);
+			schema5=new Schema5(p_1,p_2,p_3,p_4,p_5,p_6,p_7,p_8,p_9,p_10,p_11,p_12, null, null, null, null, null, null);
 			aLire_5.close();
 			
 		}
@@ -140,7 +140,7 @@ public class ChargerEtude implements ActionListener {
 			Entreprise e_2=Entreprise.getByName(aLire_6.readLine());
 			
 			aLire_6.close();
-			schema6=new Schema6(e_1,e_2);
+			schema6=new Schema6(e_1,e_2,null);
 			
 		}
 		catch (IOException e6){

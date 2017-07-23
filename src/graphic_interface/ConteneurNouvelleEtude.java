@@ -350,6 +350,6 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 	// pour récupérer le conteneur dans lequel il y a l'image : on pourra ainsi récupérer les boutons et les zones de texte ! A appeler à l'aide des boolean MAINTENANT et APRES.
 	public ConteneurSchema getConteneurSchema(int type, int mode)
 	{
-		return mode==0 ? ((TabGraphe)((Conteneur)this.getTabs().getComponentAt(type-1)).getComponents()[0]).getConteneur_maintenant() :(mode==1 ? ((TabGraphe)((Conteneur)this.getTabs().getComponentAt(type-1)).getComponents()[0]).getConteneur_apres() : (ConteneurSchema) ((TabGraphe)((Conteneur)this.getTabs().getComponentAt(type-1)).getComponents()[0]).getConteneur_risque());
+		return mode==MAINTENANT ? ((TabGraphe)((Conteneur)this.getTabs().getComponentAt(type-1)).getComponents()[0]).getConteneur_maintenant() :(mode==APRES ? ((TabGraphe)((Conteneur)this.getTabs().getComponentAt(type-1)).getComponents()[0]).getConteneur_apres() : (ConteneurSchema) ((TabGraphe)((Conteneur)this.getTabs().getComponentAt(type-1)).getComponents()[0]).getConteneur_risque());
 	}
 }

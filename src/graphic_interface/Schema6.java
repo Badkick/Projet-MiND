@@ -6,20 +6,23 @@ public class Schema6 {
 	
 	private Entreprise mtn;
 	private Entreprise apr;
+	private Entreprise ris;
 	
 	// CONSTRUCTEUR //
-	public Schema6(Entreprise mtn, Entreprise apr) {
-		super();
+	public Schema6(Entreprise mtn, Entreprise apr, Entreprise ris) {
 		this.mtn = mtn;
 		this.apr = apr;
+		this.ris = ris;
 	}
 
 	// GETTERS //
 	
+	public Entreprise getRis() {
+		return ris;
+	}
 	public Entreprise getMtn() {
 		return mtn;
 	}
-
 	public Entreprise getApr() {
 		return apr;
 	}
@@ -29,9 +32,10 @@ public class Schema6 {
 	public void setMtn(Entreprise mtn) {
 		this.mtn = mtn;
 	}
-
 	public void setApr(Entreprise apr) {
 		this.apr = apr;
 	}
-	
+	public void setRis(Entreprise ris) {
+		this.ris = ris;
+	}
 }
