@@ -174,6 +174,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 					);
 			break;
 		case 2:
+			ActionBoutonSchema2 action = new ActionBoutonSchema2(this,theme);
 			Dimension dim_boutons = new Dimension(170,90);
 			this.b_simple_marche = new Bouton("Structure\nSIMPLE DE MARCHE",dim_boutons,theme);
 			this.b_professionnelle = new Bouton("Structure\nPROFESSIONNELLE",dim_boutons,theme);
@@ -187,6 +188,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			this.b_entrepreneuriale.setCouleurTexte(Color.white);
 			this.b_entrepreneuriale.updateCouleur();
 			this.b_entrepreneuriale.repaint();
+			this.b_entrepreneuriale.addActionListener(action);
 
 			this.b_simple_marche.setImgRepos(theme.getbSchema2Repos());
 			this.b_simple_marche.setImgSurvol(theme.getbSchema2Survol());
@@ -194,6 +196,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			this.b_simple_marche.setCouleurTexte(Color.white);
 			this.b_simple_marche.updateCouleur();
 			this.b_simple_marche.repaint();
+			this.b_simple_marche.addActionListener(action);
 
 			this.b_professionnelle.setImgRepos(theme.getbSchema2Repos());
 			this.b_professionnelle.setImgSurvol(theme.getbSchema2Survol());
@@ -201,6 +204,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			this.b_professionnelle.setCouleurTexte(Color.white);
 			this.b_professionnelle.updateCouleur();
 			this.b_professionnelle.repaint();
+			this.b_professionnelle.addActionListener(action);
 
 			this.b_mecaniste.setImgRepos(theme.getbSchema2Repos());
 			this.b_mecaniste.setImgSurvol(theme.getbSchema2Survol());
@@ -208,6 +212,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			this.b_mecaniste.setCouleurTexte(Color.white);
 			this.b_mecaniste.updateCouleur();
 			this.b_mecaniste.repaint();
+			this.b_mecaniste.addActionListener(action);
 
 			this.b_simple_centralisee.setImgRepos(theme.getbSchema2Repos());
 			this.b_simple_centralisee.setImgSurvol(theme.getbSchema2Survol());
@@ -215,6 +220,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			this.b_simple_centralisee.setCouleurTexte(Color.white);
 			this.b_simple_centralisee.updateCouleur();
 			this.b_simple_centralisee.repaint();
+			this.b_simple_centralisee.addActionListener(action);
 
 			this.layout.setHorizontalGroup(
 					this.layout.createSequentialGroup()
@@ -346,6 +352,26 @@ public class ConteneurSchema extends ConteneurAvecImage {
 		} catch (StringIndexOutOfBoundsException e) {
 			return null;
 		}
+	}
+
+	public Bouton getB_simple_marche() {
+		return b_simple_marche;
+	}
+
+	public Bouton getB_professionnelle() {
+		return b_professionnelle;
+	}
+
+	public Bouton getB_mecaniste() {
+		return b_mecaniste;
+	}
+
+	public Bouton getB_simple_centralisee() {
+		return b_simple_centralisee;
+	}
+
+	public Bouton getB_entrepreneuriale() {
+		return b_entrepreneuriale;
 	}
 
 	// METHODES //

@@ -172,6 +172,20 @@ public class Bouton extends JButton implements MouseListener {
 	{
 		img = this.getImgRepos();
 	}
+	
+	public void setImgFixe(Image img)
+	{
+		this.setImgClic(img);
+		this.setImgRepos(img);
+		this.setImgSurvol(img);
+	}
+	
+	public void resetImg(Theme theme)
+	{
+		this.setImgClic(theme.getBClic());
+		this.setImgRepos(theme.getBRepos());
+		this.setImgSurvol(theme.getBSurvol());
+	}
 
 
 
