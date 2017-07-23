@@ -62,7 +62,7 @@ public class TabGraphe extends JTabbedPane {
 			this.setTabComponentAt(3, new CustomTab("Comment remplir ?",theme));
 			this.setTabComponentAt(4, new CustomTab("Aperçu",theme));
 
-			this.conteneur_risque.addComponentListener(new Verification100PourCent(type, this.conteneur_risque, (CustomTab) this.getTabComponentAt(2)));
+			this.conteneur_risque.addComponentListener(new Verification100PourCent(this.conteneur_risque, (CustomTab) this.getTabComponentAt(2)));
 		}
 		else
 		{
@@ -94,14 +94,13 @@ public class TabGraphe extends JTabbedPane {
 		this.setTabComponentAt(1, new CustomTab("Après",theme));
 		this.getTabComponentAt(1).setForeground(Color.red);
 		
-		this.conteneur_maintenant.addComponentListener(new Verification100PourCent(type, this.conteneur_maintenant, (CustomTab) this.getTabComponentAt(0)));
-		this.conteneur_apres.addComponentListener(new Verification100PourCent(type, this.conteneur_apres, (CustomTab) this.getTabComponentAt(1)));
+		this.conteneur_maintenant.addComponentListener(new Verification100PourCent(this.conteneur_maintenant, (CustomTab) this.getTabComponentAt(0)));
+		this.conteneur_apres.addComponentListener(new Verification100PourCent(this.conteneur_apres, (CustomTab) this.getTabComponentAt(1)));
 	}
 
 	// GETTERS //
 
-	public Theme getTheme()
-	{
+	public Theme getTheme() {
 		return this.theme;
 	}
 
@@ -117,8 +116,7 @@ public class TabGraphe extends JTabbedPane {
 		return (this.type!=1) ? null : this.conteneur_risque;
 	}
 
-	public Conteneur getConteneur_risque()
-	{
+	public Conteneur getConteneur_risque() {
 		return (this.type!=1) ? this.conteneur_risque : this.conteneur_risque_schema1;
 	}
 
@@ -134,8 +132,7 @@ public class TabGraphe extends JTabbedPane {
 		return zoneTexte;
 	}
 	
-	public String getCommentaireRisque()
-	{
+	public String getCommentaireRisque() {
 		return this.getZoneTexte().getText();
 	}
 

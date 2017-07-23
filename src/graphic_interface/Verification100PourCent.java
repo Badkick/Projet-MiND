@@ -12,8 +12,8 @@ public class Verification100PourCent implements ComponentListener {
 	private ConteneurSchema conteneur;
 	private CustomTab tab;
 	
-	public Verification100PourCent(int type, ConteneurSchema conteneur, CustomTab tab) {
-		this.type = type;
+	public Verification100PourCent(ConteneurSchema conteneur, CustomTab tab) {
+		this.type = conteneur.getTypeSchema();
 		this.conteneur = conteneur;
 		this.tab = tab;
 	}

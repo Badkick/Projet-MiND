@@ -286,6 +286,11 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	}
 
 	// GETTERS //
+	
+	public int getTypeSchema()
+	{
+		return this.typeSchema;
+	}
 
 	public String getTextContr_tech()
 	{
