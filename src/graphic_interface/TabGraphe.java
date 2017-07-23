@@ -133,6 +133,11 @@ public class TabGraphe extends JTabbedPane {
 	public JTextField getZoneTexte() {
 		return zoneTexte;
 	}
+	
+	public String getCommentaireRisque()
+	{
+		return this.getZoneTexte().getText();
+	}
 
 	// SETTERS //
 
