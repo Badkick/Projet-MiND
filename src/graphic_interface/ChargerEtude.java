@@ -147,10 +147,10 @@ public class ChargerEtude implements ActionListener {
 			System.out.println("Une operation sur le fichier Mondes a leve l'exception "+e6);
 		}
 		
-		Etude etude=new Etude(schema1,schema2,schema3,schema4,schema5,schema6);
+		FenetreAccueil.etude=new Etude(schema1,schema2,schema3,schema4,schema5,schema6);
 		ConteneurAvecImage conteneur_principal = new ConteneurAvecImage(0,0,theme.getBackground());
 		conteneur_principal.setTaille(FenetreAccueil.fenetre_principale.getSize());
-		ConteneurNouvelleEtude nouvelle_etude = new ConteneurNouvelleEtude(FenetreAccueil.fenetre_principale.getSize(), theme, FenetreAccueil.conteneur_principal, FenetreAccueil.fenetre_principale,nom,etude);
+		ConteneurNouvelleEtude nouvelle_etude = new ConteneurNouvelleEtude(FenetreAccueil.fenetre_principale.getSize(), theme, FenetreAccueil.conteneur_principal, FenetreAccueil.fenetre_principale,nom);
 		nouvelle_etude.save();
 		FenetreAccueil.fenetre_principale.setConteneur(nouvelle_etude,"Projet MiND - "+nom);
 	}

@@ -63,6 +63,7 @@ public class TabGraphe extends JTabbedPane {
 			this.setTabComponentAt(4, new CustomTab("Aperçu",theme));
 
 			this.conteneur_risque.addComponentListener(new Verification100PourCent(this.conteneur_risque, (CustomTab) this.getTabComponentAt(2)));
+			this.conteneur_risque.addComponentListener(new UpdateEtude(this));
 		}
 		else
 		{
@@ -87,6 +88,8 @@ public class TabGraphe extends JTabbedPane {
 			zoneTexte.setMaximumSize(tailleZoneTexte);
 			zoneTexte.setFont(this.getTheme().getPolice());
 			this.conteneur_risque_schema1.add(zoneTexte);
+			this.conteneur_risque_schema1.addComponentListener(new UpdateEtude(this));
+			
 		}
 		
 		this.setTabComponentAt(0, new CustomTab("Maintenant",theme));
@@ -95,7 +98,9 @@ public class TabGraphe extends JTabbedPane {
 		this.getTabComponentAt(1).setForeground(Color.red);
 		
 		this.conteneur_maintenant.addComponentListener(new Verification100PourCent(this.conteneur_maintenant, (CustomTab) this.getTabComponentAt(0)));
+		this.conteneur_maintenant.addComponentListener(new UpdateEtude(this));
 		this.conteneur_apres.addComponentListener(new Verification100PourCent(this.conteneur_apres, (CustomTab) this.getTabComponentAt(1)));
+		this.conteneur_apres.addComponentListener(new UpdateEtude(this));
 	}
 
 	// GETTERS //

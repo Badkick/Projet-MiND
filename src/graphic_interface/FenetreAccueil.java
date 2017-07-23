@@ -14,6 +14,7 @@ public class FenetreAccueil {
 
 	public static ConteneurAvecImage conteneur_principal;
 	public static Fenetre fenetre_principale;
+	public static Etude etude;
 	
 	public FenetreAccueil(Theme theme) {
 		conteneur_principal = new ConteneurAvecImage(0,0,theme.getBackground());
@@ -93,7 +94,7 @@ public class FenetreAccueil {
 					}
 				if(!nom.equals(""))
 				{
-					ConteneurNouvelleEtude nouvelle_etude = new ConteneurNouvelleEtude(fenetre_principale.getSize(), theme, conteneur_principal, fenetre_principale,nom,new Etude());
+					ConteneurNouvelleEtude nouvelle_etude = new ConteneurNouvelleEtude(fenetre_principale.getSize(), theme, conteneur_principal, fenetre_principale,nom);
 					fenetre_principale.setConteneur(nouvelle_etude,"Projet MiND - "+nom);
 				}
 

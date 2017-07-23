@@ -39,7 +39,6 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 	private GroupLayout layout;
 	private boolean saved=false;
 	private String nom;
-	private Etude etude;
 
 	// boutons
 	private Bouton bouton_back_menu;
@@ -53,13 +52,12 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 
 	// CONSTRUCTEURS //
 
-	public ConteneurNouvelleEtude(int width, int height, Theme theme, Conteneur precedent, Fenetre fen, String nom, Etude etude) {
+	public ConteneurNouvelleEtude(int width, int height, Theme theme, Conteneur precedent, Fenetre fen, String nom) {
 		super(width, height, theme.getBackground());
 		this.theme = theme;
 		this.precedent = precedent;
 		this.fen = fen;
 		this.nom = nom;
-		this.etude = etude;
 		this.conteneur = new Conteneur(width, height);
 		//UIManager.put("TabbedPane.contentOpaque", false); // pour rendre les tab transparents
 		this.tabs = new JTabbedPane();
@@ -70,8 +68,8 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 		this.add(conteneur);
 	}
 
-	public ConteneurNouvelleEtude(Dimension dim, Theme theme, Conteneur precedent, Fenetre fen, String nom, Etude etude) {
-		this((int)dim.getWidth(),(int)dim.getHeight(),theme,precedent,fen,nom,etude);
+	public ConteneurNouvelleEtude(Dimension dim, Theme theme, Conteneur precedent, Fenetre fen, String nom) {
+		this((int)dim.getWidth(),(int)dim.getHeight(),theme,precedent,fen,nom);
 	}
 
 	// GETTERS //
@@ -128,11 +126,6 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 	public String getNom()
 	{
 		return this.nom;
-	}
-
-	public Etude getEtude()
-	{
-		return this.etude;
 	}
 
 	// SETTERS //
@@ -203,7 +196,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-				Etude save=getEtude();
+				Etude save=FenetreAccueil.etude;
 				String repertoire=getNom();
 
 				save();
