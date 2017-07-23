@@ -29,7 +29,7 @@ public class TabGraphe extends JTabbedPane {
 	private ConteneurSchema conteneur_risque;
 	private Conteneur conteneur_comment;
 	private Conteneur conteneur_apercu;
-	private Conteneur conteneur_risque_schema1;
+	private ConteneurSchema conteneur_risque_schema1;
 	
 	private JTextField zoneTexte;
 
@@ -42,7 +42,7 @@ public class TabGraphe extends JTabbedPane {
 		this.conteneur_maintenant = new ConteneurSchema(type,ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR,theme);
 		this.conteneur_apres = new ConteneurSchema(type,ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR,theme);
 		this.conteneur_comment = new Conteneur(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
-		this.conteneur_apercu = new Conteneur(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
+		//this.conteneur_apercu = new Conteneur(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
 		this.conteneur_risque = new ConteneurSchema(type,ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR,theme);
 
 		this.theme = theme;
@@ -51,6 +51,7 @@ public class TabGraphe extends JTabbedPane {
 
 		if(type!=1)
 		{
+			this.conteneur_apercu = new Conteneur(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
 			this.add("Maintenant",this.conteneur_maintenant);
 			this.add("Après",this.conteneur_apres);
 			this.add("Risque", this.conteneur_risque);
@@ -67,7 +68,8 @@ public class TabGraphe extends JTabbedPane {
 		}
 		else
 		{
-			this.conteneur_risque_schema1 = new Conteneur(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
+			this.conteneur_apercu=new ApercuSchema1(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR,theme,null);
+			this.conteneur_risque_schema1 = new ConteneurSchema(type,ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR,theme);
 			this.add("Maintenant",this.conteneur_maintenant);
 			this.add("Après",this.conteneur_apres);
 			this.add("Encore après", this.conteneur_risque);
