@@ -20,8 +20,6 @@ public class TabGraphe extends JTabbedPane {
 	};
 
 	// VARIABLES DE CLASSE //
-	private Theme theme;
-	
 	private int type;
 
 	private ConteneurSchema conteneur_maintenant;
@@ -35,17 +33,15 @@ public class TabGraphe extends JTabbedPane {
 
 	// CONSTRUCTEUR //
 
-	public TabGraphe(int type, Theme theme) {
+	public TabGraphe(int type) {
 		super();
 		this.type = type;
 		
-		this.conteneur_maintenant = new ConteneurSchema(type,ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR,theme);
-		this.conteneur_apres = new ConteneurSchema(type,ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR,theme);
+		this.conteneur_maintenant = new ConteneurSchema(type,ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
+		this.conteneur_apres = new ConteneurSchema(type,ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
 		this.conteneur_comment = new Conteneur(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
 		//this.conteneur_apercu = new Conteneur(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
-		this.conteneur_risque = new ConteneurSchema(type,ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR,theme);
-
-		this.theme = theme;
+		this.conteneur_risque = new ConteneurSchema(type,ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
 
 		this.initialiserCommentRemplir(type);
 
@@ -58,17 +54,17 @@ public class TabGraphe extends JTabbedPane {
 			this.add("Comment remplir ?",this.conteneur_comment);
 			this.add("Aperçu",this.conteneur_apercu);
 			
-			this.setTabComponentAt(2, new CustomTab("Risque",theme));
+			this.setTabComponentAt(2, new CustomTab("Risque"));
 			this.getTabComponentAt(2).setForeground(Color.red);
-			this.setTabComponentAt(3, new CustomTab("Comment remplir ?",theme));
-			this.setTabComponentAt(4, new CustomTab("Aperçu",theme));
+			this.setTabComponentAt(3, new CustomTab("Comment remplir ?"));
+			this.setTabComponentAt(4, new CustomTab("Aperçu"));
 
 			this.conteneur_risque.addComponentListener(new Verification100PourCent(this.conteneur_risque, (CustomTab) this.getTabComponentAt(2)));
 			this.conteneur_risque.addComponentListener(new UpdateEtude(this));
 		}
 		else
 		{
-			this.conteneur_apercu=new ApercuSchema1(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR,theme,null);
+			this.conteneur_apercu=new ApercuSchema1(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR,null);
 			this.conteneur_risque_schema1 = new Conteneur(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
 			this.add("Maintenant",this.conteneur_maintenant);
 			this.add("Après",this.conteneur_apres);
@@ -77,26 +73,26 @@ public class TabGraphe extends JTabbedPane {
 			this.add("Comment remplir ?",this.conteneur_comment);
 			this.add("Aperçu",this.conteneur_apercu);
 			
-			this.setTabComponentAt(2, new CustomTab("Encore après",theme));
+			this.setTabComponentAt(2, new CustomTab("Encore après"));
 			this.getTabComponentAt(2).setForeground(Color.red);
-			this.setTabComponentAt(3, new CustomTab("Risque",theme));
-			this.setTabComponentAt(4, new CustomTab("Comment remplir ?",theme));
-			this.setTabComponentAt(5, new CustomTab("Aperçu",theme));
+			this.setTabComponentAt(3, new CustomTab("Risque"));
+			this.setTabComponentAt(4, new CustomTab("Comment remplir ?"));
+			this.setTabComponentAt(5, new CustomTab("Aperçu"));
 			
 			zoneTexte = new JTextField();
 			Dimension tailleZoneTexte = new Dimension(300,300);
 			zoneTexte.setPreferredSize(tailleZoneTexte);
 			zoneTexte.setMinimumSize(tailleZoneTexte);
 			zoneTexte.setMaximumSize(tailleZoneTexte);
-			zoneTexte.setFont(this.getTheme().getPolice());
+			zoneTexte.setFont(FenetreAccueil.theme.getPolice());
 			this.conteneur_risque_schema1.add(zoneTexte);
 			this.conteneur_risque_schema1.addComponentListener(new UpdateEtude(this));
 			
 		}
 		
-		this.setTabComponentAt(0, new CustomTab("Maintenant",theme));
+		this.setTabComponentAt(0, new CustomTab("Maintenant"));
 		this.getTabComponentAt(0).setForeground(Color.red);
-		this.setTabComponentAt(1, new CustomTab("Après",theme));
+		this.setTabComponentAt(1, new CustomTab("Après"));
 		this.getTabComponentAt(1).setForeground(Color.red);
 		
 		this.conteneur_maintenant.addComponentListener(new Verification100PourCent(this.conteneur_maintenant, (CustomTab) this.getTabComponentAt(0)));
@@ -106,11 +102,7 @@ public class TabGraphe extends JTabbedPane {
 	}
 
 	// GETTERS //
-
-	public Theme getTheme() {
-		return this.theme;
-	}
-
+	
 	public ConteneurSchema getConteneur_maintenant() {
 		return conteneur_maintenant;
 	}
@@ -150,7 +142,7 @@ public class TabGraphe extends JTabbedPane {
 	private void initialiserCommentRemplir(int type)
 	{
 		JLabel texte = new JLabel(EXPLICATIONS[type-1]);
-		texte.setFont(this.getTheme().getPoliceExplications());
+		texte.setFont(FenetreAccueil.theme.getPoliceExplications());
 		this.getConteneur_comment().add(texte);
 	}
 

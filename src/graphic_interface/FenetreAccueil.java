@@ -15,19 +15,21 @@ public class FenetreAccueil {
 	public static ConteneurAvecImage conteneur_principal;
 	public static Fenetre fenetre_principale;
 	public static Etude etude;
+	public static Theme theme;
 	
-	public FenetreAccueil(Theme theme) {
+	public FenetreAccueil(Theme th) {
+		theme = th;
 		conteneur_principal = new ConteneurAvecImage(0,0,theme.getBackground());
 		fenetre_principale = new Fenetre(conteneur_principal,theme);
 		conteneur_principal.setTaille(fenetre_principale.getSize());
 		Conteneur conteneur_menu = new Conteneur(fenetre_principale.getSize());
 		conteneur_menu.setOpaque(false);
 		
-		Bouton bouton_nouveau = new Bouton("Nouvelle étude",new Dimension(200,100),theme);
-		Bouton bouton_liste = new Bouton("Liste des études", new Dimension(200,100),theme);
-		Bouton bouton_quitter = new Bouton("Quitter", new Dimension(200,100),theme);
+		Bouton bouton_nouveau = new Bouton("Nouvelle étude",new Dimension(200,100));
+		Bouton bouton_liste = new Bouton("Liste des études", new Dimension(200,100));
+		Bouton bouton_quitter = new Bouton("Quitter", new Dimension(200,100));
 		
-		ConteneurListeEtudes liste = new ConteneurListeEtudes(fenetre_principale.getSize(), theme, conteneur_principal, fenetre_principale);
+		ConteneurListeEtudes liste = new ConteneurListeEtudes(fenetre_principale.getSize(), conteneur_principal, fenetre_principale);
 		
 		bouton_nouveau.setToolTipText("Crée une nouvelle étude.");
 		bouton_liste.setToolTipText("Affiche la liste des études : permet l'édition d'une étude et l'affichage des études terminées.");
@@ -94,7 +96,7 @@ public class FenetreAccueil {
 					}
 				if(!nom.equals(""))
 				{
-					ConteneurNouvelleEtude nouvelle_etude = new ConteneurNouvelleEtude(fenetre_principale.getSize(), theme, conteneur_principal, fenetre_principale,nom);
+					ConteneurNouvelleEtude nouvelle_etude = new ConteneurNouvelleEtude(fenetre_principale.getSize(), conteneur_principal, fenetre_principale,nom);
 					fenetre_principale.setConteneur(nouvelle_etude,"Projet MiND - "+nom);
 				}
 

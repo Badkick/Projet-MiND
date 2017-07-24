@@ -13,7 +13,6 @@ public class ConteneurListeEtudes extends ConteneurAvecImage {
 
 	// VARIABLES DE CLASSE //
 
-	private Theme theme;
 	private Conteneur conteneur;
 	private Bouton bouton_back_menu;
 	private JScrollPane scroll;
@@ -25,9 +24,8 @@ public class ConteneurListeEtudes extends ConteneurAvecImage {
 
 	// CONSTRUCTEURS //
 
-	public ConteneurListeEtudes(int width, int height, Theme theme, Conteneur precedent, Fenetre fen) {
-		super(width, height, theme.getBackground(), true);
-		this.theme = theme;
+	public ConteneurListeEtudes(int width, int height, Conteneur precedent, Fenetre fen) {
+		super(width, height, FenetreAccueil.theme.getBackground(), true);
 		this.precedent = precedent;
 		this.fen = fen;
 		this.conteneur = new Conteneur(width,height);
@@ -38,22 +36,17 @@ public class ConteneurListeEtudes extends ConteneurAvecImage {
 		this.conteneur.setOpaque(false);
 		this.conteneur_etudes.setOpaque(true);
 		this.scroll.setOpaque(false);
-		this.bouton_back_menu = new Bouton("Retour au menu", new Dimension(180, 50), theme);
+		this.bouton_back_menu = new Bouton("Retour au menu", new Dimension(180, 50));
 		this.initialiser();
 		this.add(conteneur);
 	}
 
-	public ConteneurListeEtudes(Dimension dim, Theme theme, Conteneur precedent, Fenetre fen) {
-		this((int)dim.getWidth(),(int)dim.getHeight(),theme,precedent,fen);
+	public ConteneurListeEtudes(Dimension dim, Conteneur precedent, Fenetre fen) {
+		this((int)dim.getWidth(),(int)dim.getHeight(),precedent,fen);
 	}
 
 
 	// GETTERS //
-
-	public Theme getTheme()
-	{
-		return this.theme;
-	}
 
 	public Conteneur getConteneur()
 	{
@@ -163,7 +156,7 @@ public class ConteneurListeEtudes extends ConteneurAvecImage {
 		File file=new File("saves");
 		String[] nom_etudes=file.list();
 		for(String nom : nom_etudes) {
-			liste.add(new BoutonEtude(this.getTheme(),nom));
+			liste.add(new BoutonEtude(nom));
 		}
 		return liste;
 	}

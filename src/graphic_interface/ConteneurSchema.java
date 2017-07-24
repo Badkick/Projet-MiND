@@ -21,7 +21,6 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	// VARIABLES INSTANCE //
 
 	// variables générales
-	private Theme theme;
 	private int typeSchema; // le type du schéma : de 1 à 6
 	private GroupLayout layout;
 
@@ -103,10 +102,9 @@ public class ConteneurSchema extends ConteneurAvecImage {
 
 	// CONSTRUCTEURS //
 
-	public ConteneurSchema(int type, int width, int height, Theme theme) {
-		super(width,height,theme.getSchemas()[type-1]);
+	public ConteneurSchema(int type, int width, int height) {
+		super(width,height,FenetreAccueil.theme.getSchemas()[type-1]);
 		this.typeSchema = type;
-		this.theme = theme;
 		this.layout = new GroupLayout(this);
 		this.setLayout(layout);
 
@@ -174,49 +172,49 @@ public class ConteneurSchema extends ConteneurAvecImage {
 					);
 			break;
 		case 2:
-			ActionBoutonSchema2 action = new ActionBoutonSchema2(this,theme);
+			ActionBoutonSchema2 action = new ActionBoutonSchema2(this);
 			Dimension dim_boutons = new Dimension(170,90);
-			this.b_simple_marche = new Bouton("Structure\nSIMPLE DE MARCHE",dim_boutons,theme);
-			this.b_professionnelle = new Bouton("Structure\nPROFESSIONNELLE",dim_boutons,theme);
-			this.b_mecaniste = new Bouton("Structure\nMECANISTE",dim_boutons,theme);
-			this.b_simple_centralisee = new Bouton("Structure\nSIMPLE CENTRALISEE",dim_boutons,theme);
-			this.b_entrepreneuriale = new Bouton("Structure\nENTREPRENEURIALE",dim_boutons,theme);
+			this.b_simple_marche = new Bouton("Structure\nSIMPLE DE MARCHE",dim_boutons);
+			this.b_professionnelle = new Bouton("Structure\nPROFESSIONNELLE",dim_boutons);
+			this.b_mecaniste = new Bouton("Structure\nMECANISTE",dim_boutons);
+			this.b_simple_centralisee = new Bouton("Structure\nSIMPLE CENTRALISEE",dim_boutons);
+			this.b_entrepreneuriale = new Bouton("Structure\nENTREPRENEURIALE",dim_boutons);
 
-			this.b_entrepreneuriale.setImgRepos(theme.getbSchema2Repos());
-			this.b_entrepreneuriale.setImgSurvol(theme.getbSchema2Survol());
-			this.b_entrepreneuriale.setImgClic(theme.getbSchema2Survol());
+			this.b_entrepreneuriale.setImgRepos(FenetreAccueil.theme.getbSchema2Repos());
+			this.b_entrepreneuriale.setImgSurvol(FenetreAccueil.theme.getbSchema2Survol());
+			this.b_entrepreneuriale.setImgClic(FenetreAccueil.theme.getbSchema2Survol());
 			this.b_entrepreneuriale.setCouleurTexte(Color.white);
 			this.b_entrepreneuriale.updateCouleur();
 			this.b_entrepreneuriale.repaint();
 			this.b_entrepreneuriale.addActionListener(action);
 
-			this.b_simple_marche.setImgRepos(theme.getbSchema2Repos());
-			this.b_simple_marche.setImgSurvol(theme.getbSchema2Survol());
-			this.b_simple_marche.setImgClic(theme.getbSchema2Survol());
+			this.b_simple_marche.setImgRepos(FenetreAccueil.theme.getbSchema2Repos());
+			this.b_simple_marche.setImgSurvol(FenetreAccueil.theme.getbSchema2Survol());
+			this.b_simple_marche.setImgClic(FenetreAccueil.theme.getbSchema2Survol());
 			this.b_simple_marche.setCouleurTexte(Color.white);
 			this.b_simple_marche.updateCouleur();
 			this.b_simple_marche.repaint();
 			this.b_simple_marche.addActionListener(action);
 
-			this.b_professionnelle.setImgRepos(theme.getbSchema2Repos());
-			this.b_professionnelle.setImgSurvol(theme.getbSchema2Survol());
-			this.b_professionnelle.setImgClic(theme.getbSchema2Survol());
+			this.b_professionnelle.setImgRepos(FenetreAccueil.theme.getbSchema2Repos());
+			this.b_professionnelle.setImgSurvol(FenetreAccueil.theme.getbSchema2Survol());
+			this.b_professionnelle.setImgClic(FenetreAccueil.theme.getbSchema2Survol());
 			this.b_professionnelle.setCouleurTexte(Color.white);
 			this.b_professionnelle.updateCouleur();
 			this.b_professionnelle.repaint();
 			this.b_professionnelle.addActionListener(action);
 
-			this.b_mecaniste.setImgRepos(theme.getbSchema2Repos());
-			this.b_mecaniste.setImgSurvol(theme.getbSchema2Survol());
-			this.b_mecaniste.setImgClic(theme.getbSchema2Survol());
+			this.b_mecaniste.setImgRepos(FenetreAccueil.theme.getbSchema2Repos());
+			this.b_mecaniste.setImgSurvol(FenetreAccueil.theme.getbSchema2Survol());
+			this.b_mecaniste.setImgClic(FenetreAccueil.theme.getbSchema2Survol());
 			this.b_mecaniste.setCouleurTexte(Color.white);
 			this.b_mecaniste.updateCouleur();
 			this.b_mecaniste.repaint();
 			this.b_mecaniste.addActionListener(action);
 
-			this.b_simple_centralisee.setImgRepos(theme.getbSchema2Repos());
-			this.b_simple_centralisee.setImgSurvol(theme.getbSchema2Survol());
-			this.b_simple_centralisee.setImgClic(theme.getbSchema2Survol());
+			this.b_simple_centralisee.setImgRepos(FenetreAccueil.theme.getbSchema2Repos());
+			this.b_simple_centralisee.setImgSurvol(FenetreAccueil.theme.getbSchema2Survol());
+			this.b_simple_centralisee.setImgClic(FenetreAccueil.theme.getbSchema2Survol());
 			this.b_simple_centralisee.setCouleurTexte(Color.white);
 			this.b_simple_centralisee.updateCouleur();
 			this.b_simple_centralisee.repaint();
@@ -287,8 +285,8 @@ public class ConteneurSchema extends ConteneurAvecImage {
 		}
 	}
 
-	public ConteneurSchema(int type, Dimension dim, Theme theme) {
-		this(type,(int)dim.getWidth(),(int)dim.getHeight(),theme);		
+	public ConteneurSchema(int type, Dimension dim) {
+		this(type,(int)dim.getWidth(),(int)dim.getHeight());		
 	}
 
 	// GETTERS //

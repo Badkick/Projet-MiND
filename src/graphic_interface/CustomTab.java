@@ -9,23 +9,14 @@ public class CustomTab extends JLabel {
 	public static Dimension TAILLE = new Dimension(140,20);
 	private final float TAILLE_POLICE = 12;
 	
-	private Theme theme;
-	
-	public CustomTab(String text, Theme theme) {
+	public CustomTab(String text) {
 		super(text);
-		this.theme = theme;
-		this.setFont(theme.getPolice().deriveFont(TAILLE_POLICE));
+		this.setFont(FenetreAccueil.theme.getPolice().deriveFont(TAILLE_POLICE));
 	}
 
-	public CustomTab(String text, int horizontalAlignment, Theme theme) {
+	public CustomTab(String text, int horizontalAlignment) {
 		super(text, horizontalAlignment);
-		this.theme = theme;
-		this.setFont(theme.getPolice().deriveFont(TAILLE_POLICE));
-	}
-	
-	public Theme getTheme()
-	{
-		return this.theme;
+		this.setFont(FenetreAccueil.theme.getPolice().deriveFont(TAILLE_POLICE));
 	}
 	
 	public void setTaille(Dimension taille)

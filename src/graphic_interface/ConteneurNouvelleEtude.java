@@ -31,7 +31,6 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 	private final String[] titres_tabs = {"Contraintes d'envirmt.","Structures d'organisation","Organisation du travail","Relations entre acteurs","Identités collectives","Mondes sociaux"};
 
 	// variables générales
-	private Theme theme;
 	private Fenetre fen;
 	private Conteneur precedent;
 	private JTabbedPane tabs;
@@ -52,9 +51,8 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 
 	// CONSTRUCTEURS //
 
-	public ConteneurNouvelleEtude(int width, int height, Theme theme, Conteneur precedent, Fenetre fen, String nom) {
-		super(width, height, theme.getBackground());
-		this.theme = theme;
+	public ConteneurNouvelleEtude(int width, int height, Conteneur precedent, Fenetre fen, String nom) {
+		super(width, height, FenetreAccueil.theme.getBackground());
 		this.precedent = precedent;
 		this.fen = fen;
 		this.nom = nom;
@@ -68,15 +66,11 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 		this.add(conteneur);
 	}
 
-	public ConteneurNouvelleEtude(Dimension dim, Theme theme, Conteneur precedent, Fenetre fen, String nom) {
-		this((int)dim.getWidth(),(int)dim.getHeight(),theme,precedent,fen,nom);
+	public ConteneurNouvelleEtude(Dimension dim, Conteneur precedent, Fenetre fen, String nom) {
+		this((int)dim.getWidth(),(int)dim.getHeight(),precedent,fen,nom);
 	}
 
 	// GETTERS //
-
-	public Theme getTheme() {
-		return theme;
-	}
 
 	public Fenetre getFenetre() {
 		return fen;
@@ -152,10 +146,10 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 
 	private void initialiserBoutons()
 	{
-		this.bouton_back_menu = new Bouton("Retour au menu", new Dimension(180, 50), theme);
-		this.bouton_save = new Bouton("Sauvegarder l'étude", new Dimension(180, 50), theme);
-		this.bouton_delete = new Bouton("Supprimer l'étude", new Dimension(180, 50), theme);
-		this.bouton_exporter = new Bouton("Présenter l'étude", new Dimension(180, 50), theme);
+		this.bouton_back_menu = new Bouton("Retour au menu", new Dimension(180, 50));
+		this.bouton_save = new Bouton("Sauvegarder l'étude", new Dimension(180, 50));
+		this.bouton_delete = new Bouton("Supprimer l'étude", new Dimension(180, 50));
+		this.bouton_exporter = new Bouton("Présenter l'étude", new Dimension(180, 50));
 
 		this.getBoutonExporter().addActionListener(new ActionListener() {
 
@@ -323,7 +317,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 		for(int i=0;i<NB_ONGLETS;i++)
 		{
 			this.getTabs().add("Schéma "+String.valueOf(i+1), onglets[i]);
-			this.getTabs().setTabComponentAt(i, new CustomTab(titres_tabs[i],theme));
+			this.getTabs().setTabComponentAt(i, new CustomTab(titres_tabs[i]));
 			this.getTabs().getTabComponentAt(i).setForeground(Color.red);
 			((CustomTab) this.getTabs().getTabComponentAt(i)).setTaille(CustomTab.TAILLE);
 		}
@@ -334,7 +328,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 		for(int i=0;i<NB_ONGLETS;i++)
 		{
 			this.onglets[i] = new Conteneur(TAILLE_GRAND_CONTENEUR);
-			tab_graphes[i] = new TabGraphe(i+1, theme);
+			tab_graphes[i] = new TabGraphe(i+1);
 			this.onglets[i].add(tab_graphes[i]);
 			this.onglets[i].setOpaque(false);
 		}

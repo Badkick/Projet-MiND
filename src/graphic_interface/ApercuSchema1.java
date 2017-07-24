@@ -14,25 +14,19 @@ import java.io.File;
 
 public class ApercuSchema1 extends ConteneurAvecImage{
 	
-	private Theme theme;
 	private Schema1 schema1;
 	private int periode;
 	
-	public ApercuSchema1(int width, int height, Theme theme, Schema1 schema1,int periode){
-		super(width,height,Images.importerImage("themes"+File.separator+theme.getNom()+File.separator+"Apercu"+File.separator+"Schema1"+File.separator+"fond.png"));
-		this.theme=theme;
+	public ApercuSchema1(int width, int height, Schema1 schema1,int periode){
+		super(width,height,Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema1"+File.separator+"fond.png"));
 		this.schema1=schema1;
 		this.periode=periode;
 		this.initialiserTouche();
 	}
 	
-	public ApercuSchema1(Dimension dim, Theme theme, Schema1 schema1)
+	public ApercuSchema1(Dimension dim, Schema1 schema1)
 	{
-		this((int)dim.getWidth(),(int)dim.getHeight(),theme,schema1,0);
-	}
-	
-	public Theme getTheme(){
-		return this.theme;
+		this((int)dim.getWidth(),(int)dim.getHeight(),schema1,0);
 	}
 	
 	public Schema1 getSchema1(){
@@ -41,10 +35,6 @@ public class ApercuSchema1 extends ConteneurAvecImage{
 	
 	public int getPeriode(){
 		return this.periode;
-	}
-	
-	public void setTheme(Theme theme){
-		this.theme=theme;
 	}
 	
 	public void setSchema1(Schema1 schema1){
@@ -56,10 +46,10 @@ public class ApercuSchema1 extends ConteneurAvecImage{
 	}
 	
 	public void drawCenteredString(Graphics g, String text, int abscisse, int ordonnee, int width, int height){
-		FontMetrics metrics = g.getFontMetrics(this.getTheme().getPolice());
+		FontMetrics metrics = g.getFontMetrics(FenetreAccueil.theme.getPolice());
 		int x = abscisse +(width - metrics.stringWidth(text))/2;
 		int y = ordonnee + (height - metrics.getHeight())/2 + metrics.getAscent();
-		g.setFont(this.getTheme().getPolice());
+		g.setFont(FenetreAccueil.theme.getPolice());
 		g.setColor(Color.black);
 		g.drawString(text, x, y);
 	}

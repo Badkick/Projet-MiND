@@ -10,18 +10,16 @@ public class ActionBoutonSchema2 implements ActionListener {
 
 	private boolean selectionne;
 	private ConteneurSchema conteneur;
-	private Theme theme;
 
 	// CONSTRUCTEURS //
 
-	public ActionBoutonSchema2(ConteneurSchema conteneur, boolean selectionne, Theme theme) {
+	public ActionBoutonSchema2(ConteneurSchema conteneur, boolean selectionne) {
 		this.selectionne = selectionne;
 		this.conteneur = conteneur;
-		this.theme = theme;
 	}
 
-	public ActionBoutonSchema2(ConteneurSchema conteneur, Theme theme) {
-		this(conteneur,false,theme);
+	public ActionBoutonSchema2(ConteneurSchema conteneur) {
+		this(conteneur,false);
 	}
 
 	// GETTERS //
@@ -50,7 +48,7 @@ public class ActionBoutonSchema2 implements ActionListener {
 	private void activerBouton(Bouton b)
 	{
 		b.setEnabled(true);
-		b.resetImg(theme);
+		b.resetImg();
 	}
 
 }

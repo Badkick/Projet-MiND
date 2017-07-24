@@ -20,7 +20,6 @@ public class BoutonEtude extends ConteneurAvecImage {
 	
 	// VARIABLES INSTANCE //
 	
-	private Theme theme;
 	private int id;
 	private JLabel conteneur_nom;
 	private String nom = "";
@@ -29,23 +28,22 @@ public class BoutonEtude extends ConteneurAvecImage {
 	
 	// CONTRUCTEURS //
 
-	public BoutonEtude(Theme theme, String nom) {
-		super(LARGEUR, HAUTEUR, theme.getSelectionEtude());
-		this.theme = theme;
-		this.nom = nom;	
+	public BoutonEtude(String nom) {
+		super(LARGEUR, HAUTEUR, FenetreAccueil.theme.getSelectionEtude());
+		this.nom = nom;
 		this.conteneur_nom = new JLabel();
 		this.conteneur_nom.setOpaque(false);
 		this.conteneur_nom.setText(nom);
 		this.conteneur_nom.setPreferredSize(new Dimension((int)(LARGEUR / 2), HAUTEUR-20));
 		this.conteneur_nom.setMinimumSize(new Dimension((int)(LARGEUR / 2), HAUTEUR-20));
 		this.conteneur_nom.setMaximumSize(new Dimension((int)(LARGEUR / 2), HAUTEUR-20));
-		this.conteneur_nom.setFont(this.getTheme().getPolice());
-		this.conteneur_nom.setForeground(this.getTheme().getCouleurTexte());
+		this.conteneur_nom.setFont(FenetreAccueil.theme.getPolice());
+		this.conteneur_nom.setForeground(FenetreAccueil.theme.getCouleurTexte());
 		this.conteneur_nom.setToolTipText(nom);
-		this.editer = new Bouton("Modifier", new Dimension(100, 50), theme);
-		this.presenter = new Bouton("Présentation", new Dimension(100, 50), theme);
+		this.editer = new Bouton("Modifier", new Dimension(100, 50));
+		this.presenter = new Bouton("Présentation", new Dimension(100, 50));
 		
-		this.editer.addActionListener(new ChargerEtude(this.getNom(),theme));
+		this.editer.addActionListener(new ChargerEtude(this.getNom()));
 		
 		GroupLayout layout = new GroupLayout(this);
 		this.setLayout(layout);
@@ -89,11 +87,6 @@ public class BoutonEtude extends ConteneurAvecImage {
 		return presenter;
 	}
 	
-	public Theme getTheme()
-	{
-		return this.theme;
-	}
-	
 	public JLabel getConteneurNom()
 	{
 		return this.conteneur_nom;
@@ -123,7 +116,7 @@ public class BoutonEtude extends ConteneurAvecImage {
 	public void paintComponent(Graphics g)
 	{
 		Graphics2D g2d = (Graphics2D)g;
-		g2d.setColor(this.getTheme().getCouleurTexte());
+		g2d.setColor(FenetreAccueil.theme.getCouleurTexte());
 		g2d.drawImage(this.getImg(), 0, 0, this.getWidth(), this.getHeight(), this);
 	}
 	

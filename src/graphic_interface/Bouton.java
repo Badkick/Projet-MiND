@@ -17,7 +17,6 @@ public class Bouton extends JButton implements MouseListener {
 	// VARIABLES DE CLASSE //
 
 	private static final long serialVersionUID = 1L;
-	private Theme theme;
 	private String name = "Bouton";
 	private Image img;
 	private Image img_repos;
@@ -29,18 +28,18 @@ public class Bouton extends JButton implements MouseListener {
 	// CONSTRUCTEURS //
 
 	// constructeur de base
-	public Bouton(String nom, Dimension dim, Theme theme)
+	public Bouton(String nom, Dimension dim)
 	{
 		this.setText(nom);
 		this.name = nom;
-		this.police = theme.getPolice();
-		this.couleurTexte = theme.getCouleurTexte();
+		this.police = FenetreAccueil.theme.getPolice();
+		this.couleurTexte = FenetreAccueil.theme.getCouleurTexte();
 		this.setPreferredSize(dim);
 		this.setMaximumSize(dim);
 		this.setMinimumSize(dim);
-		img_repos = theme.getBRepos();
-		img_clic = theme.getBClic();
-		img_survol = theme.getBSurvol();
+		img_repos = FenetreAccueil.theme.getBRepos();
+		img_clic = FenetreAccueil.theme.getBClic();
+		img_survol = FenetreAccueil.theme.getBSurvol();
 
 		this.img = img_repos;
 
@@ -146,13 +145,6 @@ public class Bouton extends JButton implements MouseListener {
 	{
 		return this.img_survol;
 	}
-	
-	public Theme getTheme()
-	{
-		return this.theme;
-	}
-
-
 
 	// METHODES //
 
@@ -180,14 +172,12 @@ public class Bouton extends JButton implements MouseListener {
 		this.setImgSurvol(img);
 	}
 	
-	public void resetImg(Theme theme)
+	public void resetImg()
 	{
-		this.setImgClic(theme.getBClic());
-		this.setImgRepos(theme.getBRepos());
-		this.setImgSurvol(theme.getBSurvol());
+		this.setImgClic(FenetreAccueil.theme.getBClic());
+		this.setImgRepos(FenetreAccueil.theme.getBRepos());
+		this.setImgSurvol(FenetreAccueil.theme.getBSurvol());
 	}
-
-
 
 	// LISTENERS //	
 

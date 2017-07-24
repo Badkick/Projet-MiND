@@ -10,11 +10,9 @@ import java.io.IOException;
 public class ChargerEtude implements ActionListener {
 	
 	private String nom;
-	private Theme theme ;
 
-	public ChargerEtude(String nom,Theme theme) {
+	public ChargerEtude(String nom) {
 		this.nom=nom;
-		this.theme=theme;
 	}
 
 	@Override
@@ -159,9 +157,9 @@ public class ChargerEtude implements ActionListener {
 		}
 		
 		FenetreAccueil.etude=new Etude(schema1,schema2,schema3,schema4,schema5,schema6);
-		ConteneurAvecImage conteneur_principal = new ConteneurAvecImage(0,0,theme.getBackground());
+		ConteneurAvecImage conteneur_principal = new ConteneurAvecImage(0,0,FenetreAccueil.theme.getBackground());
 		conteneur_principal.setTaille(FenetreAccueil.fenetre_principale.getSize());
-		ConteneurNouvelleEtude nouvelle_etude = new ConteneurNouvelleEtude(FenetreAccueil.fenetre_principale.getSize(), theme, FenetreAccueil.conteneur_principal, FenetreAccueil.fenetre_principale,nom);
+		ConteneurNouvelleEtude nouvelle_etude = new ConteneurNouvelleEtude(FenetreAccueil.fenetre_principale.getSize(), FenetreAccueil.conteneur_principal, FenetreAccueil.fenetre_principale,nom);
 		nouvelle_etude.save();
 		FenetreAccueil.fenetre_principale.setConteneur(nouvelle_etude,"Projet MiND - "+nom);
 		System.out.println(String.valueOf(FenetreAccueil.etude.getS1().getApr_contr_tech().get()));
