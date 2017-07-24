@@ -110,21 +110,27 @@ public class ChargerEtude implements ActionListener {
 				try{
 					note_mtn=Integer.valueOf(aLire_2.readLine());
 				}catch(Exception ex){}
-				mtn_notees[i]=new ElementNote(nom_mtn,note_mtn);
+				try{
+					mtn_notees[i]=new ElementNote(nom_mtn,note_mtn);
+				}catch(NullPointerException ex){mtn_notees[i]=new ElementNote(nom_mtn,Integer.MAX_VALUE);}
 				try{
 					nom_apr=Structure.getByName(aLire_2.readLine());
 				}catch(Exception ex){}
 				try{
 					note_apr=Integer.valueOf(aLire_2.readLine());
 				}catch(Exception ex){}
-				apr_notees[i]=new ElementNote(nom_apr,note_apr);
+				try{
+					apr_notees[i]=new ElementNote(nom_apr,note_apr);
+				}catch(NullPointerException ex){apr_notees[i]=new ElementNote(nom_mtn,Integer.MAX_VALUE);}
 				try{
 					nom_ris=Structure.getByName(aLire_2.readLine());
 				}catch(Exception ex){}
 				try{
 					note_ris=Integer.valueOf(aLire_2.readLine());
 				}catch(Exception ex){}
-				ris_notees[i]=new ElementNote(nom_ris,note_ris);
+				try{
+					ris_notees[i]=new ElementNote(nom_ris,note_ris);
+				}catch(NullPointerException ex){ris_notees[i]=new ElementNote(nom_mtn,Integer.MAX_VALUE);}
 			}
 			aLire_2.close();
 			schema2=new Schema2(st_1,st_2,st_ris,mtn_notees,apr_notees,ris_notees);
@@ -166,21 +172,27 @@ public class ChargerEtude implements ActionListener {
 				try{
 					note_mtn=Integer.valueOf(aLire_3.readLine());
 				}catch(Exception ex){}
-				mtn_notees[i]=new ElementNote(nom_mtn,note_mtn);
+				try{
+					mtn_notees[i]=new ElementNote(nom_mtn,note_mtn);
+				}catch(NullPointerException ex){mtn_notees[i]=new ElementNote(nom_mtn,Integer.MAX_VALUE);}
 				try{
 					nom_apr=Organisation.getByName(aLire_3.readLine());
 				}catch(Exception ex){}
 				try{
 					note_apr=Integer.valueOf(aLire_3.readLine());
 				}catch(Exception ex){}
-				apr_notees[i]=new ElementNote(nom_apr,note_apr);
+				try{
+					apr_notees[i]=new ElementNote(nom_apr,note_apr);
+				}catch(NullPointerException ex){apr_notees[i]=new ElementNote(nom_mtn,Integer.MAX_VALUE);}
 				try{
 					nom_ris=Organisation.getByName(aLire_3.readLine());
 				}catch(Exception ex){}
 				try{
 					note_ris=Integer.valueOf(aLire_3.readLine());
 				}catch(Exception ex){}
-				ris_notees[i]=new ElementNote(nom_ris,note_ris);
+				try{
+					ris_notees[i]=new ElementNote(nom_ris,note_ris);
+				}catch(NullPointerException ex){mtn_notees[i]=new ElementNote(nom_mtn,Integer.MAX_VALUE);}
 			}
 			aLire_3.close();
 			schema3=new Schema3(org_1,org_2,org_ris,mtn_notees,apr_notees,ris_notees);
