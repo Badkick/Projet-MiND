@@ -20,20 +20,56 @@ public class ChargerEtude implements ActionListener {
 		// mettre ici ce qui se passera quand on appuiera sur le bouton Modifier
 		String contraintes="saves"+File.separator+nom+File.separator+"Contraintes.txt";
 		Schema1 schema1=null;
+		Pourcentage p_1=null;
+		Pourcentage p_2=null;
+		Pourcentage r_1=null;
+		Pourcentage p_3=null;
+		Pourcentage p_4=null;
+		Pourcentage r_2=null;
+		Pourcentage p_5=null;
+		Pourcentage p_6=null;
+		Pourcentage r_3=null;
+		Pourcentage p_7=null;
+		Pourcentage p_8=null;
+		Pourcentage r_4=null;
 		try {
 			BufferedReader aLire_1 = new BufferedReader(new FileReader(contraintes));
-			Pourcentage p_1=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
-			Pourcentage p_2=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
-			Pourcentage r_1=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
-			Pourcentage p_3=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
-			Pourcentage p_4=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
-			Pourcentage r_2=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
-			Pourcentage p_5=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
-			Pourcentage p_6=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
-			Pourcentage r_3=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
-			Pourcentage p_7=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
-			Pourcentage p_8=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
-			Pourcentage r_4=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
+			try{
+				p_1=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
+			}catch(Exception ex){}
+			try{
+				p_2=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
+			}catch(Exception ex){}
+			try{
+				r_1=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
+			}catch(Exception ex){}
+			try{
+				p_3=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
+			}catch(Exception ex){}
+			try{
+				p_4=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
+			}catch(Exception ex){}
+			try{
+				r_2=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
+			}catch(Exception ex){}
+			try{
+				p_5=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
+			}catch(Exception ex){}
+			try{
+				p_6=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
+			}catch(Exception ex){}
+			try{
+				r_3=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
+			}catch(Exception ex){}
+			try{
+				p_7=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
+			}catch(Exception ex){}
+			try{
+				p_8=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
+			}catch(Exception ex){}
+			try{
+				r_4=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
+			}catch(Exception ex){}
 			String risque=aLire_1.readLine();
 			aLire_1.close();
 			schema1=new Schema1(p_1,p_2,r_1,p_3,p_4,r_2,p_5,p_6,r_3,p_7,p_8,r_4,risque);
@@ -48,7 +84,7 @@ public class ChargerEtude implements ActionListener {
 			BufferedReader aLire_2 = new BufferedReader(new FileReader(structures));
 			Structure st_1=Structure.getByName(aLire_2.readLine());
 			Structure st_2=Structure.getByName(aLire_2.readLine());
-			Structure r_1=Structure.getByName(aLire_2.readLine());
+			Structure st_ris=Structure.getByName(aLire_2.readLine());
 			ElementNote<Structure>[] mtn_notees = new ElementNote[4];
 			ElementNote<Structure>[] apr_notees = new ElementNote[4];
 			ElementNote<Structure>[] ris_notees = new ElementNote[4];
@@ -58,7 +94,7 @@ public class ChargerEtude implements ActionListener {
 				ris_notees[i]=new ElementNote(Structure.getByName(aLire_2.readLine()),Integer.valueOf(aLire_2.readLine()));
 			}
 			aLire_2.close();
-			schema2=new Schema2(st_1,st_2,r_1,mtn_notees,apr_notees,ris_notees);
+			schema2=new Schema2(st_1,st_2,st_ris,mtn_notees,apr_notees,ris_notees);
 			
 		}
 		catch (IOException e2){
@@ -71,7 +107,7 @@ public class ChargerEtude implements ActionListener {
 			BufferedReader aLire_3 = new BufferedReader(new FileReader(organisations));
 			Organisation org_1=Organisation.getByName(aLire_3.readLine());
 			Organisation org_2=Organisation.getByName(aLire_3.readLine());
-			Organisation r_1=Organisation.getByName(aLire_3.readLine());
+			Organisation org_ris=Organisation.getByName(aLire_3.readLine());
 			ElementNote<Organisation>[] mtn_notees = new ElementNote[4];
 			ElementNote<Organisation>[] apr_notees = new ElementNote[4];
 			ElementNote<Organisation>[] ris_notees = new ElementNote[4];
@@ -81,7 +117,7 @@ public class ChargerEtude implements ActionListener {
 				ris_notees[i]=new ElementNote(Organisation.getByName(aLire_3.readLine()),Integer.valueOf(aLire_3.readLine()));
 			}
 			aLire_3.close();
-			schema3=new Schema3(org_1,org_2,r_1,mtn_notees,apr_notees,ris_notees);
+			schema3=new Schema3(org_1,org_2,org_ris,mtn_notees,apr_notees,ris_notees);
 		}
 		catch (IOException e3){
 			System.out.println("Une operation sur le fichier Organisations a leve l'exception "+e3);
@@ -113,14 +149,14 @@ public class ChargerEtude implements ActionListener {
 		Schema5 schema5=null;
 		try {
 			BufferedReader aLire_5 = new BufferedReader(new FileReader(identites));
-			Pourcentage p_1=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
+			/*Pourcentage p_1=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
 			Pourcentage p_2=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
 			Pourcentage p_3=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
 			Pourcentage p_4=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
 			Pourcentage p_5=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
 			Pourcentage p_6=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
 			Pourcentage p_7=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
-			Pourcentage p_8=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
+			Pourcentage p_8=new Pourcentage(Integer.valueOf(aLire_5.readLine()));*/
 			Pourcentage p_9=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
 			Pourcentage p_10=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
 			Pourcentage p_11=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
@@ -162,7 +198,6 @@ public class ChargerEtude implements ActionListener {
 		ConteneurNouvelleEtude nouvelle_etude = new ConteneurNouvelleEtude(FenetreAccueil.fenetre_principale.getSize(), FenetreAccueil.conteneur_principal, FenetreAccueil.fenetre_principale,nom);
 		nouvelle_etude.save();
 		FenetreAccueil.fenetre_principale.setConteneur(nouvelle_etude,"Projet MiND - "+nom);
-		System.out.println(String.valueOf(FenetreAccueil.etude.getS1().getApr_contr_tech().get()));
 	}
 
 }
