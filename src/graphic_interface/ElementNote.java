@@ -34,7 +34,7 @@ public class ElementNote<E extends ElementPouvantEtreNote> { // pour schémas 2 e
 	
 	public void setNote(int note)
 	{
-		try{this.note = (note<NOTE_MIN ? NOTE_MIN : (note>NOTE_MAX ? NOTE_MAX : note));} catch(NullPointerException ex) {}
+		try{this.note = (note<NOTE_MIN ? NOTE_MIN : (note>NOTE_MAX ? NOTE_MAX : note));} catch(NullPointerException ex) {this.note = Integer.MAX_VALUE;}
 	}
 	
 	
