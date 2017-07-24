@@ -142,8 +142,6 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 		this.initialiserTabs();
 		this.initialiserBoutons();
 		this.initialiserLayout();
-		System.out.println(nullToEmpty(FenetreAccueil.etude.getS1().getApr_etabl_prot()));
-		System.out.println(nullToEmpty(FenetreAccueil.etude.getS1().getRis_etabl_prot()));
 	}
 
 	private void initialiserBoutons()

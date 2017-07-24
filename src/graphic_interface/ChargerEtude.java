@@ -80,11 +80,14 @@ public class ChargerEtude implements ActionListener {
 		
 		String structures="saves"+File.separator+nom+File.separator+"Structures.txt";
 		Schema2 schema2=null;
+		Structure st_1=null;
+		Structure st_2=null;
+		Structure st_ris=null;
 		try {
 			BufferedReader aLire_2 = new BufferedReader(new FileReader(structures));
-			Structure st_1=Structure.getByName(aLire_2.readLine());
-			Structure st_2=Structure.getByName(aLire_2.readLine());
-			Structure st_ris=Structure.getByName(aLire_2.readLine());
+			st_1=Structure.getByName(aLire_2.readLine());
+			st_2=Structure.getByName(aLire_2.readLine());
+			st_ris=Structure.getByName(aLire_2.readLine());
 			ElementNote<Structure>[] mtn_notees = new ElementNote[4];
 			ElementNote<Structure>[] apr_notees = new ElementNote[4];
 			ElementNote<Structure>[] ris_notees = new ElementNote[4];
