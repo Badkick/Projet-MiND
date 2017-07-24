@@ -3,6 +3,8 @@ package graphic_interface;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.text.NumberFormat;
 import java.text.ParseException;
 
@@ -90,6 +92,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	private Bouton b_mecaniste;
 	private Bouton b_simple_centralisee;
 	private Bouton b_entrepreneuriale;
+	private Bouton b_annuler;
 
 	// cas 3
 
@@ -179,6 +182,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			this.b_mecaniste = new Bouton("Structure\nMECANISTE",dim_boutons);
 			this.b_simple_centralisee = new Bouton("Structure\nSIMPLE CENTRALISEE",dim_boutons);
 			this.b_entrepreneuriale = new Bouton("Structure\nENTREPRENEURIALE",dim_boutons);
+			this.b_annuler = new Bouton("R‡Z", new Dimension(120, 40));
 
 			this.b_entrepreneuriale.setImgRepos(FenetreAccueil.theme.getbSchema2Repos());
 			this.b_entrepreneuriale.setImgSurvol(FenetreAccueil.theme.getbSchema2Survol());
@@ -219,10 +223,25 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			this.b_simple_centralisee.updateCouleur();
 			this.b_simple_centralisee.repaint();
 			this.b_simple_centralisee.addActionListener(action);
+			
+			this.b_annuler.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					action.activerBouton(b_entrepreneuriale);
+					action.activerBouton(b_simple_marche);
+					action.activerBouton(b_professionnelle);
+					action.activerBouton(b_mecaniste);
+					action.activerBouton(b_simple_centralisee);
+					action.setSelected(false);
+				}
+			});
 
 			this.layout.setHorizontalGroup(
 					this.layout.createSequentialGroup()
-					.addGap(220)
+					.addGap(5)
+					.addComponent(b_annuler)
+					.addGap(95)
 					.addGroup(this.layout.createParallelGroup()
 							.addComponent(b_mecaniste)
 							.addComponent(b_simple_centralisee)
@@ -265,6 +284,8 @@ public class ConteneurSchema extends ConteneurAvecImage {
 									.addComponent(b_entrepreneuriale)
 									)
 							)
+					.addGap(50)
+					.addComponent(b_annuler)
 					);
 			break;
 		case 3:

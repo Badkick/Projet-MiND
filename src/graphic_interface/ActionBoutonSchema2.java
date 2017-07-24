@@ -28,6 +28,13 @@ public class ActionBoutonSchema2 implements ActionListener {
 	{
 		return this.selectionne;
 	}
+	
+	// SETTERS //
+	
+	public void setSelected(boolean selected)
+	{
+		this.selectionne = selected;
+	}
 
 	// METHODES //
 
@@ -39,16 +46,20 @@ public class ActionBoutonSchema2 implements ActionListener {
 		}
 	}
 	
-	private void desactiverBouton(Bouton b)
+	public void desactiverBouton(Bouton b)
 	{
 		b.setEnabled(false);
 		b.setImgFixe(Theme.NIGHT.getbSchema2Survol());
+		b.updateCouleur();
 	}
 	
-	private void activerBouton(Bouton b)
+	public void activerBouton(Bouton b)
 	{
 		b.setEnabled(true);
-		b.resetImg();
+		b.setImgRepos(FenetreAccueil.theme.getbSchema2Repos());
+		b.setImgSurvol(FenetreAccueil.theme.getbSchema2Survol());
+		b.setImgClic(FenetreAccueil.theme.getbSchema2Survol());
+		b.updateCouleur();
 	}
 
 }
