@@ -14,7 +14,7 @@ public class FenetreAccueil {
 
 	public static ConteneurAvecImage conteneur_principal;
 	public static Fenetre fenetre_principale;
-	public static Etude etude;
+	public static Etude etude=new Etude();
 	public static Theme theme;
 	
 	public FenetreAccueil(Theme th) {

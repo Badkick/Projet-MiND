@@ -353,7 +353,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 	}
 	
 	public String nullToEmpty_StructureName(ElementNote<Structure> str){
-		return (str==null ? "" : str.getElement().getNom());
+		return (str==null ||str.getElement()==null ? "" : str.getElement().getNom());
 	}
 	
 	public String nullToEmpty_StructureNote(ElementNote<Structure> str){
@@ -365,7 +365,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 	}
 	
 	public String nullToEmpty_OrganisationName(ElementNote<Organisation> org){
-		return (org==null ? "" : org.getElement().getNom());
+		return (org==null ||org.getElement()==null ? "" : org.getElement().getNom());
 	}
 	
 	public String nullToEmpty_OrganisationNote(ElementNote<Organisation> org){

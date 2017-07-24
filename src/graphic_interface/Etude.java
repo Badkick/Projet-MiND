@@ -25,6 +25,18 @@ public class Etude {
 	
 	public Etude()
 	{
+		ElementNote<Structure>[] structure = new ElementNote[4];
+		ElementNote<Organisation>[] organisation = new ElementNote[4];
+		for (int i=0;i<4;i++){
+			structure[i]=null;
+			organisation[i]=null;
+		}
+		this.s1=new Schema1(null,null,null,null,null,null,null,null,null,null,null,null,null);
+		this.s2=new Schema2(null,null,null,structure,structure,structure);
+		this.s3=new Schema3(null,null,null,organisation,organisation,organisation);
+		this.s4=new Schema4(null,null,null,null,null,null,null,null,null);
+		this.s5=new Schema5(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null);
+		this.s6=new Schema6(null,null,null);
 		
 	}
 	
