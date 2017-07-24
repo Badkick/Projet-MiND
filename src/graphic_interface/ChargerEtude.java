@@ -85,16 +85,46 @@ public class ChargerEtude implements ActionListener {
 		Structure st_ris=null;
 		try {
 			BufferedReader aLire_2 = new BufferedReader(new FileReader(structures));
-			st_1=Structure.getByName(aLire_2.readLine());
-			st_2=Structure.getByName(aLire_2.readLine());
-			st_ris=Structure.getByName(aLire_2.readLine());
+			try{
+				st_1=Structure.getByName(aLire_2.readLine());
+			}catch(Exception ex){}
+			try{
+				st_2=Structure.getByName(aLire_2.readLine());
+			}catch(Exception ex){}
+			try{
+				st_ris=Structure.getByName(aLire_2.readLine());
+			}catch(Exception ex){}
 			ElementNote<Structure>[] mtn_notees = new ElementNote[4];
 			ElementNote<Structure>[] apr_notees = new ElementNote[4];
 			ElementNote<Structure>[] ris_notees = new ElementNote[4];
 			for(int i=0;i<4;i++){
-				mtn_notees[i]=new ElementNote(Structure.getByName(aLire_2.readLine()),Integer.valueOf(aLire_2.readLine()));
-				apr_notees[i]=new ElementNote(Structure.getByName(aLire_2.readLine()),Integer.valueOf(aLire_2.readLine()));
-				ris_notees[i]=new ElementNote(Structure.getByName(aLire_2.readLine()),Integer.valueOf(aLire_2.readLine()));
+				Structure nom_mtn=null;
+				Structure nom_apr=null;
+				Structure nom_ris=null;
+				Integer note_mtn=null;
+				Integer note_apr=null;
+				Integer note_ris=null;
+				try{
+					nom_mtn=Structure.getByName(aLire_2.readLine());
+				}catch(Exception ex){}
+				try{
+					note_mtn=Integer.valueOf(aLire_2.readLine());
+				}catch(Exception ex){}
+				mtn_notees[i]=new ElementNote(nom_mtn,note_mtn);
+				try{
+					nom_apr=Structure.getByName(aLire_2.readLine());
+				}catch(Exception ex){}
+				try{
+					note_apr=Integer.valueOf(aLire_2.readLine());
+				}catch(Exception ex){}
+				apr_notees[i]=new ElementNote(nom_apr,note_apr);
+				try{
+					nom_ris=Structure.getByName(aLire_2.readLine());
+				}catch(Exception ex){}
+				try{
+					note_ris=Integer.valueOf(aLire_2.readLine());
+				}catch(Exception ex){}
+				ris_notees[i]=new ElementNote(nom_ris,note_ris);
 			}
 			aLire_2.close();
 			schema2=new Schema2(st_1,st_2,st_ris,mtn_notees,apr_notees,ris_notees);
@@ -106,18 +136,51 @@ public class ChargerEtude implements ActionListener {
 		
 		String organisations="saves"+File.separator+nom+File.separator+"Organisations.txt";
 		Schema3 schema3=null;
+		Organisation org_1=null;
+		Organisation org_2=null;
+		Organisation org_ris=null;
 		try {
 			BufferedReader aLire_3 = new BufferedReader(new FileReader(organisations));
-			Organisation org_1=Organisation.getByName(aLire_3.readLine());
-			Organisation org_2=Organisation.getByName(aLire_3.readLine());
-			Organisation org_ris=Organisation.getByName(aLire_3.readLine());
+			try{
+				org_1=Organisation.getByName(aLire_3.readLine());
+			}catch(Exception ex){}
+			try{
+				org_2=Organisation.getByName(aLire_3.readLine());
+			}catch(Exception ex){}
+			try{
+				org_ris=Organisation.getByName(aLire_3.readLine());
+			}catch(Exception ex){}
 			ElementNote<Organisation>[] mtn_notees = new ElementNote[4];
 			ElementNote<Organisation>[] apr_notees = new ElementNote[4];
 			ElementNote<Organisation>[] ris_notees = new ElementNote[4];
 			for(int i=0;i<4;i++){
-				mtn_notees[i]=new ElementNote(Organisation.getByName(aLire_3.readLine()),Integer.valueOf(aLire_3.readLine()));
-				apr_notees[i]=new ElementNote(Organisation.getByName(aLire_3.readLine()),Integer.valueOf(aLire_3.readLine()));
-				ris_notees[i]=new ElementNote(Organisation.getByName(aLire_3.readLine()),Integer.valueOf(aLire_3.readLine()));
+				Organisation nom_mtn=null;
+				Organisation nom_apr=null;
+				Organisation nom_ris=null;
+				Integer note_mtn=null;
+				Integer note_apr=null;
+				Integer note_ris=null;
+				try{
+					nom_mtn=Organisation.getByName(aLire_3.readLine());
+				}catch(Exception ex){}
+				try{
+					note_mtn=Integer.valueOf(aLire_3.readLine());
+				}catch(Exception ex){}
+				mtn_notees[i]=new ElementNote(nom_mtn,note_mtn);
+				try{
+					nom_apr=Organisation.getByName(aLire_3.readLine());
+				}catch(Exception ex){}
+				try{
+					note_apr=Integer.valueOf(aLire_3.readLine());
+				}catch(Exception ex){}
+				apr_notees[i]=new ElementNote(nom_apr,note_apr);
+				try{
+					nom_ris=Organisation.getByName(aLire_3.readLine());
+				}catch(Exception ex){}
+				try{
+					note_ris=Integer.valueOf(aLire_3.readLine());
+				}catch(Exception ex){}
+				ris_notees[i]=new ElementNote(nom_ris,note_ris);
 			}
 			aLire_3.close();
 			schema3=new Schema3(org_1,org_2,org_ris,mtn_notees,apr_notees,ris_notees);

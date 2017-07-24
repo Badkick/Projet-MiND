@@ -8,12 +8,12 @@ simple_marche
 mecaniste
 7
 mecaniste
-4
+
 professionnelle
 2
 simple_marche
-5
-simple_centralisee
+4
+entrepreneuriale
 10
 simple_centralisee
 0
