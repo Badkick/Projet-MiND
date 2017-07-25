@@ -245,6 +245,11 @@ public class ConteneurSchema extends ConteneurAvecImage {
 					action.activerBouton(b_simple_centralisee);
 					action.setBoutonSelected(null);
 					action.setSelected(false);
+					note_entrepreneuriale.setText("");
+					note_simple_marche.setText("");
+					note_professionnelle.setText("");
+					note_mecaniste.setText("");
+					note_simple_centralisee.setText("");
 				}
 			});
 
