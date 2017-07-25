@@ -360,8 +360,6 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			return new Pourcentage(Float.parseFloat(this.getTextContr_tech().substring(0, this.getTextContr_tech().length()-2).replace(',', '.')));
 		} catch (Exception e) {
 			return null;
-		} catch (NumberFormatException e) {
-			return null;
 		}
 	}
 
