@@ -200,11 +200,11 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 				String repertoire=getNom();
 
 				save();
-				
+				/*
 				for(int i=0;i<ConteneurNouvelleEtude.NB_ONGLETS;i++){
 					new UpdateEtude(getTabGraphe()[i]).updateEtude(getTabGraphe()[i]);
 				}
-				
+				*/
 				
 				try {
 					Files.createDirectories(Paths.get("saves"+File.separator+repertoire));

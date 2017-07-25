@@ -33,44 +33,47 @@ public class ChargerEtude implements ActionListener {
 			Pourcentage p_7=null;
 			Pourcentage p_8=null;
 			Pourcentage r_4=null;
+			String risque=null;
 			BufferedReader aLire_1 = new BufferedReader(new FileReader(contraintes));
 			try{
-				p_1=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
+				p_1=new Pourcentage(Float.parseFloat(aLire_1.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_2=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
+				p_2=new Pourcentage(Float.parseFloat(aLire_1.readLine()));
 			}catch(Exception ex){}
 			try{
-				r_1=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
+				r_1=new Pourcentage(Float.parseFloat(aLire_1.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_3=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
+				p_3=new Pourcentage(Float.parseFloat(aLire_1.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_4=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
+				p_4=new Pourcentage(Float.parseFloat(aLire_1.readLine()));
 			}catch(Exception ex){}
 			try{
-				r_2=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
+				r_2=new Pourcentage(Float.parseFloat(aLire_1.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_5=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
+				p_5=new Pourcentage(Float.parseFloat(aLire_1.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_6=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
+				p_6=new Pourcentage(Float.parseFloat(aLire_1.readLine()));
 			}catch(Exception ex){}
 			try{
-				r_3=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
+				r_3=new Pourcentage(Float.parseFloat(aLire_1.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_7=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
+				p_7=new Pourcentage(Float.parseFloat(aLire_1.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_8=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
+				p_8=new Pourcentage(Float.parseFloat(aLire_1.readLine()));
 			}catch(Exception ex){}
 			try{
-				r_4=new Pourcentage(Integer.valueOf(aLire_1.readLine()));
+				r_4=new Pourcentage(Float.parseFloat(aLire_1.readLine()));
 			}catch(Exception ex){}
-			String risque=aLire_1.readLine();
+			try{
+				risque=aLire_1.readLine();
+			}catch(Exception ex){}
 			aLire_1.close();
 			schema1=new Schema1(p_1,p_2,r_1,p_3,p_4,r_2,p_5,p_6,r_3,p_7,p_8,r_4,risque);
 		}
@@ -237,102 +240,102 @@ public class ChargerEtude implements ActionListener {
 			Pourcentage p_29=null;
 			Pourcentage p_30=null;
 			try{
-				p_1=new Pourcentage(Integer.valueOf(aLire_4.readLine()));
+				p_1=new Pourcentage(Float.parseFloat(aLire_4.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_2=new Pourcentage(Integer.valueOf(aLire_4.readLine()));
+				p_2=new Pourcentage(Float.parseFloat(aLire_4.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_3=new Pourcentage(Integer.valueOf(aLire_4.readLine()));
+				p_3=new Pourcentage(Float.parseFloat(aLire_4.readLine()));
 			}catch(Exception ex){}
 			Consensus cons_1=new Consensus(p_1,p_2,p_3);
 			try{	
-				p_4=new Pourcentage(Integer.valueOf(aLire_4.readLine()));
+				p_4=new Pourcentage(Float.parseFloat(aLire_4.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_5=new Pourcentage(Integer.valueOf(aLire_4.readLine()));
+				p_5=new Pourcentage(Float.parseFloat(aLire_4.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_6=new Pourcentage(Integer.valueOf(aLire_4.readLine()));
+				p_6=new Pourcentage(Float.parseFloat(aLire_4.readLine()));
 			}catch(Exception ex){}
 			Consensus cons_2=new Consensus(p_4,p_5,p_6);
 			try{
-				p_7=new Pourcentage(Integer.valueOf(aLire_4.readLine()));
+				p_7=new Pourcentage(Float.parseFloat(aLire_4.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_8=new Pourcentage(Integer.valueOf(aLire_4.readLine()));
+				p_8=new Pourcentage(Float.parseFloat(aLire_4.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_9=new Pourcentage(Integer.valueOf(aLire_4.readLine()));
+				p_9=new Pourcentage(Float.parseFloat(aLire_4.readLine()));
 			}catch(Exception ex){}
 			Consensus ris_1=new Consensus(p_7,p_8,p_9);
 			try{
-				p_10=new Pourcentage(Integer.valueOf(aLire_4.readLine()));
+				p_10=new Pourcentage(Float.parseFloat(aLire_4.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_11=new Pourcentage(Integer.valueOf(aLire_4.readLine()));
+				p_11=new Pourcentage(Float.parseFloat(aLire_4.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_12=new Pourcentage(Integer.valueOf(aLire_4.readLine()));
+				p_12=new Pourcentage(Float.parseFloat(aLire_4.readLine()));
 			}catch(Exception ex){}
 			Negociation nego_1=new Negociation(p_10,p_11,p_12);
 			try{
-				p_13=new Pourcentage(Integer.valueOf(aLire_4.readLine()));
+				p_13=new Pourcentage(Float.parseFloat(aLire_4.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_14=new Pourcentage(Integer.valueOf(aLire_4.readLine()));
+				p_14=new Pourcentage(Float.parseFloat(aLire_4.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_15=new Pourcentage(Integer.valueOf(aLire_4.readLine()));
+				p_15=new Pourcentage(Float.parseFloat(aLire_4.readLine()));
 			}catch(Exception ex){}
 			Negociation nego_2=new Negociation(p_13,p_14,p_15);
 			try{
-				p_16=new Pourcentage(Integer.valueOf(aLire_4.readLine()));
+				p_16=new Pourcentage(Float.parseFloat(aLire_4.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_17=new Pourcentage(Integer.valueOf(aLire_4.readLine()));
+				p_17=new Pourcentage(Float.parseFloat(aLire_4.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_18=new Pourcentage(Integer.valueOf(aLire_4.readLine()));
+				p_18=new Pourcentage(Float.parseFloat(aLire_4.readLine()));
 			}catch(Exception ex){}
 			Negociation ris_2=new Negociation(p_16,p_17,p_18);
 			try{
-				p_19=new Pourcentage(Integer.valueOf(aLire_4.readLine()));
+				p_19=new Pourcentage(Float.parseFloat(aLire_4.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_20=new Pourcentage(Integer.valueOf(aLire_4.readLine()));
+				p_20=new Pourcentage(Float.parseFloat(aLire_4.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_21=new Pourcentage(Integer.valueOf(aLire_4.readLine()));
+				p_21=new Pourcentage(Float.parseFloat(aLire_4.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_22=new Pourcentage(Integer.valueOf(aLire_4.readLine()));
+				p_22=new Pourcentage(Float.parseFloat(aLire_4.readLine()));
 			}catch(Exception ex){}
 			Opposition opp_1=new Opposition(p_19,p_20,p_21,p_22);
 			try{
-				p_23=new Pourcentage(Integer.valueOf(aLire_4.readLine()));
+				p_23=new Pourcentage(Float.parseFloat(aLire_4.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_24=new Pourcentage(Integer.valueOf(aLire_4.readLine()));
+				p_24=new Pourcentage(Float.parseFloat(aLire_4.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_25=new Pourcentage(Integer.valueOf(aLire_4.readLine()));
+				p_25=new Pourcentage(Float.parseFloat(aLire_4.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_26=new Pourcentage(Integer.valueOf(aLire_4.readLine()));
+				p_26=new Pourcentage(Float.parseFloat(aLire_4.readLine()));
 			}catch(Exception ex){}
 			Opposition opp_2=new Opposition(p_23,p_24,p_25,p_26);
 			try{
-				p_27=new Pourcentage(Integer.valueOf(aLire_4.readLine()));
+				p_27=new Pourcentage(Float.parseFloat(aLire_4.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_28=new Pourcentage(Integer.valueOf(aLire_4.readLine()));
+				p_28=new Pourcentage(Float.parseFloat(aLire_4.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_29=new Pourcentage(Integer.valueOf(aLire_4.readLine()));
+				p_29=new Pourcentage(Float.parseFloat(aLire_4.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_30=new Pourcentage(Integer.valueOf(aLire_4.readLine()));
+				p_30=new Pourcentage(Float.parseFloat(aLire_4.readLine()));
 			}catch(Exception ex){}
 			Opposition ris_3=new Opposition(p_27,p_28,p_29,p_30);
 			aLire_4.close();
@@ -366,58 +369,58 @@ public class ChargerEtude implements ActionListener {
 			Pourcentage p_17=null;
 			Pourcentage p_18=null;
 			try{
-				p_1=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
+				p_1=new Pourcentage(Float.parseFloat(aLire_5.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_2=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
+				p_2=new Pourcentage(Float.parseFloat(aLire_5.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_3=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
+				p_3=new Pourcentage(Float.parseFloat(aLire_5.readLine()));
 			}catch(Exception ex){}
 			try{	
-				p_4=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
+				p_4=new Pourcentage(Float.parseFloat(aLire_5.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_5=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
+				p_5=new Pourcentage(Float.parseFloat(aLire_5.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_6=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
+				p_6=new Pourcentage(Float.parseFloat(aLire_5.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_7=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
+				p_7=new Pourcentage(Float.parseFloat(aLire_5.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_8=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
+				p_8=new Pourcentage(Float.parseFloat(aLire_5.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_9=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
+				p_9=new Pourcentage(Float.parseFloat(aLire_5.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_10=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
+				p_10=new Pourcentage(Float.parseFloat(aLire_5.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_11=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
+				p_11=new Pourcentage(Float.parseFloat(aLire_5.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_12=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
+				p_12=new Pourcentage(Float.parseFloat(aLire_5.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_13=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
+				p_13=new Pourcentage(Float.parseFloat(aLire_5.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_14=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
+				p_14=new Pourcentage(Float.parseFloat(aLire_5.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_15=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
+				p_15=new Pourcentage(Float.parseFloat(aLire_5.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_16=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
+				p_16=new Pourcentage(Float.parseFloat(aLire_5.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_17=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
+				p_17=new Pourcentage(Float.parseFloat(aLire_5.readLine()));
 			}catch(Exception ex){}
 			try{
-				p_18=new Pourcentage(Integer.valueOf(aLire_5.readLine()));
+				p_18=new Pourcentage(Float.parseFloat(aLire_5.readLine()));
 			}catch(Exception ex){}
 			
 			aLire_5.close();
@@ -458,6 +461,7 @@ public class ChargerEtude implements ActionListener {
 		ConteneurNouvelleEtude nouvelle_etude = new ConteneurNouvelleEtude(FenetreAccueil.fenetre_principale.getSize(), FenetreAccueil.conteneur_principal, FenetreAccueil.fenetre_principale,nom);
 		nouvelle_etude.save();
 		FenetreAccueil.fenetre_principale.setConteneur(nouvelle_etude,"Projet MiND - "+nom);
+		
 	}
 
 }
