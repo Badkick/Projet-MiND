@@ -4,7 +4,7 @@ import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
 
 public class UpdateEtude implements ComponentListener {
-	
+
 	private TabGraphe tab;
 
 	public UpdateEtude(TabGraphe tab) {
@@ -19,21 +19,21 @@ public class UpdateEtude implements ComponentListener {
 	@Override
 	public void componentMoved(ComponentEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void componentResized(ComponentEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void componentShown(ComponentEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
-	
+
 	public void updateEtude(TabGraphe tab)
 	{
 		int type = tab.getConteneur_maintenant().getTypeSchema();
@@ -54,11 +54,116 @@ public class UpdateEtude implements ComponentListener {
 			try {FenetreAccueil.etude.getS1().setRis_press_envir(((ConteneurSchema) tab.getConteneur_encore_apres()).getPress_envir());} catch(NullPointerException ex) {}
 			try {FenetreAccueil.etude.getS1().setCommentaire_risque(tab.getCommentaireRisque());} catch(NullPointerException ex) {}
 			break;
-			
+
 		case 2:
 			try{FenetreAccueil.etude.getS2().setMtn_principale(Structure.getByName(tab.getConteneur_maintenant().getAction().getBoutonSelected().getName()));} catch(NullPointerException ex) {}
 			try{FenetreAccueil.etude.getS2().setApr_principale(Structure.getByName(tab.getConteneur_apres().getAction().getBoutonSelected().getName()));} catch(NullPointerException ex) {}
 			try{FenetreAccueil.etude.getS2().setRis_principale(Structure.getByName(((ConteneurSchema) tab.getConteneur_risque()).getAction().getBoutonSelected().getName()));} catch(NullPointerException ex) {}
+
+			if(tab.getConteneur_maintenant().getAction().isSelected())
+			{
+				ConteneurSchema conteneur = tab.getConteneur_maintenant();
+				ActionBoutonSchema2 action = conteneur.getAction();
+				ElementNote<Structure>[] mtn_notees = new ElementNote[4];
+				int i=0;
+				if(!action.getBoutonSelected().getName().equals("Structure\nSIMPLE DE MARCHE"))
+				{
+					mtn_notees[i] = new ElementNote<Structure>(Structure.SIMPLE_MARCHE, conteneur.getNote_simple_marche());
+					i++;
+				}
+				if(!action.getBoutonSelected().getName().equals("Structure\nPROFESSIONNELLE"))
+				{
+					mtn_notees[i] = new ElementNote<Structure>(Structure.PROFESSIONNELLE, conteneur.getNote_professionnelle());
+					i++;
+				}
+				if(!action.getBoutonSelected().getName().equals("Structure\nMECANISTE"))
+				{
+					mtn_notees[i] = new ElementNote<Structure>(Structure.MECANISTE, conteneur.getNote_mecaniste());
+					i++;
+				}
+				if(!action.getBoutonSelected().getName().equals("Structure\nSIMPLE CENTRALISEE"))
+				{
+					mtn_notees[i] = new ElementNote<Structure>(Structure.SIMPLE_CENTRALISEE, conteneur.getNote_simple_centralisee());
+					i++;
+				}
+				if(!action.getBoutonSelected().getName().equals("Structure\nENTREPRENEURIALE"))
+				{
+					mtn_notees[i] = new ElementNote<Structure>(Structure.ENTREPRENEURIALE, conteneur.getNote_entrepreneuriale());
+					i++;
+				}
+				
+				FenetreAccueil.etude.getS2().setMtn_notees(mtn_notees);
+			}
+			
+			if(tab.getConteneur_apres().getAction().isSelected())
+			{
+				ConteneurSchema conteneur = tab.getConteneur_apres();
+				ActionBoutonSchema2 action = conteneur.getAction();
+				ElementNote<Structure>[] apr_notees = new ElementNote[4];
+				int i=0;
+				if(!action.getBoutonSelected().getName().equals("Structure\nSIMPLE DE MARCHE"))
+				{
+					apr_notees[i] = new ElementNote<Structure>(Structure.SIMPLE_MARCHE, conteneur.getNote_simple_marche());
+					i++;
+				}
+				if(!action.getBoutonSelected().getName().equals("Structure\nPROFESSIONNELLE"))
+				{
+					apr_notees[i] = new ElementNote<Structure>(Structure.PROFESSIONNELLE, conteneur.getNote_professionnelle());
+					i++;
+				}
+				if(!action.getBoutonSelected().getName().equals("Structure\nMECANISTE"))
+				{
+					apr_notees[i] = new ElementNote<Structure>(Structure.MECANISTE, conteneur.getNote_mecaniste());
+					i++;
+				}
+				if(!action.getBoutonSelected().getName().equals("Structure\nSIMPLE CENTRALISEE"))
+				{
+					apr_notees[i] = new ElementNote<Structure>(Structure.SIMPLE_CENTRALISEE, conteneur.getNote_simple_centralisee());
+					i++;
+				}
+				if(!action.getBoutonSelected().getName().equals("Structure\nENTREPRENEURIALE"))
+				{
+					apr_notees[i] = new ElementNote<Structure>(Structure.ENTREPRENEURIALE, conteneur.getNote_entrepreneuriale());
+					i++;
+				}
+				
+				FenetreAccueil.etude.getS2().setApr_notees(apr_notees);
+			}
+			
+			if(((ConteneurSchema)tab.getConteneur_risque()).getAction().isSelected())
+			{
+				ConteneurSchema conteneur = (ConteneurSchema) tab.getConteneur_risque();
+				ActionBoutonSchema2 action = conteneur.getAction();
+				ElementNote<Structure>[] ris_notees = new ElementNote[4];
+				int i=0;
+				if(!action.getBoutonSelected().getName().equals("Structure\nSIMPLE DE MARCHE"))
+				{
+					ris_notees[i] = new ElementNote<Structure>(Structure.SIMPLE_MARCHE, conteneur.getNote_simple_marche());
+					i++;
+				}
+				if(!action.getBoutonSelected().getName().equals("Structure\nPROFESSIONNELLE"))
+				{
+					ris_notees[i] = new ElementNote<Structure>(Structure.PROFESSIONNELLE, conteneur.getNote_professionnelle());
+					i++;
+				}
+				if(!action.getBoutonSelected().getName().equals("Structure\nMECANISTE"))
+				{
+					ris_notees[i] = new ElementNote<Structure>(Structure.MECANISTE, conteneur.getNote_mecaniste());
+					i++;
+				}
+				if(!action.getBoutonSelected().getName().equals("Structure\nSIMPLE CENTRALISEE"))
+				{
+					ris_notees[i] = new ElementNote<Structure>(Structure.SIMPLE_CENTRALISEE, conteneur.getNote_simple_centralisee());
+					i++;
+				}
+				if(!action.getBoutonSelected().getName().equals("Structure\nENTREPRENEURIALE"))
+				{
+					ris_notees[i] = new ElementNote<Structure>(Structure.ENTREPRENEURIALE, conteneur.getNote_entrepreneuriale());
+					i++;
+				}
+				
+				FenetreAccueil.etude.getS2().setRis_notees(ris_notees);
+			}
 			break;
 		}
 	}

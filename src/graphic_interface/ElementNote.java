@@ -2,7 +2,7 @@ package graphic_interface;
 
 public class ElementNote<E extends ElementPouvantEtreNote> { // pour schémas 2 et 3
 
-	private static final int NOTE_MIN = 1;
+	private static final int NOTE_MIN = 0;
 	private static final int NOTE_MAX = 10;
 	
 	// VARIABLES DE CLASSE //
@@ -34,7 +34,7 @@ public class ElementNote<E extends ElementPouvantEtreNote> { // pour schémas 2 e
 	
 	public void setNote(int note)
 	{
-		try{this.note = (note<NOTE_MIN ? NOTE_MIN : (note>NOTE_MAX ? NOTE_MAX : note));} catch(NullPointerException ex) {this.note = Integer.MAX_VALUE;}
+		this.note = note==Integer.MAX_VALUE ? note : (note<NOTE_MIN ? NOTE_MIN : (note>NOTE_MAX ? NOTE_MAX : note));
 	}
 	
 	
