@@ -40,7 +40,6 @@ public class TabGraphe extends JTabbedPane {
 		this.conteneur_maintenant = new ConteneurSchema(type,ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
 		this.conteneur_apres = new ConteneurSchema(type,ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
 		this.conteneur_comment = new Conteneur(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
-		//this.conteneur_apercu = new Conteneur(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
 		this.conteneur_risque = new ConteneurSchema(type,ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
 
 		this.initialiserCommentRemplir(type);
@@ -59,8 +58,6 @@ public class TabGraphe extends JTabbedPane {
 			this.setTabComponentAt(3, new CustomTab("Comment remplir ?"));
 			this.setTabComponentAt(4, new CustomTab("Aperçu"));
 
-			this.conteneur_risque.addComponentListener(new Verification100PourCent(this.conteneur_risque, (CustomTab) this.getTabComponentAt(2)));
-			this.conteneur_risque.addComponentListener(new UpdateEtude(this));
 		}
 		else
 		{
@@ -99,6 +96,8 @@ public class TabGraphe extends JTabbedPane {
 		this.conteneur_maintenant.addComponentListener(new UpdateEtude(this));
 		this.conteneur_apres.addComponentListener(new Verification100PourCent(this.conteneur_apres, (CustomTab) this.getTabComponentAt(1)));
 		this.conteneur_apres.addComponentListener(new UpdateEtude(this));
+		this.conteneur_risque.addComponentListener(new Verification100PourCent(this.conteneur_risque, (CustomTab) this.getTabComponentAt(2)));
+		this.conteneur_risque.addComponentListener(new UpdateEtude(this));
 	}
 
 	// GETTERS //

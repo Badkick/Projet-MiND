@@ -10,6 +10,7 @@ import java.text.ParseException;
 
 import javax.swing.GroupLayout;
 import javax.swing.JFormattedTextField;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -94,6 +95,14 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	private Bouton b_entrepreneuriale;
 	private Bouton b_annuler;
 
+	private JLabel note_simple_marche;
+	private JLabel note_professionnelle;
+	private JLabel note_mecaniste;
+	private JLabel note_simple_centralisee;
+	private JLabel note_entrepreneuriale;
+
+	private ActionBoutonSchema2 action;
+
 	// cas 3
 
 	// cas 4
@@ -125,7 +134,6 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			this.press_envir.setHorizontalAlignment(JTextField.CENTER);
 			this.etabl_prot.setHorizontalAlignment(JTextField.CENTER);
 			this.mena_mar.setHorizontalAlignment(JTextField.CENTER);
-
 
 			this.contr_tech.setPreferredSize(DIMENSION_TEXT_FIELD);
 			this.press_envir.setPreferredSize(DIMENSION_TEXT_FIELD);
@@ -164,19 +172,21 @@ public class ConteneurSchema extends ConteneurAvecImage {
 					.addGroup(this.layout.createParallelGroup()
 							.addComponent(contr_tech)
 							.addGap(100)
-							.addComponent(mena_mar)
+							.addComponent(press_envir)
 							)
 					.addGap(110)
 					.addGroup(this.layout.createParallelGroup()
 							.addComponent(etabl_prot)
 							.addGap(100)
-							.addComponent(press_envir)
+							.addComponent(mena_mar)
 							)
 					);
 			break;
 		case 2:
-			ActionBoutonSchema2 action = new ActionBoutonSchema2(this);
 			Dimension dim_boutons = new Dimension(170,90);
+			Dimension dim_label = new Dimension(60,60);
+			action = new ActionBoutonSchema2(this);
+
 			this.b_simple_marche = new Bouton("Structure\nSIMPLE DE MARCHE",dim_boutons);
 			this.b_professionnelle = new Bouton("Structure\nPROFESSIONNELLE",dim_boutons);
 			this.b_mecaniste = new Bouton("Structure\nMECANISTE",dim_boutons);
@@ -223,9 +233,9 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			this.b_simple_centralisee.updateCouleur();
 			this.b_simple_centralisee.repaint();
 			this.b_simple_centralisee.addActionListener(action);
-			
+
 			this.b_annuler.addActionListener(new ActionListener() {
-				
+
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					action.activerBouton(b_entrepreneuriale);
@@ -233,55 +243,130 @@ public class ConteneurSchema extends ConteneurAvecImage {
 					action.activerBouton(b_professionnelle);
 					action.activerBouton(b_mecaniste);
 					action.activerBouton(b_simple_centralisee);
+					action.setBoutonSelected(null);
 					action.setSelected(false);
 				}
 			});
+
+			this.note_entrepreneuriale = new JLabel("10 / 10");
+			this.note_entrepreneuriale.setForeground(Color.WHITE);
+			this.note_entrepreneuriale.setPreferredSize(dim_label);
+			this.note_entrepreneuriale.setMaximumSize(dim_label);
+			this.note_entrepreneuriale.setMinimumSize(dim_label);
+
+			this.note_mecaniste = new JLabel("10 / 10");
+			this.note_mecaniste.setForeground(Color.WHITE);
+			this.note_mecaniste.setPreferredSize(dim_label);
+			this.note_mecaniste.setMaximumSize(dim_label);
+			this.note_mecaniste.setMinimumSize(dim_label);
+
+			this.note_professionnelle = new JLabel("10 / 10");
+			this.note_professionnelle.setForeground(Color.WHITE);
+			this.note_professionnelle.setPreferredSize(dim_label);
+			this.note_professionnelle.setMaximumSize(dim_label);
+			this.note_professionnelle.setMinimumSize(dim_label);
+
+			this.note_simple_centralisee = new JLabel("10 / 10");
+			this.note_simple_centralisee.setForeground(Color.WHITE);
+			this.note_simple_centralisee.setPreferredSize(dim_label);
+			this.note_simple_centralisee.setMaximumSize(dim_label);
+			this.note_simple_centralisee.setMinimumSize(dim_label);
+
+			this.note_simple_marche = new JLabel("10 / 10");
+			this.note_simple_marche.setForeground(Color.WHITE);
+			this.note_simple_marche.setPreferredSize(dim_label);
+			this.note_simple_marche.setMaximumSize(dim_label);
+			this.note_simple_marche.setMinimumSize(dim_label);
 
 			this.layout.setHorizontalGroup(
 					this.layout.createSequentialGroup()
 					.addGap(5)
 					.addComponent(b_annuler)
-					.addGap(95)
+					.addGap(80)
 					.addGroup(this.layout.createParallelGroup()
-							.addComponent(b_mecaniste)
-							.addComponent(b_simple_centralisee)
+							.addGroup(this.layout.createSequentialGroup()
+									.addComponent(b_mecaniste)
+									.addGap(10)
+									.addComponent(note_mecaniste)
+									)
+							.addGroup(this.layout.createSequentialGroup()
+									.addComponent(b_simple_centralisee)
+									.addGap(10)
+									.addComponent(note_simple_centralisee)
+									)
 							)
-					.addGap(85)
+					.addGap(30)
 					.addGroup(this.layout.createParallelGroup()
 							.addGroup(this.layout.createSequentialGroup()
 									.addGap(230)
 									.addComponent(b_simple_marche)
+									.addGap(10)
+									.addComponent(note_simple_marche)
 									)
 							.addGroup(this.layout.createSequentialGroup()
 									.addComponent(b_professionnelle)
+									.addGap(10)
+									.addComponent(note_professionnelle)
 									)
 							.addGroup(this.layout.createSequentialGroup()
 									.addGap(140)
 									.addComponent(b_entrepreneuriale)
+									.addGap(10)
+									.addComponent(note_entrepreneuriale)
 									)
 							)
 					);
-			
+
 			this.layout.setVerticalGroup(
 					this.layout.createSequentialGroup()
 					.addGap(35)
 					.addGroup(this.layout.createParallelGroup()
 							.addGroup(this.layout.createSequentialGroup()
 									.addGap(50)
-									.addComponent(b_professionnelle)
+									.addGroup(this.layout.createParallelGroup()
+											.addComponent(b_professionnelle)
+											.addGroup(this.layout.createSequentialGroup()
+													.addGap(12)
+													.addComponent(note_professionnelle)
+													)
+											)
 									)
-							.addComponent(b_simple_marche)
+							.addGroup(this.layout.createParallelGroup()
+									.addComponent(b_simple_marche)
+									.addGroup(this.layout.createSequentialGroup()
+											.addGap(12)
+											.addComponent(note_simple_marche)
+											)
+									)
 							)
 					.addGap(70)
 					.addGroup(this.layout.createParallelGroup()
 							.addGroup(this.layout.createSequentialGroup()
-									.addComponent(b_mecaniste)
+									.addGroup(this.layout.createParallelGroup()
+											.addComponent(b_mecaniste)
+											.addGroup(this.layout.createSequentialGroup()
+													.addGap(12)
+													.addComponent(note_mecaniste)
+													)
+											)
 									.addGap(20)
-									.addComponent(b_simple_centralisee)
+									.addGroup(this.layout.createParallelGroup()
+											.addComponent(b_simple_centralisee)
+											.addGroup(this.layout.createSequentialGroup()
+													.addGap(12)
+													.addComponent(note_simple_centralisee)
+													)
+											)
 									)
 							.addGroup(this.layout.createSequentialGroup()
 									.addGap(30)
-									.addComponent(b_entrepreneuriale)
+									.addGroup(this.layout.createParallelGroup()
+											.addComponent(b_entrepreneuriale)
+											.addGroup(this.layout.createSequentialGroup()
+													.addGap(12)
+													.addComponent(note_entrepreneuriale)
+													)
+											)
 									)
 							)
 					.addGap(50)
@@ -311,7 +396,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	}
 
 	// GETTERS //
-	
+
 	public int getTypeSchema()
 	{
 		return this.typeSchema;
@@ -341,7 +426,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	{
 		try {
 			return new Pourcentage(Float.parseFloat(this.getTextContr_tech().substring(0, this.getTextContr_tech().length()-2).replace(',', '.')));
-		} catch (StringIndexOutOfBoundsException e) {
+		} catch (Exception e) {
 			return null;
 		}
 	}
@@ -393,7 +478,56 @@ public class ConteneurSchema extends ConteneurAvecImage {
 		return b_entrepreneuriale;
 	}
 
+	public ActionBoutonSchema2 getAction()
+	{
+		return this.action;
+	}
+
+	public JLabel getNote_simple_marche() {
+		return note_simple_marche;
+	}
+
+	public JLabel getNote_professionnelle() {
+		return note_professionnelle;
+	}
+
+	public JLabel getNote_mecaniste() {
+		return note_mecaniste;
+	}
+
+	public JLabel getNote_simple_centralisee() {
+		return note_simple_centralisee;
+	}
+
+	public JLabel getNote_entrepreneuriale() {
+		return note_entrepreneuriale;
+	}
+
 	// METHODES //
 
+	public void setNote_simple_marche(int note)
+	{
+		this.getNote_simple_marche().setText(String.valueOf(note)+" / 10");
+	}
+	
+	public void setNote_professionnelle(int note)
+	{
+		this.getNote_professionnelle().setText(String.valueOf(note)+" / 10");
+	}
+	
+	public void setNote_mecaniste(int note)
+	{
+		this.getNote_mecaniste().setText(String.valueOf(note)+" / 10");
+	}
+	
+	public void setNote_simple_centralisee(int note)
+	{
+		this.getNote_simple_centralisee().setText(String.valueOf(note)+" / 10");
+	}
+	
+	public void setNote_entrepreneuriale(int note)
+	{
+		this.getNote_entrepreneuriale().setText(String.valueOf(note)+" / 10");
+	}
 
 }

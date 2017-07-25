@@ -48,9 +48,6 @@ public class Bouton extends JButton implements MouseListener {
 		this.addMouseListener(this);
 	}
 
-
-
-
 	// SETTERS //
 
 	public void setName(String nom)
