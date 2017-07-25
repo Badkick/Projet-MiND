@@ -111,6 +111,10 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 	{
 		return this.bouton_exporter;
 	}
+	
+	public TabGraphe[] getTabGraphe(){
+		return this.tab_graphes;
+	}
 
 	public boolean isSaved()
 	{
@@ -194,6 +198,12 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 				String repertoire=getNom();
 
 				save();
+				
+				for(int i=0;i<ConteneurNouvelleEtude.NB_ONGLETS;i++){
+					new UpdateEtude(getTabGraphe()[i]).updateEtude(getTabGraphe()[i], i+1);;
+				}
+				
+				
 				try {
 					Files.createDirectories(Paths.get("saves"+File.separator+repertoire));
 					Communication.messageInformatif("Sauvegarde effectuée avec succès !");
@@ -259,6 +269,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 			}
 
 		});
+		
 
 	
 		this.getBoutonBack().addActionListener(new ActionListener(){
