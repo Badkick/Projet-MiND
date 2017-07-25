@@ -92,11 +92,11 @@ public class TabGraphe extends JTabbedPane {
 		this.setTabComponentAt(1, new CustomTab("Après"));
 		this.getTabComponentAt(1).setForeground(Color.red);
 		
-		this.conteneur_maintenant.addComponentListener(new Verification100PourCent(this.conteneur_maintenant, (CustomTab) this.getTabComponentAt(0)));
+		this.conteneur_maintenant.addComponentListener(new VerificationPetitsOnglets(this.conteneur_maintenant, (CustomTab) this.getTabComponentAt(0)));
 		this.conteneur_maintenant.addComponentListener(new UpdateEtude(this));
-		this.conteneur_apres.addComponentListener(new Verification100PourCent(this.conteneur_apres, (CustomTab) this.getTabComponentAt(1)));
+		this.conteneur_apres.addComponentListener(new VerificationPetitsOnglets(this.conteneur_apres, (CustomTab) this.getTabComponentAt(1)));
 		this.conteneur_apres.addComponentListener(new UpdateEtude(this));
-		this.conteneur_risque.addComponentListener(new Verification100PourCent(this.conteneur_risque, (CustomTab) this.getTabComponentAt(2)));
+		this.conteneur_risque.addComponentListener(new VerificationPetitsOnglets(this.conteneur_risque, (CustomTab) this.getTabComponentAt(2)));
 		this.conteneur_risque.addComponentListener(new UpdateEtude(this));
 		
 	}

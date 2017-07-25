@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
 
-public class Verification100PourCent implements ComponentListener {
+public class VerificationPetitsOnglets implements ComponentListener {
 
 	public static final int SCHEMA1 = 1;
 	
@@ -12,7 +12,7 @@ public class Verification100PourCent implements ComponentListener {
 	private ConteneurSchema conteneur;
 	private CustomTab tab;
 	
-	public Verification100PourCent(ConteneurSchema conteneur, CustomTab tab) {
+	public VerificationPetitsOnglets(ConteneurSchema conteneur, CustomTab tab) {
 		this.type = conteneur.getTypeSchema();
 		this.conteneur = conteneur;
 		this.tab = tab;
@@ -20,19 +20,7 @@ public class Verification100PourCent implements ComponentListener {
 
 	@Override
 	public void componentHidden(ComponentEvent e) {
-		switch(type)
-		{
-		case SCHEMA1 :
-			try {
-				if(this.getConteneur().getContr_tech().get()+this.getConteneur().getEtabl_prot().get()+this.getConteneur().getMena_mar().get()+this.getConteneur().getPress_envir().get()==100.0) 
-				{
-					this.getTab().setForeground(Color.black);
-				}
-				else this.getTab().setForeground(Color.red);
-			} catch(NullPointerException ex) {}
-			break;
-		}
-		
+		this.verification();
 	}
 
 	@Override
@@ -59,6 +47,22 @@ public class Verification100PourCent implements ComponentListener {
 
 	public CustomTab getTab() {
 		return tab;
+	}
+	
+	public void verification()
+	{
+		switch(type)
+		{
+		case SCHEMA1 :
+			try {
+				if(this.getConteneur().getContr_tech().get()+this.getConteneur().getEtabl_prot().get()+this.getConteneur().getMena_mar().get()+this.getConteneur().getPress_envir().get()==100.0) 
+				{
+					this.getTab().setForeground(Color.black);
+				}
+				else this.getTab().setForeground(Color.red);
+			} catch(NullPointerException ex) {}
+			break;
+		}
 	}
 	
 

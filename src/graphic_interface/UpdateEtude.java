@@ -5,17 +5,15 @@ import java.awt.event.ComponentListener;
 
 public class UpdateEtude implements ComponentListener {
 	
-	private int type;
 	private TabGraphe tab;
 
 	public UpdateEtude(TabGraphe tab) {
 		this.tab = tab;
-		this.type = tab.getConteneur_maintenant().getTypeSchema();
 	}
 
 	@Override
 	public void componentHidden(ComponentEvent e) {
-		this.updateEtude(this.tab, this.type);
+		this.updateEtude(this.tab);
 	}
 
 	@Override
@@ -36,8 +34,9 @@ public class UpdateEtude implements ComponentListener {
 		
 	}
 	
-	public void updateEtude(TabGraphe tab, int type)
+	public void updateEtude(TabGraphe tab)
 	{
+		int type = tab.getConteneur_maintenant().getTypeSchema();
 		switch(type)
 		{
 		case 1:

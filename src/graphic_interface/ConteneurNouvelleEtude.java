@@ -202,7 +202,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 				save();
 				
 				for(int i=0;i<ConteneurNouvelleEtude.NB_ONGLETS;i++){
-					new UpdateEtude(getTabGraphe()[i]).updateEtude(getTabGraphe()[i], i+1);;
+					new UpdateEtude(getTabGraphe()[i]).updateEtude(getTabGraphe()[i]);
 				}
 				
 				
