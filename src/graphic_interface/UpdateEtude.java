@@ -55,6 +55,12 @@ public class UpdateEtude implements ComponentListener {
 			try {FenetreAccueil.etude.getS1().setRis_press_envir(((ConteneurSchema) tab.getConteneur_encore_apres()).getPress_envir());} catch(NullPointerException ex) {}
 			try {FenetreAccueil.etude.getS1().setCommentaire_risque(tab.getCommentaireRisque());} catch(NullPointerException ex) {}
 			break;
+			
+		case 2:
+			try{FenetreAccueil.etude.getS2().setMtn_principale(Structure.getByName(tab.getConteneur_maintenant().getAction().getBoutonSelected().getName()));} catch(NullPointerException ex) {}
+			try{FenetreAccueil.etude.getS2().setApr_principale(Structure.getByName(tab.getConteneur_apres().getAction().getBoutonSelected().getName()));} catch(NullPointerException ex) {}
+			try{FenetreAccueil.etude.getS2().setRis_principale(Structure.getByName(((ConteneurSchema) tab.getConteneur_risque()).getAction().getBoutonSelected().getName()));} catch(NullPointerException ex) {}
+			break;
 		}
 	}
 

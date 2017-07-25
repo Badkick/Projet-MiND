@@ -10,6 +10,7 @@ public class ActionBoutonSchema2 implements ActionListener {
 
 	private boolean selectionne;
 	private ConteneurSchema conteneur;
+	private Bouton boutonSelected;
 
 	// CONSTRUCTEURS //
 
@@ -29,11 +30,21 @@ public class ActionBoutonSchema2 implements ActionListener {
 		return this.selectionne;
 	}
 	
+	public Bouton getBoutonSelected()
+	{
+		return this.boutonSelected;
+	}
+	
 	// SETTERS //
 	
 	public void setSelected(boolean selected)
 	{
 		this.selectionne = selected;
+	}
+	
+	public void setBoutonSelected(Bouton bouton)
+	{
+		this.boutonSelected = bouton;
 	}
 
 	// METHODES //
@@ -43,6 +54,7 @@ public class ActionBoutonSchema2 implements ActionListener {
 		{
 			this.selectionne = true;
 			this.desactiverBouton((Bouton) e.getSource());
+			this.setBoutonSelected((Bouton)e.getSource());
 		}
 	}
 	

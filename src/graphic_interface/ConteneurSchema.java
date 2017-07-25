@@ -10,6 +10,7 @@ import java.text.ParseException;
 
 import javax.swing.GroupLayout;
 import javax.swing.JFormattedTextField;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -93,6 +94,14 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	private Bouton b_simple_centralisee;
 	private Bouton b_entrepreneuriale;
 	private Bouton b_annuler;
+	
+	private JLabel note_simple_marche;
+	private JLabel note_professionnelle;
+	private JLabel note_mecaniste;
+	private JLabel note_simple_centralisee;
+	private JLabel note_entrepreneuriale;
+	
+	private ActionBoutonSchema2 action;
 
 	// cas 3
 
@@ -125,7 +134,6 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			this.press_envir.setHorizontalAlignment(JTextField.CENTER);
 			this.etabl_prot.setHorizontalAlignment(JTextField.CENTER);
 			this.mena_mar.setHorizontalAlignment(JTextField.CENTER);
-
 
 			this.contr_tech.setPreferredSize(DIMENSION_TEXT_FIELD);
 			this.press_envir.setPreferredSize(DIMENSION_TEXT_FIELD);
@@ -175,8 +183,10 @@ public class ConteneurSchema extends ConteneurAvecImage {
 					);
 			break;
 		case 2:
-			ActionBoutonSchema2 action = new ActionBoutonSchema2(this);
 			Dimension dim_boutons = new Dimension(170,90);
+			Dimension dim_label = new Dimension(30,20);
+			action = new ActionBoutonSchema2(this);
+			
 			this.b_simple_marche = new Bouton("Structure\nSIMPLE DE MARCHE",dim_boutons);
 			this.b_professionnelle = new Bouton("Structure\nPROFESSIONNELLE",dim_boutons);
 			this.b_mecaniste = new Bouton("Structure\nMECANISTE",dim_boutons);
@@ -233,10 +243,17 @@ public class ConteneurSchema extends ConteneurAvecImage {
 					action.activerBouton(b_professionnelle);
 					action.activerBouton(b_mecaniste);
 					action.activerBouton(b_simple_centralisee);
+					action.setBoutonSelected(null);
 					action.setSelected(false);
 				}
 			});
 
+			this.note_entrepreneuriale = new JLabel();
+			this.note_mecaniste = new JLabel();
+			this.note_professionnelle = new JLabel();
+			this.note_simple_centralisee = new JLabel();
+			this.note_simple_marche = new JLabel();
+			
 			this.layout.setHorizontalGroup(
 					this.layout.createSequentialGroup()
 					.addGap(5)
@@ -343,6 +360,8 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			return new Pourcentage(Float.parseFloat(this.getTextContr_tech().substring(0, this.getTextContr_tech().length()-2).replace(',', '.')));
 		} catch (StringIndexOutOfBoundsException e) {
 			return null;
+		} catch (NumberFormatException e) {
+			return null;
 		}
 	}
 
@@ -391,6 +410,31 @@ public class ConteneurSchema extends ConteneurAvecImage {
 
 	public Bouton getB_entrepreneuriale() {
 		return b_entrepreneuriale;
+	}
+	
+	public ActionBoutonSchema2 getAction()
+	{
+		return this.action;
+	}
+
+	public JLabel getNote_simple_marche() {
+		return note_simple_marche;
+	}
+
+	public JLabel getNote_professionnelle() {
+		return note_professionnelle;
+	}
+
+	public JLabel getNote_mecaniste() {
+		return note_mecaniste;
+	}
+
+	public JLabel getNote_simple_centralisee() {
+		return note_simple_centralisee;
+	}
+
+	public JLabel getNote_entrepreneuriale() {
+		return note_entrepreneuriale;
 	}
 
 	// METHODES //
