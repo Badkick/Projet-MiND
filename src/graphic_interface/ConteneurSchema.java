@@ -482,6 +482,22 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	}
 
 	// METHODES //
+	
+	public void setContr_tech(Pourcentage p){
+		this.contr_tech.setValue(p.get()/100);
+	}
+	
+	public void setEtabl_prot(Pourcentage p){
+		this.etabl_prot.setValue(p.get()/100);
+	}
+	
+	public void setMena_mar(Pourcentage p){
+		this.mena_mar.setValue(p.get()/100);
+	}
+	
+	public void setPress_envir(Pourcentage p){
+		this.press_envir.setValue(p.get()/100);
+	}
 
 	public void setNote_simple_marche(int note)
 	{
