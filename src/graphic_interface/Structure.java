@@ -2,11 +2,11 @@ package graphic_interface;
 
 public enum Structure implements ElementPouvantEtreNote{ // pour schéma 2
 	
-	SIMPLE_MARCHE("simple_marche",1),
-	PROFESSIONNELLE("professionnelle",2),
-	MECANISTE("mecaniste",3),
-	SIMPLE_CENTRALISEE("simple_centralisee",4),
-	ENTREPRENEURIALE("entrepreneuriale",5);
+	SIMPLE_MARCHE("Structure\nSIMPLE DE MARCHE",1),
+	PROFESSIONNELLE("Structure\nPROFESSIONNELLE",2),
+	MECANISTE("Structure\nMECANISTE",3),
+	SIMPLE_CENTRALISEE("Structure\nSIMPLE CENTRALISEE",4),
+	ENTREPRENEURIALE("Structure\nENTREPRENEURIALE",5);
 
 	private String nom;
 	private int numero;
