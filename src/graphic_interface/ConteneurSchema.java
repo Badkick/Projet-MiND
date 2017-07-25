@@ -164,13 +164,13 @@ public class ConteneurSchema extends ConteneurAvecImage {
 					.addGroup(this.layout.createParallelGroup()
 							.addComponent(contr_tech)
 							.addGap(100)
-							.addComponent(mena_mar)
+							.addComponent(press_envir)
 							)
 					.addGap(110)
 					.addGroup(this.layout.createParallelGroup()
 							.addComponent(etabl_prot)
 							.addGap(100)
-							.addComponent(press_envir)
+							.addComponent(mena_mar)
 							)
 					);
 			break;
@@ -341,7 +341,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	{
 		try {
 			return new Pourcentage(Float.parseFloat(this.getTextContr_tech().substring(0, this.getTextContr_tech().length()-2).replace(',', '.')));
-		} catch (StringIndexOutOfBoundsException e) {
+		} catch (Exception e) {
 			return null;
 		}
 	}
