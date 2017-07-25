@@ -10,7 +10,7 @@ import javax.swing.ImageIcon;
 public enum Theme {
 	
 	CLASSIC("Classic",0,new Font("Tahoma",Font.PLAIN,16),Color.BLACK),
-	NIGHT("Night",1,new Font("Calibri",Font.PLAIN,16),Color.BLACK);
+	NIGHT("Night",1,new Font("Calibri",Font.PLAIN,16),Color.WHITE);
 
 	// VARIABLES DE CLASSE //
 	

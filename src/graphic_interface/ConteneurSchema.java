@@ -248,31 +248,31 @@ public class ConteneurSchema extends ConteneurAvecImage {
 				}
 			});
 
-			this.note_entrepreneuriale = new JLabel("10 / 10");
+			this.note_entrepreneuriale = new JLabel();
 			this.note_entrepreneuriale.setForeground(Color.WHITE);
 			this.note_entrepreneuriale.setPreferredSize(dim_label);
 			this.note_entrepreneuriale.setMaximumSize(dim_label);
 			this.note_entrepreneuriale.setMinimumSize(dim_label);
 
-			this.note_mecaniste = new JLabel("10 / 10");
+			this.note_mecaniste = new JLabel();
 			this.note_mecaniste.setForeground(Color.WHITE);
 			this.note_mecaniste.setPreferredSize(dim_label);
 			this.note_mecaniste.setMaximumSize(dim_label);
 			this.note_mecaniste.setMinimumSize(dim_label);
 
-			this.note_professionnelle = new JLabel("10 / 10");
+			this.note_professionnelle = new JLabel();
 			this.note_professionnelle.setForeground(Color.WHITE);
 			this.note_professionnelle.setPreferredSize(dim_label);
 			this.note_professionnelle.setMaximumSize(dim_label);
 			this.note_professionnelle.setMinimumSize(dim_label);
 
-			this.note_simple_centralisee = new JLabel("10 / 10");
+			this.note_simple_centralisee = new JLabel();
 			this.note_simple_centralisee.setForeground(Color.WHITE);
 			this.note_simple_centralisee.setPreferredSize(dim_label);
 			this.note_simple_centralisee.setMaximumSize(dim_label);
 			this.note_simple_centralisee.setMinimumSize(dim_label);
 
-			this.note_simple_marche = new JLabel("10 / 10");
+			this.note_simple_marche = new JLabel();
 			this.note_simple_marche.setForeground(Color.WHITE);
 			this.note_simple_marche.setPreferredSize(dim_label);
 			this.note_simple_marche.setMaximumSize(dim_label);
@@ -528,6 +528,30 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	public void setNote_entrepreneuriale(int note)
 	{
 		this.getNote_entrepreneuriale().setText(String.valueOf(note)+" / 10");
+	}
+	
+	public void setNote(Bouton b, int note)
+	{
+		String nom = b.getName();
+		
+		switch(nom)
+		{
+		case "Structure\nSIMPLE DE MARCHE":
+			this.setNote_simple_marche(note);
+			break;
+		case "Structure\nPROFESSIONNELLE":
+			this.setNote_professionnelle(note);
+			break;
+		case "Structure\nMECANISTE":
+			this.setNote_mecaniste(note);
+			break;
+		case "Structure\nSIMPLE CENTRALISEE":
+			this.setNote_simple_centralisee(note);
+			break;
+		case "Structure\nENTREPRENEURIALE":
+			this.setNote_entrepreneuriale(note);
+			break;
+		}
 	}
 
 }

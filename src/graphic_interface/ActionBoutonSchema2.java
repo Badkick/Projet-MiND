@@ -56,6 +56,10 @@ public class ActionBoutonSchema2 implements ActionListener {
 			this.desactiverBouton((Bouton) e.getSource());
 			this.setBoutonSelected((Bouton)e.getSource());
 		}
+		else
+		{
+			new FenetreChoixNote((Bouton)e.getSource(),this.conteneur);
+		}
 	}
 	
 	public void desactiverBouton(Bouton b)
