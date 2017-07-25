@@ -57,6 +57,7 @@ public class TabGraphe extends JTabbedPane {
 			this.getTabComponentAt(2).setForeground(Color.red);
 			this.setTabComponentAt(3, new CustomTab("Comment remplir ?"));
 			this.setTabComponentAt(4, new CustomTab("Aperçu"));
+			
 
 		}
 		else
@@ -98,6 +99,9 @@ public class TabGraphe extends JTabbedPane {
 		this.conteneur_apres.addComponentListener(new UpdateEtude(this));
 		this.conteneur_risque.addComponentListener(new VerificationPetitsOnglets(this.conteneur_risque, (CustomTab) this.getTabComponentAt(2)));
 		this.conteneur_risque.addComponentListener(new UpdateEtude(this));
+		for (int i=1;i<=6;i++){
+			this.initialiserCases(i);
+		}
 		
 	}
 
@@ -145,5 +149,62 @@ public class TabGraphe extends JTabbedPane {
 		texte.setFont(FenetreAccueil.theme.getPoliceExplications());
 		this.getConteneur_comment().add(texte);
 	}
+	
+	private void initialiserCases(int type){
+		switch(type){
+		case 1:
+			try{
+				this.getConteneur_maintenant().setContr_tech(FenetreAccueil.etude.getS1().getMtn_contr_tech());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_maintenant().setEtabl_prot(FenetreAccueil.etude.getS1().getMtn_etabl_prot());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_maintenant().setMena_mar(FenetreAccueil.etude.getS1().getMtn_mena_mar());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_maintenant().setPress_envir(FenetreAccueil.etude.getS1().getMtn_press_envir());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_apres().setContr_tech(FenetreAccueil.etude.getS1().getApr_contr_tech());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_apres().setEtabl_prot(FenetreAccueil.etude.getS1().getApr_etabl_prot());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_apres().setMena_mar(FenetreAccueil.etude.getS1().getApr_mena_mar());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_apres().setPress_envir(FenetreAccueil.etude.getS1().getApr_press_envir());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_encore_apres().setContr_tech(FenetreAccueil.etude.getS1().getRis_contr_tech());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_encore_apres().setEtabl_prot(FenetreAccueil.etude.getS1().getRis_etabl_prot());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_encore_apres().setMena_mar(FenetreAccueil.etude.getS1().getRis_mena_mar());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_encore_apres().setPress_envir(FenetreAccueil.etude.getS1().getRis_press_envir());
+			}catch(NullPointerException ex){}
+			try{
+				this.getZoneTexte().setText(FenetreAccueil.etude.getS1().getCommentaire_risque());
+			}catch(NullPointerException ex){}
+			break;
+		case 2:
+			break;
+		case 3:
+			break;
+		case 4:
+			break;
+		case 5:
+			break;
+		case 6:
+			break;
+		}
+	}
+	
 
 }
