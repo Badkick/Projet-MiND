@@ -18,7 +18,7 @@ public class ApercuSchema1 extends ConteneurAvecImage{
 	private int periode;
 	
 	public ApercuSchema1(int width, int height, Schema1 schema1,int periode){
-		super(width,height,Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema1"+File.separator+"fond.png"));
+		super(width,height,Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema1"+File.separator+"Etude_1_fond.png"));
 		this.schema1=schema1;
 		this.periode=periode;
 		this.initialiserTouche();
@@ -104,19 +104,19 @@ public class ApercuSchema1 extends ConteneurAvecImage{
 		this.requestFocusInWindow();
 		g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alpha));
 		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-		Image technique=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema1"+File.separator+"technique.png");
-		Image pression=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema1"+File.separator+"pression.png");
-		Image protege=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema1"+File.separator+"protege.png");
-		Image menace=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema1"+File.separator+"menace.png");
+		Image technique=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema1"+File.separator+"Etude_1_bouton3.png");
+		Image pression=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema1"+File.separator+"Etude_1_bouton2.png");
+		Image protege=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema1"+File.separator+"Etude_1_bouton4.png");
+		Image menace=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema1"+File.separator+"Etude_1_bouton1.png");
 		g.setColor(Color.white);
-		g.fillRoundRect(370, 10, 200, 60, 15, 15);
+		g.fillRoundRect(376, 10, 200, 60, 15, 15);
 		g.fillRoundRect(401, 178, 55, 35, 15, 15);
 		g.fillRoundRect(498, 178, 55, 35, 15, 15);
 		g.fillRoundRect(401, 245, 55, 35, 15, 15);
 		g.fillRoundRect(498, 245, 55, 35, 15, 15);
 		if(this.getPeriode()<=0){
 			this.setPeriode(0);
-			this.drawCenteredString(g, "Aujourd'hui", 370, 10, 200, 60);
+			this.drawCenteredString(g, "Aujourd'hui", 376, 10, 200, 60);
 			try{
 				int x=(int) (253-technique.getWidth(null)*(FenetreAccueil.etude.getS1().getMtn_contr_tech().get())/200);
 				int y=(int) (125-technique.getHeight(null)*(FenetreAccueil.etude.getS1().getMtn_contr_tech().get())/200);
@@ -158,7 +158,7 @@ public class ApercuSchema1 extends ConteneurAvecImage{
 				g.drawImage(menace,(int)(702-menace.getWidth(null)/2),(int)(332-menace.getHeight(null)/2),menace.getWidth(null),menace.getHeight(null),null,null);
 			}
 		}else if(this.getPeriode()==1){
-			this.drawCenteredString(g, "Demain", 370, 10, 200, 60);
+			this.drawCenteredString(g, "Demain", 376, 10, 200, 60);
 			try{
 				int x=(int) (253-technique.getWidth(null)*(FenetreAccueil.etude.getS1().getApr_contr_tech().get())/200);
 				int y=(int) (125-technique.getHeight(null)*(FenetreAccueil.etude.getS1().getApr_contr_tech().get())/200);
@@ -201,11 +201,11 @@ public class ApercuSchema1 extends ConteneurAvecImage{
 			}
 		}else if(this.getPeriode()>=2){
 			this.setPeriode(2);
-			this.drawCenteredString(g, "Après-demain", 370, 10, 200, 60);
+			this.drawCenteredString(g, "Après-demain", 376, 10, 200, 60);
 			g.setColor(Color.white);
-			g.fillOval(370, 380, 200, 60);
+			g.fillOval(376, 380, 200, 60);
 			try{
-				this.drawCenteredString(g, FenetreAccueil.etude.getS1().getCommentaire_risque(), 370, 380, 200, 60);
+				this.drawCenteredString(g, FenetreAccueil.etude.getS1().getCommentaire_risque(), 376, 380, 200, 60);
 			}catch(NullPointerException ex){}
 			try{
 				int x=(int) (253-technique.getWidth(null)*(FenetreAccueil.etude.getS1().getRis_contr_tech().get())/200);
