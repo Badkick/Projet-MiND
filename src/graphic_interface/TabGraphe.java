@@ -98,6 +98,7 @@ public class TabGraphe extends JTabbedPane {
 		this.conteneur_apres.addComponentListener(new UpdateEtude(this));
 		this.conteneur_risque.addComponentListener(new Verification100PourCent(this.conteneur_risque, (CustomTab) this.getTabComponentAt(2)));
 		this.conteneur_risque.addComponentListener(new UpdateEtude(this));
+		
 	}
 
 	// GETTERS //
