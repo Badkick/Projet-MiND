@@ -194,45 +194,11 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			this.b_entrepreneuriale = new Bouton("Structure\nENTREPRENEURIALE",dim_boutons);
 			this.b_annuler = new Bouton("R‡Z", new Dimension(120, 40));
 
-			this.b_entrepreneuriale.setImgRepos(FenetreAccueil.theme.getbSchema2Repos());
-			this.b_entrepreneuriale.setImgSurvol(FenetreAccueil.theme.getbSchema2Survol());
-			this.b_entrepreneuriale.setImgClic(FenetreAccueil.theme.getbSchema2Survol());
-			this.b_entrepreneuriale.setCouleurTexte(Color.white);
-			this.b_entrepreneuriale.updateCouleur();
-			this.b_entrepreneuriale.repaint();
-			this.b_entrepreneuriale.addActionListener(action);
-
-			this.b_simple_marche.setImgRepos(FenetreAccueil.theme.getbSchema2Repos());
-			this.b_simple_marche.setImgSurvol(FenetreAccueil.theme.getbSchema2Survol());
-			this.b_simple_marche.setImgClic(FenetreAccueil.theme.getbSchema2Survol());
-			this.b_simple_marche.setCouleurTexte(Color.white);
-			this.b_simple_marche.updateCouleur();
-			this.b_simple_marche.repaint();
-			this.b_simple_marche.addActionListener(action);
-
-			this.b_professionnelle.setImgRepos(FenetreAccueil.theme.getbSchema2Repos());
-			this.b_professionnelle.setImgSurvol(FenetreAccueil.theme.getbSchema2Survol());
-			this.b_professionnelle.setImgClic(FenetreAccueil.theme.getbSchema2Survol());
-			this.b_professionnelle.setCouleurTexte(Color.white);
-			this.b_professionnelle.updateCouleur();
-			this.b_professionnelle.repaint();
-			this.b_professionnelle.addActionListener(action);
-
-			this.b_mecaniste.setImgRepos(FenetreAccueil.theme.getbSchema2Repos());
-			this.b_mecaniste.setImgSurvol(FenetreAccueil.theme.getbSchema2Survol());
-			this.b_mecaniste.setImgClic(FenetreAccueil.theme.getbSchema2Survol());
-			this.b_mecaniste.setCouleurTexte(Color.white);
-			this.b_mecaniste.updateCouleur();
-			this.b_mecaniste.repaint();
-			this.b_mecaniste.addActionListener(action);
-
-			this.b_simple_centralisee.setImgRepos(FenetreAccueil.theme.getbSchema2Repos());
-			this.b_simple_centralisee.setImgSurvol(FenetreAccueil.theme.getbSchema2Survol());
-			this.b_simple_centralisee.setImgClic(FenetreAccueil.theme.getbSchema2Survol());
-			this.b_simple_centralisee.setCouleurTexte(Color.white);
-			this.b_simple_centralisee.updateCouleur();
-			this.b_simple_centralisee.repaint();
-			this.b_simple_centralisee.addActionListener(action);
+			this.initialiserBoutonSchema2(this.b_entrepreneuriale);
+			this.initialiserBoutonSchema2(this.b_simple_marche);
+			this.initialiserBoutonSchema2(this.b_professionnelle);
+			this.initialiserBoutonSchema2(this.b_mecaniste);
+			this.initialiserBoutonSchema2(this.b_simple_centralisee);
 
 			this.b_annuler.addActionListener(new ActionListener() {
 
@@ -254,34 +220,16 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			});
 
 			this.note_entrepreneuriale = new JLabel();
-			this.note_entrepreneuriale.setForeground(Color.WHITE);
-			this.note_entrepreneuriale.setPreferredSize(dim_label);
-			this.note_entrepreneuriale.setMaximumSize(dim_label);
-			this.note_entrepreneuriale.setMinimumSize(dim_label);
-
 			this.note_mecaniste = new JLabel();
-			this.note_mecaniste.setForeground(Color.WHITE);
-			this.note_mecaniste.setPreferredSize(dim_label);
-			this.note_mecaniste.setMaximumSize(dim_label);
-			this.note_mecaniste.setMinimumSize(dim_label);
-
 			this.note_professionnelle = new JLabel();
-			this.note_professionnelle.setForeground(Color.WHITE);
-			this.note_professionnelle.setPreferredSize(dim_label);
-			this.note_professionnelle.setMaximumSize(dim_label);
-			this.note_professionnelle.setMinimumSize(dim_label);
-
 			this.note_simple_centralisee = new JLabel();
-			this.note_simple_centralisee.setForeground(Color.WHITE);
-			this.note_simple_centralisee.setPreferredSize(dim_label);
-			this.note_simple_centralisee.setMaximumSize(dim_label);
-			this.note_simple_centralisee.setMinimumSize(dim_label);
-
 			this.note_simple_marche = new JLabel();
-			this.note_simple_marche.setForeground(Color.WHITE);
-			this.note_simple_marche.setPreferredSize(dim_label);
-			this.note_simple_marche.setMaximumSize(dim_label);
-			this.note_simple_marche.setMinimumSize(dim_label);
+			
+			this.initialiserLabelSchema2(note_entrepreneuriale, dim_label);
+			this.initialiserLabelSchema2(note_mecaniste, dim_label);
+			this.initialiserLabelSchema2(note_professionnelle, dim_label);
+			this.initialiserLabelSchema2(note_simple_centralisee, dim_label);
+			this.initialiserLabelSchema2(note_simple_marche, dim_label);
 
 			this.layout.setHorizontalGroup(
 					this.layout.createSequentialGroup()
@@ -582,6 +530,24 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			this.setNote_entrepreneuriale(note);
 			break;
 		}
+	}
+	
+	public void initialiserBoutonSchema2(Bouton b)
+	{
+		b.setImgRepos(FenetreAccueil.theme.getbSchema2Repos());
+		b.setImgSurvol(FenetreAccueil.theme.getbSchema2Survol());
+		b.setImgClic(FenetreAccueil.theme.getbSchema2Survol());
+		b.updateCouleur();
+		b.repaint();
+		b.addActionListener(this.getAction());
+	}
+	
+	public void initialiserLabelSchema2(JLabel label, Dimension dim_label)
+	{
+		label.setForeground(Color.WHITE);
+		label.setPreferredSize(dim_label);
+		label.setMaximumSize(dim_label);
+		label.setMinimumSize(dim_label);
 	}
 
 }
