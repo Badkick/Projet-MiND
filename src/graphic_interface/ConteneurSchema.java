@@ -488,51 +488,76 @@ public class ConteneurSchema extends ConteneurAvecImage {
 		return this.action;
 	}
 
-	public JLabel getNote_simple_marche() {
+	public JLabel getLabel_simple_marche() {
 		return note_simple_marche;
 	}
 
-	public JLabel getNote_professionnelle() {
+	public JLabel getLabel_professionnelle() {
 		return note_professionnelle;
 	}
 
-	public JLabel getNote_mecaniste() {
+	public JLabel getLabel_mecaniste() {
 		return note_mecaniste;
 	}
 
-	public JLabel getNote_simple_centralisee() {
+	public JLabel getLabel_simple_centralisee() {
 		return note_simple_centralisee;
 	}
 
-	public JLabel getNote_entrepreneuriale() {
+	public JLabel getLabel_entrepreneuriale() {
 		return note_entrepreneuriale;
+	}
+	
+	public int getNote_simple_marche()
+	{
+		try{return Integer.valueOf(this.getLabel_simple_marche().getText().substring(0, this.getLabel_simple_marche().getText().length()-5));} catch(StringIndexOutOfBoundsException e) {return Integer.MAX_VALUE;}
+	}
+	
+	public int getNote_professionnelle()
+	{
+		try{return Integer.valueOf(this.getLabel_professionnelle().getText().substring(0, this.getLabel_professionnelle().getText().length()-5));} catch(StringIndexOutOfBoundsException e) {return Integer.MAX_VALUE;}
+	}
+	
+	public int getNote_mecaniste()
+	{
+		try{return Integer.valueOf(this.getLabel_mecaniste().getText().substring(0, this.getLabel_mecaniste().getText().length()-5));} catch(StringIndexOutOfBoundsException e) {return Integer.MAX_VALUE;}
+	}
+	
+	public int getNote_simple_centralisee()
+	{
+		try{return Integer.valueOf(this.getLabel_simple_centralisee().getText().substring(0, this.getLabel_simple_centralisee().getText().length()-5));} catch(StringIndexOutOfBoundsException e) {return Integer.MAX_VALUE;}
+	}
+	
+	public int getNote_entrepreneuriale()
+	{
+		try{return Integer.valueOf(this.getLabel_entrepreneuriale().getText().substring(0, this.getLabel_entrepreneuriale().getText().length()-5));} catch(StringIndexOutOfBoundsException e) {return Integer.MAX_VALUE;}
 	}
 
 	// METHODES //
 
 	public void setNote_simple_marche(int note)
 	{
-		this.getNote_simple_marche().setText(String.valueOf(note)+" / 10");
+		this.getLabel_simple_marche().setText(String.valueOf(note)+" / 10");
 	}
 	
 	public void setNote_professionnelle(int note)
 	{
-		this.getNote_professionnelle().setText(String.valueOf(note)+" / 10");
+		this.getLabel_professionnelle().setText(String.valueOf(note)+" / 10");
 	}
 	
 	public void setNote_mecaniste(int note)
 	{
-		this.getNote_mecaniste().setText(String.valueOf(note)+" / 10");
+		this.getLabel_mecaniste().setText(String.valueOf(note)+" / 10");
 	}
 	
 	public void setNote_simple_centralisee(int note)
 	{
-		this.getNote_simple_centralisee().setText(String.valueOf(note)+" / 10");
+		this.getLabel_simple_centralisee().setText(String.valueOf(note)+" / 10");
 	}
 	
 	public void setNote_entrepreneuriale(int note)
 	{
-		this.getNote_entrepreneuriale().setText(String.valueOf(note)+" / 10");
+		this.getLabel_entrepreneuriale().setText(String.valueOf(note)+" / 10");
 	}
 	
 	public void setNote(Bouton b, int note)
