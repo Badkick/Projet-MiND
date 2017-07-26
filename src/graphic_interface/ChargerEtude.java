@@ -90,13 +90,13 @@ public class ChargerEtude implements ActionListener {
 			Structure st_2=null;
 			Structure st_ris=null;
 			try{
-				st_1=Structure.getByName(aLire_2.readLine());
+				st_1=Structure.getByNum(Integer.valueOf(aLire_2.readLine()));
 			}catch(Exception ex){}
 			try{
-				st_2=Structure.getByName(aLire_2.readLine());
+				st_2=Structure.getByNum(Integer.valueOf(aLire_2.readLine()));
 			}catch(Exception ex){}
 			try{
-				st_ris=Structure.getByName(aLire_2.readLine());
+				st_ris=Structure.getByNum(Integer.valueOf(aLire_2.readLine()));
 			}catch(Exception ex){}
 			ElementNote<Structure>[] mtn_notees = new ElementNote[4];
 			ElementNote<Structure>[] apr_notees = new ElementNote[4];
@@ -109,7 +109,7 @@ public class ChargerEtude implements ActionListener {
 				Integer note_apr=null;
 				Integer note_ris=null;
 				try{
-					nom_mtn=Structure.getByName(aLire_2.readLine());
+					nom_mtn=Structure.getByNum(Integer.valueOf(aLire_2.readLine()));
 				}catch(Exception ex){}
 				try{
 					note_mtn=Integer.valueOf(aLire_2.readLine());
@@ -118,7 +118,7 @@ public class ChargerEtude implements ActionListener {
 					mtn_notees[i]=new ElementNote(nom_mtn,note_mtn);
 				}catch(NullPointerException ex){mtn_notees[i]=new ElementNote(nom_mtn,Integer.MAX_VALUE);}
 				try{
-					nom_apr=Structure.getByName(aLire_2.readLine());
+					nom_apr=Structure.getByNum(Integer.valueOf(aLire_2.readLine()));
 				}catch(Exception ex){}
 				try{
 					note_apr=Integer.valueOf(aLire_2.readLine());
@@ -127,7 +127,7 @@ public class ChargerEtude implements ActionListener {
 					apr_notees[i]=new ElementNote(nom_apr,note_apr);
 				}catch(NullPointerException ex){apr_notees[i]=new ElementNote(nom_mtn,Integer.MAX_VALUE);}
 				try{
-					nom_ris=Structure.getByName(aLire_2.readLine());
+					nom_ris=Structure.getByNum(Integer.valueOf(aLire_2.readLine()));
 				}catch(Exception ex){}
 				try{
 					note_ris=Integer.valueOf(aLire_2.readLine());
@@ -152,13 +152,13 @@ public class ChargerEtude implements ActionListener {
 		try {
 			BufferedReader aLire_3 = new BufferedReader(new FileReader(organisations));
 			try{
-				org_1=Organisation.getByName(aLire_3.readLine());
+				org_1=Organisation.getByNum(Integer.valueOf(aLire_3.readLine()));
 			}catch(Exception ex){}
 			try{
-				org_2=Organisation.getByName(aLire_3.readLine());
+				org_2=Organisation.getByNum(Integer.valueOf(aLire_3.readLine()));
 			}catch(Exception ex){}
 			try{
-				org_ris=Organisation.getByName(aLire_3.readLine());
+				org_ris=Organisation.getByNum(Integer.valueOf(aLire_3.readLine()));
 			}catch(Exception ex){}
 			ElementNote<Organisation>[] mtn_notees = new ElementNote[4];
 			ElementNote<Organisation>[] apr_notees = new ElementNote[4];
@@ -171,7 +171,7 @@ public class ChargerEtude implements ActionListener {
 				Integer note_apr=null;
 				Integer note_ris=null;
 				try{
-					nom_mtn=Organisation.getByName(aLire_3.readLine());
+					nom_mtn=Organisation.getByNum(Integer.valueOf(aLire_3.readLine()));
 				}catch(Exception ex){}
 				try{
 					note_mtn=Integer.valueOf(aLire_3.readLine());
@@ -180,7 +180,7 @@ public class ChargerEtude implements ActionListener {
 					mtn_notees[i]=new ElementNote(nom_mtn,note_mtn);
 				}catch(NullPointerException ex){mtn_notees[i]=new ElementNote(nom_mtn,Integer.MAX_VALUE);}
 				try{
-					nom_apr=Organisation.getByName(aLire_3.readLine());
+					nom_apr=Organisation.getByNum(Integer.valueOf(aLire_3.readLine()));
 				}catch(Exception ex){}
 				try{
 					note_apr=Integer.valueOf(aLire_3.readLine());
@@ -189,7 +189,7 @@ public class ChargerEtude implements ActionListener {
 					apr_notees[i]=new ElementNote(nom_apr,note_apr);
 				}catch(NullPointerException ex){apr_notees[i]=new ElementNote(nom_mtn,Integer.MAX_VALUE);}
 				try{
-					nom_ris=Organisation.getByName(aLire_3.readLine());
+					nom_ris=Organisation.getByNum(Integer.valueOf(aLire_3.readLine()));
 				}catch(Exception ex){}
 				try{
 					note_ris=Integer.valueOf(aLire_3.readLine());
