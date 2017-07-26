@@ -2,7 +2,6 @@ package graphic_interface;
 
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.NumberFormat;
@@ -12,8 +11,6 @@ import javax.swing.GroupLayout;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
 import javax.swing.text.DefaultFormatterFactory;
 import javax.swing.text.NumberFormatter;
 
@@ -482,13 +479,13 @@ public class ConteneurSchema extends ConteneurAvecImage {
 									.addComponent(note_process)
 									.addComponent(b_process)
 									)
-							.addGap(200)
 							.addGroup(
 									this.layout.createSequentialGroup()
 									.addComponent(note_flexible)
 									.addComponent(b_flexible)
 									)
 							)
+					.addGap(40)
 					.addComponent(b_annuler3)
 					);
 			

@@ -56,6 +56,7 @@ public class VerificationPetitsOnglets implements ComponentListener {
 
 	public void verification()
 	{
+		int nbNotes=0;
 		switch(type)
 		{
 		case SCHEMA1 :
@@ -69,7 +70,6 @@ public class VerificationPetitsOnglets implements ComponentListener {
 			break;
 
 		case SCHEMA2 :
-			int nbNotes = 0;
 			if(this.getConteneur().getNote_entrepreneuriale()!=Integer.MAX_VALUE) nbNotes++;
 			if(this.getConteneur().getNote_mecaniste()!=Integer.MAX_VALUE) nbNotes++;
 			if(this.getConteneur().getNote_professionnelle()!=Integer.MAX_VALUE) nbNotes++;
@@ -80,7 +80,13 @@ public class VerificationPetitsOnglets implements ComponentListener {
 			break;
 
 		case SCHEMA3 :
-
+			if(this.getConteneur().getNote_rationnelle()!=Integer.MAX_VALUE) nbNotes++;
+			if(this.getConteneur().getNote_artisanale()!=Integer.MAX_VALUE) nbNotes++;
+			if(this.getConteneur().getNote_personnalisee()!=Integer.MAX_VALUE) nbNotes++;
+			if(this.getConteneur().getNote_process()!=Integer.MAX_VALUE) nbNotes++;
+			if(this.getConteneur().getNote_flexible()!=Integer.MAX_VALUE) nbNotes++;
+			if(nbNotes==4) this.getTab().setForeground(Color.black);
+			else this.getTab().setForeground(Color.red);
 			break;
 
 		case SCHEMA4 :
