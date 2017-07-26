@@ -148,6 +148,9 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 		this.initialiserTabs();
 		this.initialiserBoutons();
 		this.initialiserLayout();
+		for (int i=0;i<=5;i++){
+			this.getTabGraphe()[i].initialiserCases(i+1);
+		}
 	}
 
 	private void initialiserBoutons()
@@ -200,11 +203,11 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 				String repertoire=getNom();
 
 				save();
-				/*
+				
 				for(int i=0;i<ConteneurNouvelleEtude.NB_ONGLETS;i++){
 					new UpdateEtude(getTabGraphe()[i]).updateEtude(getTabGraphe()[i]);
 				}
-				*/
+				
 				
 				try {
 					Files.createDirectories(Paths.get("saves"+File.separator+repertoire));
@@ -363,11 +366,11 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 	}
 	
 	public String nullToEmpty(Structure str){
-		return (str==null ? "":str.getNom());
+		return (str==null ? "":String.valueOf(str.getNumero()));
 	}
 	
 	public String nullToEmpty_StructureName(ElementNote<Structure> str){
-		return (str==null ||str.getElement()==null ? "" : str.getElement().getNom());
+		return (str==null ||str.getElement()==null ? "" : String.valueOf(str.getElement().getNumero()));
 	}
 	
 	public String nullToEmpty_StructureNote(ElementNote<Structure> str){
@@ -375,11 +378,11 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 	}
 	
 	public String nullToEmpty(Organisation org){
-		return (org==null ? "":org.getNom());
+		return (org==null ? "":String.valueOf(org.getNumero()));
 	}
 	
 	public String nullToEmpty_OrganisationName(ElementNote<Organisation> org){
-		return (org==null ||org.getElement()==null ? "" : org.getElement().getNom());
+		return (org==null ||org.getElement()==null ? "" : String.valueOf(org.getElement().getNumero()));
 	}
 	
 	public String nullToEmpty_OrganisationNote(ElementNote<Organisation> org){

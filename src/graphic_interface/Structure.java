@@ -33,4 +33,12 @@ public enum Structure implements ElementPouvantEtreNote{ // pour schéma 2
 			}
 		}return null;
 	}
+	
+	public static Structure getByNum(int n){
+		for(Structure e:Structure.values()){
+			if(n==e.getNumero()){
+				return e;
+			}
+		}return null;
+	}
 }
