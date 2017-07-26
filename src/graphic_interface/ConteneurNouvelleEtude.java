@@ -206,6 +206,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 				
 				for(int i=0;i<ConteneurNouvelleEtude.NB_ONGLETS;i++){
 					new UpdateEtude(getTabGraphe()[i]).updateEtude(getTabGraphe()[i]);
+					new VerificationOnglets((CustomTab)getTabs().getTabComponentAt(i),tab_graphes[i]).verification();
 				}
 				
 				
@@ -351,7 +352,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 		}
 	}
 
-	// pour récupérer le conteneur dans lequel il y a l'image : on pourra ainsi récupérer les boutons et les zones de texte ! A appeler à l'aide des boolean MAINTENANT et APRES.
+	// pour récupérer le conteneur dans lequel il y a l'image : on pourra ainsi récupérer les boutons et les zones de texte ! A appeler à l'aide des int MAINTENANT, APRES et RISQUE.
 	public ConteneurSchema getConteneurSchema(int type, int mode)
 	{
 		return mode==MAINTENANT ? ((TabGraphe)((Conteneur)this.getTabs().getComponentAt(type-1)).getComponents()[0]).getConteneur_maintenant() :(mode==APRES ? ((TabGraphe)((Conteneur)this.getTabs().getComponentAt(type-1)).getComponents()[0]).getConteneur_apres() : (ConteneurSchema) ((TabGraphe)((Conteneur)this.getTabs().getComponentAt(type-1)).getComponents()[0]).getConteneur_risque());
