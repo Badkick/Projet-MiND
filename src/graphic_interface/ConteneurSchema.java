@@ -343,7 +343,51 @@ public class ConteneurSchema extends ConteneurAvecImage {
 					);
 			break;
 		case 3:
+			action3 = new ActionBoutonSchemas23(this);
 
+			this.b_rationnelle = new Bouton("Organisation\nRATIONNELLE",dim_boutons_schemas23);
+			this.b_artisanale = new Bouton("Organisation\nARTISANALE",dim_boutons_schemas23);
+			this.b_personnalisee = new Bouton("Organisation\nPERSONNALISEE",dim_boutons_schemas23);
+			this.b_process = new Bouton("Organisation\nPROFESSIONNELLE DE PROCESS",dim_boutons_schemas23);
+			this.b_flexible = new Bouton("Organisation\nFLEXIBLE",dim_boutons_schemas23);
+			this.b_annuler3 = new Bouton("R‡Z", new Dimension(120, 40));
+
+			this.initialiserBoutonSchemas23(this.b_rationnelle,action3);
+			this.initialiserBoutonSchemas23(this.b_artisanale,action3);
+			this.initialiserBoutonSchemas23(this.b_personnalisee,action3);
+			this.initialiserBoutonSchemas23(this.b_process,action3);
+			this.initialiserBoutonSchemas23(this.b_flexible,action3);
+
+			this.b_annuler3.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					action3.activerBouton(b_rationnelle);
+					action3.activerBouton(b_artisanale);
+					action3.activerBouton(b_personnalisee);
+					action3.activerBouton(b_process);
+					action3.activerBouton(b_flexible);
+					action3.setBoutonSelected(null);
+					action3.setSelected(false);
+					note_rationnelle.setText("");
+					note_artisanale.setText("");
+					note_personnalisee.setText("");
+					note_process.setText("");
+					note_flexible.setText("");
+				}
+			});
+
+			this.note_rationnelle = new JLabel();
+			this.note_artisanale = new JLabel();
+			this.note_personnalisee = new JLabel();
+			this.note_process = new JLabel();
+			this.note_flexible = new JLabel();
+			
+			this.initialiserLabelSchemas23(note_rationnelle, dim_labels_schemas23);
+			this.initialiserLabelSchemas23(note_artisanale, dim_labels_schemas23);
+			this.initialiserLabelSchemas23(note_personnalisee, dim_labels_schemas23);
+			this.initialiserLabelSchemas23(note_process, dim_labels_schemas23);
+			this.initialiserLabelSchemas23(note_flexible, dim_labels_schemas23);
 			break;
 		case 4:
 
@@ -548,6 +592,31 @@ public class ConteneurSchema extends ConteneurAvecImage {
 
 	public JLabel getLabel_flexible() {
 		return note_flexible;
+	}
+	
+	public int getNote_rationnelle()
+	{
+		try{return Integer.valueOf(this.getLabel_rationnelle().getText().substring(0, this.getLabel_rationnelle().getText().length()-5));} catch(StringIndexOutOfBoundsException e) {return Integer.MAX_VALUE;}
+	}
+	
+	public int getNote_artisanale()
+	{
+		try{return Integer.valueOf(this.getLabel_artisanale().getText().substring(0, this.getLabel_artisanale().getText().length()-5));} catch(StringIndexOutOfBoundsException e) {return Integer.MAX_VALUE;}
+	}
+	
+	public int getNote_personnalisee()
+	{
+		try{return Integer.valueOf(this.getLabel_personnalisee().getText().substring(0, this.getLabel_personnalisee().getText().length()-5));} catch(StringIndexOutOfBoundsException e) {return Integer.MAX_VALUE;}
+	}
+	
+	public int getNote_process()
+	{
+		try{return Integer.valueOf(this.getLabel_process().getText().substring(0, this.getLabel_process().getText().length()-5));} catch(StringIndexOutOfBoundsException e) {return Integer.MAX_VALUE;}
+	}
+	
+	public int getNote_flexible()
+	{
+		try{return Integer.valueOf(this.getLabel_flexible().getText().substring(0, this.getLabel_flexible().getText().length()-5));} catch(StringIndexOutOfBoundsException e) {return Integer.MAX_VALUE;}
 	}
 
 	// SETTERS //

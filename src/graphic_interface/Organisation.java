@@ -2,11 +2,11 @@ package graphic_interface;
 
 public enum Organisation implements ElementPouvantEtreNote { // pour schéma 3
 
-	RATIONNELLE("rationnelle",1),
-	ARTISANALE("artisanale",2),
-	PERSONNALISEE("personnalisee",3),
-	PROFESSIONNELLE("professionnelle",4),
-	FLEXIBLE("flexible",5);
+	RATIONNELLE("Organisation\nRATIONNELLE",1),
+	ARTISANALE("Organisation\nARTISANALE",2),
+	PERSONNALISEE("Organisation\nPERSONNALISEE",3),
+	PROFESSIONNELLE_PROCESS("Organisation\nPROFESSIONNELLE DE PROCESS",4),
+	FLEXIBLE("Organisation\nFLEXIBLE",5);
 
 	private String nom;
 	private int numero;
