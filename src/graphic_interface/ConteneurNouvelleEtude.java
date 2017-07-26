@@ -148,8 +148,9 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 		this.initialiserTabs();
 		this.initialiserBoutons();
 		this.initialiserLayout();
-		for (int i=0;i<=5;i++){
+		for (int i=0;i<NB_ONGLETS;i++){
 			this.getTabGraphe()[i].initialiserCases(i+1);
+			new VerificationOnglets((CustomTab)this.getTabs().getTabComponentAt(i),tab_graphes[i]).verification();
 		}
 	}
 
