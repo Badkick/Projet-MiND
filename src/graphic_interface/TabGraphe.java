@@ -1,5 +1,6 @@
 package graphic_interface;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ComponentEvent;
@@ -83,7 +84,14 @@ public class TabGraphe extends JTabbedPane {
 			zoneTexte.setPreferredSize(tailleZoneTexte);
 			zoneTexte.setMinimumSize(tailleZoneTexte);
 			zoneTexte.setMaximumSize(tailleZoneTexte);
-			zoneTexte.setFont(FenetreAccueil.theme.getPolice());
+			zoneTexte.setWrapStyleWord(true);
+			zoneTexte.setLineWrap(true);
+			zoneTexte.setFont(FenetreAccueil.theme.getPolice().deriveFont(30f));
+			this.conteneur_risque_schema1.setLayout(new BorderLayout());
+			JLabel titre = new JLabel("Entrez votre commentaire dans la zone ci-dessous :");
+			titre.setHorizontalAlignment(CENTER);
+			titre.setFont(FenetreAccueil.theme.getPolice().deriveFont(35f));
+			this.conteneur_risque_schema1.add(titre,BorderLayout.NORTH);
 			this.conteneur_risque_schema1.add(zoneTexte);
 			this.conteneur_risque_schema1.addComponentListener(new UpdateEtude(this));
 			
