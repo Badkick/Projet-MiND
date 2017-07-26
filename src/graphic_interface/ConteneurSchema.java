@@ -89,7 +89,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	// cas 2
 	
 	Dimension dim_boutons_schemas23 = new Dimension(170,90);
-	Dimension dim_labels_schemas23 = new Dimension(60,60);
+	Dimension dim_labels_schemas23 = new Dimension(60,40);
 
 	private Bouton b_simple_marche;
 	private Bouton b_professionnelle;
@@ -295,7 +295,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 									.addGroup(this.layout.createParallelGroup()
 											.addComponent(b_professionnelle)
 											.addGroup(this.layout.createSequentialGroup()
-													.addGap(12)
+													.addGap(20)
 													.addComponent(note_professionnelle)
 													)
 											)
@@ -303,7 +303,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 							.addGroup(this.layout.createParallelGroup()
 									.addComponent(b_simple_marche)
 									.addGroup(this.layout.createSequentialGroup()
-											.addGap(12)
+											.addGap(20)
 											.addComponent(note_simple_marche)
 											)
 									)
@@ -314,7 +314,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 									.addGroup(this.layout.createParallelGroup()
 											.addComponent(b_mecaniste)
 											.addGroup(this.layout.createSequentialGroup()
-													.addGap(12)
+													.addGap(20)
 													.addComponent(note_mecaniste)
 													)
 											)
@@ -322,7 +322,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 									.addGroup(this.layout.createParallelGroup()
 											.addComponent(b_simple_centralisee)
 											.addGroup(this.layout.createSequentialGroup()
-													.addGap(12)
+													.addGap(20)
 													.addComponent(note_simple_centralisee)
 													)
 											)
@@ -332,7 +332,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 									.addGroup(this.layout.createParallelGroup()
 											.addComponent(b_entrepreneuriale)
 											.addGroup(this.layout.createSequentialGroup()
-													.addGap(12)
+													.addGap(20)
 													.addComponent(note_entrepreneuriale)
 													)
 											)
@@ -348,7 +348,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			this.b_rationnelle = new Bouton("Organisation\nRATIONNELLE",dim_boutons_schemas23);
 			this.b_artisanale = new Bouton("Organisation\nARTISANALE",dim_boutons_schemas23);
 			this.b_personnalisee = new Bouton("Organisation\nPERSONNALISEE",dim_boutons_schemas23);
-			this.b_process = new Bouton("Organisation\nPROFESSIONNELLE DE PROCESS",dim_boutons_schemas23);
+			this.b_process = new Bouton("Organisation\nPROFESSIONNELLE\nDE PROCESS",dim_boutons_schemas23);
 			this.b_flexible = new Bouton("Organisation\nFLEXIBLE",dim_boutons_schemas23);
 			this.b_annuler3 = new Bouton("RàZ", new Dimension(120, 40));
 
@@ -388,6 +388,110 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			this.initialiserLabelSchemas23(note_personnalisee, dim_labels_schemas23);
 			this.initialiserLabelSchemas23(note_process, dim_labels_schemas23);
 			this.initialiserLabelSchemas23(note_flexible, dim_labels_schemas23);
+			
+			this.layout.setHorizontalGroup(
+					this.layout.createSequentialGroup()
+					.addGap(5)
+					.addComponent(b_annuler3)
+					.addGap(70)
+					.addGroup(
+							this.layout.createParallelGroup()
+							.addGroup(
+									this.layout.createParallelGroup()
+									.addGroup(
+											this.layout.createSequentialGroup()
+											.addGap(70)
+											.addComponent(note_rationnelle)
+											)
+									.addComponent(b_rationnelle)
+									)
+							.addGroup(
+									this.layout.createParallelGroup()
+									.addGroup(
+											this.layout.createSequentialGroup()
+											.addGap(70)
+											.addComponent(note_process)
+											)
+									.addComponent(b_process)
+									)
+							)
+					.addGap(25)
+					.addGroup(
+							this.layout.createParallelGroup()
+							.addGroup(
+									this.layout.createSequentialGroup()
+									.addGap(70)
+									.addComponent(note_artisanale)
+									)
+							.addComponent(b_artisanale)
+							)
+					.addGap(25)
+					.addGroup(
+							this.layout.createParallelGroup()
+							.addGroup(
+									this.layout.createParallelGroup()
+									.addGroup(
+											this.layout.createSequentialGroup()
+											.addGap(70)
+											.addComponent(note_personnalisee)
+											)
+									.addComponent(b_personnalisee)
+									)
+							.addGroup(
+									this.layout.createParallelGroup()
+									.addGroup(
+											this.layout.createSequentialGroup()
+											.addGap(70)
+											.addComponent(note_flexible)
+											)
+									.addComponent(b_flexible)
+									)
+							)
+					);
+			
+			this.layout.setVerticalGroup(
+					this.layout.createSequentialGroup()
+					.addGap(30)
+					.addGroup(
+							this.layout.createParallelGroup()
+							.addGroup(
+									this.layout.createSequentialGroup()
+									.addComponent(note_rationnelle)
+									.addComponent(b_rationnelle)
+									)
+							.addGroup(
+									this.layout.createSequentialGroup()
+									.addGap(25)
+									.addGroup(
+											this.layout.createSequentialGroup()
+											.addComponent(note_artisanale)
+											.addComponent(b_artisanale)
+											)
+									)
+							.addGroup(
+									this.layout.createSequentialGroup()
+									.addComponent(note_personnalisee)
+									.addComponent(b_personnalisee)
+									)
+							)
+					.addGap(140)
+					.addGroup(
+							this.layout.createParallelGroup()
+							.addGroup(
+									this.layout.createSequentialGroup()
+									.addComponent(note_process)
+									.addComponent(b_process)
+									)
+							.addGap(200)
+							.addGroup(
+									this.layout.createSequentialGroup()
+									.addComponent(note_flexible)
+									.addComponent(b_flexible)
+									)
+							)
+					.addComponent(b_annuler3)
+					);
+			
 			break;
 		case 4:
 
@@ -668,6 +772,52 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	
 	// schéma 3 //
 	
+	public void setNote_rationnelle(int note)
+	{
+		this.getLabel_rationnelle().setText(String.valueOf(note)+" / 10");
+	}
+	
+	public void setNote_artisanale(int note)
+	{
+		this.getLabel_artisanale().setText(String.valueOf(note)+" / 10");
+	}
+	
+	public void setNote_personnalisee(int note)
+	{
+		this.getLabel_personnalisee().setText(String.valueOf(note)+" / 10");
+	}
+	
+	public void setNote_process(int note)
+	{
+		this.getLabel_process().setText(String.valueOf(note)+" / 10");
+	}
+	
+	public void setNote_flexible(int note)
+	{
+		this.getLabel_flexible().setText(String.valueOf(note)+" / 10");
+	}
+	
+	
+	// METHODES //
+	
+	public void initialiserBoutonSchemas23(Bouton b, ActionBoutonSchemas23 action)
+	{
+		b.setImgRepos(FenetreAccueil.theme.getbSchema2Repos());
+		b.setImgSurvol(FenetreAccueil.theme.getbSchema2Survol());
+		b.setImgClic(FenetreAccueil.theme.getbSchema2Survol());
+		b.updateCouleur();
+		b.repaint();
+		b.addActionListener(action);
+	}
+	
+	public void initialiserLabelSchemas23(JLabel label, Dimension dim_label)
+	{
+		label.setForeground(Color.WHITE);
+		label.setPreferredSize(dim_label);
+		label.setMaximumSize(dim_label);
+		label.setMinimumSize(dim_label);
+	}
+	
 	public void setNote(Bouton b, int note)
 	{
 		String nom = b.getName();
@@ -689,27 +839,22 @@ public class ConteneurSchema extends ConteneurAvecImage {
 		case "Structure\nENTREPRENEURIALE":
 			this.setNote_entrepreneuriale(note);
 			break;
+		case "Organisation\nRATIONNELLE":
+			this.setNote_rationnelle(note);
+			break;
+		case "Organisation\nARTISANALE":
+			this.setNote_artisanale(note);
+			break;
+		case "Organisation\nPERSONNALISEE":
+			this.setNote_personnalisee(note);
+			break;
+		case "Organisation\nPROFESSIONNELLE\nDE PROCESS":
+			this.setNote_process(note);
+			break;
+		case "Organisation\nFLEXIBLE":
+			this.setNote_flexible(note);
+			break;
 		}
-	}
-	
-	// METHODES //
-	
-	public void initialiserBoutonSchemas23(Bouton b, ActionBoutonSchemas23 action)
-	{
-		b.setImgRepos(FenetreAccueil.theme.getbSchema2Repos());
-		b.setImgSurvol(FenetreAccueil.theme.getbSchema2Survol());
-		b.setImgClic(FenetreAccueil.theme.getbSchema2Survol());
-		b.updateCouleur();
-		b.repaint();
-		b.addActionListener(action);
-	}
-	
-	public void initialiserLabelSchemas23(JLabel label, Dimension dim_label)
-	{
-		label.setForeground(Color.WHITE);
-		label.setPreferredSize(dim_label);
-		label.setMaximumSize(dim_label);
-		label.setMinimumSize(dim_label);
 	}
 
 }
