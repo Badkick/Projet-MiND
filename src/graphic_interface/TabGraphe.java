@@ -108,9 +108,6 @@ public class TabGraphe extends JTabbedPane {
 		this.conteneur_apres.addComponentListener(new UpdateEtude(this));
 		this.conteneur_risque.addComponentListener(new VerificationPetitsOnglets(this.conteneur_risque, (CustomTab) this.getTabComponentAt(2)));
 		this.conteneur_risque.addComponentListener(new UpdateEtude(this));
-		for (int i=1;i<=6;i++){
-			this.initialiserCases(i);
-		}
 		
 	}
 
@@ -159,7 +156,7 @@ public class TabGraphe extends JTabbedPane {
 		this.getConteneur_comment().add(texte);
 	}
 	
-	private void initialiserCases(int type){
+	public void initialiserCases(int type){
 		switch(type){
 		case 1:
 			try{
@@ -203,6 +200,256 @@ public class TabGraphe extends JTabbedPane {
 			}catch(NullPointerException ex){}
 			break;
 		case 2:
+			try{	
+				if(FenetreAccueil.etude.getS2().getMtn_principale().getNumero()==1){
+					this.getConteneur_maintenant().getAction().setSelected(true);
+					this.getConteneur_maintenant().getAction().setBoutonSelected(this.getConteneur_maintenant().getB_simple_marche());
+					this.getConteneur_maintenant().getAction().desactiverBouton(this.getConteneur_maintenant().getB_simple_marche());
+					if(FenetreAccueil.etude.getS2().getMtn_notees()[0].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_maintenant().setNote_professionnelle(FenetreAccueil.etude.getS2().getMtn_notees()[0].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getMtn_notees()[1].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_maintenant().setNote_mecaniste(FenetreAccueil.etude.getS2().getMtn_notees()[1].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getMtn_notees()[2].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_maintenant().setNote_simple_centralisee(FenetreAccueil.etude.getS2().getMtn_notees()[2].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getMtn_notees()[3].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_maintenant().setNote_entrepreneuriale(FenetreAccueil.etude.getS2().getMtn_notees()[3].getNote());
+					}
+				}else if(FenetreAccueil.etude.getS2().getMtn_principale().getNumero()==2){
+					this.getConteneur_maintenant().getAction().setSelected(true);
+					this.getConteneur_maintenant().getAction().setBoutonSelected(this.getConteneur_maintenant().getB_professionnelle());
+					this.getConteneur_maintenant().getAction().desactiverBouton(this.getConteneur_maintenant().getB_professionnelle());
+					if(FenetreAccueil.etude.getS2().getMtn_notees()[0].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_maintenant().setNote_simple_marche(FenetreAccueil.etude.getS2().getMtn_notees()[0].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getMtn_notees()[1].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_maintenant().setNote_mecaniste(FenetreAccueil.etude.getS2().getMtn_notees()[1].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getMtn_notees()[2].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_maintenant().setNote_simple_centralisee(FenetreAccueil.etude.getS2().getMtn_notees()[2].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getMtn_notees()[3].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_maintenant().setNote_entrepreneuriale(FenetreAccueil.etude.getS2().getMtn_notees()[3].getNote());
+					}
+				}else if(FenetreAccueil.etude.getS2().getMtn_principale().getNumero()==3){
+					this.getConteneur_maintenant().getAction().setSelected(true);
+					this.getConteneur_maintenant().getAction().setBoutonSelected(this.getConteneur_maintenant().getB_mecaniste());
+					this.getConteneur_maintenant().getAction().desactiverBouton(this.getConteneur_maintenant().getB_mecaniste());
+					if(FenetreAccueil.etude.getS2().getMtn_notees()[0].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_maintenant().setNote_simple_marche(FenetreAccueil.etude.getS2().getMtn_notees()[0].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getMtn_notees()[1].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_maintenant().setNote_professionnelle(FenetreAccueil.etude.getS2().getMtn_notees()[1].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getMtn_notees()[2].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_maintenant().setNote_simple_centralisee(FenetreAccueil.etude.getS2().getMtn_notees()[2].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getMtn_notees()[3].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_maintenant().setNote_entrepreneuriale(FenetreAccueil.etude.getS2().getMtn_notees()[3].getNote());
+					}
+				}else if(FenetreAccueil.etude.getS2().getMtn_principale().getNumero()==4){
+					this.getConteneur_maintenant().getAction().setSelected(true);
+					this.getConteneur_maintenant().getAction().setBoutonSelected(this.getConteneur_maintenant().getB_simple_centralisee());
+					this.getConteneur_maintenant().getAction().desactiverBouton(this.getConteneur_maintenant().getB_simple_centralisee());
+					if(FenetreAccueil.etude.getS2().getMtn_notees()[0].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_maintenant().setNote_simple_marche(FenetreAccueil.etude.getS2().getMtn_notees()[0].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getMtn_notees()[1].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_maintenant().setNote_professionnelle(FenetreAccueil.etude.getS2().getMtn_notees()[1].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getMtn_notees()[2].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_maintenant().setNote_mecaniste(FenetreAccueil.etude.getS2().getMtn_notees()[2].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getMtn_notees()[3].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_maintenant().setNote_entrepreneuriale(FenetreAccueil.etude.getS2().getMtn_notees()[3].getNote());
+					}
+				}else if(FenetreAccueil.etude.getS2().getMtn_principale().getNumero()==5){
+					this.getConteneur_maintenant().getAction().setSelected(true);
+					this.getConteneur_maintenant().getAction().setBoutonSelected(this.getConteneur_maintenant().getB_entrepreneuriale());
+					this.getConteneur_maintenant().getAction().desactiverBouton(this.getConteneur_maintenant().getB_entrepreneuriale());
+					if(FenetreAccueil.etude.getS2().getMtn_notees()[0].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_maintenant().setNote_simple_marche(FenetreAccueil.etude.getS2().getMtn_notees()[0].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getMtn_notees()[1].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_maintenant().setNote_professionnelle(FenetreAccueil.etude.getS2().getMtn_notees()[1].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getMtn_notees()[2].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_maintenant().setNote_mecaniste(FenetreAccueil.etude.getS2().getMtn_notees()[2].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getMtn_notees()[3].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_maintenant().setNote_simple_centralisee(FenetreAccueil.etude.getS2().getMtn_notees()[3].getNote());
+					}
+				}
+			}catch(NullPointerException ex){}
+			try{	
+				if(FenetreAccueil.etude.getS2().getApr_principale().getNumero()==1){
+					this.getConteneur_apres().getAction().setSelected(true);
+					this.getConteneur_apres().getAction().setBoutonSelected(this.getConteneur_apres().getB_simple_marche());
+					this.getConteneur_apres().getAction().desactiverBouton(this.getConteneur_apres().getB_simple_marche());
+					if(FenetreAccueil.etude.getS2().getApr_notees()[0].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_apres().setNote_professionnelle(FenetreAccueil.etude.getS2().getApr_notees()[0].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getApr_notees()[1].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_apres().setNote_mecaniste(FenetreAccueil.etude.getS2().getApr_notees()[1].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getApr_notees()[2].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_apres().setNote_simple_centralisee(FenetreAccueil.etude.getS2().getApr_notees()[2].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getApr_notees()[3].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_apres().setNote_entrepreneuriale(FenetreAccueil.etude.getS2().getApr_notees()[3].getNote());
+					}
+				}else if(FenetreAccueil.etude.getS2().getApr_principale().getNumero()==2){
+					this.getConteneur_apres().getAction().setSelected(true);
+					this.getConteneur_apres().getAction().setBoutonSelected(this.getConteneur_apres().getB_professionnelle());
+					this.getConteneur_apres().getAction().desactiverBouton(this.getConteneur_apres().getB_professionnelle());
+					if(FenetreAccueil.etude.getS2().getApr_notees()[0].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_apres().setNote_simple_marche(FenetreAccueil.etude.getS2().getApr_notees()[0].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getApr_notees()[1].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_apres().setNote_mecaniste(FenetreAccueil.etude.getS2().getApr_notees()[1].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getApr_notees()[2].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_apres().setNote_simple_centralisee(FenetreAccueil.etude.getS2().getApr_notees()[2].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getApr_notees()[3].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_apres().setNote_entrepreneuriale(FenetreAccueil.etude.getS2().getApr_notees()[3].getNote());
+					}
+				}else if(FenetreAccueil.etude.getS2().getApr_principale().getNumero()==3){
+					this.getConteneur_apres().getAction().setSelected(true);
+					this.getConteneur_apres().getAction().setBoutonSelected(this.getConteneur_apres().getB_mecaniste());
+					this.getConteneur_apres().getAction().desactiverBouton(this.getConteneur_apres().getB_mecaniste());
+					if(FenetreAccueil.etude.getS2().getApr_notees()[0].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_apres().setNote_simple_marche(FenetreAccueil.etude.getS2().getApr_notees()[0].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getApr_notees()[1].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_apres().setNote_professionnelle(FenetreAccueil.etude.getS2().getApr_notees()[1].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getApr_notees()[2].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_apres().setNote_simple_centralisee(FenetreAccueil.etude.getS2().getApr_notees()[2].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getApr_notees()[3].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_apres().setNote_entrepreneuriale(FenetreAccueil.etude.getS2().getApr_notees()[3].getNote());
+					}
+				}else if(FenetreAccueil.etude.getS2().getApr_principale().getNumero()==4){
+					this.getConteneur_apres().getAction().setSelected(true);
+					this.getConteneur_apres().getAction().setBoutonSelected(this.getConteneur_apres().getB_simple_centralisee());
+					this.getConteneur_apres().getAction().desactiverBouton(this.getConteneur_apres().getB_simple_centralisee());
+					if(FenetreAccueil.etude.getS2().getApr_notees()[0].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_apres().setNote_simple_marche(FenetreAccueil.etude.getS2().getApr_notees()[0].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getApr_notees()[1].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_apres().setNote_professionnelle(FenetreAccueil.etude.getS2().getApr_notees()[1].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getApr_notees()[2].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_apres().setNote_mecaniste(FenetreAccueil.etude.getS2().getApr_notees()[2].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getApr_notees()[3].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_apres().setNote_entrepreneuriale(FenetreAccueil.etude.getS2().getApr_notees()[3].getNote());
+					}
+				}else if(FenetreAccueil.etude.getS2().getApr_principale().getNumero()==5){
+					this.getConteneur_apres().getAction().setSelected(true);
+					this.getConteneur_apres().getAction().setBoutonSelected(this.getConteneur_apres().getB_entrepreneuriale());
+					this.getConteneur_apres().getAction().desactiverBouton(this.getConteneur_apres().getB_entrepreneuriale());
+					if(FenetreAccueil.etude.getS2().getApr_notees()[0].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_apres().setNote_simple_marche(FenetreAccueil.etude.getS2().getApr_notees()[0].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getApr_notees()[1].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_apres().setNote_professionnelle(FenetreAccueil.etude.getS2().getApr_notees()[1].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getApr_notees()[2].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_apres().setNote_mecaniste(FenetreAccueil.etude.getS2().getApr_notees()[2].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getApr_notees()[3].getNote()!=Integer.MAX_VALUE){
+						this.getConteneur_apres().setNote_simple_centralisee(FenetreAccueil.etude.getS2().getApr_notees()[3].getNote());
+					}
+				}
+			}catch(NullPointerException ex){}
+			try{	
+				ConteneurSchema cont=(ConteneurSchema) this.getConteneur_risque();
+				if(FenetreAccueil.etude.getS2().getRis_principale().getNumero()==1){
+					cont.getAction().setSelected(true);
+					cont.getAction().setBoutonSelected(cont.getB_simple_marche());
+					cont.getAction().desactiverBouton(cont.getB_simple_marche());
+					if(FenetreAccueil.etude.getS2().getRis_notees()[0].getNote()!=Integer.MAX_VALUE){
+						cont.setNote_professionnelle(FenetreAccueil.etude.getS2().getRis_notees()[0].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getRis_notees()[1].getNote()!=Integer.MAX_VALUE){
+						cont.setNote_mecaniste(FenetreAccueil.etude.getS2().getRis_notees()[1].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getRis_notees()[2].getNote()!=Integer.MAX_VALUE){
+						cont.setNote_simple_centralisee(FenetreAccueil.etude.getS2().getRis_notees()[2].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getRis_notees()[3].getNote()!=Integer.MAX_VALUE){
+						cont.setNote_entrepreneuriale(FenetreAccueil.etude.getS2().getRis_notees()[3].getNote());
+					}
+				}else if(FenetreAccueil.etude.getS2().getRis_principale().getNumero()==2){
+					cont.getAction().setSelected(true);
+					cont.getAction().setBoutonSelected(cont.getB_professionnelle());
+					cont.getAction().desactiverBouton(cont.getB_professionnelle());
+					if(FenetreAccueil.etude.getS2().getRis_notees()[0].getNote()!=Integer.MAX_VALUE){
+						cont.setNote_simple_marche(FenetreAccueil.etude.getS2().getRis_notees()[0].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getRis_notees()[1].getNote()!=Integer.MAX_VALUE){
+						cont.setNote_mecaniste(FenetreAccueil.etude.getS2().getRis_notees()[1].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getRis_notees()[2].getNote()!=Integer.MAX_VALUE){
+						cont.setNote_simple_centralisee(FenetreAccueil.etude.getS2().getRis_notees()[2].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getRis_notees()[3].getNote()!=Integer.MAX_VALUE){
+						cont.setNote_entrepreneuriale(FenetreAccueil.etude.getS2().getRis_notees()[3].getNote());
+					}
+				}else if(FenetreAccueil.etude.getS2().getRis_principale().getNumero()==3){
+					cont.getAction().setSelected(true);
+					cont.getAction().setBoutonSelected(cont.getB_mecaniste());
+					cont.getAction().desactiverBouton(cont.getB_mecaniste());
+					if(FenetreAccueil.etude.getS2().getRis_notees()[0].getNote()!=Integer.MAX_VALUE){
+						cont.setNote_simple_marche(FenetreAccueil.etude.getS2().getRis_notees()[0].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getRis_notees()[1].getNote()!=Integer.MAX_VALUE){
+						cont.setNote_professionnelle(FenetreAccueil.etude.getS2().getRis_notees()[1].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getRis_notees()[2].getNote()!=Integer.MAX_VALUE){
+						cont.setNote_simple_centralisee(FenetreAccueil.etude.getS2().getRis_notees()[2].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getRis_notees()[3].getNote()!=Integer.MAX_VALUE){
+						cont.setNote_entrepreneuriale(FenetreAccueil.etude.getS2().getRis_notees()[3].getNote());
+					}
+				}else if(FenetreAccueil.etude.getS2().getRis_principale().getNumero()==4){
+					cont.getAction().setSelected(true);
+					cont.getAction().setBoutonSelected(cont.getB_simple_centralisee());
+					cont.getAction().desactiverBouton(cont.getB_simple_centralisee());
+					if(FenetreAccueil.etude.getS2().getRis_notees()[0].getNote()!=Integer.MAX_VALUE){
+						cont.setNote_simple_marche(FenetreAccueil.etude.getS2().getRis_notees()[0].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getRis_notees()[1].getNote()!=Integer.MAX_VALUE){
+						cont.setNote_professionnelle(FenetreAccueil.etude.getS2().getRis_notees()[1].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getRis_notees()[2].getNote()!=Integer.MAX_VALUE){
+						cont.setNote_mecaniste(FenetreAccueil.etude.getS2().getRis_notees()[2].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getRis_notees()[3].getNote()!=Integer.MAX_VALUE){
+						cont.setNote_entrepreneuriale(FenetreAccueil.etude.getS2().getRis_notees()[3].getNote());
+					}
+				}else if(FenetreAccueil.etude.getS2().getRis_principale().getNumero()==5){
+					cont.getAction().setSelected(true);
+					cont.getAction().setBoutonSelected(cont.getB_entrepreneuriale());
+					cont.getAction().desactiverBouton(cont.getB_entrepreneuriale());
+					if(FenetreAccueil.etude.getS2().getRis_notees()[0].getNote()!=Integer.MAX_VALUE){
+						cont.setNote_simple_marche(FenetreAccueil.etude.getS2().getRis_notees()[0].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getRis_notees()[1].getNote()!=Integer.MAX_VALUE){
+						cont.setNote_professionnelle(FenetreAccueil.etude.getS2().getRis_notees()[1].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getRis_notees()[2].getNote()!=Integer.MAX_VALUE){
+						cont.setNote_mecaniste(FenetreAccueil.etude.getS2().getRis_notees()[2].getNote());
+					}
+					if(FenetreAccueil.etude.getS2().getRis_notees()[3].getNote()!=Integer.MAX_VALUE){
+						cont.setNote_simple_centralisee(FenetreAccueil.etude.getS2().getRis_notees()[3].getNote());
+					}
+				}
+			}catch(NullPointerException ex){}
 			break;
 		case 3:
 			break;
