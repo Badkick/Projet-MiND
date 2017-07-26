@@ -206,8 +206,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 				save();
 				
 				for(int i=0;i<ConteneurNouvelleEtude.NB_ONGLETS;i++){
-					new UpdateEtude(getTabGraphe()[i]).updateEtude(getTabGraphe()[i]);
-					new VerificationOnglets((CustomTab)getTabs().getTabComponentAt(i),tab_graphes[i]).verification();
+					new VerificationOnglets((CustomTab)getTabs().getTabComponentAt(i),getTabGraphe()[i]).verification();
 				}
 				
 				
