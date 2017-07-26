@@ -40,7 +40,6 @@ public class UpdateEtude implements ComponentListener {
 		switch(type)
 		{
 		case 1:
-			//try {FenetreAccueil.etude.getS1().setMtn_contr_tech(tab.getConteneur_maintenant().getContr_tech());} catch(NullPointerException ex) {}
 			FenetreAccueil.etude.getS1().setMtn_contr_tech(tab.getConteneur_maintenant().getContr_tech());
 			FenetreAccueil.etude.getS1().setMtn_etabl_prot(tab.getConteneur_maintenant().getEtabl_prot());
 			FenetreAccueil.etude.getS1().setMtn_mena_mar(tab.getConteneur_maintenant().getMena_mar());
@@ -67,27 +66,27 @@ public class UpdateEtude implements ComponentListener {
 				ActionBoutonSchemas23 action = conteneur.getAction2();
 				ElementNote<Structure>[] mtn_notees = new ElementNote[4];
 				int i=0;
-				if(!action.getBoutonSelected().getName().equals("Structure\nSIMPLE DE MARCHE"))
+				if(!action.getBoutonSelected().getName().equals(Structure.SIMPLE_MARCHE.getNom()))
 				{
 					mtn_notees[i] = new ElementNote<Structure>(Structure.SIMPLE_MARCHE, conteneur.getNote_simple_marche());
 					i++;
 				}
-				if(!action.getBoutonSelected().getName().equals("Structure\nPROFESSIONNELLE"))
+				if(!action.getBoutonSelected().getName().equals(Structure.PROFESSIONNELLE.getNom()))
 				{
 					mtn_notees[i] = new ElementNote<Structure>(Structure.PROFESSIONNELLE, conteneur.getNote_professionnelle());
 					i++;
 				}
-				if(!action.getBoutonSelected().getName().equals("Structure\nMECANISTE"))
+				if(!action.getBoutonSelected().getName().equals(Structure.MECANISTE.getNom()))
 				{
 					mtn_notees[i] = new ElementNote<Structure>(Structure.MECANISTE, conteneur.getNote_mecaniste());
 					i++;
 				}
-				if(!action.getBoutonSelected().getName().equals("Structure\nSIMPLE CENTRALISEE"))
+				if(!action.getBoutonSelected().getName().equals(Structure.SIMPLE_CENTRALISEE.getNom()))
 				{
 					mtn_notees[i] = new ElementNote<Structure>(Structure.SIMPLE_CENTRALISEE, conteneur.getNote_simple_centralisee());
 					i++;
 				}
-				if(!action.getBoutonSelected().getName().equals("Structure\nENTREPRENEURIALE"))
+				if(!action.getBoutonSelected().getName().equals(Structure.ENTREPRENEURIALE.getNom()))
 				{
 					mtn_notees[i] = new ElementNote<Structure>(Structure.ENTREPRENEURIALE, conteneur.getNote_entrepreneuriale());
 					i++;
@@ -102,27 +101,27 @@ public class UpdateEtude implements ComponentListener {
 				ActionBoutonSchemas23 action = conteneur.getAction2();
 				ElementNote<Structure>[] apr_notees = new ElementNote[4];
 				int i=0;
-				if(!action.getBoutonSelected().getName().equals("Structure\nSIMPLE DE MARCHE"))
+				if(!action.getBoutonSelected().getName().equals(Structure.SIMPLE_MARCHE.getNom()))
 				{
 					apr_notees[i] = new ElementNote<Structure>(Structure.SIMPLE_MARCHE, conteneur.getNote_simple_marche());
 					i++;
 				}
-				if(!action.getBoutonSelected().getName().equals("Structure\nPROFESSIONNELLE"))
+				if(!action.getBoutonSelected().getName().equals(Structure.PROFESSIONNELLE.getNom()))
 				{
 					apr_notees[i] = new ElementNote<Structure>(Structure.PROFESSIONNELLE, conteneur.getNote_professionnelle());
 					i++;
 				}
-				if(!action.getBoutonSelected().getName().equals("Structure\nMECANISTE"))
+				if(!action.getBoutonSelected().getName().equals(Structure.MECANISTE.getNom()))
 				{
 					apr_notees[i] = new ElementNote<Structure>(Structure.MECANISTE, conteneur.getNote_mecaniste());
 					i++;
 				}
-				if(!action.getBoutonSelected().getName().equals("Structure\nSIMPLE CENTRALISEE"))
+				if(!action.getBoutonSelected().getName().equals(Structure.SIMPLE_CENTRALISEE.getNom()))
 				{
 					apr_notees[i] = new ElementNote<Structure>(Structure.SIMPLE_CENTRALISEE, conteneur.getNote_simple_centralisee());
 					i++;
 				}
-				if(!action.getBoutonSelected().getName().equals("Structure\nENTREPRENEURIALE"))
+				if(!action.getBoutonSelected().getName().equals(Structure.ENTREPRENEURIALE.getNom()))
 				{
 					apr_notees[i] = new ElementNote<Structure>(Structure.ENTREPRENEURIALE, conteneur.getNote_entrepreneuriale());
 					i++;
@@ -137,33 +136,144 @@ public class UpdateEtude implements ComponentListener {
 				ActionBoutonSchemas23 action = conteneur.getAction2();
 				ElementNote<Structure>[] ris_notees = new ElementNote[4];
 				int i=0;
-				if(!action.getBoutonSelected().getName().equals("Structure\nSIMPLE DE MARCHE"))
+				if(!action.getBoutonSelected().getName().equals(Structure.SIMPLE_MARCHE.getNom()))
 				{
 					ris_notees[i] = new ElementNote<Structure>(Structure.SIMPLE_MARCHE, conteneur.getNote_simple_marche());
 					i++;
 				}
-				if(!action.getBoutonSelected().getName().equals("Structure\nPROFESSIONNELLE"))
+				if(!action.getBoutonSelected().getName().equals(Structure.PROFESSIONNELLE.getNom()))
 				{
 					ris_notees[i] = new ElementNote<Structure>(Structure.PROFESSIONNELLE, conteneur.getNote_professionnelle());
 					i++;
 				}
-				if(!action.getBoutonSelected().getName().equals("Structure\nMECANISTE"))
+				if(!action.getBoutonSelected().getName().equals(Structure.MECANISTE.getNom()))
 				{
 					ris_notees[i] = new ElementNote<Structure>(Structure.MECANISTE, conteneur.getNote_mecaniste());
 					i++;
 				}
-				if(!action.getBoutonSelected().getName().equals("Structure\nSIMPLE CENTRALISEE"))
+				if(!action.getBoutonSelected().getName().equals(Structure.SIMPLE_CENTRALISEE.getNom()))
 				{
 					ris_notees[i] = new ElementNote<Structure>(Structure.SIMPLE_CENTRALISEE, conteneur.getNote_simple_centralisee());
 					i++;
 				}
-				if(!action.getBoutonSelected().getName().equals("Structure\nENTREPRENEURIALE"))
+				if(!action.getBoutonSelected().getName().equals(Structure.ENTREPRENEURIALE.getNom()))
 				{
 					ris_notees[i] = new ElementNote<Structure>(Structure.ENTREPRENEURIALE, conteneur.getNote_entrepreneuriale());
 					i++;
 				}
 				
 				FenetreAccueil.etude.getS2().setRis_notees(ris_notees);
+			}
+			break;
+			
+		case 3:
+			try{FenetreAccueil.etude.getS3().setMtn_principale(Organisation.getByName(tab.getConteneur_maintenant().getAction3().getBoutonSelected().getName()));} catch(NullPointerException ex) {}
+			try{FenetreAccueil.etude.getS3().setApr_principale(Organisation.getByName(tab.getConteneur_apres().getAction3().getBoutonSelected().getName()));} catch(NullPointerException ex) {}
+			try{FenetreAccueil.etude.getS3().setRis_principale(Organisation.getByName(((ConteneurSchema) tab.getConteneur_risque()).getAction3().getBoutonSelected().getName()));} catch(NullPointerException ex) {}
+
+			if(tab.getConteneur_maintenant().getAction3().isSelected())
+			{
+				ConteneurSchema conteneur = tab.getConteneur_maintenant();
+				ActionBoutonSchemas23 action = conteneur.getAction3();
+				ElementNote<Organisation>[] mtn_notees = new ElementNote[4];
+				int i=0;
+				if(!action.getBoutonSelected().getName().equals(Organisation.RATIONNELLE.getNom()))
+				{
+					mtn_notees[i] = new ElementNote<Organisation>(Organisation.RATIONNELLE, conteneur.getNote_rationnelle());
+					i++;
+				}
+				if(!action.getBoutonSelected().getName().equals(Organisation.ARTISANALE.getNom()))
+				{
+					mtn_notees[i] = new ElementNote<Organisation>(Organisation.ARTISANALE, conteneur.getNote_artisanale());
+					i++;
+				}
+				if(!action.getBoutonSelected().getName().equals(Organisation.PERSONNALISEE.getNom()))
+				{
+					mtn_notees[i] = new ElementNote<Organisation>(Organisation.PERSONNALISEE, conteneur.getNote_personnalisee());
+					i++;
+				}
+				if(!action.getBoutonSelected().getName().equals(Organisation.PROFESSIONNELLE_PROCESS.getNom()))
+				{
+					mtn_notees[i] = new ElementNote<Organisation>(Organisation.PROFESSIONNELLE_PROCESS, conteneur.getNote_process());
+					i++;
+				}
+				if(!action.getBoutonSelected().getName().equals(Organisation.FLEXIBLE.getNom()))
+				{
+					mtn_notees[i] = new ElementNote<Organisation>(Organisation.FLEXIBLE, conteneur.getNote_flexible());
+					i++;
+				}
+				
+				FenetreAccueil.etude.getS3().setMtn_notees(mtn_notees);
+			}
+			
+			if(tab.getConteneur_apres().getAction3().isSelected())
+			{
+				ConteneurSchema conteneur = tab.getConteneur_apres();
+				ActionBoutonSchemas23 action = conteneur.getAction3();
+				ElementNote<Organisation>[] apr_notees = new ElementNote[4];
+				int i=0;
+				if(!action.getBoutonSelected().getName().equals(Organisation.RATIONNELLE.getNom()))
+				{
+					apr_notees[i] = new ElementNote<Organisation>(Organisation.RATIONNELLE, conteneur.getNote_rationnelle());
+					i++;
+				}
+				if(!action.getBoutonSelected().getName().equals(Organisation.ARTISANALE.getNom()))
+				{
+					apr_notees[i] = new ElementNote<Organisation>(Organisation.ARTISANALE, conteneur.getNote_artisanale());
+					i++;
+				}
+				if(!action.getBoutonSelected().getName().equals(Organisation.PERSONNALISEE.getNom()))
+				{
+					apr_notees[i] = new ElementNote<Organisation>(Organisation.PERSONNALISEE, conteneur.getNote_personnalisee());
+					i++;
+				}
+				if(!action.getBoutonSelected().getName().equals(Organisation.PROFESSIONNELLE_PROCESS.getNom()))
+				{
+					apr_notees[i] = new ElementNote<Organisation>(Organisation.PROFESSIONNELLE_PROCESS, conteneur.getNote_process());
+					i++;
+				}
+				if(!action.getBoutonSelected().getName().equals(Organisation.FLEXIBLE.getNom()))
+				{
+					apr_notees[i] = new ElementNote<Organisation>(Organisation.FLEXIBLE, conteneur.getNote_flexible());
+					i++;
+				}
+				
+				FenetreAccueil.etude.getS3().setApr_notees(apr_notees);
+			}
+			
+			if(((ConteneurSchema)tab.getConteneur_risque()).getAction3().isSelected())
+			{
+				ConteneurSchema conteneur = (ConteneurSchema) tab.getConteneur_risque();
+				ActionBoutonSchemas23 action = conteneur.getAction3();
+				ElementNote<Organisation>[] ris_notees = new ElementNote[4];
+				int i=0;
+				if(!action.getBoutonSelected().getName().equals(Organisation.RATIONNELLE.getNom()))
+				{
+					ris_notees[i] = new ElementNote<Organisation>(Organisation.RATIONNELLE, conteneur.getNote_rationnelle());
+					i++;
+				}
+				if(!action.getBoutonSelected().getName().equals(Organisation.ARTISANALE.getNom()))
+				{
+					ris_notees[i] = new ElementNote<Organisation>(Organisation.ARTISANALE, conteneur.getNote_artisanale());
+					i++;
+				}
+				if(!action.getBoutonSelected().getName().equals(Organisation.PERSONNALISEE.getNom()))
+				{
+					ris_notees[i] = new ElementNote<Organisation>(Organisation.PERSONNALISEE, conteneur.getNote_personnalisee());
+					i++;
+				}
+				if(!action.getBoutonSelected().getName().equals(Organisation.PROFESSIONNELLE_PROCESS.getNom()))
+				{
+					ris_notees[i] = new ElementNote<Organisation>(Organisation.PROFESSIONNELLE_PROCESS, conteneur.getNote_process());
+					i++;
+				}
+				if(!action.getBoutonSelected().getName().equals(Organisation.FLEXIBLE.getNom()))
+				{
+					ris_notees[i] = new ElementNote<Organisation>(Organisation.FLEXIBLE, conteneur.getNote_flexible());
+					i++;
+				}
+				
+				FenetreAccueil.etude.getS3().setRis_notees(ris_notees);
 			}
 			break;
 		}

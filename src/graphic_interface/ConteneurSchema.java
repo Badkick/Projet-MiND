@@ -200,11 +200,11 @@ public class ConteneurSchema extends ConteneurAvecImage {
 		case 2:
 			action2 = new ActionBoutonSchemas23(this);
 
-			this.b_simple_marche = new Bouton("Structure\nSIMPLE DE MARCHE",dim_boutons_schemas23);
-			this.b_professionnelle = new Bouton("Structure\nPROFESSIONNELLE",dim_boutons_schemas23);
-			this.b_mecaniste = new Bouton("Structure\nMECANISTE",dim_boutons_schemas23);
-			this.b_simple_centralisee = new Bouton("Structure\nSIMPLE CENTRALISEE",dim_boutons_schemas23);
-			this.b_entrepreneuriale = new Bouton("Structure\nENTREPRENEURIALE",dim_boutons_schemas23);
+			this.b_simple_marche = new Bouton(Structure.SIMPLE_MARCHE.getNom(),dim_boutons_schemas23);
+			this.b_professionnelle = new Bouton(Structure.PROFESSIONNELLE.getNom(),dim_boutons_schemas23);
+			this.b_mecaniste = new Bouton(Structure.MECANISTE.getNom(),dim_boutons_schemas23);
+			this.b_simple_centralisee = new Bouton(Structure.SIMPLE_CENTRALISEE.getNom(),dim_boutons_schemas23);
+			this.b_entrepreneuriale = new Bouton(Structure.ENTREPRENEURIALE.getNom(),dim_boutons_schemas23);
 			this.b_annuler2 = new Bouton("R‡Z", new Dimension(120, 40));
 
 			this.initialiserBoutonSchemas23(this.b_entrepreneuriale,action2);
@@ -342,11 +342,11 @@ public class ConteneurSchema extends ConteneurAvecImage {
 		case 3:
 			action3 = new ActionBoutonSchemas23(this);
 
-			this.b_rationnelle = new Bouton("Organisation\nRATIONNELLE",dim_boutons_schemas23);
-			this.b_artisanale = new Bouton("Organisation\nARTISANALE",dim_boutons_schemas23);
-			this.b_personnalisee = new Bouton("Organisation\nPERSONNALISEE",dim_boutons_schemas23);
-			this.b_process = new Bouton("Organisation\nPROFESSIONNELLE\nDE PROCESS",dim_boutons_schemas23);
-			this.b_flexible = new Bouton("Organisation\nFLEXIBLE",dim_boutons_schemas23);
+			this.b_rationnelle = new Bouton(Organisation.RATIONNELLE.getNom(),dim_boutons_schemas23);
+			this.b_artisanale = new Bouton(Organisation.ARTISANALE.getNom(),dim_boutons_schemas23);
+			this.b_personnalisee = new Bouton(Organisation.PERSONNALISEE.getNom(),dim_boutons_schemas23);
+			this.b_process = new Bouton(Organisation.PROFESSIONNELLE_PROCESS.getNom(),dim_boutons_schemas23);
+			this.b_flexible = new Bouton(Organisation.FLEXIBLE.getNom(),dim_boutons_schemas23);
 			this.b_annuler3 = new Bouton("R‡Z", new Dimension(120, 40));
 
 			this.initialiserBoutonSchemas23(this.b_rationnelle,action3);
