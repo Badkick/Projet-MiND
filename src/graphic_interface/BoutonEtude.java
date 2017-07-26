@@ -63,8 +63,15 @@ public class BoutonEtude extends ConteneurAvecImage {
 		layout.setVerticalGroup(
 				layout.createParallelGroup()
 				.addComponent(this.conteneur_nom)
-				.addComponent(this.editer)
-				.addComponent(this.presenter)
+				.addGroup(
+						layout.createSequentialGroup()
+						.addGap(4)
+						.addGroup(
+								layout.createParallelGroup()
+								.addComponent(this.editer)
+								.addComponent(this.presenter)
+								)
+						)
 				);		
 	}
 
