@@ -57,14 +57,14 @@ public class UpdateEtude implements ComponentListener {
 			break;
 
 		case 2:
-			try{FenetreAccueil.etude.getS2().setMtn_principale(Structure.getByName(tab.getConteneur_maintenant().getAction().getBoutonSelected().getName()));} catch(NullPointerException ex) {}
-			try{FenetreAccueil.etude.getS2().setApr_principale(Structure.getByName(tab.getConteneur_apres().getAction().getBoutonSelected().getName()));} catch(NullPointerException ex) {}
-			try{FenetreAccueil.etude.getS2().setRis_principale(Structure.getByName(((ConteneurSchema) tab.getConteneur_risque()).getAction().getBoutonSelected().getName()));} catch(NullPointerException ex) {}
+			try{FenetreAccueil.etude.getS2().setMtn_principale(Structure.getByName(tab.getConteneur_maintenant().getAction2().getBoutonSelected().getName()));} catch(NullPointerException ex) {}
+			try{FenetreAccueil.etude.getS2().setApr_principale(Structure.getByName(tab.getConteneur_apres().getAction2().getBoutonSelected().getName()));} catch(NullPointerException ex) {}
+			try{FenetreAccueil.etude.getS2().setRis_principale(Structure.getByName(((ConteneurSchema) tab.getConteneur_risque()).getAction2().getBoutonSelected().getName()));} catch(NullPointerException ex) {}
 
-			if(tab.getConteneur_maintenant().getAction().isSelected())
+			if(tab.getConteneur_maintenant().getAction2().isSelected())
 			{
 				ConteneurSchema conteneur = tab.getConteneur_maintenant();
-				ActionBoutonSchemas23 action = conteneur.getAction();
+				ActionBoutonSchemas23 action = conteneur.getAction2();
 				ElementNote<Structure>[] mtn_notees = new ElementNote[4];
 				int i=0;
 				if(!action.getBoutonSelected().getName().equals("Structure\nSIMPLE DE MARCHE"))
@@ -96,10 +96,10 @@ public class UpdateEtude implements ComponentListener {
 				FenetreAccueil.etude.getS2().setMtn_notees(mtn_notees);
 			}
 			
-			if(tab.getConteneur_apres().getAction().isSelected())
+			if(tab.getConteneur_apres().getAction2().isSelected())
 			{
 				ConteneurSchema conteneur = tab.getConteneur_apres();
-				ActionBoutonSchemas23 action = conteneur.getAction();
+				ActionBoutonSchemas23 action = conteneur.getAction2();
 				ElementNote<Structure>[] apr_notees = new ElementNote[4];
 				int i=0;
 				if(!action.getBoutonSelected().getName().equals("Structure\nSIMPLE DE MARCHE"))
@@ -131,10 +131,10 @@ public class UpdateEtude implements ComponentListener {
 				FenetreAccueil.etude.getS2().setApr_notees(apr_notees);
 			}
 			
-			if(((ConteneurSchema)tab.getConteneur_risque()).getAction().isSelected())
+			if(((ConteneurSchema)tab.getConteneur_risque()).getAction2().isSelected())
 			{
 				ConteneurSchema conteneur = (ConteneurSchema) tab.getConteneur_risque();
-				ActionBoutonSchemas23 action = conteneur.getAction();
+				ActionBoutonSchemas23 action = conteneur.getAction2();
 				ElementNote<Structure>[] ris_notees = new ElementNote[4];
 				int i=0;
 				if(!action.getBoutonSelected().getName().equals("Structure\nSIMPLE DE MARCHE"))

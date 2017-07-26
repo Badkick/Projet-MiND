@@ -93,7 +93,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	private Bouton b_mecaniste;
 	private Bouton b_simple_centralisee;
 	private Bouton b_entrepreneuriale;
-	private Bouton b_annuler;
+	private Bouton b_annuler2;
 
 	private JLabel note_simple_marche;
 	private JLabel note_professionnelle;
@@ -101,9 +101,24 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	private JLabel note_simple_centralisee;
 	private JLabel note_entrepreneuriale;
 
-	private ActionBoutonSchemas23 action;
+	private ActionBoutonSchemas23 action2;
 
 	// cas 3
+	
+	private Bouton b_rationnelle;
+	private Bouton b_artisanale;
+	private Bouton b_personnalisee;
+	private Bouton b_process;
+	private Bouton b_flexible;
+	private Bouton b_annuler3;
+	
+	private JLabel note_rationnelle;
+	private JLabel note_artisanale;
+	private JLabel note_personnalisee;
+	private JLabel note_process;
+	private JLabel note_flexible;
+	
+	private ActionBoutonSchemas23 action3;
 
 	// cas 4
 
@@ -185,32 +200,32 @@ public class ConteneurSchema extends ConteneurAvecImage {
 		case 2:
 			Dimension dim_boutons = new Dimension(170,90);
 			Dimension dim_label = new Dimension(60,60);
-			action = new ActionBoutonSchemas23(this);
+			action2 = new ActionBoutonSchemas23(this);
 
 			this.b_simple_marche = new Bouton("Structure\nSIMPLE DE MARCHE",dim_boutons);
 			this.b_professionnelle = new Bouton("Structure\nPROFESSIONNELLE",dim_boutons);
 			this.b_mecaniste = new Bouton("Structure\nMECANISTE",dim_boutons);
 			this.b_simple_centralisee = new Bouton("Structure\nSIMPLE CENTRALISEE",dim_boutons);
 			this.b_entrepreneuriale = new Bouton("Structure\nENTREPRENEURIALE",dim_boutons);
-			this.b_annuler = new Bouton("RàZ", new Dimension(120, 40));
+			this.b_annuler2 = new Bouton("RàZ", new Dimension(120, 40));
 
-			this.initialiserBoutonSchema2(this.b_entrepreneuriale);
-			this.initialiserBoutonSchema2(this.b_simple_marche);
-			this.initialiserBoutonSchema2(this.b_professionnelle);
-			this.initialiserBoutonSchema2(this.b_mecaniste);
-			this.initialiserBoutonSchema2(this.b_simple_centralisee);
+			this.initialiserBoutonSchemas23(this.b_entrepreneuriale,action2);
+			this.initialiserBoutonSchemas23(this.b_simple_marche,action2);
+			this.initialiserBoutonSchemas23(this.b_professionnelle,action2);
+			this.initialiserBoutonSchemas23(this.b_mecaniste,action2);
+			this.initialiserBoutonSchemas23(this.b_simple_centralisee,action2);
 
-			this.b_annuler.addActionListener(new ActionListener() {
+			this.b_annuler2.addActionListener(new ActionListener() {
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					action.activerBouton(b_entrepreneuriale);
-					action.activerBouton(b_simple_marche);
-					action.activerBouton(b_professionnelle);
-					action.activerBouton(b_mecaniste);
-					action.activerBouton(b_simple_centralisee);
-					action.setBoutonSelected(null);
-					action.setSelected(false);
+					action2.activerBouton(b_entrepreneuriale);
+					action2.activerBouton(b_simple_marche);
+					action2.activerBouton(b_professionnelle);
+					action2.activerBouton(b_mecaniste);
+					action2.activerBouton(b_simple_centralisee);
+					action2.setBoutonSelected(null);
+					action2.setSelected(false);
 					note_entrepreneuriale.setText("");
 					note_simple_marche.setText("");
 					note_professionnelle.setText("");
@@ -225,16 +240,16 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			this.note_simple_centralisee = new JLabel();
 			this.note_simple_marche = new JLabel();
 			
-			this.initialiserLabelSchema2(note_entrepreneuriale, dim_label);
-			this.initialiserLabelSchema2(note_mecaniste, dim_label);
-			this.initialiserLabelSchema2(note_professionnelle, dim_label);
-			this.initialiserLabelSchema2(note_simple_centralisee, dim_label);
-			this.initialiserLabelSchema2(note_simple_marche, dim_label);
+			this.initialiserLabelSchemas23(note_entrepreneuriale, dim_label);
+			this.initialiserLabelSchemas23(note_mecaniste, dim_label);
+			this.initialiserLabelSchemas23(note_professionnelle, dim_label);
+			this.initialiserLabelSchemas23(note_simple_centralisee, dim_label);
+			this.initialiserLabelSchemas23(note_simple_marche, dim_label);
 
 			this.layout.setHorizontalGroup(
 					this.layout.createSequentialGroup()
 					.addGap(5)
-					.addComponent(b_annuler)
+					.addComponent(b_annuler2)
 					.addGap(80)
 					.addGroup(this.layout.createParallelGroup()
 							.addGroup(this.layout.createSequentialGroup()
@@ -323,7 +338,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 									)
 							)
 					.addGap(50)
-					.addComponent(b_annuler)
+					.addComponent(b_annuler2)
 					);
 			break;
 		case 3:
@@ -349,11 +364,15 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	}
 
 	// GETTERS //
+	
+	// généraux //
 
 	public int getTypeSchema()
 	{
 		return this.typeSchema;
 	}
+	
+	// schéma 1 //
 
 	public String getTextContr_tech()
 	{
@@ -410,6 +429,8 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			return null;
 		}
 	}
+	
+	// schéma 2 //
 
 	public Bouton getB_simple_marche() {
 		return b_simple_marche;
@@ -430,12 +451,12 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	public Bouton getB_entrepreneuriale() {
 		return b_entrepreneuriale;
 	}
-
-	public ActionBoutonSchemas23 getAction()
+	
+	public ActionBoutonSchemas23 getAction2()
 	{
-		return this.action;
+		return this.action2;
 	}
-
+	
 	public JLabel getLabel_simple_marche() {
 		return note_simple_marche;
 	}
@@ -480,8 +501,57 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	{
 		try{return Integer.valueOf(this.getLabel_entrepreneuriale().getText().substring(0, this.getLabel_entrepreneuriale().getText().length()-5));} catch(StringIndexOutOfBoundsException e) {return Integer.MAX_VALUE;}
 	}
+	
+	// schéma 3 //
 
-	// METHODES //
+	public Bouton getB_artisanale() {
+		return b_artisanale;
+	}
+
+	public Bouton getB_personnalisee() {
+		return b_personnalisee;
+	}
+
+	public Bouton getB_process() {
+		return b_process;
+	}
+
+	public Bouton getB_flexible() {
+		return b_flexible;
+	}
+
+	public Bouton getB_rationnelle() {
+		return b_rationnelle;
+	}
+	
+	public ActionBoutonSchemas23 getAction3()
+	{
+		return this.action3;
+	}
+	
+	public JLabel getLabel_rationnelle() {
+		return note_rationnelle;
+	}
+
+	public JLabel getLabel_artisanale() {
+		return note_artisanale;
+	}
+
+	public JLabel getLabel_personnalisee() {
+		return note_personnalisee;
+	}
+
+	public JLabel getLabel_process() {
+		return note_process;
+	}
+
+	public JLabel getLabel_flexible() {
+		return note_flexible;
+	}
+
+	// SETTERS //
+	
+	// schéma 1 //
 	
 	public void setContr_tech(Pourcentage p){
 		this.contr_tech.setValue(p.get()/100);
@@ -498,6 +568,8 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	public void setPress_envir(Pourcentage p){
 		this.press_envir.setValue(p.get()/100);
 	}
+	
+	// schéma 2 //
 
 	public void setNote_simple_marche(int note)
 	{
@@ -524,6 +596,8 @@ public class ConteneurSchema extends ConteneurAvecImage {
 		this.getLabel_entrepreneuriale().setText(String.valueOf(note)+" / 10");
 	}
 	
+	// schéma 3 //
+	
 	public void setNote(Bouton b, int note)
 	{
 		String nom = b.getName();
@@ -548,17 +622,19 @@ public class ConteneurSchema extends ConteneurAvecImage {
 		}
 	}
 	
-	public void initialiserBoutonSchema2(Bouton b)
+	// METHODES //
+	
+	public void initialiserBoutonSchemas23(Bouton b, ActionBoutonSchemas23 action)
 	{
 		b.setImgRepos(FenetreAccueil.theme.getbSchema2Repos());
 		b.setImgSurvol(FenetreAccueil.theme.getbSchema2Survol());
 		b.setImgClic(FenetreAccueil.theme.getbSchema2Survol());
 		b.updateCouleur();
 		b.repaint();
-		b.addActionListener(this.getAction());
+		b.addActionListener(action);
 	}
 	
-	public void initialiserLabelSchema2(JLabel label, Dimension dim_label)
+	public void initialiserLabelSchemas23(JLabel label, Dimension dim_label)
 	{
 		label.setForeground(Color.WHITE);
 		label.setPreferredSize(dim_label);
