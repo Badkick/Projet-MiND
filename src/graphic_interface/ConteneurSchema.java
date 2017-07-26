@@ -87,6 +87,9 @@ public class ConteneurSchema extends ConteneurAvecImage {
 					percentEditFormatter));
 
 	// cas 2
+	
+	Dimension dim_boutons_schemas23 = new Dimension(170,90);
+	Dimension dim_labels_schemas23 = new Dimension(60,60);
 
 	private Bouton b_simple_marche;
 	private Bouton b_professionnelle;
@@ -198,15 +201,13 @@ public class ConteneurSchema extends ConteneurAvecImage {
 					);
 			break;
 		case 2:
-			Dimension dim_boutons = new Dimension(170,90);
-			Dimension dim_label = new Dimension(60,60);
 			action2 = new ActionBoutonSchemas23(this);
 
-			this.b_simple_marche = new Bouton("Structure\nSIMPLE DE MARCHE",dim_boutons);
-			this.b_professionnelle = new Bouton("Structure\nPROFESSIONNELLE",dim_boutons);
-			this.b_mecaniste = new Bouton("Structure\nMECANISTE",dim_boutons);
-			this.b_simple_centralisee = new Bouton("Structure\nSIMPLE CENTRALISEE",dim_boutons);
-			this.b_entrepreneuriale = new Bouton("Structure\nENTREPRENEURIALE",dim_boutons);
+			this.b_simple_marche = new Bouton("Structure\nSIMPLE DE MARCHE",dim_boutons_schemas23);
+			this.b_professionnelle = new Bouton("Structure\nPROFESSIONNELLE",dim_boutons_schemas23);
+			this.b_mecaniste = new Bouton("Structure\nMECANISTE",dim_boutons_schemas23);
+			this.b_simple_centralisee = new Bouton("Structure\nSIMPLE CENTRALISEE",dim_boutons_schemas23);
+			this.b_entrepreneuriale = new Bouton("Structure\nENTREPRENEURIALE",dim_boutons_schemas23);
 			this.b_annuler2 = new Bouton("R‡Z", new Dimension(120, 40));
 
 			this.initialiserBoutonSchemas23(this.b_entrepreneuriale,action2);
@@ -240,11 +241,11 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			this.note_simple_centralisee = new JLabel();
 			this.note_simple_marche = new JLabel();
 			
-			this.initialiserLabelSchemas23(note_entrepreneuriale, dim_label);
-			this.initialiserLabelSchemas23(note_mecaniste, dim_label);
-			this.initialiserLabelSchemas23(note_professionnelle, dim_label);
-			this.initialiserLabelSchemas23(note_simple_centralisee, dim_label);
-			this.initialiserLabelSchemas23(note_simple_marche, dim_label);
+			this.initialiserLabelSchemas23(note_entrepreneuriale, dim_labels_schemas23);
+			this.initialiserLabelSchemas23(note_mecaniste, dim_labels_schemas23);
+			this.initialiserLabelSchemas23(note_professionnelle, dim_labels_schemas23);
+			this.initialiserLabelSchemas23(note_simple_centralisee, dim_labels_schemas23);
+			this.initialiserLabelSchemas23(note_simple_marche, dim_labels_schemas23);
 
 			this.layout.setHorizontalGroup(
 					this.layout.createSequentialGroup()
