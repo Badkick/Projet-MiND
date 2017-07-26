@@ -100,6 +100,7 @@ public class FenetreAccueil {
 				if(!libre) Communication.messageErreur("Ce nom est déjà utilisé par une étude existante !");
 				else if(!nom.equals(""))
 				{
+					etude = new Etude();
 					ConteneurNouvelleEtude nouvelle_etude = new ConteneurNouvelleEtude(fenetre_principale.getSize(), conteneur_principal, fenetre_principale,nom);
 					ConteneurNouvelleEtude.unsave();
 					fenetre_principale.setConteneur(nouvelle_etude,"Projet MiND - "+nom);
