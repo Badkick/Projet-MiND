@@ -101,7 +101,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	private JLabel note_simple_centralisee;
 	private JLabel note_entrepreneuriale;
 
-	private ActionBoutonSchema2 action;
+	private ActionBoutonSchemas23 action;
 
 	// cas 3
 
@@ -185,7 +185,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 		case 2:
 			Dimension dim_boutons = new Dimension(170,90);
 			Dimension dim_label = new Dimension(60,60);
-			action = new ActionBoutonSchema2(this);
+			action = new ActionBoutonSchemas23(this);
 
 			this.b_simple_marche = new Bouton("Structure\nSIMPLE DE MARCHE",dim_boutons);
 			this.b_professionnelle = new Bouton("Structure\nPROFESSIONNELLE",dim_boutons);
@@ -431,7 +431,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 		return b_entrepreneuriale;
 	}
 
-	public ActionBoutonSchema2 getAction()
+	public ActionBoutonSchemas23 getAction()
 	{
 		return this.action;
 	}

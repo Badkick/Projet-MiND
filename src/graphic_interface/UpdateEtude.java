@@ -64,7 +64,7 @@ public class UpdateEtude implements ComponentListener {
 			if(tab.getConteneur_maintenant().getAction().isSelected())
 			{
 				ConteneurSchema conteneur = tab.getConteneur_maintenant();
-				ActionBoutonSchema2 action = conteneur.getAction();
+				ActionBoutonSchemas23 action = conteneur.getAction();
 				ElementNote<Structure>[] mtn_notees = new ElementNote[4];
 				int i=0;
 				if(!action.getBoutonSelected().getName().equals("Structure\nSIMPLE DE MARCHE"))
@@ -99,7 +99,7 @@ public class UpdateEtude implements ComponentListener {
 			if(tab.getConteneur_apres().getAction().isSelected())
 			{
 				ConteneurSchema conteneur = tab.getConteneur_apres();
-				ActionBoutonSchema2 action = conteneur.getAction();
+				ActionBoutonSchemas23 action = conteneur.getAction();
 				ElementNote<Structure>[] apr_notees = new ElementNote[4];
 				int i=0;
 				if(!action.getBoutonSelected().getName().equals("Structure\nSIMPLE DE MARCHE"))
@@ -134,7 +134,7 @@ public class UpdateEtude implements ComponentListener {
 			if(((ConteneurSchema)tab.getConteneur_risque()).getAction().isSelected())
 			{
 				ConteneurSchema conteneur = (ConteneurSchema) tab.getConteneur_risque();
-				ActionBoutonSchema2 action = conteneur.getAction();
+				ActionBoutonSchemas23 action = conteneur.getAction();
 				ElementNote<Structure>[] ris_notees = new ElementNote[4];
 				int i=0;
 				if(!action.getBoutonSelected().getName().equals("Structure\nSIMPLE DE MARCHE"))

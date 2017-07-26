@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
-public class ActionBoutonSchema2 implements ActionListener {
+public class ActionBoutonSchemas23 implements ActionListener {
 
 	// VARIABLES INSTANCE //
 
@@ -14,12 +14,12 @@ public class ActionBoutonSchema2 implements ActionListener {
 
 	// CONSTRUCTEURS //
 
-	public ActionBoutonSchema2(ConteneurSchema conteneur, boolean selectionne) {
+	public ActionBoutonSchemas23(ConteneurSchema conteneur, boolean selectionne) {
 		this.selectionne = selectionne;
 		this.conteneur = conteneur;
 	}
 
-	public ActionBoutonSchema2(ConteneurSchema conteneur) {
+	public ActionBoutonSchemas23(ConteneurSchema conteneur) {
 		this(conteneur,false);
 	}
 

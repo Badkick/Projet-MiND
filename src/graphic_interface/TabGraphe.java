@@ -7,6 +7,7 @@ import java.awt.event.ComponentListener;
 
 import javax.swing.JLabel;
 import javax.swing.JTabbedPane;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 public class TabGraphe extends JTabbedPane {
@@ -29,7 +30,7 @@ public class TabGraphe extends JTabbedPane {
 	private Conteneur conteneur_apercu;
 	private Conteneur conteneur_risque_schema1;
 	
-	private JTextField zoneTexte;
+	private JTextArea zoneTexte;
 
 	// CONSTRUCTEUR //
 
@@ -77,7 +78,7 @@ public class TabGraphe extends JTabbedPane {
 			this.setTabComponentAt(4, new CustomTab("Comment remplir ?"));
 			this.setTabComponentAt(5, new CustomTab("Aperçu"));
 			
-			zoneTexte = new JTextField();
+			zoneTexte = new JTextArea();
 			Dimension tailleZoneTexte = new Dimension(300,300);
 			zoneTexte.setPreferredSize(tailleZoneTexte);
 			zoneTexte.setMinimumSize(tailleZoneTexte);
@@ -131,7 +132,7 @@ public class TabGraphe extends JTabbedPane {
 		return conteneur_apercu;
 	}
 	
-	public JTextField getZoneTexte() {
+	public JTextArea getZoneTexte() {
 		return zoneTexte;
 	}
 	
