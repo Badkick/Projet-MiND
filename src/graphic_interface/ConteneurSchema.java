@@ -4,6 +4,10 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ContainerEvent;
+import java.awt.event.ContainerListener;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import java.text.NumberFormat;
 import java.text.ParseException;
 
@@ -11,6 +15,8 @@ import javax.swing.GroupLayout;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.event.CaretEvent;
+import javax.swing.event.CaretListener;
 import javax.swing.text.DefaultFormatterFactory;
 import javax.swing.text.NumberFormatter;
 
@@ -84,7 +90,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 					percentEditFormatter));
 
 	// cas 2
-	
+
 	Dimension dim_boutons_schemas23 = new Dimension(170,90);
 	Dimension dim_labels_schemas23 = new Dimension(60,40);
 
@@ -104,20 +110,20 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	private ActionBoutonSchemas23 action2;
 
 	// cas 3
-	
+
 	private Bouton b_rationnelle;
 	private Bouton b_artisanale;
 	private Bouton b_personnalisee;
 	private Bouton b_process;
 	private Bouton b_flexible;
 	private Bouton b_annuler3;
-	
+
 	private JLabel note_rationnelle;
 	private JLabel note_artisanale;
 	private JLabel note_personnalisee;
 	private JLabel note_process;
 	private JLabel note_flexible;
-	
+
 	private ActionBoutonSchemas23 action3;
 
 	// cas 4
@@ -149,6 +155,35 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			this.press_envir.setHorizontalAlignment(JTextField.CENTER);
 			this.etabl_prot.setHorizontalAlignment(JTextField.CENTER);
 			this.mena_mar.setHorizontalAlignment(JTextField.CENTER);
+
+			this.contr_tech.addCaretListener(new CaretListener() {
+
+				@Override
+				public void caretUpdate(CaretEvent e) {
+					ConteneurNouvelleEtude.unsave();					
+				}
+			});
+			this.press_envir.addCaretListener(new CaretListener() {
+
+				@Override
+				public void caretUpdate(CaretEvent e) {
+					ConteneurNouvelleEtude.unsave();					
+				}
+			});
+			this.etabl_prot.addCaretListener(new CaretListener() {
+
+				@Override
+				public void caretUpdate(CaretEvent e) {
+					ConteneurNouvelleEtude.unsave();					
+				}
+			});
+			this.mena_mar.addCaretListener(new CaretListener() {
+
+				@Override
+				public void caretUpdate(CaretEvent e) {
+					ConteneurNouvelleEtude.unsave();					
+				}
+			});
 
 			this.contr_tech.setPreferredSize(DIMENSION_TEXT_FIELD);
 			this.press_envir.setPreferredSize(DIMENSION_TEXT_FIELD);
@@ -229,6 +264,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 					note_professionnelle.setText("");
 					note_mecaniste.setText("");
 					note_simple_centralisee.setText("");
+					ConteneurNouvelleEtude.unsave();
 				}
 			});
 
@@ -237,7 +273,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			this.note_professionnelle = new JLabel();
 			this.note_simple_centralisee = new JLabel();
 			this.note_simple_marche = new JLabel();
-			
+
 			this.initialiserLabelSchemas23(note_entrepreneuriale, dim_labels_schemas23);
 			this.initialiserLabelSchemas23(note_mecaniste, dim_labels_schemas23);
 			this.initialiserLabelSchemas23(note_professionnelle, dim_labels_schemas23);
@@ -371,6 +407,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 					note_personnalisee.setText("");
 					note_process.setText("");
 					note_flexible.setText("");
+					ConteneurNouvelleEtude.unsave();
 				}
 			});
 
@@ -379,13 +416,13 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			this.note_personnalisee = new JLabel();
 			this.note_process = new JLabel();
 			this.note_flexible = new JLabel();
-			
+
 			this.initialiserLabelSchemas23(note_rationnelle, dim_labels_schemas23);
 			this.initialiserLabelSchemas23(note_artisanale, dim_labels_schemas23);
 			this.initialiserLabelSchemas23(note_personnalisee, dim_labels_schemas23);
 			this.initialiserLabelSchemas23(note_process, dim_labels_schemas23);
 			this.initialiserLabelSchemas23(note_flexible, dim_labels_schemas23);
-			
+
 			this.layout.setHorizontalGroup(
 					this.layout.createSequentialGroup()
 					.addGap(5)
@@ -445,7 +482,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 									)
 							)
 					);
-			
+
 			this.layout.setVerticalGroup(
 					this.layout.createSequentialGroup()
 					.addGap(30)
@@ -488,7 +525,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 					.addGap(40)
 					.addComponent(b_annuler3)
 					);
-			
+
 			break;
 		case 4:
 
@@ -510,14 +547,14 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	}
 
 	// GETTERS //
-	
+
 	// généraux //
 
 	public int getTypeSchema()
 	{
 		return this.typeSchema;
 	}
-	
+
 	// schéma 1 //
 
 	public String getTextContr_tech()
@@ -575,7 +612,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			return null;
 		}
 	}
-	
+
 	// schéma 2 //
 
 	public Bouton getB_simple_marche() {
@@ -597,12 +634,12 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	public Bouton getB_entrepreneuriale() {
 		return b_entrepreneuriale;
 	}
-	
+
 	public ActionBoutonSchemas23 getAction2()
 	{
 		return this.action2;
 	}
-	
+
 	public JLabel getLabel_simple_marche() {
 		return note_simple_marche;
 	}
@@ -622,32 +659,32 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	public JLabel getLabel_entrepreneuriale() {
 		return note_entrepreneuriale;
 	}
-	
+
 	public int getNote_simple_marche()
 	{
 		try{return Integer.valueOf(this.getLabel_simple_marche().getText().substring(0, this.getLabel_simple_marche().getText().length()-5));} catch(StringIndexOutOfBoundsException e) {return Integer.MAX_VALUE;}
 	}
-	
+
 	public int getNote_professionnelle()
 	{
 		try{return Integer.valueOf(this.getLabel_professionnelle().getText().substring(0, this.getLabel_professionnelle().getText().length()-5));} catch(StringIndexOutOfBoundsException e) {return Integer.MAX_VALUE;}
 	}
-	
+
 	public int getNote_mecaniste()
 	{
 		try{return Integer.valueOf(this.getLabel_mecaniste().getText().substring(0, this.getLabel_mecaniste().getText().length()-5));} catch(StringIndexOutOfBoundsException e) {return Integer.MAX_VALUE;}
 	}
-	
+
 	public int getNote_simple_centralisee()
 	{
 		try{return Integer.valueOf(this.getLabel_simple_centralisee().getText().substring(0, this.getLabel_simple_centralisee().getText().length()-5));} catch(StringIndexOutOfBoundsException e) {return Integer.MAX_VALUE;}
 	}
-	
+
 	public int getNote_entrepreneuriale()
 	{
 		try{return Integer.valueOf(this.getLabel_entrepreneuriale().getText().substring(0, this.getLabel_entrepreneuriale().getText().length()-5));} catch(StringIndexOutOfBoundsException e) {return Integer.MAX_VALUE;}
 	}
-	
+
 	// schéma 3 //
 
 	public Bouton getB_artisanale() {
@@ -669,12 +706,12 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	public Bouton getB_rationnelle() {
 		return b_rationnelle;
 	}
-	
+
 	public ActionBoutonSchemas23 getAction3()
 	{
 		return this.action3;
 	}
-	
+
 	public JLabel getLabel_rationnelle() {
 		return note_rationnelle;
 	}
@@ -694,109 +731,109 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	public JLabel getLabel_flexible() {
 		return note_flexible;
 	}
-	
+
 	public int getNote_rationnelle()
 	{
 		try{return Integer.valueOf(this.getLabel_rationnelle().getText().substring(0, this.getLabel_rationnelle().getText().length()-5));} catch(StringIndexOutOfBoundsException e) {return Integer.MAX_VALUE;}
 	}
-	
+
 	public int getNote_artisanale()
 	{
 		try{return Integer.valueOf(this.getLabel_artisanale().getText().substring(0, this.getLabel_artisanale().getText().length()-5));} catch(StringIndexOutOfBoundsException e) {return Integer.MAX_VALUE;}
 	}
-	
+
 	public int getNote_personnalisee()
 	{
 		try{return Integer.valueOf(this.getLabel_personnalisee().getText().substring(0, this.getLabel_personnalisee().getText().length()-5));} catch(StringIndexOutOfBoundsException e) {return Integer.MAX_VALUE;}
 	}
-	
+
 	public int getNote_process()
 	{
 		try{return Integer.valueOf(this.getLabel_process().getText().substring(0, this.getLabel_process().getText().length()-5));} catch(StringIndexOutOfBoundsException e) {return Integer.MAX_VALUE;}
 	}
-	
+
 	public int getNote_flexible()
 	{
 		try{return Integer.valueOf(this.getLabel_flexible().getText().substring(0, this.getLabel_flexible().getText().length()-5));} catch(StringIndexOutOfBoundsException e) {return Integer.MAX_VALUE;}
 	}
 
 	// SETTERS //
-	
+
 	// schéma 1 //
-	
+
 	public void setContr_tech(Pourcentage p){
 		this.contr_tech.setValue(p.get()/100);
 	}
-	
+
 	public void setEtabl_prot(Pourcentage p){
 		this.etabl_prot.setValue(p.get()/100);
 	}
-	
+
 	public void setMena_mar(Pourcentage p){
 		this.mena_mar.setValue(p.get()/100);
 	}
-	
+
 	public void setPress_envir(Pourcentage p){
 		this.press_envir.setValue(p.get()/100);
 	}
-	
+
 	// schéma 2 //
 
 	public void setNote_simple_marche(int note)
 	{
 		this.getLabel_simple_marche().setText(String.valueOf(note)+" / 10");
 	}
-	
+
 	public void setNote_professionnelle(int note)
 	{
 		this.getLabel_professionnelle().setText(String.valueOf(note)+" / 10");
 	}
-	
+
 	public void setNote_mecaniste(int note)
 	{
 		this.getLabel_mecaniste().setText(String.valueOf(note)+" / 10");
 	}
-	
+
 	public void setNote_simple_centralisee(int note)
 	{
 		this.getLabel_simple_centralisee().setText(String.valueOf(note)+" / 10");
 	}
-	
+
 	public void setNote_entrepreneuriale(int note)
 	{
 		this.getLabel_entrepreneuriale().setText(String.valueOf(note)+" / 10");
 	}
-	
+
 	// schéma 3 //
-	
+
 	public void setNote_rationnelle(int note)
 	{
 		this.getLabel_rationnelle().setText(String.valueOf(note)+" / 10");
 	}
-	
+
 	public void setNote_artisanale(int note)
 	{
 		this.getLabel_artisanale().setText(String.valueOf(note)+" / 10");
 	}
-	
+
 	public void setNote_personnalisee(int note)
 	{
 		this.getLabel_personnalisee().setText(String.valueOf(note)+" / 10");
 	}
-	
+
 	public void setNote_process(int note)
 	{
 		this.getLabel_process().setText(String.valueOf(note)+" / 10");
 	}
-	
+
 	public void setNote_flexible(int note)
 	{
 		this.getLabel_flexible().setText(String.valueOf(note)+" / 10");
 	}
-	
-	
+
+
 	// METHODES //
-	
+
 	public void initialiserBoutonSchemas23(Bouton b, ActionBoutonSchemas23 action)
 	{
 		b.setImgRepos(FenetreAccueil.theme.getbSchema2Repos());
@@ -806,7 +843,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 		b.repaint();
 		b.addActionListener(action);
 	}
-	
+
 	public void initialiserLabelSchemas23(JLabel label, Dimension dim_label)
 	{
 		label.setForeground(Color.WHITE);
@@ -814,11 +851,11 @@ public class ConteneurSchema extends ConteneurAvecImage {
 		label.setMaximumSize(dim_label);
 		label.setMinimumSize(dim_label);
 	}
-	
+
 	public void setNote(Bouton b, int note)
 	{
 		String nom = b.getName();
-		
+
 		switch(nom)
 		{
 		case "Structure\nSIMPLE DE MARCHE":

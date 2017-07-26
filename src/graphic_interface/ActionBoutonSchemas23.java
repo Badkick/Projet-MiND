@@ -60,6 +60,7 @@ public class ActionBoutonSchemas23 implements ActionListener {
 		{
 			new FenetreChoixNote((Bouton)e.getSource(),this.conteneur);
 		}
+		ConteneurNouvelleEtude.unsave();
 	}
 	
 	public void desactiverBouton(Bouton b)

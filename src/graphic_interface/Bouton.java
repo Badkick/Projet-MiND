@@ -53,6 +53,7 @@ public class Bouton extends JButton implements MouseListener {
 	public void setName(String nom)
 	{
 		this.name = nom;
+		this.repaint();
 	}
 
 	public void setCouleurTexte(Color couleur)

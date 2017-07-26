@@ -4,8 +4,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ComponentEvent;
-import java.awt.event.ComponentListener;
 import java.io.File;
 import java.io.IOException;
 import java.net.URI;
@@ -30,6 +28,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 	private static int APRES = 1;
 	private static int RISQUE = 2;
 	private static int NB_ONGLETS = 6;
+	private static boolean saved;
 	private final String[] titres_tabs = {"Contraintes d'envirmt.","Structures d'organisation","Organisation du travail","Relations entre acteurs","Identités collectives","Mondes sociaux"};
 
 	// variables générales
@@ -38,12 +37,11 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 	private JTabbedPane tabs;
 	private Conteneur conteneur;
 	private GroupLayout layout;
-	private boolean saved=false;
 	private String nom;
 
 	// boutons
 	private Bouton bouton_back_menu;
-	private Bouton bouton_save;
+	private static Bouton bouton_save;
 	private Bouton bouton_delete;
 	private Bouton bouton_exporter;
 
@@ -99,9 +97,9 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 		return this.bouton_back_menu;
 	}
 
-	public Bouton getBoutonSave()
+	private static Bouton getBoutonSave()
 	{
-		return this.bouton_save;
+		return bouton_save;
 	}
 
 	public Bouton getBoutonDelete()
@@ -118,9 +116,9 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 		return this.tab_graphes;
 	}
 
-	public boolean isSaved()
+	public static boolean isSaved()
 	{
-		return this.saved;		
+		return saved;		
 	}
 
 	public String getNom()
@@ -130,14 +128,16 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 
 	// SETTERS //
 
-	public void save()
+	public static void save()
 	{
-		this.saved = true;
+		saved = true;
+		bouton_save.setName("Sauvegarder l'étude");
 	}
 
-	public void unsave()
+	public static void unsave()
 	{
-		this.saved = false;
+		saved = false;
+		bouton_save.setName("* Sauvegarder l'étude");
 	}
 
 	// METHODES //
@@ -150,14 +150,14 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 		this.initialiserLayout();
 		for (int i=0;i<NB_ONGLETS;i++){
 			this.getTabGraphe()[i].initialiserCases(i+1);
-			new VerificationOnglets((CustomTab)this.getTabs().getTabComponentAt(i),tab_graphes[i]).verification();
+			new VerificationOnglets((CustomTab)this.getTabs().getTabComponentAt(i),this.getTabGraphe()[i]).verification();
 		}
 	}
 
 	private void initialiserBoutons()
 	{
 		this.bouton_back_menu = new Bouton("Retour au menu", new Dimension(180, 50));
-		this.bouton_save = new Bouton("Sauvegarder l'étude", new Dimension(180, 50));
+		bouton_save = new Bouton("Sauvegarder l'étude", new Dimension(180, 50));
 		this.bouton_delete = new Bouton("Supprimer l'étude", new Dimension(180, 50));
 		this.bouton_exporter = new Bouton("Présenter l'étude", new Dimension(180, 50));
 
@@ -195,7 +195,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 
 		});
 
-		this.getBoutonSave().addActionListener(new ActionListener(){
+		getBoutonSave().addActionListener(new ActionListener(){
 
 			@Override
 			public void actionPerformed(ActionEvent e) {

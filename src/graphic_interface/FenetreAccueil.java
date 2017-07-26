@@ -1,13 +1,11 @@
 package graphic_interface;
 
 import java.awt.Dimension;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.GroupLayout;
 import javax.swing.JOptionPane;
-import javax.swing.LayoutStyle.ComponentPlacement;
 
 
 public class FenetreAccueil {
@@ -97,6 +95,7 @@ public class FenetreAccueil {
 				if(!nom.equals(""))
 				{
 					ConteneurNouvelleEtude nouvelle_etude = new ConteneurNouvelleEtude(fenetre_principale.getSize(), conteneur_principal, fenetre_principale,nom);
+					ConteneurNouvelleEtude.unsave();
 					fenetre_principale.setConteneur(nouvelle_etude,"Projet MiND - "+nom);
 				}
 
