@@ -59,9 +59,9 @@ public class UpdateEtude implements ComponentListener {
 			break;
 
 		case 2:
-			try{FenetreAccueil.etude.getS2().setMtn_principale(Structure.getByName(tab.getConteneur_maintenant().getAction2().getBoutonSelected().getName()));} catch(NullPointerException ex) {}
-			try{FenetreAccueil.etude.getS2().setApr_principale(Structure.getByName(tab.getConteneur_apres().getAction2().getBoutonSelected().getName()));} catch(NullPointerException ex) {}
-			try{FenetreAccueil.etude.getS2().setRis_principale(Structure.getByName(((ConteneurSchema) tab.getConteneur_risque()).getAction2().getBoutonSelected().getName()));} catch(NullPointerException ex) {}
+			try{FenetreAccueil.etude.getS2().setMtn_principale(Structure.getByName(tab.getConteneur_maintenant().getAction2().getBoutonSelected().getName()));} catch(NullPointerException ex) {FenetreAccueil.etude.getS2().setMtn_principale(null);}
+			try{FenetreAccueil.etude.getS2().setApr_principale(Structure.getByName(tab.getConteneur_apres().getAction2().getBoutonSelected().getName()));} catch(NullPointerException ex) {FenetreAccueil.etude.getS2().setApr_principale(null);}
+			try{FenetreAccueil.etude.getS2().setRis_principale(Structure.getByName(((ConteneurSchema) tab.getConteneur_risque()).getAction2().getBoutonSelected().getName()));} catch(NullPointerException ex) {FenetreAccueil.etude.getS2().setRis_principale(null);}
 
 			if(tab.getConteneur_maintenant().getAction2().isSelected())
 			{
@@ -170,9 +170,9 @@ public class UpdateEtude implements ComponentListener {
 			break;
 			
 		case 3:
-			try{FenetreAccueil.etude.getS3().setMtn_principale(Organisation.getByName(tab.getConteneur_maintenant().getAction3().getBoutonSelected().getName()));} catch(NullPointerException ex) {}
-			try{FenetreAccueil.etude.getS3().setApr_principale(Organisation.getByName(tab.getConteneur_apres().getAction3().getBoutonSelected().getName()));} catch(NullPointerException ex) {}
-			try{FenetreAccueil.etude.getS3().setRis_principale(Organisation.getByName(((ConteneurSchema) tab.getConteneur_risque()).getAction3().getBoutonSelected().getName()));} catch(NullPointerException ex) {}
+			try{FenetreAccueil.etude.getS3().setMtn_principale(Organisation.getByName(tab.getConteneur_maintenant().getAction3().getBoutonSelected().getName()));} catch(NullPointerException ex) {FenetreAccueil.etude.getS3().setMtn_principale(null);}
+			try{FenetreAccueil.etude.getS3().setApr_principale(Organisation.getByName(tab.getConteneur_apres().getAction3().getBoutonSelected().getName()));} catch(NullPointerException ex) {FenetreAccueil.etude.getS3().setApr_principale(null);}
+			try{FenetreAccueil.etude.getS3().setRis_principale(Organisation.getByName(((ConteneurSchema) tab.getConteneur_risque()).getAction3().getBoutonSelected().getName()));} catch(NullPointerException ex) {FenetreAccueil.etude.getS3().setRis_principale(null);}
 
 			if(tab.getConteneur_maintenant().getAction3().isSelected())
 			{
