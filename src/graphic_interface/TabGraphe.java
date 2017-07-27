@@ -3,13 +3,12 @@ package graphic_interface;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.event.ComponentEvent;
-import java.awt.event.ComponentListener;
 
 import javax.swing.JLabel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
-import javax.swing.JTextField;
+import javax.swing.event.CaretEvent;
+import javax.swing.event.CaretListener;
 
 public class TabGraphe extends JTabbedPane {
 
@@ -87,6 +86,13 @@ public class TabGraphe extends JTabbedPane {
 			zoneTexte.setWrapStyleWord(true);
 			zoneTexte.setLineWrap(true);
 			zoneTexte.setFont(FenetreAccueil.theme.getPolice().deriveFont(30f));
+			zoneTexte.addCaretListener(new CaretListener() {
+				
+				@Override
+				public void caretUpdate(CaretEvent e) {
+					ConteneurNouvelleEtude.unsave();					
+				}
+			});
 			this.conteneur_risque_schema1.setLayout(new BorderLayout());
 			JLabel titre = new JLabel("Entrez votre commentaire dans la zone ci-dessous :");
 			titre.setHorizontalAlignment(CENTER);
