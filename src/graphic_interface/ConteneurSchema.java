@@ -4,10 +4,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ContainerEvent;
-import java.awt.event.ContainerListener;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
 import java.text.NumberFormat;
 import java.text.ParseException;
 
@@ -22,7 +18,9 @@ import javax.swing.text.NumberFormatter;
 
 public class ConteneurSchema extends ConteneurAvecImage {
 
-	public static final Dimension DIMENSION_TEXT_FIELD = new Dimension(45,30);
+	public static final Dimension DIMENSION_TEXT_FIELD_SCHEMAS15 = new Dimension(45,30);
+	public static final Dimension DIMENSION_BOUTON_SCHEMAS23 = new Dimension(170,90);
+	public static final Dimension DIMENSION_LABEL_SCHEMAS23 = new Dimension(60,40);
 
 	// VARIABLES INSTANCE //
 
@@ -91,9 +89,6 @@ public class ConteneurSchema extends ConteneurAvecImage {
 
 	// cas 2
 
-	Dimension dim_boutons_schemas23 = new Dimension(170,90);
-	Dimension dim_labels_schemas23 = new Dimension(60,40);
-
 	private Bouton b_simple_marche;
 	private Bouton b_professionnelle;
 	private Bouton b_mecaniste;
@@ -129,6 +124,37 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	// cas 4
 
 	// cas 5
+	
+	private JFormattedTextField reglementaire = new JFormattedTextField(
+			new DefaultFormatterFactory(
+					new NumberFormatter(percentDisplayFormat),
+					new NumberFormatter(percentDisplayFormat),
+					percentEditFormatter));
+	private JFormattedTextField mobilite = new JFormattedTextField(
+			new DefaultFormatterFactory(
+					new NumberFormatter(percentDisplayFormat),
+					new NumberFormatter(percentDisplayFormat),
+					percentEditFormatter));
+	private JFormattedTextField pro_service_public = new JFormattedTextField(
+			new DefaultFormatterFactory(
+					new NumberFormatter(percentDisplayFormat),
+					new NumberFormatter(percentDisplayFormat),
+					percentEditFormatter));
+	private JFormattedTextField professionnelle = new JFormattedTextField(
+			new DefaultFormatterFactory(
+					new NumberFormatter(percentDisplayFormat),
+					new NumberFormatter(percentDisplayFormat),
+					percentEditFormatter));
+	private JFormattedTextField communautaire = new JFormattedTextField(
+			new DefaultFormatterFactory(
+					new NumberFormatter(percentDisplayFormat),
+					new NumberFormatter(percentDisplayFormat),
+					percentEditFormatter));
+	private JFormattedTextField entrepreneuriale = new JFormattedTextField(
+			new DefaultFormatterFactory(
+					new NumberFormatter(percentDisplayFormat),
+					new NumberFormatter(percentDisplayFormat),
+					percentEditFormatter));
 
 	// cas 6
 
@@ -144,61 +170,18 @@ public class ConteneurSchema extends ConteneurAvecImage {
 		switch(type)
 		{
 		case 1:		
+			
 			this.percentDisplayFormat.setParseIntegerOnly(false);
 			this.percentDisplayFormat.setMaximumFractionDigits(1);
 			this.percentEditFormat.setParseIntegerOnly(false);
 			this.percentEditFormat.setMaximumFractionDigits(1);
 			this.percentEditFormatter.setMinimum(0D);
 			this.percentEditFormatter.setMaximum(100D);
-
-			this.contr_tech.setHorizontalAlignment(JTextField.CENTER);
-			this.press_envir.setHorizontalAlignment(JTextField.CENTER);
-			this.etabl_prot.setHorizontalAlignment(JTextField.CENTER);
-			this.mena_mar.setHorizontalAlignment(JTextField.CENTER);
-
-			this.contr_tech.addCaretListener(new CaretListener() {
-
-				@Override
-				public void caretUpdate(CaretEvent e) {
-					ConteneurNouvelleEtude.unsave();					
-				}
-			});
-			this.press_envir.addCaretListener(new CaretListener() {
-
-				@Override
-				public void caretUpdate(CaretEvent e) {
-					ConteneurNouvelleEtude.unsave();					
-				}
-			});
-			this.etabl_prot.addCaretListener(new CaretListener() {
-
-				@Override
-				public void caretUpdate(CaretEvent e) {
-					ConteneurNouvelleEtude.unsave();					
-				}
-			});
-			this.mena_mar.addCaretListener(new CaretListener() {
-
-				@Override
-				public void caretUpdate(CaretEvent e) {
-					ConteneurNouvelleEtude.unsave();					
-				}
-			});
-
-			this.contr_tech.setPreferredSize(DIMENSION_TEXT_FIELD);
-			this.press_envir.setPreferredSize(DIMENSION_TEXT_FIELD);
-			this.etabl_prot.setPreferredSize(DIMENSION_TEXT_FIELD);
-			this.mena_mar.setPreferredSize(DIMENSION_TEXT_FIELD);
-
-			this.contr_tech.setMinimumSize(DIMENSION_TEXT_FIELD);
-			this.press_envir.setMinimumSize(DIMENSION_TEXT_FIELD);
-			this.etabl_prot.setMinimumSize(DIMENSION_TEXT_FIELD);
-			this.mena_mar.setMinimumSize(DIMENSION_TEXT_FIELD);
-
-			this.contr_tech.setMaximumSize(DIMENSION_TEXT_FIELD);
-			this.press_envir.setMaximumSize(DIMENSION_TEXT_FIELD);
-			this.etabl_prot.setMaximumSize(DIMENSION_TEXT_FIELD);
-			this.mena_mar.setMaximumSize(DIMENSION_TEXT_FIELD);
+			
+			this.initialiserTextFieldSchemas15(this.contr_tech);
+			this.initialiserTextFieldSchemas15(this.press_envir);
+			this.initialiserTextFieldSchemas15(this.etabl_prot);
+			this.initialiserTextFieldSchemas15(this.mena_mar);
 
 			this.layout.setHorizontalGroup(
 					this.layout.createSequentialGroup()
@@ -235,11 +218,11 @@ public class ConteneurSchema extends ConteneurAvecImage {
 		case 2:
 			action2 = new ActionBoutonSchemas23(this);
 
-			this.b_simple_marche = new Bouton(Structure.SIMPLE_MARCHE.getNom(),dim_boutons_schemas23);
-			this.b_professionnelle = new Bouton(Structure.PROFESSIONNELLE.getNom(),dim_boutons_schemas23);
-			this.b_mecaniste = new Bouton(Structure.MECANISTE.getNom(),dim_boutons_schemas23);
-			this.b_simple_centralisee = new Bouton(Structure.SIMPLE_CENTRALISEE.getNom(),dim_boutons_schemas23);
-			this.b_entrepreneuriale = new Bouton(Structure.ENTREPRENEURIALE.getNom(),dim_boutons_schemas23);
+			this.b_simple_marche = new Bouton(Structure.SIMPLE_MARCHE.getNom(),DIMENSION_BOUTON_SCHEMAS23);
+			this.b_professionnelle = new Bouton(Structure.PROFESSIONNELLE.getNom(),DIMENSION_BOUTON_SCHEMAS23);
+			this.b_mecaniste = new Bouton(Structure.MECANISTE.getNom(),DIMENSION_BOUTON_SCHEMAS23);
+			this.b_simple_centralisee = new Bouton(Structure.SIMPLE_CENTRALISEE.getNom(),DIMENSION_BOUTON_SCHEMAS23);
+			this.b_entrepreneuriale = new Bouton(Structure.ENTREPRENEURIALE.getNom(),DIMENSION_BOUTON_SCHEMAS23);
 			this.b_annuler2 = new Bouton("RàZ", new Dimension(120, 40));
 
 			this.initialiserBoutonSchemas23(this.b_entrepreneuriale,action2);
@@ -274,11 +257,11 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			this.note_simple_centralisee = new JLabel();
 			this.note_simple_marche = new JLabel();
 
-			this.initialiserLabelSchemas23(note_entrepreneuriale, dim_labels_schemas23);
-			this.initialiserLabelSchemas23(note_mecaniste, dim_labels_schemas23);
-			this.initialiserLabelSchemas23(note_professionnelle, dim_labels_schemas23);
-			this.initialiserLabelSchemas23(note_simple_centralisee, dim_labels_schemas23);
-			this.initialiserLabelSchemas23(note_simple_marche, dim_labels_schemas23);
+			this.initialiserLabelSchemas23(note_entrepreneuriale);
+			this.initialiserLabelSchemas23(note_mecaniste);
+			this.initialiserLabelSchemas23(note_professionnelle);
+			this.initialiserLabelSchemas23(note_simple_centralisee);
+			this.initialiserLabelSchemas23(note_simple_marche);
 
 			this.layout.setHorizontalGroup(
 					this.layout.createSequentialGroup()
@@ -378,11 +361,11 @@ public class ConteneurSchema extends ConteneurAvecImage {
 		case 3:
 			action3 = new ActionBoutonSchemas23(this);
 
-			this.b_rationnelle = new Bouton(Organisation.RATIONNELLE.getNom(),dim_boutons_schemas23);
-			this.b_artisanale = new Bouton(Organisation.ARTISANALE.getNom(),dim_boutons_schemas23);
-			this.b_personnalisee = new Bouton(Organisation.PERSONNALISEE.getNom(),dim_boutons_schemas23);
-			this.b_process = new Bouton(Organisation.PROFESSIONNELLE_PROCESS.getNom(),dim_boutons_schemas23);
-			this.b_flexible = new Bouton(Organisation.FLEXIBLE.getNom(),dim_boutons_schemas23);
+			this.b_rationnelle = new Bouton(Organisation.RATIONNELLE.getNom(),DIMENSION_BOUTON_SCHEMAS23);
+			this.b_artisanale = new Bouton(Organisation.ARTISANALE.getNom(),DIMENSION_BOUTON_SCHEMAS23);
+			this.b_personnalisee = new Bouton(Organisation.PERSONNALISEE.getNom(),DIMENSION_BOUTON_SCHEMAS23);
+			this.b_process = new Bouton(Organisation.PROFESSIONNELLE_PROCESS.getNom(),DIMENSION_BOUTON_SCHEMAS23);
+			this.b_flexible = new Bouton(Organisation.FLEXIBLE.getNom(),DIMENSION_BOUTON_SCHEMAS23);
 			this.b_annuler3 = new Bouton("RàZ", new Dimension(120, 40));
 
 			this.initialiserBoutonSchemas23(this.b_rationnelle,action3);
@@ -417,11 +400,11 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			this.note_process = new JLabel();
 			this.note_flexible = new JLabel();
 
-			this.initialiserLabelSchemas23(note_rationnelle, dim_labels_schemas23);
-			this.initialiserLabelSchemas23(note_artisanale, dim_labels_schemas23);
-			this.initialiserLabelSchemas23(note_personnalisee, dim_labels_schemas23);
-			this.initialiserLabelSchemas23(note_process, dim_labels_schemas23);
-			this.initialiserLabelSchemas23(note_flexible, dim_labels_schemas23);
+			this.initialiserLabelSchemas23(note_rationnelle);
+			this.initialiserLabelSchemas23(note_artisanale);
+			this.initialiserLabelSchemas23(note_personnalisee);
+			this.initialiserLabelSchemas23(note_process);
+			this.initialiserLabelSchemas23(note_flexible);
 
 			this.layout.setHorizontalGroup(
 					this.layout.createSequentialGroup()
@@ -531,6 +514,84 @@ public class ConteneurSchema extends ConteneurAvecImage {
 
 			break;
 		case 5:
+			
+			this.percentDisplayFormat.setParseIntegerOnly(false);
+			this.percentDisplayFormat.setMaximumFractionDigits(1);
+			this.percentEditFormat.setParseIntegerOnly(false);
+			this.percentEditFormat.setMaximumFractionDigits(1);
+			this.percentEditFormatter.setMinimum(0D);
+			this.percentEditFormatter.setMaximum(100D);
+			
+			this.initialiserTextFieldSchemas15(this.reglementaire);
+			this.initialiserTextFieldSchemas15(this.mobilite);
+			this.initialiserTextFieldSchemas15(this.pro_service_public);
+			this.initialiserTextFieldSchemas15(this.professionnelle);
+			this.initialiserTextFieldSchemas15(this.communautaire);
+			this.initialiserTextFieldSchemas15(this.entrepreneuriale);
+			
+			this.layout.setHorizontalGroup(
+					this.layout.createSequentialGroup()
+					.addGap(300)
+					.addGroup(
+							this.layout.createParallelGroup()
+							.addComponent(reglementaire)
+							.addGroup(
+									this.layout.createSequentialGroup()
+									.addGap(70)
+									.addComponent(communautaire)
+									)
+							)
+					.addGap(110)
+					.addGroup(
+							this.layout.createParallelGroup()
+							.addGroup(
+									this.layout.createSequentialGroup()
+									.addGap(170)
+									.addComponent(mobilite)
+									)
+							.addComponent(pro_service_public)
+							.addGroup(
+									this.layout.createSequentialGroup()
+									.addGap(120)
+									.addComponent(professionnelle)
+									)
+							.addGroup(
+									this.layout.createSequentialGroup()
+									.addGap(280)
+									.addComponent(entrepreneuriale)
+									)
+							)
+					);
+			
+			this.layout.setVerticalGroup(
+					this.layout.createSequentialGroup()
+					.addGap(110)
+					.addGroup(
+							this.layout.createParallelGroup()
+							.addComponent(reglementaire)
+							.addGroup(
+									this.layout.createSequentialGroup()
+									.addGap(125)
+									.addComponent(pro_service_public)
+									)
+							.addComponent(mobilite)
+							)
+					.addGap(75)
+					.addGroup(
+							this.layout.createParallelGroup()
+							.addGroup(
+									this.layout.createSequentialGroup()
+									.addGap(73)
+									.addComponent(communautaire)
+									)
+							.addComponent(professionnelle)
+							.addGroup(
+									this.layout.createSequentialGroup()
+									.addGap(73)
+									.addComponent(entrepreneuriale)
+									)
+							)
+					);
 
 			break;
 		case 6:
@@ -756,6 +817,92 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	{
 		try{return Integer.valueOf(this.getLabel_flexible().getText().substring(0, this.getLabel_flexible().getText().length()-5));} catch(StringIndexOutOfBoundsException e) {return Integer.MAX_VALUE;}
 	}
+	
+	// schéma 5 //
+	
+	public String getTextReglementaire()
+	{
+		return this.reglementaire.getText();
+	}
+
+	public String getTextMobilite()
+	{
+		return this.mobilite.getText();
+	}
+
+	public String getTextPro_service_public()
+	{
+		return this.pro_service_public.getText();
+	}
+
+	public String getTextProfessionnelle()
+	{
+		return this.professionnelle.getText();
+	}
+	
+	public String getTextCommunautaire()
+	{
+		return this.communautaire.getText();
+	}
+
+	public String getTextEntrepreneuriale()
+	{
+		return this.entrepreneuriale.getText();
+	}
+
+	public Pourcentage getReglementaire()
+	{
+		try {
+			return new Pourcentage(Float.parseFloat(this.getTextReglementaire().substring(0, this.getTextReglementaire().length()-2).replace(',', '.')));
+		} catch (Exception e) {
+			return null;
+		}
+	}
+
+	public Pourcentage getMobilite()
+	{
+		try {
+			return new Pourcentage(Float.parseFloat(this.getTextMobilite().substring(0, this.getTextMobilite().length()-2).replace(',', '.')));
+		} catch (StringIndexOutOfBoundsException e) {
+			return null;
+		}
+	}
+
+	public Pourcentage getPro_service_public()
+	{
+		try {
+			return new Pourcentage(Float.parseFloat(this.getTextPro_service_public().substring(0, this.getTextPro_service_public().length()-2).replace(',', '.')));
+		} catch (StringIndexOutOfBoundsException e) {
+			return null;
+		}
+	}
+
+	public Pourcentage getProfessionnelle()
+	{
+		try {
+			return new Pourcentage(Float.parseFloat(this.getTextProfessionnelle().substring(0, this.getTextProfessionnelle().length()-2).replace(',', '.')));
+		} catch (StringIndexOutOfBoundsException e) {
+			return null;
+		}
+	}
+	
+	public Pourcentage getCommunautaire()
+	{
+		try {
+			return new Pourcentage(Float.parseFloat(this.getTextCommunautaire().substring(0, this.getTextCommunautaire().length()-2).replace(',', '.')));
+		} catch (StringIndexOutOfBoundsException e) {
+			return null;
+		}
+	}
+
+	public Pourcentage getEntrepreneuriale()
+	{
+		try {
+			return new Pourcentage(Float.parseFloat(this.getTextEntrepreneuriale().substring(0, this.getTextEntrepreneuriale().length()-2).replace(',', '.')));
+		} catch (StringIndexOutOfBoundsException e) {
+			return null;
+		}
+	}
 
 	// SETTERS //
 
@@ -830,6 +977,32 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	{
 		this.getLabel_flexible().setText(String.valueOf(note)+" / 10");
 	}
+	
+	// schéma 5 //
+	
+	public void setReglementaire(Pourcentage p){
+		this.reglementaire.setValue(p.get()/100);
+	}
+
+	public void setMobilite(Pourcentage p){
+		this.mobilite.setValue(p.get()/100);
+	}
+
+	public void setPro_service_public(Pourcentage p){
+		this.pro_service_public.setValue(p.get()/100);
+	}
+
+	public void setProfessionnelle(Pourcentage p){
+		this.professionnelle.setValue(p.get()/100);
+	}
+	
+	public void setCommunautaire(Pourcentage p){
+		this.communautaire.setValue(p.get()/100);
+	}
+
+	public void setEntrepreneuriale(Pourcentage p){
+		this.entrepreneuriale.setValue(p.get()/100);
+	}
 
 
 	// METHODES //
@@ -844,12 +1017,12 @@ public class ConteneurSchema extends ConteneurAvecImage {
 		b.addActionListener(action);
 	}
 
-	public void initialiserLabelSchemas23(JLabel label, Dimension dim_label)
+	public void initialiserLabelSchemas23(JLabel label)
 	{
 		label.setForeground(Color.WHITE);
-		label.setPreferredSize(dim_label);
-		label.setMaximumSize(dim_label);
-		label.setMinimumSize(dim_label);
+		label.setPreferredSize(DIMENSION_LABEL_SCHEMAS23);
+		label.setMaximumSize(DIMENSION_LABEL_SCHEMAS23);
+		label.setMinimumSize(DIMENSION_LABEL_SCHEMAS23);
 	}
 
 	public void setNote(Bouton b, int note)
@@ -889,6 +1062,21 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			this.setNote_flexible(note);
 			break;
 		}
+	}
+	
+	public void initialiserTextFieldSchemas15(JFormattedTextField field)
+	{
+		field.setHorizontalAlignment(JTextField.CENTER);
+		field.addCaretListener(new CaretListener() {
+
+			@Override
+			public void caretUpdate(CaretEvent e) {
+				ConteneurNouvelleEtude.unsave();					
+			}
+		});
+		field.setPreferredSize(DIMENSION_TEXT_FIELD_SCHEMAS15);
+		field.setMinimumSize(DIMENSION_TEXT_FIELD_SCHEMAS15);
+		field.setMaximumSize(DIMENSION_TEXT_FIELD_SCHEMAS15);
 	}
 
 }

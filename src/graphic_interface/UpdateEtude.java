@@ -44,14 +44,17 @@ public class UpdateEtude implements ComponentListener {
 			FenetreAccueil.etude.getS1().setMtn_etabl_prot(tab.getConteneur_maintenant().getEtabl_prot());
 			FenetreAccueil.etude.getS1().setMtn_mena_mar(tab.getConteneur_maintenant().getMena_mar());
 			FenetreAccueil.etude.getS1().setMtn_press_envir(tab.getConteneur_maintenant().getPress_envir());
+			
 			FenetreAccueil.etude.getS1().setApr_contr_tech(tab.getConteneur_apres().getContr_tech());
 			FenetreAccueil.etude.getS1().setApr_etabl_prot(tab.getConteneur_apres().getEtabl_prot());
 			FenetreAccueil.etude.getS1().setApr_mena_mar(tab.getConteneur_apres().getMena_mar());
 			FenetreAccueil.etude.getS1().setApr_press_envir(tab.getConteneur_apres().getPress_envir());
+			
 			FenetreAccueil.etude.getS1().setRis_contr_tech(((ConteneurSchema) tab.getConteneur_encore_apres()).getContr_tech());
 			FenetreAccueil.etude.getS1().setRis_etabl_prot(((ConteneurSchema) tab.getConteneur_encore_apres()).getEtabl_prot());
 			FenetreAccueil.etude.getS1().setRis_mena_mar(((ConteneurSchema) tab.getConteneur_encore_apres()).getMena_mar());
 			FenetreAccueil.etude.getS1().setRis_press_envir(((ConteneurSchema) tab.getConteneur_encore_apres()).getPress_envir());
+			
 			FenetreAccueil.etude.getS1().setCommentaire_risque(tab.getCommentaireRisque());
 			break;
 
@@ -275,6 +278,37 @@ public class UpdateEtude implements ComponentListener {
 				
 				FenetreAccueil.etude.getS3().setRis_notees(ris_notees);
 			}
+			break;
+			
+		case 4:
+			
+			break;
+			
+		case 5:
+			FenetreAccueil.etude.getS5().setMtn_reglementaire(tab.getConteneur_maintenant().getReglementaire());
+			FenetreAccueil.etude.getS5().setMtn_mobilite(tab.getConteneur_maintenant().getMobilite());
+			FenetreAccueil.etude.getS5().setMtn_pro_service_public(tab.getConteneur_maintenant().getPro_service_public());
+			FenetreAccueil.etude.getS5().setMtn_professionnelle(tab.getConteneur_maintenant().getProfessionnelle());
+			FenetreAccueil.etude.getS5().setMtn_communautaire(tab.getConteneur_maintenant().getCommunautaire());
+			FenetreAccueil.etude.getS5().setMtn_entrepreneuriale(tab.getConteneur_maintenant().getEntrepreneuriale());
+			
+			FenetreAccueil.etude.getS5().setApr_reglementaire(tab.getConteneur_apres().getReglementaire());
+			FenetreAccueil.etude.getS5().setApr_mobilite(tab.getConteneur_apres().getMobilite());
+			FenetreAccueil.etude.getS5().setApr_pro_service_public(tab.getConteneur_apres().getPro_service_public());
+			FenetreAccueil.etude.getS5().setApr_professionnelle(tab.getConteneur_apres().getProfessionnelle());
+			FenetreAccueil.etude.getS5().setApr_communautaire(tab.getConteneur_apres().getCommunautaire());
+			FenetreAccueil.etude.getS5().setApr_entrepreneuriale(tab.getConteneur_apres().getEntrepreneuriale());
+			
+			FenetreAccueil.etude.getS5().setRis_reglementaire(((ConteneurSchema) tab.getConteneur_risque()).getReglementaire());
+			FenetreAccueil.etude.getS5().setRis_mobilite(((ConteneurSchema) tab.getConteneur_risque()).getMobilite());
+			FenetreAccueil.etude.getS5().setRis_pro_service_public(((ConteneurSchema) tab.getConteneur_risque()).getPro_service_public());
+			FenetreAccueil.etude.getS5().setRis_professionnelle(((ConteneurSchema) tab.getConteneur_risque()).getProfessionnelle());
+			FenetreAccueil.etude.getS5().setRis_communautaire(((ConteneurSchema) tab.getConteneur_risque()).getCommunautaire());
+			FenetreAccueil.etude.getS5().setRis_entrepreneuriale(((ConteneurSchema) tab.getConteneur_risque()).getEntrepreneuriale());
+			break;
+			
+		case 6:
+			
 			break;
 		}
 	}
