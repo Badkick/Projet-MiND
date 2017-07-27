@@ -2,6 +2,7 @@ package graphic_interface;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -129,7 +130,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 
 	// cas 4
 	
-	private JButton b_gros_consensus;
+	private BoutonOvaleSchema4 b_gros_consensus;
 
 	// cas 5
 	
@@ -520,16 +521,22 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			break;
 		case 4:
 			
-			this.b_gros_consensus = new BoutonOvaleSchema4();
+			Image img1 = Images.importerImage("tardis.jpg");
+			this.b_gros_consensus = new BoutonOvaleSchema4(img1);
+			
+			Image img2 = Images.importerImage("pb.jpg");
+			BoutonOvaleSchema4 b_test = new BoutonOvaleSchema4(img2);
 	
 			
 			this.layout.setHorizontalGroup(
 					this.layout.createSequentialGroup()
+					.addComponent(b_test)
 					.addComponent(b_gros_consensus)
 					);
 			
 			this.layout.setVerticalGroup(
 					this.layout.createSequentialGroup()
+					.addComponent(b_test)
 					.addComponent(b_gros_consensus)
 					);
 			

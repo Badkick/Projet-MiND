@@ -1,85 +1,105 @@
 package graphic_interface;
 
 import java.awt.BasicStroke;
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Shape;
-import java.awt.Stroke;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.geom.Area;
 import java.awt.geom.Ellipse2D;
 
+import javax.swing.BorderFactory;
+import javax.swing.DefaultButtonModel;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
-public class BoutonOvaleSchema4 extends JButton implements MouseListener {
+class BoutonOvaleSchema4 extends JButton implements MouseListener {
 
+	private Shape shape;
 	private Image img;
 	
-	public BoutonOvaleSchema4() {
-		super();
-		
-		this.img = Images.importerImage("pb.jpg");
-		
-		//this.setPreferredSize(new Dimension(img.getWidth(null), img.getHeight(null)));
-		//this.setMaximumSize(new Dimension(img.getWidth(null), img.getHeight(null)));
-		//this.setMinimumSize(new Dimension(img.getWidth(null), img.getHeight(null)));
-		
+	public BoutonOvaleSchema4(Image img) {
+		this.img = img;
+		Icon icon = new ImageIcon(img);
+		this.addMouseListener(this);
+		this.setModel(new DefaultButtonModel());
+		this.init("",icon);
+
+		this.setBorder(BorderFactory.createEmptyBorder(1,1,1,1));
 		this.setContentAreaFilled(false);
 		this.setFocusPainted(false);
-		this.setBorderPainted(false);
-		this.setOpaque(false);
-		
-		this.addMouseListener(this);
-	}
 
-	@Override
-	public void paintBorder(Graphics g) {
-		//g.drawOval(0, 0, this.getWidth(), this.getHeight());
+		this.initShape();
+	}
+	
+	protected void initShape() {
+		this.shape = new Ellipse2D.Float(0, 0, this.getPreferredSize().width-1, this.getPreferredSize().height-1);
+	}
+	
+	@Override 
+	public Dimension getPreferredSize() {
+		return new Dimension(this.getIcon().getIconWidth(), this.getIcon().getIconHeight());
+	}
+	
+	@Override 
+	protected void paintBorder(Graphics g) {
+		this.initShape();
+		Graphics2D g2 = (Graphics2D)g;	
+		g2.setStroke(new BasicStroke(1.0f));
+		g2.draw(this.shape);
 	}
 	
 	@Override
-	public void paintComponent(Graphics g) {
-		Graphics2D g2d = (Graphics2D)g;
-		g2d.clip(new Ellipse2D.Double(0, 0, this.img.getWidth(null), this.img.getHeight(null))); 
-		g2d.drawImage(this.img, 0, 0, null);
-		//Graphics2D g2d = (Graphics2D)g;
-		//g2d.drawImage(this.img, 0, 0, this.getWidth(), this.getHeight(), this);
-		//g.fillOval(0, 0, this.getWidth(), this.getHeight());
+	protected void paintComponent(Graphics g) {
+		this.initShape();
+		Graphics2D g2 = (Graphics2D)g;
+		g2.setClip(this.shape);
+		g2.drawImage(this.getImage(), 0, 0, null);
 	}
-
-
+	
+	@Override 
+	public boolean contains(int x, int y) {
+		this.initShape();
+		return shape.contains(x, y);
+	}
+	
+	public Image getImage()
+	{
+		return this.img;
+	}
+	
+	public void setImage(Image img)
+	{
+		this.img = img;
+		this.repaint();
+	}
+	
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		System.out.println("hello");
-		
-	}
 
+	}
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
-	}
 
+	}
 	@Override
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
-	}
 
+	}
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
-	}
 
+	}
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
-	}
 
+	}
 }
