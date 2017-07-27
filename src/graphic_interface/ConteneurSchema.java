@@ -4,10 +4,16 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.io.File;
 import java.text.NumberFormat;
 import java.text.ParseException;
 
 import javax.swing.GroupLayout;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -122,6 +128,8 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	private ActionBoutonSchemas23 action3;
 
 	// cas 4
+	
+	private JButton b_gros_consensus;
 
 	// cas 5
 	
@@ -511,7 +519,20 @@ public class ConteneurSchema extends ConteneurAvecImage {
 
 			break;
 		case 4:
-
+			
+			this.b_gros_consensus = new BoutonOvaleSchema4();
+	
+			
+			this.layout.setHorizontalGroup(
+					this.layout.createSequentialGroup()
+					.addComponent(b_gros_consensus)
+					);
+			
+			this.layout.setVerticalGroup(
+					this.layout.createSequentialGroup()
+					.addComponent(b_gros_consensus)
+					);
+			
 			break;
 		case 5:
 			
