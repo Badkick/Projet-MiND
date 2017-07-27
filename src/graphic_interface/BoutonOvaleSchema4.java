@@ -1,11 +1,17 @@
 package graphic_interface;
 
+import java.awt.BasicStroke;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.Shape;
+import java.awt.Stroke;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.geom.Area;
+import java.awt.geom.Ellipse2D;
 
 import javax.swing.JButton;
 
@@ -18,25 +24,31 @@ public class BoutonOvaleSchema4 extends JButton implements MouseListener {
 		
 		this.img = Images.importerImage("pb.jpg");
 		
-		this.setPreferredSize(new Dimension(img.getWidth(null), img.getHeight(null)));
-		this.setMaximumSize(new Dimension(img.getWidth(null), img.getHeight(null)));
-		this.setMinimumSize(new Dimension(img.getWidth(null), img.getHeight(null)));
+		//this.setPreferredSize(new Dimension(img.getWidth(null), img.getHeight(null)));
+		//this.setMaximumSize(new Dimension(img.getWidth(null), img.getHeight(null)));
+		//this.setMinimumSize(new Dimension(img.getWidth(null), img.getHeight(null)));
 		
 		this.setContentAreaFilled(false);
 		this.setFocusPainted(false);
-		//this.setBorderPainted(false);
+		this.setBorderPainted(false);
 		this.setOpaque(false);
 		
 		this.addMouseListener(this);
 	}
 
 	@Override
-	public void paintBorder(Graphics g) {}
+	public void paintBorder(Graphics g) {
+		//g.drawOval(0, 0, this.getWidth(), this.getHeight());
+	}
 	
 	@Override
 	public void paintComponent(Graphics g) {
 		Graphics2D g2d = (Graphics2D)g;
-		g2d.drawImage(this.img, 0, 0, this.getWidth(), this.getHeight(), this);
+		g2d.clip(new Ellipse2D.Double(0, 0, this.img.getWidth(null), this.img.getHeight(null))); 
+		g2d.drawImage(this.img, 0, 0, null);
+		//Graphics2D g2d = (Graphics2D)g;
+		//g2d.drawImage(this.img, 0, 0, this.getWidth(), this.getHeight(), this);
+		//g.fillOval(0, 0, this.getWidth(), this.getHeight());
 	}
 
 
