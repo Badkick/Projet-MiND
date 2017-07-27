@@ -90,11 +90,17 @@ public class VerificationPetitsOnglets implements ComponentListener {
 			break;
 
 		case SCHEMA4 :
-
+			
 			break;
 
 		case SCHEMA5 :
-
+			try {
+				if(this.getConteneur().getReglementaire().get()+this.getConteneur().getMobilite().get()+this.getConteneur().getPro_service_public().get()+this.getConteneur().getProfessionnelle().get()+this.getConteneur().getCommunautaire().get()+this.getConteneur().getEntrepreneuriale().get()==100.0) 
+				{
+					this.getTab().setForeground(Color.black);
+				}
+				else this.getTab().setForeground(Color.red);
+			} catch(NullPointerException ex) {}
 			break;
 
 		case SCHEMA6 :
