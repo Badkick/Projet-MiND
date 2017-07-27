@@ -712,6 +712,64 @@ public class TabGraphe extends JTabbedPane {
 		case 4:
 			break;
 		case 5:
+			try{
+				this.getConteneur_maintenant().setContr_tech(FenetreAccueil.etude.getS1().getMtn_contr_tech());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_maintenant().setReglementaire(FenetreAccueil.etude.getS5().getMtn_reglementaire());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_maintenant().setMobilite(FenetreAccueil.etude.getS5().getMtn_mobilite());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_maintenant().setPro_service_public(FenetreAccueil.etude.getS5().getMtn_pro_service_public());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_maintenant().setProfessionnelle(FenetreAccueil.etude.getS5().getMtn_professionnelle());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_maintenant().setCommunautaire(FenetreAccueil.etude.getS5().getMtn_communautaire());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_maintenant().setEntrepreneuriale(FenetreAccueil.etude.getS5().getMtn_entrepreneuriale());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_apres().setReglementaire(FenetreAccueil.etude.getS5().getApr_reglementaire());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_apres().setMobilite(FenetreAccueil.etude.getS5().getApr_mobilite());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_apres().setPro_service_public(FenetreAccueil.etude.getS5().getApr_pro_service_public());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_apres().setProfessionnelle(FenetreAccueil.etude.getS5().getApr_professionnelle());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_apres().setCommunautaire(FenetreAccueil.etude.getS5().getApr_communautaire());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_apres().setEntrepreneuriale(FenetreAccueil.etude.getS5().getApr_entrepreneuriale());
+			}catch(NullPointerException ex){}
+			ConteneurSchema cont=(ConteneurSchema) this.getConteneur_risque();
+			try{
+				cont.setReglementaire(FenetreAccueil.etude.getS5().getRis_reglementaire());
+			}catch(NullPointerException ex){}
+			try{
+				cont.setMobilite(FenetreAccueil.etude.getS5().getRis_mobilite());
+			}catch(NullPointerException ex){}
+			try{
+				cont.setPro_service_public(FenetreAccueil.etude.getS5().getRis_pro_service_public());
+			}catch(NullPointerException ex){}
+			try{
+				cont.setProfessionnelle(FenetreAccueil.etude.getS5().getRis_professionnelle());
+			}catch(NullPointerException ex){}
+			try{
+				cont.setCommunautaire(FenetreAccueil.etude.getS5().getRis_communautaire());
+			}catch(NullPointerException ex){}
+			try{
+				cont.setEntrepreneuriale(FenetreAccueil.etude.getS5().getRis_entrepreneuriale());
+			}catch(NullPointerException ex){}
 			break;
 		case 6:
 			break;
