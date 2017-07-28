@@ -16,6 +16,7 @@ public class ApercuSchema1 extends ConteneurAvecImage{
 	
 	private Schema1 schema1;
 	private int periode;
+	float alpha = 0.0f;
 	
 	public ApercuSchema1(int width, int height, Schema1 schema1,int periode){
 		super(width,height,Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema1"+File.separator+"Etude_1_fond.png"));
@@ -47,11 +48,12 @@ public class ApercuSchema1 extends ConteneurAvecImage{
 	
 	public void drawCenteredString(Graphics g, String text, int abscisse, int ordonnee, int width, int height){
 		FontMetrics metrics = g.getFontMetrics(FenetreAccueil.theme.getPolice());
-		int x = abscisse +(width - metrics.stringWidth(text))/2;
-		int y = ordonnee + (height - metrics.getHeight())/2 + metrics.getAscent();
+		int y = ordonnee + (height - (metrics.getAscent()+metrics.getDescent())*text.split("\n").length)/2;
 		g.setFont(FenetreAccueil.theme.getPolice());
 		g.setColor(Color.black);
-		g.drawString(text, x, y);
+		for (String line : text.split("\n")){
+			g.drawString(line, abscisse +(width - metrics.stringWidth(line))/2, y +=g.getFontMetrics().getAscent());
+		}
 	}
 	
 	public void initialiserTouche(){
@@ -89,7 +91,6 @@ public class ApercuSchema1 extends ConteneurAvecImage{
 		});
 	}
 	
-	float alpha = 0.0f;
 	
 	public void paintComponent(Graphics g_base){
 		super.paintComponent(g_base);
