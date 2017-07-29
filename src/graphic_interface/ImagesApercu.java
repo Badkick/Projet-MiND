@@ -7,6 +7,8 @@ import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.Polygon;
+import java.awt.Shape;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
@@ -29,6 +31,88 @@ public class ImagesApercu extends Conteneur{
 	
 	public void setPeriode(int periode){
 		this.periode=periode;
+	}
+	
+	public void drawArray_schema1(Graphics2D g,int instant_precedent){
+		int avant=0;
+		int maintenant=0;
+		if(instant_precedent==0){
+			avant = FenetreAccueil.etude.getS1().getMax_maintenant();
+			maintenant=FenetreAccueil.etude.getS1().getMax_apres();
+		}else if(instant_precedent==1){
+			avant = FenetreAccueil.etude.getS1().getMax_apres();
+			maintenant=FenetreAccueil.etude.getS1().getMax_encore_apres();
+		}
+		g.setColor(Color.red);
+		if(avant ==0){
+			if(maintenant==1){
+				int[] X = { 2*411, 2*516, 2*516, 2*541, 2*516, 2*516, 2*411};
+				int[] Y = { 2*105, 2*105, 2*85, 2*120, 2*155, 2*135, 2*135};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(maintenant==2){
+				int[] X = { 2*266, 2*266, 2*286, 2*251, 2*216, 2*236, 2*236};
+				int[] Y = { 2*170, 2*220, 2*220, 2*240, 2*220, 2*220, 2*170};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(maintenant ==3){
+				int[] X = { 2*385, 2*547, 2*564, 2*564, 2*500, 2*527, 2*365};
+				int[] Y = { 2*144, 2*248, 2*221, 2*285, 2*290, 2*273, 2*169};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}
+		}else if(avant ==1){
+			if(maintenant==0){
+				int[] X = { 2*541, 2*436, 2*436, 2*411, 2*436, 2*436, 2*541};
+				int[] Y = { 2*105, 2*105, 2*85, 2*120, 2*155, 2*135, 2*135};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(maintenant==2){
+				int[] X = { 2*587, 2*425, 2*452, 2*388, 2*388, 2*405, 2*567};
+				int[] Y = { 2*169, 2*273, 2*290, 2*285, 2*221, 2*248, 2*144};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(maintenant ==3){
+				int[] X = { 2*717, 2*717, 2*737, 2*702, 2*667, 2*687, 2*687};
+				int[] Y = { 2*170, 2*220, 2*220, 2*240, 2*220, 2*220, 2*170};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}
+		}else if(avant==2){
+			if(maintenant==0){
+				int[] X = { 2*266, 2*266, 2*286, 2*251, 2*216, 2*236, 2*236};
+				int[] Y = { 2*240, 2*190, 2*190, 2*170, 2*190, 2*190, 2*240};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(maintenant==1){
+				int[] X = { 2*385, 2*547, 2*564, 2*564, 2*500, 2*527, 2*365};
+				int[] Y = { 2*316, 2*212, 2*239, 2*175, 2*170, 2*187, 2*291};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);	
+			}else if(maintenant==3){
+				int[] X = { 2*411, 2*516, 2*516, 2*541, 2*516, 2*516, 2*411};
+				int[] Y = { 2*317, 2*317, 2*297, 2*332, 2*367, 2*347,2*347};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}
+		}else if(avant==3){
+			if(maintenant==0){
+				int[] X = { 2*587, 2*425,2*452, 2*388, 2*388, 2*405, 2*567};
+				int[] Y = { 2*291, 2*187, 2*170, 2*175, 2*239, 2*212, 2*316};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);	
+			}else if(maintenant==1){
+				int[] X = { 2*717, 2*717, 2*737, 2*702, 2*667, 2*687, 2*687};
+				int[] Y = { 2*240, 2*190, 2*190, 2*170, 2*190, 2*190, 2*240};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(maintenant==2){
+				int[] X = { 2*541, 2*436, 2*436, 2*411, 2*436, 2*436, 2*541};
+				int[] Y = { 2*317, 2*317, 2*297, 2*332, 2*367, 2*347,2*347};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}
+		}
 	}
 	
 	public void drawCenteredString(Graphics g, String text, int abscisse, int ordonnee, int width, int height,Color color){
@@ -60,137 +144,173 @@ public class ImagesApercu extends Conteneur{
 			g.drawImage(Images.scaleImage(fond,1920, 1080),0,0,null);
 			g.setColor(Color.white);
 			g.fillRoundRect(2*376, 2*10, 2*200, 2*60, 2*15, 2*15);
-			g.fillRoundRect(2*401, 2*178, 2*55, 2*35, 2*15, 2*15);
-			g.fillRoundRect(2*498, 2*178, 2*55, 2*35, 2*15, 2*15);
-			g.fillRoundRect(2*401, 2*245, 2*55, 2*35, 2*15, 2*15);
-			g.fillRoundRect(2*498, 2*245, 2*55, 2*35, 2*15, 2*15);
 			if(this.getPeriode()==0){
 				this.drawCenteredString(g, "Aujourd'hui", 2*376, 2*10, 2*200, 2*60,Color.black);
+				g.setColor(Color.white);
+				g.fillRoundRect(2*401, 2*178, 2*55, 2*35, 2*15, 2*15);
+				g.fillRoundRect(2*498, 2*178, 2*55, 2*35, 2*15, 2*15);
+				g.fillRoundRect(2*401, 2*245, 2*55, 2*35, 2*15, 2*15);
+				g.fillRoundRect(2*498, 2*245, 2*55, 2*35, 2*15, 2*15);
 				try{
-					int x=(int) (253-technique.getWidth(null)*(FenetreAccueil.etude.getS1().getMtn_contr_tech().get())/200);
-					int y=(int) (125-technique.getHeight(null)*(FenetreAccueil.etude.getS1().getMtn_contr_tech().get())/200);
-					int width=(int) (technique.getWidth(null)*(FenetreAccueil.etude.getS1().getMtn_contr_tech().get())/100);
-					int height=(int) (technique.getHeight(null)*(FenetreAccueil.etude.getS1().getMtn_contr_tech().get())/100);
-					g.drawImage(technique, 2*x, 2*y, 2*width,2*height , null, null);
+					int x=(int) (253-technique.getWidth(null)*(0.7*FenetreAccueil.etude.getS1().getMtn_contr_tech().get()+30)/200);
+					int y=(int) (125-technique.getHeight(null)*(0.7*FenetreAccueil.etude.getS1().getMtn_contr_tech().get()+30)/200);
+					int width=(int) (technique.getWidth(null)*(0.7*FenetreAccueil.etude.getS1().getMtn_contr_tech().get()+30)/100);
+					int height=(int) (technique.getHeight(null)*(0.7*FenetreAccueil.etude.getS1().getMtn_contr_tech().get()+30)/100);
+					if(FenetreAccueil.etude.getS1().getMtn_contr_tech().get()!=0){
+						g.drawImage(technique, 2*x, 2*y, 2*width,2*height , null, null);
+					}
 					this.drawCenteredString(g, FenetreAccueil.etude.getS1().getMtn_contr_tech().toString(), 2*401, 2*178, 2*55, 2*35,Color.black);
 				}catch(NullPointerException ex){
 					g.drawImage(technique,(int)(253-technique.getWidth(null)/2),(int)(125-technique.getHeight(null)/2),technique.getWidth(null),technique.getHeight(null),null,null);
 				}
 				try{
-					int x=(int) (702-pression.getWidth(null)*(FenetreAccueil.etude.getS1().getMtn_press_envir().get())/200);
-					int y=(int) (125-pression.getHeight(null)*(FenetreAccueil.etude.getS1().getMtn_press_envir().get())/200);
-					int width=(int) (pression.getWidth(null)*(FenetreAccueil.etude.getS1().getMtn_press_envir().get())/100);
-					int height=(int) (pression.getHeight(null)*(FenetreAccueil.etude.getS1().getMtn_press_envir().get())/100);
-					g.drawImage(pression, 2*x, 2*y, 2*width,2*height , null, null);
+					int x=(int) (702-pression.getWidth(null)*(0.7*FenetreAccueil.etude.getS1().getMtn_press_envir().get()+30)/200);
+					int y=(int) (125-pression.getHeight(null)*(0.7*FenetreAccueil.etude.getS1().getMtn_press_envir().get()+30)/200);
+					int width=(int) (pression.getWidth(null)*(0.7*FenetreAccueil.etude.getS1().getMtn_press_envir().get()+30)/100);
+					int height=(int) (pression.getHeight(null)*(0.7*FenetreAccueil.etude.getS1().getMtn_press_envir().get()+30)/100);
+					if(FenetreAccueil.etude.getS1().getMtn_press_envir().get()!=0){
+						g.drawImage(pression, 2*x, 2*y, 2*width,2*height , null, null);
+					}
 					this.drawCenteredString(g, FenetreAccueil.etude.getS1().getMtn_press_envir().toString(), 2*498, 2*178, 2*55, 2*35,Color.black);
 				}catch(NullPointerException ex){
 					g.drawImage(pression,(int)(702-pression.getWidth(null)/2),(int)(125-pression.getHeight(null)/2),pression.getWidth(null),pression.getHeight(null),null,null);
 				}
 				try{
-					int x=(int) (253-protege.getWidth(null)*(FenetreAccueil.etude.getS1().getMtn_etabl_prot().get())/200);
-					int y=(int) (332-protege.getHeight(null)*(FenetreAccueil.etude.getS1().getMtn_etabl_prot().get())/200);
-					int width=(int) (protege.getWidth(null)*(FenetreAccueil.etude.getS1().getMtn_etabl_prot().get())/100);
-					int height=(int) (protege.getHeight(null)*(FenetreAccueil.etude.getS1().getMtn_etabl_prot().get())/100);
-					g.drawImage(protege, 2*x, 2*y, 2*width,2*height , null, null);
+					int x=(int) (253-protege.getWidth(null)*(0.7*FenetreAccueil.etude.getS1().getMtn_etabl_prot().get()+30)/200);
+					int y=(int) (332-protege.getHeight(null)*(0.7*FenetreAccueil.etude.getS1().getMtn_etabl_prot().get()+30)/200);
+					int width=(int) (protege.getWidth(null)*(0.7*FenetreAccueil.etude.getS1().getMtn_etabl_prot().get()+30)/100);
+					int height=(int) (protege.getHeight(null)*(0.7*FenetreAccueil.etude.getS1().getMtn_etabl_prot().get()+30)/100);
+					if(FenetreAccueil.etude.getS1().getMtn_etabl_prot().get()!=0){
+						g.drawImage(protege, 2*x, 2*y, 2*width,2*height , null, null);
+					}
 					this.drawCenteredString(g, FenetreAccueil.etude.getS1().getMtn_etabl_prot().toString(), 2*401, 2*245, 2*55, 2*35,Color.black);
 				}catch(NullPointerException ex){
 					g.drawImage(protege,(int)(253-protege.getWidth(null)/2),(int)(332-technique.getHeight(null)/2),protege.getWidth(null),protege.getHeight(null),null,null);
 				}
 				try{
-					int x=(int) (702-menace.getWidth(null)*(FenetreAccueil.etude.getS1().getMtn_mena_mar().get())/200);
-					int y=(int) (332-menace.getHeight(null)*(FenetreAccueil.etude.getS1().getMtn_mena_mar().get())/200);
-					int width=(int) (menace.getWidth(null)*(FenetreAccueil.etude.getS1().getMtn_mena_mar().get())/100);
-					int height=(int) (menace.getHeight(null)*(FenetreAccueil.etude.getS1().getMtn_mena_mar().get())/100);
-					g.drawImage(menace, 2*x, 2*y, 2*width,2*height , null, null);
+					int x=(int) (702-menace.getWidth(null)*(0.7*FenetreAccueil.etude.getS1().getMtn_mena_mar().get()+30)/200);
+					int y=(int) (332-menace.getHeight(null)*(0.7*FenetreAccueil.etude.getS1().getMtn_mena_mar().get()+30)/200);
+					int width=(int) (menace.getWidth(null)*(0.7*FenetreAccueil.etude.getS1().getMtn_mena_mar().get()+30)/100);
+					int height=(int) (menace.getHeight(null)*(0.7*FenetreAccueil.etude.getS1().getMtn_mena_mar().get()+30)/100);
+					if(FenetreAccueil.etude.getS1().getMtn_mena_mar().get()!=0){
+						g.drawImage(menace, 2*x, 2*y, 2*width,2*height , null, null);
+					}
 					this.drawCenteredString(g, FenetreAccueil.etude.getS1().getMtn_mena_mar().toString(), 2*498, 2*245, 2*55, 2*35,Color.black);
 				}catch(NullPointerException ex){
 					g.drawImage(menace,(int)(702-menace.getWidth(null)/2),(int)(332-menace.getHeight(null)/2),menace.getWidth(null),menace.getHeight(null),null,null);
 				}
 			}else if(this.getPeriode()==1){
 				this.drawCenteredString(g, "Demain", 2*376, 2*10, 2*200, 2*60,Color.black);
+				this.drawArray_schema1(g, 0);
+				g.setColor(Color.white);
+				g.fillRoundRect(2*401, 2*178, 2*55, 2*35, 2*15, 2*15);
+				g.fillRoundRect(2*498, 2*178, 2*55, 2*35, 2*15, 2*15);
+				g.fillRoundRect(2*401, 2*245, 2*55, 2*35, 2*15, 2*15);
+				g.fillRoundRect(2*498, 2*245, 2*55, 2*35, 2*15, 2*15);
 				try{
-					int x=(int) (253-technique.getWidth(null)*(FenetreAccueil.etude.getS1().getApr_contr_tech().get())/200);
-					int y=(int) (125-technique.getHeight(null)*(FenetreAccueil.etude.getS1().getApr_contr_tech().get())/200);
-					int width=(int) (technique.getWidth(null)*(FenetreAccueil.etude.getS1().getApr_contr_tech().get())/100);
-					int height=(int) (technique.getHeight(null)*(FenetreAccueil.etude.getS1().getApr_contr_tech().get())/100);
-					g.drawImage(technique, 2*x, 2*y, 2*width,2*height , null, null);
+					int x=(int) (253-technique.getWidth(null)*(0.7*FenetreAccueil.etude.getS1().getApr_contr_tech().get()+30)/200);
+					int y=(int) (125-technique.getHeight(null)*(0.7*FenetreAccueil.etude.getS1().getApr_contr_tech().get()+30)/200);
+					int width=(int) (technique.getWidth(null)*(0.7*FenetreAccueil.etude.getS1().getApr_contr_tech().get()+30)/100);
+					int height=(int) (technique.getHeight(null)*(0.7*FenetreAccueil.etude.getS1().getApr_contr_tech().get()+30)/100);
+					if(FenetreAccueil.etude.getS1().getApr_contr_tech().get()!=0){
+						g.drawImage(technique, 2*x, 2*y, 2*width,2*height , null, null);
+					}
 					this.drawCenteredString(g, FenetreAccueil.etude.getS1().getApr_contr_tech().toString(), 2*401, 2*178, 2*55, 2*35,Color.black);
 				}catch(NullPointerException ex){
 					g.drawImage(technique,(int)(253-technique.getWidth(null)/2),(int)(125-technique.getHeight(null)/2),technique.getWidth(null),technique.getHeight(null),null,null);
 				}
 				try{
-					int x=(int) (702-pression.getWidth(null)*(FenetreAccueil.etude.getS1().getApr_press_envir().get())/200);
-					int y=(int) (125-pression.getHeight(null)*(FenetreAccueil.etude.getS1().getApr_press_envir().get())/200);
-					int width=(int) (pression.getWidth(null)*(FenetreAccueil.etude.getS1().getApr_press_envir().get())/100);
-					int height=(int) (pression.getHeight(null)*(FenetreAccueil.etude.getS1().getApr_press_envir().get())/100);
-					g.drawImage(pression, 2*x, 2*y, 2*width,2*height , null, null);
+					int x=(int) (702-pression.getWidth(null)*(0.7*FenetreAccueil.etude.getS1().getApr_press_envir().get()+30)/200);
+					int y=(int) (125-pression.getHeight(null)*(0.7*FenetreAccueil.etude.getS1().getApr_press_envir().get()+30)/200);
+					int width=(int) (pression.getWidth(null)*(0.7*FenetreAccueil.etude.getS1().getApr_press_envir().get()+30)/100);
+					int height=(int) (pression.getHeight(null)*(0.7*FenetreAccueil.etude.getS1().getApr_press_envir().get()+30)/100);
+					if(FenetreAccueil.etude.getS1().getApr_press_envir().get()!=0){
+						g.drawImage(pression, 2*x, 2*y, 2*width,2*height , null, null);
+					}
 					this.drawCenteredString(g, FenetreAccueil.etude.getS1().getApr_press_envir().toString(), 2*498, 2*178, 2*55, 2*35,Color.black);
 				}catch(NullPointerException ex){
 					g.drawImage(pression,(int)(702-pression.getWidth(null)/2),(int)(125-pression.getHeight(null)/2),pression.getWidth(null),pression.getHeight(null),null,null);
 				}
 				try{
-					int x=(int) (253-protege.getWidth(null)*(FenetreAccueil.etude.getS1().getApr_etabl_prot().get())/200);
-					int y=(int) (332-protege.getHeight(null)*(FenetreAccueil.etude.getS1().getApr_etabl_prot().get())/200);
-					int width=(int) (protege.getWidth(null)*(FenetreAccueil.etude.getS1().getApr_etabl_prot().get())/100);
-					int height=(int) (protege.getHeight(null)*(FenetreAccueil.etude.getS1().getApr_etabl_prot().get())/100);
-					g.drawImage(protege, 2*x, 2*y, 2*width,2*height , null, null);
+					int x=(int) (253-protege.getWidth(null)*(0.7*FenetreAccueil.etude.getS1().getApr_etabl_prot().get()+30)/200);
+					int y=(int) (332-protege.getHeight(null)*(0.7*FenetreAccueil.etude.getS1().getApr_etabl_prot().get()+30)/200);
+					int width=(int) (protege.getWidth(null)*(0.7*FenetreAccueil.etude.getS1().getApr_etabl_prot().get()+30)/100);
+					int height=(int) (protege.getHeight(null)*(0.7*FenetreAccueil.etude.getS1().getApr_etabl_prot().get()+30)/100);
+					if(FenetreAccueil.etude.getS1().getApr_etabl_prot().get()!=0){
+						g.drawImage(protege, 2*x, 2*y, 2*width,2*height , null, null);
+					}
 					this.drawCenteredString(g, FenetreAccueil.etude.getS1().getApr_etabl_prot().toString(), 2*401, 2*245, 2*55, 2*35,Color.black);
 				}catch(NullPointerException ex){
 					g.drawImage(protege,(int)(253-protege.getWidth(null)/2),(int)(332-technique.getHeight(null)/2),protege.getWidth(null),protege.getHeight(null),null,null);
 				}
 				try{
-					int x=(int) (702-menace.getWidth(null)*(FenetreAccueil.etude.getS1().getApr_mena_mar().get())/200);
-					int y=(int) (332-menace.getHeight(null)*(FenetreAccueil.etude.getS1().getApr_mena_mar().get())/200);
-					int width=(int) (menace.getWidth(null)*(FenetreAccueil.etude.getS1().getApr_mena_mar().get())/100);
-					int height=(int) (menace.getHeight(null)*(FenetreAccueil.etude.getS1().getApr_mena_mar().get())/100);
-					g.drawImage(menace, 2*x, 2*y, 2*width,2*height , null, null);
+					int x=(int) (702-menace.getWidth(null)*(0.7*FenetreAccueil.etude.getS1().getApr_mena_mar().get()+30)/200);
+					int y=(int) (332-menace.getHeight(null)*(0.7*FenetreAccueil.etude.getS1().getApr_mena_mar().get()+30)/200);
+					int width=(int) (menace.getWidth(null)*(0.7*FenetreAccueil.etude.getS1().getApr_mena_mar().get()+30)/100);
+					int height=(int) (menace.getHeight(null)*(0.7*FenetreAccueil.etude.getS1().getApr_mena_mar().get()+30)/100);
+					if(FenetreAccueil.etude.getS1().getApr_mena_mar().get()!=0){
+						g.drawImage(menace, 2*x, 2*y, 2*width,2*height , null, null);
+					}
 					this.drawCenteredString(g, FenetreAccueil.etude.getS1().getApr_mena_mar().toString(), 2*498, 2*245, 2*55, 2*35,Color.black);
 				}catch(NullPointerException ex){
 					g.drawImage(menace,(int)(702-menace.getWidth(null)/2),(int)(332-menace.getHeight(null)/2),menace.getWidth(null),menace.getHeight(null),null,null);
 				}
 			}else if(this.getPeriode()==2){
 				this.drawCenteredString(g, "Après-demain", 2*376, 2*10, 2*200, 2*60,Color.black);
+				this.drawArray_schema1(g, 1);
 				g.setColor(Color.white);
 				g.fillOval(2*376, 2*380, 2*200, 2*60);
+				g.fillRoundRect(2*401, 2*178, 2*55, 2*35, 2*15, 2*15);
+				g.fillRoundRect(2*498, 2*178, 2*55, 2*35, 2*15, 2*15);
+				g.fillRoundRect(2*401, 2*245, 2*55, 2*35, 2*15, 2*15);
+				g.fillRoundRect(2*498, 2*245, 2*55, 2*35, 2*15, 2*15);
 				try{
 					this.drawCenteredString(g, FenetreAccueil.etude.getS1().getCommentaire_risque(), 2*376, 2*380, 2*200, 2*60,Color.black);
 				}catch(NullPointerException ex){}
 				try{
-					int x=(int) (253-technique.getWidth(null)*(FenetreAccueil.etude.getS1().getRis_contr_tech().get())/200);
-					int y=(int) (125-technique.getHeight(null)*(FenetreAccueil.etude.getS1().getRis_contr_tech().get())/200);
-					int width=(int) (technique.getWidth(null)*(FenetreAccueil.etude.getS1().getRis_contr_tech().get())/100);
-					int height=(int) (technique.getHeight(null)*(FenetreAccueil.etude.getS1().getRis_contr_tech().get())/100);
-					g.drawImage(technique, 2*x, 2*y, 2*width,2*height , null, null);
+					int x=(int) (253-technique.getWidth(null)*(0.7*FenetreAccueil.etude.getS1().getRis_contr_tech().get()+30)/200);
+					int y=(int) (125-technique.getHeight(null)*(0.7*FenetreAccueil.etude.getS1().getRis_contr_tech().get()+30)/200);
+					int width=(int) (technique.getWidth(null)*(0.7*FenetreAccueil.etude.getS1().getRis_contr_tech().get()+30)/100);
+					int height=(int) (technique.getHeight(null)*(0.7*FenetreAccueil.etude.getS1().getRis_contr_tech().get()+30)/100);
+					if(FenetreAccueil.etude.getS1().getRis_contr_tech().get()!=0){
+						g.drawImage(technique, 2*x, 2*y, 2*width,2*height , null, null);
+					}
 					this.drawCenteredString(g, FenetreAccueil.etude.getS1().getRis_contr_tech().toString(), 2*401, 2*178, 2*55, 2*35,Color.black);
 				}catch(NullPointerException ex){
 					g.drawImage(technique,(int)(253-technique.getWidth(null)/2),(int)(125-technique.getHeight(null)/2),technique.getWidth(null),technique.getHeight(null),null,null);
 				}
 				try{
-					int x=(int) (702-pression.getWidth(null)*(FenetreAccueil.etude.getS1().getRis_press_envir().get())/200);
-					int y=(int) (125-pression.getHeight(null)*(FenetreAccueil.etude.getS1().getRis_press_envir().get())/200);
-					int width=(int) (pression.getWidth(null)*(FenetreAccueil.etude.getS1().getRis_press_envir().get())/100);
-					int height=(int) (pression.getHeight(null)*(FenetreAccueil.etude.getS1().getRis_press_envir().get())/100);
-					g.drawImage(pression, 2*x, 2*y, 2*width,2*height , null, null);
+					int x=(int) (702-pression.getWidth(null)*(0.7*FenetreAccueil.etude.getS1().getRis_press_envir().get()+30)/200);
+					int y=(int) (125-pression.getHeight(null)*(0.7*FenetreAccueil.etude.getS1().getRis_press_envir().get()+30)/200);
+					int width=(int) (pression.getWidth(null)*(0.7*FenetreAccueil.etude.getS1().getRis_press_envir().get()+30)/100);
+					int height=(int) (pression.getHeight(null)*(0.7*FenetreAccueil.etude.getS1().getRis_press_envir().get()+30)/100);
+					if(FenetreAccueil.etude.getS1().getRis_press_envir().get()!=0){
+						g.drawImage(pression, 2*x, 2*y, 2*width,2*height , null, null);
+					}
 					this.drawCenteredString(g, FenetreAccueil.etude.getS1().getRis_press_envir().toString(), 2*498, 2*178, 2*55, 2*35,Color.black);
 				}catch(NullPointerException ex){
 					g.drawImage(pression,(int)(702-pression.getWidth(null)/2),(int)(125-pression.getHeight(null)/2),pression.getWidth(null),pression.getHeight(null),null,null);
 				}
 				try{
-					int x=(int) (253-protege.getWidth(null)*(FenetreAccueil.etude.getS1().getRis_etabl_prot().get())/200);
-					int y=(int) (332-protege.getHeight(null)*(FenetreAccueil.etude.getS1().getRis_etabl_prot().get())/200);
-					int width=(int) (protege.getWidth(null)*(FenetreAccueil.etude.getS1().getRis_etabl_prot().get())/100);
-					int height=(int) (protege.getHeight(null)*(FenetreAccueil.etude.getS1().getRis_etabl_prot().get())/100);
+					int x=(int) (253-protege.getWidth(null)*(0.7*FenetreAccueil.etude.getS1().getRis_etabl_prot().get()+30)/200);
+					int y=(int) (332-protege.getHeight(null)*(0.7*FenetreAccueil.etude.getS1().getRis_etabl_prot().get()+30)/200);
+					int width=(int) (protege.getWidth(null)*(0.7*FenetreAccueil.etude.getS1().getRis_etabl_prot().get()+30)/100);
+					int height=(int) (protege.getHeight(null)*(0.7*FenetreAccueil.etude.getS1().getRis_etabl_prot().get()+30)/100);
 					this.drawCenteredString(g, FenetreAccueil.etude.getS1().getRis_etabl_prot().toString(), 2*401, 2*245, 2*55, 2*35,Color.black);
-					g.drawImage(protege, 2*x, 2*y, 2*width,2*height , null, null);
+					if(FenetreAccueil.etude.getS1().getRis_etabl_prot().get()!=0){
+						g.drawImage(protege, 2*x, 2*y, 2*width,2*height , null, null);
+					}
 				}catch(NullPointerException ex){
 					g.drawImage(protege,(int)(253-protege.getWidth(null)/2),(int)(332-technique.getHeight(null)/2),protege.getWidth(null),protege.getHeight(null),null,null);
 				}
 				try{
-					int x=(int) (702-menace.getWidth(null)*(FenetreAccueil.etude.getS1().getRis_mena_mar().get())/200);
-					int y=(int) (332-menace.getHeight(null)*(FenetreAccueil.etude.getS1().getRis_mena_mar().get())/200);
-					int width=(int) (menace.getWidth(null)*(FenetreAccueil.etude.getS1().getRis_mena_mar().get())/100);
-					int height=(int) (menace.getHeight(null)*(FenetreAccueil.etude.getS1().getRis_mena_mar().get())/100);
-					g.drawImage(menace, 2*x, 2*y, 2*width,2*height , null, null);
+					int x=(int) (702-menace.getWidth(null)*(0.7*FenetreAccueil.etude.getS1().getRis_mena_mar().get()+30)/200);
+					int y=(int) (332-menace.getHeight(null)*(0.7*FenetreAccueil.etude.getS1().getRis_mena_mar().get()+30)/200);
+					int width=(int) (menace.getWidth(null)*(0.7*FenetreAccueil.etude.getS1().getRis_mena_mar().get()+30)/100);
+					int height=(int) (menace.getHeight(null)*(0.7*FenetreAccueil.etude.getS1().getRis_mena_mar().get()+30)/100);
+					if(FenetreAccueil.etude.getS1().getRis_mena_mar().get()!=0){
+						g.drawImage(menace, 2*x, 2*y, 2*width,2*height , null, null);
+					}
 					this.drawCenteredString(g, FenetreAccueil.etude.getS1().getRis_mena_mar().toString(), 2*498, 2*245, 2*55, 2*35,Color.black);
 				}catch(NullPointerException ex){
 					g.drawImage(menace,(int)(702-menace.getWidth(null)/2),(int)(332-menace.getHeight(null)/2),menace.getWidth(null),menace.getHeight(null),null,null);

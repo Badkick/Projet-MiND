@@ -127,6 +127,51 @@ public class Schema1 {
 		this.commentaire_risque = commentaire_risque;
 	}
 
+	//METHODES
 	
+	public int getMax_maintenant(){
+		try{
+			float[] liste={this.getMtn_contr_tech().get(),this.getMtn_press_envir().get(),this.getMtn_etabl_prot().get(),this.getMtn_mena_mar().get()};
+			float max=0;
+			int j=0;
+			for(int i=0;i<4;i++){
+				if(liste[i]>max){
+					max=liste[i];
+					j=i;
+				}
+			}
+			return j;
+		}catch(NullPointerException ex){return Integer.MAX_VALUE;}
+	}
+	
+	public int getMax_apres(){
+		try{
+			float[] liste={this.getApr_contr_tech().get(),this.getApr_press_envir().get(),this.getApr_etabl_prot().get(),this.getApr_mena_mar().get()};
+			float max=0;
+			int j=0;
+			for(int i=0;i<4;i++){
+				if(liste[i]>max){
+					max=liste[i];
+					j=i;
+				}
+			}
+			return j;
+		}catch(NullPointerException ex){return Integer.MAX_VALUE;}
+	}
+	
+	public int getMax_encore_apres(){
+		try{
+			float[] liste={this.getRis_contr_tech().get(),this.getRis_press_envir().get(),this.getRis_etabl_prot().get(),this.getRis_mena_mar().get()};
+			float max=0;
+			int j=0;
+			for(int i=0;i<4;i++){
+				if(liste[i]>max){
+					max=liste[i];
+					j=i;
+				}
+			}
+			return j;
+		}catch(NullPointerException ex){return Integer.MAX_VALUE;}
+	}
 
 }
