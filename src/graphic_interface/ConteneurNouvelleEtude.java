@@ -161,14 +161,16 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 		this.bouton_delete = new Bouton("Supprimer l'étude", new Dimension(180, 50));
 		this.bouton_exporter = new Bouton("Présenter l'étude", new Dimension(180, 50));
 
-		this.getBoutonExporter().addActionListener(new ActionListener() {
+		/*this.getBoutonExporter().addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				System.out.println(getConteneurSchema(1,MAINTENANT));
 			}
-		});
+		});*/
+		
+		this.getBoutonExporter().addActionListener(new PresenterEtude());
 
 		this.getBoutonDelete().addActionListener(new ActionListener(){
 
