@@ -9,6 +9,7 @@ import java.awt.Shape;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.geom.Ellipse2D;
+import java.awt.geom.RoundRectangle2D;
 
 import javax.swing.BorderFactory;
 import javax.swing.DefaultButtonModel;
@@ -16,12 +17,12 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
-class BoutonOvaleSchema4 extends JButton implements MouseListener {
+class BoutonOvaleSchema6 extends JButton implements MouseListener {
 
 	private Shape shape;
 	private Image img;
 	
-	public BoutonOvaleSchema4(Image img) {
+	public BoutonOvaleSchema6(Image img) {
 		this.img = img;
 		Icon icon = new ImageIcon(img);
 		this.addMouseListener(this);
@@ -36,7 +37,8 @@ class BoutonOvaleSchema4 extends JButton implements MouseListener {
 	}
 	
 	protected void initShape() {
-		this.shape = new Ellipse2D.Float(0, 0, this.getPreferredSize().width-1, this.getPreferredSize().height-1);
+		//this.shape = new Ellipse2D.Float(0, 0, this.getPreferredSize().width-1, this.getPreferredSize().height-1);
+		this.shape = new RoundRectangle2D.Float(0f, 0f, (float)this.getPreferredSize().width-1, (float)this.getPreferredSize().height-1,230f,130f);
 	}
 	
 	@Override 
@@ -74,13 +76,13 @@ class BoutonOvaleSchema4 extends JButton implements MouseListener {
 	public void setImage(Image img)
 	{
 		this.img = img;
+		this.setIcon(new ImageIcon(img));
 		this.repaint();
 	}
 	
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		System.out.println("hello");
-
+		System.out.println("hello"+this.getIcon());
 	}
 	@Override
 	public void mouseEntered(MouseEvent e) {
