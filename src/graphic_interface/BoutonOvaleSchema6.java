@@ -18,12 +18,20 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 class BoutonOvaleSchema6 extends JButton implements MouseListener {
+	
+	// VARIABLES INSTANCE //
 
 	private Shape shape;
 	private Image img;
 	
-	public BoutonOvaleSchema6(Image img) {
-		this.img = img;
+	private Image img_repos = FenetreAccueil.theme.getBRepos();
+	private Image img_survol = FenetreAccueil.theme.getBSurvol();
+	private Image img_clic = FenetreAccueil.theme.getBClic();
+	
+	// CONSTRUCTEUR //
+	
+	public BoutonOvaleSchema6() {
+		this.img = FenetreAccueil.theme.getBRepos();
 		Icon icon = new ImageIcon(img);
 		this.addMouseListener(this);
 		this.setModel(new DefaultButtonModel());
@@ -36,9 +44,57 @@ class BoutonOvaleSchema6 extends JButton implements MouseListener {
 		this.initShape();
 	}
 	
+	// GETTERS //
+	
+	public Image getImage()
+	{
+		return this.img;
+	}
+	
+	public Image getImgRepos()
+	{
+		return this.img_repos;
+	}
+	
+	public Image getImgSurvol()
+	{
+		return this.img_survol;
+	}
+	
+	public Image getImgClic()
+	{
+		return this.img_clic;
+	}
+	
+	// SETTERS //
+	
+	public void setImage(Image img)
+	{
+		this.img = img;
+		this.setIcon(new ImageIcon(img));
+		this.repaint();
+	}
+	
+	public void setImgRepos(Image imgRepos)
+	{
+		this.img_repos = imgRepos;
+	}
+	
+	public void setImgSurvol(Image imgSurvol)
+	{
+		this.img_survol = imgSurvol;
+	}
+	
+	public void setImgClic(Image imgClic)
+	{
+		this.img_clic = imgClic;
+	}
+	
+	// METHODES //
+	
 	protected void initShape() {
-		//this.shape = new Ellipse2D.Float(0, 0, this.getPreferredSize().width-1, this.getPreferredSize().height-1);
-		this.shape = new RoundRectangle2D.Float(0f, 0f, (float)this.getPreferredSize().width-1, (float)this.getPreferredSize().height-1,230f,130f);
+		this.shape = new Ellipse2D.Float(0, 0, this.getPreferredSize().width-1, this.getPreferredSize().height-1);
+		//this.shape = new RoundRectangle2D.Float(0f, 0f, (float)this.getPreferredSize().width-1, (float)this.getPreferredSize().height-1,230f,130f);
 	}
 	
 	@Override 
@@ -68,40 +124,29 @@ class BoutonOvaleSchema6 extends JButton implements MouseListener {
 		return shape.contains(x, y);
 	}
 	
-	public Image getImage()
-	{
-		return this.img;
-	}
-	
-	public void setImage(Image img)
-	{
-		this.img = img;
-		this.setIcon(new ImageIcon(img));
-		this.repaint();
-	}
-	
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		System.out.println("hello"+this.getIcon());
+		
 	}
 	@Override
 	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
+		this.setImage(this.getImgSurvol());
 
 	}
 	@Override
 	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
+		this.setImage(this.getImgRepos());
 
 	}
 	@Override
 	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
+		this.setImage(this.getImgClic());
 
 	}
 	@Override
-	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-
+	public void mouseReleased(MouseEvent event) {
+		int y = event.getY();
+		int x = event.getX();
+		this.img=(y>0 && y<this.getHeight() && x>0 && x<this.getWidth()) ? this.getImgSurvol() : this.getImgRepos();
 	}
 }

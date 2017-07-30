@@ -29,6 +29,10 @@ public enum Theme {
 	private Image bSchema2Repos;
 	private Image bSchema2Survol;
 	
+	private Image bSchema6Repos;
+	private Image bSchema6Survol;
+	private Image bSchema6Clic;
+	
 	// police
 	private Font police;
 	private Color couleurTexte;
@@ -96,6 +100,18 @@ public enum Theme {
 
 	public Image getbSchema2Survol() {
 		return this.bSchema2Survol;
+	}
+	
+	public Image getbSchema6Repos() {
+		return this.bSchema6Repos;
+	}
+
+	public Image getbSchema6Survol() {
+		return this.bSchema6Survol;
+	}
+	
+	public Image getbSchema6Clic() {
+		return this.bSchema6Clic;
 	}
 
 	public Image getIcone()
@@ -176,6 +192,10 @@ public enum Theme {
 		
 		this.bSchema2Repos = Images.importerImage(chemin()+"button_schema2_repos.png");
 		this.bSchema2Survol = Images.importerImage(chemin()+"button_schema2_survol.png");
+		
+		this.bSchema6Repos = Images.importerImage(chemin()+"button_schema6_repos.png");
+		this.bSchema6Survol = Images.importerImage(chemin()+"button_schema6_survol.png");
+		this.bSchema6Clic = Images.importerImage(chemin()+"button_schema6_clic.png");
 		
 		this.selectionEtude = Images.importerImage(chemin()+"select_etude.png");
 		

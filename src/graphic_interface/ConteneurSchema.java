@@ -772,22 +772,17 @@ public class ConteneurSchema extends ConteneurAvecImage {
 
 			break;
 		case 6:
-			Image img1 = Images.importerImage("tardis.jpg");
-			this.b_gros_consensus = new BoutonOvaleSchema6(img1);
+			this.b_gros_consensus = new BoutonOvaleSchema6();
 			
-			Image img2 = Images.importerImage("pb.jpg");
-			BoutonOvaleSchema6 b_test = new BoutonOvaleSchema6(img2);
 	
 			
 			this.layout.setHorizontalGroup(
 					this.layout.createSequentialGroup()
-					.addComponent(b_test)
 					.addComponent(b_gros_consensus)
 					);
 			
 			this.layout.setVerticalGroup(
 					this.layout.createSequentialGroup()
-					.addComponent(b_test)
 					.addComponent(b_gros_consensus)
 					);
 			break;

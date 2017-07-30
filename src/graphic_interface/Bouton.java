@@ -209,13 +209,6 @@ public class Bouton extends JButton implements MouseListener {
 		// RELACHEMENT DU CLIC GAUCHE
 		int y = event.getY();
 		int x = event.getX();
-		if (y>0 && y<this.getHeight() && x>0 && x<this.getWidth())
-		{
-			img=this.getImgSurvol();
-		}
-		else
-		{
-			img=this.getImgRepos();
-		}
+		this.img=(y>0 && y<this.getHeight() && x>0 && x<this.getWidth()) ? this.getImgSurvol() : this.getImgRepos();
 	}
 }
