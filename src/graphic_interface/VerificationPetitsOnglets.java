@@ -61,12 +61,8 @@ public class VerificationPetitsOnglets implements ComponentListener {
 		{
 		case SCHEMA1 :
 			try {
-				if(this.getConteneur().getContr_tech().get()+this.getConteneur().getEtabl_prot().get()+this.getConteneur().getMena_mar().get()+this.getConteneur().getPress_envir().get()==100.0) 
-				{
-					this.getTab().setForeground(Color.black);
-				}
-				else this.getTab().setForeground(Color.red);
-			} catch(NullPointerException ex) {}
+				this.getTab().setForeground((this.getConteneur().getContr_tech().get()+this.getConteneur().getEtabl_prot().get()+this.getConteneur().getMena_mar().get()+this.getConteneur().getPress_envir().get()==100.0) ? Color.black : Color.red);
+			} catch(NullPointerException ex) {this.getTab().setForeground(Color.red);}
 			break;
 
 		case SCHEMA2 :
@@ -75,8 +71,7 @@ public class VerificationPetitsOnglets implements ComponentListener {
 			if(this.getConteneur().getNote_professionnelle()!=Integer.MAX_VALUE) nbNotes++;
 			if(this.getConteneur().getNote_simple_centralisee()!=Integer.MAX_VALUE) nbNotes++;
 			if(this.getConteneur().getNote_simple_marche()!=Integer.MAX_VALUE) nbNotes++;
-			if(nbNotes==4) this.getTab().setForeground(Color.black);
-			else this.getTab().setForeground(Color.red);
+			this.getTab().setForeground(nbNotes==4 ? Color.black : Color.red);
 			break;
 
 		case SCHEMA3 :
@@ -85,22 +80,23 @@ public class VerificationPetitsOnglets implements ComponentListener {
 			if(this.getConteneur().getNote_personnalisee()!=Integer.MAX_VALUE) nbNotes++;
 			if(this.getConteneur().getNote_process()!=Integer.MAX_VALUE) nbNotes++;
 			if(this.getConteneur().getNote_flexible()!=Integer.MAX_VALUE) nbNotes++;
-			if(nbNotes==4) this.getTab().setForeground(Color.black);
-			else this.getTab().setForeground(Color.red);
+			this.getTab().setForeground(nbNotes==4 ? Color.black : Color.red);
 			break;
 
 		case SCHEMA4 :
-			
+			try {
+				this.getTab().setForeground( ( (this.getConteneur().getImportance_consensus().get()+this.getConteneur().getImportance_negociation().get()+this.getConteneur().getImportance_opposition().get()==100.0)
+						&& (this.getConteneur().getPetit_consensus().get()+this.getConteneur().getPetit_pacte().get()==100.0)
+						&& (this.getConteneur().getPetit_ajustement().get()+this.getConteneur().getPetit_transformation().get()==100.0)
+						&& (this.getConteneur().getPetit_domination().get()+this.getConteneur().getPetit_contrePouvoir().get()+this.getConteneur().getPetit_antagonisme().get()==100.0)
+						) ? Color.black : Color.red);
+			} catch(NullPointerException ex) {this.getTab().setForeground(Color.red);}
 			break;
 
 		case SCHEMA5 :
 			try {
-				if(this.getConteneur().getReglementaire().get()+this.getConteneur().getMobilite().get()+this.getConteneur().getPro_service_public().get()+this.getConteneur().getProfessionnelle().get()+this.getConteneur().getCommunautaire().get()+this.getConteneur().getEntrepreneuriale().get()==100.0) 
-				{
-					this.getTab().setForeground(Color.black);
-				}
-				else this.getTab().setForeground(Color.red);
-			} catch(NullPointerException ex) {}
+				this.getTab().setForeground((this.getConteneur().getReglementaire().get()+this.getConteneur().getMobilite().get()+this.getConteneur().getPro_service_public().get()+this.getConteneur().getProfessionnelle().get()+this.getConteneur().getCommunautaire().get()+this.getConteneur().getEntrepreneuriale().get()==100.0) ? Color.black : Color.red);
+			} catch(NullPointerException ex) {this.getTab().setForeground(Color.red);}
 			break;
 
 		case SCHEMA6 :

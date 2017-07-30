@@ -1058,7 +1058,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	{
 		try {
 			return new Pourcentage(Float.parseFloat(this.getTextImportance_consensus().substring(0, this.getTextImportance_consensus().length()-2).replace(',', '.')));
-		} catch (Exception e) {
+		} catch (StringIndexOutOfBoundsException e) {
 			return null;
 		}
 	}
@@ -1085,7 +1085,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	{
 		try {
 			return new Pourcentage(Float.parseFloat(this.getTextImportance_negociation().substring(0, this.getTextImportance_negociation().length()-2).replace(',', '.')));
-		} catch (StringIndexOutOfBoundsException e) {
+		} catch (Exception e) {
 			return null;
 		}
 	}
