@@ -281,7 +281,17 @@ public class UpdateEtude implements ComponentListener {
 			break;
 			
 		case 4:
+			FenetreAccueil.etude.getS4().setMtn_consensus(new Consensus(tab.getConteneur_maintenant().getImportance_consensus(),tab.getConteneur_maintenant().getPetit_consensus(),tab.getConteneur_maintenant().getPetit_pacte()));
+			FenetreAccueil.etude.getS4().setMtn_negociation(new Negociation(tab.getConteneur_maintenant().getImportance_negociation(), tab.getConteneur_maintenant().getPetit_ajustement(), tab.getConteneur_maintenant().getPetit_transformation()));
+			FenetreAccueil.etude.getS4().setMtn_opposition(new Opposition(tab.getConteneur_maintenant().getImportance_opposition(), tab.getConteneur_maintenant().getPetit_domination(), tab.getConteneur_maintenant().getPetit_contrePouvoir(), tab.getConteneur_maintenant().getPetit_antagonisme()));
 			
+			FenetreAccueil.etude.getS4().setApr_consensus(new Consensus(tab.getConteneur_apres().getImportance_consensus(),tab.getConteneur_apres().getPetit_consensus(),tab.getConteneur_apres().getPetit_pacte()));
+			FenetreAccueil.etude.getS4().setApr_negociation(new Negociation(tab.getConteneur_apres().getImportance_negociation(), tab.getConteneur_apres().getPetit_ajustement(), tab.getConteneur_apres().getPetit_transformation()));
+			FenetreAccueil.etude.getS4().setApr_opposition(new Opposition(tab.getConteneur_apres().getImportance_opposition(), tab.getConteneur_apres().getPetit_domination(), tab.getConteneur_apres().getPetit_contrePouvoir(), tab.getConteneur_apres().getPetit_antagonisme()));
+			
+			FenetreAccueil.etude.getS4().setRis_consensus(new Consensus(((ConteneurSchema) tab.getConteneur_risque()).getImportance_consensus(),((ConteneurSchema) tab.getConteneur_risque()).getPetit_consensus(),((ConteneurSchema) tab.getConteneur_risque()).getPetit_pacte()));
+			FenetreAccueil.etude.getS4().setRis_negociation(new Negociation(((ConteneurSchema) tab.getConteneur_risque()).getImportance_negociation(), ((ConteneurSchema) tab.getConteneur_risque()).getPetit_ajustement(), ((ConteneurSchema) tab.getConteneur_risque()).getPetit_transformation()));
+			FenetreAccueil.etude.getS4().setRis_opposition(new Opposition(((ConteneurSchema) tab.getConteneur_risque()).getImportance_opposition(), ((ConteneurSchema) tab.getConteneur_risque()).getPetit_domination(), ((ConteneurSchema) tab.getConteneur_risque()).getPetit_contrePouvoir(), ((ConteneurSchema) tab.getConteneur_risque()).getPetit_antagonisme()));
 			break;
 			
 		case 5:
