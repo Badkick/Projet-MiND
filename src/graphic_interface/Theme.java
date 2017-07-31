@@ -102,6 +102,10 @@ public enum Theme {
 		return this.bSchema2Survol;
 	}
 	
+	public Image getbSchema2Clic() {
+		return this.bSchema2Survol;
+	}
+	
 	public Image getbSchema6Repos() {
 		return this.bSchema6Repos;
 	}

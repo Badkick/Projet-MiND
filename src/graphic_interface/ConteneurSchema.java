@@ -300,11 +300,11 @@ public class ConteneurSchema extends ConteneurAvecImage {
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					action2.activerBouton(b_entrepreneuriale);
-					action2.activerBouton(b_simple_marche);
-					action2.activerBouton(b_professionnelle);
-					action2.activerBouton(b_mecaniste);
-					action2.activerBouton(b_simple_centralisee);
+					b_entrepreneuriale.activer(FenetreAccueil.theme.getbSchema2Repos(), FenetreAccueil.theme.getbSchema2Survol(), FenetreAccueil.theme.getbSchema2Clic());
+					b_simple_marche.activer(FenetreAccueil.theme.getbSchema2Repos(), FenetreAccueil.theme.getbSchema2Survol(), FenetreAccueil.theme.getbSchema2Clic());
+					b_professionnelle.activer(FenetreAccueil.theme.getbSchema2Repos(), FenetreAccueil.theme.getbSchema2Survol(), FenetreAccueil.theme.getbSchema2Clic());
+					b_mecaniste.activer(FenetreAccueil.theme.getbSchema2Repos(), FenetreAccueil.theme.getbSchema2Survol(), FenetreAccueil.theme.getbSchema2Clic());
+					b_simple_centralisee.activer(FenetreAccueil.theme.getbSchema2Repos(), FenetreAccueil.theme.getbSchema2Survol(), FenetreAccueil.theme.getbSchema2Clic());
 					action2.setBoutonSelected(null);
 					action2.setSelected(false);
 					note_entrepreneuriale.setText("");
@@ -443,11 +443,12 @@ public class ConteneurSchema extends ConteneurAvecImage {
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					action3.activerBouton(b_rationnelle);
-					action3.activerBouton(b_artisanale);
-					action3.activerBouton(b_personnalisee);
-					action3.activerBouton(b_process);
-					action3.activerBouton(b_flexible);
+					
+					b_rationnelle.activer(FenetreAccueil.theme.getbSchema2Repos(), FenetreAccueil.theme.getbSchema2Survol(), FenetreAccueil.theme.getbSchema2Clic());
+					b_artisanale.activer(FenetreAccueil.theme.getbSchema2Repos(), FenetreAccueil.theme.getbSchema2Survol(), FenetreAccueil.theme.getbSchema2Clic());
+					b_personnalisee.activer(FenetreAccueil.theme.getbSchema2Repos(), FenetreAccueil.theme.getbSchema2Survol(), FenetreAccueil.theme.getbSchema2Clic());
+					b_process.activer(FenetreAccueil.theme.getbSchema2Repos(), FenetreAccueil.theme.getbSchema2Survol(), FenetreAccueil.theme.getbSchema2Clic());
+					b_flexible.activer(FenetreAccueil.theme.getbSchema2Repos(), FenetreAccueil.theme.getbSchema2Survol(), FenetreAccueil.theme.getbSchema2Clic());
 					action3.setBoutonSelected(null);
 					action3.setSelected(false);
 					note_rationnelle.setText("");

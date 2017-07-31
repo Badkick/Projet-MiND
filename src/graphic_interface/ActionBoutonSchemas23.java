@@ -53,27 +53,10 @@ public class ActionBoutonSchemas23 implements ActionListener {
 		if(!this.isSelected())
 		{
 			this.selectionne = true;
-			this.desactiverBouton((Bouton) e.getSource());
+			((Bouton) e.getSource()).desactiver(FenetreAccueil.theme.getbSchema2Survol());
 			this.setBoutonSelected((Bouton)e.getSource());
 		}
 		else new FenetreChoixNote((Bouton)e.getSource(),this.conteneur);
 		ConteneurNouvelleEtude.unsave();
 	}
-	
-	public void desactiverBouton(Bouton b)
-	{
-		b.setEnabled(false);
-		b.setImgFixe(Theme.NIGHT.getbSchema2Survol());
-		b.updateCouleur();
-	}
-	
-	public void activerBouton(Bouton b)
-	{
-		b.setEnabled(true);
-		b.setImgRepos(FenetreAccueil.theme.getbSchema2Repos());
-		b.setImgSurvol(FenetreAccueil.theme.getbSchema2Survol());
-		b.setImgClic(FenetreAccueil.theme.getbSchema2Survol());
-		b.updateCouleur();
-	}
-
 }

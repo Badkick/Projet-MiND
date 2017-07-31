@@ -61,11 +61,13 @@ public class Bouton extends JButton implements MouseListener {
 	public void setCouleurTexte(Color couleur)
 	{
 		this.couleurTexte = couleur;
+		this.repaint();
 	}
 
 	public void setPolice(Font police)
 	{
 		this.police = police;
+		this.repaint();
 	}
 	
 	public void setImage(Image img)
@@ -124,6 +126,7 @@ public class Bouton extends JButton implements MouseListener {
 	public void setImgSurvol(Image image)
 	{
 		this.img_survol = image;
+		this.repaint();
 	}
 
 
@@ -201,6 +204,32 @@ public class Bouton extends JButton implements MouseListener {
 		this.setImgClic(FenetreAccueil.theme.getBClic());
 		this.setImgRepos(FenetreAccueil.theme.getBRepos());
 		this.setImgSurvol(FenetreAccueil.theme.getBSurvol());
+	}
+	
+	public void desactiver()
+	{
+		this.setEnabled(false);
+		this.updateCouleur();
+	}
+	
+	public void desactiver(Image img_desactive)
+	{
+		this.setImgFixe(img_desactive);
+		this.desactiver();
+	}
+	
+	public void activer()
+	{
+		this.activer(FenetreAccueil.theme.getBRepos(), FenetreAccueil.theme.getBSurvol(), FenetreAccueil.theme.getBClic());
+	}
+	
+	public void activer(Image img_repos, Image img_survol, Image img_clic)
+	{
+		this.setEnabled(true);
+		this.setImgRepos(img_repos);
+		this.setImgSurvol(img_survol);
+		this.setImgClic(img_clic);
+		this.updateCouleur();
 	}
 
 	// LISTENERS //	
