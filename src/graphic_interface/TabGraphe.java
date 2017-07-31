@@ -38,10 +38,10 @@ public class TabGraphe extends JTabbedPane {
 		super();
 		this.type = type;
 		
-		this.conteneur_maintenant = new ConteneurSchema(type,ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
-		this.conteneur_apres = new ConteneurSchema(type,ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
+		this.conteneur_maintenant = new ConteneurSchema(type,this,ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
+		this.conteneur_apres = new ConteneurSchema(type,this,ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
 		this.conteneur_comment = new Conteneur(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
-		this.conteneur_risque = new ConteneurSchema(type,ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
+		this.conteneur_risque = new ConteneurSchema(type,this,ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
 
 		this.initialiserCommentRemplir(type);
 

@@ -35,6 +35,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	// variables générales
 	private int typeSchema; // le type du schéma : de 1 à 6
 	private GroupLayout layout;
+	private TabGraphe tab;
 
 	// cas 1
 
@@ -230,9 +231,10 @@ public class ConteneurSchema extends ConteneurAvecImage {
 
 	// CONSTRUCTEURS //
 
-	public ConteneurSchema(int type, int width, int height) {
+	public ConteneurSchema(int type, TabGraphe tab, int width, int height) {
 		super(width,height,FenetreAccueil.theme.getSchemas()[type-1]);
 		this.typeSchema = type;
+		this.tab = tab;
 		this.layout = new GroupLayout(this);
 		this.setLayout(layout);
 
@@ -316,6 +318,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 					note_professionnelle.setText("");
 					note_mecaniste.setText("");
 					note_simple_centralisee.setText("");
+					tab.setForeground(Color.red);
 					ConteneurNouvelleEtude.unsave();
 				}
 			});
@@ -460,6 +463,8 @@ public class ConteneurSchema extends ConteneurAvecImage {
 					note_personnalisee.setText("");
 					note_process.setText("");
 					note_flexible.setText("");
+					tab.setForeground(Color.red);
+					System.out.println(getContainerListeners()[0]);
 					ConteneurNouvelleEtude.unsave();
 				}
 			});
@@ -871,8 +876,8 @@ public class ConteneurSchema extends ConteneurAvecImage {
 		}
 	}
 
-	public ConteneurSchema(int type, Dimension dim) {
-		this(type,(int)dim.getWidth(),(int)dim.getHeight());		
+	public ConteneurSchema(int type, TabGraphe tab, Dimension dim) {
+		this(type,tab,(int)dim.getWidth(),(int)dim.getHeight());		
 	}
 
 	// GETTERS //
