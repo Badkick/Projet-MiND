@@ -27,6 +27,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 
 	public static final Dimension DIMENSION_TEXT_FIELD_SCHEMAS15 = new Dimension(45,30);
 	public static final Dimension DIMENSION_BOUTON_SCHEMAS23 = new Dimension(170,90);
+	public static final Dimension DIMENSION_BOUTON_SCHEMA6 = new Dimension(170,120);
 	public static final Dimension DIMENSION_LABEL_SCHEMAS23 = new Dimension(60,40);
 
 	// VARIABLES INSTANCE //
@@ -144,7 +145,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 					new NumberFormatter(percentDisplayFormat),
 					new NumberFormatter(percentDisplayFormat),
 					percentEditFormatter));
-	
+
 	private JFormattedTextField importance_negociation = new JFormattedTextField(
 			new DefaultFormatterFactory(
 					new NumberFormatter(percentDisplayFormat),
@@ -160,7 +161,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 					new NumberFormatter(percentDisplayFormat),
 					new NumberFormatter(percentDisplayFormat),
 					percentEditFormatter));
-	
+
 	private JFormattedTextField importance_opposition = new JFormattedTextField(
 			new DefaultFormatterFactory(
 					new NumberFormatter(percentDisplayFormat),
@@ -183,7 +184,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 					percentEditFormatter));
 
 	// cas 5
-	
+
 	private JFormattedTextField reglementaire = new JFormattedTextField(
 			new DefaultFormatterFactory(
 					new NumberFormatter(percentDisplayFormat),
@@ -217,8 +218,12 @@ public class ConteneurSchema extends ConteneurAvecImage {
 
 	// cas 6
 
-	private BoutonOvaleSchema6 b_gros_consensus;
-	
+	private BoutonOvaleSchema6 b_entrep_communaute;
+	private BoutonOvaleSchema6 b_entrep_duale;
+	private BoutonOvaleSchema6 b_entrep_bureaucratique;
+	private BoutonOvaleSchema6 b_entrep_crise;
+	private BoutonOvaleSchema6 b_entrep_modernisee;
+
 	// CONSTRUCTEURS //
 
 	public ConteneurSchema(int type, int width, int height) {
@@ -230,14 +235,14 @@ public class ConteneurSchema extends ConteneurAvecImage {
 		switch(type)
 		{
 		case 1:		
-			
+
 			this.percentDisplayFormat.setParseIntegerOnly(false);
 			this.percentDisplayFormat.setMaximumFractionDigits(1);
 			this.percentEditFormat.setParseIntegerOnly(false);
 			this.percentEditFormat.setMaximumFractionDigits(1);
 			this.percentEditFormatter.setMinimum(0D);
 			this.percentEditFormatter.setMaximum(100D);
-			
+
 			this.initialiserTextFieldSchemas145(this.contr_tech);
 			this.initialiserTextFieldSchemas145(this.press_envir);
 			this.initialiserTextFieldSchemas145(this.etabl_prot);
@@ -571,14 +576,14 @@ public class ConteneurSchema extends ConteneurAvecImage {
 
 			break;
 		case 4:
-			
+
 			this.percentDisplayFormat.setParseIntegerOnly(false);
 			this.percentDisplayFormat.setMaximumFractionDigits(1);
 			this.percentEditFormat.setParseIntegerOnly(false);
 			this.percentEditFormat.setMaximumFractionDigits(1);
 			this.percentEditFormatter.setMinimum(0D);
 			this.percentEditFormatter.setMaximum(100D);
-			
+
 			this.initialiserTextFieldSchemas145(this.importance_consensus);
 			this.initialiserTextFieldSchemas145(this.petit_consensus);
 			this.initialiserTextFieldSchemas145(this.petit_pacte);
@@ -589,11 +594,11 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			this.initialiserTextFieldSchemas145(this.petit_domination);
 			this.initialiserTextFieldSchemas145(this.petit_contrePouvoir);
 			this.initialiserTextFieldSchemas145(this.petit_antagonisme);
-			
+
 			this.importance_consensus.setBackground(Color.GRAY);
 			this.importance_negociation.setBackground(Color.GRAY);
 			this.importance_opposition.setBackground(Color.GRAY);
-			
+
 			this.layout.setHorizontalGroup(
 					this.layout.createSequentialGroup()
 					.addGap(190)
@@ -644,7 +649,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 									)
 							)
 					);
-			
+
 			this.layout.setVerticalGroup(
 					this.layout.createSequentialGroup()
 					.addGap(94)
@@ -691,21 +696,21 @@ public class ConteneurSchema extends ConteneurAvecImage {
 					);
 			break;
 		case 5:
-			
+
 			this.percentDisplayFormat.setParseIntegerOnly(false);
 			this.percentDisplayFormat.setMaximumFractionDigits(1);
 			this.percentEditFormat.setParseIntegerOnly(false);
 			this.percentEditFormat.setMaximumFractionDigits(1);
 			this.percentEditFormatter.setMinimum(0D);
 			this.percentEditFormatter.setMaximum(100D);
-			
+
 			this.initialiserTextFieldSchemas145(this.reglementaire);
 			this.initialiserTextFieldSchemas145(this.mobilite);
 			this.initialiserTextFieldSchemas145(this.pro_service_public);
 			this.initialiserTextFieldSchemas145(this.professionnelle);
 			this.initialiserTextFieldSchemas145(this.communautaire);
 			this.initialiserTextFieldSchemas145(this.entrepreneuriale);
-			
+
 			this.layout.setHorizontalGroup(
 					this.layout.createSequentialGroup()
 					.addGap(300)
@@ -739,7 +744,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 									)
 							)
 					);
-			
+
 			this.layout.setVerticalGroup(
 					this.layout.createSequentialGroup()
 					.addGap(110)
@@ -772,18 +777,62 @@ public class ConteneurSchema extends ConteneurAvecImage {
 
 			break;
 		case 6:
-			this.b_gros_consensus = new BoutonOvaleSchema6();
-			
-	
-			
+
+			this.b_entrep_communaute = new BoutonOvaleSchema6(Entreprise.COMMUNAUTE.getNom(),DIMENSION_BOUTON_SCHEMA6);
+			this.b_entrep_duale = new BoutonOvaleSchema6(Entreprise.DUALE.getNom(),DIMENSION_BOUTON_SCHEMA6);
+			this.b_entrep_bureaucratique = new BoutonOvaleSchema6(Entreprise.BUREAUCRATIQUE.getNom(),DIMENSION_BOUTON_SCHEMA6);
+			this.b_entrep_crise = new BoutonOvaleSchema6(Entreprise.CRISE.getNom(),DIMENSION_BOUTON_SCHEMA6);
+			this.b_entrep_modernisee = new BoutonOvaleSchema6(Entreprise.MODERNISEE.getNom(),DIMENSION_BOUTON_SCHEMA6);
+
 			this.layout.setHorizontalGroup(
 					this.layout.createSequentialGroup()
-					.addComponent(b_gros_consensus)
+					.addGap(235)
+					.addGroup(
+							this.layout.createParallelGroup()
+							.addGroup(
+									this.layout.createSequentialGroup()
+									.addGap(80)
+									.addComponent(b_entrep_communaute)
+									)
+							.addGroup(
+									this.layout.createSequentialGroup()
+									.addGap(70)
+									.addComponent(b_entrep_duale)
+									)
+							.addComponent(b_entrep_bureaucratique)
+							)
+					.addGap(65)
+					.addGroup(
+							this.layout.createParallelGroup()
+							.addGroup(
+									this.layout.createSequentialGroup()
+									.addGap(60)
+									.addComponent(b_entrep_modernisee)
+									)
+							.addComponent(b_entrep_crise)
+							)
 					);
-			
+
 			this.layout.setVerticalGroup(
 					this.layout.createSequentialGroup()
-					.addComponent(b_gros_consensus)
+					.addGap(90)
+					.addGroup(
+							this.layout.createParallelGroup()
+							.addGroup(
+									this.layout.createSequentialGroup()
+									.addComponent(b_entrep_communaute)
+									.addGap(10)
+									.addComponent(b_entrep_duale)
+									.addComponent(b_entrep_bureaucratique)
+									)
+							.addGroup(
+									this.layout.createSequentialGroup()
+									.addGap(40)
+									.addComponent(b_entrep_modernisee)
+									.addGap(50)
+									.addComponent(b_entrep_crise)
+									)
+							)
 					);
 			break;
 		default:
@@ -1006,9 +1055,9 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	{
 		try{return Integer.valueOf(this.getLabel_flexible().getText().substring(0, this.getLabel_flexible().getText().length()-5));} catch(StringIndexOutOfBoundsException e) {return Integer.MAX_VALUE;}
 	}
-	
+
 	// schéma 4 //
-	
+
 	public String getTextImportance_consensus() {
 		return this.importance_consensus.getText();
 	}
@@ -1048,7 +1097,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	public String getTextPetit_antagonisme() {
 		return this.petit_antagonisme.getText();
 	}
-	
+
 	public Pourcentage getImportance_consensus()
 	{
 		try {
@@ -1057,7 +1106,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			return null;
 		}
 	}
-	
+
 	public Pourcentage getPetit_consensus()
 	{
 		try {
@@ -1066,7 +1115,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			return null;
 		}
 	}
-	
+
 	public Pourcentage getPetit_pacte()
 	{
 		try {
@@ -1075,7 +1124,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			return null;
 		}
 	}
-	
+
 	public Pourcentage getImportance_negociation()
 	{
 		try {
@@ -1084,7 +1133,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			return null;
 		}
 	}
-	
+
 	public Pourcentage getPetit_ajustement()
 	{
 		try {
@@ -1093,7 +1142,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			return null;
 		}
 	}
-	
+
 	public Pourcentage getPetit_transformation()
 	{
 		try {
@@ -1102,7 +1151,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			return null;
 		}
 	}
-	
+
 	public Pourcentage getImportance_opposition()
 	{
 		try {
@@ -1111,7 +1160,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			return null;
 		}
 	}
-	
+
 	public Pourcentage getPetit_domination()
 	{
 		try {
@@ -1120,7 +1169,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			return null;
 		}
 	}
-	
+
 	public Pourcentage getPetit_contrePouvoir()
 	{
 		try {
@@ -1129,7 +1178,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			return null;
 		}
 	}
-	
+
 	public Pourcentage getPetit_antagonisme()
 	{
 		try {
@@ -1138,9 +1187,9 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			return null;
 		}
 	}
-	
+
 	// schéma 5 //
-	
+
 	public String getTextReglementaire()
 	{
 		return this.reglementaire.getText();
@@ -1160,7 +1209,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	{
 		return this.professionnelle.getText();
 	}
-	
+
 	public String getTextCommunautaire()
 	{
 		return this.communautaire.getText();
@@ -1206,7 +1255,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			return null;
 		}
 	}
-	
+
 	public Pourcentage getCommunautaire()
 	{
 		try {
@@ -1223,6 +1272,28 @@ public class ConteneurSchema extends ConteneurAvecImage {
 		} catch (StringIndexOutOfBoundsException e) {
 			return null;
 		}
+	}
+	
+	// schéma 6 //
+	
+	public BoutonOvaleSchema6 getB_entrep_communaute() {
+		return b_entrep_communaute;
+	}
+
+	public BoutonOvaleSchema6 getB_entrep_duale() {
+		return b_entrep_duale;
+	}
+
+	public BoutonOvaleSchema6 getB_entrep_bureaucratique() {
+		return b_entrep_bureaucratique;
+	}
+
+	public BoutonOvaleSchema6 getB_entrep_crise() {
+		return b_entrep_crise;
+	}
+
+	public BoutonOvaleSchema6 getB_entrep_modernisee() {
+		return b_entrep_modernisee;
 	}
 
 	// SETTERS //
@@ -1298,7 +1369,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	{
 		this.getLabel_flexible().setText(String.valueOf(note)+" / 10");
 	}
-	
+
 	// schéma 4 //
 
 	public void setImportance_consensus(Pourcentage p) {
@@ -1340,7 +1411,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	public void setPetit_antagonisme(Pourcentage p) {
 		this.petit_antagonisme.setValue(p.get()/100);
 	}
-	
+
 	// schéma 5 //
 
 	public void setReglementaire(Pourcentage p){
@@ -1358,7 +1429,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	public void setProfessionnelle(Pourcentage p){
 		this.professionnelle.setValue(p.get()/100);
 	}
-	
+
 	public void setCommunautaire(Pourcentage p){
 		this.communautaire.setValue(p.get()/100);
 	}
@@ -1426,7 +1497,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			break;
 		}
 	}
-	
+
 	public void initialiserTextFieldSchemas145(JFormattedTextField field)
 	{
 		field.setHorizontalAlignment(JTextField.CENTER);

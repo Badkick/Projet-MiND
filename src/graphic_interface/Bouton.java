@@ -147,7 +147,7 @@ public class Bouton extends JButton implements MouseListener {
 	// METHODES //
 
 	// appelée à chaque fois qu'une action sur le bouton sera effectuée
-	public void paintComponent(Graphics g)
+	protected void paintComponent(Graphics g)
 	{
 		g.setFont(this.getPolice());
 		Graphics2D g2d = (Graphics2D)g;

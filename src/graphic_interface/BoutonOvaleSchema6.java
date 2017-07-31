@@ -1,6 +1,7 @@
 package graphic_interface;
 
 import java.awt.BasicStroke;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -21,6 +22,8 @@ class BoutonOvaleSchema6 extends JButton implements MouseListener {
 	
 	// VARIABLES INSTANCE //
 
+	private String name = "Bouton";
+	private Dimension taille;
 	private Shape shape;
 	private Image img;
 	
@@ -30,12 +33,19 @@ class BoutonOvaleSchema6 extends JButton implements MouseListener {
 	
 	// CONSTRUCTEUR //
 	
-	public BoutonOvaleSchema6() {
+	public BoutonOvaleSchema6(String name, Dimension dim) {
+		this.name = name;
+		this.taille = dim;
 		this.img = FenetreAccueil.theme.getBRepos();
 		Icon icon = new ImageIcon(img);
 		this.addMouseListener(this);
 		this.setModel(new DefaultButtonModel());
 		this.init("",icon);
+		this.setForeground(Color.WHITE);
+		
+		this.setPreferredSize(dim);
+		this.setMaximumSize(dim);
+		this.setMinimumSize(dim);
 
 		this.setBorder(BorderFactory.createEmptyBorder(1,1,1,1));
 		this.setContentAreaFilled(false);
@@ -93,21 +103,25 @@ class BoutonOvaleSchema6 extends JButton implements MouseListener {
 	// METHODES //
 	
 	protected void initShape() {
-		this.shape = new Ellipse2D.Float(0, 0, this.getPreferredSize().width-1, this.getPreferredSize().height-1);
+		//this.shape = new Ellipse2D.Float(0, 0, this.getPreferredSize().width-1, this.getPreferredSize().height-1);
+		this.shape = new Ellipse2D.Float(0, 0, this.taille.width, this.taille.height);
 		//this.shape = new RoundRectangle2D.Float(0f, 0f, (float)this.getPreferredSize().width-1, (float)this.getPreferredSize().height-1,230f,130f);
 	}
 	
 	@Override 
 	public Dimension getPreferredSize() {
-		return new Dimension(this.getIcon().getIconWidth(), this.getIcon().getIconHeight());
+		return this.taille;
+		//return new Dimension(this.getIcon().getIconWidth(), this.getIcon().getIconHeight());
 	}
 	
 	@Override 
 	protected void paintBorder(Graphics g) {
 		this.initShape();
 		Graphics2D g2 = (Graphics2D)g;	
+		g2.setColor(Color.DARK_GRAY);
 		g2.setStroke(new BasicStroke(1.0f));
 		g2.draw(this.shape);
+		g2.setColor(Color.WHITE);
 	}
 	
 	@Override
@@ -115,7 +129,10 @@ class BoutonOvaleSchema6 extends JButton implements MouseListener {
 		this.initShape();
 		Graphics2D g2 = (Graphics2D)g;
 		g2.setClip(this.shape);
-		g2.drawImage(this.getImage(), 0, 0, null);
+		g2.drawImage(this.getImage(), -(this.getIcon().getIconWidth()-this.taille.width)/2, -(this.getIcon().getIconHeight()-this.taille.height)/2, null);
+		g2.setFont(FenetreAccueil.theme.getPolice());
+		int y = (this.getHeight()-(g2.getFontMetrics().getAscent()+g2.getFontMetrics().getDescent())*this.name.split("\n").length)/2;
+		for (String line : this.name.split("\n")) g2.drawString(line, (this.getWidth()-g2.getFontMetrics().stringWidth(line))/2, y += g2.getFontMetrics().getAscent());
 	}
 	
 	@Override 

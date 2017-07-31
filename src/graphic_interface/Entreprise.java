@@ -2,11 +2,11 @@ package graphic_interface;
 
 public enum Entreprise {
 
-	COMMUNAUTE("communaute",1),
-	DUALE("duale",2),
-	MODERNISEE("modernisee",3),
-	CRISE("crise",4),
-	BUREAUCRATIQUE("bureaucratique",5);
+	COMMUNAUTE("Entreprise\ncommunauté",1),
+	DUALE("Entreprise\nduale",2),
+	MODERNISEE("Entreprise\nmodernisée",3),
+	CRISE("Entreprise\nen crise",4),
+	BUREAUCRATIQUE("Entreprise\nbureaucratique",5);
 	
 	private String nom;
 	private int numero;

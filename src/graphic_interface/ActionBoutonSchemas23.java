@@ -56,10 +56,7 @@ public class ActionBoutonSchemas23 implements ActionListener {
 			this.desactiverBouton((Bouton) e.getSource());
 			this.setBoutonSelected((Bouton)e.getSource());
 		}
-		else
-		{
-			new FenetreChoixNote((Bouton)e.getSource(),this.conteneur);
-		}
+		else new FenetreChoixNote((Bouton)e.getSource(),this.conteneur);
 		ConteneurNouvelleEtude.unsave();
 	}
 	
