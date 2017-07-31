@@ -223,6 +223,10 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	private BoutonOvaleSchema6 b_entrep_bureaucratique;
 	private BoutonOvaleSchema6 b_entrep_crise;
 	private BoutonOvaleSchema6 b_entrep_modernisee;
+	
+	private Bouton b_annuler6;
+	
+	private ActionBoutonSchema6 action6;
 
 	// CONSTRUCTEURS //
 
@@ -778,16 +782,39 @@ public class ConteneurSchema extends ConteneurAvecImage {
 
 			break;
 		case 6:
-
+			
+			this.b_annuler6 = new Bouton("R‡Z", new Dimension(120, 40));
+			
 			this.b_entrep_communaute = new BoutonOvaleSchema6(Entreprise.COMMUNAUTE.getNom(),DIMENSION_BOUTON_SCHEMA6);
 			this.b_entrep_duale = new BoutonOvaleSchema6(Entreprise.DUALE.getNom(),DIMENSION_BOUTON_SCHEMA6);
 			this.b_entrep_bureaucratique = new BoutonOvaleSchema6(Entreprise.BUREAUCRATIQUE.getNom(),DIMENSION_BOUTON_SCHEMA6);
 			this.b_entrep_crise = new BoutonOvaleSchema6(Entreprise.CRISE.getNom(),DIMENSION_BOUTON_SCHEMA6);
 			this.b_entrep_modernisee = new BoutonOvaleSchema6(Entreprise.MODERNISEE.getNom(),DIMENSION_BOUTON_SCHEMA6);
+			
+			this.action6 = new ActionBoutonSchema6(this);
+			
+			this.b_entrep_communaute.addActionListener(action6);
+			this.b_entrep_duale.addActionListener(action6);
+			this.b_entrep_bureaucratique.addActionListener(action6);
+			this.b_entrep_crise.addActionListener(action6);
+			this.b_entrep_modernisee.addActionListener(action6);
+			
+			this.b_annuler6.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					for(BoutonOvaleSchema6 b : action6.getBoutons()) b.activer(FenetreAccueil.theme.getbSchema6Repos(), FenetreAccueil.theme.getbSchema6Survol(), FenetreAccueil.theme.getbSchema6Clic());
+					action6.setBoutonSelected(null);
+					action6.setSelected(false);
+					ConteneurNouvelleEtude.unsave();
+				}
+			});
 
 			this.layout.setHorizontalGroup(
 					this.layout.createSequentialGroup()
-					.addGap(235)
+					.addGap(5)
+					.addComponent(b_annuler6)
+					.addGap(110)
 					.addGroup(
 							this.layout.createParallelGroup()
 							.addGroup(
@@ -834,6 +861,8 @@ public class ConteneurSchema extends ConteneurAvecImage {
 									.addComponent(b_entrep_crise)
 									)
 							)
+					.addGap(35)
+					.addComponent(b_annuler6)
 					);
 			break;
 		default:
@@ -1296,6 +1325,11 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	public BoutonOvaleSchema6 getB_entrep_modernisee() {
 		return b_entrep_modernisee;
 	}
+	
+	public ActionBoutonSchema6 getAction6()
+	{
+		return this.action6;
+	}
 
 	// SETTERS //
 
@@ -1448,7 +1482,6 @@ public class ConteneurSchema extends ConteneurAvecImage {
 		b.setImgSurvol(FenetreAccueil.theme.getbSchema2Survol());
 		b.setImgClic(FenetreAccueil.theme.getbSchema2Survol());
 		b.updateCouleur();
-		b.repaint();
 		b.addActionListener(action);
 	}
 
