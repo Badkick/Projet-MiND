@@ -714,6 +714,97 @@ public class TabGraphe extends JTabbedPane {
 			}catch(NullPointerException ex){}
 			break;
 		case 4:
+			try{
+				this.getConteneur_maintenant().setImportance_consensus(FenetreAccueil.etude.getS4().getMtn_consensus().getImportance());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_maintenant().setPetit_consensus(FenetreAccueil.etude.getS4().getMtn_consensus().getConsensus());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_maintenant().setPetit_pacte(FenetreAccueil.etude.getS4().getMtn_consensus().getPacte());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_maintenant().setImportance_negociation(FenetreAccueil.etude.getS4().getMtn_negociation().getImportance());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_maintenant().setPetit_ajustement(FenetreAccueil.etude.getS4().getMtn_negociation().getAjustement());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_maintenant().setPetit_transformation(FenetreAccueil.etude.getS4().getMtn_negociation().getTransformation());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_maintenant().setImportance_opposition(FenetreAccueil.etude.getS4().getMtn_opposition().getImportance());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_maintenant().setPetit_domination(FenetreAccueil.etude.getS4().getMtn_opposition().getDomination());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_maintenant().setPetit_contrePouvoir(FenetreAccueil.etude.getS4().getMtn_opposition().getContrePouvoir());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_maintenant().setPetit_antagonisme(FenetreAccueil.etude.getS4().getMtn_opposition().getAntagonisme());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_apres().setImportance_consensus(FenetreAccueil.etude.getS4().getApr_consensus().getImportance());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_apres().setPetit_consensus(FenetreAccueil.etude.getS4().getApr_consensus().getConsensus());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_apres().setPetit_pacte(FenetreAccueil.etude.getS4().getApr_consensus().getPacte());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_apres().setImportance_negociation(FenetreAccueil.etude.getS4().getApr_negociation().getImportance());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_apres().setPetit_ajustement(FenetreAccueil.etude.getS4().getApr_negociation().getAjustement());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_apres().setPetit_transformation(FenetreAccueil.etude.getS4().getApr_negociation().getTransformation());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_apres().setImportance_opposition(FenetreAccueil.etude.getS4().getApr_opposition().getImportance());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_apres().setPetit_domination(FenetreAccueil.etude.getS4().getApr_opposition().getDomination());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_apres().setPetit_contrePouvoir(FenetreAccueil.etude.getS4().getApr_opposition().getContrePouvoir());
+			}catch(NullPointerException ex){}
+			try{
+				this.getConteneur_apres().setPetit_antagonisme(FenetreAccueil.etude.getS4().getApr_opposition().getAntagonisme());
+			}catch(NullPointerException ex){}
+			ConteneurSchema cont_4=(ConteneurSchema) this.getConteneur_risque();
+			try{
+				cont_4.setImportance_consensus(FenetreAccueil.etude.getS4().getRis_consensus().getImportance());
+			}catch(NullPointerException ex){}
+			try{
+				cont_4.setPetit_consensus(FenetreAccueil.etude.getS4().getRis_consensus().getConsensus());
+			}catch(NullPointerException ex){}
+			try{
+				cont_4.setPetit_pacte(FenetreAccueil.etude.getS4().getRis_consensus().getPacte());
+			}catch(NullPointerException ex){}
+			try{
+				cont_4.setImportance_negociation(FenetreAccueil.etude.getS4().getRis_negociation().getImportance());
+			}catch(NullPointerException ex){}
+			try{
+				cont_4.setPetit_ajustement(FenetreAccueil.etude.getS4().getRis_negociation().getAjustement());
+			}catch(NullPointerException ex){}
+			try{
+				cont_4.setPetit_transformation(FenetreAccueil.etude.getS4().getRis_negociation().getTransformation());
+			}catch(NullPointerException ex){}
+			try{
+				cont_4.setImportance_opposition(FenetreAccueil.etude.getS4().getRis_opposition().getImportance());
+			}catch(NullPointerException ex){}
+			try{
+				cont_4.setPetit_domination(FenetreAccueil.etude.getS4().getRis_opposition().getDomination());
+			}catch(NullPointerException ex){}
+			try{
+				cont_4.setPetit_contrePouvoir(FenetreAccueil.etude.getS4().getRis_opposition().getContrePouvoir());
+			}catch(NullPointerException ex){}
+			try{
+				cont_4.setPetit_antagonisme(FenetreAccueil.etude.getS4().getRis_opposition().getAntagonisme());
+			}catch(NullPointerException ex){}
 			break;
 		case 5:
 			try{
@@ -755,24 +846,24 @@ public class TabGraphe extends JTabbedPane {
 			try{
 				this.getConteneur_apres().setEntrepreneuriale(FenetreAccueil.etude.getS5().getApr_entrepreneuriale());
 			}catch(NullPointerException ex){}
-			ConteneurSchema cont=(ConteneurSchema) this.getConteneur_risque();
+			ConteneurSchema cont_5=(ConteneurSchema) this.getConteneur_risque();
 			try{
-				cont.setReglementaire(FenetreAccueil.etude.getS5().getRis_reglementaire());
+				cont_5.setReglementaire(FenetreAccueil.etude.getS5().getRis_reglementaire());
 			}catch(NullPointerException ex){}
 			try{
-				cont.setMobilite(FenetreAccueil.etude.getS5().getRis_mobilite());
+				cont_5.setMobilite(FenetreAccueil.etude.getS5().getRis_mobilite());
 			}catch(NullPointerException ex){}
 			try{
-				cont.setPro_service_public(FenetreAccueil.etude.getS5().getRis_pro_service_public());
+				cont_5.setPro_service_public(FenetreAccueil.etude.getS5().getRis_pro_service_public());
 			}catch(NullPointerException ex){}
 			try{
-				cont.setProfessionnelle(FenetreAccueil.etude.getS5().getRis_professionnelle());
+				cont_5.setProfessionnelle(FenetreAccueil.etude.getS5().getRis_professionnelle());
 			}catch(NullPointerException ex){}
 			try{
-				cont.setCommunautaire(FenetreAccueil.etude.getS5().getRis_communautaire());
+				cont_5.setCommunautaire(FenetreAccueil.etude.getS5().getRis_communautaire());
 			}catch(NullPointerException ex){}
 			try{
-				cont.setEntrepreneuriale(FenetreAccueil.etude.getS5().getRis_entrepreneuriale());
+				cont_5.setEntrepreneuriale(FenetreAccueil.etude.getS5().getRis_entrepreneuriale());
 			}catch(NullPointerException ex){}
 			break;
 		case 6:
