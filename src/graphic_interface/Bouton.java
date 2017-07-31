@@ -24,6 +24,7 @@ public class Bouton extends JButton implements MouseListener {
 	private Image img_survol;
 	private Color couleurTexte;
 	private Font police;
+	private Dimension taille;
 
 	// CONSTRUCTEURS //
 
@@ -34,12 +35,13 @@ public class Bouton extends JButton implements MouseListener {
 		this.name = nom;
 		this.police = FenetreAccueil.theme.getPolice();
 		this.couleurTexte = FenetreAccueil.theme.getCouleurTexte();
+		this.taille = dim;
+		
 		this.setPreferredSize(dim);
 		this.setMaximumSize(dim);
 		this.setMinimumSize(dim);
-		img_repos = FenetreAccueil.theme.getBRepos();
-		img_clic = FenetreAccueil.theme.getBClic();
-		img_survol = FenetreAccueil.theme.getBSurvol();
+		
+		this.resetImg();
 
 		this.img = img_repos;
 
@@ -65,44 +67,58 @@ public class Bouton extends JButton implements MouseListener {
 	{
 		this.police = police;
 	}
+	
+	public void setImage(Image img)
+	{
+		this.img = img;
+		this.repaint();
+	}
 
 	public void setImgRepos(File fichier)
 	{
-		img_repos = Images.importerImage(fichier);
+		this.img_repos = Images.importerImage(fichier);
+		this.repaint();
 	}
 
 	public void setImgRepos(String chemin)
 	{
-		img_repos = Images.importerImage(chemin);
+		this.img_repos = Images.importerImage(chemin);
+		this.repaint();
 	}
 	
 	public void setImgRepos(Image image)
 	{
 		this.img_repos = image;
+		this.repaint();
 	}
 
 	public void setImgClic(File fichier)
 	{
-		img_clic = Images.importerImage(fichier);
+		this.img_clic = Images.importerImage(fichier);
+		this.repaint();
 	}
 
 	public void setImgClic(String chemin)
 	{
-		img_clic = Images.importerImage(chemin);
+		this.img_clic = Images.importerImage(chemin);
+		this.repaint();
 	}
 	public void setImgClic(Image image)
 	{
 		this.img_clic = image;
+		this.repaint();
 	}
 
 	public void setImgSurvol(File fichier)
 	{
-		img_survol = Images.importerImage(fichier);
+		this.img_survol = Images.importerImage(fichier);
+		this.repaint();
 	}
 
 	public void setImgSurvol(String chemin)
 	{
-		img_survol = Images.importerImage(chemin);
+		this.img_survol = Images.importerImage(chemin);
+		this.repaint();
 	}
 	
 	public void setImgSurvol(Image image)
@@ -143,6 +159,16 @@ public class Bouton extends JButton implements MouseListener {
 	{
 		return this.img_survol;
 	}
+	
+	public Image getImg()
+	{
+		return this.img;
+	}
+	
+	public Dimension getTaille()
+	{
+		return this.taille;
+	}
 
 	// METHODES //
 
@@ -152,15 +178,15 @@ public class Bouton extends JButton implements MouseListener {
 		g.setFont(this.getPolice());
 		Graphics2D g2d = (Graphics2D)g;
 		g2d.setColor(this.getCouleurTexte());
-		g2d.drawImage(img, 0, 0, this.getWidth(), this.getHeight(), this);
-		int y = (this.getHeight()-(g2d.getFontMetrics().getAscent()+g2d.getFontMetrics().getDescent())*this.name.split("\n").length)/2;
-		for (String line : this.name.split("\n")) g2d.drawString(line, (this.getWidth()-g2d.getFontMetrics().stringWidth(line))/2, y += g2d.getFontMetrics().getAscent());
+		g2d.drawImage(this.getImg(), 0, 0, this.getWidth(), this.getHeight(), this);
+		int y = (this.getHeight()-(g2d.getFontMetrics().getAscent()+g2d.getFontMetrics().getDescent())*this.getName().split("\n").length)/2;
+		for (String line : this.getName().split("\n")) g2d.drawString(line, (this.getWidth()-g2d.getFontMetrics().stringWidth(line))/2, y += g2d.getFontMetrics().getAscent());
 	}
 	
 	// met la couleur du bouton sur repos quand cette méthode est appelée
 	public void updateCouleur()
 	{
-		img = this.getImgRepos();
+		this.setImage(this.getImgRepos());
 	}
 	
 	public void setImgFixe(Image img)
@@ -188,20 +214,20 @@ public class Bouton extends JButton implements MouseListener {
 	@Override
 	public void mouseEntered(MouseEvent arg0) {
 		// SURVOL DU BOUTON
-		img=this.getImgSurvol();
+		this.setImage(this.getImgSurvol());
 
 	}
 
 	@Override
 	public void mouseExited(MouseEvent arg0) {
 		// BOUTON QUITTE
-		img=this.getImgRepos();
+		this.setImage(this.getImgRepos());
 	}
 
 	@Override
 	public void mousePressed(MouseEvent arg0) {
 		// CLIC GAUCHE (RESTER APPUYE)
-		img=this.getImgClic();
+		this.setImage(this.getImgClic());
 	}
 
 	@Override
@@ -209,6 +235,6 @@ public class Bouton extends JButton implements MouseListener {
 		// RELACHEMENT DU CLIC GAUCHE
 		int y = event.getY();
 		int x = event.getX();
-		this.img=(y>0 && y<this.getHeight() && x>0 && x<this.getWidth()) ? this.getImgSurvol() : this.getImgRepos();
+		this.setImage((y>0 && y<this.getHeight() && x>0 && x<this.getWidth()) ? this.getImgSurvol() : this.getImgRepos());
 	}
 }
