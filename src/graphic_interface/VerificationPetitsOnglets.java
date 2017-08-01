@@ -90,7 +90,9 @@ public class VerificationPetitsOnglets implements ComponentListener {
 			break;
 
 		case SCHEMA6 :
-
+			try {
+				tab.setForeground( (conteneur.getAction6().isSelected()) ? Color.black : Color.red);
+			} catch(NullPointerException ex) {tab.setForeground(Color.red);}
 			break;
 		}
 	}

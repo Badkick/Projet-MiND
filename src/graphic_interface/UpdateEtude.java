@@ -318,7 +318,9 @@ public class UpdateEtude implements ComponentListener {
 			break;
 			
 		case 6:
-			
+			try{FenetreAccueil.etude.getS6().setMtn(Entreprise.getByName(tab.getConteneur_maintenant().getAction6().getBoutonSelected().getName()));} catch(NullPointerException ex) {FenetreAccueil.etude.getS6().setMtn(null);}
+			try{FenetreAccueil.etude.getS6().setApr(Entreprise.getByName(tab.getConteneur_apres().getAction6().getBoutonSelected().getName()));} catch(NullPointerException ex) {FenetreAccueil.etude.getS6().setApr(null);}
+			try{FenetreAccueil.etude.getS6().setRis(Entreprise.getByName(((ConteneurSchema) tab.getConteneur_risque()).getAction6().getBoutonSelected().getName()));} catch(NullPointerException ex) {FenetreAccueil.etude.getS6().setRis(null);}
 			break;
 		}
 	}
