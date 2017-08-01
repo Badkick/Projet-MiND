@@ -58,7 +58,7 @@ public class ApercuSchema1 extends ConteneurAvecImage{
 		}
 	}
 	
-	public void drawArray(Graphics2D g,int instant_precedent){
+	public void drawArrow(Graphics2D g,int instant_precedent){
 		int avant=0;
 		int maintenant=0;
 		if(instant_precedent==0){
@@ -257,7 +257,7 @@ public class ApercuSchema1 extends ConteneurAvecImage{
 			}
 		}else if(this.getPeriode()==1){
 			this.drawCenteredString(g, "Demain", 376, 10, 200, 60);
-			this.drawArray(g, 0);
+			this.drawArrow(g, 0);
 			g.setColor(Color.white);
 			g.fillRoundRect(401, 178, 55, 35, 15, 15);
 			g.fillRoundRect(498, 178, 55, 35, 15, 15);
@@ -313,7 +313,7 @@ public class ApercuSchema1 extends ConteneurAvecImage{
 			}
 		}else if(this.getPeriode()>=2){
 			this.setPeriode(2);
-			this.drawArray(g, 1);
+			this.drawArrow(g, 1);
 			g.setColor(Color.white);
 			g.fillRoundRect(401, 178, 55, 35, 15, 15);
 			g.fillRoundRect(498, 178, 55, 35, 15, 15);

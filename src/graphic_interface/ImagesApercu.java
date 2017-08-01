@@ -33,7 +33,7 @@ public class ImagesApercu extends Conteneur{
 		this.periode=periode;
 	}
 	
-	public void drawArray_schema1(Graphics2D g,int instant_precedent){
+	public void drawArrow_schema1(Graphics2D g,int instant_precedent){
 		int avant=0;
 		int maintenant=0;
 		if(instant_precedent==0){
@@ -109,6 +109,121 @@ public class ImagesApercu extends Conteneur{
 			}else if(maintenant==2){
 				int[] X = { 2*541, 2*436, 2*436, 2*411, 2*436, 2*436, 2*541};
 				int[] Y = { 2*317, 2*317, 2*297, 2*332, 2*367, 2*347,2*347};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}
+		}
+	}
+	
+	public void drawArrow_schema2(Graphics2D g){
+		g.setColor(Color.red);
+		if(FenetreAccueil.etude.getS2().getMtn_principale().getNumero()==1){
+			if(FenetreAccueil.etude.getS2().getApr_principale().getNumero()==2){
+				int[] X = { 2*700, 2*665, 2*669, 2*646, 2*653, 2*657, 2*692};
+				int[] Y = { 2*114, 2*124, 2*138, 2*114, 2*81, 2*95, 2*85};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(FenetreAccueil.etude.getS2().getApr_principale().getNumero()==3){
+				int[] X = { 2*776, 2*787, 2*443, 2*449, 2*382, 2*427, 2*433};
+				int[] Y = { 2*125, 2*153, 2*287, 2*300, 2*294, 2*245, 2*258};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(FenetreAccueil.etude.getS2().getApr_principale().getNumero()==4){
+				int[] X = { 2*775, 2*791, 2*440, 2*448, 2*381, 2*416, 2*424};
+				int[] Y = { 2*123, 2*148, 2*372, 2*385, 2*392, 2*334, 2*346};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(FenetreAccueil.etude.getS2().getApr_principale().getNumero()==5){
+				int[] X = { 2*769, 2*797, 2*769, 2*783, 2*734, 2*727, 2*741};
+				int[] Y = { 2*127, 2*138, 2*209, 2*215, 2*259, 2*193, 2*198};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}
+		}else if(FenetreAccueil.etude.getS2().getMtn_principale().getNumero()==2){
+			if(FenetreAccueil.etude.getS2().getApr_principale().getNumero()==1){
+				int[] X = { 2*657, 2*686, 2*691, 2*697, 2*674, 2*678, 2*649};
+				int[] Y = { 2*127, 2*118, 2*133, 2*99, 2*75, 2*89, 2*98};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(FenetreAccueil.etude.getS2().getApr_principale().getNumero()==3){
+				int[] X = { 2*451, 2*472, 2*434, 2*444, 2*380, 2*402, 2*413};
+				int[] Y = { 2*149, 2*171, 2*208, 2*219, 2*239, 2*176, 2*187};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(FenetreAccueil.etude.getS2().getApr_principale().getNumero()==4){
+				int[] X = { 2*529, 2*553, 2*434, 2*446, 2*385, 2*399, 2*410};
+				int[] Y = { 2*181, 2*200, 2*350, 2*359, 2*388, 2*322, 2*331};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(FenetreAccueil.etude.getS2().getApr_principale().getNumero()==5){
+				int[] X = { 2*627, 2*635, 2*649, 2*635, 2*591, 2*605, 2*598};
+				int[] Y = { 2*175, 2*206, 2*203, 2*268, 2*217, 2*213, 2*182};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}
+		}else if(FenetreAccueil.etude.getS2().getMtn_principale().getNumero()==3){
+			if(FenetreAccueil.etude.getS2().getApr_principale().getNumero()==1){
+				int[] X = { 2*377, 2*729, 2*723, 2*790, 2*749, 2*743, 2*390};
+				int[] Y = { 2*304, 2*139, 2*125, 2*127, 2*179, 2*166, 2*332};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(FenetreAccueil.etude.getS2().getApr_principale().getNumero()==2){
+				int[] X = { 2*374, 2*488, 2*480, 2*547, 2*512, 2*504, 2*390};
+				int[] Y = { 2*269, 2*198, 2*185, 2*179, 2*236, 2*223, 2*295};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(FenetreAccueil.etude.getS2().getApr_principale().getNumero()==4){
+				int[] X = { 2*275, 2*275, 2*261, 2*290, 2*319, 2*305, 2*305};
+				int[] Y = { 2*333, 2*339, 2*339, 2*355, 2*339, 2*339, 2*333};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(FenetreAccueil.etude.getS2().getApr_principale().getNumero()==5){
+				int[] X = { 2*384, 2*553, 2*554, 2*611, 2*547, 2*549, 2*380};
+				int[] Y = { 2*275, 2*296, 2*281, 2*318, 2*341, 2*326, 2*305};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}
+		}else if(FenetreAccueil.etude.getS2().getMtn_principale().getNumero()==4){
+			if(FenetreAccueil.etude.getS2().getApr_principale().getNumero()==1){
+				int[] X = { 2*374, 2*709, 2*701, 2*767, 2*734, 2*726, 2*391};
+				int[] Y = { 2*373, 2*149, 2*137, 2*128, 2*187, 2*174, 2*397};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(FenetreAccueil.etude.getS2().getApr_principale().getNumero()==2){
+				int[] X = { 2*374, 2*486, 2*474, 2*533, 2*523, 2*511, 2*399};
+				int[] Y = { 2*379, 2*216, 2*207, 2*174, 2*241, 2*233, 2*396};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(FenetreAccueil.etude.getS2().getApr_principale().getNumero()==3){
+				int[] X = { 2*274, 2*274, 2*258, 2*289, 2*320, 2*304, 2*304};
+				int[] Y = { 2*353, 2*348, 2*348, 2*333, 2*348, 2*348, 2*353};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(FenetreAccueil.etude.getS2().getApr_principale().getNumero()==5){
+				int[] X = { 2*380, 2*550, 2*545, 2*612, 2*563, 2*559, 2*388};
+				int[] Y = { 2*373, 2*321, 2*307, 2*318, 2*364, 2*350, 2*402};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}
+		}else if(FenetreAccueil.etude.getS2().getMtn_principale().getNumero()==5){
+			if(FenetreAccueil.etude.getS2().getApr_principale().getNumero()==1){
+				int[] X = { 2*699, 2*733,2*720, 2*773, 2*774, 2*761, 2*726};
+				int[] Y = { 2*251, 2*181, 2*174, 2*134, 2*201, 2*194, 2*265};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(FenetreAccueil.etude.getS2().getApr_principale().getNumero()==2){
+				int[] X = { 2*641, 2*624, 2*610, 2*610, 2*664, 2*651, 2*668};
+				int[] Y = { 2*273, 2*239, 2*246, 2*179, 2*219, 2*225, 2*259};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(FenetreAccueil.etude.getS2().getApr_principale().getNumero()==3){
+				int[] X = { 2*602, 2*444, 2*443, 2*384, 2*446, 2*445, 2*603};
+				int[] Y = { 2*315, 2*308, 2*323, 2*290, 2*263, 2*277, 2*285};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(FenetreAccueil.etude.getS2().getApr_principale().getNumero()==4){
+				int[] X = { 2*602, 2*450, 2*455, 2*389, 2*437, 2*442, 2*593};
+				int[] Y = { 2*341, 2*388,2*403,2*391, 2*345, 2*359, 2*312};
 				Shape shape=new Polygon(X,Y,X.length);
 				g.fill(shape);
 			}
@@ -201,7 +316,7 @@ public class ImagesApercu extends Conteneur{
 				}
 			}else if(this.getPeriode()==1){
 				this.drawCenteredString(g, "Demain", 2*376, 2*10, 2*200, 2*60,Color.black);
-				this.drawArray_schema1(g, 0);
+				this.drawArrow_schema1(g, 0);
 				g.setColor(Color.white);
 				g.fillRoundRect(2*401, 2*178, 2*55, 2*35, 2*15, 2*15);
 				g.fillRoundRect(2*498, 2*178, 2*55, 2*35, 2*15, 2*15);
@@ -257,7 +372,7 @@ public class ImagesApercu extends Conteneur{
 				}
 			}else if(this.getPeriode()==2){
 				this.drawCenteredString(g, "Après-demain", 2*376, 2*10, 2*200, 2*60,Color.black);
-				this.drawArray_schema1(g, 1);
+				this.drawArrow_schema1(g, 1);
 				g.setColor(Color.white);
 				g.fillOval(2*376, 2*380, 2*200, 2*60);
 				g.fillRoundRect(2*401, 2*178, 2*55, 2*35, 2*15, 2*15);
@@ -446,6 +561,9 @@ public class ImagesApercu extends Conteneur{
 					}
 				}catch(NullPointerException ex){}
 			}else if(this.getPeriode()==4){
+				try{
+					this.drawArrow_schema2(g);
+				}catch(NullPointerException ex){}
 				try{
 					if(FenetreAccueil.etude.getS2().getApr_principale().getNumero()==1){//simple marche
 						g.drawImage(actif,2*705,2*35,width,height,null,null);
