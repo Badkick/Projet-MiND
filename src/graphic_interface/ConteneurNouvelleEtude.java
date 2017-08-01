@@ -150,7 +150,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 		this.initialiserLayout();
 		for (int i=0;i<NB_ONGLETS;i++){
 			this.getTabGraphe()[i].initialiserCases(i+1);
-			new VerificationOnglets((CustomTab)this.getTabs().getTabComponentAt(i),this.getTabGraphe()[i]).verification();
+			VerificationOnglets.verification((CustomTab)this.getTabs().getTabComponentAt(i),this.getTabGraphe()[i]);
 		}
 	}
 
@@ -208,7 +208,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 				save();
 				
 				for(int i=0;i<ConteneurNouvelleEtude.NB_ONGLETS;i++){
-					new VerificationOnglets((CustomTab)getTabs().getTabComponentAt(i),getTabGraphe()[i]).verification();
+					VerificationOnglets.verification((CustomTab)getTabs().getTabComponentAt(i),getTabGraphe()[i]);
 				}
 				
 				

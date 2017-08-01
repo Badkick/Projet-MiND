@@ -13,19 +13,17 @@ public class VerificationPetitsOnglets implements ComponentListener {
 	public static final int SCHEMA5 = 5;
 	public static final int SCHEMA6 = 6;
 
-	private int type;
 	private ConteneurSchema conteneur;
 	private CustomTab tab;
 
 	public VerificationPetitsOnglets(ConteneurSchema conteneur, CustomTab tab) {
-		this.type = conteneur.getTypeSchema();
 		this.conteneur = conteneur;
 		this.tab = tab;
 	}
 
 	@Override
 	public void componentHidden(ComponentEvent e) {
-		this.verification();
+		verification(this.getConteneur(),this.getTab());
 	}
 
 	@Override
@@ -54,49 +52,50 @@ public class VerificationPetitsOnglets implements ComponentListener {
 		return tab;
 	}
 
-	public void verification()
+	public static void verification(ConteneurSchema conteneur, CustomTab tab)
 	{
+		int type = conteneur.getTypeSchema();
 		int nbNotes=0;
 		switch(type)
 		{
 		case SCHEMA1 :
 			try {
-				this.getTab().setForeground((this.getConteneur().getContr_tech().get()+this.getConteneur().getEtabl_prot().get()+this.getConteneur().getMena_mar().get()+this.getConteneur().getPress_envir().get()==100.0) ? Color.black : Color.red);
-			} catch(NullPointerException ex) {this.getTab().setForeground(Color.red);}
+				tab.setForeground((conteneur.getContr_tech().get()+conteneur.getEtabl_prot().get()+conteneur.getMena_mar().get()+conteneur.getPress_envir().get()==100.0) ? Color.black : Color.red);
+			} catch(NullPointerException ex) {tab.setForeground(Color.red);}
 			break;
 
 		case SCHEMA2 :
-			if(this.getConteneur().getNote_entrepreneuriale()!=Integer.MAX_VALUE) nbNotes++;
-			if(this.getConteneur().getNote_mecaniste()!=Integer.MAX_VALUE) nbNotes++;
-			if(this.getConteneur().getNote_professionnelle()!=Integer.MAX_VALUE) nbNotes++;
-			if(this.getConteneur().getNote_simple_centralisee()!=Integer.MAX_VALUE) nbNotes++;
-			if(this.getConteneur().getNote_simple_marche()!=Integer.MAX_VALUE) nbNotes++;
-			this.getTab().setForeground(nbNotes==4 ? Color.black : Color.red);
+			if(conteneur.getNote_entrepreneuriale()!=Integer.MAX_VALUE) nbNotes++;
+			if(conteneur.getNote_mecaniste()!=Integer.MAX_VALUE) nbNotes++;
+			if(conteneur.getNote_professionnelle()!=Integer.MAX_VALUE) nbNotes++;
+			if(conteneur.getNote_simple_centralisee()!=Integer.MAX_VALUE) nbNotes++;
+			if(conteneur.getNote_simple_marche()!=Integer.MAX_VALUE) nbNotes++;
+			tab.setForeground(nbNotes==4 ? Color.black : Color.red);
 			break;
 
 		case SCHEMA3 :
-			if(this.getConteneur().getNote_rationnelle()!=Integer.MAX_VALUE) nbNotes++;
-			if(this.getConteneur().getNote_artisanale()!=Integer.MAX_VALUE) nbNotes++;
-			if(this.getConteneur().getNote_personnalisee()!=Integer.MAX_VALUE) nbNotes++;
-			if(this.getConteneur().getNote_process()!=Integer.MAX_VALUE) nbNotes++;
-			if(this.getConteneur().getNote_flexible()!=Integer.MAX_VALUE) nbNotes++;
-			this.getTab().setForeground(nbNotes==4 ? Color.black : Color.red);
+			if(conteneur.getNote_rationnelle()!=Integer.MAX_VALUE) nbNotes++;
+			if(conteneur.getNote_artisanale()!=Integer.MAX_VALUE) nbNotes++;
+			if(conteneur.getNote_personnalisee()!=Integer.MAX_VALUE) nbNotes++;
+			if(conteneur.getNote_process()!=Integer.MAX_VALUE) nbNotes++;
+			if(conteneur.getNote_flexible()!=Integer.MAX_VALUE) nbNotes++;
+			tab.setForeground(nbNotes==4 ? Color.black : Color.red);
 			break;
 
 		case SCHEMA4 :
 			try {
-				this.getTab().setForeground( ( (this.getConteneur().getImportance_consensus().get()+this.getConteneur().getImportance_negociation().get()+this.getConteneur().getImportance_opposition().get()==100.0)
-						&& (this.getConteneur().getPetit_consensus().get()+this.getConteneur().getPetit_pacte().get()==100.0)
-						&& (this.getConteneur().getPetit_ajustement().get()+this.getConteneur().getPetit_transformation().get()==100.0)
-						&& (this.getConteneur().getPetit_domination().get()+this.getConteneur().getPetit_contrePouvoir().get()+this.getConteneur().getPetit_antagonisme().get()==100.0)
+				tab.setForeground( ( (conteneur.getImportance_consensus().get()+conteneur.getImportance_negociation().get()+conteneur.getImportance_opposition().get()==100.0)
+						&& (conteneur.getPetit_consensus().get()+conteneur.getPetit_pacte().get()==100.0)
+						&& (conteneur.getPetit_ajustement().get()+conteneur.getPetit_transformation().get()==100.0)
+						&& (conteneur.getPetit_domination().get()+conteneur.getPetit_contrePouvoir().get()+conteneur.getPetit_antagonisme().get()==100.0)
 						) ? Color.black : Color.red);
-			} catch(NullPointerException ex) {this.getTab().setForeground(Color.red);}
+			} catch(NullPointerException ex) {tab.setForeground(Color.red);}
 			break;
 
 		case SCHEMA5 :
 			try {
-				this.getTab().setForeground((this.getConteneur().getReglementaire().get()+this.getConteneur().getMobilite().get()+this.getConteneur().getPro_service_public().get()+this.getConteneur().getProfessionnelle().get()+this.getConteneur().getCommunautaire().get()+this.getConteneur().getEntrepreneuriale().get()==100.0) ? Color.black : Color.red);
-			} catch(NullPointerException ex) {this.getTab().setForeground(Color.red);}
+				tab.setForeground((conteneur.getReglementaire().get()+conteneur.getMobilite().get()+conteneur.getPro_service_public().get()+conteneur.getProfessionnelle().get()+conteneur.getCommunautaire().get()+conteneur.getEntrepreneuriale().get()==100.0) ? Color.black : Color.red);
+			} catch(NullPointerException ex) {tab.setForeground(Color.red);}
 			break;
 
 		case SCHEMA6 :

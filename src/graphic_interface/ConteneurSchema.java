@@ -463,8 +463,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 					note_personnalisee.setText("");
 					note_process.setText("");
 					note_flexible.setText("");
-					tab.setForeground(Color.red);
-					System.out.println(getContainerListeners()[0]);
+					//VerificationOnglets.verification(tab, tab);
 					ConteneurNouvelleEtude.unsave();
 				}
 			});

@@ -13,7 +13,7 @@ public class UpdateEtude implements ComponentListener {
 
 	@Override
 	public void componentHidden(ComponentEvent e) {
-		this.updateEtude(this.tab);
+		updateEtude(this.tab);
 	}
 
 	@Override
@@ -34,7 +34,7 @@ public class UpdateEtude implements ComponentListener {
 
 	}
 
-	public void updateEtude(TabGraphe tab)
+	public static void updateEtude(TabGraphe tab)
 	{
 		int type = tab.getConteneur_maintenant().getTypeSchema();
 		switch(type)

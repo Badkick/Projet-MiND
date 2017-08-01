@@ -16,7 +16,7 @@ public class VerificationOnglets implements ComponentListener {
 
 	@Override
 	public void componentHidden(ComponentEvent e) {
-		this.verification();
+		verification(this.tab,this.tab_graphe);
 	}
 
 	@Override
@@ -28,16 +28,16 @@ public class VerificationOnglets implements ComponentListener {
 	@Override
 	public void componentShown(ComponentEvent e) {}
 	
-	public void verification()
+	public static void verification(CustomTab tab, TabGraphe tab_graphe)
 	{
-		new UpdateEtude(tab_graphe).updateEtude(tab_graphe);
+		UpdateEtude.updateEtude(tab_graphe);
 		boolean termine = true;
 		for(int i=0;i<3;i++)
 		{
-			new VerificationPetitsOnglets((ConteneurSchema) this.tab_graphe.getComponent(i), (CustomTab) this.tab_graphe.getTabComponentAt(i)).verification();
-			termine &= this.tab_graphe.getTabComponentAt(i).getForeground().equals(Color.black);
+			VerificationPetitsOnglets.verification((ConteneurSchema) tab_graphe.getComponent(i), (CustomTab) tab_graphe.getTabComponentAt(i));
+			termine &= tab_graphe.getTabComponentAt(i).getForeground().equals(Color.black);
 		}
-		this.tab.setForeground(termine ? Color.BLACK : Color.RED);
+		tab.setForeground(termine ? Color.BLACK : Color.RED);
 	}
 
 }
