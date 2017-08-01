@@ -439,14 +439,14 @@ public class ChargerEtude implements ActionListener {
 		try {
 			BufferedReader aLire_6 = new BufferedReader(new FileReader(mondes));
 			try{
-				e_1=Entreprise.getByName(aLire_6.readLine());
-			}catch(NullPointerException ex){}
+				e_1=Entreprise.getByNum(Integer.valueOf(aLire_6.readLine()));
+			}catch(Exception ex){}
 			try{
-				e_2=Entreprise.getByName(aLire_6.readLine());
-			}catch(NullPointerException ex){}
+				e_2=Entreprise.getByNum(Integer.valueOf(aLire_6.readLine()));
+			}catch(Exception ex){}
 			try{
-				e_3=Entreprise.getByName(aLire_6.readLine());
-			}catch(NullPointerException ex){}
+				e_3=Entreprise.getByNum(Integer.valueOf(aLire_6.readLine()));
+			}catch(Exception ex){}
 			
 			aLire_6.close();
 			schema6=new Schema6(e_1,e_2,e_3);
