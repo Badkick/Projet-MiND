@@ -12,12 +12,12 @@ import javax.swing.event.CaretListener;
 
 public class TabGraphe extends JTabbedPane {
 
-	private static String[] EXPLICATIONS = {"<html>Remplissez les 4 cases de pourcentages pour maintenant <br> et pour après. <br> <br> Pour être valide, le total des 4 pourcentages <br> doit atteindre 100%. </html>",
-			"Salut",
-			"Je suis",
-			"L'ami",
-			"De",
-			"Bouffi"
+	private static String[] EXPLICATIONS = {"<html>Remplissez les 4 cases de pourcentages pour maintenant, <br> pour après, et pour encore après. <br> <br> Pour que le schéma soit valide, le total des 4 pourcentages <br> doit atteindre 100%.</html>",
+			"<html>Choisissez une structure principale en cliquant dessus puis notez les autres structures <br> sur 10 en suivant la démarche suivante : <br> <br> - Cliquer sur la structure à noter <br> - Entrer la note sur 10 <br> - Appuyer sur ENTREE pour valider </html>",
+			"<html>Choisissez une organisation principale en cliquant dessus puis notez les autres organisations <br> sur 10 en suivant la démarche suivante : <br> <br> - Cliquer sur l'organisation à noter <br> - Entrer la note sur 10 <br> - Appuyer sur ENTREE pour valider </html>",
+			"<html>Vous pouvez remplir ces cases dans l'ordre de votre choix. <br> Veillez simplement à ce que : <br> <br> - Le total des pourcentages des grosses bulles soit égal à 100% <br> - Le total des pourcentages à l'intérieur de chaque grosse bulle soit égal à 100%</html>",
+			"<html>Remplissez les 6 cases de pourcentages dans chaque cas. <br> <br> Pour que le schéma soit valide, le total des 6 pourcentages <br> doit atteindre 100%.</html>",
+			"<html>Choisissez simplement le type d'entreprise prédominant en cliquant dessus.</html>"
 	};
 
 	// VARIABLES DE CLASSE //
