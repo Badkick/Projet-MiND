@@ -144,8 +144,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 
 	private void initialiser()
 	{
-		this.initialiserConteneurs();
-		this.initialiserTabs();
+		this.initialiserTabsEtConteneurs();
 		this.initialiserBoutons();
 		this.initialiserLayout();
 		for (int i=0;i<NB_ONGLETS;i++){
@@ -331,26 +330,20 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 				);
 	}
 
-	private void initialiserTabs()
-	{
-		for(int i=0;i<NB_ONGLETS;i++)
-		{
-			this.getTabs().add("Schéma "+String.valueOf(i+1), onglets[i]);
-			this.getTabs().setTabComponentAt(i, new CustomTab(titres_tabs[i]));
-			this.getTabs().getTabComponentAt(i).setForeground(Color.red);
-			onglets[i].addComponentListener(new VerificationOnglets((CustomTab)this.getTabs().getTabComponentAt(i),tab_graphes[i]));
-			((CustomTab) this.getTabs().getTabComponentAt(i)).setTaille(CustomTab.TAILLE);
-		}
-	}
-
-	private void initialiserConteneurs()
+	private void initialiserTabsEtConteneurs()
 	{
 		for(int i=0;i<NB_ONGLETS;i++)
 		{
 			this.onglets[i] = new Conteneur(TAILLE_GRAND_CONTENEUR);
-			tab_graphes[i] = new TabGraphe(i+1);
+			
+			this.getTabs().add("Schéma "+String.valueOf(i+1), onglets[i]);
+			this.getTabs().setTabComponentAt(i, new CustomTab(titres_tabs[i]));
+			this.getTabs().getTabComponentAt(i).setForeground(Color.red);
+			tab_graphes[i] = new TabGraphe(i+1,(CustomTab)this.getTabs().getTabComponentAt(i));
 			this.onglets[i].add(tab_graphes[i]);
 			this.onglets[i].setOpaque(false);
+			onglets[i].addComponentListener(new VerificationOnglets((CustomTab)this.getTabs().getTabComponentAt(i),tab_graphes[i]));
+			((CustomTab) this.getTabs().getTabComponentAt(i)).setTaille(CustomTab.TAILLE);
 		}
 	}
 

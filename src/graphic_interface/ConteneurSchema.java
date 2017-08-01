@@ -35,7 +35,6 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	// variables générales
 	private int typeSchema; // le type du schéma : de 1 à 6
 	private GroupLayout layout;
-	private TabGraphe tab;
 
 	// cas 1
 
@@ -231,10 +230,9 @@ public class ConteneurSchema extends ConteneurAvecImage {
 
 	// CONSTRUCTEURS //
 
-	public ConteneurSchema(int type, TabGraphe tab, int width, int height) {
+	public ConteneurSchema(int type, CustomTab tab, TabGraphe tab_graphe, int width, int height) {
 		super(width,height,FenetreAccueil.theme.getSchemas()[type-1]);
 		this.typeSchema = type;
-		this.tab = tab;
 		this.layout = new GroupLayout(this);
 		this.setLayout(layout);
 
@@ -318,7 +316,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 					note_professionnelle.setText("");
 					note_mecaniste.setText("");
 					note_simple_centralisee.setText("");
-					tab.setForeground(Color.red);
+					VerificationOnglets.verification(tab, tab_graphe);
 					ConteneurNouvelleEtude.unsave();
 				}
 			});
@@ -463,7 +461,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 					note_personnalisee.setText("");
 					note_process.setText("");
 					note_flexible.setText("");
-					//VerificationOnglets.verification(tab, tab);
+					VerificationOnglets.verification(tab, tab_graphe);
 					ConteneurNouvelleEtude.unsave();
 				}
 			});
@@ -810,6 +808,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 					for(BoutonOvaleSchema6 b : action6.getBoutons()) b.activer(FenetreAccueil.theme.getbSchema6Repos(), FenetreAccueil.theme.getbSchema6Survol(), FenetreAccueil.theme.getbSchema6Clic());
 					action6.setBoutonSelected(null);
 					action6.setSelected(false);
+					VerificationOnglets.verification(tab, tab_graphe);
 					ConteneurNouvelleEtude.unsave();
 				}
 			});
@@ -875,8 +874,8 @@ public class ConteneurSchema extends ConteneurAvecImage {
 		}
 	}
 
-	public ConteneurSchema(int type, TabGraphe tab, Dimension dim) {
-		this(type,tab,(int)dim.getWidth(),(int)dim.getHeight());		
+	public ConteneurSchema(int type, CustomTab tab, TabGraphe tab_graphe, Dimension dim) {
+		this(type,tab,tab_graphe,(int)dim.getWidth(),(int)dim.getHeight());		
 	}
 
 	// GETTERS //

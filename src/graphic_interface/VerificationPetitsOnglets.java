@@ -13,17 +13,15 @@ public class VerificationPetitsOnglets implements ComponentListener {
 	public static final int SCHEMA5 = 5;
 	public static final int SCHEMA6 = 6;
 
-	private ConteneurSchema conteneur;
 	private CustomTab tab;
 
-	public VerificationPetitsOnglets(ConteneurSchema conteneur, CustomTab tab) {
-		this.conteneur = conteneur;
+	public VerificationPetitsOnglets(CustomTab tab) {
 		this.tab = tab;
 	}
 
 	@Override
 	public void componentHidden(ComponentEvent e) {
-		verification(this.getConteneur(),this.getTab());
+		verification((ConteneurSchema) e.getComponent(),this.getTab());
 	}
 
 	@Override
@@ -39,14 +37,7 @@ public class VerificationPetitsOnglets implements ComponentListener {
 	}
 
 	@Override
-	public void componentShown(ComponentEvent e) {
-		// TODO Auto-generated method stub
-
-	}
-
-	public ConteneurSchema getConteneur() {
-		return conteneur;
-	}
+	public void componentShown(ComponentEvent e) {}
 
 	public CustomTab getTab() {
 		return tab;
