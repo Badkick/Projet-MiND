@@ -386,7 +386,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 	}
 	
 	public String nullToEmpty(Entreprise ent){
-		return (ent==null ? "":ent.getNom());
+		return (ent==null ? "":String.valueOf(ent.getNumero()));
 	}
 	
 	public String nullToEmpty_ImportanceConsensus(Consensus cons){

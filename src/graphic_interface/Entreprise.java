@@ -32,4 +32,12 @@ public enum Entreprise {
 		}return null;
 	}
 	
+	public static Entreprise getByNum(int n){
+		for(Entreprise e:Entreprise.values()){
+			if(n==e.getNumero()){
+				return e;
+			}
+		}return null;
+	}
+	
 }
