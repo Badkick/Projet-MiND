@@ -33,7 +33,7 @@ public class VerificationOnglets implements ComponentListener {
 		boolean termine = true;
 		for(int i=0;i<3;i++)
 		{
-			VerificationPetitsOnglets.verification((ConteneurSchema) tab_graphe.getComponent(i), (CustomTab) tab_graphe.getTabComponentAt(i));
+			VerificationPetitsOnglets.verification((ConteneurSchema) tab_graphe.getComponentAt(i), (CustomTab) tab_graphe.getTabComponentAt(i));
 			termine &= tab_graphe.getTabComponentAt(i).getForeground().equals(Color.black);
 		}
 		tab.setForeground(termine ? Color.BLACK : Color.RED);
