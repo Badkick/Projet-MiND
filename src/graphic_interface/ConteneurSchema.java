@@ -28,7 +28,8 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	public static final Dimension DIMENSION_TEXT_FIELD_SCHEMAS15 = new Dimension(45,30);
 	public static final Dimension DIMENSION_BOUTON_SCHEMAS23 = new Dimension(170,90);
 	public static final Dimension DIMENSION_BOUTON_SCHEMA6 = new Dimension(170,120);
-	public static final Dimension DIMENSION_LABEL_SCHEMAS23 = new Dimension(60,40);
+	public static final Dimension DIMENSION_LABEL_SCHEMA2 = new Dimension(60,40);
+	public static final Dimension DIMENSION_LABEL_SCHEMA3 = new Dimension(60,30);
 
 	// VARIABLES INSTANCE //
 
@@ -327,11 +328,11 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			this.note_simple_centralisee = new JLabel();
 			this.note_simple_marche = new JLabel();
 
-			this.initialiserLabelSchemas23(note_entrepreneuriale);
-			this.initialiserLabelSchemas23(note_mecaniste);
-			this.initialiserLabelSchemas23(note_professionnelle);
-			this.initialiserLabelSchemas23(note_simple_centralisee);
-			this.initialiserLabelSchemas23(note_simple_marche);
+			this.initialiserLabelSchema2(note_entrepreneuriale);
+			this.initialiserLabelSchema2(note_mecaniste);
+			this.initialiserLabelSchema2(note_professionnelle);
+			this.initialiserLabelSchema2(note_simple_centralisee);
+			this.initialiserLabelSchema2(note_simple_marche);
 
 			this.layout.setHorizontalGroup(
 					this.layout.createSequentialGroup()
@@ -472,11 +473,11 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			this.note_process = new JLabel();
 			this.note_flexible = new JLabel();
 
-			this.initialiserLabelSchemas23(note_rationnelle);
-			this.initialiserLabelSchemas23(note_artisanale);
-			this.initialiserLabelSchemas23(note_personnalisee);
-			this.initialiserLabelSchemas23(note_process);
-			this.initialiserLabelSchemas23(note_flexible);
+			this.initialiserLabelSchema3(note_rationnelle);
+			this.initialiserLabelSchema3(note_artisanale);
+			this.initialiserLabelSchema3(note_personnalisee);
+			this.initialiserLabelSchema3(note_process);
+			this.initialiserLabelSchema3(note_flexible);
 
 			this.layout.setHorizontalGroup(
 					this.layout.createSequentialGroup()
@@ -509,7 +510,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 							this.layout.createParallelGroup()
 							.addGroup(
 									this.layout.createSequentialGroup()
-									.addGap(70)
+									.addGap(112)
 									.addComponent(note_artisanale)
 									)
 							.addComponent(b_artisanale)
@@ -540,44 +541,44 @@ public class ConteneurSchema extends ConteneurAvecImage {
 
 			this.layout.setVerticalGroup(
 					this.layout.createSequentialGroup()
-					.addGap(30)
+					.addGap(70)
 					.addGroup(
 							this.layout.createParallelGroup()
 							.addGroup(
 									this.layout.createSequentialGroup()
-									.addComponent(note_rationnelle)
 									.addComponent(b_rationnelle)
+									.addComponent(note_rationnelle)
 									)
 							.addGroup(
 									this.layout.createSequentialGroup()
 									.addGap(25)
 									.addGroup(
 											this.layout.createSequentialGroup()
-											.addComponent(note_artisanale)
 											.addComponent(b_artisanale)
+											.addComponent(note_artisanale)
 											)
 									)
 							.addGroup(
 									this.layout.createSequentialGroup()
-									.addComponent(note_personnalisee)
 									.addComponent(b_personnalisee)
+									.addComponent(note_personnalisee)
 									)
 							)
-					.addGap(140)
+					.addGap(130)
 					.addGroup(
 							this.layout.createParallelGroup()
 							.addGroup(
 									this.layout.createSequentialGroup()
-									.addComponent(note_process)
 									.addComponent(b_process)
+									.addComponent(note_process)
 									)
 							.addGroup(
 									this.layout.createSequentialGroup()
-									.addComponent(note_flexible)
 									.addComponent(b_flexible)
+									.addComponent(note_flexible)
 									)
 							)
-					.addGap(40)
+					.addGap(30)
 					.addComponent(b_annuler3)
 					);
 
@@ -1488,12 +1489,20 @@ public class ConteneurSchema extends ConteneurAvecImage {
 		b.addActionListener(action);
 	}
 
-	public void initialiserLabelSchemas23(JLabel label)
+	public void initialiserLabelSchema2(JLabel label)
 	{
 		label.setForeground(Color.WHITE);
-		label.setPreferredSize(DIMENSION_LABEL_SCHEMAS23);
-		label.setMaximumSize(DIMENSION_LABEL_SCHEMAS23);
-		label.setMinimumSize(DIMENSION_LABEL_SCHEMAS23);
+		label.setPreferredSize(DIMENSION_LABEL_SCHEMA2);
+		label.setMaximumSize(DIMENSION_LABEL_SCHEMA2);
+		label.setMinimumSize(DIMENSION_LABEL_SCHEMA2);
+	}
+	
+	public void initialiserLabelSchema3(JLabel label)
+	{
+		label.setForeground(Color.WHITE);
+		label.setPreferredSize(DIMENSION_LABEL_SCHEMA3);
+		label.setMaximumSize(DIMENSION_LABEL_SCHEMA3);
+		label.setMinimumSize(DIMENSION_LABEL_SCHEMA3);
 	}
 
 	public void setNote(Bouton b, int note)
