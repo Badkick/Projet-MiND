@@ -254,7 +254,7 @@ public class ApercuSchema2 extends ConteneurAvecImage{
 					if(FenetreAccueil.etude.getS2().getMtn_notees()[3].getNote()!=Integer.MAX_VALUE){
 						g.setColor(Color.white);
 						g.fillRoundRect(665, 372, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS2().getMtn_notees()[0].getNote())+" / 10", 665, 372, 70, 36,Color.black);
+						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS2().getMtn_notees()[3].getNote())+" / 10", 665, 372, 70, 36,Color.black);
 					}
 				}else if(FenetreAccueil.etude.getS2().getMtn_principale().getNumero()==2){//professionnelle
 					g.drawImage(actif,475,85,width,height,null,null);
@@ -276,7 +276,7 @@ public class ApercuSchema2 extends ConteneurAvecImage{
 					if(FenetreAccueil.etude.getS2().getMtn_notees()[3].getNote()!=Integer.MAX_VALUE){
 						g.setColor(Color.white);
 						g.fillRoundRect(665, 372, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS2().getMtn_notees()[0].getNote())+" / 10", 665, 372, 70, 36,Color.black);
+						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS2().getMtn_notees()[3].getNote())+" / 10", 665, 372, 70, 36,Color.black);
 					}
 				}else if(FenetreAccueil.etude.getS2().getMtn_principale().getNumero()==3){//mecaniste
 					g.drawImage(actif,205,245,width,height,null,null);
@@ -298,7 +298,7 @@ public class ApercuSchema2 extends ConteneurAvecImage{
 					if(FenetreAccueil.etude.getS2().getMtn_notees()[3].getNote()!=Integer.MAX_VALUE){
 						g.setColor(Color.white);
 						g.fillRoundRect(665, 372, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS2().getMtn_notees()[0].getNote())+" / 10", 665, 372, 70, 36,Color.black);
+						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS2().getMtn_notees()[3].getNote())+" / 10", 665, 372, 70, 36,Color.black);
 					}
 				}else if(FenetreAccueil.etude.getS2().getMtn_principale().getNumero()==4){//simple centralisee
 					g.drawImage(actif,205,355,width,height,null,null);
@@ -320,7 +320,7 @@ public class ApercuSchema2 extends ConteneurAvecImage{
 					if(FenetreAccueil.etude.getS2().getMtn_notees()[3].getNote()!=Integer.MAX_VALUE){
 						g.setColor(Color.white);
 						g.fillRoundRect(665, 372, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS2().getMtn_notees()[0].getNote())+" / 10", 665, 372, 70, 36,Color.black);
+						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS2().getMtn_notees()[3].getNote())+" / 10", 665, 372, 70, 36,Color.black);
 					}
 				}else if(FenetreAccueil.etude.getS2().getMtn_principale().getNumero()==5){//entrepreneuriale
 					g.drawImage(actif,615,275,width,height,null,null);
@@ -342,7 +342,7 @@ public class ApercuSchema2 extends ConteneurAvecImage{
 					if(FenetreAccueil.etude.getS2().getMtn_notees()[3].getNote()!=Integer.MAX_VALUE){
 						g.setColor(Color.white);
 						g.fillRoundRect(385, 382, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS2().getMtn_notees()[0].getNote())+" / 10", 385, 382, 70, 36,Color.black);
+						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS2().getMtn_notees()[3].getNote())+" / 10", 385, 382, 70, 36,Color.black);
 					}
 				}
 			}catch(NullPointerException ex){}
@@ -372,7 +372,7 @@ public class ApercuSchema2 extends ConteneurAvecImage{
 					if(FenetreAccueil.etude.getS2().getApr_notees()[3].getNote()!=Integer.MAX_VALUE){
 						g.setColor(Color.white);
 						g.fillRoundRect(665, 372, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS2().getApr_notees()[0].getNote())+" / 10", 665, 372, 70, 36,Color.black);
+						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS2().getApr_notees()[3].getNote())+" / 10", 665, 372, 70, 36,Color.black);
 					}
 				}else if(FenetreAccueil.etude.getS2().getApr_principale().getNumero()==2){//professionnelle
 					g.drawImage(actif,475,85,width,height,null,null);
@@ -394,7 +394,7 @@ public class ApercuSchema2 extends ConteneurAvecImage{
 					if(FenetreAccueil.etude.getS2().getApr_notees()[3].getNote()!=Integer.MAX_VALUE){
 						g.setColor(Color.white);
 						g.fillRoundRect(665, 372, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS2().getApr_notees()[0].getNote())+" / 10", 665, 372, 70, 36,Color.black);
+						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS2().getApr_notees()[3].getNote())+" / 10", 665, 372, 70, 36,Color.black);
 					}
 				}else if(FenetreAccueil.etude.getS2().getApr_principale().getNumero()==3){//mecaniste
 					g.setColor(Color.white);g.drawImage(actif,205,245,width,height,null,null);
@@ -416,7 +416,7 @@ public class ApercuSchema2 extends ConteneurAvecImage{
 					if(FenetreAccueil.etude.getS2().getApr_notees()[3].getNote()!=Integer.MAX_VALUE){
 						g.setColor(Color.white);
 						g.fillRoundRect(665, 372, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS2().getApr_notees()[0].getNote())+" / 10", 665, 372, 70, 36,Color.black);
+						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS2().getApr_notees()[3].getNote())+" / 10", 665, 372, 70, 36,Color.black);
 					}
 				}else if(FenetreAccueil.etude.getS2().getApr_principale().getNumero()==4){//simple centralisee
 					g.drawImage(actif,205,355,width,height,null,null);
@@ -438,7 +438,7 @@ public class ApercuSchema2 extends ConteneurAvecImage{
 					if(FenetreAccueil.etude.getS2().getApr_notees()[3].getNote()!=Integer.MAX_VALUE){
 						g.setColor(Color.white);
 						g.fillRoundRect(665, 372, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS2().getApr_notees()[0].getNote())+" / 10", 665, 372, 70, 36,Color.black);
+						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS2().getApr_notees()[3].getNote())+" / 10", 665, 372, 70, 36,Color.black);
 					}
 				}else if(FenetreAccueil.etude.getS2().getApr_principale().getNumero()==5){//entrepreneuriale
 					g.drawImage(actif,615,275,width,height,null,null);
@@ -460,14 +460,17 @@ public class ApercuSchema2 extends ConteneurAvecImage{
 					if(FenetreAccueil.etude.getS2().getApr_notees()[3].getNote()!=Integer.MAX_VALUE){
 						g.setColor(Color.white);
 						g.fillRoundRect(385, 382, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS2().getApr_notees()[0].getNote())+" / 10", 385, 382, 70, 36,Color.black);
+						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS2().getApr_notees()[3].getNote())+" / 10", 385, 382, 70, 36,Color.black);
 					}
 				}
 			}catch(NullPointerException ex){}
 			try{
-				String texte="Risque principal :\n\n "+FenetreAccueil.etude.getS2().getRis_principale().getNom().replaceAll("\n", " ")+"\n\nRisques notés :\n\n";
+				String texte1="Risque principal :\n\n "+FenetreAccueil.etude.getS2().getRis_principale().getNom().replaceAll("\n", " ");
 				g.setColor(Color.red);
-				g.fillRoundRect(205, 10, 260, 210, 20, 20);
+				//g.fillRoundRect(205, 10, 260, 210, 20, 20);
+				g.fillRoundRect(205, 10, 260, 60, 20, 20);
+				this.drawCenteredString(g, texte1, 205, 10, 260, 60, Color.white);
+				String texte="Risques notés :\n\n";
 				if(FenetreAccueil.etude.getS2().getRis_notees()[0].getNote()!=Integer.MAX_VALUE){
 					texte=texte+"- "+FenetreAccueil.etude.getS2().getRis_notees()[0].getElement().getNom().replaceAll("\n", " ")+" ("+String.valueOf(FenetreAccueil.etude.getS2().getRis_notees()[0].getNote())+" / 10)\n";
 				}
@@ -480,7 +483,12 @@ public class ApercuSchema2 extends ConteneurAvecImage{
 				if(FenetreAccueil.etude.getS2().getRis_notees()[3].getNote()!=Integer.MAX_VALUE){
 					texte=texte+"- "+FenetreAccueil.etude.getS2().getRis_notees()[3].getElement().getNom().replaceAll("\n", " ")+" ("+String.valueOf(FenetreAccueil.etude.getS2().getRis_notees()[3].getNote())+" / 10)\n";
 				}
-				this.drawCenteredString(g, texte, 205, 10, 260, 210, Color.white);
+				String comparaison="Risques notés :\n\n";
+				if(!comparaison.equals(texte)){
+					g.setColor(Color.red);
+					g.fillRoundRect(205, 72, 260, 150, 20, 20);
+					this.drawCenteredString(g, texte, 205, 72, 260, 150, Color.white);
+				}
 			}catch(NullPointerException ex){}
 			
 		}

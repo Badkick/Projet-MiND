@@ -49,6 +49,8 @@ public class TabGraphe extends JTabbedPane {
 		{
 			if(type==2){
 				this.conteneur_apercu = new ApercuSchema2(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR,null);
+			}else if(type==3){
+				this.conteneur_apercu = new ApercuSchema3(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR,null);
 			}else{
 				this.conteneur_apercu = new Conteneur(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
 			}
