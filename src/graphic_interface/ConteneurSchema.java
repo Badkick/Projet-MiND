@@ -721,33 +721,33 @@ public class ConteneurSchema extends ConteneurAvecImage {
 
 			this.layout.setHorizontalGroup(
 					this.layout.createSequentialGroup()
-					.addGap(300)
+					.addGap(310)
 					.addGroup(
 							this.layout.createParallelGroup()
 							.addComponent(reglementaire)
 							.addGroup(
 									this.layout.createSequentialGroup()
-									.addGap(70)
+									.addGap(74)
 									.addComponent(communautaire)
 									)
 							)
-					.addGap(110)
+					.addGap(143)
 					.addGroup(
 							this.layout.createParallelGroup()
 							.addGroup(
 									this.layout.createSequentialGroup()
-									.addGap(170)
+									.addGap(236)
 									.addComponent(mobilite)
 									)
 							.addComponent(pro_service_public)
 							.addGroup(
 									this.layout.createSequentialGroup()
-									.addGap(120)
+									.addGap(130)
 									.addComponent(professionnelle)
 									)
 							.addGroup(
 									this.layout.createSequentialGroup()
-									.addGap(280)
+									.addGap(302)
 									.addComponent(entrepreneuriale)
 									)
 							)
@@ -755,29 +755,33 @@ public class ConteneurSchema extends ConteneurAvecImage {
 
 			this.layout.setVerticalGroup(
 					this.layout.createSequentialGroup()
-					.addGap(110)
+					.addGap(111)
 					.addGroup(
 							this.layout.createParallelGroup()
 							.addComponent(reglementaire)
 							.addGroup(
 									this.layout.createSequentialGroup()
-									.addGap(125)
+									.addGap(158)
 									.addComponent(pro_service_public)
 									)
-							.addComponent(mobilite)
+							.addGroup(
+									this.layout.createSequentialGroup()
+									.addGap(10)
+									.addComponent(mobilite)
+									)
 							)
 					.addGap(75)
 					.addGroup(
 							this.layout.createParallelGroup()
 							.addGroup(
 									this.layout.createSequentialGroup()
-									.addGap(73)
+									.addGap(44)
 									.addComponent(communautaire)
 									)
 							.addComponent(professionnelle)
 							.addGroup(
 									this.layout.createSequentialGroup()
-									.addGap(73)
+									.addGap(47)
 									.addComponent(entrepreneuriale)
 									)
 							)
