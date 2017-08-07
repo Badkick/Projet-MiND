@@ -16,33 +16,25 @@ import java.io.File;
 
 public class ApercuSchema3 extends ConteneurAvecImage{
 	
-	private Schema3 schema3;
 	private int periode;
 	float alpha = 0.0f;
 	
-	public ApercuSchema3(int width, int height, Schema3 schema3,int periode){
+	public ApercuSchema3(int width, int height,int periode){
 		super(width,height,Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema3"+File.separator+"Etude_3_fond.png"));
-		this.schema3=schema3;
 		this.periode=periode;
 		this.initialiserTouche();
 	}
 	
-	public ApercuSchema3(Dimension dim, Schema3 schema3)
+	public ApercuSchema3(Dimension dim)
 	{
-		this((int)dim.getWidth(),(int)dim.getHeight(),schema3,0);
+		this((int)dim.getWidth(),(int)dim.getHeight(),0);
 	}
 	
-	public Schema3 getSchema(){
-		return this.schema3;
-	}
 	
 	public int getPeriode(){
 		return this.periode;
 	}
 	
-	public void setSchema(Schema3 schema3){
-		this.schema3=schema3;
-	}
 	
 	public void setPeriode(int periode){
 		this.periode=periode;

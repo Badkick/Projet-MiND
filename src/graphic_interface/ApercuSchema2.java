@@ -16,33 +16,25 @@ import java.io.File;
 
 public class ApercuSchema2 extends ConteneurAvecImage{
 	
-	private Schema2 schema2;
 	private int periode;
 	float alpha = 0.0f;
 	
-	public ApercuSchema2(int width, int height, Schema2 schema2,int periode){
+	public ApercuSchema2(int width, int height,int periode){
 		super(width,height,Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema2"+File.separator+"Etude_2_fond.png"));
-		this.schema2=schema2;
 		this.periode=periode;
 		this.initialiserTouche();
 	}
 	
-	public ApercuSchema2(Dimension dim, Schema2 schema2)
+	public ApercuSchema2(Dimension dim)
 	{
-		this((int)dim.getWidth(),(int)dim.getHeight(),schema2,0);
+		this((int)dim.getWidth(),(int)dim.getHeight(),0);
 	}
 	
-	public Schema2 getSchema(){
-		return this.schema2;
-	}
 	
 	public int getPeriode(){
 		return this.periode;
 	}
-	
-	public void setSchema(Schema2 schema2){
-		this.schema2=schema2;
-	}
+
 	
 	public void setPeriode(int periode){
 		this.periode=periode;
