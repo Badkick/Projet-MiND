@@ -48,9 +48,11 @@ public class TabGraphe extends JTabbedPane {
 		if(type!=1)
 		{
 			if(type==2){
-				this.conteneur_apercu = new ApercuSchema2(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR,null);
+				this.conteneur_apercu = new ApercuSchema2(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
 			}else if(type==3){
-				this.conteneur_apercu = new ApercuSchema3(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR,null);
+				this.conteneur_apercu = new ApercuSchema3(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
+			}else if(type==4){
+				this.conteneur_apercu = new ApercuSchema4(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
 			}else{
 				this.conteneur_apercu = new Conteneur(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
 			}
@@ -69,7 +71,7 @@ public class TabGraphe extends JTabbedPane {
 		}
 		else
 		{
-			this.conteneur_apercu=new ApercuSchema1(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR,null);
+			this.conteneur_apercu=new ApercuSchema1(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
 			this.conteneur_risque_schema1 = new Conteneur(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
 			this.add("Maintenant",this.conteneur_maintenant);
 			this.add("Après",this.conteneur_apres);
