@@ -91,4 +91,36 @@ public class Schema4 {
 	public void setApr_opposition(Opposition apr_opposition) {
 		this.apr_opposition = apr_opposition;
 	}
+	
+	//METHODES
+	
+	public int getMax_maintenant(){
+		try{
+			float[] liste={this.getMtn_consensus().getConsensus().get()*this.getMtn_consensus().getImportance().get(),this.getMtn_consensus().getPacte().get()*this.getMtn_consensus().getImportance().get(),this.getMtn_negociation().getAjustement().get()*this.getMtn_negociation().getImportance().get(),this.getMtn_negociation().getTransformation().get()*this.getMtn_negociation().getImportance().get(),this.getMtn_opposition().getDomination().get()*this.getMtn_opposition().getImportance().get(),this.getMtn_opposition().getContrePouvoir().get()*this.getMtn_opposition().getImportance().get(),this.getMtn_opposition().getAntagonisme().get()*this.getMtn_opposition().getImportance().get()};
+			float max=0;
+			int j=0;
+			for(int i=0;i<7;i++){
+				if(liste[i]>max){
+					max=liste[i];
+					j=i;
+				}
+			}
+			return j;
+		}catch(NullPointerException ex){return Integer.MAX_VALUE;}
+	}
+	
+	public int getMax_apres(){
+		try{
+			float[] liste={this.getApr_consensus().getConsensus().get()*this.getApr_consensus().getImportance().get(),this.getApr_consensus().getPacte().get()*this.getApr_consensus().getImportance().get(),this.getApr_negociation().getAjustement().get()*this.getApr_negociation().getImportance().get(),this.getApr_negociation().getTransformation().get()*this.getApr_negociation().getImportance().get(),this.getApr_opposition().getDomination().get()*this.getApr_opposition().getImportance().get(),this.getApr_opposition().getContrePouvoir().get()*this.getApr_opposition().getImportance().get(),this.getApr_opposition().getAntagonisme().get()*this.getApr_opposition().getImportance().get()};
+			float max=0;
+			int j=0;
+			for(int i=0;i<7;i++){
+				if(liste[i]>max){
+					max=liste[i];
+					j=i;
+				}
+			}
+			return j;
+		}catch(NullPointerException ex){return Integer.MAX_VALUE;}
+	}
 }

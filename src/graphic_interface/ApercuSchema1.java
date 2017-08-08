@@ -60,7 +60,7 @@ public class ApercuSchema1 extends ConteneurAvecImage{
 			avant = FenetreAccueil.etude.getS1().getMax_apres();
 			maintenant=FenetreAccueil.etude.getS1().getMax_encore_apres();
 		}
-		g.setColor(Color.red);
+		g.setColor(new Color(0, 150, 50));
 		if(avant ==0){
 			if(maintenant==1){
 				int[] X = { 411, 516, 516, 541, 516, 516, 411};
