@@ -119,8 +119,8 @@ public class ApercuSchema4 extends ConteneurAvecImage{
 		//CHARGEMENT DES IMAGES
 		
 		Image rouge=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema1"+File.separator+"Etude_1_bouton3.png");
-		Image consensus=null;
-		Image pacte=null;
+		Image consensus=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema1"+File.separator+"Etude_1_bouton2.png");
+		Image pacte=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema1"+File.separator+"Etude_1_bouton4.png");
 		Image bleu=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema1"+File.separator+"Etude_1_bouton2.png");
 		Image ajustement=null;
 		Image transformation=null;
@@ -255,7 +255,178 @@ public class ApercuSchema4 extends ConteneurAvecImage{
 				this.drawCenteredString(g, FenetreAccueil.etude.getS4().getMtn_opposition().getImportance().toString(), 903, 460, 55, 35, Color.black);
 			}catch(NullPointerException ex){}
 
-		}else if(this.getPeriode()==1){
+		}else if(this.getPeriode()>=1){
+			this.setPeriode(1);
+			
+			//ROUND RECTANGLES POUR LES NOTES A DEFINIR
+			
+			try{
+				int width=(int) (rouge.getWidth(null)*(a*FenetreAccueil.etude.getS4().getApr_consensus().getImportance().get()+b)/100);
+				int height=(int) (rouge.getHeight(null)*(a*FenetreAccueil.etude.getS4().getApr_consensus().getImportance().get()+b)/100);
+				int x=279-width/2;
+				int y=210-height/2;
+				if(FenetreAccueil.etude.getS4().getApr_consensus().getImportance().get()!=0){
+					g.drawImage(rouge, x, y, width,height , null, null);
+					try{
+						int width_cons=(int) (consensus.getWidth(null)*((a*FenetreAccueil.etude.getS4().getApr_consensus().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getApr_consensus().getConsensus().get()+b)/100);
+						int height_cons=(int) (consensus.getHeight(null)*((a*FenetreAccueil.etude.getS4().getApr_consensus().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getApr_consensus().getConsensus().get()+b)/100);
+						int x_cons=279-width_cons/2;
+						int y_cons=(int) ((166-210)*((a*FenetreAccueil.etude.getS4().getApr_consensus().getImportance().get()+b)/100)+210-height_cons/2);
+						if(FenetreAccueil.etude.getS4().getApr_consensus().getConsensus().get()!=0){
+							g.drawImage(consensus, x_cons, y_cons, width_cons,height_cons , null, null);
+						}
+						g.setColor(Color.white);
+						g.fillRoundRect(140,148, 55, 35, 15, 15);
+						this.drawCenteredString(g, FenetreAccueil.etude.getS4().getApr_consensus().getConsensus().toString(), 140,148, 55, 35, Color.black);
+					}catch(NullPointerException ex){}
+					try{
+						int width_pac=(int) (pacte.getWidth(null)*((a*FenetreAccueil.etude.getS4().getApr_consensus().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getApr_consensus().getPacte().get()+b)/100);
+						int height_pac=(int) (pacte.getHeight(null)*((a*FenetreAccueil.etude.getS4().getApr_consensus().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getApr_consensus().getPacte().get()+b)/100);
+						int x_pac=279-width_pac/2;
+						int y_pac=(int) ((250-210)*((a*FenetreAccueil.etude.getS4().getApr_consensus().getImportance().get()+b)/100)+210-height_pac/2);
+						if(FenetreAccueil.etude.getS4().getApr_consensus().getPacte().get()!=0){
+							g.drawImage(pacte, x_pac, y_pac, width_pac,height_pac , null, null);
+						}
+						g.setColor(Color.white);
+						g.fillRoundRect(140,234, 55, 35, 15, 15);
+						this.drawCenteredString(g, FenetreAccueil.etude.getS4().getApr_consensus().getPacte().toString(), 140,234, 55, 35, Color.black);
+					}catch(NullPointerException ex){}
+				}
+				g.setColor(Color.white);
+				g.fillRoundRect(60, 119, 55, 35, 15, 15);
+				this.drawCenteredString(g, FenetreAccueil.etude.getS4().getApr_consensus().getImportance().toString(), 60, 119, 55, 35, Color.black);
+			}catch(NullPointerException ex){}
+			try{
+				int width=(int) (bleu.getWidth(null)*(a*FenetreAccueil.etude.getS4().getApr_negociation().getImportance().get()+b)/100);
+				int height=(int) (bleu.getHeight(null)*(a*FenetreAccueil.etude.getS4().getApr_negociation().getImportance().get()+b)/100);
+				int x=694-width/2;
+				int y=171-height/2;
+				if(FenetreAccueil.etude.getS4().getApr_negociation().getImportance().get()!=0){
+					g.drawImage(bleu, x, y, width,height , null, null);
+					try{
+						int width_aju=(int) (ajustement.getWidth(null)*((a*FenetreAccueil.etude.getS4().getApr_negociation().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getApr_negociation().getAjustement().get()+b)/100);
+						int height_aju=(int) (ajustement.getHeight(null)*((a*FenetreAccueil.etude.getS4().getApr_negociation().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getApr_negociation().getAjustement().get()+b)/100);
+						int x_aju=(int) ((606-694)*((a*FenetreAccueil.etude.getS4().getApr_negociation().getImportance().get()+b)/100)+694-width_aju/2);
+						int y_aju=171-height_aju/2;
+						if(FenetreAccueil.etude.getS4().getApr_negociation().getAjustement().get()!=0){
+							g.drawImage(ajustement, x_aju, y_aju, width_aju,height_aju , null, null);
+						}
+						g.setColor(Color.white);
+						g.fillRoundRect(578,55, 55, 35, 15, 15);
+						this.drawCenteredString(g, FenetreAccueil.etude.getS4().getApr_negociation().getAjustement().toString(), 578, 55, 55, 35, Color.black);
+					}catch(NullPointerException ex){}
+					try{
+						int width_transfo=(int) (transformation.getWidth(null)*((a*FenetreAccueil.etude.getS4().getApr_negociation().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getApr_negociation().getTransformation().get()+b)/100);
+						int height_transfo=(int) (transformation.getHeight(null)*((a*FenetreAccueil.etude.getS4().getApr_negociation().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getApr_negociation().getTransformation().get()+b)/100);
+						int x_transfo=(int) ((786-694)*((a*FenetreAccueil.etude.getS4().getApr_negociation().getImportance().get()+b)/100)+694-width_transfo/2);
+						int y_transfo=171-height_transfo/2;
+						if(FenetreAccueil.etude.getS4().getApr_negociation().getTransformation().get()!=0){
+							g.drawImage(transformation, x_transfo, y_transfo, width_transfo,height_transfo , null, null);
+						}
+						g.setColor(Color.white);
+						g.fillRoundRect(884, 143, 55, 35, 15, 15);
+						this.drawCenteredString(g, FenetreAccueil.etude.getS4().getApr_negociation().getTransformation().toString(), 884, 143, 55, 35, Color.black);
+					}catch(NullPointerException ex){}
+				}
+				g.setColor(Color.white);
+				g.fillRoundRect(885, 63, 55, 35, 15, 15);
+				this.drawCenteredString(g, FenetreAccueil.etude.getS4().getApr_negociation().getImportance().toString(), 885,63, 55, 35, Color.black);
+			}catch(NullPointerException ex){}
+			try{
+				int width=(int) (vert.getWidth(null)*(a*FenetreAccueil.etude.getS4().getApr_opposition().getImportance().get()+b)/100);
+				int height=(int) (vert.getHeight(null)*(a*FenetreAccueil.etude.getS4().getApr_opposition().getImportance().get()+b)/100);
+				int x=568-width/2;
+				int y=395-height/2;
+				if(FenetreAccueil.etude.getS4().getApr_opposition().getImportance().get()!=0){
+					g.drawImage(vert, x, y, width,height , null, null);
+					try{
+						int width_domi=(int) (domination.getWidth(null)*((a*FenetreAccueil.etude.getS4().getApr_opposition().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getApr_opposition().getDomination().get()+b)/100);
+						int height_domi=(int) (domination.getHeight(null)*((a*FenetreAccueil.etude.getS4().getApr_opposition().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getApr_opposition().getDomination().get()+b)/100);
+						int x_domi=(int) ((389-568)*((a*FenetreAccueil.etude.getS4().getApr_opposition().getImportance().get()+b)/100)+568-width_domi/2);
+						int y_domi=395-height_domi/2;
+						if(FenetreAccueil.etude.getS4().getApr_opposition().getDomination().get()!=0){
+							g.drawImage(domination, x_domi, y_domi, width_domi,height_domi , null, null);
+						}
+						g.setColor(Color.white);
+						g.fillRoundRect(225, 380, 55, 35, 15, 15);
+						this.drawCenteredString(g, FenetreAccueil.etude.getS4().getApr_opposition().getDomination().toString(), 225, 380, 55, 35, Color.black);
+					}catch(NullPointerException ex){}
+					try{
+						int width_cp=(int) (contrePouvoir.getWidth(null)*((a*FenetreAccueil.etude.getS4().getApr_opposition().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getApr_opposition().getContrePouvoir().get()+b)/100);
+						int height_cp=(int) (contrePouvoir.getHeight(null)*((a*FenetreAccueil.etude.getS4().getApr_opposition().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getApr_opposition().getContrePouvoir().get()+b)/100);
+						int x_cp=(int) ((656-568)*((a*FenetreAccueil.etude.getS4().getApr_opposition().getImportance().get()+b)/100)+568-width_cp/2);
+						int y_cp=(int) ((352-395)*((a*FenetreAccueil.etude.getS4().getApr_opposition().getImportance().get()+b)/100)+395-height_cp/2);
+						if(FenetreAccueil.etude.getS4().getApr_opposition().getContrePouvoir().get()!=0){
+							g.drawImage(contrePouvoir, x_cp, y_cp, width_cp,height_cp , null, null);
+						}
+						g.setColor(Color.white);
+						g.fillRoundRect(777,337, 55, 35, 15, 15);
+						this.drawCenteredString(g, FenetreAccueil.etude.getS4().getApr_opposition().getContrePouvoir().toString(), 777, 337, 55, 35, Color.black);
+					}catch(NullPointerException ex){}
+					try{
+						int width_ant=(int) (antagonisme.getWidth(null)*((a*FenetreAccueil.etude.getS4().getApr_opposition().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getApr_opposition().getAntagonisme().get()+b)/100);
+						int height_ant=(int) (antagonisme.getHeight(null)*((a*FenetreAccueil.etude.getS4().getApr_opposition().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getApr_opposition().getAntagonisme().get()+b)/100);
+						int x_ant=(int) ((655-568)*((a*FenetreAccueil.etude.getS4().getApr_opposition().getImportance().get()+b)/100)+568-width_ant/2);
+						int y_ant=(int) ((439-395)*((a*FenetreAccueil.etude.getS4().getApr_opposition().getImportance().get()+b)/100)+395-height_ant/2);
+						if(FenetreAccueil.etude.getS4().getApr_opposition().getAntagonisme().get()!=0){
+							g.drawImage(antagonisme, x_ant, y_ant, width_ant,height_ant , null, null);
+						}
+						g.setColor(Color.white);
+						g.fillRoundRect(777,424, 55, 35, 15, 15);
+						this.drawCenteredString(g, FenetreAccueil.etude.getS4().getApr_opposition().getAntagonisme().toString(), 777, 424, 55, 35, Color.black);
+					}catch(NullPointerException ex){}
+				}
+				g.setColor(Color.white);
+				g.fillRoundRect(903,460, 55, 35, 15, 15);
+				this.drawCenteredString(g, FenetreAccueil.etude.getS4().getApr_opposition().getImportance().toString(), 903, 460, 55, 35, Color.black);
+				//this.drawArrow(g);
+			}catch(NullPointerException ex){}
+
+		//mettre les risques
+			/*g.setColor(Color.red);
+			g.fillRoundRect(0, 310, 243, 225, 20, 20);*/
+			String texte1="";
+			String texte2="";
+			String texte3="";
+			try{
+				texte1=texte1+"Risque Consensus ("+FenetreAccueil.etude.getS4().getRis_consensus().getImportance().toString()+")\n\n";
+				try{
+					texte1=texte1+"   -Consensus ("+FenetreAccueil.etude.getS4().getRis_consensus().getConsensus().toString()+")\n";
+				}catch(NullPointerException ex){}
+				try{
+					texte1=texte1+"   -Pacte ("+FenetreAccueil.etude.getS4().getRis_consensus().getPacte().toString()+")";
+				}catch(NullPointerException ex){}
+				g.setColor(Color.red);
+				g.fillRoundRect(0, 306, 243, 75, 20, 20);
+				this.drawCenteredString(g, texte1, 0, 306, 243, 75, Color.white);
+			}catch(NullPointerException ex){}
+			try{
+				texte2=texte2+"Risque Negociation ("+FenetreAccueil.etude.getS4().getRis_negociation().getImportance().toString()+")\n\n";
+				try{
+					texte2=texte2+"   -Ajustement hiérarchique ("+FenetreAccueil.etude.getS4().getRis_negociation().getAjustement().toString()+")\n";
+				}catch(NullPointerException ex){}
+				try{
+					texte2=texte2+"   -Transformation négociée ("+FenetreAccueil.etude.getS4().getRis_negociation().getTransformation().toString()+")";
+				}catch(NullPointerException ex){}
+				g.setColor(Color.red);
+				g.fillRoundRect(0, 383, 243, 75, 20, 20);
+				this.drawCenteredString(g, texte2, 0, 383, 243, 75, Color.white);
+			}catch(NullPointerException ex){}
+			try{
+				texte3=texte3+"Risque Opposition ("+FenetreAccueil.etude.getS4().getRis_opposition().getImportance().toString()+")\n\n";
+				try{
+					texte3=texte3+"   -Domination ("+FenetreAccueil.etude.getS4().getRis_opposition().getDomination().toString()+")\n";
+				}catch(NullPointerException ex){}
+				try{
+					texte3=texte3+"   -Contre Pouvoir ("+FenetreAccueil.etude.getS4().getRis_opposition().getContrePouvoir().toString()+")\n";
+				}catch(NullPointerException ex){}
+				try{
+					texte3=texte3+"   -Antagonisme ("+FenetreAccueil.etude.getS4().getRis_opposition().getAntagonisme().toString()+")";
+				}catch(NullPointerException ex){}
+				g.setColor(Color.red);
+				g.fillRoundRect(0, 460, 243, 75, 20, 20);
+				this.drawCenteredString(g, texte3, 0, 464, 243, 75, Color.white);
+			}catch(NullPointerException ex){}
 			
 		}
 		
