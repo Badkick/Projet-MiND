@@ -19,7 +19,7 @@ public class ApercuSchema5 extends ConteneurAvecImage {
 	float alpha = 0.0f;
 	
 	public ApercuSchema5(int width, int height,int periode){
-		super(width,height,Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"Etude_5_fond.png"));
+		super(width,height,Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"Etude_5_Fond.png"));
 		this.periode=periode;
 		this.initialiserTouche();
 	}
@@ -228,28 +228,28 @@ public class ApercuSchema5 extends ConteneurAvecImage {
 		this.requestFocusInWindow();
 		g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alpha));
 		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-		double a=0.7;
-		int b=30;
+		double a=0.3;
+		int b=70;
 		
-		Image reglementaire=null;
-		Image mobilite=null;
-		Image service_public=null;
-		Image professionnelle=null;
-		Image communautaire=null;
-		Image entrepreneuriale=null;
+		Image reglementaire=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"reglementaire.png");
+		Image mobilite=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"mobilite.png");
+		Image service_public=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"pro_service_public.png");
+		Image professionnelle=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"professionnelle.png");
+		Image communautaire=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"communautaire.png");
+		Image entrepreneuriale=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"entrepreneuriale.png");
 		//reglementaire :208,129
 		//mobilite : 682, 135
 		//service_public : 472, 280
 		//professionnelle : 604, 404
 		//communautaire : 260, 431
 		//entrepreneuriale : 816, 462
-		g.setColor(Color.white);
+		/*g.setColor(Color.white);
 		g.fillRoundRect(59, 111, 55, 35, 15, 15);
 		g.fillRoundRect(805, 117, 55, 35, 15, 15);
 		g.fillRoundRect(566, 262, 55, 35, 15, 15);
 		g.fillRoundRect(576, 495, 55, 35, 15, 15);
 		g.fillRoundRect(87, 413, 55, 35, 15, 15);
-		g.fillRoundRect(884, 371, 55, 35, 15, 15);
+		g.fillRoundRect(884, 371, 55, 35, 15, 15);*/
 		
 		if(this.getPeriode()<=0){
 			this.setPeriode(0);

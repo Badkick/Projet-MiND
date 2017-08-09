@@ -43,7 +43,7 @@ public class ImagesApercu extends Conteneur{
 			avant = FenetreAccueil.etude.getS1().getMax_apres();
 			maintenant=FenetreAccueil.etude.getS1().getMax_encore_apres();
 		}
-		g.setColor(Color.red);
+		g.setColor(new Color(255, 211, 33));
 		if(avant ==0){
 			if(maintenant==1){
 				int[] X = { 2*411, 2*516, 2*516, 2*541, 2*516, 2*516, 2*411};
@@ -116,7 +116,7 @@ public class ImagesApercu extends Conteneur{
 	}
 	
 	public void drawArrow_schema2(Graphics2D g){
-		g.setColor(Color.red);
+		g.setColor(new Color(255, 211, 33));
 		if(FenetreAccueil.etude.getS2().getMtn_principale().getNumero()==1){
 			if(FenetreAccueil.etude.getS2().getApr_principale().getNumero()==2){
 				int[] X = { 2*700, 2*665, 2*669, 2*646, 2*653, 2*657, 2*692};
@@ -231,7 +231,7 @@ public class ImagesApercu extends Conteneur{
 	}
 	
 	public void drawArrow_schema3(Graphics2D g){
-		g.setColor(Color.red);
+		g.setColor(new Color(255, 211, 33));
 		if(FenetreAccueil.etude.getS3().getMtn_principale().getNumero()==1){
 			if(FenetreAccueil.etude.getS3().getApr_principale().getNumero()==2){
 				int[] X = { 2*364, 2*377, 2*377, 2*392, 2*375, 2*375, 2*364};
@@ -344,6 +344,335 @@ public class ImagesApercu extends Conteneur{
 			}
 		}
 	}
+	
+	public void drawArrow_schema4(Graphics2D g){
+		int maintenant=FenetreAccueil.etude.getS4().getMax_maintenant();
+		int apres=FenetreAccueil.etude.getS4().getMax_apres();
+		g.setColor(new Color(255, 211, 33));
+		if(maintenant==0){
+			if(apres==1){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema4"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 2*352, 2*155, 2*image.getWidth(null), 2*image.getHeight(null), null);
+			}else if (apres==2){
+				int[] X = { 2*372, 2*500, 2*500, 2*513, 2*500, 2*500, 2*372};
+				int[] Y = { 2*151, 2*151, 2*137, 2*167, 2*197, 2*181, 2*181};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if (apres==3){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema4"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 2*361, 2*1, 2*image.getWidth(null), 2*image.getHeight(null), null);
+			}else if (apres==4){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema4"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 2*352, 2*168, 2*image.getWidth(null), 2*image.getHeight(null), null);
+			}else if (apres==5){
+				int[] X = { 2*364, 2*557, 2*563, 2*562, 2*535, 2*542, 2*349};
+				int[] Y = { 2*177, 2*292, 2*281, 2*312, 2*330, 2*318, 2*203};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==6){
+				int[] X = { 2*366, 2*554, 2*564, 2*553, 2*521, 2*532, 2*344};
+				int[] Y = { 2*187, 2*393, 2*384, 2*414, 2*423, 2*413, 2*207};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}
+		}else if(maintenant==1){
+			if(apres==0){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema4"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 2*357, 2*154, 2*image.getWidth(null), 2*image.getHeight(null), null);
+			}else if (apres==2){
+				int[] X = { 2*360, 2*498, 2*494, 2*516, 2*512, 2*506, 2*369};
+				int[] Y = { 2*225, 2*181, 2*168, 2*191, 2*222, 2*211, 2*253};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if (apres==3){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema4"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 2*368, 2*235, 2*image.getWidth(null), 2*image.getHeight(null), null);
+			}else if (apres==4){
+				int[] X = { 2*314, 2*344, 2*356, 2*338, 2*306, 2*318, 2*288};
+				int[] Y = { 2*287, 2*338, 2*331, 2*359, 2*360, 2*353, 2*302};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if (apres==5){
+				int[] X = { 2*365, 2*543, 2*548, 2*552, 2*528, 2*533, 2*355};
+				int[] Y = { 2*240, 2*305, 2*292, 2*325, 2*347, 2*333, 2*268};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==6){
+				int[] X = { 2*359, 2*552, 2*560, 2*558, 2*529, 2*536, 2*342};
+				int[] Y = { 2*264, 2*389, 2*378, 2*409, 2*427, 2*415, 2*289};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}
+		}else if(maintenant==2){
+			if(apres==0){
+				int[] X = { 2*509, 2*372, 2*372, 2*357, 2*371, 2*371, 2*509};
+				int[] Y = { 2*152, 2*149, 2*134, 2*164, 2*193, 2*179, 2*181};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if (apres==1){
+				int[] X = { 2*511, 2*366, 2*362, 2*355, 2*377, 2*374, 2*519};
+				int[] Y = { 2*181, 2*220, 2*206, 2*239, 2*263, 2*249, 2*210};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if (apres==3){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema4"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 2*633, 2*14, 2*image.getWidth(null), 2*image.getHeight(null), null);
+			}else if (apres==4){
+				int[] X = { 2*530, 2*449, 2*438, 2*453, 2*485, 2*474, 2*555};
+				int[] Y = { 2*223, 2*338, 2*331, 2*359, 2*364, 2*355, 2*240};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if (apres==5){
+				int[] X = { 2*599, 2*604, 2*589, 2*620, 2*647, 2*633, 2*628};
+				int[] Y = { 2*256, 2*300, 2*300, 2*312, 2*294, 2*295, 2*253};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==6){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema4"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 2*491, 2*227, 2*image.getWidth(null), 2*image.getHeight(null), null);
+			}
+		}else if(maintenant==3){
+			if(apres==0){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema4"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 2*175, 2*13, 2*image.getWidth(null), 2*image.getHeight(null), null);
+			}else if(apres==1){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema4"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 2*197, 2*233, 2*image.getWidth(null), 2*image.getHeight(null), null);
+			}else if(apres==2){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema4"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 2*624, 2*242, 2*image.getWidth(null), 2*image.getHeight(null), null);
+			}else if(apres==4){
+				int[] X = { 2*709, 2*473, 2*466, 2*466, 2*492, 2*487, 2*723};
+				int[] Y = { 2*228, 2*344, 2*331, 2*365, 2*385, 2*371, 2*255};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==5){
+				int[] X = { 2*749, 2*727, 2*714, 2*735, 2*768, 2*754, 2*777};
+				int[] Y = { 2*248, 2*301, 2*296, 2*321, 2*319, 2*313, 2*259};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==6){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema4"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 2*832, 2*213, 2*image.getWidth(null), 2*image.getHeight(null), null);
+			}
+		}else if(maintenant==4){
+			if(apres==0){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema4"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 2*354, 2*104, 2*image.getWidth(null), 2*image.getHeight(null), null);
+			}else if(apres==1){
+				int[] X = { 2*335, 2*314, 2*300, 2*323, 2*356, 2*342, 2*363};
+				int[] Y = { 2*363, 2*302, 2*307, 2*283, 2*287, 2*292, 2*353};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==2){
+				int[] X = { 2*425, 2*520, 2*509, 2*541, 2*555, 2*544, 2*449};
+				int[] Y = { 2*346, 2*230, 2*220, 2*227, 2*258, 2*248, 2*365};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==3){
+				int[] X = { 2*471, 2*697, 2*689, 2*717, 2*720, 2*712, 2*487};
+				int[] Y = { 2*353, 2*216, 2*203, 2*221, 2*254, 2*242, 2*378};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==5){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema4"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 2*448, 2*264, 2*image.getWidth(null), 2*image.getHeight(null), null);
+			}else if(apres==6){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema4"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 2*448, 2*447, 2*image.getWidth(null), 2*image.getHeight(null), null);
+			}
+		}else if(maintenant==5){
+			if(apres==0){
+				int[] X = { 2*550, 2*362, 2*352, 2*358, 2*389, 2*379, 2*568};
+				int[] Y = { 2*340, 2*199, 2*209, 2*177, 2*162, 2*175, 2*315};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==1){
+				int[] X = { 2*534, 2*364, 2*357, 2*355, 2*381, 2*375, 2*546};
+				int[] Y = { 2*357, 2*285, 2*298, 2*266, 2*244, 2*258, 2*329};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==2){
+				int[] X = { 2*587, 2*586, 2*572, 2*601, 2*631, 2*617, 2*617};
+				int[] Y = { 2*315, 2*269, 2*269, 2*253, 2*268, 2*268, 2*314};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==3){
+				int[] X = { 2*703, 2*730, 2*717, 2*750, 2*770, 2*757, 2*729};
+				int[] Y = { 2*309, 2*255, 2*248, 2*247, 2*274, 2*268, 2*323};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==4){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema4"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 2*357, 2*287, 2*image.getWidth(null), 2*image.getHeight(null), null);
+			}else if(apres==6){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema4"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 2*822, 2*351, 2*image.getWidth(null), 2*image.getHeight(null), null);
+			}
+		}else if(maintenant==6){
+			if(apres==0){
+				int[] X = { 2*546, 2*360, 2*349, 2*361, 2*393, 2*383, 2*569};
+				int[] Y = { 2*422, 2*204, 2*212, 2*181, 2*174, 2*184, 2*402};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==1){
+				int[] X = { 2*558, 2*357, 2*350, 2*353, 2*382, 2*375, 2*575};
+				int[] Y = { 2*426, 2*289, 2*301, 2*267, 2*252, 2*264, 2*401};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==2){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema4"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 2*446, 2*180, 2*image.getWidth(null), 2*image.getHeight(null), null);
+			}else if(apres==3){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema4"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 2*792, 2*159, 2*image.getWidth(null), 2*image.getHeight(null), null);
+			}else if(apres==4){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema4"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 2*361, 2*433, 2*image.getWidth(null), 2*image.getHeight(null), null);
+			}else if(apres==5){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema4"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 2*822, 2*351, 2*image.getWidth(null), 2*image.getHeight(null), null);
+			}
+		}
+	}
+	
+	public void drawArrow_schema5(Graphics2D g){
+		int maintenant=FenetreAccueil.etude.getS5().getMax_maintenant();
+		int apres=FenetreAccueil.etude.getS5().getMax_apres();
+		g.setColor(new Color(255, 211, 33));
+		if(maintenant==0){
+			if(apres==1){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 2*269, 2*1, 2*image.getWidth(null), 2*image.getHeight(null), null);
+			}else if(apres==2){
+				int[] X = { 2*294, 2*385, 2*392, 2*393, 2*367, 2*373, 2*281};
+				int[] Y = { 2*169, 2*211, 2*198, 2*232, 2*252, 2*239, 2*196};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==3){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 2*299, 2*111, 2*image.getWidth(null), 2*image.getHeight(null), null);
+			}else if(apres==4){
+				int[] X = { 2*233, 2*259, 2*273, 2*248, 2*215, 2*230, 2*204};
+				int[] Y = { 2*214, 2*350, 2*348, 2*369, 2*360, 2*356, 2*220};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==5){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 2*306, 2*120, 2*image.getWidth(null), 2*image.getHeight(null), null);
+			}
+		}else if(maintenant==1){
+			if(apres==0){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 2*201, 2*3, 2*image.getWidth(null), 2*image.getHeight(null), null);
+			}else if(apres==2){
+				int[] X = { 2*601, 2*570, 2*579, 2*548, 2*540, 2*550, 2*580};
+				int[] Y = { 2*196, 2*222, 2*234, 2*222, 2*189, 2*200, 2*173};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==3){
+				int[] X = { 2*676, 2*649, 2*663, 2*630, 2*605, 2*619, 2*647};
+				int[] Y = { 2*206, 2*312, 2*316, 2*323, 2*301, 2*304, 2*198};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==4){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 2*50, 2*125, 2*image.getWidth(null), 2*image.getHeight(null), null);
+			}else if(apres==5){
+				int[] X = { 2*763, 2*815, 2*829, 2*804, 2*771, 2*786, 2*734};
+				int[] Y = { 2*189, 2*382, 2*379, 2*402, 2*394, 2*390, 2*195};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}
+		}else if(maintenant==2){
+			if(apres==0){
+				int[] X = { 2*388, 2*301, 2*294, 2*296, 2*325, 2*318, 2*404};
+				int[] Y = { 2*244, 2*189, 2*200, 2*167, 2*151, 2*163, 2*219};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==1){
+				int[] X = { 2*529, 2*566, 2*556, 2*587, 2*598, 2*587, 2*549};
+				int[] Y = { 2*210, 2*174, 2*163, 2*174, 2*207, 2*196, 2*232};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==3){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 2*568, 2*226, 2*image.getWidth(null), 2*image.getHeight(null), null);
+			}else if(apres==4){
+				int[] X = { 2*416, 2*380, 2*391, 2*358, 2*345, 2*357, 2*393};
+				int[] Y = { 2*348, 2*391, 2*400, 2*393, 2*362, 2*371, 2*329};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==5){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 2*564, 2*271, 2*image.getWidth(null), 2*image.getHeight(null), null);
+			}
+		}else if(maintenant==3){
+			if(apres==0){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 2*37, 2*194, 2*image.getWidth(null), 2*image.getHeight(null), null);
+			}else if(apres==1){
+				int[] X = { 2*643, 2*669, 2*683, 2*657, 2*625, 2*639, 2*614};
+				int[] Y = { 2*325, 2*210, 2*214, 2*192, 2*200, 2*203, 2*318};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==2){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 2*380, 2*353, 2*image.getWidth(null), 2*image.getHeight(null), null);
+			}else if(apres==4){
+				int[] X = { 2*512, 2*399, 2*399, 2*381, 2*394, 2*395, 2*509};
+				int[] Y = { 2*427, 2*438, 2*452, 2*425, 2*392, 2*408, 2*396};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==5){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 2*672, 2*276, 2*image.getWidth(null), 2*image.getHeight(null), null);
+			}
+		}else if(maintenant==4){
+			if(apres==0){
+				int[] X = { 2*215, 2*200, 2*186, 2*213, 2*245, 2*230, 2*245};
+				int[] Y = { 2*373, 2*238, 2*239, 2*220, 2*232, 2*233, 2*370};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==1){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 2*373, 2*178, 2*image.getWidth(null), 2*image.getHeight(null), null);
+			}else if(apres==2){
+				int[] X = { 2*343, 2*382, 2*372, 2*404, 2*415, 2*404, 2*366};
+				int[] Y = { 2*379, 2*338, 2*328, 2*337, 2*368, 2*359, 2*400};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==3){
+				int[] X = { 2*383, 2*496, 2*498, 2*510, 2*491, 2*492, 2*380};
+				int[] Y = { 2*445, 2*431, 2*445, 2*414, 2*386, 2*401, 2*414};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==5){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 2*321, 2*294, 2*image.getWidth(null), 2*image.getHeight(null), null);
+			}
+		}else if(maintenant==5){
+			if(apres==0){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 2*19, 2*215, 2*image.getWidth(null), 2*image.getHeight(null), null);
+			}else if(apres==1){
+				int[] X = { 2*771, 2*720, 2*705, 2*730, 2*763, 2*749, 2*800};
+				int[] Y = { 2*403, 2*210, 2*214, 2*191, 2*198, 2*202, 2*395};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==2){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 2*506, 2*130, 2*image.getWidth(null), 2*image.getHeight(null), null);
+			}else if(apres==3){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 2*683, 2*278, 2*image.getWidth(null), 2*image.getHeight(null), null);
+			}else if(apres==4){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 2*83, 2*279, 2*image.getWidth(null), 2*image.getHeight(null), null);
+			}
+		}
+	}
+	
 	
 	public void drawCenteredString(Graphics g, String text, int abscisse, int ordonnee, int width, int height,Color color){
 		FontMetrics metrics = g.getFontMetrics(new Font(FenetreAccueil.theme.getPolice().getFontName(),FenetreAccueil.theme.getPolice().getStyle(),2*FenetreAccueil.theme.getPolice().getSize()));
@@ -1103,6 +1432,311 @@ public class ImagesApercu extends Conteneur{
 			this.drawCenteredString(g, Organisation.FLEXIBLE.getNom(), 2*587, 2*345, width, height,Color.white);
 			
 		}else if(this.getPeriode()==7 || this.getPeriode()==8){
+			Image fond=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema4"+File.separator+"Etude_4_fond.png");
+			g.drawImage(Images.scaleImage(fond,1920, 1080),0,0,null);
+			double a=0.3;
+			int b=70;
+			Image rouge=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema4"+File.separator+"rouge.png");
+			Image consensus=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema4"+File.separator+"consensus.png");
+			Image pacte=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema4"+File.separator+"pacte.png");
+			Image bleu=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema4"+File.separator+"bleu.png");
+			Image ajustement=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema4"+File.separator+"ajustement.png");
+			Image transformation=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema4"+File.separator+"transformation.png");
+			Image vert=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema4"+File.separator+"vert.png");
+			Image domination=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema4"+File.separator+"domination.png");
+			Image contrePouvoir=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema4"+File.separator+"contrepouvoir.png");
+			Image antagonisme=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema4"+File.separator+"antagonisme.png");
+			
+			if(this.getPeriode()==7){
+				
+				try{
+					int width=(int) (rouge.getWidth(null)*(a*FenetreAccueil.etude.getS4().getMtn_consensus().getImportance().get()+b)/100);
+					int height=(int) (rouge.getHeight(null)*(a*FenetreAccueil.etude.getS4().getMtn_consensus().getImportance().get()+b)/100);
+					int x=279-width/2;
+					int y=210-height/2;
+					if(FenetreAccueil.etude.getS4().getMtn_consensus().getImportance().get()!=0){
+						g.drawImage(rouge, 2*x, 2*y, 2*width, 2*height , null, null);
+						try{
+							int width_cons=(int) (consensus.getWidth(null)*((a*FenetreAccueil.etude.getS4().getMtn_consensus().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getMtn_consensus().getConsensus().get()+b)/100);
+							int height_cons=(int) (consensus.getHeight(null)*((a*FenetreAccueil.etude.getS4().getMtn_consensus().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getMtn_consensus().getConsensus().get()+b)/100);
+							int x_cons=279-width_cons/2;
+							int y_cons=(int) ((166-210)*((a*FenetreAccueil.etude.getS4().getMtn_consensus().getImportance().get()+b)/100)+210-height_cons/2);
+							if(FenetreAccueil.etude.getS4().getMtn_consensus().getConsensus().get()!=0){
+								g.drawImage(consensus, 2*x_cons, 2*y_cons, 2*width_cons, 2*height_cons , null, null);
+							}
+							g.setColor(Color.white);
+							g.fillRoundRect(2*140,2*148, 2*55, 2*35, 2*15, 2*15);
+							this.drawCenteredString(g, FenetreAccueil.etude.getS4().getMtn_consensus().getConsensus().toString(), 2*140,2*148, 2*55, 2*35, Color.black);
+						}catch(NullPointerException ex){}
+						try{
+							int width_pac=(int) (pacte.getWidth(null)*((a*FenetreAccueil.etude.getS4().getMtn_consensus().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getMtn_consensus().getPacte().get()+b)/100);
+							int height_pac=(int) (pacte.getHeight(null)*((a*FenetreAccueil.etude.getS4().getMtn_consensus().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getMtn_consensus().getPacte().get()+b)/100);
+							int x_pac=279-width_pac/2;
+							int y_pac=(int) ((250-210)*((a*FenetreAccueil.etude.getS4().getMtn_consensus().getImportance().get()+b)/100)+210-height_pac/2);
+							if(FenetreAccueil.etude.getS4().getMtn_consensus().getPacte().get()!=0){
+								g.drawImage(pacte, 2*x_pac, 2*y_pac, 2*width_pac,2*height_pac , null, null);
+							}
+							g.setColor(Color.white);
+							g.fillRoundRect(2*140,2*234, 2*55, 2*35, 2*15, 2*15);
+							this.drawCenteredString(g, FenetreAccueil.etude.getS4().getMtn_consensus().getPacte().toString(), 2*140,2*234, 2*55, 2*35, Color.black);
+						}catch(NullPointerException ex){}
+					}
+					g.setColor(Color.white);
+					g.fillRoundRect(2*60, 2*119, 2*55, 2*35, 2*15, 2*15);
+					this.drawCenteredString(g, FenetreAccueil.etude.getS4().getMtn_consensus().getImportance().toString(), 2*60, 2*119, 2*55, 2*35, Color.black);
+				}catch(NullPointerException ex){}
+				try{
+					int width=(int) (bleu.getWidth(null)*(a*FenetreAccueil.etude.getS4().getMtn_negociation().getImportance().get()+b)/100);
+					int height=(int) (bleu.getHeight(null)*(a*FenetreAccueil.etude.getS4().getMtn_negociation().getImportance().get()+b)/100);
+					int x=694-width/2;
+					int y=171-height/2;
+					if(FenetreAccueil.etude.getS4().getMtn_negociation().getImportance().get()!=0){
+						g.drawImage(bleu, 2*x, 2*y, 2*width,2*height , null, null);
+						try{
+							int width_aju=(int) (ajustement.getWidth(null)*((a*FenetreAccueil.etude.getS4().getMtn_negociation().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getMtn_negociation().getAjustement().get()+b)/100);
+							int height_aju=(int) (ajustement.getHeight(null)*((a*FenetreAccueil.etude.getS4().getMtn_negociation().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getMtn_negociation().getAjustement().get()+b)/100);
+							int x_aju=(int) ((606-694)*((a*FenetreAccueil.etude.getS4().getMtn_negociation().getImportance().get()+b)/100)+694-width_aju/2);
+							int y_aju=171-height_aju/2;
+							if(FenetreAccueil.etude.getS4().getMtn_negociation().getAjustement().get()!=0){
+								g.drawImage(ajustement, 2*x_aju, 2*y_aju, 2*width_aju,2*height_aju , null, null);
+							}
+							g.setColor(Color.white);
+							g.fillRoundRect(2*578,2*55, 2*55, 2*35, 2*15, 2*15);
+							this.drawCenteredString(g, FenetreAccueil.etude.getS4().getMtn_negociation().getAjustement().toString(), 2*578, 2*55, 2*55, 2*35, Color.black);
+						}catch(NullPointerException ex){}
+						try{
+							int width_transfo=(int) (transformation.getWidth(null)*((a*FenetreAccueil.etude.getS4().getMtn_negociation().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getMtn_negociation().getTransformation().get()+b)/100);
+							int height_transfo=(int) (transformation.getHeight(null)*((a*FenetreAccueil.etude.getS4().getMtn_negociation().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getMtn_negociation().getTransformation().get()+b)/100);
+							int x_transfo=(int) ((786-694)*((a*FenetreAccueil.etude.getS4().getMtn_negociation().getImportance().get()+b)/100)+694-width_transfo/2);
+							int y_transfo=171-height_transfo/2;
+							if(FenetreAccueil.etude.getS4().getMtn_negociation().getTransformation().get()!=0){
+								g.drawImage(transformation, 2*x_transfo, 2*y_transfo, 2*width_transfo,2*height_transfo , null, null);
+							}
+							g.setColor(Color.white);
+							g.fillRoundRect(2*884, 2*143, 2*55, 2*35, 2*15, 2*15);
+							this.drawCenteredString(g, FenetreAccueil.etude.getS4().getMtn_negociation().getTransformation().toString(), 2*884, 2*143, 2*55, 2*35, Color.black);
+						}catch(NullPointerException ex){}
+					}
+					g.setColor(Color.white);
+					g.fillRoundRect(2*885, 2*63, 2*55, 2*35, 2*15, 2*15);
+					this.drawCenteredString(g, FenetreAccueil.etude.getS4().getMtn_negociation().getImportance().toString(), 2*885,2*63, 2*55, 2*35, Color.black);
+				}catch(NullPointerException ex){}
+				try{
+					int width=(int) (vert.getWidth(null)*(a*FenetreAccueil.etude.getS4().getMtn_opposition().getImportance().get()+b)/100);
+					int height=(int) (vert.getHeight(null)*(a*FenetreAccueil.etude.getS4().getMtn_opposition().getImportance().get()+b)/100);
+					int x=568-width/2;
+					int y=395-height/2;
+					if(FenetreAccueil.etude.getS4().getMtn_opposition().getImportance().get()!=0){
+						g.drawImage(vert, 2*x, 2*y, 2*width,2*height , null, null);
+						try{
+							int width_domi=(int) (domination.getWidth(null)*((a*FenetreAccueil.etude.getS4().getMtn_opposition().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getMtn_opposition().getDomination().get()+b)/100);
+							int height_domi=(int) (domination.getHeight(null)*((a*FenetreAccueil.etude.getS4().getMtn_opposition().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getMtn_opposition().getDomination().get()+b)/100);
+							int x_domi=(int) ((389-568)*((a*FenetreAccueil.etude.getS4().getMtn_opposition().getImportance().get()+b)/100)+568-width_domi/2);
+							int y_domi=395-height_domi/2;
+							if(FenetreAccueil.etude.getS4().getMtn_opposition().getDomination().get()!=0){
+								g.drawImage(domination, 2*x_domi, 2*y_domi, 2*width_domi,2*height_domi , null, null);
+							}
+							g.setColor(Color.white);
+							g.fillRoundRect(2*243, 2*380, 2*55, 2*35, 2*15, 2*15);
+							this.drawCenteredString(g, FenetreAccueil.etude.getS4().getMtn_opposition().getDomination().toString(), 2*243, 2*380, 2*55, 2*35, Color.black);
+						}catch(NullPointerException ex){}
+						try{
+							int width_cp=(int) (contrePouvoir.getWidth(null)*((a*FenetreAccueil.etude.getS4().getMtn_opposition().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getMtn_opposition().getContrePouvoir().get()+b)/100);
+							int height_cp=(int) (contrePouvoir.getHeight(null)*((a*FenetreAccueil.etude.getS4().getMtn_opposition().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getMtn_opposition().getContrePouvoir().get()+b)/100);
+							int x_cp=(int) ((656-568)*((a*FenetreAccueil.etude.getS4().getMtn_opposition().getImportance().get()+b)/100)+568-width_cp/2);
+							int y_cp=(int) ((352-395)*((a*FenetreAccueil.etude.getS4().getMtn_opposition().getImportance().get()+b)/100)+395-height_cp/2);
+							if(FenetreAccueil.etude.getS4().getMtn_opposition().getContrePouvoir().get()!=0){
+								g.drawImage(contrePouvoir, 2*x_cp, 2*y_cp, 2*width_cp,2*height_cp , null, null);
+							}
+							g.setColor(Color.white);
+							g.fillRoundRect(2*777,2*337, 2*55, 2*35, 2*15, 2*15);
+							this.drawCenteredString(g, FenetreAccueil.etude.getS4().getMtn_opposition().getContrePouvoir().toString(), 2*777, 2*337, 2*55, 2*35, Color.black);
+						}catch(NullPointerException ex){}
+						try{
+							int width_ant=(int) (antagonisme.getWidth(null)*((a*FenetreAccueil.etude.getS4().getMtn_opposition().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getMtn_opposition().getAntagonisme().get()+b)/100);
+							int height_ant=(int) (antagonisme.getHeight(null)*((a*FenetreAccueil.etude.getS4().getMtn_opposition().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getMtn_opposition().getAntagonisme().get()+b)/100);
+							int x_ant=(int) ((655-568)*((a*FenetreAccueil.etude.getS4().getMtn_opposition().getImportance().get()+b)/100)+568-width_ant/2);
+							int y_ant=(int) ((439-395)*((a*FenetreAccueil.etude.getS4().getMtn_opposition().getImportance().get()+b)/100)+395-height_ant/2);
+							if(FenetreAccueil.etude.getS4().getMtn_opposition().getAntagonisme().get()!=0){
+								g.drawImage(antagonisme, 2*x_ant, 2*y_ant, 2*width_ant,2*height_ant , null, null);
+							}
+							g.setColor(Color.white);
+							g.fillRoundRect(2*777,2*424, 2*55, 2*35, 2*15, 2*15);
+							this.drawCenteredString(g, FenetreAccueil.etude.getS4().getMtn_opposition().getAntagonisme().toString(), 2*777, 2*424, 2*55, 2*35, Color.black);
+						}catch(NullPointerException ex){}
+					}
+					g.setColor(Color.white);
+					g.fillRoundRect(2*903,2*460, 2*55, 2*35, 2*15, 2*15);
+					this.drawCenteredString(g, FenetreAccueil.etude.getS4().getMtn_opposition().getImportance().toString(), 2*903, 2*460, 2*55, 2*35, Color.black);
+				}catch(NullPointerException ex){}
+				
+			}else if(this.getPeriode()==8){
+				
+				try{
+					int width=(int) (rouge.getWidth(null)*(a*FenetreAccueil.etude.getS4().getApr_consensus().getImportance().get()+b)/100);
+					int height=(int) (rouge.getHeight(null)*(a*FenetreAccueil.etude.getS4().getApr_consensus().getImportance().get()+b)/100);
+					int x=279-width/2;
+					int y=210-height/2;
+					if(FenetreAccueil.etude.getS4().getApr_consensus().getImportance().get()!=0){
+						g.drawImage(rouge, 2*x, 2*y, 2*width, 2*height , null, null);
+						try{
+							int width_cons=(int) (consensus.getWidth(null)*((a*FenetreAccueil.etude.getS4().getApr_consensus().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getApr_consensus().getConsensus().get()+b)/100);
+							int height_cons=(int) (consensus.getHeight(null)*((a*FenetreAccueil.etude.getS4().getApr_consensus().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getApr_consensus().getConsensus().get()+b)/100);
+							int x_cons=279-width_cons/2;
+							int y_cons=(int) ((166-210)*((a*FenetreAccueil.etude.getS4().getApr_consensus().getImportance().get()+b)/100)+210-height_cons/2);
+							if(FenetreAccueil.etude.getS4().getApr_consensus().getConsensus().get()!=0){
+								g.drawImage(consensus, 2*x_cons, 2*y_cons, 2*width_cons, 2*height_cons , null, null);
+							}
+							g.setColor(Color.white);
+							g.fillRoundRect(2*140,2*148, 2*55, 2*35, 2*15, 2*15);
+							this.drawCenteredString(g, FenetreAccueil.etude.getS4().getApr_consensus().getConsensus().toString(), 2*140,2*148, 2*55, 2*35, Color.black);
+						}catch(NullPointerException ex){}
+						try{
+							int width_pac=(int) (pacte.getWidth(null)*((a*FenetreAccueil.etude.getS4().getApr_consensus().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getApr_consensus().getPacte().get()+b)/100);
+							int height_pac=(int) (pacte.getHeight(null)*((a*FenetreAccueil.etude.getS4().getApr_consensus().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getApr_consensus().getPacte().get()+b)/100);
+							int x_pac=279-width_pac/2;
+							int y_pac=(int) ((250-210)*((a*FenetreAccueil.etude.getS4().getApr_consensus().getImportance().get()+b)/100)+210-height_pac/2);
+							if(FenetreAccueil.etude.getS4().getApr_consensus().getPacte().get()!=0){
+								g.drawImage(pacte, 2*x_pac, 2*y_pac, 2*width_pac,2*height_pac , null, null);
+							}
+							g.setColor(Color.white);
+							g.fillRoundRect(2*140,2*234, 2*55, 2*35, 2*15, 2*15);
+							this.drawCenteredString(g, FenetreAccueil.etude.getS4().getApr_consensus().getPacte().toString(), 2*140,2*234, 2*55, 2*35, Color.black);
+						}catch(NullPointerException ex){}
+					}
+					g.setColor(Color.white);
+					g.fillRoundRect(2*60, 2*119, 2*55, 2*35, 2*15, 2*15);
+					this.drawCenteredString(g, FenetreAccueil.etude.getS4().getApr_consensus().getImportance().toString(), 2*60, 2*119, 2*55, 2*35, Color.black);
+				}catch(NullPointerException ex){}
+				try{
+					int width=(int) (bleu.getWidth(null)*(a*FenetreAccueil.etude.getS4().getApr_negociation().getImportance().get()+b)/100);
+					int height=(int) (bleu.getHeight(null)*(a*FenetreAccueil.etude.getS4().getApr_negociation().getImportance().get()+b)/100);
+					int x=694-width/2;
+					int y=171-height/2;
+					if(FenetreAccueil.etude.getS4().getApr_negociation().getImportance().get()!=0){
+						g.drawImage(bleu, 2*x, 2*y, 2*width,2*height , null, null);
+						try{
+							int width_aju=(int) (ajustement.getWidth(null)*((a*FenetreAccueil.etude.getS4().getApr_negociation().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getApr_negociation().getAjustement().get()+b)/100);
+							int height_aju=(int) (ajustement.getHeight(null)*((a*FenetreAccueil.etude.getS4().getApr_negociation().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getApr_negociation().getAjustement().get()+b)/100);
+							int x_aju=(int) ((606-694)*((a*FenetreAccueil.etude.getS4().getApr_negociation().getImportance().get()+b)/100)+694-width_aju/2);
+							int y_aju=171-height_aju/2;
+							if(FenetreAccueil.etude.getS4().getApr_negociation().getAjustement().get()!=0){
+								g.drawImage(ajustement, 2*x_aju, 2*y_aju, 2*width_aju,2*height_aju , null, null);
+							}
+							g.setColor(Color.white);
+							g.fillRoundRect(2*578,2*55, 2*55, 2*35, 2*15, 2*15);
+							this.drawCenteredString(g, FenetreAccueil.etude.getS4().getApr_negociation().getAjustement().toString(), 2*578, 2*55, 2*55, 2*35, Color.black);
+						}catch(NullPointerException ex){}
+						try{
+							int width_transfo=(int) (transformation.getWidth(null)*((a*FenetreAccueil.etude.getS4().getApr_negociation().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getApr_negociation().getTransformation().get()+b)/100);
+							int height_transfo=(int) (transformation.getHeight(null)*((a*FenetreAccueil.etude.getS4().getApr_negociation().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getApr_negociation().getTransformation().get()+b)/100);
+							int x_transfo=(int) ((786-694)*((a*FenetreAccueil.etude.getS4().getApr_negociation().getImportance().get()+b)/100)+694-width_transfo/2);
+							int y_transfo=171-height_transfo/2;
+							if(FenetreAccueil.etude.getS4().getApr_negociation().getTransformation().get()!=0){
+								g.drawImage(transformation, 2*x_transfo, 2*y_transfo, 2*width_transfo,2*height_transfo , null, null);
+							}
+							g.setColor(Color.white);
+							g.fillRoundRect(2*884, 2*143, 2*55, 2*35, 2*15, 2*15);
+							this.drawCenteredString(g, FenetreAccueil.etude.getS4().getApr_negociation().getTransformation().toString(), 2*884, 2*143, 2*55, 2*35, Color.black);
+						}catch(NullPointerException ex){}
+					}
+					g.setColor(Color.white);
+					g.fillRoundRect(2*885, 2*63, 2*55, 2*35, 2*15, 2*15);
+					this.drawCenteredString(g, FenetreAccueil.etude.getS4().getApr_negociation().getImportance().toString(), 2*885,2*63, 2*55, 2*35, Color.black);
+				}catch(NullPointerException ex){}
+				try{
+					int width=(int) (vert.getWidth(null)*(a*FenetreAccueil.etude.getS4().getApr_opposition().getImportance().get()+b)/100);
+					int height=(int) (vert.getHeight(null)*(a*FenetreAccueil.etude.getS4().getApr_opposition().getImportance().get()+b)/100);
+					int x=568-width/2;
+					int y=395-height/2;
+					if(FenetreAccueil.etude.getS4().getApr_opposition().getImportance().get()!=0){
+						g.drawImage(vert, 2*x, 2*y, 2*width,2*height , null, null);
+						try{
+							int width_domi=(int) (domination.getWidth(null)*((a*FenetreAccueil.etude.getS4().getApr_opposition().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getApr_opposition().getDomination().get()+b)/100);
+							int height_domi=(int) (domination.getHeight(null)*((a*FenetreAccueil.etude.getS4().getApr_opposition().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getApr_opposition().getDomination().get()+b)/100);
+							int x_domi=(int) ((389-568)*((a*FenetreAccueil.etude.getS4().getApr_opposition().getImportance().get()+b)/100)+568-width_domi/2);
+							int y_domi=395-height_domi/2;
+							if(FenetreAccueil.etude.getS4().getApr_opposition().getDomination().get()!=0){
+								g.drawImage(domination, 2*x_domi, 2*y_domi, 2*width_domi,2*height_domi , null, null);
+							}
+							g.setColor(Color.white);
+							g.fillRoundRect(2*243, 2*380, 2*55, 2*35, 2*15, 2*15);
+							this.drawCenteredString(g, FenetreAccueil.etude.getS4().getApr_opposition().getDomination().toString(), 2*243, 2*380, 2*55, 2*35, Color.black);
+						}catch(NullPointerException ex){}
+						try{
+							int width_cp=(int) (contrePouvoir.getWidth(null)*((a*FenetreAccueil.etude.getS4().getApr_opposition().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getApr_opposition().getContrePouvoir().get()+b)/100);
+							int height_cp=(int) (contrePouvoir.getHeight(null)*((a*FenetreAccueil.etude.getS4().getApr_opposition().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getApr_opposition().getContrePouvoir().get()+b)/100);
+							int x_cp=(int) ((656-568)*((a*FenetreAccueil.etude.getS4().getApr_opposition().getImportance().get()+b)/100)+568-width_cp/2);
+							int y_cp=(int) ((352-395)*((a*FenetreAccueil.etude.getS4().getApr_opposition().getImportance().get()+b)/100)+395-height_cp/2);
+							if(FenetreAccueil.etude.getS4().getApr_opposition().getContrePouvoir().get()!=0){
+								g.drawImage(contrePouvoir, 2*x_cp, 2*y_cp, 2*width_cp,2*height_cp , null, null);
+							}
+							g.setColor(Color.white);
+							g.fillRoundRect(2*777,2*337, 2*55, 2*35, 2*15, 2*15);
+							this.drawCenteredString(g, FenetreAccueil.etude.getS4().getApr_opposition().getContrePouvoir().toString(), 2*777, 2*337, 2*55, 2*35, Color.black);
+						}catch(NullPointerException ex){}
+						try{
+							int width_ant=(int) (antagonisme.getWidth(null)*((a*FenetreAccueil.etude.getS4().getApr_opposition().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getApr_opposition().getAntagonisme().get()+b)/100);
+							int height_ant=(int) (antagonisme.getHeight(null)*((a*FenetreAccueil.etude.getS4().getApr_opposition().getImportance().get()+b)/100)*(a*FenetreAccueil.etude.getS4().getApr_opposition().getAntagonisme().get()+b)/100);
+							int x_ant=(int) ((655-568)*((a*FenetreAccueil.etude.getS4().getApr_opposition().getImportance().get()+b)/100)+568-width_ant/2);
+							int y_ant=(int) ((439-395)*((a*FenetreAccueil.etude.getS4().getApr_opposition().getImportance().get()+b)/100)+395-height_ant/2);
+							if(FenetreAccueil.etude.getS4().getApr_opposition().getAntagonisme().get()!=0){
+								g.drawImage(antagonisme, 2*x_ant, 2*y_ant, 2*width_ant,2*height_ant , null, null);
+							}
+							g.setColor(Color.white);
+							g.fillRoundRect(2*777,2*424, 2*55, 2*35, 2*15, 2*15);
+							this.drawCenteredString(g, FenetreAccueil.etude.getS4().getApr_opposition().getAntagonisme().toString(), 2*777, 2*424, 2*55, 2*35, Color.black);
+						}catch(NullPointerException ex){}
+					}
+					g.setColor(Color.white);
+					g.fillRoundRect(2*903,2*460, 2*55, 2*35, 2*15, 2*15);
+					this.drawCenteredString(g, FenetreAccueil.etude.getS4().getApr_opposition().getImportance().toString(), 2*903, 2*460, 2*55, 2*35, Color.black);
+				}catch(NullPointerException ex){}
+				this.drawArrow_schema4(g);
+				
+				String texte1="";
+				String texte2="";
+				String texte3="";
+				try{
+					texte1=texte1+"Risque Consensus ("+FenetreAccueil.etude.getS4().getRis_consensus().getImportance().toString()+")\n\n";
+					try{
+						texte1=texte1+"   -Consensus ("+FenetreAccueil.etude.getS4().getRis_consensus().getConsensus().toString()+")\n";
+					}catch(NullPointerException ex){}
+					try{
+						texte1=texte1+"   -Pacte ("+FenetreAccueil.etude.getS4().getRis_consensus().getPacte().toString()+")";
+					}catch(NullPointerException ex){}
+					g.setColor(Color.red);
+					g.fillRoundRect(2*0, 2*306, 2*243, 2*75, 2*20, 2*20);
+					this.drawCenteredString(g, texte1, 2*0, 2*306, 2*243, 2*75, Color.white);
+				}catch(NullPointerException ex){}
+				try{
+					texte2=texte2+"Risque Negociation ("+FenetreAccueil.etude.getS4().getRis_negociation().getImportance().toString()+")\n\n";
+					try{
+						texte2=texte2+"   -Ajustement hiérarchique ("+FenetreAccueil.etude.getS4().getRis_negociation().getAjustement().toString()+")\n";
+					}catch(NullPointerException ex){}
+					try{
+						texte2=texte2+"   -Transformation négociée ("+FenetreAccueil.etude.getS4().getRis_negociation().getTransformation().toString()+")";
+					}catch(NullPointerException ex){}
+					g.setColor(Color.red);
+					g.fillRoundRect(2*0, 2*383, 2*243, 2*75, 2*20, 2*20);
+					this.drawCenteredString(g, texte2, 2*0, 2*383, 2*243, 2*75, Color.white);
+				}catch(NullPointerException ex){}
+				try{
+					texte3=texte3+"Risque Opposition ("+FenetreAccueil.etude.getS4().getRis_opposition().getImportance().toString()+")\n\n";
+					try{
+						texte3=texte3+"   -Domination ("+FenetreAccueil.etude.getS4().getRis_opposition().getDomination().toString()+")\n";
+					}catch(NullPointerException ex){}
+					try{
+						texte3=texte3+"   -Contre Pouvoir ("+FenetreAccueil.etude.getS4().getRis_opposition().getContrePouvoir().toString()+")\n";
+					}catch(NullPointerException ex){}
+					try{
+						texte3=texte3+"   -Antagonisme ("+FenetreAccueil.etude.getS4().getRis_opposition().getAntagonisme().toString()+")";
+					}catch(NullPointerException ex){}
+					g.setColor(Color.red);
+					g.fillRoundRect(2*0, 2*460, 2*243, 2*75, 2*20, 2*20);
+					this.drawCenteredString(g, texte3, 2*0, 2*464, 2*243, 2*75, Color.white);
+				}catch(NullPointerException ex){}
+			}
 			
 		}else if(this.getPeriode()==9 || this.getPeriode()==10){
 			
