@@ -170,5 +170,36 @@ public class Schema5 {
 		this.ris_entrepreneuriale = ris_entrepreneuriale;
 	}
 	
+	//METHODES
+	
+	public int getMax_maintenant(){
+		try{
+			float[] liste={this.getMtn_reglementaire().get(),this.getMtn_mobilite().get(),this.getMtn_pro_service_public().get(),this.getMtn_professionnelle().get(),this.getMtn_communautaire().get(),this.getMtn_entrepreneuriale().get()};
+			float max=0;
+			int j=0;
+			for(int i=0;i<6;i++){
+				if(liste[i]>max){
+					max=liste[i];
+					j=i;
+				}
+			}
+			return j;
+		}catch(NullPointerException ex){return Integer.MAX_VALUE;}
+	}
+	
+	public int getMax_apres(){
+		try{
+			float[] liste={this.getApr_reglementaire().get(),this.getApr_mobilite().get(),this.getApr_pro_service_public().get(),this.getApr_professionnelle().get(),this.getApr_communautaire().get(),this.getApr_entrepreneuriale().get()};
+			float max=0;
+			int j=0;
+			for(int i=0;i<6;i++){
+				if(liste[i]>max){
+					max=liste[i];
+					j=i;
+				}
+			}
+			return j;
+		}catch(NullPointerException ex){return Integer.MAX_VALUE;}
+	}
 	
 }

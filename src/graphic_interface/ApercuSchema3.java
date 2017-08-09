@@ -51,7 +51,7 @@ public class ApercuSchema3 extends ConteneurAvecImage{
 	}
 	
 	public void drawArrow(Graphics2D g){
-		g.setColor(new Color(0, 150, 50));
+		g.setColor(new Color(255, 211, 33));
 		if(FenetreAccueil.etude.getS3().getMtn_principale().getNumero()==1){
 			if(FenetreAccueil.etude.getS3().getApr_principale().getNumero()==2){
 				int[] X = { 364, 377, 377, 392, 375, 375, 364};

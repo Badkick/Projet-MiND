@@ -7,7 +7,9 @@ import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.Polygon;
 import java.awt.RenderingHints;
+import java.awt.Shape;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.File;
@@ -44,6 +46,143 @@ public class ApercuSchema5 extends ConteneurAvecImage {
 		g.setColor(color);
 		for (String line : text.split("\n")){
 			g.drawString(line, abscisse +(width - metrics.stringWidth(line))/2, y +=g.getFontMetrics().getAscent());
+		}
+	}
+	
+	public void drawArrow(Graphics2D g){
+		int maintenant=FenetreAccueil.etude.getS5().getMax_maintenant();
+		int apres=FenetreAccueil.etude.getS5().getMax_apres();
+		g.setColor(new Color(255, 211, 33));
+		if(maintenant==0){
+			if(apres==1){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 269, 1, image.getWidth(null), image.getHeight(null), null);
+			}else if(apres==2){
+				int[] X = { 294, 385, 392, 393, 367, 373, 281};
+				int[] Y = { 169, 211, 198, 232, 252, 239, 196};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==3){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 299, 111, image.getWidth(null), image.getHeight(null), null);
+			}else if(apres==4){
+				int[] X = { 233, 259, 273, 248, 215, 230, 204};
+				int[] Y = { 214, 350, 348, 369, 360, 356, 220};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==5){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 306, 120, image.getWidth(null), image.getHeight(null), null);
+			}
+		}else if(maintenant==1){
+			if(apres==0){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 201, 3, image.getWidth(null), image.getHeight(null), null);
+			}else if(apres==2){
+				int[] X = { 601, 570, 579, 548, 540, 550, 580};
+				int[] Y = { 196, 222, 234, 222, 189, 200, 173};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==3){
+				int[] X = { 676, 649, 663, 630, 605, 619, 647};
+				int[] Y = { 206, 312, 316, 323, 301, 304, 198};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==4){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 50, 125, image.getWidth(null), image.getHeight(null), null);
+			}else if(apres==5){
+				int[] X = { 763, 815, 829, 804, 771, 786, 734};
+				int[] Y = { 189, 382, 379, 402, 394, 390, 195};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}
+		}else if(maintenant==2){
+			if(apres==0){
+				int[] X = { 388, 301, 294, 296, 325, 318, 404};
+				int[] Y = { 244, 189, 200, 167, 151, 163, 219};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==1){
+				int[] X = { 529, 566, 556, 587, 598, 587, 549};
+				int[] Y = { 210, 174, 163, 174, 207, 196, 232};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==3){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 568, 226, image.getWidth(null), image.getHeight(null), null);
+			}else if(apres==4){
+				int[] X = { 416, 380, 391, 358, 345, 357, 393};
+				int[] Y = { 348, 391, 400, 393, 362, 371, 329};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==5){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 564, 271, image.getWidth(null), image.getHeight(null), null);
+			}
+		}else if(maintenant==3){
+			if(apres==0){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 37, 194, image.getWidth(null), image.getHeight(null), null);
+			}else if(apres==1){
+				int[] X = { 643, 669, 683, 657, 625, 639, 614};
+				int[] Y = { 325, 210, 214, 192, 200, 203, 318};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==2){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 380, 353, image.getWidth(null), image.getHeight(null), null);
+			}else if(apres==4){
+				int[] X = { 512, 399, 399, 381, 394, 395, 509};
+				int[] Y = { 427, 438, 452, 425, 392, 408, 396};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==5){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 672, 276, image.getWidth(null), image.getHeight(null), null);
+			}
+		}else if(maintenant==4){
+			if(apres==0){
+				int[] X = { 215, 200, 186, 213, 245, 230, 245};
+				int[] Y = { 373, 238, 239, 220, 232, 233, 370};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==1){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 373, 178, image.getWidth(null), image.getHeight(null), null);
+			}else if(apres==2){
+				int[] X = { 343, 382, 372, 404, 415, 404, 366};
+				int[] Y = { 379, 338, 328, 337, 368, 359, 400};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==3){
+				int[] X = { 383, 496, 498, 510, 491, 492, 380};
+				int[] Y = { 445, 431, 445, 414, 386, 401, 414};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==5){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 321, 294, image.getWidth(null), image.getHeight(null), null);
+			}
+		}else if(maintenant==5){
+			if(apres==0){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 19, 215, image.getWidth(null), image.getHeight(null), null);
+			}else if(apres==1){
+				int[] X = { 771, 720, 705, 730, 763, 749, 800};
+				int[] Y = { 403, 210, 214, 191, 198, 202, 395};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==2){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 506, 130, image.getWidth(null), image.getHeight(null), null);
+			}else if(apres==3){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 683, 278, image.getWidth(null), image.getHeight(null), null);
+			}else if(apres==4){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
+				g.drawImage(image, 83, 279, image.getWidth(null), image.getHeight(null), null);
+			}
 		}
 	}
 	
@@ -190,6 +329,7 @@ public class ApercuSchema5 extends ConteneurAvecImage {
 		}else if(this.getPeriode()>=1){
 			this.setPeriode(1);
 			//dessiner les fleches
+			this.drawArrow(g);
 			g.setColor(Color.white);
 			g.fillRoundRect(59, 111, 55, 35, 15, 15);
 			g.fillRoundRect(805, 117, 55, 35, 15, 15);

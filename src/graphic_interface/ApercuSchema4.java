@@ -53,7 +53,7 @@ public class ApercuSchema4 extends ConteneurAvecImage{
 	public void drawArrow(Graphics2D g){
 		int maintenant=FenetreAccueil.etude.getS4().getMax_maintenant();
 		int apres=FenetreAccueil.etude.getS4().getMax_apres();
-		g.setColor(new Color(0, 150, 50));
+		g.setColor(new Color(255, 211, 33));
 		if(maintenant==0){
 			if(apres==1){
 				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema4"+File.separator+"fleche"+String.valueOf(maintenant+1)+String.valueOf(apres+1)+".png");
