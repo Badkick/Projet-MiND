@@ -37,7 +37,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 	private JTabbedPane tabs;
 	private Conteneur conteneur;
 	private GroupLayout layout;
-	private String nom;
+	public static String nom;
 
 	// boutons
 	private Bouton bouton_back_menu;
@@ -55,7 +55,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 		super(width, height, FenetreAccueil.theme.getBackground());
 		this.precedent = precedent;
 		this.fen = fen;
-		this.nom = nom;
+		ConteneurNouvelleEtude.nom = nom;
 		this.conteneur = new Conteneur(width, height);
 		//UIManager.put("TabbedPane.contentOpaque", false); // pour rendre les tab transparents
 		this.tabs = new JTabbedPane();
@@ -121,10 +121,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 		return saved;		
 	}
 
-	public String getNom()
-	{
-		return this.nom;
-	}
+	
 
 	// SETTERS //
 
@@ -176,7 +173,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				File etude=new File("saves"+File.separator+getNom());
+				File etude=new File("saves"+File.separator+ConteneurNouvelleEtude.nom);
 				if(etude.exists()){
 					if(Communication.messageAttentionChoix("Vous êtes sur le point de supprimer cette étude. Confirmez-vous cette requête ?")==0){
 						String[] donnees=etude.list();
@@ -202,7 +199,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 			public void actionPerformed(ActionEvent e) {
 
 				Etude save=FenetreAccueil.etude;
-				String repertoire=getNom();
+				String repertoire=ConteneurNouvelleEtude.nom;
 
 				save();
 				
