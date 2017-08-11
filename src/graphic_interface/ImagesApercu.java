@@ -673,6 +673,111 @@ public class ImagesApercu extends Conteneur{
 		}
 	}
 	
+	public void drawArrow_schema6(Graphics2D g){
+		g.setColor(new Color(255, 211, 33));
+		int maintenant=FenetreAccueil.etude.getS6().getMtn().getNumero();
+		int apres=FenetreAccueil.etude.getS6().getApr().getNumero();
+		if(maintenant==1){
+			if(apres==2){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema6"+File.separator+"fleche"+String.valueOf(maintenant)+String.valueOf(apres)+".png");
+				g.drawImage(image, 2*217, 2*149, image.getWidth(null), image.getHeight(null), null);
+			}else if(apres==3){
+				int[] X = { 2*496, 2*590, 2*592, 2*603, 2*585, 2*586, 2*492};
+				int[] Y = { 2*140, 2*151, 2*137, 2*168, 2*196, 2*182, 2*170};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==4){
+				int[] X = { 2*488, 2*568, 2*580, 2*567, 2*534, 2*544, 2*465};
+				int[] Y = { 2*188, 2*287, 2*279, 2*310, 2*316, 2*307, 2*207};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==5){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema6"+File.separator+"fleche"+String.valueOf(maintenant)+String.valueOf(apres)+".png");
+				g.drawImage(image, 2*143, 2*155, image.getWidth(null), image.getHeight(null), null);
+			}
+		}else if(maintenant==2){
+			if(apres==1){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema6"+File.separator+"fleche"+String.valueOf(maintenant)+String.valueOf(apres)+".png");
+				g.drawImage(image, 2*248, 2*141, image.getWidth(null), image.getHeight(null), null);
+			}else if (apres==3){
+				int[] X = { 2*475, 2*587, 2*582, 2*607, 2*606, 2*599, 2*487};
+				int[] Y = { 2*250, 2*201, 2*188, 2*209, 2*242, 2*230, 2*277};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==4){
+				int[] X = { 2*489, 2*537, 2*542, 2*546, 2*522, 2*526, 2*478};
+				int[] Y = { 2*294, 2*312, 2*300, 2*333, 2*355, 2*341, 2*322};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==5){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema6"+File.separator+"fleche"+String.valueOf(maintenant)+String.valueOf(apres)+".png");
+				g.drawImage(image, 2*198, 2*250, image.getWidth(null), image.getHeight(null), null);
+			}
+		}else if(maintenant==3){
+			if(apres==1){
+				int[] X = { 2*606, 2*513, 2*515, 2*495, 2*504, 2*508, 2*601};
+				int[] Y = { 2*166, 2*149, 2*135, 2*160, 2*193, 2*178, 2*196};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if (apres==2){
+				int[] X = { 2*614, 2*500, 2*505, 2*481, 2*486, 2*492, 2*605};
+				int[] Y = { 2*234, 2*271, 2*285, 2*262, 2*229, 2*242, 2*205};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==4){
+				int[] X = { 2*694, 2*685, 2*699, 2*666, 2*642, 2*656, 2*664};
+				int[] Y = { 2*262, 2*291, 2*295, 2*302, 2*278, 2*282, 2*253};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==5){
+				int[] X = { 2*625, 2*433, 2*441, 2*411, 2*405, 2*415, 2*607};
+				int[] Y = { 2*244, 2*389, 2*401, 2*386, 2*352, 2*364, 2*219};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}
+		}else if(maintenant==4){
+			if(apres==1){
+				int[] X = { 2*566, 2*474, 2*464, 2*476, 2*508, 2*497, 2*589};
+				int[] Y = { 2*315, 2*209, 2*219, 2*188, 2*180, 2*190, 2*295};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if (apres==2){
+				int[] X = { 2*558, 2*492, 2*487, 2*483, 2*508, 2*503, 2*569};
+				int[] Y = { 2*336, 2*310, 2*323, 2*290, 2*268, 2*282, 2*308};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==3){
+				int[] X = { 2*649, 2*657, 2*644, 2*677, 2*700, 2*687, 2*677};
+				int[] Y = { 2*294, 2*265, 2*260, 2*254, 2*277, 2*273, 2*303};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==5){
+				int[] X = { 2*544, 2*431, 2*432, 2*413, 2*423, 2*426, 2*538};
+				int[] Y = { 2*384, 2*403, 2*417, 2*390, 2*358, 2*373, 2*355};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}
+		}else if(maintenant==5){
+			if(apres==1){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema6"+File.separator+"fleche"+String.valueOf(maintenant)+String.valueOf(apres)+".png");
+				g.drawImage(image, 2*203, 2*75, image.getWidth(null), image.getHeight(null), null);
+			}else if (apres==2){
+				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema6"+File.separator+"fleche"+String.valueOf(maintenant)+String.valueOf(apres)+".png");
+				g.drawImage(image, 2*216, 224, image.getWidth(null), image.getHeight(null), null);
+			}else if(apres==3){
+				int[] X = { 2*409, 2*598, 2*590, 2*619, 2*624, 2*616, 2*427};
+				int[] Y = { 2*367, 2*228, 2*216, 2*231, 2*264, 2*252, 2*391};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}else if(apres==4){
+				int[] X = { 2*416, 2*527, 2*525, 2*545, 2*536, 2*533, 2*422};
+				int[] Y = { 2*386, 2*365, 2*351, 2*377, 2*409, 2*395, 2*416};
+				Shape shape=new Polygon(X,Y,X.length);
+				g.fill(shape);
+			}
+		}
+	}
+	
 	
 	public void drawCenteredString(Graphics g, String text, int abscisse, int ordonnee, int width, int height,Color color){
 		FontMetrics metrics = g.getFontMetrics(new Font(FenetreAccueil.theme.getPolice().getFontName(),FenetreAccueil.theme.getPolice().getStyle(),2*FenetreAccueil.theme.getPolice().getSize()));
@@ -890,7 +995,9 @@ public class ImagesApercu extends Conteneur{
 			g.drawImage(repos,2*615,2*275,width,height,null,null);
 			g.drawImage(repos,2*705,2*35,width,height,null,null);
 			g.setColor(Color.white);
+			g.fillRoundRect(2*10, 2*10, 2*170, 2*60, 2*20, 2*20);
 			if(this.getPeriode()==3){
+				this.drawCenteredString(g, "Aujourd'hui", 2*10, 2*10, 2*170, 2*60, Color.black);
 				try{
 					if(FenetreAccueil.etude.getS2().getMtn_principale().getNumero()==1){//simple marche
 						g.drawImage(actif,2*705,2*35,width,height,null,null);
@@ -1005,6 +1112,7 @@ public class ImagesApercu extends Conteneur{
 					}
 				}catch(NullPointerException ex){}
 			}else if(this.getPeriode()==4){
+				this.drawCenteredString(g, "Demain", 2*10, 2*10, 2*170, 2*60, Color.black);
 				try{
 					this.drawArrow_schema2(g);
 				}catch(NullPointerException ex){}
@@ -1168,7 +1276,10 @@ public class ImagesApercu extends Conteneur{
 			g.drawImage(repos,2*587,2*70,width,height,null,null);
 			g.drawImage(repos,2*195,2*345,width,height,null,null);
 			g.drawImage(repos,2*587,2*345,width,height,null,null);
+			g.setColor(Color.white);
+			g.fillRoundRect(2*10, 2*10, 2*170, 2*60, 2*20, 2*20);
 			if(this.getPeriode()==5){
+				this.drawCenteredString(g, "Aujourd'hui", 2*10, 2*10, 2*170, 2*60, Color.black);
 				try{
 					if(FenetreAccueil.etude.getS3().getMtn_principale().getNumero()==1){
 						g.drawImage(actif,2*195,2*70,width,height,null,null);
@@ -1283,6 +1394,7 @@ public class ImagesApercu extends Conteneur{
 					}
 				}catch(NullPointerException ex){}
 			}else if(this.getPeriode()==6){
+				this.drawCenteredString(g, "Demain", 2*10, 2*10, 2*170, 2*60, Color.black);
 				try{
 					this.drawArrow_schema3(g);
 				}catch(NullPointerException ex){}
@@ -1447,8 +1559,11 @@ public class ImagesApercu extends Conteneur{
 			Image contrePouvoir=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema4"+File.separator+"contrepouvoir.png");
 			Image antagonisme=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema4"+File.separator+"antagonisme.png");
 			
+			g.setColor(Color.white);
+			g.fillRoundRect(2*10, 2*10, 2*170, 2*60, 2*20, 2*20);
+			
 			if(this.getPeriode()==7){
-				
+				this.drawCenteredString(g, "Aujourd'hui", 2*10, 2*10, 2*170, 2*60, Color.black);
 				try{
 					int width=(int) (rouge.getWidth(null)*(a*FenetreAccueil.etude.getS4().getMtn_consensus().getImportance().get()+b)/100);
 					int height=(int) (rouge.getHeight(null)*(a*FenetreAccueil.etude.getS4().getMtn_consensus().getImportance().get()+b)/100);
@@ -1571,7 +1686,7 @@ public class ImagesApercu extends Conteneur{
 				}catch(NullPointerException ex){}
 				
 			}else if(this.getPeriode()==8){
-				
+				this.drawCenteredString(g, "Demain", 2*10, 2*10, 2*170, 2*60, Color.black);
 				try{
 					int width=(int) (rouge.getWidth(null)*(a*FenetreAccueil.etude.getS4().getApr_consensus().getImportance().get()+b)/100);
 					int height=(int) (rouge.getHeight(null)*(a*FenetreAccueil.etude.getS4().getApr_consensus().getImportance().get()+b)/100);
@@ -1739,8 +1854,266 @@ public class ImagesApercu extends Conteneur{
 			}
 			
 		}else if(this.getPeriode()==9 || this.getPeriode()==10){
+			Image fond=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"Etude_5_fond.png");
+			g.drawImage(Images.scaleImage(fond,1920, 1080),0,0,null);
+			
+			double a=0.3;
+			int b=70;
+			
+			Image reglementaire=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"reglementaire.png");
+			Image mobilite=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"mobilite.png");
+			Image service_public=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"pro_service_public.png");
+			Image professionnelle=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"professionnelle.png");
+			Image communautaire=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"communautaire.png");
+			Image entrepreneuriale=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"entrepreneuriale.png");
+			
+			g.setColor(Color.white);
+			g.fillRoundRect(2*10, 2*10, 2*170, 2*60, 2*20, 2*20);
+			
+			if(this.getPeriode()==9){
+				g.setColor(Color.white);
+				g.fillRoundRect(2*59, 2*111, 2*55, 2*35, 2*15, 2*15);
+				g.fillRoundRect(2*805, 2*117, 2*55, 2*35, 2*15, 2*15);
+				g.fillRoundRect(2*566, 2*262, 2*55, 2*35, 2*15, 2*15);
+				g.fillRoundRect(2*576, 2*495, 2*55, 2*35, 2*15, 2*15);
+				g.fillRoundRect(2*87, 2*413, 2*55, 2*35, 2*15, 2*15);
+				g.fillRoundRect(2*884, 2*371, 2*55, 2*35, 2*15, 2*15);
+				this.drawCenteredString(g, "Aujourd'hui", 2*10, 2*10, 2*170, 2*60, Color.black);
+				try{
+					int x=(int) (208-reglementaire.getWidth(null)*(a*FenetreAccueil.etude.getS5().getMtn_reglementaire().get()+b)/200);
+					int y=(int) (129-reglementaire.getHeight(null)*(a*FenetreAccueil.etude.getS5().getMtn_reglementaire().get()+b)/200);
+					int width=(int) (reglementaire.getWidth(null)*(a*FenetreAccueil.etude.getS5().getMtn_reglementaire().get()+b)/100);
+					int height=(int) (reglementaire.getHeight(null)*(a*FenetreAccueil.etude.getS5().getMtn_reglementaire().get()+b)/100);
+					if(FenetreAccueil.etude.getS5().getMtn_reglementaire().get()!=0){
+						g.drawImage(reglementaire, 2*x, 2*y, 2*width,2*height , null, null);
+					}
+					this.drawCenteredString(g, FenetreAccueil.etude.getS5().getMtn_reglementaire().toString(), 2*59, 2*111, 2*55, 2*35,Color.black);
+				}catch(NullPointerException ex){}
+				
+				try{
+					int x=(int) (682-mobilite.getWidth(null)*(a*FenetreAccueil.etude.getS5().getMtn_mobilite().get()+b)/200);
+					int y=(int) (135-mobilite.getHeight(null)*(a*FenetreAccueil.etude.getS5().getMtn_mobilite().get()+b)/200);
+					int width=(int) (mobilite.getWidth(null)*(a*FenetreAccueil.etude.getS5().getMtn_mobilite().get()+b)/100);
+					int height=(int) (mobilite.getHeight(null)*(a*FenetreAccueil.etude.getS5().getMtn_mobilite().get()+b)/100);
+					if(FenetreAccueil.etude.getS5().getMtn_mobilite().get()!=0){
+						g.drawImage(mobilite, 2*x, 2*y, 2*width,2*height , null, null);
+					}
+					this.drawCenteredString(g, FenetreAccueil.etude.getS5().getMtn_mobilite().toString(), 2*805, 2*117, 2*55, 2*35,Color.black);
+				}catch(NullPointerException ex){}
+				
+				try{
+					int x=(int) (472-service_public.getWidth(null)*(a*FenetreAccueil.etude.getS5().getMtn_pro_service_public().get()+b)/200);
+					int y=(int) (280-service_public.getHeight(null)*(a*FenetreAccueil.etude.getS5().getMtn_pro_service_public().get()+b)/200);
+					int width=(int) (service_public.getWidth(null)*(a*FenetreAccueil.etude.getS5().getMtn_pro_service_public().get()+b)/100);
+					int height=(int) (service_public.getHeight(null)*(a*FenetreAccueil.etude.getS5().getMtn_pro_service_public().get()+b)/100);
+					if(FenetreAccueil.etude.getS5().getMtn_pro_service_public().get()!=0){
+						g.drawImage(service_public, 2*x, 2*y, 2*width,2*height , null, null);
+					}
+					this.drawCenteredString(g, FenetreAccueil.etude.getS5().getMtn_pro_service_public().toString(), 2*566, 2*262, 2*55, 2*35,Color.black);
+				}catch(NullPointerException ex){}
+				
+				try{
+					int x=(int) (604-professionnelle.getWidth(null)*(a*FenetreAccueil.etude.getS5().getMtn_professionnelle().get()+b)/200);
+					int y=(int) (404-professionnelle.getHeight(null)*(a*FenetreAccueil.etude.getS5().getMtn_professionnelle().get()+b)/200);
+					int width=(int) (professionnelle.getWidth(null)*(a*FenetreAccueil.etude.getS5().getMtn_professionnelle().get()+b)/100);
+					int height=(int) (professionnelle.getHeight(null)*(a*FenetreAccueil.etude.getS5().getMtn_professionnelle().get()+b)/100);
+					if(FenetreAccueil.etude.getS5().getMtn_professionnelle().get()!=0){
+						g.drawImage(professionnelle, 2*x, 2*y, 2*width,2*height , null, null);
+					}
+					this.drawCenteredString(g, FenetreAccueil.etude.getS5().getMtn_professionnelle().toString(), 2*576, 2*495, 2*55, 2*35,Color.black);
+				}catch(NullPointerException ex){}
+				
+				try{
+					int x=(int) (260-communautaire.getWidth(null)*(a*FenetreAccueil.etude.getS5().getMtn_communautaire().get()+b)/200);
+					int y=(int) (431-communautaire.getHeight(null)*(a*FenetreAccueil.etude.getS5().getMtn_communautaire().get()+b)/200);
+					int width=(int) (communautaire.getWidth(null)*(a*FenetreAccueil.etude.getS5().getMtn_communautaire().get()+b)/100);
+					int height=(int) (communautaire.getHeight(null)*(a*FenetreAccueil.etude.getS5().getMtn_communautaire().get()+b)/100);
+					if(FenetreAccueil.etude.getS5().getMtn_communautaire().get()!=0){
+						g.drawImage(communautaire, 2*x, 2*y, 2*width,2*height , null, null);
+					}
+					this.drawCenteredString(g, FenetreAccueil.etude.getS5().getMtn_communautaire().toString(), 2*87, 2*413, 2*55, 2*35,Color.black);
+				}catch(NullPointerException ex){}
+				
+				try{
+					int x=(int) (816-entrepreneuriale.getWidth(null)*(a*FenetreAccueil.etude.getS5().getMtn_entrepreneuriale().get()+b)/200);
+					int y=(int) (462-entrepreneuriale.getHeight(null)*(a*FenetreAccueil.etude.getS5().getMtn_entrepreneuriale().get()+b)/200);
+					int width=(int) (entrepreneuriale.getWidth(null)*(a*FenetreAccueil.etude.getS5().getMtn_entrepreneuriale().get()+b)/100);
+					int height=(int) (entrepreneuriale.getHeight(null)*(a*FenetreAccueil.etude.getS5().getMtn_entrepreneuriale().get()+b)/100);
+					if(FenetreAccueil.etude.getS5().getMtn_entrepreneuriale().get()!=0){
+						g.drawImage(entrepreneuriale, 2*x, 2*y, 2*width,2*height , null, null);
+					}
+					this.drawCenteredString(g, FenetreAccueil.etude.getS5().getMtn_entrepreneuriale().toString(), 2*884, 2*371, 2*55, 2*35,Color.black);
+				}catch(NullPointerException ex){}
+			}else if(this.getPeriode()==10){
+				this.drawArrow_schema5(g);
+				g.setColor(Color.white);
+				g.fillRoundRect(2*59, 2*111, 2*55, 2*35, 2*15, 2*15);
+				g.fillRoundRect(2*805, 2*117, 2*55, 2*35, 2*15, 2*15);
+				g.fillRoundRect(2*566, 2*262, 2*55, 2*35, 2*15, 2*15);
+				g.fillRoundRect(2*576, 2*495, 2*55, 2*35, 2*15, 2*15);
+				g.fillRoundRect(2*87, 2*413, 2*55, 2*35, 2*15, 2*15);
+				g.fillRoundRect(2*884, 2*371, 2*55, 2*35, 2*15, 2*15);
+				this.drawCenteredString(g, "Demain", 2*10, 2*10, 2*170, 2*60, Color.black);
+				
+				try{
+					int x=(int) (208-reglementaire.getWidth(null)*(a*FenetreAccueil.etude.getS5().getApr_reglementaire().get()+b)/200);
+					int y=(int) (129-reglementaire.getHeight(null)*(a*FenetreAccueil.etude.getS5().getApr_reglementaire().get()+b)/200);
+					int width=(int) (reglementaire.getWidth(null)*(a*FenetreAccueil.etude.getS5().getApr_reglementaire().get()+b)/100);
+					int height=(int) (reglementaire.getHeight(null)*(a*FenetreAccueil.etude.getS5().getApr_reglementaire().get()+b)/100);
+					if(FenetreAccueil.etude.getS5().getApr_reglementaire().get()!=0){
+						g.drawImage(reglementaire, 2*x, 2*y, 2*width,2*height , null, null);
+					}
+					this.drawCenteredString(g, FenetreAccueil.etude.getS5().getApr_reglementaire().toString(), 2*59, 2*111, 2*55, 2*35,Color.black);
+				}catch(NullPointerException ex){}
+				
+				try{
+					int x=(int) (682-mobilite.getWidth(null)*(a*FenetreAccueil.etude.getS5().getApr_mobilite().get()+b)/200);
+					int y=(int) (135-mobilite.getHeight(null)*(a*FenetreAccueil.etude.getS5().getApr_mobilite().get()+b)/200);
+					int width=(int) (mobilite.getWidth(null)*(a*FenetreAccueil.etude.getS5().getApr_mobilite().get()+b)/100);
+					int height=(int) (mobilite.getHeight(null)*(a*FenetreAccueil.etude.getS5().getApr_mobilite().get()+b)/100);
+					if(FenetreAccueil.etude.getS5().getApr_mobilite().get()!=0){
+						g.drawImage(mobilite, 2*x, 2*y, 2*width,2*height , null, null);
+					}
+					this.drawCenteredString(g, FenetreAccueil.etude.getS5().getApr_mobilite().toString(), 2*805, 2*117, 2*55, 2*35,Color.black);
+				}catch(NullPointerException ex){}
+				
+				try{
+					int x=(int) (472-service_public.getWidth(null)*(a*FenetreAccueil.etude.getS5().getApr_pro_service_public().get()+b)/200);
+					int y=(int) (280-service_public.getHeight(null)*(a*FenetreAccueil.etude.getS5().getApr_pro_service_public().get()+b)/200);
+					int width=(int) (service_public.getWidth(null)*(a*FenetreAccueil.etude.getS5().getApr_pro_service_public().get()+b)/100);
+					int height=(int) (service_public.getHeight(null)*(a*FenetreAccueil.etude.getS5().getApr_pro_service_public().get()+b)/100);
+					if(FenetreAccueil.etude.getS5().getApr_pro_service_public().get()!=0){
+						g.drawImage(service_public, 2*x, 2*y, 2*width,2*height , null, null);
+					}
+					this.drawCenteredString(g, FenetreAccueil.etude.getS5().getApr_pro_service_public().toString(), 2*566, 2*262, 2*55, 2*35,Color.black);
+				}catch(NullPointerException ex){}
+				
+				try{
+					int x=(int) (604-professionnelle.getWidth(null)*(a*FenetreAccueil.etude.getS5().getApr_professionnelle().get()+b)/200);
+					int y=(int) (404-professionnelle.getHeight(null)*(a*FenetreAccueil.etude.getS5().getApr_professionnelle().get()+b)/200);
+					int width=(int) (professionnelle.getWidth(null)*(a*FenetreAccueil.etude.getS5().getApr_professionnelle().get()+b)/100);
+					int height=(int) (professionnelle.getHeight(null)*(a*FenetreAccueil.etude.getS5().getApr_professionnelle().get()+b)/100);
+					if(FenetreAccueil.etude.getS5().getApr_professionnelle().get()!=0){
+						g.drawImage(professionnelle, 2*x, 2*y, 2*width,2*height , null, null);
+					}
+					this.drawCenteredString(g, FenetreAccueil.etude.getS5().getApr_professionnelle().toString(), 2*576, 2*495, 2*55, 2*35,Color.black);
+				}catch(NullPointerException ex){}
+				
+				try{
+					int x=(int) (260-communautaire.getWidth(null)*(a*FenetreAccueil.etude.getS5().getApr_communautaire().get()+b)/200);
+					int y=(int) (431-communautaire.getHeight(null)*(a*FenetreAccueil.etude.getS5().getApr_communautaire().get()+b)/200);
+					int width=(int) (communautaire.getWidth(null)*(a*FenetreAccueil.etude.getS5().getApr_communautaire().get()+b)/100);
+					int height=(int) (communautaire.getHeight(null)*(a*FenetreAccueil.etude.getS5().getApr_communautaire().get()+b)/100);
+					if(FenetreAccueil.etude.getS5().getApr_communautaire().get()!=0){
+						g.drawImage(communautaire, 2*x, 2*y, 2*width,2*height , null, null);
+					}
+					this.drawCenteredString(g, FenetreAccueil.etude.getS5().getApr_communautaire().toString(), 2*87, 2*413, 2*55, 2*35,Color.black);
+				}catch(NullPointerException ex){}
+				
+				try{
+					int x=(int) (816-entrepreneuriale.getWidth(null)*(a*FenetreAccueil.etude.getS5().getApr_entrepreneuriale().get()+b)/200);
+					int y=(int) (462-entrepreneuriale.getHeight(null)*(a*FenetreAccueil.etude.getS5().getApr_entrepreneuriale().get()+b)/200);
+					int width=(int) (entrepreneuriale.getWidth(null)*(a*FenetreAccueil.etude.getS5().getApr_entrepreneuriale().get()+b)/100);
+					int height=(int) (entrepreneuriale.getHeight(null)*(a*FenetreAccueil.etude.getS5().getApr_entrepreneuriale().get()+b)/100);
+					if(FenetreAccueil.etude.getS5().getApr_entrepreneuriale().get()!=0){
+						g.drawImage(entrepreneuriale, 2*x, 2*y, 2*width,2*height , null, null);
+					}
+					this.drawCenteredString(g, FenetreAccueil.etude.getS5().getApr_entrepreneuriale().toString(), 2*884, 2*371, 2*55, 2*35,Color.black);
+				}catch(NullPointerException ex){}
+				
+				String texte="Risque\n\n";
+				try{
+					texte=texte+"Identité réglementaire ("+FenetreAccueil.etude.getS5().getRis_reglementaire().toString()+")\n";
+				}catch(NullPointerException ex){}
+				try{
+					texte=texte+"Identité de mobilité ("+FenetreAccueil.etude.getS5().getRis_mobilite().toString()+")\n";
+				}catch(NullPointerException ex){}
+				try{
+					texte=texte+"Identité professionnelle de service \npublic ("+FenetreAccueil.etude.getS5().getRis_pro_service_public().toString()+")\n";
+				}catch(NullPointerException ex){}
+				try{
+					texte=texte+"Identité professionnelle ("+FenetreAccueil.etude.getS5().getRis_professionnelle().toString()+")\n";
+				}catch(NullPointerException ex){}
+				try{
+					texte=texte+"Identité communautaire ("+FenetreAccueil.etude.getS5().getRis_communautaire().toString()+")\n";
+				}catch(NullPointerException ex){}
+				try{
+					texte=texte+"Identité entrepreneuriale ("+FenetreAccueil.etude.getS5().getRis_entrepreneuriale().toString()+")";
+				}catch(NullPointerException ex){}
+				String comparaison="Risque\n\n";
+				if(!texte.equals(comparaison)){
+					g.setColor(Color.red);
+					g.fillRoundRect(2*316, 2*60, 2*240, 2*134, 2*15, 2*15);
+					this.drawCenteredString(g, texte, 2*308, 2*70, 2*256, 2*134, Color.white);
+				}
+				
+			}
 			
 		}else if(this.getPeriode()==11 || this.getPeriode()==12){
+			Image fond=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema6"+File.separator+"Etude_6_fond.png");
+			g.drawImage(Images.scaleImage(fond,1920, 1080),0,0,null);
+			Image repos=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema6"+File.separator+"Etude_6_repos.png");
+			Image actif=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema6"+File.separator+"Etude_6_actif.png");
+			int width=(int) ConteneurSchema.DIMENSION_BOUTON_SCHEMA6.getWidth();
+			int height=(int) ConteneurSchema.DIMENSION_BOUTON_SCHEMA6.getHeight();
+			
+			width=2*width;
+			height=2*height;//meilleure qualité
+			
+			g.drawImage(repos,2*315,2*90,width,height,null,null);
+			g.drawImage(repos,2*305,2*220,width,height,null,null);
+			g.drawImage(repos,2*610,2*130,width,height,null,null);
+			g.drawImage(repos,2*550,2*300,width,height,null,null);
+			g.drawImage(repos,2*235,2*340,width,height,null,null);
+			g.setColor(Color.white);
+			g.fillRoundRect(2*10, 2*10, 2*170,2*60, 2*20, 2*20);
+			
+			if(this.getPeriode()==11){
+				this.drawCenteredString(g, "Aujourd'hui", 2*10, 2*10, 2*170, 2*60, Color.black);
+				try{
+					if(FenetreAccueil.etude.getS6().getMtn().getNumero()==1){
+						g.drawImage(actif,2*315,2*90,width,height,null,null);
+					}else if(FenetreAccueil.etude.getS6().getMtn().getNumero()==2){
+						g.drawImage(actif,2*305,2*220,width,height,null,null);
+					}else if(FenetreAccueil.etude.getS6().getMtn().getNumero()==3){
+						g.drawImage(actif,2*610,2*130,width,height,null,null);
+					}else if(FenetreAccueil.etude.getS6().getMtn().getNumero()==4){
+						g.drawImage(actif,2*550,2*300,width,height,null,null);
+					}else if(FenetreAccueil.etude.getS6().getMtn().getNumero()==5){
+						g.drawImage(actif,2*235,2*340,width,height,null,null);
+					}
+				
+				}catch(NullPointerException ex){}
+			}else if(this.getPeriode()==12){
+				this.drawCenteredString(g, "Demain", 2*10, 2*10, 2*170, 2*60, Color.black);
+				this.drawArrow_schema6(g);
+				try{
+					if(FenetreAccueil.etude.getS6().getApr().getNumero()==1){
+						g.drawImage(actif,2*315,2*90,width,height,null,null);
+					}else if(FenetreAccueil.etude.getS6().getApr().getNumero()==2){
+						g.drawImage(actif,2*305,2*220,width,height,null,null);
+					}else if(FenetreAccueil.etude.getS6().getApr().getNumero()==3){
+						g.drawImage(actif,2*610,2*130,width,height,null,null);
+					}else if(FenetreAccueil.etude.getS6().getApr().getNumero()==4){
+						g.drawImage(actif,2*550,2*300,width,height,null,null);
+					}else if(FenetreAccueil.etude.getS6().getApr().getNumero()==5){
+						g.drawImage(actif,2*235,2*340,width,height,null,null);
+					}
+				}catch(NullPointerException ex){}
+				
+				try{
+					String texte="Risque principal:\n\n"+FenetreAccueil.etude.getS6().getRis().getNom();
+					g.setColor(Color.red);
+					g.fillRoundRect(2*750, 2*420, 2*200, 2*100, 2*20, 2*20);
+					this.drawCenteredString(g, texte, 2*750, 2*420, 2*200, 2*100, Color.white);
+				}catch(NullPointerException ex){}
+			}
+			
+			this.drawCenteredString(g, Entreprise.COMMUNAUTE.getNom(), 2*315, 2*90, width, height, Color.WHITE);
+			this.drawCenteredString(g, Entreprise.DUALE.getNom(), 2*305, 2*220, width, height, Color.WHITE);
+			this.drawCenteredString(g, Entreprise.MODERNISEE.getNom(), 2*610, 2*130, width, height, Color.WHITE);
+			this.drawCenteredString(g, Entreprise.CRISE.getNom(), 2*550, 2*300, width, height, Color.WHITE);
+			this.drawCenteredString(g, Entreprise.BUREAUCRATIQUE.getNom(), 2*235, 2*340, width, height, Color.WHITE);
 			
 		}
 	}

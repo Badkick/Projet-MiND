@@ -17,7 +17,7 @@ public class PresenterEtude implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		for(int i=0;i<9;i++){
+		for(int i=0;i<13;i++){
 			BufferedImage image=new ImagesApercu(1920,1080,i).getImage();
 			File output=new File("image"+String.valueOf(i)+".png");
 			try {

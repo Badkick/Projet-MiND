@@ -216,8 +216,9 @@ public class ApercuSchema3 extends ConteneurAvecImage{
 		g.drawImage(repos,587,70,width,height,null,null);
 		g.drawImage(repos,195,345,width,height,null,null);
 		g.drawImage(repos,587,345,width,height,null,null);
-		/*g.setColor(Color.white);
-		g.fillRoundRect(245, 168, 70, 36, 15, 15);//rationnelle
+		g.setColor(Color.white);
+		g.fillRoundRect(10, 10, 170, 60, 20, 20);
+		/*g.fillRoundRect(245, 168, 70, 36, 15, 15);//rationnelle
 		g.fillRoundRect(440, 193, 70, 36, 15, 15);//artisanale
 		g.fillRoundRect(637, 168, 70, 36, 15, 15);//personnalisee
 		g.fillRoundRect(245, 443, 70, 36, 15, 15);//professionnelle de process
@@ -225,6 +226,7 @@ public class ApercuSchema3 extends ConteneurAvecImage{
 		
 		if(this.getPeriode()<=0){
 			this.setPeriode(0);
+			this.drawCenteredString(g, "Aujourd'hui", 10, 10, 170, 60, Color.black);
 			try{
 				if(FenetreAccueil.etude.getS3().getMtn_principale().getNumero()==1){
 					g.drawImage(actif,195,70,width,height,null,null);
@@ -340,6 +342,7 @@ public class ApercuSchema3 extends ConteneurAvecImage{
 			}catch(NullPointerException ex){}
 		}else if(this.getPeriode()>=1){
 			this.setPeriode(1);
+			this.drawCenteredString(g, "Demain", 10, 10, 170, 60, Color.black);
 			try{
 				this.drawArrow(g);
 			}catch(NullPointerException ex){}

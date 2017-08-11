@@ -19,7 +19,7 @@ public class ApercuSchema5 extends ConteneurAvecImage {
 	float alpha = 0.0f;
 	
 	public ApercuSchema5(int width, int height,int periode){
-		super(width,height,Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"Etude_5_Fond.png"));
+		super(width,height,Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"Etude_5_fond.png"));
 		this.periode=periode;
 		this.initialiserTouche();
 	}
@@ -250,6 +250,8 @@ public class ApercuSchema5 extends ConteneurAvecImage {
 		g.fillRoundRect(576, 495, 55, 35, 15, 15);
 		g.fillRoundRect(87, 413, 55, 35, 15, 15);
 		g.fillRoundRect(884, 371, 55, 35, 15, 15);*/
+		g.setColor(Color.white);
+		g.fillRoundRect(10, 10, 170, 60, 20, 20);
 		
 		if(this.getPeriode()<=0){
 			this.setPeriode(0);
@@ -260,6 +262,7 @@ public class ApercuSchema5 extends ConteneurAvecImage {
 			g.fillRoundRect(576, 495, 55, 35, 15, 15);
 			g.fillRoundRect(87, 413, 55, 35, 15, 15);
 			g.fillRoundRect(884, 371, 55, 35, 15, 15);
+			this.drawCenteredString(g, "Aujourd'hui", 10, 10, 170, 60, Color.black);
 			try{
 				int x=(int) (208-reglementaire.getWidth(null)*(a*FenetreAccueil.etude.getS5().getMtn_reglementaire().get()+b)/200);
 				int y=(int) (129-reglementaire.getHeight(null)*(a*FenetreAccueil.etude.getS5().getMtn_reglementaire().get()+b)/200);
@@ -337,6 +340,7 @@ public class ApercuSchema5 extends ConteneurAvecImage {
 			g.fillRoundRect(576, 495, 55, 35, 15, 15);
 			g.fillRoundRect(87, 413, 55, 35, 15, 15);
 			g.fillRoundRect(884, 371, 55, 35, 15, 15);
+			this.drawCenteredString(g, "Demain", 10, 10, 170, 60, Color.black);
 			
 			try{
 				int x=(int) (208-reglementaire.getWidth(null)*(a*FenetreAccueil.etude.getS5().getApr_reglementaire().get()+b)/200);

@@ -217,6 +217,7 @@ public class ApercuSchema2 extends ConteneurAvecImage{
 		g.drawImage(repos,615,275,width,height,null,null);
 		g.drawImage(repos,705,35,width,height,null,null);
 		g.setColor(Color.white);
+		g.fillRoundRect(10, 10, 170, 60, 20, 20);
 		/*g.fillRoundRect(755, 132, 70, 36, 15, 15);//simple marche
 		g.fillRoundRect(525, 182, 70, 36, 15, 15);//professionnelle
 		g.fillRoundRect(385, 272, 70, 36, 15, 15);//mecaniste
@@ -225,6 +226,7 @@ public class ApercuSchema2 extends ConteneurAvecImage{
 		
 		if(this.getPeriode()<=0){
 			this.setPeriode(0);
+			this.drawCenteredString(g, "Aujourd'hui", 10, 10, 170, 60, Color.black);
 			try{
 				if(FenetreAccueil.etude.getS2().getMtn_principale().getNumero()==1){//simple marche
 					g.drawImage(actif,705,35,width,height,null,null);
@@ -340,6 +342,7 @@ public class ApercuSchema2 extends ConteneurAvecImage{
 			}catch(NullPointerException ex){}
 		}else if(this.getPeriode()>=1){
 			this.setPeriode(1);
+			this.drawCenteredString(g, "Demain", 10, 10, 170, 60, Color.black);
 			try{
 				this.drawArrow(g);
 			}catch(NullPointerException ex){}

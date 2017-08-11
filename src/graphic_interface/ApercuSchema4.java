@@ -307,6 +307,8 @@ public class ApercuSchema4 extends ConteneurAvecImage{
 		g.fillRoundRect(225, 380, 55, 35, 15, 15);
 		g.fillRoundRect(777,337, 55, 35, 15, 15);
 		g.fillRoundRect(777,424, 55, 35, 15, 15);*/
+		g.setColor(Color.white);
+		g.fillRoundRect(10, 10, 170, 60, 20, 20);
 		
 		
 		//CHARGEMENT DES IMAGES
@@ -324,6 +326,7 @@ public class ApercuSchema4 extends ConteneurAvecImage{
 		
 		if(this.getPeriode()<=0){
 			this.setPeriode(0);
+			this.drawCenteredString(g, "Aujourd'hui", 10, 10, 170, 60, Color.black);
 			
 			//ROUND RECTANGLES POUR LES NOTES A DEFINIR
 			
@@ -450,7 +453,7 @@ public class ApercuSchema4 extends ConteneurAvecImage{
 
 		}else if(this.getPeriode()>=1){
 			this.setPeriode(1);
-			
+			this.drawCenteredString(g, "Demain", 10, 10, 170, 60, Color.black);
 			//ROUND RECTANGLES POUR LES NOTES A DEFINIR
 			
 			try{
