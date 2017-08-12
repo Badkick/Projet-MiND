@@ -27,7 +27,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 	private static int MAINTENANT = 0;
 	private static int APRES = 1;
 	private static int RISQUE = 2;
-	private static int NB_ONGLETS = 6;
+	public static int NB_ONGLETS = 6;
 	private static boolean saved;
 	private final String[] titres_tabs = {"Contraintes d'envirmt.","Structures d'organisation","Organisation du travail","Relations entre acteurs","Identités collectives","Mondes sociaux"};
 
@@ -97,7 +97,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 		return this.bouton_back_menu;
 	}
 
-	private static Bouton getBoutonSave()
+	public static Bouton getBoutonSave()
 	{
 		return bouton_save;
 	}
@@ -166,7 +166,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 			}
 		});*/
 		
-		this.getBoutonExporter().addActionListener(new PresenterEtude());
+		this.getBoutonExporter().addActionListener(new PresenterEtude(this));
 
 		this.getBoutonDelete().addActionListener(new ActionListener(){
 
