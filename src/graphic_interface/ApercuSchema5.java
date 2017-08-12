@@ -332,7 +332,9 @@ public class ApercuSchema5 extends ConteneurAvecImage {
 		}else if(this.getPeriode()>=1){
 			this.setPeriode(1);
 			//dessiner les fleches
-			this.drawArrow(g);
+			try{
+				this.drawArrow(g);
+			}catch(NullPointerException ex){}
 			g.setColor(Color.white);
 			g.fillRoundRect(59, 111, 55, 35, 15, 15);
 			g.fillRoundRect(805, 117, 55, 35, 15, 15);
@@ -340,7 +342,7 @@ public class ApercuSchema5 extends ConteneurAvecImage {
 			g.fillRoundRect(576, 495, 55, 35, 15, 15);
 			g.fillRoundRect(87, 413, 55, 35, 15, 15);
 			g.fillRoundRect(884, 371, 55, 35, 15, 15);
-			this.drawCenteredString(g, "Demain", 10, 10, 170, 60, Color.black);
+			this.drawCenteredString(g, "Cible", 10, 10, 170, 60, Color.black);
 			
 			try{
 				int x=(int) (208-reglementaire.getWidth(null)*(a*FenetreAccueil.etude.getS5().getApr_reglementaire().get()+b)/200);

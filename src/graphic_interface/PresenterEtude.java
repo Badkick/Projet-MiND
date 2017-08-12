@@ -37,9 +37,9 @@ public class PresenterEtude implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		for(int i=0;i<13;i++){
+		for(int i=0;i<14;i++){
 			BufferedImage image=new ImagesApercu(1920,1080,i).getImage();
-			File output=new File("image"+String.valueOf(i)+".png");
+			File output=new File("saves"+File.separator+ConteneurNouvelleEtude.nom+File.separator+"image"+String.valueOf(i)+".png");
 			try {
 				ImageIO.write(image, "PNG", output);
 			} catch (IOException e1) {
@@ -59,14 +59,14 @@ public class PresenterEtude implements ActionListener {
 	public void creerPowerPoint() throws IOException{
 		XMLSlideShow ppt = new XMLSlideShow();
 		XSLFSlideMaster slideMaster = ppt.getSlideMasters().get(0);
-		XSLFSlideLayout titleLayout = slideMaster.getLayout(SlideLayout.TITLE);
+		XSLFSlideLayout titleLayout = slideMaster.getLayout(SlideLayout.TITLE_ONLY);
 		XSLFSlideLayout contentLayout = slideMaster.getLayout(SlideLayout.TITLE_AND_CONTENT);
 		
 		XSLFSlide slidetitle = ppt.createSlide(titleLayout);
 		XSLFTextShape title1 = slidetitle.getPlaceholder(0);
 		title1.setText(ConteneurNouvelleEtude.nom);
-		XSLFTextShape subtitle1 = slidetitle.getPlaceholder(1);
-		subtitle1.setText("");
+		//XSLFTextShape subtitle1 = slidetitle.getPlaceholder(1);
+		//subtitle1.setText("");
 		ArrayList<String> titres=new ArrayList<String>();
 		for(int i=0;i<3;i++){
 			titres.add(ConteneurNouvelleEtude.nom+" - Environnement");
@@ -83,17 +83,17 @@ public class PresenterEtude implements ActionListener {
 		for(int i=0;i<2;i++){
 			titres.add(ConteneurNouvelleEtude.nom+" - Identités");
 		}
-		for(int i=0;i<2;i++){
+		for(int i=0;i<3;i++){
 			titres.add(ConteneurNouvelleEtude.nom);
 		}
-		for(int i=0;i<13;i++){
+		for(int i=0;i<14;i++){
 			XSLFSlide slide=ppt.createSlide(contentLayout);
 			XSLFTextShape title=slide.getPlaceholder(0);
 			title.setText(titres.get(i));
 			XSLFShape pic=slide.getShapes().get(1);
 			Rectangle2D anchor=pic.getAnchor();
 			byte[] pictureData = IOUtils.toByteArray(
-					new FileInputStream("image"+String.valueOf(i)+".png"));
+					new FileInputStream("saves"+File.separator+ConteneurNouvelleEtude.nom+File.separator+"image"+String.valueOf(i)+".png"));
 				XSLFPictureData idx = ppt.addPicture(pictureData,
 						PictureData.PictureType.PNG);
 				XSLFPictureShape picture = slide.createPicture(idx);
@@ -105,7 +105,7 @@ public class PresenterEtude implements ActionListener {
 		
         
 		
-		File file=new File(ConteneurNouvelleEtude.nom+".pptx");
+		File file=new File("Présentations"+File.separator+ConteneurNouvelleEtude.nom+".pptx");
 	    FileOutputStream out = new FileOutputStream(file);
 	    ppt.write(out);
 	    out.close();

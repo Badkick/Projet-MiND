@@ -45,7 +45,7 @@ public class TabGraphe extends JTabbedPane {
 
 		this.initialiserCommentRemplir(type);
 
-		if(type!=1)
+		if(type!=1 && type!=6)
 		{
 			if(type==2){
 				this.conteneur_apercu = new ApercuSchema2(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
@@ -55,15 +55,17 @@ public class TabGraphe extends JTabbedPane {
 				this.conteneur_apercu = new ApercuSchema4(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
 			}else if(type==5){
 				this.conteneur_apercu = new ApercuSchema5(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
-			}else if(this.type==6){
-				this.conteneur_apercu = new ApercuSchema6(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
 			}
-			this.add("Maintenant",this.conteneur_maintenant);
-			this.add("Après",this.conteneur_apres);
+			this.add("Aujourd'hui",this.conteneur_maintenant);
+			this.add("Cible",this.conteneur_apres);
 			this.add("Risque", this.conteneur_risque);
 			this.add("Comment remplir ?",this.conteneur_comment);
 			this.add("Aperçu",this.conteneur_apercu);
 			
+			this.setTabComponentAt(0, new CustomTab("Aujourd'hui"));
+			this.getTabComponentAt(0).setForeground(Color.red);
+			this.setTabComponentAt(1, new CustomTab("Cible"));
+			this.getTabComponentAt(1).setForeground(Color.red);
 			this.setTabComponentAt(2, new CustomTab("Risque"));
 			this.getTabComponentAt(2).setForeground(Color.red);
 			this.setTabComponentAt(3, new CustomTab("Comment remplir ?"));
@@ -71,18 +73,22 @@ public class TabGraphe extends JTabbedPane {
 			
 
 		}
-		else
+		else if(type==1)
 		{
 			this.conteneur_apercu=new ApercuSchema1(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
 			this.conteneur_risque_schema1 = new Conteneur(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
-			this.add("Maintenant",this.conteneur_maintenant);
-			this.add("Après",this.conteneur_apres);
-			this.add("Encore après", this.conteneur_risque);
+			this.add("Années 2000",this.conteneur_maintenant);
+			this.add("Années 2010",this.conteneur_apres);
+			this.add("Années 2020", this.conteneur_risque);
 			this.add("Risque", this.conteneur_risque_schema1);
 			this.add("Comment remplir ?",this.conteneur_comment);
 			this.add("Aperçu",this.conteneur_apercu);
 			
-			this.setTabComponentAt(2, new CustomTab("Encore après"));
+			this.setTabComponentAt(0, new CustomTab("Années 2000"));
+			this.getTabComponentAt(0).setForeground(Color.red);
+			this.setTabComponentAt(1, new CustomTab("Années 2010"));
+			this.getTabComponentAt(1).setForeground(Color.red);
+			this.setTabComponentAt(2, new CustomTab("Années 2020"));
 			this.getTabComponentAt(2).setForeground(Color.red);
 			this.setTabComponentAt(3, new CustomTab("Risque"));
 			this.setTabComponentAt(4, new CustomTab("Comment remplir ?"));
@@ -111,12 +117,29 @@ public class TabGraphe extends JTabbedPane {
 			this.conteneur_risque_schema1.add(zoneTexte);
 			this.conteneur_risque_schema1.addComponentListener(new UpdateEtude(this));
 			
+		}else if(type==6){
+			
+			this.conteneur_apercu = new ApercuSchema6(ConteneurNouvelleEtude.TAILLE_PETIT_CONTENEUR);
+			this.add("Passé",this.conteneur_maintenant);
+			this.add("Aujourd'hui",this.conteneur_apres);
+			this.add("Cible", this.conteneur_risque);
+			this.add("Comment remplir ?",this.conteneur_comment);
+			this.add("Aperçu",this.conteneur_apercu);
+			
+			this.setTabComponentAt(0, new CustomTab("Passé"));
+			this.getTabComponentAt(0).setForeground(Color.red);
+			this.setTabComponentAt(1, new CustomTab("Aujourd'hui"));
+			this.getTabComponentAt(1).setForeground(Color.red);
+			this.setTabComponentAt(2, new CustomTab("Cible"));
+			this.getTabComponentAt(2).setForeground(Color.red);
+			this.setTabComponentAt(3, new CustomTab("Comment remplir ?"));
+			this.setTabComponentAt(4, new CustomTab("Aperçu"));
 		}
 		
-		this.setTabComponentAt(0, new CustomTab("Maintenant"));
+		/*this.setTabComponentAt(0, new CustomTab("Maintenant"));
 		this.getTabComponentAt(0).setForeground(Color.red);
 		this.setTabComponentAt(1, new CustomTab("Après"));
-		this.getTabComponentAt(1).setForeground(Color.red);
+		this.getTabComponentAt(1).setForeground(Color.red);*/
 		
 		this.conteneur_maintenant.addComponentListener(new VerificationPetitsOnglets((CustomTab) this.getTabComponentAt(0)));
 		this.conteneur_maintenant.addComponentListener(new UpdateEtude(this));

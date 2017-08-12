@@ -198,7 +198,7 @@ public class ApercuSchema1 extends ConteneurAvecImage{
 			g.fillRoundRect(498, 178, 55, 35, 15, 15);
 			g.fillRoundRect(401, 245, 55, 35, 15, 15);
 			g.fillRoundRect(498, 245, 55, 35, 15, 15);
-			this.drawCenteredString(g, "Aujourd'hui", 376, 10, 200, 60);
+			this.drawCenteredString(g, "Années 2000", 376, 10, 200, 60);
 			try{
 				int x=(int) (253-technique.getWidth(null)*(0.7*FenetreAccueil.etude.getS1().getMtn_contr_tech().get()+30)/200);
 				int y=(int) (125-technique.getHeight(null)*(0.7*FenetreAccueil.etude.getS1().getMtn_contr_tech().get()+30)/200);
@@ -248,8 +248,10 @@ public class ApercuSchema1 extends ConteneurAvecImage{
 				g.drawImage(menace,(int)(702-menace.getWidth(null)/2),(int)(332-menace.getHeight(null)/2),menace.getWidth(null),menace.getHeight(null),null,null);
 			}
 		}else if(this.getPeriode()==1){
-			this.drawCenteredString(g, "Demain", 376, 10, 200, 60);
-			this.drawArrow(g, 0);
+			this.drawCenteredString(g, "Années 2010", 376, 10, 200, 60);
+			try{
+				this.drawArrow(g, 0);
+			}catch(NullPointerException ex){}
 			g.setColor(Color.white);
 			g.fillRoundRect(401, 178, 55, 35, 15, 15);
 			g.fillRoundRect(498, 178, 55, 35, 15, 15);
@@ -305,13 +307,15 @@ public class ApercuSchema1 extends ConteneurAvecImage{
 			}
 		}else if(this.getPeriode()>=2){
 			this.setPeriode(2);
-			this.drawArrow(g, 1);
+			try{
+				this.drawArrow(g, 1);
+			}catch(NullPointerException ex){}
 			g.setColor(Color.white);
 			g.fillRoundRect(401, 178, 55, 35, 15, 15);
 			g.fillRoundRect(498, 178, 55, 35, 15, 15);
 			g.fillRoundRect(401, 245, 55, 35, 15, 15);
 			g.fillRoundRect(498, 245, 55, 35, 15, 15);
-			this.drawCenteredString(g, "Après-demain", 376, 10, 200, 60);
+			this.drawCenteredString(g, "Années 2020", 376, 10, 200, 60);
 			g.setColor(Color.white);
 			g.fillOval(376, 380, 200, 60);
 			try{

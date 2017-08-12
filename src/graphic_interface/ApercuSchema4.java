@@ -453,7 +453,7 @@ public class ApercuSchema4 extends ConteneurAvecImage{
 
 		}else if(this.getPeriode()>=1){
 			this.setPeriode(1);
-			this.drawCenteredString(g, "Demain", 10, 10, 170, 60, Color.black);
+			this.drawCenteredString(g, "Cible", 10, 10, 170, 60, Color.black);
 			//ROUND RECTANGLES POUR LES NOTES A DEFINIR
 			
 			try{
@@ -577,7 +577,9 @@ public class ApercuSchema4 extends ConteneurAvecImage{
 				this.drawCenteredString(g, FenetreAccueil.etude.getS4().getApr_opposition().getImportance().toString(), 903, 460, 55, 35, Color.black);
 				//this.drawArrow(g);
 			}catch(NullPointerException ex){}
-			this.drawArrow(g);
+			try{
+				this.drawArrow(g);
+			}catch(NullPointerException ex){}
 		//mettre les risques
 			/*g.setColor(Color.red);
 			g.fillRoundRect(0, 310, 243, 225, 20, 20);*/

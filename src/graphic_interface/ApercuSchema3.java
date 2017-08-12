@@ -342,7 +342,7 @@ public class ApercuSchema3 extends ConteneurAvecImage{
 			}catch(NullPointerException ex){}
 		}else if(this.getPeriode()>=1){
 			this.setPeriode(1);
-			this.drawCenteredString(g, "Demain", 10, 10, 170, 60, Color.black);
+			this.drawCenteredString(g, "Cible", 10, 10, 170, 60, Color.black);
 			try{
 				this.drawArrow(g);
 			}catch(NullPointerException ex){}

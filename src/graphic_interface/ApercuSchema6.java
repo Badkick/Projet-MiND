@@ -51,10 +51,17 @@ public class ApercuSchema6 extends ConteneurAvecImage{
 		}
 	}
 	
-	public void drawArrow(Graphics2D g){
+	public void drawArrow(Graphics2D g,int instant_precedent){
 		g.setColor(new Color(255, 211, 33));
-		int maintenant=FenetreAccueil.etude.getS6().getMtn().getNumero();
-		int apres=FenetreAccueil.etude.getS6().getApr().getNumero();
+		int maintenant=0;
+		int apres=0;
+		if(instant_precedent==0){
+			maintenant=FenetreAccueil.etude.getS6().getMtn().getNumero();
+			apres=FenetreAccueil.etude.getS6().getApr().getNumero();
+		}else if(instant_precedent==1){
+			maintenant=FenetreAccueil.etude.getS6().getApr().getNumero();
+			apres=FenetreAccueil.etude.getS6().getRis().getNumero();
+		}
 		if(maintenant==1){
 			if(apres==2){
 				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema6"+File.separator+"fleche"+String.valueOf(maintenant)+String.valueOf(apres)+".png");
@@ -213,7 +220,7 @@ public class ApercuSchema6 extends ConteneurAvecImage{
 		
 		if(this.getPeriode()<=0){
 			this.setPeriode(0);
-			this.drawCenteredString(g, "Aujourd'hui", 10, 10, 170, 60, Color.black);
+			this.drawCenteredString(g, "Passé", 10, 10, 170, 60, Color.black);
 			try{
 				if(FenetreAccueil.etude.getS6().getMtn().getNumero()==1){
 					g.drawImage(actif,315,90,width,height,null,null);
@@ -229,11 +236,12 @@ public class ApercuSchema6 extends ConteneurAvecImage{
 			
 			}catch(NullPointerException ex){}
 				
-		}else if(this.getPeriode()>=1){
+		}else if(this.getPeriode()==1){
 			
-			this.setPeriode(1);
-			this.drawCenteredString(g, "Demain", 10, 10, 170, 60, Color.black);
-			this.drawArrow(g);
+			this.drawCenteredString(g, "Aujourd'hui", 10, 10, 170, 60, Color.black);
+			try{
+				this.drawArrow(g,0);
+			}catch(NullPointerException ex){}
 			try{
 				if(FenetreAccueil.etude.getS6().getApr().getNumero()==1){
 					g.drawImage(actif,315,90,width,height,null,null);
@@ -248,11 +256,30 @@ public class ApercuSchema6 extends ConteneurAvecImage{
 				}
 			}catch(NullPointerException ex){}
 			
-			try{
+			/*try{
 				String texte="Risque principal:\n\n"+FenetreAccueil.etude.getS6().getRis().getNom();
 				g.setColor(Color.red);
 				g.fillRoundRect(750, 420, 200, 100, 20, 20);
 				this.drawCenteredString(g, texte, 750, 420, 200, 100, Color.white);
+			}catch(NullPointerException ex){}*/
+		}else if(this.getPeriode()>=2){
+			this.setPeriode(2);
+			this.drawCenteredString(g, "Cible", 10, 10, 170, 60, Color.black);
+			try{
+				this.drawArrow(g,1);
+			}catch(NullPointerException ex){}
+			try{
+				if(FenetreAccueil.etude.getS6().getRis().getNumero()==1){
+					g.drawImage(actif,315,90,width,height,null,null);
+				}else if(FenetreAccueil.etude.getS6().getRis().getNumero()==2){
+					g.drawImage(actif,305,220,width,height,null,null);
+				}else if(FenetreAccueil.etude.getS6().getRis().getNumero()==3){
+					g.drawImage(actif,610,130,width,height,null,null);
+				}else if(FenetreAccueil.etude.getS6().getRis().getNumero()==4){
+					g.drawImage(actif,550,300,width,height,null,null);
+				}else if(FenetreAccueil.etude.getS6().getRis().getNumero()==5){
+					g.drawImage(actif,235,340,width,height,null,null);
+				}
 			}catch(NullPointerException ex){}
 		}
 		
