@@ -24,7 +24,7 @@ public class BoutonEtude extends ConteneurAvecImage {
 	private JLabel conteneur_nom;
 	private String nom = "";
 	private Bouton editer;
-	private Bouton presenter;
+	private Bouton supprimer;
 	
 	// CONTRUCTEURS //
 
@@ -40,10 +40,11 @@ public class BoutonEtude extends ConteneurAvecImage {
 		this.conteneur_nom.setFont(FenetreAccueil.theme.getPolice());
 		this.conteneur_nom.setForeground(FenetreAccueil.theme.getCouleurTexte());
 		this.conteneur_nom.setToolTipText(nom);
-		this.editer = new Bouton("Modifier", new Dimension(100, 50));
-		this.presenter = new Bouton("Présentation", new Dimension(100, 50));
+		this.editer = new Bouton("Editer", new Dimension(100, 50));
+		this.supprimer = new Bouton("Supprimer", new Dimension(100, 50));
 		
 		this.editer.addActionListener(new ChargerEtude(this.getNom()));
+		this.supprimer.addActionListener(new SupprimerEtude());
 		
 		GroupLayout layout = new GroupLayout(this);
 		this.setLayout(layout);
@@ -57,7 +58,7 @@ public class BoutonEtude extends ConteneurAvecImage {
 				.addGap(50)
 				.addComponent(this.editer)
 				.addGap(30)
-				.addComponent(this.presenter)
+				.addComponent(this.supprimer)
 				);
 		
 		layout.setVerticalGroup(
@@ -69,7 +70,7 @@ public class BoutonEtude extends ConteneurAvecImage {
 						.addGroup(
 								layout.createParallelGroup()
 								.addComponent(this.editer)
-								.addComponent(this.presenter)
+								.addComponent(this.supprimer)
 								)
 						)
 				);		
@@ -91,7 +92,7 @@ public class BoutonEtude extends ConteneurAvecImage {
 	}
 
 	public Bouton getPresenter() {
-		return presenter;
+		return supprimer;
 	}
 	
 	public JLabel getConteneurNom()
@@ -108,14 +109,6 @@ public class BoutonEtude extends ConteneurAvecImage {
 
 	public void setNom(String nom) {
 		this.nom = nom;
-	}
-
-	public void setEditer(Bouton editer) {
-		this.editer = editer;
-	}
-
-	public void setPresenter(Bouton presenter) {
-		this.presenter = presenter;
 	}
 	
 	// METHODES //
