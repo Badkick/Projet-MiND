@@ -45,51 +45,10 @@ public class PresenterEtude implements ActionListener {
 
 		boolean ok = true;
 
-		for(int i=0;i<ConteneurNouvelleEtude.NB_ONGLETS;i++){
-			ok &= ((CustomTab)this.conteneur.getTabs().getTabComponentAt(i)).getForeground().equals(Color.black);
-		}
+		for(int i=0;i<ConteneurNouvelleEtude.NB_ONGLETS;i++) ok &= ((CustomTab)this.conteneur.getTabs().getTabComponentAt(i)).getForeground().equals(Color.black);
 
-		if(!ok)
-		{
-			if(Communication.messageAttentionChoix("L'étude n'est pas complète, voulez vous quand même la présenter ?")==JOptionPane.YES_OPTION)
-			{
-				// TODO Auto-generated method stub
-				for(int i=0;i<14;i++){
-					BufferedImage image=new ImagesApercu(1920,1080,i).getImage();
-					File output=new File("saves"+File.separator+ConteneurNouvelleEtude.nom+File.separator+"image"+String.valueOf(i)+".png");
-					try {
-						ImageIO.write(image, "PNG", output);
-					} catch (IOException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-				}
-				try {
-					creerPowerPoint();
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-
-			}
-		}else{
-			for(int i=0;i<14;i++){
-				BufferedImage image=new ImagesApercu(1920,1080,i).getImage();
-				File output=new File("saves"+File.separator+ConteneurNouvelleEtude.nom+File.separator+"image"+String.valueOf(i)+".png");
-				try {
-					ImageIO.write(image, "PNG", output);
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-			}
-			try {
-				creerPowerPoint();
-			} catch (IOException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-		}
+		if(!ok) if(Communication.messageAttentionChoix("L'étude n'est pas complète, voulez vous quand même la présenter ?")==JOptionPane.YES_OPTION) presenter();
+		else presenter();
 	}
 
 	public void creerPowerPoint() throws IOException{
@@ -145,6 +104,26 @@ public class PresenterEtude implements ActionListener {
 		FileOutputStream out = new FileOutputStream(file);
 		ppt.write(out);
 		out.close();
+	}
+
+	private void presenter()
+	{
+		for(int i=0;i<14;i++){
+			BufferedImage image=new ImagesApercu(1920,1080,i).getImage();
+			File output=new File("saves"+File.separator+ConteneurNouvelleEtude.nom+File.separator+"image"+String.valueOf(i)+".png");
+			try {
+				ImageIO.write(image, "PNG", output);
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
+		try {
+			creerPowerPoint();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 	}
 
 
