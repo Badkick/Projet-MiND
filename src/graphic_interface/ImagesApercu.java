@@ -787,9 +787,19 @@ public class ImagesApercu extends Conteneur{
 	
 	
 	public void drawCenteredString(Graphics g, String text, int abscisse, int ordonnee, int width, int height,Color color){
-		FontMetrics metrics = g.getFontMetrics(new Font(FenetreAccueil.theme.getPolice().getFontName(),FenetreAccueil.theme.getPolice().getStyle(),2*FenetreAccueil.theme.getPolice().getSize()));
+		FontMetrics metrics = g.getFontMetrics(new Font(FenetreAccueil.theme.getPolice().getFontName(),Font.BOLD,2*FenetreAccueil.theme.getPolice().getSize()));
 		int y = ordonnee + (height - (metrics.getAscent()+metrics.getDescent())*text.split("\n").length)/2;
-		g.setFont(new Font(FenetreAccueil.theme.getPolice().getFontName(),FenetreAccueil.theme.getPolice().getStyle(),2*FenetreAccueil.theme.getPolice().getSize()));
+		g.setFont(new Font(FenetreAccueil.theme.getPolice().getFontName(),Font.BOLD,2*FenetreAccueil.theme.getPolice().getSize()));
+		g.setColor(color);
+		for (String line : text.split("\n")){
+			g.drawString(line, abscisse +(width - metrics.stringWidth(line))/2, y +=g.getFontMetrics().getAscent());
+		}
+	}
+	
+	public void drawMainTitle(Graphics g, String text, int abscisse, int ordonnee, int width, int height,Color color){
+		FontMetrics metrics = g.getFontMetrics(new Font(FenetreAccueil.theme.getPolice().getFontName(),FenetreAccueil.theme.getPolice().getStyle(),8*FenetreAccueil.theme.getPolice().getSize()));
+		int y = ordonnee + (height - (metrics.getAscent()+metrics.getDescent())*text.split("\n").length)/2;
+		g.setFont(new Font(FenetreAccueil.theme.getPolice().getFontName(),FenetreAccueil.theme.getPolice().getStyle(),8*FenetreAccueil.theme.getPolice().getSize()));
 		g.setColor(color);
 		for (String line : text.split("\n")){
 			g.drawString(line, abscisse +(width - metrics.stringWidth(line))/2, y +=g.getFontMetrics().getAscent());
@@ -2064,7 +2074,7 @@ public class ImagesApercu extends Conteneur{
 				
 			}
 			
-		}else if(this.getPeriode()>=11){
+		}else if(this.getPeriode()==11 ||this.getPeriode()==12 ||this.getPeriode()==13){
 			Image fond=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema6"+File.separator+"Etude_6_fond.png");
 			g.drawImage(Images.scaleImage(fond,1920, 1080),0,0,null);
 			Image repos=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema6"+File.separator+"Etude_6_repos.png");
@@ -2149,6 +2159,11 @@ public class ImagesApercu extends Conteneur{
 			this.drawCenteredString(g, Entreprise.MODERNISEE.getNom(), 2*610, 2*130, width, height, Color.WHITE);
 			this.drawCenteredString(g, Entreprise.CRISE.getNom(), 2*550, 2*300, width, height, Color.WHITE);
 			this.drawCenteredString(g, Entreprise.BUREAUCRATIQUE.getNom(), 2*235, 2*340, width, height, Color.WHITE);
+			
+		}else if(this.getPeriode()==14){
+			Image fond=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"fondppt.png");
+			g.drawImage(Images.scaleImage(fond,1920, 1080),0,0,null);
+			this.drawMainTitle(g, ConteneurNouvelleEtude.nom, 0, 0, 1920, 1080, Color.white);
 			
 		}
 	}

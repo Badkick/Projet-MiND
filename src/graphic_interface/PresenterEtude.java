@@ -57,11 +57,18 @@ public class PresenterEtude implements ActionListener {
 		XSLFSlideLayout titleLayout = slideMaster.getLayout(SlideLayout.TITLE_ONLY);
 		XSLFSlideLayout contentLayout = slideMaster.getLayout(SlideLayout.TITLE_AND_CONTENT);
 
-		XSLFSlide slidetitle = ppt.createSlide(titleLayout);
-		XSLFTextShape title1 = slidetitle.getPlaceholder(0);
+		XSLFSlide slidetitle = ppt.createSlide(contentLayout);
+		/*XSLFTextShape title1 = slidetitle.getPlaceholder(0);
 		title1.setText(ConteneurNouvelleEtude.nom);
 		//XSLFTextShape subtitle1 = slidetitle.getPlaceholder(1);
-		//subtitle1.setText("");
+		//subtitle1.setText("");*/
+		Rectangle2D anchor_main=slidetitle.getBackground().getAnchor();
+		byte[] pictureData_main = IOUtils.toByteArray(
+				new FileInputStream("saves"+File.separator+ConteneurNouvelleEtude.nom+File.separator+"main.png"));
+		XSLFPictureData idx_main = ppt.addPicture(pictureData_main,
+				PictureData.PictureType.PNG);
+		XSLFPictureShape picture_main = slidetitle.createPicture(idx_main);
+		picture_main.setAnchor(anchor_main);
 		ArrayList<String> titres=new ArrayList<String>();
 		for(int i=0;i<3;i++){
 			titres.add(ConteneurNouvelleEtude.nom+" - Environnement");
@@ -117,6 +124,14 @@ public class PresenterEtude implements ActionListener {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
+		}
+		BufferedImage image=new ImagesApercu(1920,1080,14).getImage();
+		File output=new File("saves"+File.separator+ConteneurNouvelleEtude.nom+File.separator+"main.png");
+		try {
+			ImageIO.write(image, "PNG", output);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
 		}
 		try {
 			creerPowerPoint();
