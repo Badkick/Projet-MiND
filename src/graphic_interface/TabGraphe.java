@@ -141,6 +141,8 @@ public class TabGraphe extends JTabbedPane {
 		this.setTabComponentAt(1, new CustomTab("Après"));
 		this.getTabComponentAt(1).setForeground(Color.red);*/
 		
+		this.conteneur_comment.setBackground(new Color(90, 90, 90));
+		
 		this.conteneur_maintenant.addComponentListener(new VerificationPetitsOnglets((CustomTab) this.getTabComponentAt(0)));
 		this.conteneur_maintenant.addComponentListener(new UpdateEtude(this));
 		this.conteneur_apres.addComponentListener(new VerificationPetitsOnglets((CustomTab) this.getTabComponentAt(1)));
