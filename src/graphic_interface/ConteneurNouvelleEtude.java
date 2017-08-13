@@ -15,6 +15,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import javax.swing.GroupLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JTabbedPane;
 import javax.swing.UIManager;
 
@@ -175,7 +176,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 				// TODO Auto-generated method stub
 				File etude=new File("saves"+File.separator+ConteneurNouvelleEtude.nom);
 				if(etude.exists()){
-					if(Communication.messageAttentionChoix("Vous êtes sur le point de supprimer cette étude. Confirmez-vous cette requête ?")==0){
+					if(Communication.messageAttentionChoix("Vous êtes sur le point de supprimer cette étude. Confirmez-vous cette requête ?")==JOptionPane.YES_OPTION){
 						String[] donnees=etude.list();
 						for(String s:donnees){
 							File currentFile = new File(etude.getPath(),s);

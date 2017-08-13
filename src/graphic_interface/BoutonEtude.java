@@ -44,7 +44,7 @@ public class BoutonEtude extends ConteneurAvecImage {
 		this.supprimer = new Bouton("Supprimer", new Dimension(100, 50));
 		
 		this.editer.addActionListener(new ChargerEtude(this.getNom()));
-		this.supprimer.addActionListener(new SupprimerEtude());
+		this.supprimer.addActionListener(new SupprimerEtude(this.getNom()));
 		
 		GroupLayout layout = new GroupLayout(this);
 		this.setLayout(layout);
