@@ -1,6 +1,7 @@
 package graphic_interface;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -28,6 +29,7 @@ import org.apache.poi.xslf.usermodel.XSLFShape;
 import org.apache.poi.xslf.usermodel.XSLFSlide;
 import org.apache.poi.xslf.usermodel.XSLFSlideLayout;
 import org.apache.poi.xslf.usermodel.XSLFSlideMaster;
+import org.apache.poi.xslf.usermodel.XSLFTextParagraph;
 import org.apache.poi.xslf.usermodel.XSLFTextShape;
 
 public class PresenterEtude implements ActionListener {
@@ -47,21 +49,24 @@ public class PresenterEtude implements ActionListener {
 
 		for(int i=0;i<ConteneurNouvelleEtude.NB_ONGLETS;i++) ok &= ((CustomTab)this.conteneur.getTabs().getTabComponentAt(i)).getForeground().equals(Color.black);
 
-		if(!ok) if(Communication.messageAttentionChoix("L'étude n'est pas complète, voulez vous quand même la présenter ?")==JOptionPane.YES_OPTION) presenter();
-		else presenter();
+		if(!ok) {
+			if(Communication.messageAttentionChoix("L'étude n'est pas complète, voulez vous quand même la présenter ?")==JOptionPane.YES_OPTION) {
+				presenter();
+			}
+		}
+		else {
+			presenter();
+		}
 	}
 
 	public void creerPowerPoint() throws IOException{
 		XMLSlideShow ppt = new XMLSlideShow();
+		ppt.setPageSize(new Dimension(1920,1080));
 		XSLFSlideMaster slideMaster = ppt.getSlideMasters().get(0);
-		XSLFSlideLayout titleLayout = slideMaster.getLayout(SlideLayout.TITLE_ONLY);
-		XSLFSlideLayout contentLayout = slideMaster.getLayout(SlideLayout.TITLE_AND_CONTENT);
+		XSLFSlideLayout titleLayout = slideMaster.getLayout(SlideLayout.TITLE_AND_CONTENT);
+		XSLFSlideLayout contentLayout = slideMaster.getLayout(SlideLayout.TITLE);
 
-		XSLFSlide slidetitle = ppt.createSlide(contentLayout);
-		/*XSLFTextShape title1 = slidetitle.getPlaceholder(0);
-		title1.setText(ConteneurNouvelleEtude.nom);
-		//XSLFTextShape subtitle1 = slidetitle.getPlaceholder(1);
-		//subtitle1.setText("");*/
+		XSLFSlide slidetitle = ppt.createSlide(titleLayout);
 		Rectangle2D anchor_main=slidetitle.getBackground().getAnchor();
 		byte[] pictureData_main = IOUtils.toByteArray(
 				new FileInputStream("saves"+File.separator+ConteneurNouvelleEtude.nom+File.separator+"main.png"));
@@ -91,17 +96,24 @@ public class PresenterEtude implements ActionListener {
 		for(int i=0;i<14;i++){
 			XSLFSlide slide=ppt.createSlide(contentLayout);
 			XSLFTextShape title=slide.getPlaceholder(0);
+			Rectangle2D rec=new Rectangle2D.Double(132, 0, 1655, 209);
+			title.setAnchor(rec);
 			title.setText(titres.get(i));
-			XSLFShape pic=slide.getShapes().get(1);
-			Rectangle2D anchor=pic.getAnchor();
+			
+			
+			Rectangle2D anchor=new Rectangle2D.Double(190, 196, 1511, 850);
 			byte[] pictureData = IOUtils.toByteArray(
 					new FileInputStream("saves"+File.separator+ConteneurNouvelleEtude.nom+File.separator+"image"+String.valueOf(i)+".png"));
 			XSLFPictureData idx = ppt.addPicture(pictureData,
 					PictureData.PictureType.PNG);
 			XSLFPictureShape picture = slide.createPicture(idx);
-			slide.removeShape(pic);
-
+			//slide.removeShape(pic);
 			picture.setAnchor(anchor);
+			
+			Rectangle2D page_anchor=new Rectangle2D.Double(1849, 1022, 71, 58);
+			XSLFTextShape page=slide.getPlaceholder(1);
+			page.setAnchor(page_anchor);
+			page.setText(String.valueOf(i+1));
 		}
 
 
