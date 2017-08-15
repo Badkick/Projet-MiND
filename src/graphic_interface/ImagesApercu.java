@@ -770,7 +770,7 @@ public class ImagesApercu extends Conteneur{
 				g.drawImage(image, 2*203, 2*75, 2*image.getWidth(null), 2*image.getHeight(null), null);
 			}else if (apres==2){
 				Image image=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema6"+File.separator+"fleche"+String.valueOf(maintenant)+String.valueOf(apres)+".png");
-				g.drawImage(image, 2*216, 224, 2*image.getWidth(null), 2*image.getHeight(null), null);
+				g.drawImage(image, 2*216, 2*224, 2*image.getWidth(null), 2*image.getHeight(null), null);
 			}else if(apres==3){
 				int[] X = { 2*409, 2*598, 2*590, 2*619, 2*624, 2*616, 2*427};
 				int[] Y = { 2*367, 2*228, 2*216, 2*231, 2*264, 2*252, 2*391};
@@ -981,10 +981,10 @@ public class ImagesApercu extends Conteneur{
 					int y=(int) (332-protege.getHeight(null)*(0.7*FenetreAccueil.etude.getS1().getRis_etabl_prot().get()+30)/200);
 					int width=(int) (protege.getWidth(null)*(0.7*FenetreAccueil.etude.getS1().getRis_etabl_prot().get()+30)/100);
 					int height=(int) (protege.getHeight(null)*(0.7*FenetreAccueil.etude.getS1().getRis_etabl_prot().get()+30)/100);
-					this.drawCenteredString(g, FenetreAccueil.etude.getS1().getRis_etabl_prot().toString(), 2*401, 2*245, 2*55, 2*35,Color.black);
 					if(FenetreAccueil.etude.getS1().getRis_etabl_prot().get()!=0){
 						g.drawImage(protege, 2*x, 2*y, 2*width,2*height , null, null);
 					}
+					this.drawCenteredString(g, FenetreAccueil.etude.getS1().getRis_etabl_prot().toString(), 2*401, 2*245, 2*55, 2*35,Color.black);
 				}catch(NullPointerException ex){
 					//g.drawImage(protege,(int)(253-protege.getWidth(null)/2),(int)(332-technique.getHeight(null)/2),protege.getWidth(null),protege.getHeight(null),null,null);
 				}
@@ -1183,7 +1183,7 @@ public class ImagesApercu extends Conteneur{
 							this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS2().getApr_notees()[3].getNote())+" / 10", 2*665, 2*372, 2*70, 2*36,Color.black);
 						}
 					}else if(FenetreAccueil.etude.getS2().getApr_principale().getNumero()==3){//mecaniste
-						g.setColor(Color.white);g.drawImage(actif,2*205,2*245,width,height,null,null);
+						g.drawImage(actif,2*205,2*245,width,height,null,null);
 						if(FenetreAccueil.etude.getS2().getApr_notees()[0].getNote()!=Integer.MAX_VALUE){
 							g.setColor(Color.white);
 							g.fillRoundRect(2*755, 2*132, 2*70, 2*36, 2*15, 2*15);
