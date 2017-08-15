@@ -20,7 +20,7 @@ public class FenetreAccueil {
 		theme = th;
 		conteneur_principal = new ConteneurAvecImage(0,0,theme.getBackground());
 		fenetre_principale = new Fenetre(conteneur_principal,theme);
-		conteneur_principal.setTaille(fenetre_principale.getSize());
+		conteneur_principal.setTaille(fenetre_principale.getWidth(),fenetre_principale.getHeight()-20);
 		Conteneur conteneur_menu = new Conteneur(fenetre_principale.getSize());
 		conteneur_menu.setOpaque(false);
 		

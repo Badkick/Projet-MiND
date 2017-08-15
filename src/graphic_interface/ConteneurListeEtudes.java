@@ -25,7 +25,7 @@ public class ConteneurListeEtudes extends ConteneurAvecImage {
 	// CONSTRUCTEURS //
 
 	public ConteneurListeEtudes(int width, int height, Conteneur precedent, Fenetre fen) {
-		super(width, height, FenetreAccueil.theme.getBackground(), true);
+		super(width, height-20, FenetreAccueil.theme.getBackground(), true);
 		this.precedent = precedent;
 		this.fen = fen;
 		this.conteneur = new Conteneur(width,height);
