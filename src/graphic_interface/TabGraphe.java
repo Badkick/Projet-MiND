@@ -414,7 +414,23 @@ public class TabGraphe extends JTabbedPane {
 			}catch(NullPointerException ex){}
 			try{	
 				ConteneurSchema cont=(ConteneurSchema) this.getConteneur_risque();
-				if(FenetreAccueil.etude.getS2().getRis_principale().getNumero()==1){
+				cont.getAction2().setSelected(true);
+				if(FenetreAccueil.etude.getS2().getRis_notees()[0].getNote()!=Integer.MAX_VALUE){
+					cont.setNote_simple_marche(FenetreAccueil.etude.getS2().getRis_notees()[0].getNote());
+				}
+				if(FenetreAccueil.etude.getS2().getRis_notees()[1].getNote()!=Integer.MAX_VALUE){
+					cont.setNote_professionnelle(FenetreAccueil.etude.getS2().getRis_notees()[0].getNote());
+				}
+				if(FenetreAccueil.etude.getS2().getRis_notees()[2].getNote()!=Integer.MAX_VALUE){
+					cont.setNote_mecaniste(FenetreAccueil.etude.getS2().getRis_notees()[1].getNote());
+				}
+				if(FenetreAccueil.etude.getS2().getRis_notees()[3].getNote()!=Integer.MAX_VALUE){
+					cont.setNote_simple_centralisee(FenetreAccueil.etude.getS2().getRis_notees()[2].getNote());
+				}
+				if(FenetreAccueil.etude.getS2().getRis_notees()[4].getNote()!=Integer.MAX_VALUE){
+					cont.setNote_entrepreneuriale(FenetreAccueil.etude.getS2().getRis_notees()[3].getNote());
+				}
+				/*if(FenetreAccueil.etude.getS2().getRis_principale().getNumero()==1){
 					cont.getAction2().setSelected(true);
 					cont.getAction2().setBoutonSelected(cont.getB_simple_marche());
 					cont.getB_simple_marche().desactiver(FenetreAccueil.theme.getbSchema2Survol());
@@ -494,7 +510,7 @@ public class TabGraphe extends JTabbedPane {
 					if(FenetreAccueil.etude.getS2().getRis_notees()[3].getNote()!=Integer.MAX_VALUE){
 						cont.setNote_simple_centralisee(FenetreAccueil.etude.getS2().getRis_notees()[3].getNote());
 					}
-				}
+				}*/
 			}catch(NullPointerException ex){}
 			break;
 		case 3:

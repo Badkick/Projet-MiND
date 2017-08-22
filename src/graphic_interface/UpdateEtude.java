@@ -61,7 +61,6 @@ public class UpdateEtude implements ComponentListener {
 		case 2:
 			try{FenetreAccueil.etude.getS2().setMtn_principale(Structure.getByName(tab.getConteneur_maintenant().getAction2().getBoutonSelected().getName()));} catch(NullPointerException ex) {FenetreAccueil.etude.getS2().setMtn_principale(null);}
 			try{FenetreAccueil.etude.getS2().setApr_principale(Structure.getByName(tab.getConteneur_apres().getAction2().getBoutonSelected().getName()));} catch(NullPointerException ex) {FenetreAccueil.etude.getS2().setApr_principale(null);}
-			try{FenetreAccueil.etude.getS2().setRis_principale(Structure.getByName(((ConteneurSchema) tab.getConteneur_risque()).getAction2().getBoutonSelected().getName()));} catch(NullPointerException ex) {FenetreAccueil.etude.getS2().setRis_principale(null);}
 
 			if(tab.getConteneur_maintenant().getAction2().isSelected())
 			{
@@ -135,41 +134,16 @@ public class UpdateEtude implements ComponentListener {
 				FenetreAccueil.etude.getS2().setApr_notees(apr_notees);
 			}
 			
-			if(((ConteneurSchema)tab.getConteneur_risque()).getAction2().isSelected())
-			{
-				ConteneurSchema conteneur = (ConteneurSchema) tab.getConteneur_risque();
-				ActionBoutonSchemas23 action = conteneur.getAction2();
+				ConteneurSchema conteneur_2 = (ConteneurSchema) tab.getConteneur_risque();
 				@SuppressWarnings("unchecked")
-				ElementNote<Structure>[] ris_notees = new ElementNote[4];
-				int i=0;
-				if(!action.getBoutonSelected().getName().equals(Structure.SIMPLE_MARCHE.getNom()))
-				{
-					ris_notees[i] = new ElementNote<Structure>(Structure.SIMPLE_MARCHE, conteneur.getNote_simple_marche());
-					i++;
-				}
-				if(!action.getBoutonSelected().getName().equals(Structure.PROFESSIONNELLE.getNom()))
-				{
-					ris_notees[i] = new ElementNote<Structure>(Structure.PROFESSIONNELLE, conteneur.getNote_professionnelle());
-					i++;
-				}
-				if(!action.getBoutonSelected().getName().equals(Structure.MECANISTE.getNom()))
-				{
-					ris_notees[i] = new ElementNote<Structure>(Structure.MECANISTE, conteneur.getNote_mecaniste());
-					i++;
-				}
-				if(!action.getBoutonSelected().getName().equals(Structure.SIMPLE_CENTRALISEE.getNom()))
-				{
-					ris_notees[i] = new ElementNote<Structure>(Structure.SIMPLE_CENTRALISEE, conteneur.getNote_simple_centralisee());
-					i++;
-				}
-				if(!action.getBoutonSelected().getName().equals(Structure.ENTREPRENEURIALE.getNom()))
-				{
-					ris_notees[i] = new ElementNote<Structure>(Structure.ENTREPRENEURIALE, conteneur.getNote_entrepreneuriale());
-					i++;
-				}
+				ElementNote<Structure>[] ris_notees_schema2 = new ElementNote[5];
+				ris_notees_schema2[0] = new ElementNote<Structure>(Structure.SIMPLE_MARCHE, conteneur_2.getNote_simple_marche());
+				ris_notees_schema2[1] = new ElementNote<Structure>(Structure.PROFESSIONNELLE, conteneur_2.getNote_professionnelle());
+				ris_notees_schema2[2] = new ElementNote<Structure>(Structure.MECANISTE, conteneur_2.getNote_mecaniste());
+				ris_notees_schema2[3] = new ElementNote<Structure>(Structure.SIMPLE_CENTRALISEE, conteneur_2.getNote_simple_centralisee());
+				ris_notees_schema2[4] = new ElementNote<Structure>(Structure.ENTREPRENEURIALE, conteneur_2.getNote_entrepreneuriale());
 				
-				FenetreAccueil.etude.getS2().setRis_notees(ris_notees);
-			}
+				FenetreAccueil.etude.getS2().setRis_notees(ris_notees_schema2);
 			break;
 			
 		case 3:

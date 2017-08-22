@@ -95,9 +95,6 @@ public class ChargerEtude implements ActionListener {
 			try{
 				st_2=Structure.getByNum(Integer.valueOf(aLire_2.readLine()));
 			}catch(Exception ex){}
-			try{//a supprimer
-				st_ris=Structure.getByNum(Integer.valueOf(aLire_2.readLine()));
-			}catch(Exception ex){}
 			@SuppressWarnings("unchecked")
 			ElementNote<Structure>[] mtn_notees = new ElementNote[4];
 			@SuppressWarnings("unchecked")
@@ -140,7 +137,7 @@ public class ChargerEtude implements ActionListener {
 					ris_notees[i]=new ElementNote<Structure>(nom_ris,note_ris);
 				}catch(NullPointerException ex){ris_notees[i]=new ElementNote<Structure>(nom_ris,Integer.MAX_VALUE);}
 			}
-			/*Structure nom_ris=null;
+			Structure nom_ris=null;
 			Integer note_ris=null;
 			try{
 				nom_ris=Structure.getByNum(Integer.valueOf(aLire_2.readLine()));
@@ -150,9 +147,9 @@ public class ChargerEtude implements ActionListener {
 			}catch(Exception ex){}
 			try{
 				ris_notees[4]=new ElementNote<Structure>(nom_ris,note_ris);
-			}catch(NullPointerException ex){ris_notees[4]=new ElementNote<Structure>(nom_ris,Integer.MAX_VALUE);}*/
+			}catch(NullPointerException ex){ris_notees[4]=new ElementNote<Structure>(nom_ris,Integer.MAX_VALUE);}
 			aLire_2.close();
-			schema2=new Schema2(st_1,st_2,st_ris,mtn_notees,apr_notees,ris_notees);
+			schema2=new Schema2(st_1,st_2,mtn_notees,apr_notees,ris_notees);
 			
 		}
 		catch (IOException e2){

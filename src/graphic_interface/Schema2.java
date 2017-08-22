@@ -6,22 +6,20 @@ public class Schema2 {
 	
 	private Structure mtn_principale;
 	private Structure apr_principale;
-	private Structure ris_principale;
 	
 	@SuppressWarnings("unchecked")
 	private ElementNote<Structure>[] mtn_notees = new ElementNote[4];
 	@SuppressWarnings("unchecked")
 	private ElementNote<Structure>[] apr_notees = new ElementNote[4];
 	@SuppressWarnings("unchecked")
-	private ElementNote<Structure>[] ris_notees = new ElementNote[4];
+	private ElementNote<Structure>[] ris_notees = new ElementNote[5];
 	
 	// CONSTRUCTEUR //
 	
-	public Schema2(Structure mtn_principale, Structure apr_principale, Structure ris_principale, ElementNote<Structure>[] mtn_notees, ElementNote<Structure>[] apr_notees, ElementNote<Structure>[] ris_notees)
+	public Schema2(Structure mtn_principale, Structure apr_principale, ElementNote<Structure>[] mtn_notees, ElementNote<Structure>[] apr_notees, ElementNote<Structure>[] ris_notees)
 	{
 		this.mtn_principale = mtn_principale;
 		this.apr_principale = apr_principale;
-		this.ris_principale = ris_principale;
 		
 		for(int i=0;i<4;i++)
 		{
@@ -29,6 +27,8 @@ public class Schema2 {
 			this.apr_notees[i] = apr_notees[i];
 			this.ris_notees[i] = ris_notees[i];
 		}
+		
+		this.ris_notees[4]=ris_notees[4];
 	}
 	
 	// GETTERS //
@@ -38,9 +38,6 @@ public class Schema2 {
 	}
 	public Structure getApr_principale() {
 		return apr_principale;
-	}
-	public Structure getRis_principale() {
-		return ris_principale;
 	}
 	public ElementNote<Structure>[] getMtn_notees() {
 		return mtn_notees;
@@ -59,9 +56,6 @@ public class Schema2 {
 	}
 	public void setApr_principale(Structure apr_principale) {
 		this.apr_principale = apr_principale;
-	}
-	public void setRis_principale(Structure ris_principale) {
-		this.ris_principale = ris_principale;
 	}
 	public void setMtn_notees(ElementNote<Structure>[] mtn_notees) {
 		for(int i=0;i<mtn_notees.length;i++) this.mtn_notees[i] = mtn_notees[i];

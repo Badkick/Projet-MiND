@@ -183,7 +183,7 @@ public class ApercuSchema2 extends ConteneurAvecImage{
 				// TODO Auto-generated method stub
 				if (e.getKeyCode()==KeyEvent.VK_RIGHT){
 					setPeriode(getPeriode()+1);
-					if(getPeriode()<=1){
+					if(getPeriode()<=2){
 						alpha = 0.0f;
 					}
 					repaint();
@@ -345,7 +345,9 @@ public class ApercuSchema2 extends ConteneurAvecImage{
 				}
 			}catch(NullPointerException ex){}
 		}else if(this.getPeriode()>=1){
-			this.setPeriode(1);
+			if(this.getPeriode()>=2){
+				this.setPeriode(2);
+			}
 			this.drawCenteredString(g, "Cible", 10, 10, 170, 60, Color.black);
 			try{
 				this.drawArrow(g);
@@ -463,32 +465,32 @@ public class ApercuSchema2 extends ConteneurAvecImage{
 					}
 				}
 			}catch(NullPointerException ex){}
-			try{
-				String texte1="Risque principal :\n\n "+FenetreAccueil.etude.getS2().getRis_principale().getNom().replaceAll("\n", " ");
-				g.setColor(Color.red);
-				//g.fillRoundRect(205, 10, 260, 210, 20, 20);
-				g.fillRoundRect(205, 10, 260, 60, 20, 20);
-				this.drawCenteredString(g, texte1, 205, 10, 260, 60, Color.white);
-				String texte="Risques notés :\n\n";
-				if(FenetreAccueil.etude.getS2().getRis_notees()[0].getNote()!=Integer.MAX_VALUE){
-					texte=texte+"- "+FenetreAccueil.etude.getS2().getRis_notees()[0].getElement().getNom().replaceAll("\n", " ")+" ("+String.valueOf(FenetreAccueil.etude.getS2().getRis_notees()[0].getNote())+" / 10)\n";
-				}
-				if(FenetreAccueil.etude.getS2().getRis_notees()[1].getNote()!=Integer.MAX_VALUE){
-					texte=texte+"- "+FenetreAccueil.etude.getS2().getRis_notees()[1].getElement().getNom().replaceAll("\n", " ")+" ("+String.valueOf(FenetreAccueil.etude.getS2().getRis_notees()[1].getNote())+" / 10)\n";
-				}
-				if(FenetreAccueil.etude.getS2().getRis_notees()[2].getNote()!=Integer.MAX_VALUE){
-					texte=texte+"- "+FenetreAccueil.etude.getS2().getRis_notees()[2].getElement().getNom().replaceAll("\n", " ")+" ("+String.valueOf(FenetreAccueil.etude.getS2().getRis_notees()[2].getNote())+" / 10)\n";
-				}
-				if(FenetreAccueil.etude.getS2().getRis_notees()[3].getNote()!=Integer.MAX_VALUE){
-					texte=texte+"- "+FenetreAccueil.etude.getS2().getRis_notees()[3].getElement().getNom().replaceAll("\n", " ")+" ("+String.valueOf(FenetreAccueil.etude.getS2().getRis_notees()[3].getNote())+" / 10)\n";
-				}
-				String comparaison="Risques notés :\n\n";
-				if(!comparaison.equals(texte)){
-					g.setColor(Color.red);
-					g.fillRoundRect(205, 72, 260, 150, 20, 20);
-					this.drawCenteredString(g, texte, 205, 72, 260, 150, Color.white);
-				}
-			}catch(NullPointerException ex){}
+			if(this.getPeriode()>=2){
+				try{
+					String texte="Risques notés :\n\n";
+					if(FenetreAccueil.etude.getS2().getRis_notees()[0].getNote()!=Integer.MAX_VALUE){
+						texte=texte+"- "+FenetreAccueil.etude.getS2().getRis_notees()[0].getElement().getNom().replaceAll("\n", " ")+" ("+String.valueOf(FenetreAccueil.etude.getS2().getRis_notees()[0].getNote())+" / 10)\n";
+					}
+					if(FenetreAccueil.etude.getS2().getRis_notees()[1].getNote()!=Integer.MAX_VALUE){
+						texte=texte+"- "+FenetreAccueil.etude.getS2().getRis_notees()[1].getElement().getNom().replaceAll("\n", " ")+" ("+String.valueOf(FenetreAccueil.etude.getS2().getRis_notees()[1].getNote())+" / 10)\n";
+					}
+					if(FenetreAccueil.etude.getS2().getRis_notees()[2].getNote()!=Integer.MAX_VALUE){
+						texte=texte+"- "+FenetreAccueil.etude.getS2().getRis_notees()[2].getElement().getNom().replaceAll("\n", " ")+" ("+String.valueOf(FenetreAccueil.etude.getS2().getRis_notees()[2].getNote())+" / 10)\n";
+					}
+					if(FenetreAccueil.etude.getS2().getRis_notees()[3].getNote()!=Integer.MAX_VALUE){
+						texte=texte+"- "+FenetreAccueil.etude.getS2().getRis_notees()[3].getElement().getNom().replaceAll("\n", " ")+" ("+String.valueOf(FenetreAccueil.etude.getS2().getRis_notees()[3].getNote())+" / 10)\n";
+					}
+					if(FenetreAccueil.etude.getS2().getRis_notees()[4].getNote()!=Integer.MAX_VALUE){
+						texte=texte+"- "+FenetreAccueil.etude.getS2().getRis_notees()[3].getElement().getNom().replaceAll("\n", " ")+" ("+String.valueOf(FenetreAccueil.etude.getS2().getRis_notees()[3].getNote())+" / 10)\n";
+					}
+					String comparaison="Risques notés :\n\n";
+					if(!comparaison.equals(texte)){
+						g.setColor(Color.red);
+						g.fillRoundRect(205, 10, 260, 200, 20, 20);
+						this.drawCenteredString(g, texte, 205, 10, 260, 200, Color.white);
+					}
+				}catch(NullPointerException ex){}
+			}
 			
 		}
 		this.drawCenteredString(g, Structure.SIMPLE_MARCHE.getNom(), 705, 35, width, height,Color.white);
