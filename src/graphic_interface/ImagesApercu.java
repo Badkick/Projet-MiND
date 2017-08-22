@@ -14,6 +14,10 @@ import java.io.File;
 
 public class ImagesApercu extends Conteneur{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int periode;
 	
 	public ImagesApercu(int width,int height,int periode){
@@ -943,14 +947,16 @@ public class ImagesApercu extends Conteneur{
 				try{
 					this.drawArrow_schema1(g, 1);
 				}catch(NullPointerException ex){}
-				g.setColor(Color.white);
-				g.fillOval(2*376, 2*380, 2*200, 2*60);
 				g.fillRoundRect(2*401, 2*178, 2*55, 2*35, 2*15, 2*15);
 				g.fillRoundRect(2*498, 2*178, 2*55, 2*35, 2*15, 2*15);
 				g.fillRoundRect(2*401, 2*245, 2*55, 2*35, 2*15, 2*15);
 				g.fillRoundRect(2*498, 2*245, 2*55, 2*35, 2*15, 2*15);
 				try{
-					//this.drawCenteredString(g, FenetreAccueil.etude.getS1().getCommentaire_risque(), 2*376, 2*380, 2*200, 2*60,Color.black);
+					if(!FenetreAccueil.etude.getS1().getCommentaire_risque().equals("")){
+						g.setColor(Color.white);
+						g.fillOval(2*376, 2*380, 2*200, 2*60);
+					}
+					this.drawCenteredString(g, FenetreAccueil.etude.getS1().getCommentaire_risque(), 2*376, 2*380, 2*200, 2*60,Color.black);
 				}catch(NullPointerException ex){}
 				try{
 					int x=(int) (253-technique.getWidth(null)*(0.7*FenetreAccueil.etude.getS1().getRis_contr_tech().get()+30)/200);

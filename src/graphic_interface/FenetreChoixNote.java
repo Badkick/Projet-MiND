@@ -1,6 +1,5 @@
 package graphic_interface;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -11,6 +10,10 @@ import javax.swing.JTextField;
 
 public class FenetreChoixNote extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTextField demande = new JTextField();
 
 	public FenetreChoixNote(Bouton bouton, ConteneurSchema conteneur) {

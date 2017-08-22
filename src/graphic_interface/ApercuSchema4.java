@@ -16,6 +16,10 @@ import java.io.File;
 
 public class ApercuSchema4 extends ConteneurAvecImage{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int periode;
 	float alpha = 0.0f;
 	
@@ -628,7 +632,7 @@ public class ApercuSchema4 extends ConteneurAvecImage{
 			
 		}
 		
-		alpha +=0.02f;
+		alpha +=0.01f;
 		if(alpha >= 1.0f){
 			alpha=1.0f;
 		}else{

@@ -25,7 +25,9 @@ public class Etude {
 	
 	public Etude()
 	{
+		@SuppressWarnings("unchecked")
 		ElementNote<Structure>[] structure = new ElementNote[4];
+		@SuppressWarnings("unchecked")
 		ElementNote<Organisation>[] organisation = new ElementNote[4];
 		for (int i=0;i<4;i++){
 			structure[i]=null;

@@ -8,8 +8,11 @@ public class Schema3 {
 	private Organisation apr_principale;
 	private Organisation ris_principale;
 
+	@SuppressWarnings("unchecked")
 	private ElementNote<Organisation>[] mtn_notees = new ElementNote[4];
+	@SuppressWarnings("unchecked")
 	private ElementNote<Organisation>[] apr_notees = new ElementNote[4];
+	@SuppressWarnings("unchecked")
 	private ElementNote<Organisation>[] ris_notees = new ElementNote[4];
 
 	// CONSTRUCTEUR //

@@ -16,6 +16,10 @@ import java.io.File;
 
 public class ApercuSchema3 extends ConteneurAvecImage{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int periode;
 	float alpha = 0.0f;
 	
@@ -493,7 +497,7 @@ public class ApercuSchema3 extends ConteneurAvecImage{
 		this.drawCenteredString(g, Organisation.FLEXIBLE.getNom(), 587, 345, width, height,Color.white);
 		
 		
-		alpha +=0.02f;
+		alpha +=0.01f;
 		if(alpha >= 1.0f){
 			alpha=1.0f;
 		}else{

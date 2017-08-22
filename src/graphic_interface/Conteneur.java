@@ -11,6 +11,10 @@ public class Conteneur extends JPanel {
 
 	// VARIABLES DE CLASSE //
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int height;
 	private int width;
 

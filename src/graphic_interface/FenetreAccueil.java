@@ -103,7 +103,7 @@ public class FenetreAccueil {
 					etude = new Etude();
 					ConteneurNouvelleEtude nouvelle_etude = new ConteneurNouvelleEtude(fenetre_principale.getSize(), conteneur_principal, fenetre_principale,nom);
 					ConteneurNouvelleEtude.unsave();
-					fenetre_principale.setConteneur(nouvelle_etude,"Projet MiND - "+nom);
+					fenetre_principale.setConteneur(nouvelle_etude,"StudyPresentation - "+nom);
 				}
 
 			}

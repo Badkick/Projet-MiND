@@ -6,7 +6,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
-import java.net.URI;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -17,17 +16,19 @@ import java.util.List;
 import javax.swing.GroupLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JTabbedPane;
-import javax.swing.UIManager;
 
 public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 
 	// VARIABLES DE CLASSE //
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public static Dimension TAILLE_GRAND_CONTENEUR= new Dimension(972,570);
 	public static Dimension TAILLE_PETIT_CONTENEUR= new Dimension(972,540);
 	private static int MAINTENANT = 0;
 	private static int APRES = 1;
-	private static int RISQUE = 2;
 	public static int NB_ONGLETS = 6;
 	private static boolean saved;
 	private final String[] titres_tabs = {"Contraintes d'envirmt.","Structures d'organisation","Organisation du travail","Relations entre acteurs","Identités collectives","Mondes sociaux"};

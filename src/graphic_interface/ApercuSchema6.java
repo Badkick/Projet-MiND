@@ -12,11 +12,14 @@ import java.awt.RenderingHints;
 import java.awt.Shape;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.awt.geom.Ellipse2D;
 import java.io.File;
 
 public class ApercuSchema6 extends ConteneurAvecImage{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int periode;
 	float alpha = 0.0f;
 	
@@ -289,7 +292,7 @@ public class ApercuSchema6 extends ConteneurAvecImage{
 		this.drawCenteredString(g, Entreprise.CRISE.getNom(), 550, 300, width, height, Color.WHITE);
 		this.drawCenteredString(g, Entreprise.BUREAUCRATIQUE.getNom(), 235, 340, width, height, Color.WHITE);
 		
-		alpha +=0.02f;
+		alpha +=0.01f;
 		if(alpha >= 1.0f){
 			alpha=1.0f;
 		}else{

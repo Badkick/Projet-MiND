@@ -9,6 +9,10 @@ import javax.swing.JFrame;
 
 public class Fenetre extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Conteneur conteneur;// le conteneur principal (JContentPane)
 	
 	public Fenetre(Conteneur pane, Theme theme) {
@@ -45,7 +49,7 @@ public class Fenetre extends JFrame {
 	public void configurationBasique(Theme theme)
 	{
 		this.setSize(1000, 700); // taille de la fenêtre
-		this.setTitle("Projet MiND"); // titre de la fenêtre
+		this.setTitle("StudyPresentation"); // titre de la fenêtre
 		this.setLocationRelativeTo(null); // fenêtre au centre
 		this.setIconImage(theme.getIcone());
 		this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE); // arrêter le programme lors de la fermeture de la fenêtre

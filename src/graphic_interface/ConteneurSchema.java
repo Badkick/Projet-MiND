@@ -2,19 +2,12 @@ package graphic_interface;
 
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.io.File;
 import java.text.NumberFormat;
 import java.text.ParseException;
 
 import javax.swing.GroupLayout;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -25,6 +18,10 @@ import javax.swing.text.NumberFormatter;
 
 public class ConteneurSchema extends ConteneurAvecImage {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public static final Dimension DIMENSION_TEXT_FIELD_SCHEMAS15 = new Dimension(45,30);
 	public static final Dimension DIMENSION_BOUTON_SCHEMAS23 = new Dimension(170,90);
 	public static final Dimension DIMENSION_BOUTON_SCHEMA6 = new Dimension(170,120);

@@ -2,34 +2,28 @@ package graphic_interface;
 
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
 
 import org.apache.poi.sl.usermodel.PictureData;
-import org.apache.poi.sl.usermodel.PictureData.PictureType;
 import org.apache.poi.util.IOUtils;
 import org.apache.poi.xslf.usermodel.SlideLayout;
 import org.apache.poi.xslf.usermodel.XMLSlideShow;
 import org.apache.poi.xslf.usermodel.XSLFPictureData;
 import org.apache.poi.xslf.usermodel.XSLFPictureShape;
-import org.apache.poi.xslf.usermodel.XSLFShape;
 import org.apache.poi.xslf.usermodel.XSLFSlide;
 import org.apache.poi.xslf.usermodel.XSLFSlideLayout;
 import org.apache.poi.xslf.usermodel.XSLFSlideMaster;
-import org.apache.poi.xslf.usermodel.XSLFTextParagraph;
 import org.apache.poi.xslf.usermodel.XSLFTextShape;
 
 public class PresenterEtude implements ActionListener {
@@ -123,6 +117,7 @@ public class PresenterEtude implements ActionListener {
 		FileOutputStream out = new FileOutputStream(file);
 		ppt.write(out);
 		out.close();
+		ppt.close();
 	}
 
 	private void presenter()

@@ -16,6 +16,10 @@ import java.io.File;
 
 public class ApercuSchema1 extends ConteneurAvecImage{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int periode;
 	float alpha = 0.0f;
 	
@@ -209,7 +213,7 @@ public class ApercuSchema1 extends ConteneurAvecImage{
 				}
 				this.drawCenteredString(g, FenetreAccueil.etude.getS1().getMtn_contr_tech().toString(), 401, 178, 55, 35);
 			}catch(NullPointerException ex){
-				g.drawImage(technique,(int)(253-technique.getWidth(null)/2),(int)(125-technique.getHeight(null)/2),technique.getWidth(null),technique.getHeight(null),null,null);
+				//g.drawImage(technique,(int)(253-technique.getWidth(null)/2),(int)(125-technique.getHeight(null)/2),technique.getWidth(null),technique.getHeight(null),null,null);
 			}
 			try{
 				int x=(int) (702-pression.getWidth(null)*(0.7*FenetreAccueil.etude.getS1().getMtn_press_envir().get()+30)/200);
@@ -221,7 +225,7 @@ public class ApercuSchema1 extends ConteneurAvecImage{
 				}
 				this.drawCenteredString(g, FenetreAccueil.etude.getS1().getMtn_press_envir().toString(), 498, 178, 55, 35);
 			}catch(NullPointerException ex){
-				g.drawImage(pression,(int)(702-pression.getWidth(null)/2),(int)(125-pression.getHeight(null)/2),pression.getWidth(null),pression.getHeight(null),null,null);
+				//g.drawImage(pression,(int)(702-pression.getWidth(null)/2),(int)(125-pression.getHeight(null)/2),pression.getWidth(null),pression.getHeight(null),null,null);
 			}
 			try{
 				int x=(int) (253-protege.getWidth(null)*(0.7*FenetreAccueil.etude.getS1().getMtn_etabl_prot().get()+30)/200);
@@ -233,7 +237,7 @@ public class ApercuSchema1 extends ConteneurAvecImage{
 				}
 				this.drawCenteredString(g, FenetreAccueil.etude.getS1().getMtn_etabl_prot().toString(), 401, 245, 55, 35);
 			}catch(NullPointerException ex){
-				g.drawImage(protege,(int)(253-protege.getWidth(null)/2),(int)(332-technique.getHeight(null)/2),protege.getWidth(null),protege.getHeight(null),null,null);
+				//g.drawImage(protege,(int)(253-protege.getWidth(null)/2),(int)(332-technique.getHeight(null)/2),protege.getWidth(null),protege.getHeight(null),null,null);
 			}
 			try{
 				int x=(int) (702-menace.getWidth(null)*(0.7*FenetreAccueil.etude.getS1().getMtn_mena_mar().get()+30)/200);
@@ -245,7 +249,7 @@ public class ApercuSchema1 extends ConteneurAvecImage{
 				}
 				this.drawCenteredString(g, FenetreAccueil.etude.getS1().getMtn_mena_mar().toString(), 498, 245, 55, 35);
 			}catch(NullPointerException ex){
-				g.drawImage(menace,(int)(702-menace.getWidth(null)/2),(int)(332-menace.getHeight(null)/2),menace.getWidth(null),menace.getHeight(null),null,null);
+				//g.drawImage(menace,(int)(702-menace.getWidth(null)/2),(int)(332-menace.getHeight(null)/2),menace.getWidth(null),menace.getHeight(null),null,null);
 			}
 		}else if(this.getPeriode()==1){
 			this.drawCenteredString(g, "Années 2010", 376, 10, 200, 60);
@@ -267,7 +271,7 @@ public class ApercuSchema1 extends ConteneurAvecImage{
 				}
 				this.drawCenteredString(g, FenetreAccueil.etude.getS1().getApr_contr_tech().toString(), 401, 178, 55, 35);
 			}catch(NullPointerException ex){
-				g.drawImage(technique,(int)(253-technique.getWidth(null)/2),(int)(125-technique.getHeight(null)/2),technique.getWidth(null),technique.getHeight(null),null,null);
+				//g.drawImage(technique,(int)(253-technique.getWidth(null)/2),(int)(125-technique.getHeight(null)/2),technique.getWidth(null),technique.getHeight(null),null,null);
 			}
 			try{
 				int x=(int) (702-pression.getWidth(null)*(0.7*FenetreAccueil.etude.getS1().getApr_press_envir().get()+30)/200);
@@ -279,7 +283,7 @@ public class ApercuSchema1 extends ConteneurAvecImage{
 				}
 				this.drawCenteredString(g, FenetreAccueil.etude.getS1().getApr_press_envir().toString(), 498, 178, 55, 35);
 			}catch(NullPointerException ex){
-				g.drawImage(pression,(int)(702-pression.getWidth(null)/2),(int)(125-pression.getHeight(null)/2),pression.getWidth(null),pression.getHeight(null),null,null);
+				//g.drawImage(pression,(int)(702-pression.getWidth(null)/2),(int)(125-pression.getHeight(null)/2),pression.getWidth(null),pression.getHeight(null),null,null);
 			}
 			try{
 				int x=(int) (253-protege.getWidth(null)*(0.7*FenetreAccueil.etude.getS1().getApr_etabl_prot().get()+30)/200);
@@ -291,7 +295,7 @@ public class ApercuSchema1 extends ConteneurAvecImage{
 				}
 				this.drawCenteredString(g, FenetreAccueil.etude.getS1().getApr_etabl_prot().toString(), 401, 245, 55, 35);
 			}catch(NullPointerException ex){
-				g.drawImage(protege,(int)(253-protege.getWidth(null)/2),(int)(332-technique.getHeight(null)/2),protege.getWidth(null),protege.getHeight(null),null,null);
+				//g.drawImage(protege,(int)(253-protege.getWidth(null)/2),(int)(332-technique.getHeight(null)/2),protege.getWidth(null),protege.getHeight(null),null,null);
 			}
 			try{
 				int x=(int) (702-menace.getWidth(null)*(0.7*FenetreAccueil.etude.getS1().getApr_mena_mar().get()+30)/200);
@@ -303,7 +307,7 @@ public class ApercuSchema1 extends ConteneurAvecImage{
 				}
 				this.drawCenteredString(g, FenetreAccueil.etude.getS1().getApr_mena_mar().toString(), 498, 245, 55, 35);
 			}catch(NullPointerException ex){
-				g.drawImage(menace,(int)(702-menace.getWidth(null)/2),(int)(332-menace.getHeight(null)/2),menace.getWidth(null),menace.getHeight(null),null,null);
+				//g.drawImage(menace,(int)(702-menace.getWidth(null)/2),(int)(332-menace.getHeight(null)/2),menace.getWidth(null),menace.getHeight(null),null,null);
 			}
 		}else if(this.getPeriode()>=2){
 			this.setPeriode(2);
@@ -316,9 +320,11 @@ public class ApercuSchema1 extends ConteneurAvecImage{
 			g.fillRoundRect(401, 245, 55, 35, 15, 15);
 			g.fillRoundRect(498, 245, 55, 35, 15, 15);
 			this.drawCenteredString(g, "Années 2020", 376, 10, 200, 60);
-			g.setColor(Color.white);
-			g.fillOval(376, 380, 200, 60);
 			try{
+				if(!FenetreAccueil.etude.getS1().getCommentaire_risque().equals("")){
+					g.setColor(Color.white);
+					g.fillOval(376, 380, 200, 60);
+				}
 				this.drawCenteredString(g, FenetreAccueil.etude.getS1().getCommentaire_risque(), 376, 380, 200, 60);
 			}catch(NullPointerException ex){}
 			try{
@@ -331,7 +337,7 @@ public class ApercuSchema1 extends ConteneurAvecImage{
 				}
 				this.drawCenteredString(g, FenetreAccueil.etude.getS1().getRis_contr_tech().toString(), 401, 178, 55, 35);
 			}catch(NullPointerException ex){
-				g.drawImage(technique,(int)(253-technique.getWidth(null)/2),(int)(125-technique.getHeight(null)/2),technique.getWidth(null),technique.getHeight(null),null,null);
+				//g.drawImage(technique,(int)(253-technique.getWidth(null)/2),(int)(125-technique.getHeight(null)/2),technique.getWidth(null),technique.getHeight(null),null,null);
 			}
 			try{
 				int x=(int) (702-pression.getWidth(null)*(0.7*FenetreAccueil.etude.getS1().getRis_press_envir().get()+30)/200);
@@ -343,7 +349,7 @@ public class ApercuSchema1 extends ConteneurAvecImage{
 				}
 				this.drawCenteredString(g, FenetreAccueil.etude.getS1().getRis_press_envir().toString(), 498, 178, 55, 35);
 			}catch(NullPointerException ex){
-				g.drawImage(pression,(int)(702-pression.getWidth(null)/2),(int)(125-pression.getHeight(null)/2),pression.getWidth(null),pression.getHeight(null),null,null);
+				//g.drawImage(pression,(int)(702-pression.getWidth(null)/2),(int)(125-pression.getHeight(null)/2),pression.getWidth(null),pression.getHeight(null),null,null);
 			}
 			try{
 				int x=(int) (253-protege.getWidth(null)*(0.7*FenetreAccueil.etude.getS1().getRis_etabl_prot().get()+30)/200);
@@ -355,7 +361,7 @@ public class ApercuSchema1 extends ConteneurAvecImage{
 					g.drawImage(protege, x, y, width,height , null, null);
 				}
 			}catch(NullPointerException ex){
-				g.drawImage(protege,(int)(253-protege.getWidth(null)/2),(int)(332-technique.getHeight(null)/2),protege.getWidth(null),protege.getHeight(null),null,null);
+				//g.drawImage(protege,(int)(253-protege.getWidth(null)/2),(int)(332-technique.getHeight(null)/2),protege.getWidth(null),protege.getHeight(null),null,null);
 			}
 			try{
 				int x=(int) (702-menace.getWidth(null)*(0.7*FenetreAccueil.etude.getS1().getRis_mena_mar().get()+30)/200);
@@ -367,10 +373,10 @@ public class ApercuSchema1 extends ConteneurAvecImage{
 				}
 				this.drawCenteredString(g, FenetreAccueil.etude.getS1().getRis_mena_mar().toString(), 498, 245, 55, 35);
 			}catch(NullPointerException ex){
-				g.drawImage(menace,(int)(702-menace.getWidth(null)/2),(int)(332-menace.getHeight(null)/2),menace.getWidth(null),menace.getHeight(null),null,null);
+				//g.drawImage(menace,(int)(702-menace.getWidth(null)/2),(int)(332-menace.getHeight(null)/2),menace.getWidth(null),menace.getHeight(null),null,null);
 			}
 		}
-		alpha +=0.02f;
+		alpha +=0.01f;
 		if(alpha >= 1.0f){
 			alpha=1.0f;
 		}else{

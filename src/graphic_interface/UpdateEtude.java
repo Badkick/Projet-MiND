@@ -67,6 +67,7 @@ public class UpdateEtude implements ComponentListener {
 			{
 				ConteneurSchema conteneur = tab.getConteneur_maintenant();
 				ActionBoutonSchemas23 action = conteneur.getAction2();
+				@SuppressWarnings("unchecked")
 				ElementNote<Structure>[] mtn_notees = new ElementNote[4];
 				int i=0;
 				if(!action.getBoutonSelected().getName().equals(Structure.SIMPLE_MARCHE.getNom()))
@@ -102,6 +103,7 @@ public class UpdateEtude implements ComponentListener {
 			{
 				ConteneurSchema conteneur = tab.getConteneur_apres();
 				ActionBoutonSchemas23 action = conteneur.getAction2();
+				@SuppressWarnings("unchecked")
 				ElementNote<Structure>[] apr_notees = new ElementNote[4];
 				int i=0;
 				if(!action.getBoutonSelected().getName().equals(Structure.SIMPLE_MARCHE.getNom()))
@@ -137,6 +139,7 @@ public class UpdateEtude implements ComponentListener {
 			{
 				ConteneurSchema conteneur = (ConteneurSchema) tab.getConteneur_risque();
 				ActionBoutonSchemas23 action = conteneur.getAction2();
+				@SuppressWarnings("unchecked")
 				ElementNote<Structure>[] ris_notees = new ElementNote[4];
 				int i=0;
 				if(!action.getBoutonSelected().getName().equals(Structure.SIMPLE_MARCHE.getNom()))
@@ -178,6 +181,7 @@ public class UpdateEtude implements ComponentListener {
 			{
 				ConteneurSchema conteneur = tab.getConteneur_maintenant();
 				ActionBoutonSchemas23 action = conteneur.getAction3();
+				@SuppressWarnings("unchecked")
 				ElementNote<Organisation>[] mtn_notees = new ElementNote[4];
 				int i=0;
 				if(!action.getBoutonSelected().getName().equals(Organisation.RATIONNELLE.getNom()))
@@ -213,6 +217,7 @@ public class UpdateEtude implements ComponentListener {
 			{
 				ConteneurSchema conteneur = tab.getConteneur_apres();
 				ActionBoutonSchemas23 action = conteneur.getAction3();
+				@SuppressWarnings("unchecked")
 				ElementNote<Organisation>[] apr_notees = new ElementNote[4];
 				int i=0;
 				if(!action.getBoutonSelected().getName().equals(Organisation.RATIONNELLE.getNom()))
@@ -248,6 +253,7 @@ public class UpdateEtude implements ComponentListener {
 			{
 				ConteneurSchema conteneur = (ConteneurSchema) tab.getConteneur_risque();
 				ActionBoutonSchemas23 action = conteneur.getAction3();
+				@SuppressWarnings("unchecked")
 				ElementNote<Organisation>[] ris_notees = new ElementNote[4];
 				int i=0;
 				if(!action.getBoutonSelected().getName().equals(Organisation.RATIONNELLE.getNom()))

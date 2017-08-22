@@ -7,19 +7,21 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Shape;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.awt.geom.Ellipse2D;
-import java.awt.geom.RoundRectangle2D;
+
 
 import javax.swing.BorderFactory;
 import javax.swing.DefaultButtonModel;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
+
 
 class BoutonOvaleSchema6 extends Bouton {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	// VARIABLES INSTANCE //
 
 	private Shape shape;

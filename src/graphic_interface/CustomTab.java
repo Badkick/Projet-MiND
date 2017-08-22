@@ -6,6 +6,10 @@ import javax.swing.JLabel;
 
 public class CustomTab extends JLabel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public static Dimension TAILLE = new Dimension(140,20);
 	private final float TAILLE_POLICE = 12;
 	

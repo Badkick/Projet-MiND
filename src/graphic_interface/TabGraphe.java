@@ -12,6 +12,11 @@ import javax.swing.event.CaretListener;
 
 public class TabGraphe extends JTabbedPane {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private static String[] EXPLICATIONS = {"<html><body style='background-color:rgb(90,90,90); font-family:Calibri; font-weight:light; color:white; margin-top:30px; font-size:140%;'>Remplissez les 4 cases de pourcentages pour maintenant, <br> pour après, et pour encore après. <br> <br> Pour que le schéma soit valide, le total des 4 pourcentages <br> doit atteindre 100%.</body></html>",
 			"<html><body style='background-color:rgb(90,90,90); font-family:Calibri; font-weight:light; color:white; margin-top:30px; font-size:130%;'>Choisissez une structure principale en cliquant dessus puis notez les autres structures <br> sur 10 en suivant la démarche suivante : <br> <br> - Cliquer sur la structure à noter <br> - Entrer la note sur 10 <br> - Appuyer sur ENTREE pour valider </body></html>",
 			"<html><body style='background-color:rgb(90,90,90); font-family:Calibri; font-weight:light; color:white; margin-top:30px; font-size:130%;'>Choisissez une organisation principale en cliquant dessus <br>puis notez les autres organisations <br> sur 10 en suivant la démarche suivante : <br> <br> - Cliquer sur l'organisation à noter <br> - Entrer la note sur 10 <br> - Appuyer sur ENTREE pour valider </body></html>",

@@ -8,6 +8,10 @@ public class ConteneurAvecImage extends Conteneur{
 	
 	// VARIABLES DE CLASSE //
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Image img;
 	private boolean remplissage;
 	

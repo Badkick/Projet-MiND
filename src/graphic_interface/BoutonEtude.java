@@ -3,18 +3,17 @@ package graphic_interface;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+
 
 import javax.swing.GroupLayout;
 import javax.swing.JLabel;
 
 public class BoutonEtude extends ConteneurAvecImage {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public static final int LARGEUR = 697;
 	public static final int HAUTEUR = 80;
 	

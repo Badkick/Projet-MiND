@@ -13,6 +13,10 @@ public class ConteneurListeEtudes extends ConteneurAvecImage {
 
 	// VARIABLES DE CLASSE //
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Conteneur conteneur;
 	private Bouton bouton_back_menu;
 	private JScrollPane scroll;
