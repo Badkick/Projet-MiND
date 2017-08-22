@@ -6,22 +6,20 @@ public class Schema3 {
 
 	private Organisation mtn_principale;
 	private Organisation apr_principale;
-	private Organisation ris_principale;
 
 	@SuppressWarnings("unchecked")
 	private ElementNote<Organisation>[] mtn_notees = new ElementNote[4];
 	@SuppressWarnings("unchecked")
 	private ElementNote<Organisation>[] apr_notees = new ElementNote[4];
 	@SuppressWarnings("unchecked")
-	private ElementNote<Organisation>[] ris_notees = new ElementNote[4];
+	private ElementNote<Organisation>[] ris_notees = new ElementNote[5];
 
 	// CONSTRUCTEUR //
 
-	public Schema3(Organisation mtn_principale, Organisation apr_principale, Organisation ris_principale, ElementNote<Organisation>[] mtn_notees, ElementNote<Organisation>[] apr_notees, ElementNote<Organisation>[] ris_notees)
+	public Schema3(Organisation mtn_principale, Organisation apr_principale, ElementNote<Organisation>[] mtn_notees, ElementNote<Organisation>[] apr_notees, ElementNote<Organisation>[] ris_notees)
 	{
 		this.mtn_principale = mtn_principale;
 		this.apr_principale = apr_principale;
-		this.ris_principale = ris_principale;
 
 		for(int i=0;i<4;i++)
 		{
@@ -29,6 +27,8 @@ public class Schema3 {
 			this.apr_notees[i] = apr_notees[i];
 			this.ris_notees[i] = ris_notees[i];
 		}
+		
+		this.ris_notees[4] = ris_notees[4];
 	}
 
 	// GETTERS //
@@ -39,10 +39,6 @@ public class Schema3 {
 
 	public Organisation getApr_principale() {
 		return apr_principale;
-	}
-	
-	public Organisation getRis_principale() {
-		return ris_principale;
 	}
 
 	public ElementNote<Organisation>[] getMtn_notees() {
@@ -65,10 +61,6 @@ public class Schema3 {
 
 	public void setApr_principale(Organisation apr_principale) {
 		this.apr_principale = apr_principale;
-	}
-	
-	public void setRis_principale(Organisation ris_principale) {
-		this.ris_principale=ris_principale;
 	}
 
 	public void setMtn_notees(ElementNote<Organisation>[] mtn_notees) {

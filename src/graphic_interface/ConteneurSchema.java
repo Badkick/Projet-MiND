@@ -109,6 +109,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	private JLabel note_entrepreneuriale;
 
 	private ActionBoutonSchemas23 action2;
+	private boolean f_bouton2;
 
 	// cas 3
 
@@ -126,6 +127,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	private JLabel note_flexible;
 
 	private ActionBoutonSchemas23 action3;
+	private boolean f_bouton3;
 
 	// cas 4
 	private JFormattedTextField importance_consensus = new JFormattedTextField(
@@ -308,7 +310,9 @@ public class ConteneurSchema extends ConteneurAvecImage {
 					b_mecaniste.activer(FenetreAccueil.theme.getbSchema2Repos(), FenetreAccueil.theme.getbSchema2Survol(), FenetreAccueil.theme.getbSchema2Clic());
 					b_simple_centralisee.activer(FenetreAccueil.theme.getbSchema2Repos(), FenetreAccueil.theme.getbSchema2Survol(), FenetreAccueil.theme.getbSchema2Clic());
 					action2.setBoutonSelected(null);
-					action2.setSelected(false);
+					if(f_bouton2){
+						action2.setSelected(false);
+					}
 					note_entrepreneuriale.setText("");
 					note_simple_marche.setText("");
 					note_professionnelle.setText("");
@@ -453,7 +457,9 @@ public class ConteneurSchema extends ConteneurAvecImage {
 					b_process.activer(FenetreAccueil.theme.getbSchema2Repos(), FenetreAccueil.theme.getbSchema2Survol(), FenetreAccueil.theme.getbSchema2Clic());
 					b_flexible.activer(FenetreAccueil.theme.getbSchema2Repos(), FenetreAccueil.theme.getbSchema2Survol(), FenetreAccueil.theme.getbSchema2Clic());
 					action3.setBoutonSelected(null);
-					action3.setSelected(false);
+					if(f_bouton3){
+						action3.setSelected(false);
+					}
 					note_rationnelle.setText("");
 					note_artisanale.setText("");
 					note_personnalisee.setText("");
@@ -1018,6 +1024,10 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	{
 		try{return Integer.valueOf(this.getLabel_entrepreneuriale().getText().substring(0, this.getLabel_entrepreneuriale().getText().length()-5));} catch(StringIndexOutOfBoundsException e) {return Integer.MAX_VALUE;}
 	}
+	
+	public boolean getFonction_schema2(){
+		return this.f_bouton2;
+	}
 
 	// schéma 3 //
 
@@ -1089,6 +1099,10 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	public int getNote_flexible()
 	{
 		try{return Integer.valueOf(this.getLabel_flexible().getText().substring(0, this.getLabel_flexible().getText().length()-5));} catch(StringIndexOutOfBoundsException e) {return Integer.MAX_VALUE;}
+	}
+	
+	public boolean getFonction_schema3(){
+		return this.f_bouton3;
 	}
 
 	// schéma 4 //
@@ -1382,6 +1396,10 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	{
 		this.getLabel_entrepreneuriale().setText(String.valueOf(note)+" / 10");
 	}
+	
+	public void setFonction_schema2(boolean bool){
+		this.f_bouton2=bool;
+	}
 
 	// schéma 3 //
 
@@ -1408,6 +1426,10 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	public void setNote_flexible(int note)
 	{
 		this.getLabel_flexible().setText(String.valueOf(note)+" / 10");
+	}
+	
+	public void setFonction_schema3(boolean bool){
+		this.f_bouton3=bool;
 	}
 
 	// schéma 4 //
@@ -1544,6 +1566,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			break;
 		}
 	}
+	
 
 	public void initialiserTextFieldSchemas145(JFormattedTextField field)
 	{

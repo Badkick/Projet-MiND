@@ -61,7 +61,7 @@ public class VerificationPetitsOnglets implements ComponentListener {
 			if(conteneur.getNote_professionnelle()!=Integer.MAX_VALUE) nbNotes++;
 			if(conteneur.getNote_simple_centralisee()!=Integer.MAX_VALUE) nbNotes++;
 			if(conteneur.getNote_simple_marche()!=Integer.MAX_VALUE) nbNotes++;
-			tab.setForeground(nbNotes==4 ? Color.black : Color.red);
+			tab.setForeground((nbNotes==4 && conteneur.getFonction_schema2())||nbNotes==5 ? Color.black : Color.red);
 			break;
 
 		case SCHEMA3 :
@@ -70,7 +70,7 @@ public class VerificationPetitsOnglets implements ComponentListener {
 			if(conteneur.getNote_personnalisee()!=Integer.MAX_VALUE) nbNotes++;
 			if(conteneur.getNote_process()!=Integer.MAX_VALUE) nbNotes++;
 			if(conteneur.getNote_flexible()!=Integer.MAX_VALUE) nbNotes++;
-			tab.setForeground(nbNotes==4 ? Color.black : Color.red);
+			tab.setForeground((nbNotes==4 && conteneur.getFonction_schema3())||nbNotes==5 ? Color.black : Color.red);
 			break;
 
 		case SCHEMA4 :

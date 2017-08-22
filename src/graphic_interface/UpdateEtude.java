@@ -149,8 +149,6 @@ public class UpdateEtude implements ComponentListener {
 		case 3:
 			try{FenetreAccueil.etude.getS3().setMtn_principale(Organisation.getByName(tab.getConteneur_maintenant().getAction3().getBoutonSelected().getName()));} catch(NullPointerException ex) {FenetreAccueil.etude.getS3().setMtn_principale(null);}
 			try{FenetreAccueil.etude.getS3().setApr_principale(Organisation.getByName(tab.getConteneur_apres().getAction3().getBoutonSelected().getName()));} catch(NullPointerException ex) {FenetreAccueil.etude.getS3().setApr_principale(null);}
-			try{FenetreAccueil.etude.getS3().setRis_principale(Organisation.getByName(((ConteneurSchema) tab.getConteneur_risque()).getAction3().getBoutonSelected().getName()));} catch(NullPointerException ex) {FenetreAccueil.etude.getS3().setRis_principale(null);}
-
 			if(tab.getConteneur_maintenant().getAction3().isSelected())
 			{
 				ConteneurSchema conteneur = tab.getConteneur_maintenant();
@@ -223,41 +221,15 @@ public class UpdateEtude implements ComponentListener {
 				FenetreAccueil.etude.getS3().setApr_notees(apr_notees);
 			}
 			
-			if(((ConteneurSchema)tab.getConteneur_risque()).getAction3().isSelected())
-			{
 				ConteneurSchema conteneur = (ConteneurSchema) tab.getConteneur_risque();
-				ActionBoutonSchemas23 action = conteneur.getAction3();
 				@SuppressWarnings("unchecked")
-				ElementNote<Organisation>[] ris_notees = new ElementNote[4];
-				int i=0;
-				if(!action.getBoutonSelected().getName().equals(Organisation.RATIONNELLE.getNom()))
-				{
-					ris_notees[i] = new ElementNote<Organisation>(Organisation.RATIONNELLE, conteneur.getNote_rationnelle());
-					i++;
-				}
-				if(!action.getBoutonSelected().getName().equals(Organisation.ARTISANALE.getNom()))
-				{
-					ris_notees[i] = new ElementNote<Organisation>(Organisation.ARTISANALE, conteneur.getNote_artisanale());
-					i++;
-				}
-				if(!action.getBoutonSelected().getName().equals(Organisation.PERSONNALISEE.getNom()))
-				{
-					ris_notees[i] = new ElementNote<Organisation>(Organisation.PERSONNALISEE, conteneur.getNote_personnalisee());
-					i++;
-				}
-				if(!action.getBoutonSelected().getName().equals(Organisation.PROFESSIONNELLE_PROCESS.getNom()))
-				{
-					ris_notees[i] = new ElementNote<Organisation>(Organisation.PROFESSIONNELLE_PROCESS, conteneur.getNote_process());
-					i++;
-				}
-				if(!action.getBoutonSelected().getName().equals(Organisation.FLEXIBLE.getNom()))
-				{
-					ris_notees[i] = new ElementNote<Organisation>(Organisation.FLEXIBLE, conteneur.getNote_flexible());
-					i++;
-				}
-				
-				FenetreAccueil.etude.getS3().setRis_notees(ris_notees);
-			}
+				ElementNote<Organisation>[] ris_notees_schema3 = new ElementNote[5];
+				ris_notees_schema3[0] = new ElementNote<Organisation>(Organisation.RATIONNELLE, conteneur.getNote_rationnelle());
+				ris_notees_schema3[1] = new ElementNote<Organisation>(Organisation.ARTISANALE, conteneur.getNote_artisanale());
+				ris_notees_schema3[2] = new ElementNote<Organisation>(Organisation.PERSONNALISEE, conteneur.getNote_personnalisee());
+				ris_notees_schema3[3] = new ElementNote<Organisation>(Organisation.PROFESSIONNELLE_PROCESS, conteneur.getNote_process());
+				ris_notees_schema3[4] = new ElementNote<Organisation>(Organisation.FLEXIBLE, conteneur.getNote_flexible());
+				FenetreAccueil.etude.getS3().setRis_notees(ris_notees_schema3);
 			break;
 			
 		case 4:

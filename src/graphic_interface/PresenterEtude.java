@@ -72,22 +72,22 @@ public class PresenterEtude implements ActionListener {
 		for(int i=0;i<3;i++){
 			titres.add(ConteneurNouvelleEtude.nom+" - Environnement");
 		}
-		for(int i=0;i<2;i++){
+		for(int i=0;i<3;i++){
 			titres.add(ConteneurNouvelleEtude.nom+" - Orga/travail");
 		}
-		for(int i=0;i<2;i++){
+		for(int i=0;i<3;i++){
 			titres.add(ConteneurNouvelleEtude.nom+" - Orga/structure");
 		}
-		for(int i=0;i<2;i++){
+		for(int i=0;i<3;i++){
 			titres.add(ConteneurNouvelleEtude.nom+" - Relations");
 		}
-		for(int i=0;i<2;i++){
+		for(int i=0;i<3;i++){
 			titres.add(ConteneurNouvelleEtude.nom+" - Identités");
 		}
 		for(int i=0;i<3;i++){
 			titres.add(ConteneurNouvelleEtude.nom);
 		}
-		for(int i=0;i<14;i++){
+		for(int i=0;i<18;i++){
 			XSLFSlide slide=ppt.createSlide(contentLayout);
 			XSLFTextShape title=slide.getPlaceholder(0);
 			Rectangle2D rec=new Rectangle2D.Double(132, 0, 1655, 209);
@@ -122,7 +122,7 @@ public class PresenterEtude implements ActionListener {
 
 	private void presenter()
 	{
-		for(int i=0;i<14;i++){
+		for(int i=0;i<18;i++){
 			BufferedImage image=new ImagesApercu(1920,1080,i).getImage();
 			File output=new File("saves"+File.separator+ConteneurNouvelleEtude.nom+File.separator+"image"+String.valueOf(i)+".png");
 			try {
@@ -132,7 +132,7 @@ public class PresenterEtude implements ActionListener {
 				e1.printStackTrace();
 			}
 		}
-		BufferedImage image=new ImagesApercu(1920,1080,14).getImage();
+		BufferedImage image=new ImagesApercu(1920,1080,18).getImage();
 		File output=new File("saves"+File.separator+ConteneurNouvelleEtude.nom+File.separator+"main.png");
 		try {
 			ImageIO.write(image, "PNG", output);

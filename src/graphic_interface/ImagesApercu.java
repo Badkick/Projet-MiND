@@ -947,6 +947,7 @@ public class ImagesApercu extends Conteneur{
 				try{
 					this.drawArrow_schema1(g, 1);
 				}catch(NullPointerException ex){}
+				g.setColor(Color.white);
 				g.fillRoundRect(2*401, 2*178, 2*55, 2*35, 2*15, 2*15);
 				g.fillRoundRect(2*498, 2*178, 2*55, 2*35, 2*15, 2*15);
 				g.fillRoundRect(2*401, 2*245, 2*55, 2*35, 2*15, 2*15);
@@ -1260,19 +1261,19 @@ public class ImagesApercu extends Conteneur{
 					try{
 						String texte="Risques notés :\n\n";
 						if(FenetreAccueil.etude.getS2().getRis_notees()[0].getNote()!=Integer.MAX_VALUE){
-							texte=texte+"- "+FenetreAccueil.etude.getS2().getRis_notees()[0].getElement().getNom().replaceAll("\n", " ")+" ("+String.valueOf(FenetreAccueil.etude.getS2().getRis_notees()[0].getNote())+" / 10)\n";
+							texte=texte+FenetreAccueil.etude.getS2().getRis_notees()[0].getElement().getNom().replaceAll("\n", " ")+"\n ("+String.valueOf(FenetreAccueil.etude.getS2().getRis_notees()[0].getNote())+" / 10)\n";
 						}
 						if(FenetreAccueil.etude.getS2().getRis_notees()[1].getNote()!=Integer.MAX_VALUE){
-							texte=texte+"- "+FenetreAccueil.etude.getS2().getRis_notees()[1].getElement().getNom().replaceAll("\n", " ")+" ("+String.valueOf(FenetreAccueil.etude.getS2().getRis_notees()[1].getNote())+" / 10)\n";
+							texte=texte+FenetreAccueil.etude.getS2().getRis_notees()[1].getElement().getNom().replaceAll("\n", " ")+"\n ("+String.valueOf(FenetreAccueil.etude.getS2().getRis_notees()[1].getNote())+" / 10)\n";
 						}
 						if(FenetreAccueil.etude.getS2().getRis_notees()[2].getNote()!=Integer.MAX_VALUE){
-							texte=texte+"- "+FenetreAccueil.etude.getS2().getRis_notees()[2].getElement().getNom().replaceAll("\n", " ")+" ("+String.valueOf(FenetreAccueil.etude.getS2().getRis_notees()[2].getNote())+" / 10)\n";
+							texte=texte+FenetreAccueil.etude.getS2().getRis_notees()[2].getElement().getNom().replaceAll("\n", " ")+"\n ("+String.valueOf(FenetreAccueil.etude.getS2().getRis_notees()[2].getNote())+" / 10)\n";
 						}
 						if(FenetreAccueil.etude.getS2().getRis_notees()[3].getNote()!=Integer.MAX_VALUE){
-							texte=texte+"- "+FenetreAccueil.etude.getS2().getRis_notees()[3].getElement().getNom().replaceAll("\n", " ")+" ("+String.valueOf(FenetreAccueil.etude.getS2().getRis_notees()[3].getNote())+" / 10)\n";
+							texte=texte+FenetreAccueil.etude.getS2().getRis_notees()[3].getElement().getNom().replaceAll("\n", " ")+"\n ("+String.valueOf(FenetreAccueil.etude.getS2().getRis_notees()[3].getNote())+" / 10)\n";
 						}
 						if(FenetreAccueil.etude.getS2().getRis_notees()[4].getNote()!=Integer.MAX_VALUE){
-							texte=texte+"- "+FenetreAccueil.etude.getS2().getRis_notees()[3].getElement().getNom().replaceAll("\n", " ")+" ("+String.valueOf(FenetreAccueil.etude.getS2().getRis_notees()[3].getNote())+" / 10)\n";
+							texte=texte+FenetreAccueil.etude.getS2().getRis_notees()[4].getElement().getNom().replaceAll("\n", " ")+"\n ("+String.valueOf(FenetreAccueil.etude.getS2().getRis_notees()[4].getNote())+" / 10)\n";
 						}
 						String comparaison="Risques notés :\n\n";
 						if(!comparaison.equals(texte)){
@@ -1289,7 +1290,7 @@ public class ImagesApercu extends Conteneur{
 			this.drawCenteredString(g, Structure.SIMPLE_CENTRALISEE.getNom(), 2*205, 2*355, width, height,Color.white);
 			this.drawCenteredString(g, Structure.ENTREPRENEURIALE.getNom(), 2*615, 2*275, width, height,Color.white);
 			
-		}else if(this.getPeriode()==5||this.getPeriode()==6){
+		}else if(this.getPeriode()==6||this.getPeriode()==7 ||this.getPeriode()==8){
 			
 			Image fond=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema3"+File.separator+"Etude_3_fond.png");
 			g.drawImage(Images.scaleImage(fond,1920, 1080),0,0,null);
@@ -1306,7 +1307,7 @@ public class ImagesApercu extends Conteneur{
 			g.drawImage(repos,2*587,2*345,width,height,null,null);
 			g.setColor(Color.white);
 			g.fillRoundRect(2*10, 2*10, 2*170, 2*60, 2*20, 2*20);
-			if(this.getPeriode()==5){
+			if(this.getPeriode()==6){
 				this.drawCenteredString(g, "Aujourd'hui", 2*10, 2*10, 2*170, 2*60, Color.black);
 				try{
 					if(FenetreAccueil.etude.getS3().getMtn_principale().getNumero()==1){
@@ -1421,7 +1422,7 @@ public class ImagesApercu extends Conteneur{
 						}
 					}
 				}catch(NullPointerException ex){}
-			}else if(this.getPeriode()==6){
+			}else if(this.getPeriode()>=7){
 				this.drawCenteredString(g, "Cible", 2*10, 2*10, 2*170, 2*60, Color.black);
 				try{
 					this.drawArrow_schema3(g);
@@ -1539,31 +1540,36 @@ public class ImagesApercu extends Conteneur{
 						}
 					}
 				}catch(NullPointerException ex){}
-				try{
-					String texte1="Risque principal :\n\n "+FenetreAccueil.etude.getS3().getRis_principale().getNom().replaceAll("\n", " ");
-					g.setColor(Color.red);
-					g.fillRoundRect(2*325, 2*250, 2*300, 2*60, 2*20, 2*20);
-					this.drawCenteredString(g, texte1, 2*325, 2*250, 2*300, 2*60, Color.white);
-					String texte="Risques notés :\n\n";
-					if(FenetreAccueil.etude.getS3().getRis_notees()[0].getNote()!=Integer.MAX_VALUE){
-						texte=texte+"- "+FenetreAccueil.etude.getS3().getRis_notees()[0].getElement().getNom().replaceAll("\n", " ")+" ("+String.valueOf(FenetreAccueil.etude.getS3().getRis_notees()[0].getNote())+" / 10)\n";
-					}
-					if(FenetreAccueil.etude.getS3().getRis_notees()[1].getNote()!=Integer.MAX_VALUE){
-						texte=texte+"- "+FenetreAccueil.etude.getS3().getRis_notees()[1].getElement().getNom().replaceAll("\n", " ")+" ("+String.valueOf(FenetreAccueil.etude.getS3().getRis_notees()[1].getNote())+" / 10)\n";
-					}
-					if(FenetreAccueil.etude.getS3().getRis_notees()[2].getNote()!=Integer.MAX_VALUE){
-						texte=texte+"- "+FenetreAccueil.etude.getS3().getRis_notees()[2].getElement().getNom().replaceAll("\n", " ")+" ("+String.valueOf(FenetreAccueil.etude.getS3().getRis_notees()[2].getNote())+" / 10)\n";
-					}
-					if(FenetreAccueil.etude.getS3().getRis_notees()[3].getNote()!=Integer.MAX_VALUE){
-						texte=texte+"- "+FenetreAccueil.etude.getS3().getRis_notees()[3].getElement().getNom().replaceAll("\n", " ")+" ("+String.valueOf(FenetreAccueil.etude.getS3().getRis_notees()[3].getNote())+" / 10)";
-					}
-					String comparaison="Risques notés :\n\n";
-					if(!comparaison.equals(texte)){
+				if(this.getPeriode()==8){
+					try{
+						/*String texte1="Risque principal :\n\n "+FenetreAccueil.etude.getS3().getRis_principale().getNom().replaceAll("\n", " ");
 						g.setColor(Color.red);
-						g.fillRoundRect(2*490, 2*440, 2*450, 2*90, 2*20, 2*20);
-						this.drawCenteredString(g, texte, 2*490, 2*445, 2*450, 2*90, Color.white);
-					}
-				}catch(NullPointerException ex){}
+						g.fillRoundRect(325, 250, 300, 60, 20, 20);
+						this.drawCenteredString(g, texte1, 325, 250, 300, 60, Color.white);*/
+						String texte="Risques notés :\n";
+						if(FenetreAccueil.etude.getS3().getRis_notees()[0].getNote()!=Integer.MAX_VALUE){
+							texte=texte+FenetreAccueil.etude.getS3().getRis_notees()[0].getElement().getNom().replaceAll("\n", " ")+" ("+String.valueOf(FenetreAccueil.etude.getS3().getRis_notees()[0].getNote())+" / 10)\n";
+						}
+						if(FenetreAccueil.etude.getS3().getRis_notees()[1].getNote()!=Integer.MAX_VALUE){
+							texte=texte+FenetreAccueil.etude.getS3().getRis_notees()[1].getElement().getNom().replaceAll("\n", " ")+" ("+String.valueOf(FenetreAccueil.etude.getS3().getRis_notees()[1].getNote())+" / 10)\n";
+						}
+						if(FenetreAccueil.etude.getS3().getRis_notees()[2].getNote()!=Integer.MAX_VALUE){
+							texte=texte+FenetreAccueil.etude.getS3().getRis_notees()[2].getElement().getNom().replaceAll("\n", " ")+" ("+String.valueOf(FenetreAccueil.etude.getS3().getRis_notees()[2].getNote())+" / 10)\n";
+						}
+						if(FenetreAccueil.etude.getS3().getRis_notees()[3].getNote()!=Integer.MAX_VALUE){
+							texte=texte+FenetreAccueil.etude.getS3().getRis_notees()[3].getElement().getNom().replaceAll("\n", " ")+" ("+String.valueOf(FenetreAccueil.etude.getS3().getRis_notees()[3].getNote())+" / 10)\n";
+						}
+						if(FenetreAccueil.etude.getS3().getRis_notees()[4].getNote()!=Integer.MAX_VALUE){
+							texte=texte+FenetreAccueil.etude.getS3().getRis_notees()[4].getElement().getNom().replaceAll("\n", " ")+" ("+String.valueOf(FenetreAccueil.etude.getS3().getRis_notees()[4].getNote())+" / 10)";
+						}
+						String comparaison="Risques notés :\n";
+						if(!comparaison.equals(texte)){
+							g.setColor(Color.red);
+							g.fillRoundRect(2*490, 2*440, 2*450, 2*90, 2*20, 2*20);
+							this.drawCenteredString(g, texte, 2*490, 2*445, 2*450, 2*90, Color.white);
+						}
+					}catch(NullPointerException ex){}
+				}
 			}
 			this.drawCenteredString(g, Organisation.RATIONNELLE.getNom(), 2*195, 2*70, width, height,Color.white);
 			this.drawCenteredString(g, Organisation.ARTISANALE.getNom(), 2*390, 2*95, width, height,Color.white);
@@ -1571,7 +1577,7 @@ public class ImagesApercu extends Conteneur{
 			this.drawCenteredString(g, Organisation.PROFESSIONNELLE_PROCESS.getNom(), 2*195, 2*345, width, height,Color.white);
 			this.drawCenteredString(g, Organisation.FLEXIBLE.getNom(), 2*587, 2*345, width, height,Color.white);
 			
-		}else if(this.getPeriode()==7 || this.getPeriode()==8){
+		}else if(this.getPeriode()==9 || this.getPeriode()==10 ||this.getPeriode()==11){
 			Image fond=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema4"+File.separator+"Etude_4_fond.png");
 			g.drawImage(Images.scaleImage(fond,1920, 1080),0,0,null);
 			double a=0.3;
@@ -1590,7 +1596,7 @@ public class ImagesApercu extends Conteneur{
 			g.setColor(Color.white);
 			g.fillRoundRect(2*10, 2*10, 2*170, 2*60, 2*20, 2*20);
 			
-			if(this.getPeriode()==7){
+			if(this.getPeriode()==9){
 				this.drawCenteredString(g, "Aujourd'hui", 2*10, 2*10, 2*170, 2*60, Color.black);
 				try{
 					int width=(int) (rouge.getWidth(null)*(a*FenetreAccueil.etude.getS4().getMtn_consensus().getImportance().get()+b)/100);
@@ -1713,7 +1719,7 @@ public class ImagesApercu extends Conteneur{
 					this.drawCenteredString(g, FenetreAccueil.etude.getS4().getMtn_opposition().getImportance().toString(), 2*903, 2*460, 2*55, 2*35, Color.black);
 				}catch(NullPointerException ex){}
 				
-			}else if(this.getPeriode()==8){
+			}else if(this.getPeriode()>=10){
 				this.drawCenteredString(g, "Cible", 2*10, 2*10, 2*170, 2*60, Color.black);
 				try{
 					int width=(int) (rouge.getWidth(null)*(a*FenetreAccueil.etude.getS4().getApr_consensus().getImportance().get()+b)/100);
@@ -1839,51 +1845,53 @@ public class ImagesApercu extends Conteneur{
 					this.drawArrow_schema4(g);
 				}catch(NullPointerException ex){}
 				
-				String texte1="";
-				String texte2="";
-				String texte3="";
-				try{
-					texte1=texte1+"Risque Consensus ("+FenetreAccueil.etude.getS4().getRis_consensus().getImportance().toString()+")\n\n";
+				if(this.getPeriode()==11){
+					String texte1="";
+					String texte2="";
+					String texte3="";
 					try{
-						texte1=texte1+"   -Consensus ("+FenetreAccueil.etude.getS4().getRis_consensus().getConsensus().toString()+")\n";
+						texte1=texte1+"Risque Consensus ("+FenetreAccueil.etude.getS4().getRis_consensus().getImportance().toString()+")\n\n";
+						try{
+							texte1=texte1+"Consensus ("+FenetreAccueil.etude.getS4().getRis_consensus().getConsensus().toString()+")\n";
+						}catch(NullPointerException ex){}
+						try{
+							texte1=texte1+"Pacte ("+FenetreAccueil.etude.getS4().getRis_consensus().getPacte().toString()+")";
+						}catch(NullPointerException ex){}
+						g.setColor(Color.red);
+						g.fillRoundRect(2*0, 2*306, 2*243, 2*75, 2*20, 2*20);
+						this.drawCenteredString(g, texte1, 2*0, 2*306, 2*243, 2*75, Color.white);
 					}catch(NullPointerException ex){}
 					try{
-						texte1=texte1+"   -Pacte ("+FenetreAccueil.etude.getS4().getRis_consensus().getPacte().toString()+")";
-					}catch(NullPointerException ex){}
-					g.setColor(Color.red);
-					g.fillRoundRect(2*0, 2*306, 2*243, 2*75, 2*20, 2*20);
-					this.drawCenteredString(g, texte1, 2*0, 2*306, 2*243, 2*75, Color.white);
-				}catch(NullPointerException ex){}
-				try{
-					texte2=texte2+"Risque Negociation ("+FenetreAccueil.etude.getS4().getRis_negociation().getImportance().toString()+")\n\n";
-					try{
-						texte2=texte2+"   -Ajustement hiérarchique ("+FenetreAccueil.etude.getS4().getRis_negociation().getAjustement().toString()+")\n";
-					}catch(NullPointerException ex){}
-					try{
-						texte2=texte2+"   -Transformation négociée ("+FenetreAccueil.etude.getS4().getRis_negociation().getTransformation().toString()+")";
-					}catch(NullPointerException ex){}
-					g.setColor(Color.red);
-					g.fillRoundRect(2*0, 2*383, 2*243, 2*75, 2*20, 2*20);
-					this.drawCenteredString(g, texte2, 2*0, 2*383, 2*243, 2*75, Color.white);
-				}catch(NullPointerException ex){}
-				try{
-					texte3=texte3+"Risque Opposition ("+FenetreAccueil.etude.getS4().getRis_opposition().getImportance().toString()+")\n\n";
-					try{
-						texte3=texte3+"   -Domination ("+FenetreAccueil.etude.getS4().getRis_opposition().getDomination().toString()+")\n";
+						texte2=texte2+"Risque Negociation ("+FenetreAccueil.etude.getS4().getRis_negociation().getImportance().toString()+")\n\n";
+						try{
+							texte2=texte2+"Ajustement hiérarchique ("+FenetreAccueil.etude.getS4().getRis_negociation().getAjustement().toString()+")\n";
+						}catch(NullPointerException ex){}
+						try{
+							texte2=texte2+"Transformation négociée ("+FenetreAccueil.etude.getS4().getRis_negociation().getTransformation().toString()+")";
+						}catch(NullPointerException ex){}
+						g.setColor(Color.red);
+						g.fillRoundRect(2*0, 2*383, 2*243, 2*75, 2*20, 2*20);
+						this.drawCenteredString(g, texte2, 2*0, 2*383, 2*243, 2*75, Color.white);
 					}catch(NullPointerException ex){}
 					try{
-						texte3=texte3+"   -Contre Pouvoir ("+FenetreAccueil.etude.getS4().getRis_opposition().getContrePouvoir().toString()+")\n";
+						texte3=texte3+"Risque Opposition ("+FenetreAccueil.etude.getS4().getRis_opposition().getImportance().toString()+")\n\n";
+						try{
+							texte3=texte3+"Domination ("+FenetreAccueil.etude.getS4().getRis_opposition().getDomination().toString()+")\n";
+						}catch(NullPointerException ex){}
+						try{
+							texte3=texte3+"Contre Pouvoir ("+FenetreAccueil.etude.getS4().getRis_opposition().getContrePouvoir().toString()+")\n";
+						}catch(NullPointerException ex){}
+						try{
+							texte3=texte3+"Antagonisme ("+FenetreAccueil.etude.getS4().getRis_opposition().getAntagonisme().toString()+")";
+						}catch(NullPointerException ex){}
+						g.setColor(Color.red);
+						g.fillRoundRect(2*0, 2*460, 2*243, 2*75, 2*20, 2*20);
+						this.drawCenteredString(g, texte3, 2*0, 2*464, 2*243, 2*75, Color.white);
 					}catch(NullPointerException ex){}
-					try{
-						texte3=texte3+"   -Antagonisme ("+FenetreAccueil.etude.getS4().getRis_opposition().getAntagonisme().toString()+")";
-					}catch(NullPointerException ex){}
-					g.setColor(Color.red);
-					g.fillRoundRect(2*0, 2*460, 2*243, 2*75, 2*20, 2*20);
-					this.drawCenteredString(g, texte3, 2*0, 2*464, 2*243, 2*75, Color.white);
-				}catch(NullPointerException ex){}
+				}
 			}
 			
-		}else if(this.getPeriode()==9 || this.getPeriode()==10){
+		}else if(this.getPeriode()==12 || this.getPeriode()==13||this.getPeriode()==14){
 			Image fond=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema5"+File.separator+"Etude_5_fond.png");
 			g.drawImage(Images.scaleImage(fond,1920, 1080),0,0,null);
 			
@@ -1900,7 +1908,7 @@ public class ImagesApercu extends Conteneur{
 			g.setColor(Color.white);
 			g.fillRoundRect(2*10, 2*10, 2*170, 2*60, 2*20, 2*20);
 			
-			if(this.getPeriode()==9){
+			if(this.getPeriode()==12){
 				g.setColor(Color.white);
 				g.fillRoundRect(2*59, 2*111, 2*55, 2*35, 2*15, 2*15);
 				g.fillRoundRect(2*805, 2*117, 2*55, 2*35, 2*15, 2*15);
@@ -1974,7 +1982,7 @@ public class ImagesApercu extends Conteneur{
 					}
 					this.drawCenteredString(g, FenetreAccueil.etude.getS5().getMtn_entrepreneuriale().toString(), 2*884, 2*371, 2*55, 2*35,Color.black);
 				}catch(NullPointerException ex){}
-			}else if(this.getPeriode()==10){
+			}else if(this.getPeriode()>=13){
 				try{
 					this.drawArrow_schema5(g);
 				}catch(NullPointerException ex){}
@@ -2052,36 +2060,37 @@ public class ImagesApercu extends Conteneur{
 					}
 					this.drawCenteredString(g, FenetreAccueil.etude.getS5().getApr_entrepreneuriale().toString(), 2*884, 2*371, 2*55, 2*35,Color.black);
 				}catch(NullPointerException ex){}
-				
-				String texte="Risque\n\n";
-				try{
-					texte=texte+"Identité réglementaire ("+FenetreAccueil.etude.getS5().getRis_reglementaire().toString()+")\n";
-				}catch(NullPointerException ex){}
-				try{
-					texte=texte+"Identité de mobilité ("+FenetreAccueil.etude.getS5().getRis_mobilite().toString()+")\n";
-				}catch(NullPointerException ex){}
-				try{
-					texte=texte+"Identité professionnelle de service \npublic ("+FenetreAccueil.etude.getS5().getRis_pro_service_public().toString()+")\n";
-				}catch(NullPointerException ex){}
-				try{
-					texte=texte+"Identité professionnelle ("+FenetreAccueil.etude.getS5().getRis_professionnelle().toString()+")\n";
-				}catch(NullPointerException ex){}
-				try{
-					texte=texte+"Identité communautaire ("+FenetreAccueil.etude.getS5().getRis_communautaire().toString()+")\n";
-				}catch(NullPointerException ex){}
-				try{
-					texte=texte+"Identité entrepreneuriale ("+FenetreAccueil.etude.getS5().getRis_entrepreneuriale().toString()+")";
-				}catch(NullPointerException ex){}
-				String comparaison="Risque\n\n";
-				if(!texte.equals(comparaison)){
-					g.setColor(Color.red);
-					g.fillRoundRect(2*316, 2*60, 2*240, 2*134, 2*15, 2*15);
-					this.drawCenteredString(g, texte, 2*308, 2*70, 2*256, 2*134, Color.white);
+				if(this.getPeriode()==14){
+					String texte="Risque\n\n";
+					try{
+						texte=texte+"Identité réglementaire ("+FenetreAccueil.etude.getS5().getRis_reglementaire().toString()+")\n";
+					}catch(NullPointerException ex){}
+					try{
+						texte=texte+"Identité de mobilité ("+FenetreAccueil.etude.getS5().getRis_mobilite().toString()+")\n";
+					}catch(NullPointerException ex){}
+					try{
+						texte=texte+"Identité professionnelle de service \npublic ("+FenetreAccueil.etude.getS5().getRis_pro_service_public().toString()+")\n";
+					}catch(NullPointerException ex){}
+					try{
+						texte=texte+"Identité professionnelle ("+FenetreAccueil.etude.getS5().getRis_professionnelle().toString()+")\n";
+					}catch(NullPointerException ex){}
+					try{
+						texte=texte+"Identité communautaire ("+FenetreAccueil.etude.getS5().getRis_communautaire().toString()+")\n";
+					}catch(NullPointerException ex){}
+					try{
+						texte=texte+"Identité entrepreneuriale ("+FenetreAccueil.etude.getS5().getRis_entrepreneuriale().toString()+")";
+					}catch(NullPointerException ex){}
+					String comparaison="Risque\n\n";
+					if(!texte.equals(comparaison)){
+						g.setColor(Color.red);
+						g.fillRoundRect(2*316, 2*60, 2*240, 2*134, 2*15, 2*15);
+						this.drawCenteredString(g, texte, 2*308, 2*70, 2*256, 2*134, Color.white);
+					}
 				}
 				
 			}
 			
-		}else if(this.getPeriode()==11 ||this.getPeriode()==12 ||this.getPeriode()==13){
+		}else if(this.getPeriode()==15 ||this.getPeriode()==16 ||this.getPeriode()==17){
 			Image fond=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema6"+File.separator+"Etude_6_fond.png");
 			g.drawImage(Images.scaleImage(fond,1920, 1080),0,0,null);
 			Image repos=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema6"+File.separator+"Etude_6_repos.png");
@@ -2100,7 +2109,7 @@ public class ImagesApercu extends Conteneur{
 			g.setColor(Color.white);
 			g.fillRoundRect(2*10, 2*10, 2*170,2*60, 2*20, 2*20);
 			
-			if(this.getPeriode()==11){
+			if(this.getPeriode()==15){
 				this.drawCenteredString(g, "Passé", 2*10, 2*10, 2*170, 2*60, Color.black);
 				try{
 					if(FenetreAccueil.etude.getS6().getMtn().getNumero()==1){
@@ -2116,7 +2125,7 @@ public class ImagesApercu extends Conteneur{
 					}
 				
 				}catch(NullPointerException ex){}
-			}else if(this.getPeriode()==12){
+			}else if(this.getPeriode()==16){
 				this.drawCenteredString(g, "Aujourd'hui", 2*10, 2*10, 2*170, 2*60, Color.black);
 				try{
 					this.drawArrow_schema6(g,0);
@@ -2141,7 +2150,7 @@ public class ImagesApercu extends Conteneur{
 					g.fillRoundRect(2*750, 2*420, 2*200, 2*100, 2*20, 2*20);
 					this.drawCenteredString(g, texte, 2*750, 2*420, 2*200, 2*100, Color.white);
 				}catch(NullPointerException ex){}*/
-			}else if(this.getPeriode()==13){
+			}else if(this.getPeriode()==17){
 				this.drawCenteredString(g, "Cible", 2*10, 2*10, 2*170, 2*60, Color.black);
 				try{
 					this.drawArrow_schema6(g,1);
@@ -2167,7 +2176,7 @@ public class ImagesApercu extends Conteneur{
 			this.drawCenteredString(g, Entreprise.CRISE.getNom(), 2*550, 2*300, width, height, Color.WHITE);
 			this.drawCenteredString(g, Entreprise.BUREAUCRATIQUE.getNom(), 2*235, 2*340, width, height, Color.WHITE);
 			
-		}else if(this.getPeriode()==14){
+		}else if(this.getPeriode()==18){
 			Image fond=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"fondppt.png");
 			g.drawImage(Images.scaleImage(fond,1920, 1080),0,0,null);
 			this.drawMainTitle(g, ConteneurNouvelleEtude.nom, 0, 0, 1920, 1080, Color.white);

@@ -100,8 +100,7 @@ public class ChargerEtude implements ActionListener {
 			@SuppressWarnings("unchecked")
 			ElementNote<Structure>[] apr_notees = new ElementNote[4];
 			@SuppressWarnings("unchecked")
-			ElementNote<Structure>[] ris_notees = new ElementNote[4];
-			//ElementNote<Structure>[] ris_notees = new ElementNote[5];
+			ElementNote<Structure>[] ris_notees = new ElementNote[5];
 			for(int i=0;i<4;i++){
 				Structure nom_mtn=null;
 				Structure nom_apr=null;
@@ -169,16 +168,12 @@ public class ChargerEtude implements ActionListener {
 			try{
 				org_2=Organisation.getByNum(Integer.valueOf(aLire_3.readLine()));
 			}catch(Exception ex){}
-			try{//a supprimer
-				org_ris=Organisation.getByNum(Integer.valueOf(aLire_3.readLine()));
-			}catch(Exception ex){}
 			@SuppressWarnings("unchecked")
 			ElementNote<Organisation>[] mtn_notees = new ElementNote[4];
 			@SuppressWarnings("unchecked")
 			ElementNote<Organisation>[] apr_notees = new ElementNote[4];
 			@SuppressWarnings("unchecked")
-			ElementNote<Organisation>[] ris_notees = new ElementNote[4];
-			//ElementNote<Organisation>[] ris_notees = new ElementNote[5];
+			ElementNote<Organisation>[] ris_notees = new ElementNote[5];
 			for(int i=0;i<4;i++){
 				Organisation nom_mtn=null;
 				Organisation nom_apr=null;
@@ -214,7 +209,7 @@ public class ChargerEtude implements ActionListener {
 					ris_notees[i]=new ElementNote<Organisation>(nom_ris,note_ris);
 				}catch(NullPointerException ex){mtn_notees[i]=new ElementNote<Organisation>(nom_ris,Integer.MAX_VALUE);}
 			}
-			/*Organisation nom_ris=null;
+			Organisation nom_ris=null;
 			Integer note_ris=null;
 			try{
 				nom_ris=Organisation.getByNum(Integer.valueOf(aLire_3.readLine()));
@@ -224,9 +219,9 @@ public class ChargerEtude implements ActionListener {
 			}catch(Exception ex){}
 			try{
 				ris_notees[4]=new ElementNote<Organisation>(nom_ris,note_ris);
-			}catch(NullPointerException ex){mtn_notees[4]=new ElementNote<Organisation>(nom_ris,Integer.MAX_VALUE);}*/
+			}catch(NullPointerException ex){mtn_notees[4]=new ElementNote<Organisation>(nom_ris,Integer.MAX_VALUE);}
 			aLire_3.close();
-			schema3=new Schema3(org_1,org_2,org_ris,mtn_notees,apr_notees,ris_notees);
+			schema3=new Schema3(org_1,org_2,mtn_notees,apr_notees,ris_notees);
 		}
 		catch (IOException e3){
 			System.out.println("Une operation sur le fichier Organisations a leve l'exception "+e3);

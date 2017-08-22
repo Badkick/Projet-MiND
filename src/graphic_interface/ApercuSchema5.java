@@ -334,7 +334,9 @@ public class ApercuSchema5 extends ConteneurAvecImage {
 			}catch(NullPointerException ex){}
 
 		}else if(this.getPeriode()>=1){
-			this.setPeriode(1);
+			if(this.getPeriode()>=2){
+				this.setPeriode(2);
+			}
 			//dessiner les fleches
 			try{
 				this.drawArrow(g);
@@ -414,30 +416,32 @@ public class ApercuSchema5 extends ConteneurAvecImage {
 				this.drawCenteredString(g, FenetreAccueil.etude.getS5().getApr_entrepreneuriale().toString(), 884, 371, 55, 35,Color.black);
 			}catch(NullPointerException ex){}
 			
-			String texte="Risque\n\n";
-			try{
-				texte=texte+"Identité réglementaire ("+FenetreAccueil.etude.getS5().getRis_reglementaire().toString()+")\n";
-			}catch(NullPointerException ex){}
-			try{
-				texte=texte+"Identité de mobilité ("+FenetreAccueil.etude.getS5().getRis_mobilite().toString()+")\n";
-			}catch(NullPointerException ex){}
-			try{
-				texte=texte+"Identité professionnelle de service \npublic ("+FenetreAccueil.etude.getS5().getRis_pro_service_public().toString()+")\n";
-			}catch(NullPointerException ex){}
-			try{
-				texte=texte+"Identité professionnelle ("+FenetreAccueil.etude.getS5().getRis_professionnelle().toString()+")\n";
-			}catch(NullPointerException ex){}
-			try{
-				texte=texte+"Identité communautaire ("+FenetreAccueil.etude.getS5().getRis_communautaire().toString()+")\n";
-			}catch(NullPointerException ex){}
-			try{
-				texte=texte+"Identité entrepreneuriale ("+FenetreAccueil.etude.getS5().getRis_entrepreneuriale().toString()+")";
-			}catch(NullPointerException ex){}
-			String comparaison="Risque\n\n";
-			if(!texte.equals(comparaison)){
-				g.setColor(Color.red);
-				g.fillRoundRect(316, 60, 240, 134, 15, 15);
-				this.drawCenteredString(g, texte, 308, 70, 256, 134, Color.white);
+			if(this.getPeriode()>=2){
+				String texte="Risque\n\n";
+				try{
+					texte=texte+"Identité réglementaire ("+FenetreAccueil.etude.getS5().getRis_reglementaire().toString()+")\n";
+				}catch(NullPointerException ex){}
+				try{
+					texte=texte+"Identité de mobilité ("+FenetreAccueil.etude.getS5().getRis_mobilite().toString()+")\n";
+				}catch(NullPointerException ex){}
+				try{
+					texte=texte+"Identité professionnelle de service \npublic ("+FenetreAccueil.etude.getS5().getRis_pro_service_public().toString()+")\n";
+				}catch(NullPointerException ex){}
+				try{
+					texte=texte+"Identité professionnelle ("+FenetreAccueil.etude.getS5().getRis_professionnelle().toString()+")\n";
+				}catch(NullPointerException ex){}
+				try{
+					texte=texte+"Identité communautaire ("+FenetreAccueil.etude.getS5().getRis_communautaire().toString()+")\n";
+				}catch(NullPointerException ex){}
+				try{
+					texte=texte+"Identité entrepreneuriale ("+FenetreAccueil.etude.getS5().getRis_entrepreneuriale().toString()+")";
+				}catch(NullPointerException ex){}
+				String comparaison="Risque\n\n";
+				if(!texte.equals(comparaison)){
+					g.setColor(Color.red);
+					g.fillRoundRect(316, 60, 240, 134, 15, 15);
+					this.drawCenteredString(g, texte, 308, 70, 256, 134, Color.white);
+				}
 			}
 			
 		}

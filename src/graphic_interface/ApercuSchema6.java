@@ -180,7 +180,7 @@ public class ApercuSchema6 extends ConteneurAvecImage{
 				// TODO Auto-generated method stub
 				if (e.getKeyCode()==KeyEvent.VK_RIGHT){
 					setPeriode(getPeriode()+1);
-					if(getPeriode()<=1){
+					if(getPeriode()<=2){
 						alpha = 0.0f;
 					}
 					repaint();

@@ -596,10 +596,10 @@ public class ApercuSchema4 extends ConteneurAvecImage{
 				try{
 					texte1=texte1+"Risque Consensus ("+FenetreAccueil.etude.getS4().getRis_consensus().getImportance().toString()+")\n\n";
 					try{
-						texte1=texte1+"   -Consensus ("+FenetreAccueil.etude.getS4().getRis_consensus().getConsensus().toString()+")\n";
+						texte1=texte1+"Consensus ("+FenetreAccueil.etude.getS4().getRis_consensus().getConsensus().toString()+")\n";
 					}catch(NullPointerException ex){}
 					try{
-						texte1=texte1+"   -Pacte ("+FenetreAccueil.etude.getS4().getRis_consensus().getPacte().toString()+")";
+						texte1=texte1+"Pacte ("+FenetreAccueil.etude.getS4().getRis_consensus().getPacte().toString()+")";
 					}catch(NullPointerException ex){}
 					g.setColor(Color.red);
 					g.fillRoundRect(0, 306, 243, 75, 20, 20);
@@ -608,10 +608,10 @@ public class ApercuSchema4 extends ConteneurAvecImage{
 				try{
 					texte2=texte2+"Risque Negociation ("+FenetreAccueil.etude.getS4().getRis_negociation().getImportance().toString()+")\n\n";
 					try{
-						texte2=texte2+"   -Ajustement hiérarchique ("+FenetreAccueil.etude.getS4().getRis_negociation().getAjustement().toString()+")\n";
+						texte2=texte2+"Ajustement hiérarchique ("+FenetreAccueil.etude.getS4().getRis_negociation().getAjustement().toString()+")\n";
 					}catch(NullPointerException ex){}
 					try{
-						texte2=texte2+"   -Transformation négociée ("+FenetreAccueil.etude.getS4().getRis_negociation().getTransformation().toString()+")";
+						texte2=texte2+"Transformation négociée ("+FenetreAccueil.etude.getS4().getRis_negociation().getTransformation().toString()+")";
 					}catch(NullPointerException ex){}
 					g.setColor(Color.red);
 					g.fillRoundRect(0, 383, 243, 75, 20, 20);
@@ -620,13 +620,13 @@ public class ApercuSchema4 extends ConteneurAvecImage{
 				try{
 					texte3=texte3+"Risque Opposition ("+FenetreAccueil.etude.getS4().getRis_opposition().getImportance().toString()+")\n\n";
 					try{
-						texte3=texte3+"   -Domination ("+FenetreAccueil.etude.getS4().getRis_opposition().getDomination().toString()+")\n";
+						texte3=texte3+"Domination ("+FenetreAccueil.etude.getS4().getRis_opposition().getDomination().toString()+")\n";
 					}catch(NullPointerException ex){}
 					try{
-						texte3=texte3+"   -Contre Pouvoir ("+FenetreAccueil.etude.getS4().getRis_opposition().getContrePouvoir().toString()+")\n";
+						texte3=texte3+"Contre Pouvoir ("+FenetreAccueil.etude.getS4().getRis_opposition().getContrePouvoir().toString()+")\n";
 					}catch(NullPointerException ex){}
 					try{
-						texte3=texte3+"   -Antagonisme ("+FenetreAccueil.etude.getS4().getRis_opposition().getAntagonisme().toString()+")";
+						texte3=texte3+"Antagonisme ("+FenetreAccueil.etude.getS4().getRis_opposition().getAntagonisme().toString()+")";
 					}catch(NullPointerException ex){}
 					g.setColor(Color.red);
 					g.fillRoundRect(0, 460, 243, 75, 20, 20);

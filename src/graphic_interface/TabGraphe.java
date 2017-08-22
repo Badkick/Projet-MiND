@@ -247,6 +247,7 @@ public class TabGraphe extends JTabbedPane {
 			break;
 		case 2:
 			try{	
+				this.getConteneur_maintenant().setFonction_schema2(true);
 				if(FenetreAccueil.etude.getS2().getMtn_principale().getNumero()==1){
 					this.getConteneur_maintenant().getAction2().setSelected(true);
 					this.getConteneur_maintenant().getAction2().setBoutonSelected(this.getConteneur_maintenant().getB_simple_marche());
@@ -329,7 +330,8 @@ public class TabGraphe extends JTabbedPane {
 					}
 				}
 			}catch(NullPointerException ex){}
-			try{	
+			try{
+				this.getConteneur_apres().setFonction_schema2(true);
 				if(FenetreAccueil.etude.getS2().getApr_principale().getNumero()==1){
 					this.getConteneur_apres().getAction2().setSelected(true);
 					this.getConteneur_apres().getAction2().setBoutonSelected(this.getConteneur_apres().getB_simple_marche());
@@ -415,20 +417,21 @@ public class TabGraphe extends JTabbedPane {
 			try{	
 				ConteneurSchema cont=(ConteneurSchema) this.getConteneur_risque();
 				cont.getAction2().setSelected(true);
+				cont.setFonction_schema2(false);
 				if(FenetreAccueil.etude.getS2().getRis_notees()[0].getNote()!=Integer.MAX_VALUE){
 					cont.setNote_simple_marche(FenetreAccueil.etude.getS2().getRis_notees()[0].getNote());
 				}
 				if(FenetreAccueil.etude.getS2().getRis_notees()[1].getNote()!=Integer.MAX_VALUE){
-					cont.setNote_professionnelle(FenetreAccueil.etude.getS2().getRis_notees()[0].getNote());
+					cont.setNote_professionnelle(FenetreAccueil.etude.getS2().getRis_notees()[1].getNote());
 				}
 				if(FenetreAccueil.etude.getS2().getRis_notees()[2].getNote()!=Integer.MAX_VALUE){
-					cont.setNote_mecaniste(FenetreAccueil.etude.getS2().getRis_notees()[1].getNote());
+					cont.setNote_mecaniste(FenetreAccueil.etude.getS2().getRis_notees()[2].getNote());
 				}
 				if(FenetreAccueil.etude.getS2().getRis_notees()[3].getNote()!=Integer.MAX_VALUE){
-					cont.setNote_simple_centralisee(FenetreAccueil.etude.getS2().getRis_notees()[2].getNote());
+					cont.setNote_simple_centralisee(FenetreAccueil.etude.getS2().getRis_notees()[3].getNote());
 				}
 				if(FenetreAccueil.etude.getS2().getRis_notees()[4].getNote()!=Integer.MAX_VALUE){
-					cont.setNote_entrepreneuriale(FenetreAccueil.etude.getS2().getRis_notees()[3].getNote());
+					cont.setNote_entrepreneuriale(FenetreAccueil.etude.getS2().getRis_notees()[4].getNote());
 				}
 				/*if(FenetreAccueil.etude.getS2().getRis_principale().getNumero()==1){
 					cont.getAction2().setSelected(true);
@@ -515,6 +518,7 @@ public class TabGraphe extends JTabbedPane {
 			break;
 		case 3:
 			try{	
+				this.getConteneur_maintenant().setFonction_schema3(true);
 				if(FenetreAccueil.etude.getS3().getMtn_principale().getNumero()==1){
 					this.getConteneur_maintenant().getAction3().setSelected(true);
 					this.getConteneur_maintenant().getAction3().setBoutonSelected(this.getConteneur_maintenant().getB_rationnelle());
@@ -598,6 +602,7 @@ public class TabGraphe extends JTabbedPane {
 				}
 			}catch(NullPointerException ex){}
 			try{	
+				this.getConteneur_apres().setFonction_schema3(true);
 				if(FenetreAccueil.etude.getS3().getApr_principale().getNumero()==1){
 					this.getConteneur_apres().getAction3().setSelected(true);
 					this.getConteneur_apres().getAction3().setBoutonSelected(this.getConteneur_apres().getB_rationnelle());
@@ -682,7 +687,24 @@ public class TabGraphe extends JTabbedPane {
 			}catch(NullPointerException ex){}
 			try{	
 				ConteneurSchema cont=(ConteneurSchema) this.getConteneur_risque();
-				if(FenetreAccueil.etude.getS3().getRis_principale().getNumero()==1){
+				cont.getAction3().setSelected(true);
+				cont.setFonction_schema3(false);
+				if(FenetreAccueil.etude.getS3().getRis_notees()[0].getNote()!=Integer.MAX_VALUE){
+					cont.setNote_rationnelle(FenetreAccueil.etude.getS3().getRis_notees()[0].getNote());
+				}
+				if(FenetreAccueil.etude.getS3().getRis_notees()[1].getNote()!=Integer.MAX_VALUE){
+					cont.setNote_artisanale(FenetreAccueil.etude.getS3().getRis_notees()[1].getNote());
+				}
+				if(FenetreAccueil.etude.getS3().getRis_notees()[2].getNote()!=Integer.MAX_VALUE){
+					cont.setNote_personnalisee(FenetreAccueil.etude.getS3().getRis_notees()[2].getNote());
+				}
+				if(FenetreAccueil.etude.getS3().getRis_notees()[3].getNote()!=Integer.MAX_VALUE){
+					cont.setNote_process(FenetreAccueil.etude.getS3().getRis_notees()[3].getNote());
+				}
+				if(FenetreAccueil.etude.getS3().getRis_notees()[4].getNote()!=Integer.MAX_VALUE){
+					cont.setNote_flexible(FenetreAccueil.etude.getS3().getRis_notees()[4].getNote());
+				}
+				/*if(FenetreAccueil.etude.getS3().getRis_principale().getNumero()==1){
 					cont.getAction3().setSelected(true);
 					cont.getAction3().setBoutonSelected(cont.getB_rationnelle());
 					cont.getB_rationnelle().desactiver(FenetreAccueil.theme.getbSchema2Survol());
@@ -762,7 +784,7 @@ public class TabGraphe extends JTabbedPane {
 					if(FenetreAccueil.etude.getS3().getRis_notees()[3].getNote()!=Integer.MAX_VALUE){
 						cont.setNote_process(FenetreAccueil.etude.getS3().getRis_notees()[3].getNote());
 					}
-				}
+				}*/
 			}catch(NullPointerException ex){}
 			break;
 		case 4:
