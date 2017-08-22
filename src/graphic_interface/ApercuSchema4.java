@@ -259,7 +259,7 @@ public class ApercuSchema4 extends ConteneurAvecImage{
 				// TODO Auto-generated method stub
 				if (e.getKeyCode()==KeyEvent.VK_RIGHT){
 					setPeriode(getPeriode()+1);
-					if(getPeriode()<=1){
+					if(getPeriode()<=2){
 						alpha = 0.0f;
 					}
 					repaint();
@@ -366,9 +366,9 @@ public class ApercuSchema4 extends ConteneurAvecImage{
 						this.drawCenteredString(g, FenetreAccueil.etude.getS4().getMtn_consensus().getPacte().toString(), 140,234, 55, 35, Color.black);
 					}catch(NullPointerException ex){}
 				}
-				g.setColor(Color.white);
+				g.setColor(new Color(122,0,38));
 				g.fillRoundRect(60, 119, 55, 35, 15, 15);
-				this.drawCenteredString(g, FenetreAccueil.etude.getS4().getMtn_consensus().getImportance().toString(), 60, 119, 55, 35, Color.black);
+				this.drawCenteredString(g, FenetreAccueil.etude.getS4().getMtn_consensus().getImportance().toString(), 60, 119, 55, 35, Color.white);
 			}catch(NullPointerException ex){}
 			try{
 				int width=(int) (bleu.getWidth(null)*(a*FenetreAccueil.etude.getS4().getMtn_negociation().getImportance().get()+b)/100);
@@ -402,9 +402,9 @@ public class ApercuSchema4 extends ConteneurAvecImage{
 						this.drawCenteredString(g, FenetreAccueil.etude.getS4().getMtn_negociation().getTransformation().toString(), 884, 143, 55, 35, Color.black);
 					}catch(NullPointerException ex){}
 				}
-				g.setColor(Color.white);
+				g.setColor(new Color(27,20,100));
 				g.fillRoundRect(885, 63, 55, 35, 15, 15);
-				this.drawCenteredString(g, FenetreAccueil.etude.getS4().getMtn_negociation().getImportance().toString(), 885,63, 55, 35, Color.black);
+				this.drawCenteredString(g, FenetreAccueil.etude.getS4().getMtn_negociation().getImportance().toString(), 885,63, 55, 35, Color.white);
 			}catch(NullPointerException ex){}
 			try{
 				int width=(int) (vert.getWidth(null)*(a*FenetreAccueil.etude.getS4().getMtn_opposition().getImportance().get()+b)/100);
@@ -450,13 +450,15 @@ public class ApercuSchema4 extends ConteneurAvecImage{
 						this.drawCenteredString(g, FenetreAccueil.etude.getS4().getMtn_opposition().getAntagonisme().toString(), 777, 424, 55, 35, Color.black);
 					}catch(NullPointerException ex){}
 				}
-				g.setColor(Color.white);
+				g.setColor(new Color(0,88,38));
 				g.fillRoundRect(903,460, 55, 35, 15, 15);
-				this.drawCenteredString(g, FenetreAccueil.etude.getS4().getMtn_opposition().getImportance().toString(), 903, 460, 55, 35, Color.black);
+				this.drawCenteredString(g, FenetreAccueil.etude.getS4().getMtn_opposition().getImportance().toString(), 903, 460, 55, 35, Color.white);
 			}catch(NullPointerException ex){}
 
 		}else if(this.getPeriode()>=1){
-			this.setPeriode(1);
+			if(this.getPeriode()>=2){
+				this.setPeriode(2);
+			}
 			this.drawCenteredString(g, "Cible", 10, 10, 170, 60, Color.black);
 			//ROUND RECTANGLES POUR LES NOTES A DEFINIR
 			
@@ -492,9 +494,9 @@ public class ApercuSchema4 extends ConteneurAvecImage{
 						this.drawCenteredString(g, FenetreAccueil.etude.getS4().getApr_consensus().getPacte().toString(), 140,234, 55, 35, Color.black);
 					}catch(NullPointerException ex){}
 				}
-				g.setColor(Color.white);
+				g.setColor(new Color(122,0,38));
 				g.fillRoundRect(60, 119, 55, 35, 15, 15);
-				this.drawCenteredString(g, FenetreAccueil.etude.getS4().getApr_consensus().getImportance().toString(), 60, 119, 55, 35, Color.black);
+				this.drawCenteredString(g, FenetreAccueil.etude.getS4().getApr_consensus().getImportance().toString(), 60, 119, 55, 35, Color.white);
 			}catch(NullPointerException ex){}
 			try{
 				int width=(int) (bleu.getWidth(null)*(a*FenetreAccueil.etude.getS4().getApr_negociation().getImportance().get()+b)/100);
@@ -528,9 +530,9 @@ public class ApercuSchema4 extends ConteneurAvecImage{
 						this.drawCenteredString(g, FenetreAccueil.etude.getS4().getApr_negociation().getTransformation().toString(), 884, 143, 55, 35, Color.black);
 					}catch(NullPointerException ex){}
 				}
-				g.setColor(Color.white);
+				g.setColor(new Color(27,20,100));
 				g.fillRoundRect(885, 63, 55, 35, 15, 15);
-				this.drawCenteredString(g, FenetreAccueil.etude.getS4().getApr_negociation().getImportance().toString(), 885,63, 55, 35, Color.black);
+				this.drawCenteredString(g, FenetreAccueil.etude.getS4().getApr_negociation().getImportance().toString(), 885,63, 55, 35, Color.white);
 			}catch(NullPointerException ex){}
 			try{
 				int width=(int) (vert.getWidth(null)*(a*FenetreAccueil.etude.getS4().getApr_opposition().getImportance().get()+b)/100);
@@ -576,9 +578,9 @@ public class ApercuSchema4 extends ConteneurAvecImage{
 						this.drawCenteredString(g, FenetreAccueil.etude.getS4().getApr_opposition().getAntagonisme().toString(), 777, 424, 55, 35, Color.black);
 					}catch(NullPointerException ex){}
 				}
-				g.setColor(Color.white);
+				g.setColor(new Color(0,88,38));
 				g.fillRoundRect(903,460, 55, 35, 15, 15);
-				this.drawCenteredString(g, FenetreAccueil.etude.getS4().getApr_opposition().getImportance().toString(), 903, 460, 55, 35, Color.black);
+				this.drawCenteredString(g, FenetreAccueil.etude.getS4().getApr_opposition().getImportance().toString(), 903, 460, 55, 35, Color.white);
 				//this.drawArrow(g);
 			}catch(NullPointerException ex){}
 			try{
@@ -587,48 +589,50 @@ public class ApercuSchema4 extends ConteneurAvecImage{
 		//mettre les risques
 			/*g.setColor(Color.red);
 			g.fillRoundRect(0, 310, 243, 225, 20, 20);*/
-			String texte1="";
-			String texte2="";
-			String texte3="";
-			try{
-				texte1=texte1+"Risque Consensus ("+FenetreAccueil.etude.getS4().getRis_consensus().getImportance().toString()+")\n\n";
+			if(this.getPeriode()>=2){
+				String texte1="";
+				String texte2="";
+				String texte3="";
 				try{
-					texte1=texte1+"   -Consensus ("+FenetreAccueil.etude.getS4().getRis_consensus().getConsensus().toString()+")\n";
+					texte1=texte1+"Risque Consensus ("+FenetreAccueil.etude.getS4().getRis_consensus().getImportance().toString()+")\n\n";
+					try{
+						texte1=texte1+"   -Consensus ("+FenetreAccueil.etude.getS4().getRis_consensus().getConsensus().toString()+")\n";
+					}catch(NullPointerException ex){}
+					try{
+						texte1=texte1+"   -Pacte ("+FenetreAccueil.etude.getS4().getRis_consensus().getPacte().toString()+")";
+					}catch(NullPointerException ex){}
+					g.setColor(Color.red);
+					g.fillRoundRect(0, 306, 243, 75, 20, 20);
+					this.drawCenteredString(g, texte1, 0, 306, 243, 75, Color.white);
 				}catch(NullPointerException ex){}
 				try{
-					texte1=texte1+"   -Pacte ("+FenetreAccueil.etude.getS4().getRis_consensus().getPacte().toString()+")";
-				}catch(NullPointerException ex){}
-				g.setColor(Color.red);
-				g.fillRoundRect(0, 306, 243, 75, 20, 20);
-				this.drawCenteredString(g, texte1, 0, 306, 243, 75, Color.white);
-			}catch(NullPointerException ex){}
-			try{
-				texte2=texte2+"Risque Negociation ("+FenetreAccueil.etude.getS4().getRis_negociation().getImportance().toString()+")\n\n";
-				try{
-					texte2=texte2+"   -Ajustement hiérarchique ("+FenetreAccueil.etude.getS4().getRis_negociation().getAjustement().toString()+")\n";
-				}catch(NullPointerException ex){}
-				try{
-					texte2=texte2+"   -Transformation négociée ("+FenetreAccueil.etude.getS4().getRis_negociation().getTransformation().toString()+")";
-				}catch(NullPointerException ex){}
-				g.setColor(Color.red);
-				g.fillRoundRect(0, 383, 243, 75, 20, 20);
-				this.drawCenteredString(g, texte2, 0, 383, 243, 75, Color.white);
-			}catch(NullPointerException ex){}
-			try{
-				texte3=texte3+"Risque Opposition ("+FenetreAccueil.etude.getS4().getRis_opposition().getImportance().toString()+")\n\n";
-				try{
-					texte3=texte3+"   -Domination ("+FenetreAccueil.etude.getS4().getRis_opposition().getDomination().toString()+")\n";
+					texte2=texte2+"Risque Negociation ("+FenetreAccueil.etude.getS4().getRis_negociation().getImportance().toString()+")\n\n";
+					try{
+						texte2=texte2+"   -Ajustement hiérarchique ("+FenetreAccueil.etude.getS4().getRis_negociation().getAjustement().toString()+")\n";
+					}catch(NullPointerException ex){}
+					try{
+						texte2=texte2+"   -Transformation négociée ("+FenetreAccueil.etude.getS4().getRis_negociation().getTransformation().toString()+")";
+					}catch(NullPointerException ex){}
+					g.setColor(Color.red);
+					g.fillRoundRect(0, 383, 243, 75, 20, 20);
+					this.drawCenteredString(g, texte2, 0, 383, 243, 75, Color.white);
 				}catch(NullPointerException ex){}
 				try{
-					texte3=texte3+"   -Contre Pouvoir ("+FenetreAccueil.etude.getS4().getRis_opposition().getContrePouvoir().toString()+")\n";
+					texte3=texte3+"Risque Opposition ("+FenetreAccueil.etude.getS4().getRis_opposition().getImportance().toString()+")\n\n";
+					try{
+						texte3=texte3+"   -Domination ("+FenetreAccueil.etude.getS4().getRis_opposition().getDomination().toString()+")\n";
+					}catch(NullPointerException ex){}
+					try{
+						texte3=texte3+"   -Contre Pouvoir ("+FenetreAccueil.etude.getS4().getRis_opposition().getContrePouvoir().toString()+")\n";
+					}catch(NullPointerException ex){}
+					try{
+						texte3=texte3+"   -Antagonisme ("+FenetreAccueil.etude.getS4().getRis_opposition().getAntagonisme().toString()+")";
+					}catch(NullPointerException ex){}
+					g.setColor(Color.red);
+					g.fillRoundRect(0, 460, 243, 75, 20, 20);
+					this.drawCenteredString(g, texte3, 0, 464, 243, 75, Color.white);
 				}catch(NullPointerException ex){}
-				try{
-					texte3=texte3+"   -Antagonisme ("+FenetreAccueil.etude.getS4().getRis_opposition().getAntagonisme().toString()+")";
-				}catch(NullPointerException ex){}
-				g.setColor(Color.red);
-				g.fillRoundRect(0, 460, 243, 75, 20, 20);
-				this.drawCenteredString(g, texte3, 0, 464, 243, 75, Color.white);
-			}catch(NullPointerException ex){}
+			}
 			
 		}
 		
