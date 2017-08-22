@@ -95,7 +95,7 @@ public class ChargerEtude implements ActionListener {
 			try{
 				st_2=Structure.getByNum(Integer.valueOf(aLire_2.readLine()));
 			}catch(Exception ex){}
-			try{
+			try{//a supprimer
 				st_ris=Structure.getByNum(Integer.valueOf(aLire_2.readLine()));
 			}catch(Exception ex){}
 			@SuppressWarnings("unchecked")
@@ -104,6 +104,7 @@ public class ChargerEtude implements ActionListener {
 			ElementNote<Structure>[] apr_notees = new ElementNote[4];
 			@SuppressWarnings("unchecked")
 			ElementNote<Structure>[] ris_notees = new ElementNote[4];
+			//ElementNote<Structure>[] ris_notees = new ElementNote[5];
 			for(int i=0;i<4;i++){
 				Structure nom_mtn=null;
 				Structure nom_apr=null;
@@ -128,7 +129,7 @@ public class ChargerEtude implements ActionListener {
 				}catch(Exception ex){}
 				try{
 					apr_notees[i]=new ElementNote<Structure>(nom_apr,note_apr);
-				}catch(NullPointerException ex){apr_notees[i]=new ElementNote<Structure>(nom_mtn,Integer.MAX_VALUE);}
+				}catch(NullPointerException ex){apr_notees[i]=new ElementNote<Structure>(nom_apr,Integer.MAX_VALUE);}
 				try{
 					nom_ris=Structure.getByNum(Integer.valueOf(aLire_2.readLine()));
 				}catch(Exception ex){}
@@ -137,8 +138,19 @@ public class ChargerEtude implements ActionListener {
 				}catch(Exception ex){}
 				try{
 					ris_notees[i]=new ElementNote<Structure>(nom_ris,note_ris);
-				}catch(NullPointerException ex){ris_notees[i]=new ElementNote<Structure>(nom_mtn,Integer.MAX_VALUE);}
+				}catch(NullPointerException ex){ris_notees[i]=new ElementNote<Structure>(nom_ris,Integer.MAX_VALUE);}
 			}
+			/*Structure nom_ris=null;
+			Integer note_ris=null;
+			try{
+				nom_ris=Structure.getByNum(Integer.valueOf(aLire_2.readLine()));
+			}catch(Exception ex){}
+			try{
+				note_ris=Integer.valueOf(aLire_2.readLine());
+			}catch(Exception ex){}
+			try{
+				ris_notees[4]=new ElementNote<Structure>(nom_ris,note_ris);
+			}catch(NullPointerException ex){ris_notees[4]=new ElementNote<Structure>(nom_ris,Integer.MAX_VALUE);}*/
 			aLire_2.close();
 			schema2=new Schema2(st_1,st_2,st_ris,mtn_notees,apr_notees,ris_notees);
 			
@@ -160,7 +172,7 @@ public class ChargerEtude implements ActionListener {
 			try{
 				org_2=Organisation.getByNum(Integer.valueOf(aLire_3.readLine()));
 			}catch(Exception ex){}
-			try{
+			try{//a supprimer
 				org_ris=Organisation.getByNum(Integer.valueOf(aLire_3.readLine()));
 			}catch(Exception ex){}
 			@SuppressWarnings("unchecked")
@@ -169,6 +181,7 @@ public class ChargerEtude implements ActionListener {
 			ElementNote<Organisation>[] apr_notees = new ElementNote[4];
 			@SuppressWarnings("unchecked")
 			ElementNote<Organisation>[] ris_notees = new ElementNote[4];
+			//ElementNote<Organisation>[] ris_notees = new ElementNote[5];
 			for(int i=0;i<4;i++){
 				Organisation nom_mtn=null;
 				Organisation nom_apr=null;
@@ -193,7 +206,7 @@ public class ChargerEtude implements ActionListener {
 				}catch(Exception ex){}
 				try{
 					apr_notees[i]=new ElementNote<Organisation>(nom_apr,note_apr);
-				}catch(NullPointerException ex){apr_notees[i]=new ElementNote<Organisation>(nom_mtn,Integer.MAX_VALUE);}
+				}catch(NullPointerException ex){apr_notees[i]=new ElementNote<Organisation>(nom_apr,Integer.MAX_VALUE);}
 				try{
 					nom_ris=Organisation.getByNum(Integer.valueOf(aLire_3.readLine()));
 				}catch(Exception ex){}
@@ -202,8 +215,19 @@ public class ChargerEtude implements ActionListener {
 				}catch(Exception ex){}
 				try{
 					ris_notees[i]=new ElementNote<Organisation>(nom_ris,note_ris);
-				}catch(NullPointerException ex){mtn_notees[i]=new ElementNote<Organisation>(nom_mtn,Integer.MAX_VALUE);}
+				}catch(NullPointerException ex){mtn_notees[i]=new ElementNote<Organisation>(nom_ris,Integer.MAX_VALUE);}
 			}
+			/*Organisation nom_ris=null;
+			Integer note_ris=null;
+			try{
+				nom_ris=Organisation.getByNum(Integer.valueOf(aLire_3.readLine()));
+			}catch(Exception ex){}
+			try{
+				note_ris=Integer.valueOf(aLire_3.readLine());
+			}catch(Exception ex){}
+			try{
+				ris_notees[4]=new ElementNote<Organisation>(nom_ris,note_ris);
+			}catch(NullPointerException ex){mtn_notees[4]=new ElementNote<Organisation>(nom_ris,Integer.MAX_VALUE);}*/
 			aLire_3.close();
 			schema3=new Schema3(org_1,org_2,org_ris,mtn_notees,apr_notees,ris_notees);
 		}
