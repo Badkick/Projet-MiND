@@ -221,14 +221,14 @@ public class UpdateEtude implements ComponentListener {
 				FenetreAccueil.etude.getS3().setApr_notees(apr_notees);
 			}
 
-			ConteneurSchema conteneur = (ConteneurSchema) tab.getConteneur_risque();
+			ConteneurSchema conteneur_ris = (ConteneurSchema) tab.getConteneur_risque();
 			@SuppressWarnings("unchecked")
 			ElementNote<Organisation>[] ris_notees_schema3 = new ElementNote[5];
-			ris_notees_schema3[0] = new ElementNote<Organisation>(Organisation.RATIONNELLE, conteneur.getNote_rationnelle());
-			ris_notees_schema3[1] = new ElementNote<Organisation>(Organisation.ARTISANALE, conteneur.getNote_artisanale());
-			ris_notees_schema3[2] = new ElementNote<Organisation>(Organisation.PERSONNALISEE, conteneur.getNote_personnalisee());
-			ris_notees_schema3[3] = new ElementNote<Organisation>(Organisation.PROFESSIONNELLE_PROCESS, conteneur.getNote_process());
-			ris_notees_schema3[4] = new ElementNote<Organisation>(Organisation.FLEXIBLE, conteneur.getNote_flexible());
+			ris_notees_schema3[0] = new ElementNote<Organisation>(Organisation.RATIONNELLE, conteneur_ris.getNote_rationnelle());
+			ris_notees_schema3[1] = new ElementNote<Organisation>(Organisation.ARTISANALE, conteneur_ris.getNote_artisanale());
+			ris_notees_schema3[2] = new ElementNote<Organisation>(Organisation.PERSONNALISEE, conteneur_ris.getNote_personnalisee());
+			ris_notees_schema3[3] = new ElementNote<Organisation>(Organisation.PROFESSIONNELLE_PROCESS, conteneur_ris.getNote_process());
+			ris_notees_schema3[4] = new ElementNote<Organisation>(Organisation.FLEXIBLE, conteneur_ris.getNote_flexible());
 			FenetreAccueil.etude.getS3().setRis_notees(ris_notees_schema3);
 			break;
 
@@ -276,7 +276,7 @@ public class UpdateEtude implements ComponentListener {
 
 			if(tab.getConteneur_maintenant().getAction6().isSelected())
 			{
-				ConteneurSchema c = tab.getConteneur_maintenant();
+				ConteneurSchema conteneur = tab.getConteneur_maintenant();
 				ActionBoutonSchemas236 action = conteneur.getAction6();
 				@SuppressWarnings("unchecked")
 				ElementNote<Entreprise>[] mtn_notees = new ElementNote[4];
