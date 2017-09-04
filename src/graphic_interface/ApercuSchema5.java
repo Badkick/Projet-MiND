@@ -259,13 +259,13 @@ public class ApercuSchema5 extends ConteneurAvecImage {
 		
 		if(this.getPeriode()<=0){
 			this.setPeriode(0);
-			g.setColor(Color.white);
+			/*g.setColor(Color.white);
 			g.fillRoundRect(59, 111, 55, 35, 15, 15);
 			g.fillRoundRect(805, 117, 55, 35, 15, 15);
 			g.fillRoundRect(566, 262, 55, 35, 15, 15);
 			g.fillRoundRect(576, 495, 55, 35, 15, 15);
 			g.fillRoundRect(87, 413, 55, 35, 15, 15);
-			g.fillRoundRect(884, 371, 55, 35, 15, 15);
+			g.fillRoundRect(884, 371, 55, 35, 15, 15);*/
 			this.drawCenteredString(g, "Aujourd'hui", 10, 10, 170, 60, Color.black);
 			try{
 				int x=(int) (208-reglementaire.getWidth(null)*(a*FenetreAccueil.etude.getS5().getMtn_reglementaire().get()+b)/200);
@@ -274,8 +274,11 @@ public class ApercuSchema5 extends ConteneurAvecImage {
 				int height=(int) (reglementaire.getHeight(null)*(a*FenetreAccueil.etude.getS5().getMtn_reglementaire().get()+b)/100);
 				if(FenetreAccueil.etude.getS5().getMtn_reglementaire().get()!=0){
 					g.drawImage(reglementaire, x, y, width,height , null, null);
+					g.setColor(Color.white);
+					g.fillRoundRect(59, 111, 55, 35, 15, 15);
+					this.drawCenteredString(g, FenetreAccueil.etude.getS5().getMtn_reglementaire().toString(), 59, 111, 55, 35,Color.black);
 				}
-				this.drawCenteredString(g, FenetreAccueil.etude.getS5().getMtn_reglementaire().toString(), 59, 111, 55, 35,Color.black);
+				
 			}catch(NullPointerException ex){}
 			
 			try{
@@ -285,8 +288,11 @@ public class ApercuSchema5 extends ConteneurAvecImage {
 				int height=(int) (mobilite.getHeight(null)*(a*FenetreAccueil.etude.getS5().getMtn_mobilite().get()+b)/100);
 				if(FenetreAccueil.etude.getS5().getMtn_mobilite().get()!=0){
 					g.drawImage(mobilite, x, y, width,height , null, null);
+					g.setColor(Color.white);
+					g.fillRoundRect(805, 117, 55, 35, 15, 15);
+					this.drawCenteredString(g, FenetreAccueil.etude.getS5().getMtn_mobilite().toString(), 805, 117, 55, 35,Color.black);
 				}
-				this.drawCenteredString(g, FenetreAccueil.etude.getS5().getMtn_mobilite().toString(), 805, 117, 55, 35,Color.black);
+				
 			}catch(NullPointerException ex){}
 			
 			try{
@@ -296,8 +302,11 @@ public class ApercuSchema5 extends ConteneurAvecImage {
 				int height=(int) (service_public.getHeight(null)*(a*FenetreAccueil.etude.getS5().getMtn_pro_service_public().get()+b)/100);
 				if(FenetreAccueil.etude.getS5().getMtn_pro_service_public().get()!=0){
 					g.drawImage(service_public, x, y, width,height , null, null);
+					g.setColor(Color.white);
+					g.fillRoundRect(566, 262, 55, 35, 15, 15);
+					this.drawCenteredString(g, FenetreAccueil.etude.getS5().getMtn_pro_service_public().toString(), 566, 262, 55, 35,Color.black);
 				}
-				this.drawCenteredString(g, FenetreAccueil.etude.getS5().getMtn_pro_service_public().toString(), 566, 262, 55, 35,Color.black);
+				
 			}catch(NullPointerException ex){}
 			
 			try{
@@ -307,8 +316,11 @@ public class ApercuSchema5 extends ConteneurAvecImage {
 				int height=(int) (professionnelle.getHeight(null)*(a*FenetreAccueil.etude.getS5().getMtn_professionnelle().get()+b)/100);
 				if(FenetreAccueil.etude.getS5().getMtn_professionnelle().get()!=0){
 					g.drawImage(professionnelle, x, y, width,height , null, null);
+					g.setColor(Color.white);
+					g.fillRoundRect(576, 495, 55, 35, 15, 15);
+					this.drawCenteredString(g, FenetreAccueil.etude.getS5().getMtn_professionnelle().toString(), 576, 495, 55, 35,Color.black);
 				}
-				this.drawCenteredString(g, FenetreAccueil.etude.getS5().getMtn_professionnelle().toString(), 576, 495, 55, 35,Color.black);
+				
 			}catch(NullPointerException ex){}
 			
 			try{
@@ -318,8 +330,11 @@ public class ApercuSchema5 extends ConteneurAvecImage {
 				int height=(int) (communautaire.getHeight(null)*(a*FenetreAccueil.etude.getS5().getMtn_communautaire().get()+b)/100);
 				if(FenetreAccueil.etude.getS5().getMtn_communautaire().get()!=0){
 					g.drawImage(communautaire, x, y, width,height , null, null);
+					g.setColor(Color.white);
+					g.fillRoundRect(87, 413, 55, 35, 15, 15);
+					this.drawCenteredString(g, FenetreAccueil.etude.getS5().getMtn_communautaire().toString(), 87, 413, 55, 35,Color.black);
 				}
-				this.drawCenteredString(g, FenetreAccueil.etude.getS5().getMtn_communautaire().toString(), 87, 413, 55, 35,Color.black);
+				
 			}catch(NullPointerException ex){}
 			
 			try{
@@ -329,8 +344,11 @@ public class ApercuSchema5 extends ConteneurAvecImage {
 				int height=(int) (entrepreneuriale.getHeight(null)*(a*FenetreAccueil.etude.getS5().getMtn_entrepreneuriale().get()+b)/100);
 				if(FenetreAccueil.etude.getS5().getMtn_entrepreneuriale().get()!=0){
 					g.drawImage(entrepreneuriale, x, y, width,height , null, null);
+					g.setColor(Color.white);
+					g.fillRoundRect(884, 371, 55, 35, 15, 15);
+					this.drawCenteredString(g, FenetreAccueil.etude.getS5().getMtn_entrepreneuriale().toString(), 884, 371, 55, 35,Color.black);
 				}
-				this.drawCenteredString(g, FenetreAccueil.etude.getS5().getMtn_entrepreneuriale().toString(), 884, 371, 55, 35,Color.black);
+				
 			}catch(NullPointerException ex){}
 
 		}else if(this.getPeriode()>=1){
@@ -341,13 +359,13 @@ public class ApercuSchema5 extends ConteneurAvecImage {
 			try{
 				this.drawArrow(g);
 			}catch(NullPointerException ex){}
-			g.setColor(Color.white);
+			/*g.setColor(Color.white);
 			g.fillRoundRect(59, 111, 55, 35, 15, 15);
 			g.fillRoundRect(805, 117, 55, 35, 15, 15);
 			g.fillRoundRect(566, 262, 55, 35, 15, 15);
 			g.fillRoundRect(576, 495, 55, 35, 15, 15);
 			g.fillRoundRect(87, 413, 55, 35, 15, 15);
-			g.fillRoundRect(884, 371, 55, 35, 15, 15);
+			g.fillRoundRect(884, 371, 55, 35, 15, 15);*/
 			this.drawCenteredString(g, "Cible", 10, 10, 170, 60, Color.black);
 			
 			try{
@@ -357,8 +375,11 @@ public class ApercuSchema5 extends ConteneurAvecImage {
 				int height=(int) (reglementaire.getHeight(null)*(a*FenetreAccueil.etude.getS5().getApr_reglementaire().get()+b)/100);
 				if(FenetreAccueil.etude.getS5().getApr_reglementaire().get()!=0){
 					g.drawImage(reglementaire, x, y, width,height , null, null);
+					g.setColor(Color.white);
+					g.fillRoundRect(59, 111, 55, 35, 15, 15);
+					this.drawCenteredString(g, FenetreAccueil.etude.getS5().getApr_reglementaire().toString(), 59, 111, 55, 35,Color.black);
 				}
-				this.drawCenteredString(g, FenetreAccueil.etude.getS5().getApr_reglementaire().toString(), 59, 111, 55, 35,Color.black);
+				
 			}catch(NullPointerException ex){}
 			
 			try{
@@ -368,8 +389,11 @@ public class ApercuSchema5 extends ConteneurAvecImage {
 				int height=(int) (mobilite.getHeight(null)*(a*FenetreAccueil.etude.getS5().getApr_mobilite().get()+b)/100);
 				if(FenetreAccueil.etude.getS5().getApr_mobilite().get()!=0){
 					g.drawImage(mobilite, x, y, width,height , null, null);
+					g.setColor(Color.white);
+					g.fillRoundRect(805, 117, 55, 35, 15, 15);
+					this.drawCenteredString(g, FenetreAccueil.etude.getS5().getApr_mobilite().toString(), 805, 117, 55, 35,Color.black);
 				}
-				this.drawCenteredString(g, FenetreAccueil.etude.getS5().getApr_mobilite().toString(), 805, 117, 55, 35,Color.black);
+				
 			}catch(NullPointerException ex){}
 			
 			try{
@@ -379,8 +403,11 @@ public class ApercuSchema5 extends ConteneurAvecImage {
 				int height=(int) (service_public.getHeight(null)*(a*FenetreAccueil.etude.getS5().getApr_pro_service_public().get()+b)/100);
 				if(FenetreAccueil.etude.getS5().getApr_pro_service_public().get()!=0){
 					g.drawImage(service_public, x, y, width,height , null, null);
+					g.setColor(Color.white);
+					g.fillRoundRect(566, 262, 55, 35, 15, 15);
+					this.drawCenteredString(g, FenetreAccueil.etude.getS5().getApr_pro_service_public().toString(), 566, 262, 55, 35,Color.black);
 				}
-				this.drawCenteredString(g, FenetreAccueil.etude.getS5().getApr_pro_service_public().toString(), 566, 262, 55, 35,Color.black);
+				
 			}catch(NullPointerException ex){}
 			
 			try{
@@ -390,8 +417,11 @@ public class ApercuSchema5 extends ConteneurAvecImage {
 				int height=(int) (professionnelle.getHeight(null)*(a*FenetreAccueil.etude.getS5().getApr_professionnelle().get()+b)/100);
 				if(FenetreAccueil.etude.getS5().getApr_professionnelle().get()!=0){
 					g.drawImage(professionnelle, x, y, width,height , null, null);
+					g.setColor(Color.white);
+					g.fillRoundRect(576, 495, 55, 35, 15, 15);
+					this.drawCenteredString(g, FenetreAccueil.etude.getS5().getApr_professionnelle().toString(), 576, 495, 55, 35,Color.black);
 				}
-				this.drawCenteredString(g, FenetreAccueil.etude.getS5().getApr_professionnelle().toString(), 576, 495, 55, 35,Color.black);
+				
 			}catch(NullPointerException ex){}
 			
 			try{
@@ -401,8 +431,11 @@ public class ApercuSchema5 extends ConteneurAvecImage {
 				int height=(int) (communautaire.getHeight(null)*(a*FenetreAccueil.etude.getS5().getApr_communautaire().get()+b)/100);
 				if(FenetreAccueil.etude.getS5().getApr_communautaire().get()!=0){
 					g.drawImage(communautaire, x, y, width,height , null, null);
+					g.setColor(Color.white);
+					g.fillRoundRect(87, 413, 55, 35, 15, 15);
+					this.drawCenteredString(g, FenetreAccueil.etude.getS5().getApr_communautaire().toString(), 87, 413, 55, 35,Color.black);
 				}
-				this.drawCenteredString(g, FenetreAccueil.etude.getS5().getApr_communautaire().toString(), 87, 413, 55, 35,Color.black);
+				
 			}catch(NullPointerException ex){}
 			
 			try{
@@ -412,8 +445,11 @@ public class ApercuSchema5 extends ConteneurAvecImage {
 				int height=(int) (entrepreneuriale.getHeight(null)*(a*FenetreAccueil.etude.getS5().getApr_entrepreneuriale().get()+b)/100);
 				if(FenetreAccueil.etude.getS5().getApr_entrepreneuriale().get()!=0){
 					g.drawImage(entrepreneuriale, x, y, width,height , null, null);
+					g.setColor(Color.white);
+					g.fillRoundRect(884, 371, 55, 35, 15, 15);
+					this.drawCenteredString(g, FenetreAccueil.etude.getS5().getApr_entrepreneuriale().toString(), 884, 371, 55, 35,Color.black);
 				}
-				this.drawCenteredString(g, FenetreAccueil.etude.getS5().getApr_entrepreneuriale().toString(), 884, 371, 55, 35,Color.black);
+				
 			}catch(NullPointerException ex){}
 			
 			if(this.getPeriode()>=2){

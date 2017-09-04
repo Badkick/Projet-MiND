@@ -1923,13 +1923,13 @@ public class ImagesApercu extends Conteneur{
 			g.fillRoundRect(2*10, 2*10, 2*170, 2*60, 2*20, 2*20);
 			
 			if(this.getPeriode()==12){
-				g.setColor(Color.white);
+				/*g.setColor(Color.white);
 				g.fillRoundRect(2*59, 2*111, 2*55, 2*35, 2*15, 2*15);
 				g.fillRoundRect(2*805, 2*117, 2*55, 2*35, 2*15, 2*15);
 				g.fillRoundRect(2*566, 2*262, 2*55, 2*35, 2*15, 2*15);
 				g.fillRoundRect(2*576, 2*495, 2*55, 2*35, 2*15, 2*15);
 				g.fillRoundRect(2*87, 2*413, 2*55, 2*35, 2*15, 2*15);
-				g.fillRoundRect(2*884, 2*371, 2*55, 2*35, 2*15, 2*15);
+				g.fillRoundRect(2*884, 2*371, 2*55, 2*35, 2*15, 2*15);*/
 				this.drawCenteredString(g, "Aujourd'hui", 2*10, 2*10, 2*170, 2*60, Color.black);
 				try{
 					int x=(int) (208-reglementaire.getWidth(null)*(a*FenetreAccueil.etude.getS5().getMtn_reglementaire().get()+b)/200);
@@ -1938,8 +1938,11 @@ public class ImagesApercu extends Conteneur{
 					int height=(int) (reglementaire.getHeight(null)*(a*FenetreAccueil.etude.getS5().getMtn_reglementaire().get()+b)/100);
 					if(FenetreAccueil.etude.getS5().getMtn_reglementaire().get()!=0){
 						g.drawImage(reglementaire, 2*x, 2*y, 2*width,2*height , null, null);
+						g.setColor(Color.white);
+						g.fillRoundRect(2*59, 2*111, 2*55, 2*35, 2*15, 2*15);
+						this.drawCenteredString(g, FenetreAccueil.etude.getS5().getMtn_reglementaire().toString(), 2*59, 2*111, 2*55, 2*35,Color.black);
 					}
-					this.drawCenteredString(g, FenetreAccueil.etude.getS5().getMtn_reglementaire().toString(), 2*59, 2*111, 2*55, 2*35,Color.black);
+					
 				}catch(NullPointerException ex){}
 				
 				try{
@@ -1949,8 +1952,11 @@ public class ImagesApercu extends Conteneur{
 					int height=(int) (mobilite.getHeight(null)*(a*FenetreAccueil.etude.getS5().getMtn_mobilite().get()+b)/100);
 					if(FenetreAccueil.etude.getS5().getMtn_mobilite().get()!=0){
 						g.drawImage(mobilite, 2*x, 2*y, 2*width,2*height , null, null);
+						g.setColor(Color.white);
+						g.fillRoundRect(2*805, 2*117, 2*55, 2*35, 2*15, 2*15);
+						this.drawCenteredString(g, FenetreAccueil.etude.getS5().getMtn_mobilite().toString(), 2*805, 2*117, 2*55, 2*35,Color.black);
 					}
-					this.drawCenteredString(g, FenetreAccueil.etude.getS5().getMtn_mobilite().toString(), 2*805, 2*117, 2*55, 2*35,Color.black);
+					
 				}catch(NullPointerException ex){}
 				
 				try{
@@ -1960,8 +1966,11 @@ public class ImagesApercu extends Conteneur{
 					int height=(int) (service_public.getHeight(null)*(a*FenetreAccueil.etude.getS5().getMtn_pro_service_public().get()+b)/100);
 					if(FenetreAccueil.etude.getS5().getMtn_pro_service_public().get()!=0){
 						g.drawImage(service_public, 2*x, 2*y, 2*width,2*height , null, null);
+						g.setColor(Color.white);
+						g.fillRoundRect(2*566, 2*262, 2*55, 2*35, 2*15, 2*15);
+						this.drawCenteredString(g, FenetreAccueil.etude.getS5().getMtn_pro_service_public().toString(), 2*566, 2*262, 2*55, 2*35,Color.black);
 					}
-					this.drawCenteredString(g, FenetreAccueil.etude.getS5().getMtn_pro_service_public().toString(), 2*566, 2*262, 2*55, 2*35,Color.black);
+					
 				}catch(NullPointerException ex){}
 				
 				try{
@@ -1971,8 +1980,11 @@ public class ImagesApercu extends Conteneur{
 					int height=(int) (professionnelle.getHeight(null)*(a*FenetreAccueil.etude.getS5().getMtn_professionnelle().get()+b)/100);
 					if(FenetreAccueil.etude.getS5().getMtn_professionnelle().get()!=0){
 						g.drawImage(professionnelle, 2*x, 2*y, 2*width,2*height , null, null);
+						g.setColor(Color.white);
+						g.fillRoundRect(2*576, 2*495, 2*55, 2*35, 2*15, 2*15);
+						this.drawCenteredString(g, FenetreAccueil.etude.getS5().getMtn_professionnelle().toString(), 2*576, 2*495, 2*55, 2*35,Color.black);
 					}
-					this.drawCenteredString(g, FenetreAccueil.etude.getS5().getMtn_professionnelle().toString(), 2*576, 2*495, 2*55, 2*35,Color.black);
+					
 				}catch(NullPointerException ex){}
 				
 				try{
@@ -1982,8 +1994,11 @@ public class ImagesApercu extends Conteneur{
 					int height=(int) (communautaire.getHeight(null)*(a*FenetreAccueil.etude.getS5().getMtn_communautaire().get()+b)/100);
 					if(FenetreAccueil.etude.getS5().getMtn_communautaire().get()!=0){
 						g.drawImage(communautaire, 2*x, 2*y, 2*width,2*height , null, null);
+						g.setColor(Color.white);
+						g.fillRoundRect(2*87, 2*413, 2*55, 2*35, 2*15, 2*15);
+						this.drawCenteredString(g, FenetreAccueil.etude.getS5().getMtn_communautaire().toString(), 2*87, 2*413, 2*55, 2*35,Color.black);
 					}
-					this.drawCenteredString(g, FenetreAccueil.etude.getS5().getMtn_communautaire().toString(), 2*87, 2*413, 2*55, 2*35,Color.black);
+					
 				}catch(NullPointerException ex){}
 				
 				try{
@@ -1993,20 +2008,23 @@ public class ImagesApercu extends Conteneur{
 					int height=(int) (entrepreneuriale.getHeight(null)*(a*FenetreAccueil.etude.getS5().getMtn_entrepreneuriale().get()+b)/100);
 					if(FenetreAccueil.etude.getS5().getMtn_entrepreneuriale().get()!=0){
 						g.drawImage(entrepreneuriale, 2*x, 2*y, 2*width,2*height , null, null);
+						g.setColor(Color.white);
+						g.fillRoundRect(2*884, 2*371, 2*55, 2*35, 2*15, 2*15);
+						this.drawCenteredString(g, FenetreAccueil.etude.getS5().getMtn_entrepreneuriale().toString(), 2*884, 2*371, 2*55, 2*35,Color.black);
 					}
-					this.drawCenteredString(g, FenetreAccueil.etude.getS5().getMtn_entrepreneuriale().toString(), 2*884, 2*371, 2*55, 2*35,Color.black);
+					
 				}catch(NullPointerException ex){}
 			}else if(this.getPeriode()>=13){
 				try{
 					this.drawArrow_schema5(g);
 				}catch(NullPointerException ex){}
-				g.setColor(Color.white);
+				/*g.setColor(Color.white);
 				g.fillRoundRect(2*59, 2*111, 2*55, 2*35, 2*15, 2*15);
 				g.fillRoundRect(2*805, 2*117, 2*55, 2*35, 2*15, 2*15);
 				g.fillRoundRect(2*566, 2*262, 2*55, 2*35, 2*15, 2*15);
 				g.fillRoundRect(2*576, 2*495, 2*55, 2*35, 2*15, 2*15);
 				g.fillRoundRect(2*87, 2*413, 2*55, 2*35, 2*15, 2*15);
-				g.fillRoundRect(2*884, 2*371, 2*55, 2*35, 2*15, 2*15);
+				g.fillRoundRect(2*884, 2*371, 2*55, 2*35, 2*15, 2*15);*/
 				this.drawCenteredString(g, "Cible", 2*10, 2*10, 2*170, 2*60, Color.black);
 				
 				try{
@@ -2016,8 +2034,11 @@ public class ImagesApercu extends Conteneur{
 					int height=(int) (reglementaire.getHeight(null)*(a*FenetreAccueil.etude.getS5().getApr_reglementaire().get()+b)/100);
 					if(FenetreAccueil.etude.getS5().getApr_reglementaire().get()!=0){
 						g.drawImage(reglementaire, 2*x, 2*y, 2*width,2*height , null, null);
+						g.setColor(Color.white);
+						g.fillRoundRect(2*59, 2*111, 2*55, 2*35, 2*15, 2*15);
+						this.drawCenteredString(g, FenetreAccueil.etude.getS5().getApr_reglementaire().toString(), 2*59, 2*111, 2*55, 2*35,Color.black);
 					}
-					this.drawCenteredString(g, FenetreAccueil.etude.getS5().getApr_reglementaire().toString(), 2*59, 2*111, 2*55, 2*35,Color.black);
+					
 				}catch(NullPointerException ex){}
 				
 				try{
@@ -2027,8 +2048,11 @@ public class ImagesApercu extends Conteneur{
 					int height=(int) (mobilite.getHeight(null)*(a*FenetreAccueil.etude.getS5().getApr_mobilite().get()+b)/100);
 					if(FenetreAccueil.etude.getS5().getApr_mobilite().get()!=0){
 						g.drawImage(mobilite, 2*x, 2*y, 2*width,2*height , null, null);
+						g.setColor(Color.white);
+						g.fillRoundRect(2*805, 2*117, 2*55, 2*35, 2*15, 2*15);
+						this.drawCenteredString(g, FenetreAccueil.etude.getS5().getApr_mobilite().toString(), 2*805, 2*117, 2*55, 2*35,Color.black);
 					}
-					this.drawCenteredString(g, FenetreAccueil.etude.getS5().getApr_mobilite().toString(), 2*805, 2*117, 2*55, 2*35,Color.black);
+					
 				}catch(NullPointerException ex){}
 				
 				try{
@@ -2038,8 +2062,11 @@ public class ImagesApercu extends Conteneur{
 					int height=(int) (service_public.getHeight(null)*(a*FenetreAccueil.etude.getS5().getApr_pro_service_public().get()+b)/100);
 					if(FenetreAccueil.etude.getS5().getApr_pro_service_public().get()!=0){
 						g.drawImage(service_public, 2*x, 2*y, 2*width,2*height , null, null);
+						g.setColor(Color.white);
+						g.fillRoundRect(2*566, 2*262, 2*55, 2*35, 2*15, 2*15);
+						this.drawCenteredString(g, FenetreAccueil.etude.getS5().getApr_pro_service_public().toString(), 2*566, 2*262, 2*55, 2*35,Color.black);
 					}
-					this.drawCenteredString(g, FenetreAccueil.etude.getS5().getApr_pro_service_public().toString(), 2*566, 2*262, 2*55, 2*35,Color.black);
+					
 				}catch(NullPointerException ex){}
 				
 				try{
@@ -2049,8 +2076,11 @@ public class ImagesApercu extends Conteneur{
 					int height=(int) (professionnelle.getHeight(null)*(a*FenetreAccueil.etude.getS5().getApr_professionnelle().get()+b)/100);
 					if(FenetreAccueil.etude.getS5().getApr_professionnelle().get()!=0){
 						g.drawImage(professionnelle, 2*x, 2*y, 2*width,2*height , null, null);
+						g.setColor(Color.white);
+						g.fillRoundRect(2*576, 2*495, 2*55, 2*35, 2*15, 2*15);
+						this.drawCenteredString(g, FenetreAccueil.etude.getS5().getApr_professionnelle().toString(), 2*576, 2*495, 2*55, 2*35,Color.black);
 					}
-					this.drawCenteredString(g, FenetreAccueil.etude.getS5().getApr_professionnelle().toString(), 2*576, 2*495, 2*55, 2*35,Color.black);
+					
 				}catch(NullPointerException ex){}
 				
 				try{
@@ -2060,8 +2090,11 @@ public class ImagesApercu extends Conteneur{
 					int height=(int) (communautaire.getHeight(null)*(a*FenetreAccueil.etude.getS5().getApr_communautaire().get()+b)/100);
 					if(FenetreAccueil.etude.getS5().getApr_communautaire().get()!=0){
 						g.drawImage(communautaire, 2*x, 2*y, 2*width,2*height , null, null);
+						g.setColor(Color.white);
+						g.fillRoundRect(2*87, 2*413, 2*55, 2*35, 2*15, 2*15);
+						this.drawCenteredString(g, FenetreAccueil.etude.getS5().getApr_communautaire().toString(), 2*87, 2*413, 2*55, 2*35,Color.black);
 					}
-					this.drawCenteredString(g, FenetreAccueil.etude.getS5().getApr_communautaire().toString(), 2*87, 2*413, 2*55, 2*35,Color.black);
+					
 				}catch(NullPointerException ex){}
 				
 				try{
@@ -2071,8 +2104,11 @@ public class ImagesApercu extends Conteneur{
 					int height=(int) (entrepreneuriale.getHeight(null)*(a*FenetreAccueil.etude.getS5().getApr_entrepreneuriale().get()+b)/100);
 					if(FenetreAccueil.etude.getS5().getApr_entrepreneuriale().get()!=0){
 						g.drawImage(entrepreneuriale, 2*x, 2*y, 2*width,2*height , null, null);
+						g.setColor(Color.white);
+						g.fillRoundRect(2*884, 2*371, 2*55, 2*35, 2*15, 2*15);
+						this.drawCenteredString(g, FenetreAccueil.etude.getS5().getApr_entrepreneuriale().toString(), 2*884, 2*371, 2*55, 2*35,Color.black);
 					}
-					this.drawCenteredString(g, FenetreAccueil.etude.getS5().getApr_entrepreneuriale().toString(), 2*884, 2*371, 2*55, 2*35,Color.black);
+					
 				}catch(NullPointerException ex){}
 				if(this.getPeriode()==14){
 					String texte="Risque\n\n";
