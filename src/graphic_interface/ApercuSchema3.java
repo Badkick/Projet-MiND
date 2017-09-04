@@ -504,7 +504,7 @@ public class ApercuSchema3 extends ConteneurAvecImage{
 		this.drawCenteredString(g, Organisation.FLEXIBLE.getNom(), 587, 345, width, height,Color.white);
 		
 		
-		alpha +=0.01f;
+		alpha +=0.015f;
 		if(alpha >= 1.0f){
 			alpha=1.0f;
 		}else{

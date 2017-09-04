@@ -376,7 +376,7 @@ public class ApercuSchema1 extends ConteneurAvecImage{
 				//g.drawImage(menace,(int)(702-menace.getWidth(null)/2),(int)(332-menace.getHeight(null)/2),menace.getWidth(null),menace.getHeight(null),null,null);
 			}
 		}
-		alpha +=0.01f;
+		alpha +=0.015f;
 		if(alpha >= 1.0f){
 			alpha=1.0f;
 		}else{

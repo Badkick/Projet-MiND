@@ -292,7 +292,7 @@ public class ApercuSchema6 extends ConteneurAvecImage{
 		this.drawCenteredString(g, Entreprise.CRISE.getNom(), 550, 300, width, height, Color.WHITE);
 		this.drawCenteredString(g, Entreprise.BUREAUCRATIQUE.getNom(), 235, 340, width, height, Color.WHITE);
 		
-		alpha +=0.01f;
+		alpha +=0.015f;
 		if(alpha >= 1.0f){
 			alpha=1.0f;
 		}else{

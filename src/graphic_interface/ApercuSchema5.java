@@ -446,7 +446,7 @@ public class ApercuSchema5 extends ConteneurAvecImage {
 			
 		}
 		
-		alpha +=0.01f;
+		alpha +=0.015f;
 		if(alpha >= 1.0f){
 			alpha=1.0f;
 		}else{

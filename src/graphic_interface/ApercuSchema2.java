@@ -500,7 +500,7 @@ public class ApercuSchema2 extends ConteneurAvecImage{
 		this.drawCenteredString(g, Structure.ENTREPRENEURIALE.getNom(), 615, 275, width, height,Color.white);
 		
 		
-		alpha +=0.01f;
+		alpha +=0.015f;
 		if(alpha >= 1.0f){
 			alpha=1.0f;
 		}else{
