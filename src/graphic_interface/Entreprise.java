@@ -1,6 +1,6 @@
 package graphic_interface;
 
-public enum Entreprise {
+public enum Entreprise implements ElementPouvantEtreNote{
 
 	COMMUNAUTE("Entreprise\ncommunauté",1),
 	DUALE("Entreprise\nduale",2),
