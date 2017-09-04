@@ -65,7 +65,7 @@ public class UpdateEtude implements ComponentListener {
 			if(tab.getConteneur_maintenant().getAction2().isSelected())
 			{
 				ConteneurSchema conteneur = tab.getConteneur_maintenant();
-				ActionBoutonSchemas23 action = conteneur.getAction2();
+				ActionBoutonSchemas236 action = conteneur.getAction2();
 				@SuppressWarnings("unchecked")
 				ElementNote<Structure>[] mtn_notees = new ElementNote[4];
 				int i=0;
@@ -101,7 +101,7 @@ public class UpdateEtude implements ComponentListener {
 			if(tab.getConteneur_apres().getAction2().isSelected())
 			{
 				ConteneurSchema conteneur = tab.getConteneur_apres();
-				ActionBoutonSchemas23 action = conteneur.getAction2();
+				ActionBoutonSchemas236 action = conteneur.getAction2();
 				@SuppressWarnings("unchecked")
 				ElementNote<Structure>[] apr_notees = new ElementNote[4];
 				int i=0;
@@ -152,7 +152,7 @@ public class UpdateEtude implements ComponentListener {
 			if(tab.getConteneur_maintenant().getAction3().isSelected())
 			{
 				ConteneurSchema conteneur = tab.getConteneur_maintenant();
-				ActionBoutonSchemas23 action = conteneur.getAction3();
+				ActionBoutonSchemas236 action = conteneur.getAction3();
 				@SuppressWarnings("unchecked")
 				ElementNote<Organisation>[] mtn_notees = new ElementNote[4];
 				int i=0;
@@ -188,7 +188,7 @@ public class UpdateEtude implements ComponentListener {
 			if(tab.getConteneur_apres().getAction3().isSelected())
 			{
 				ConteneurSchema conteneur = tab.getConteneur_apres();
-				ActionBoutonSchemas23 action = conteneur.getAction3();
+				ActionBoutonSchemas236 action = conteneur.getAction3();
 				@SuppressWarnings("unchecked")
 				ElementNote<Organisation>[] apr_notees = new ElementNote[4];
 				int i=0;

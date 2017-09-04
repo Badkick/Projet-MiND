@@ -27,6 +27,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	public static final Dimension DIMENSION_BOUTON_SCHEMA6 = new Dimension(170,120);
 	public static final Dimension DIMENSION_LABEL_SCHEMA2 = new Dimension(60,40);
 	public static final Dimension DIMENSION_LABEL_SCHEMA3 = new Dimension(60,30);
+	public static final Dimension DIMENSION_LABEL_SCHEMA6 = new Dimension(60,40);
 
 	// VARIABLES INSTANCE //
 
@@ -108,7 +109,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	private JLabel note_simple_centralisee;
 	private JLabel note_entrepreneuriale;
 
-	private ActionBoutonSchemas23 action2;
+	private ActionBoutonSchemas236 action2;
 	private boolean f_bouton2;
 
 	// cas 3
@@ -126,7 +127,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	private JLabel note_process;
 	private JLabel note_flexible;
 
-	private ActionBoutonSchemas23 action3;
+	private ActionBoutonSchemas236 action3;
 	private boolean f_bouton3;
 
 	// cas 4
@@ -223,10 +224,16 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	private BoutonOvaleSchema6 b_entrep_bureaucratique;
 	private BoutonOvaleSchema6 b_entrep_crise;
 	private BoutonOvaleSchema6 b_entrep_modernisee;
-	
+
+	private JLabel note_entrep_communaute;
+	private JLabel note_entrep_bureaucratique;
+	private JLabel note_entrep_duale;
+	private JLabel note_entrep_crise;
+	private JLabel note_entrep_modernisee;
+
 	private Bouton b_annuler6;
-	
-	private ActionBoutonSchema6 action6;
+
+	private ActionBoutonSchemas236 action6;
 
 	// CONSTRUCTEURS //
 
@@ -285,7 +292,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 					);
 			break;
 		case 2:
-			action2 = new ActionBoutonSchemas23(this);
+			action2 = new ActionBoutonSchemas236(this);
 
 			this.b_simple_marche = new Bouton(Structure.SIMPLE_MARCHE.getNom(),DIMENSION_BOUTON_SCHEMAS23);
 			this.b_professionnelle = new Bouton(Structure.PROFESSIONNELLE.getNom(),DIMENSION_BOUTON_SCHEMAS23);
@@ -431,7 +438,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 					);
 			break;
 		case 3:
-			action3 = new ActionBoutonSchemas23(this);
+			action3 = new ActionBoutonSchemas236(this);
 
 			this.b_rationnelle = new Bouton(Organisation.RATIONNELLE.getNom(),DIMENSION_BOUTON_SCHEMAS23);
 			this.b_artisanale = new Bouton(Organisation.ARTISANALE.getNom(),DIMENSION_BOUTON_SCHEMAS23);
@@ -450,7 +457,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					
+
 					b_rationnelle.activer(FenetreAccueil.theme.getbSchema2Repos(), FenetreAccueil.theme.getbSchema2Survol(), FenetreAccueil.theme.getbSchema2Clic());
 					b_artisanale.activer(FenetreAccueil.theme.getbSchema2Repos(), FenetreAccueil.theme.getbSchema2Survol(), FenetreAccueil.theme.getbSchema2Clic());
 					b_personnalisee.activer(FenetreAccueil.theme.getbSchema2Repos(), FenetreAccueil.theme.getbSchema2Survol(), FenetreAccueil.theme.getbSchema2Clic());
@@ -792,30 +799,51 @@ public class ConteneurSchema extends ConteneurAvecImage {
 
 			break;
 		case 6:
-			
+
 			this.b_annuler6 = new Bouton("RàZ", new Dimension(120, 40));
-			
+
 			this.b_entrep_communaute = new BoutonOvaleSchema6(Entreprise.COMMUNAUTE.getNom(),DIMENSION_BOUTON_SCHEMA6);
 			this.b_entrep_duale = new BoutonOvaleSchema6(Entreprise.DUALE.getNom(),DIMENSION_BOUTON_SCHEMA6);
 			this.b_entrep_bureaucratique = new BoutonOvaleSchema6(Entreprise.BUREAUCRATIQUE.getNom(),DIMENSION_BOUTON_SCHEMA6);
 			this.b_entrep_crise = new BoutonOvaleSchema6(Entreprise.CRISE.getNom(),DIMENSION_BOUTON_SCHEMA6);
 			this.b_entrep_modernisee = new BoutonOvaleSchema6(Entreprise.MODERNISEE.getNom(),DIMENSION_BOUTON_SCHEMA6);
-			
-			this.action6 = new ActionBoutonSchema6(this);
-			
+
+			this.action6 = new ActionBoutonSchemas236(this);
+
 			this.b_entrep_communaute.addActionListener(action6);
 			this.b_entrep_duale.addActionListener(action6);
 			this.b_entrep_bureaucratique.addActionListener(action6);
 			this.b_entrep_crise.addActionListener(action6);
 			this.b_entrep_modernisee.addActionListener(action6);
-			
+
+			this.note_entrep_communaute = new JLabel();
+			this.note_entrep_duale = new JLabel();
+			this.note_entrep_bureaucratique = new JLabel();
+			this.note_entrep_crise = new JLabel();
+			this.note_entrep_modernisee = new JLabel();
+
+			this.initialiserLabelSchema6(note_entrep_communaute);
+			this.initialiserLabelSchema6(note_entrep_duale);
+			this.initialiserLabelSchema6(note_entrep_bureaucratique);
+			this.initialiserLabelSchema6(note_entrep_crise);
+			this.initialiserLabelSchema6(note_entrep_modernisee);
+
 			this.b_annuler6.addActionListener(new ActionListener() {
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					for(BoutonOvaleSchema6 b : action6.getBoutons()) b.activer(FenetreAccueil.theme.getbSchema6Repos(), FenetreAccueil.theme.getbSchema6Survol(), FenetreAccueil.theme.getbSchema6Clic());
+					b_entrep_communaute.activer();
+					b_entrep_duale.activer();
+					b_entrep_bureaucratique.activer();
+					b_entrep_crise.activer();
+					b_entrep_modernisee.activer();
 					action6.setBoutonSelected(null);
 					action6.setSelected(false);
+					note_entrep_communaute.setText("");
+					note_entrep_duale.setText("");
+					note_entrep_bureaucratique.setText("");
+					note_entrep_crise.setText("");
+					note_entrep_modernisee.setText("");
 					VerificationOnglets.verification(tab, tab_graphe);
 					ConteneurNouvelleEtude.unsave();
 				}
@@ -832,13 +860,22 @@ public class ConteneurSchema extends ConteneurAvecImage {
 									this.layout.createSequentialGroup()
 									.addGap(80)
 									.addComponent(b_entrep_communaute)
+									.addGap(10)
+									.addComponent(note_entrep_communaute)
 									)
 							.addGroup(
 									this.layout.createSequentialGroup()
 									.addGap(70)
 									.addComponent(b_entrep_duale)
+									.addGap(10)
+									.addComponent(note_entrep_duale)
 									)
-							.addComponent(b_entrep_bureaucratique)
+							.addGroup(
+									this.layout.createSequentialGroup()
+									.addComponent(b_entrep_bureaucratique)
+									.addGap(10)
+									.addComponent(note_entrep_bureaucratique)
+									)
 							)
 					.addGap(65)
 					.addGroup(
@@ -847,8 +884,15 @@ public class ConteneurSchema extends ConteneurAvecImage {
 									this.layout.createSequentialGroup()
 									.addGap(60)
 									.addComponent(b_entrep_modernisee)
+									.addGap(10)
+									.addComponent(note_entrep_modernisee)
 									)
-							.addComponent(b_entrep_crise)
+							.addGroup(
+									this.layout.createSequentialGroup()
+									.addComponent(b_entrep_crise)
+									.addGap(10)
+									.addComponent(note_entrep_crise)
+									)
 							)
 					);
 
@@ -859,17 +903,47 @@ public class ConteneurSchema extends ConteneurAvecImage {
 							this.layout.createParallelGroup()
 							.addGroup(
 									this.layout.createSequentialGroup()
-									.addComponent(b_entrep_communaute)
+									.addGroup(this.layout.createParallelGroup()
+											.addComponent(b_entrep_communaute)
+											.addGroup(this.layout.createSequentialGroup()
+													.addGap(39)
+													.addComponent(note_entrep_communaute)
+													)
+											)
 									.addGap(10)
-									.addComponent(b_entrep_duale)
-									.addComponent(b_entrep_bureaucratique)
+									.addGroup(this.layout.createParallelGroup()
+											.addComponent(b_entrep_duale)
+											.addGroup(this.layout.createSequentialGroup()
+													.addGap(20)
+													.addComponent(note_entrep_duale)
+													)
+											)
+									.addGroup(this.layout.createParallelGroup()
+											.addComponent(b_entrep_bureaucratique)
+											.addGroup(this.layout.createSequentialGroup()
+													.addGap(39)
+													.addComponent(note_entrep_bureaucratique)
+													)
+											)
 									)
 							.addGroup(
 									this.layout.createSequentialGroup()
 									.addGap(40)
-									.addComponent(b_entrep_modernisee)
+									.addGroup(this.layout.createParallelGroup()
+											.addComponent(b_entrep_modernisee)
+											.addGroup(this.layout.createSequentialGroup()
+													.addGap(39)
+													.addComponent(note_entrep_modernisee)
+													)
+											)
 									.addGap(50)
-									.addComponent(b_entrep_crise)
+									.addGroup(this.layout.createParallelGroup()
+											.addComponent(b_entrep_crise)
+											.addGroup(this.layout.createSequentialGroup()
+													.addGap(39)
+													.addComponent(note_entrep_crise)
+													)
+											)
 									)
 							)
 					.addGap(35)
@@ -975,7 +1049,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 		return b_entrepreneuriale;
 	}
 
-	public ActionBoutonSchemas23 getAction2()
+	public ActionBoutonSchemas236 getAction2()
 	{
 		return this.action2;
 	}
@@ -1024,7 +1098,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	{
 		try{return Integer.valueOf(this.getLabel_entrepreneuriale().getText().substring(0, this.getLabel_entrepreneuriale().getText().length()-5));} catch(StringIndexOutOfBoundsException e) {return Integer.MAX_VALUE;}
 	}
-	
+
 	public boolean getFonction_schema2(){
 		return this.f_bouton2;
 	}
@@ -1051,7 +1125,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 		return b_rationnelle;
 	}
 
-	public ActionBoutonSchemas23 getAction3()
+	public ActionBoutonSchemas236 getAction3()
 	{
 		return this.action3;
 	}
@@ -1100,7 +1174,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	{
 		try{return Integer.valueOf(this.getLabel_flexible().getText().substring(0, this.getLabel_flexible().getText().length()-5));} catch(StringIndexOutOfBoundsException e) {return Integer.MAX_VALUE;}
 	}
-	
+
 	public boolean getFonction_schema3(){
 		return this.f_bouton3;
 	}
@@ -1322,9 +1396,9 @@ public class ConteneurSchema extends ConteneurAvecImage {
 			return null;
 		}
 	}
-	
+
 	// schéma 6 //
-	
+
 	public BoutonOvaleSchema6 getB_entrep_communaute() {
 		return b_entrep_communaute;
 	}
@@ -1344,10 +1418,55 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	public BoutonOvaleSchema6 getB_entrep_modernisee() {
 		return b_entrep_modernisee;
 	}
-	
-	public ActionBoutonSchema6 getAction6()
+
+	public ActionBoutonSchemas236 getAction6()
 	{
 		return this.action6;
+	}
+
+	public JLabel getLabel_entrep_communaute() {
+		return note_entrep_communaute;
+	}
+
+	public JLabel getLabel_entrep_bureaucratique() {
+		return note_entrep_bureaucratique;
+	}
+
+	public JLabel getLabel_entrep_duale() {
+		return note_entrep_duale;
+	}
+
+	public JLabel getLabel_entrep_crise() {
+		return note_entrep_crise;
+	}
+
+	public JLabel getLabel_entrep_modernisee() {
+		return note_entrep_modernisee;
+	}
+
+	public int getNote_entrep_communaute()
+	{
+		try{return Integer.valueOf(this.getLabel_entrep_communaute().getText().substring(0, this.getLabel_entrep_communaute().getText().length()-5));} catch(StringIndexOutOfBoundsException e) {return Integer.MAX_VALUE;}
+	}
+
+	public int getNote_entrep_bureaucratique()
+	{
+		try{return Integer.valueOf(this.getLabel_entrep_bureaucratique().getText().substring(0, this.getLabel_entrep_bureaucratique().getText().length()-5));} catch(StringIndexOutOfBoundsException e) {return Integer.MAX_VALUE;}
+	}
+
+	public int getNote_entrep_duale()
+	{
+		try{return Integer.valueOf(this.getLabel_entrep_duale().getText().substring(0, this.getLabel_entrep_duale().getText().length()-5));} catch(StringIndexOutOfBoundsException e) {return Integer.MAX_VALUE;}
+	}
+
+	public int getNote_entrep_crise()
+	{
+		try{return Integer.valueOf(this.getLabel_entrep_crise().getText().substring(0, this.getLabel_entrep_crise().getText().length()-5));} catch(StringIndexOutOfBoundsException e) {return Integer.MAX_VALUE;}
+	}
+
+	public int getNote_entrep_modernisee()
+	{
+		try{return Integer.valueOf(this.getLabel_entrep_modernisee().getText().substring(0, this.getLabel_entrep_modernisee().getText().length()-5));} catch(StringIndexOutOfBoundsException e) {return Integer.MAX_VALUE;}
 	}
 
 	// SETTERS //
@@ -1396,7 +1515,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	{
 		this.getLabel_entrepreneuriale().setText(String.valueOf(note)+" / 10");
 	}
-	
+
 	public void setFonction_schema2(boolean bool){
 		this.f_bouton2=bool;
 	}
@@ -1427,7 +1546,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 	{
 		this.getLabel_flexible().setText(String.valueOf(note)+" / 10");
 	}
-	
+
 	public void setFonction_schema3(boolean bool){
 		this.f_bouton3=bool;
 	}
@@ -1500,10 +1619,36 @@ public class ConteneurSchema extends ConteneurAvecImage {
 		this.entrepreneuriale.setValue(p.get()/100);
 	}
 
+	// schéma 6 //
+
+	public void setNote_entrep_communaute(int note)
+	{
+		this.getLabel_entrep_communaute().setText(String.valueOf(note)+" / 10");
+	}
+
+	public void setNote_entrep_bureaucratique(int note)
+	{
+		this.getLabel_entrep_bureaucratique().setText(String.valueOf(note)+" / 10");
+	}
+
+	public void setNote_entrep_duale(int note)
+	{
+		this.getLabel_entrep_duale().setText(String.valueOf(note)+" / 10");
+	}
+
+	public void setNote_entrep_crise(int note)
+	{
+		this.getLabel_entrep_crise().setText(String.valueOf(note)+" / 10");
+	}
+
+	public void setNote_entrep_modernisee(int note)
+	{
+		this.getLabel_entrep_modernisee().setText(String.valueOf(note)+" / 10");
+	}
 
 	// METHODES //
 
-	public void initialiserBoutonSchemas23(Bouton b, ActionBoutonSchemas23 action)
+	public void initialiserBoutonSchemas23(Bouton b, ActionBoutonSchemas236 action)
 	{
 		b.setImgRepos(FenetreAccueil.theme.getbSchema2Repos());
 		b.setImgSurvol(FenetreAccueil.theme.getbSchema2Survol());
@@ -1519,13 +1664,21 @@ public class ConteneurSchema extends ConteneurAvecImage {
 		label.setMaximumSize(DIMENSION_LABEL_SCHEMA2);
 		label.setMinimumSize(DIMENSION_LABEL_SCHEMA2);
 	}
-	
+
 	public void initialiserLabelSchema3(JLabel label)
 	{
 		label.setForeground(Color.WHITE);
 		label.setPreferredSize(DIMENSION_LABEL_SCHEMA3);
 		label.setMaximumSize(DIMENSION_LABEL_SCHEMA3);
 		label.setMinimumSize(DIMENSION_LABEL_SCHEMA3);
+	}
+
+	public void initialiserLabelSchema6(JLabel label)
+	{
+		label.setForeground(Color.WHITE);
+		label.setPreferredSize(DIMENSION_LABEL_SCHEMA6);
+		label.setMaximumSize(DIMENSION_LABEL_SCHEMA6);
+		label.setMinimumSize(DIMENSION_LABEL_SCHEMA6);
 	}
 
 	public void setNote(Bouton b, int note)
@@ -1564,9 +1717,24 @@ public class ConteneurSchema extends ConteneurAvecImage {
 		case "Organisation\nFLEXIBLE":
 			this.setNote_flexible(note);
 			break;
+		case "Entreprise\ncommunauté":
+			this.setNote_entrep_communaute(note);
+			break;
+		case "Entreprise\nduale":
+			this.setNote_entrep_duale(note);
+			break;
+		case "Entreprise\nmodernisée":
+			this.setNote_entrep_modernisee(note);
+			break;
+		case "Entreprise\nen crise":
+			this.setNote_entrep_crise(note);
+			break;
+		case "Entreprise\nbureaucratique":
+			this.setNote_entrep_bureaucratique(note);
+			break;
 		}
 	}
-	
+
 
 	public void initialiserTextFieldSchemas145(JFormattedTextField field)
 	{

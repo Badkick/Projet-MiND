@@ -104,4 +104,18 @@ class BoutonOvaleSchema6 extends Bouton {
 		this.setImgSurvol(FenetreAccueil.theme.getbSchema6Survol());
 	}
 	
+	public void activer()
+	{
+		this.setEnabled(true);
+		this.resetImg();
+		this.updateCouleur();
+	}
+	
+	public void desactiver(Image img)
+	{
+		this.setImgFixe(this.getImgSurvol());
+		this.setIcon(new ImageIcon(this.getImgSurvol()));
+		this.setEnabled(false);
+	}
+	
 }
