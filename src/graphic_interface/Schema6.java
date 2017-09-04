@@ -65,10 +65,10 @@ public class Schema6 {
 	public void setMtn_notee(ElementNote<Entreprise>[] mtn_notee) {
 		for(int i=0;i<mtn_notee.length;i++) this.mtn_notee[i] = mtn_notee[i];
 	}
-	public void setApr_notees(ElementNote<Entreprise>[] apr_notee) {
+	public void setApr_notee(ElementNote<Entreprise>[] apr_notee) {
 		for(int i=0;i<apr_notee.length;i++) this.apr_notee[i] = apr_notee[i];
 	}
-	public void setRis_notees(ElementNote<Entreprise>[] ris_notee) {
+	public void setRis_notee(ElementNote<Entreprise>[] ris_notee) {
 		for(int i=0;i<ris_notee.length;i++) this.ris_notee[i] = ris_notee[i];
 	}
 }
