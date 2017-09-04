@@ -33,9 +33,12 @@ public class Etude {
 		ElementNote<Organisation>[] organisation = new ElementNote[4];
 		@SuppressWarnings("unchecked")
 		ElementNote<Organisation>[] risque_organisation = new ElementNote[5];
+		@SuppressWarnings("unchecked")
+		ElementNote<Entreprise>[] entreprise = new ElementNote[4];
 		for (int i=0;i<4;i++){
 			structure[i]=null;
 			organisation[i]=null;
+			entreprise[i] = null;
 			risque_structure[i]=null;
 			risque_organisation[i]=null;
 		}
@@ -46,7 +49,7 @@ public class Etude {
 		this.s3=new Schema3(null,null,organisation,organisation,risque_organisation);
 		this.s4=new Schema4(null,null,null,null,null,null,null,null,null);
 		this.s5=new Schema5(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null);
-		this.s6=new Schema6(null,null,null);
+		this.s6=new Schema6(null,null,null,entreprise,entreprise,entreprise);
 		
 	}
 	
