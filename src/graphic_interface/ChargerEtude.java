@@ -88,7 +88,6 @@ public class ChargerEtude implements ActionListener {
 			BufferedReader aLire_2 = new BufferedReader(new FileReader(structures));
 			Structure st_1=null;
 			Structure st_2=null;
-			Structure st_ris=null;
 			try{
 				st_1=Structure.getByNum(Integer.valueOf(aLire_2.readLine()));
 			}catch(Exception ex){}
@@ -159,7 +158,6 @@ public class ChargerEtude implements ActionListener {
 		Schema3 schema3=null;
 		Organisation org_1=null;
 		Organisation org_2=null;
-		Organisation org_ris=null;
 		try {
 			BufferedReader aLire_3 = new BufferedReader(new FileReader(organisations));
 			try{
@@ -469,9 +467,50 @@ public class ChargerEtude implements ActionListener {
 			try{
 				e_3=Entreprise.getByNum(Integer.valueOf(aLire_6.readLine()));
 			}catch(Exception ex){}
+			@SuppressWarnings("unchecked")
+			ElementNote<Entreprise>[] mtn_notees = new ElementNote[4];
+			@SuppressWarnings("unchecked")
+			ElementNote<Entreprise>[] apr_notees = new ElementNote[4];
+			@SuppressWarnings("unchecked")
+			ElementNote<Entreprise>[] ris_notees = new ElementNote[4];
+			for(int i=0;i<4;i++){
+				Entreprise nom_mtn=null;
+				Entreprise nom_apr=null;
+				Entreprise nom_ris=null;
+				Integer note_mtn=null;
+				Integer note_apr=null;
+				Integer note_ris=null;
+				try{
+					nom_mtn=Entreprise.getByNum(Integer.valueOf(aLire_6.readLine()));
+				}catch(Exception ex){}
+				try{
+					note_mtn=Integer.valueOf(aLire_6.readLine());
+				}catch(Exception ex){}
+				try{
+					mtn_notees[i]=new ElementNote<Entreprise>(nom_mtn,note_mtn);
+				}catch(NullPointerException ex){mtn_notees[i]=new ElementNote<Entreprise>(nom_mtn,Integer.MAX_VALUE);}
+				try{
+					nom_apr=Entreprise.getByNum(Integer.valueOf(aLire_6.readLine()));
+				}catch(Exception ex){}
+				try{
+					note_apr=Integer.valueOf(aLire_6.readLine());
+				}catch(Exception ex){}
+				try{
+					apr_notees[i]=new ElementNote<Entreprise>(nom_apr,note_apr);
+				}catch(NullPointerException ex){apr_notees[i]=new ElementNote<Entreprise>(nom_apr,Integer.MAX_VALUE);}
+				try{
+					nom_ris=Entreprise.getByNum(Integer.valueOf(aLire_6.readLine()));
+				}catch(Exception ex){}
+				try{
+					note_ris=Integer.valueOf(aLire_6.readLine());
+				}catch(Exception ex){}
+				try{
+					ris_notees[i]=new ElementNote<Entreprise>(nom_ris,note_ris);
+				}catch(NullPointerException ex){mtn_notees[i]=new ElementNote<Entreprise>(nom_ris,Integer.MAX_VALUE);}
+			}
 			
 			aLire_6.close();
-			schema6=new Schema6(e_1,e_2,e_3);
+			schema6=new Schema6(e_1,e_2,e_3,mtn_notees,apr_notees,ris_notees);
 			
 		}
 		catch (IOException e6){
