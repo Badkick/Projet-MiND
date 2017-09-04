@@ -209,6 +209,7 @@ public class ApercuSchema6 extends ConteneurAvecImage{
 		g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alpha));
 		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 		Image repos=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema6"+File.separator+"Etude_6_repos.png");
+		Image secondaire =null;
 		Image actif=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema6"+File.separator+"Etude_6_actif.png");
 		int width=(int) ConteneurSchema.DIMENSION_BOUTON_SCHEMA6.getWidth();
 		int height=(int) ConteneurSchema.DIMENSION_BOUTON_SCHEMA6.getHeight();
@@ -227,17 +228,78 @@ public class ApercuSchema6 extends ConteneurAvecImage{
 			try{
 				if(FenetreAccueil.etude.getS6().getMtn().getNumero()==1){
 					g.drawImage(actif,315,90,width,height,null,null);
+					if(FenetreAccueil.etude.getS6().getMtn_notee()[0].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getMtn_notee()[0].getNote()!=0){
+						g.drawImage(secondaire,305,220,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getMtn_notee()[1].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getMtn_notee()[1].getNote()!=0){
+						g.drawImage(secondaire,610,130,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getMtn_notee()[2].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getMtn_notee()[2].getNote()!=0){
+						g.drawImage(secondaire,550,300,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getMtn_notee()[3].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getMtn_notee()[3].getNote()!=0){
+						g.drawImage(secondaire,235,340,width,height,null,null);
+					}
 				}else if(FenetreAccueil.etude.getS6().getMtn().getNumero()==2){
 					g.drawImage(actif,305,220,width,height,null,null);
+					if(FenetreAccueil.etude.getS6().getMtn_notee()[0].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getMtn_notee()[0].getNote()!=0){
+						g.drawImage(secondaire,315,90,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getMtn_notee()[1].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getMtn_notee()[1].getNote()!=0){
+						g.drawImage(secondaire,610,130,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getMtn_notee()[2].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getMtn_notee()[2].getNote()!=0){
+						g.drawImage(secondaire,550,300,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getMtn_notee()[3].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getMtn_notee()[3].getNote()!=0){
+						g.drawImage(secondaire,235,340,width,height,null,null);
+					}
 				}else if(FenetreAccueil.etude.getS6().getMtn().getNumero()==3){
 					g.drawImage(actif,610,130,width,height,null,null);
+					if(FenetreAccueil.etude.getS6().getMtn_notee()[0].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getMtn_notee()[0].getNote()!=0){
+						g.drawImage(secondaire,315,90,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getMtn_notee()[1].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getMtn_notee()[1].getNote()!=0){
+						g.drawImage(secondaire,305,220,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getMtn_notee()[2].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getMtn_notee()[2].getNote()!=0){
+						g.drawImage(secondaire,550,300,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getMtn_notee()[3].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getMtn_notee()[3].getNote()!=0){
+						g.drawImage(secondaire,235,340,width,height,null,null);
+					}
 				}else if(FenetreAccueil.etude.getS6().getMtn().getNumero()==4){
 					g.drawImage(actif,550,300,width,height,null,null);
+					if(FenetreAccueil.etude.getS6().getMtn_notee()[0].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getMtn_notee()[0].getNote()!=0){
+						g.drawImage(secondaire,315,90,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getMtn_notee()[1].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getMtn_notee()[1].getNote()!=0){
+						g.drawImage(secondaire,305,220,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getMtn_notee()[2].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getMtn_notee()[2].getNote()!=0){
+						g.drawImage(secondaire,610,130,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getMtn_notee()[3].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getMtn_notee()[3].getNote()!=0){
+						g.drawImage(secondaire,235,340,width,height,null,null);
+					}
 				}else if(FenetreAccueil.etude.getS6().getMtn().getNumero()==5){
 					g.drawImage(actif,235,340,width,height,null,null);
+					if(FenetreAccueil.etude.getS6().getMtn_notee()[0].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getMtn_notee()[0].getNote()!=0){
+						g.drawImage(secondaire,315,90,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getMtn_notee()[1].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getMtn_notee()[1].getNote()!=0){
+						g.drawImage(secondaire,305,220,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getMtn_notee()[2].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getMtn_notee()[2].getNote()!=0){
+						g.drawImage(secondaire,610,130,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getMtn_notee()[3].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getMtn_notee()[3].getNote()!=0){
+						g.drawImage(secondaire,550,300,width,height,null,null);
+					}
 				}
 			
 			}catch(NullPointerException ex){}
+			
 				
 		}else if(this.getPeriode()==1){
 			
@@ -248,15 +310,76 @@ public class ApercuSchema6 extends ConteneurAvecImage{
 			try{
 				if(FenetreAccueil.etude.getS6().getApr().getNumero()==1){
 					g.drawImage(actif,315,90,width,height,null,null);
+					if(FenetreAccueil.etude.getS6().getApr_notee()[0].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getApr_notee()[0].getNote()!=0){
+						g.drawImage(secondaire,305,220,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getApr_notee()[1].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getApr_notee()[1].getNote()!=0){
+						g.drawImage(secondaire,610,130,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getApr_notee()[2].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getApr_notee()[2].getNote()!=0){
+						g.drawImage(secondaire,550,300,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getApr_notee()[3].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getApr_notee()[3].getNote()!=0){
+						g.drawImage(secondaire,235,340,width,height,null,null);
+					}
 				}else if(FenetreAccueil.etude.getS6().getApr().getNumero()==2){
 					g.drawImage(actif,305,220,width,height,null,null);
+					if(FenetreAccueil.etude.getS6().getApr_notee()[0].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getApr_notee()[0].getNote()!=0){
+						g.drawImage(secondaire,315,90,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getApr_notee()[1].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getApr_notee()[1].getNote()!=0){
+						g.drawImage(secondaire,610,130,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getApr_notee()[2].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getApr_notee()[2].getNote()!=0){
+						g.drawImage(secondaire,550,300,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getApr_notee()[3].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getApr_notee()[3].getNote()!=0){
+						g.drawImage(secondaire,235,340,width,height,null,null);
+					}
 				}else if(FenetreAccueil.etude.getS6().getApr().getNumero()==3){
 					g.drawImage(actif,610,130,width,height,null,null);
+					if(FenetreAccueil.etude.getS6().getApr_notee()[0].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getApr_notee()[0].getNote()!=0){
+						g.drawImage(secondaire,315,90,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getApr_notee()[1].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getApr_notee()[1].getNote()!=0){
+						g.drawImage(secondaire,305,220,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getApr_notee()[2].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getApr_notee()[2].getNote()!=0){
+						g.drawImage(secondaire,550,300,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getApr_notee()[3].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getApr_notee()[3].getNote()!=0){
+						g.drawImage(secondaire,235,340,width,height,null,null);
+					}
 				}else if(FenetreAccueil.etude.getS6().getApr().getNumero()==4){
 					g.drawImage(actif,550,300,width,height,null,null);
+					if(FenetreAccueil.etude.getS6().getApr_notee()[0].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getApr_notee()[0].getNote()!=0){
+						g.drawImage(secondaire,315,90,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getApr_notee()[1].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getApr_notee()[1].getNote()!=0){
+						g.drawImage(secondaire,305,220,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getApr_notee()[2].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getApr_notee()[2].getNote()!=0){
+						g.drawImage(secondaire,610,130,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getApr_notee()[3].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getApr_notee()[3].getNote()!=0){
+						g.drawImage(secondaire,235,340,width,height,null,null);
+					}
 				}else if(FenetreAccueil.etude.getS6().getApr().getNumero()==5){
 					g.drawImage(actif,235,340,width,height,null,null);
+					if(FenetreAccueil.etude.getS6().getApr_notee()[0].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getApr_notee()[0].getNote()!=0){
+						g.drawImage(secondaire,315,90,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getApr_notee()[1].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getApr_notee()[1].getNote()!=0){
+						g.drawImage(secondaire,305,220,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getApr_notee()[2].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getApr_notee()[2].getNote()!=0){
+						g.drawImage(secondaire,610,130,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getApr_notee()[3].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getApr_notee()[3].getNote()!=0){
+						g.drawImage(secondaire,550,300,width,height,null,null);
+					}
 				}
+			
 			}catch(NullPointerException ex){}
 			
 			/*try{
@@ -274,15 +397,76 @@ public class ApercuSchema6 extends ConteneurAvecImage{
 			try{
 				if(FenetreAccueil.etude.getS6().getRis().getNumero()==1){
 					g.drawImage(actif,315,90,width,height,null,null);
+					if(FenetreAccueil.etude.getS6().getRis_notee()[0].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getRis_notee()[0].getNote()!=0){
+						g.drawImage(secondaire,305,220,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getRis_notee()[1].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getRis_notee()[1].getNote()!=0){
+						g.drawImage(secondaire,610,130,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getRis_notee()[2].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getRis_notee()[2].getNote()!=0){
+						g.drawImage(secondaire,550,300,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getRis_notee()[3].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getRis_notee()[3].getNote()!=0){
+						g.drawImage(secondaire,235,340,width,height,null,null);
+					}
 				}else if(FenetreAccueil.etude.getS6().getRis().getNumero()==2){
 					g.drawImage(actif,305,220,width,height,null,null);
+					if(FenetreAccueil.etude.getS6().getRis_notee()[0].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getRis_notee()[0].getNote()!=0){
+						g.drawImage(secondaire,315,90,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getRis_notee()[1].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getRis_notee()[1].getNote()!=0){
+						g.drawImage(secondaire,610,130,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getRis_notee()[2].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getRis_notee()[2].getNote()!=0){
+						g.drawImage(secondaire,550,300,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getRis_notee()[3].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getRis_notee()[3].getNote()!=0){
+						g.drawImage(secondaire,235,340,width,height,null,null);
+					}
 				}else if(FenetreAccueil.etude.getS6().getRis().getNumero()==3){
 					g.drawImage(actif,610,130,width,height,null,null);
+					if(FenetreAccueil.etude.getS6().getRis_notee()[0].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getRis_notee()[0].getNote()!=0){
+						g.drawImage(secondaire,315,90,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getRis_notee()[1].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getRis_notee()[1].getNote()!=0){
+						g.drawImage(secondaire,305,220,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getRis_notee()[2].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getRis_notee()[2].getNote()!=0){
+						g.drawImage(secondaire,550,300,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getRis_notee()[3].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getRis_notee()[3].getNote()!=0){
+						g.drawImage(secondaire,235,340,width,height,null,null);
+					}
 				}else if(FenetreAccueil.etude.getS6().getRis().getNumero()==4){
 					g.drawImage(actif,550,300,width,height,null,null);
+					if(FenetreAccueil.etude.getS6().getRis_notee()[0].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getRis_notee()[0].getNote()!=0){
+						g.drawImage(secondaire,315,90,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getRis_notee()[1].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getRis_notee()[1].getNote()!=0){
+						g.drawImage(secondaire,305,220,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getRis_notee()[2].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getRis_notee()[2].getNote()!=0){
+						g.drawImage(secondaire,610,130,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getRis_notee()[3].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getRis_notee()[3].getNote()!=0){
+						g.drawImage(secondaire,235,340,width,height,null,null);
+					}
 				}else if(FenetreAccueil.etude.getS6().getRis().getNumero()==5){
 					g.drawImage(actif,235,340,width,height,null,null);
+					if(FenetreAccueil.etude.getS6().getRis_notee()[0].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getRis_notee()[0].getNote()!=0){
+						g.drawImage(secondaire,315,90,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getRis_notee()[1].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getRis_notee()[1].getNote()!=0){
+						g.drawImage(secondaire,305,220,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getRis_notee()[2].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getRis_notee()[2].getNote()!=0){
+						g.drawImage(secondaire,610,130,width,height,null,null);
+					}
+					if(FenetreAccueil.etude.getS6().getRis_notee()[3].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS6().getRis_notee()[3].getNote()!=0){
+						g.drawImage(secondaire,550,300,width,height,null,null);
+					}
 				}
+			
 			}catch(NullPointerException ex){}
 		}
 		
