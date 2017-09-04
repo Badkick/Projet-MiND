@@ -266,6 +266,7 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 				}
 
 				List<String> lignes_mondes=Arrays.asList(nullToEmpty(save.getS6().getMtn()),nullToEmpty(save.getS6().getApr()),nullToEmpty(save.getS6().getRis()));
+				//List<String> lignes_mondes=Arrays.asList(nullToEmpty(save.getS6().getMtn()),nullToEmpty(save.getS6().getApr()),nullToEmpty(save.getS6().getRis()),nullToEmpty_EntrepriseName(save.getS6().getMtn_notee()[0]),nullToEmpty_EntrepriseNote(save.getS6().getMtn_notee()[0]),nullToEmpty_EntrepriseName(save.getS6().getApr_notee()[0]),nullToEmpty_EntrepriseNote(save.getS6().getApr_notee()[0]),nullToEmpty_EntrepriseName(save.getS6().getRis_notee()[0]),nullToEmpty_EntrepriseNote(save.getS6().getRis_notee()[0]),nullToEmpty_EntrepriseName(save.getS6().getMtn_notee()[1]),nullToEmpty_EntrepriseNote(save.getS6().getMtn_notee()[1]),nullToEmpty_EntrepriseName(save.getS6().getApr_notee()[1]),nullToEmpty_EntrepriseNote(save.getS6().getApr_notee()[1]),nullToEmpty_EntrepriseName(save.getS6().getRis_notee()[1]),nullToEmpty_EntrepriseNote(save.getS6().getRis_notee()[1]),nullToEmpty_EntrepriseName(save.getS6().getMtn_notee()[2]),nullToEmpty_EntrepriseNote(save.getS6().getMtn_notee()[2]),nullToEmpty_EntrepriseName(save.getS6().getApr_notee()[2]),nullToEmpty_EntrepriseNote(save.getS6().getApr_notee()[2]),nullToEmpty_EntrepriseName(save.getS6().getRis_notee()[2]),nullToEmpty_EntrepriseNote(save.getS6().getRis_notee()[2]),nullToEmpty_EntrepriseName(save.getS6().getMtn_notee()[3]),nullToEmpty_EntrepriseNote(save.getS6().getMtn_notee()[3]),nullToEmpty_EntrepriseName(save.getS6().getApr_notee()[3]),nullToEmpty_EntrepriseNote(save.getS6().getApr_notee()[3]),nullToEmpty_EntrepriseName(save.getS6().getRis_notee()[3]),nullToEmpty_EntrepriseNote(save.getS6().getRis_notee()[3]));
 				Path fichier_mondes=Paths.get("saves"+File.separator+repertoire+File.separator+"Mondes.txt");
 				try {
 					Files.write(fichier_mondes, lignes_mondes,Charset.forName("UTF-8"));
@@ -388,6 +389,14 @@ public class ConteneurNouvelleEtude extends ConteneurAvecImage {
 	
 	public String nullToEmpty(Entreprise ent){
 		return (ent==null ? "":String.valueOf(ent.getNumero()));
+	}
+	
+	public String nullToEmpty_EntrepriseName(ElementNote<Entreprise> ent){
+		return (ent==null ||ent.getElement()==null ? "" : String.valueOf(ent.getElement().getNumero()));
+	}
+	
+	public String nullToEmpty_EntrepriseNote(ElementNote<Entreprise> ent){
+		return (ent==null ? "" : String.valueOf(ent.getNote()));
 	}
 	
 	public String nullToEmpty_ImportanceConsensus(Consensus cons){
