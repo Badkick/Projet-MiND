@@ -212,6 +212,7 @@ public class ApercuSchema3 extends ConteneurAvecImage{
 		g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alpha));
 		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 		Image repos=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema3"+File.separator+"Etude_3_repos.png");
+		Image secondaire=null;
 		Image actif=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema3"+File.separator+"Etude_3_actif.png");
 		int width=(int) ConteneurSchema.DIMENSION_BOUTON_SCHEMAS23.getWidth();
 		int height=(int) ConteneurSchema.DIMENSION_BOUTON_SCHEMAS23.getHeight();
@@ -234,113 +235,73 @@ public class ApercuSchema3 extends ConteneurAvecImage{
 			try{
 				if(FenetreAccueil.etude.getS3().getMtn_principale().getNumero()==1){
 					g.drawImage(actif,195,70,width,height,null,null);
-					if(FenetreAccueil.etude.getS3().getMtn_notees()[0].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(440, 193, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getMtn_notees()[0].getNote())+" / 10", 440, 193, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getMtn_notees()[0].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getMtn_notees()[0].getNote()!=0){
+						g.drawImage(secondaire,390,95,width,height,null,null);
 					}
-					if(FenetreAccueil.etude.getS3().getMtn_notees()[1].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(637, 168, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getMtn_notees()[1].getNote())+" / 10", 637, 168, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getMtn_notees()[1].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getMtn_notees()[1].getNote()!=0){
+						g.drawImage(secondaire,587,70,width,height,null,null);
 					}
-					if(FenetreAccueil.etude.getS3().getMtn_notees()[2].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(245, 443, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getMtn_notees()[2].getNote())+" / 10", 245, 443, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getMtn_notees()[2].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getMtn_notees()[2].getNote()!=0){
+						g.drawImage(secondaire,195,345,width,height,null,null);
 					}
-					if(FenetreAccueil.etude.getS3().getMtn_notees()[3].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(767, 372, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getMtn_notees()[3].getNote())+" / 10", 767, 372, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getMtn_notees()[3].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getMtn_notees()[3].getNote()!=0){
+						g.drawImage(secondaire,587,345,width,height,null,null);
 					}
 				}else if(FenetreAccueil.etude.getS3().getMtn_principale().getNumero()==2){
 					g.drawImage(actif,390,95,width,height,null,null);
-					if(FenetreAccueil.etude.getS3().getMtn_notees()[0].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(245, 168, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getMtn_notees()[0].getNote())+" / 10", 245, 168, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getMtn_notees()[0].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getMtn_notees()[0].getNote()!=0){
+						g.drawImage(secondaire,195,70,width,height,null,null);
 					}
-					if(FenetreAccueil.etude.getS3().getMtn_notees()[1].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(637, 168, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getMtn_notees()[1].getNote())+" / 10", 637, 168, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getMtn_notees()[1].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getMtn_notees()[1].getNote()!=0){
+						g.drawImage(secondaire,587,70,width,height,null,null);
 					}
-					if(FenetreAccueil.etude.getS3().getMtn_notees()[2].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(245, 443, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getMtn_notees()[2].getNote())+" / 10", 245, 443, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getMtn_notees()[2].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getMtn_notees()[2].getNote()!=0){
+						g.drawImage(secondaire,195,345,width,height,null,null);
 					}
-					if(FenetreAccueil.etude.getS3().getMtn_notees()[3].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(767, 372, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getMtn_notees()[3].getNote())+" / 10", 767, 372, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getMtn_notees()[3].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getMtn_notees()[3].getNote()!=0){
+						g.drawImage(secondaire,587,345,width,height,null,null);
 					}
 				}else if(FenetreAccueil.etude.getS3().getMtn_principale().getNumero()==3){
 					g.drawImage(actif,587,70,width,height,null,null);
-					if(FenetreAccueil.etude.getS3().getMtn_notees()[0].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(245, 168, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getMtn_notees()[0].getNote())+" / 10", 245, 168, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getMtn_notees()[0].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getMtn_notees()[0].getNote()!=0){
+						g.drawImage(secondaire,195,70,width,height,null,null);
 					}
-					if(FenetreAccueil.etude.getS3().getMtn_notees()[1].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(440, 193, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getMtn_notees()[1].getNote())+" / 10", 440, 193, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getMtn_notees()[1].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getMtn_notees()[1].getNote()!=0){
+						g.drawImage(secondaire,390,95,width,height,null,null);
 					}
-					if(FenetreAccueil.etude.getS3().getMtn_notees()[2].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(245, 443, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getMtn_notees()[2].getNote())+" / 10", 245, 443, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getMtn_notees()[2].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getMtn_notees()[2].getNote()!=0){
+						g.drawImage(secondaire,195,345,width,height,null,null);
 					}
-					if(FenetreAccueil.etude.getS3().getMtn_notees()[3].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(767, 372, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getMtn_notees()[3].getNote())+" / 10", 767, 372, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getMtn_notees()[3].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getMtn_notees()[3].getNote()!=0){
+						g.drawImage(secondaire,587,345,width,height,null,null);
 					}
 				}else if(FenetreAccueil.etude.getS3().getMtn_principale().getNumero()==4){
 					g.drawImage(actif,195,345,width,height,null,null);
-					if(FenetreAccueil.etude.getS3().getMtn_notees()[0].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(245, 168, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getMtn_notees()[0].getNote())+" / 10", 245, 168, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getMtn_notees()[0].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getMtn_notees()[0].getNote()!=0){
+						g.drawImage(secondaire,195,70,width,height,null,null);
 					}
-					if(FenetreAccueil.etude.getS3().getMtn_notees()[1].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(440, 193, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getMtn_notees()[1].getNote())+" / 10", 440, 193, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getMtn_notees()[1].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getMtn_notees()[1].getNote()!=0){
+						g.drawImage(secondaire,390,95,width,height,null,null);
 					}
-					if(FenetreAccueil.etude.getS3().getMtn_notees()[2].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(637, 168, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getMtn_notees()[2].getNote())+" / 10", 637, 168, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getMtn_notees()[2].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getMtn_notees()[2].getNote()!=0){
+						g.drawImage(secondaire,587,70,width,height,null,null);
 					}
-					if(FenetreAccueil.etude.getS3().getMtn_notees()[3].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(767, 372, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getMtn_notees()[3].getNote())+" / 10", 767, 372, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getMtn_notees()[3].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getMtn_notees()[3].getNote()!=0){
+						g.drawImage(secondaire,587,345,width,height,null,null);
 					}
 				}else if(FenetreAccueil.etude.getS3().getMtn_principale().getNumero()==5){
 					g.drawImage(actif,587, 345,width,height,null,null);
-					if(FenetreAccueil.etude.getS3().getMtn_notees()[0].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(245, 168, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getMtn_notees()[0].getNote())+" / 10", 245, 168, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getMtn_notees()[0].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getMtn_notees()[0].getNote()!=0){
+						g.drawImage(secondaire,195,70,width,height,null,null);
 					}
-					if(FenetreAccueil.etude.getS3().getMtn_notees()[1].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(440, 193, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getMtn_notees()[1].getNote())+" / 10", 440, 193, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getMtn_notees()[1].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getMtn_notees()[1].getNote()!=0){
+						g.drawImage(secondaire,390,95,width,height,null,null);
 					}
-					if(FenetreAccueil.etude.getS3().getMtn_notees()[2].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(637, 168, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getMtn_notees()[2].getNote())+" / 10", 637, 168, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getMtn_notees()[2].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getMtn_notees()[2].getNote()!=0){
+						g.drawImage(secondaire,587,70,width,height,null,null);
 					}
-					if(FenetreAccueil.etude.getS3().getMtn_notees()[3].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(245, 443, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getMtn_notees()[3].getNote())+" / 10", 245, 443, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getMtn_notees()[3].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getMtn_notees()[3].getNote()!=0){
+						g.drawImage(secondaire,195,345,width,height,null,null);
 					}
 				}
 			}catch(NullPointerException ex){}
@@ -355,113 +316,73 @@ public class ApercuSchema3 extends ConteneurAvecImage{
 			try{
 				if(FenetreAccueil.etude.getS3().getApr_principale().getNumero()==1){
 					g.drawImage(actif,195,70,width,height,null,null);
-					if(FenetreAccueil.etude.getS3().getApr_notees()[0].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(440, 193, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getApr_notees()[0].getNote())+" / 10", 440, 193, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getApr_notees()[0].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getApr_notees()[0].getNote()!=0){
+						g.drawImage(secondaire,390,95,width,height,null,null);
 					}
-					if(FenetreAccueil.etude.getS3().getApr_notees()[1].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(637, 168, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getApr_notees()[1].getNote())+" / 10", 637, 168, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getApr_notees()[1].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getApr_notees()[1].getNote()!=0){
+						g.drawImage(secondaire,587,70,width,height,null,null);
 					}
-					if(FenetreAccueil.etude.getS3().getApr_notees()[2].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(245, 443, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getApr_notees()[2].getNote())+" / 10", 245, 443, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getApr_notees()[2].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getApr_notees()[2].getNote()!=0){
+						g.drawImage(secondaire,195,345,width,height,null,null);
 					}
-					if(FenetreAccueil.etude.getS3().getApr_notees()[3].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(767, 372, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getApr_notees()[3].getNote())+" / 10", 767, 372, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getApr_notees()[3].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getApr_notees()[3].getNote()!=0){
+						g.drawImage(secondaire,587,345,width,height,null,null);
 					}
 				}else if(FenetreAccueil.etude.getS3().getApr_principale().getNumero()==2){
 					g.drawImage(actif,390,95,width,height,null,null);
-					if(FenetreAccueil.etude.getS3().getApr_notees()[0].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(245, 168, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getApr_notees()[0].getNote())+" / 10", 245, 168, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getApr_notees()[0].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getApr_notees()[0].getNote()!=0){
+						g.drawImage(secondaire,195,70,width,height,null,null);
 					}
-					if(FenetreAccueil.etude.getS3().getApr_notees()[1].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(637, 168, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getApr_notees()[1].getNote())+" / 10", 637, 168, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getApr_notees()[1].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getApr_notees()[1].getNote()!=0){
+						g.drawImage(secondaire,587,70,width,height,null,null);
 					}
-					if(FenetreAccueil.etude.getS3().getApr_notees()[2].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(245, 443, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getApr_notees()[2].getNote())+" / 10", 245, 443, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getApr_notees()[2].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getApr_notees()[2].getNote()!=0){
+						g.drawImage(secondaire,195,345,width,height,null,null);
 					}
-					if(FenetreAccueil.etude.getS3().getApr_notees()[3].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(767, 372, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getApr_notees()[3].getNote())+" / 10", 767, 372, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getApr_notees()[3].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getApr_notees()[3].getNote()!=0){
+						g.drawImage(secondaire,587,345,width,height,null,null);
 					}
 				}else if(FenetreAccueil.etude.getS3().getApr_principale().getNumero()==3){
 					g.drawImage(actif,587,70,width,height,null,null);
-					if(FenetreAccueil.etude.getS3().getApr_notees()[0].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(245, 168, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getApr_notees()[0].getNote())+" / 10", 245, 168, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getApr_notees()[0].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getApr_notees()[0].getNote()!=0){
+						g.drawImage(secondaire,195,70,width,height,null,null);
 					}
-					if(FenetreAccueil.etude.getS3().getApr_notees()[1].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(440, 193, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getApr_notees()[1].getNote())+" / 10", 440, 193, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getApr_notees()[1].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getApr_notees()[1].getNote()!=0){
+						g.drawImage(secondaire,390,95,width,height,null,null);
 					}
-					if(FenetreAccueil.etude.getS3().getApr_notees()[2].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(245, 443, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getApr_notees()[2].getNote())+" / 10", 245, 443, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getApr_notees()[2].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getApr_notees()[2].getNote()!=0){
+						g.drawImage(secondaire,195,345,width,height,null,null);
 					}
-					if(FenetreAccueil.etude.getS3().getApr_notees()[3].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(767, 372, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getApr_notees()[3].getNote())+" / 10", 767, 372, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getApr_notees()[3].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getApr_notees()[3].getNote()!=0){
+						g.drawImage(secondaire,587,345,width,height,null,null);
 					}
 				}else if(FenetreAccueil.etude.getS3().getApr_principale().getNumero()==4){
 					g.drawImage(actif,195,345,width,height,null,null);
-					if(FenetreAccueil.etude.getS3().getApr_notees()[0].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(245, 168, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getApr_notees()[0].getNote())+" / 10", 245, 168, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getApr_notees()[0].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getApr_notees()[0].getNote()!=0){
+						g.drawImage(secondaire,195,70,width,height,null,null);
 					}
-					if(FenetreAccueil.etude.getS3().getApr_notees()[1].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(440, 193, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getApr_notees()[1].getNote())+" / 10", 440, 193, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getApr_notees()[1].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getApr_notees()[1].getNote()!=0){
+						g.drawImage(secondaire,390,95,width,height,null,null);
 					}
-					if(FenetreAccueil.etude.getS3().getApr_notees()[2].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(637, 168, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getApr_notees()[2].getNote())+" / 10", 637, 168, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getApr_notees()[2].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getApr_notees()[2].getNote()!=0){
+						g.drawImage(secondaire,587,70,width,height,null,null);
 					}
-					if(FenetreAccueil.etude.getS3().getApr_notees()[3].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(767, 372, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getApr_notees()[3].getNote())+" / 10", 767, 372, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getApr_notees()[3].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getApr_notees()[3].getNote()!=0){
+						g.drawImage(secondaire,587,345,width,height,null,null);
 					}
 				}else if(FenetreAccueil.etude.getS3().getApr_principale().getNumero()==5){
 					g.drawImage(actif,587, 345,width,height,null,null);
-					if(FenetreAccueil.etude.getS3().getApr_notees()[0].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(245, 168, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getApr_notees()[0].getNote())+" / 10", 245, 168, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getApr_notees()[0].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getApr_notees()[0].getNote()!=0){
+						g.drawImage(secondaire,195,70,width,height,null,null);
 					}
-					if(FenetreAccueil.etude.getS3().getApr_notees()[1].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(440, 193, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getApr_notees()[1].getNote())+" / 10", 440,193, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getApr_notees()[1].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getApr_notees()[1].getNote()!=0){
+						g.drawImage(secondaire,390,95,width,height,null,null);
 					}
-					if(FenetreAccueil.etude.getS3().getApr_notees()[2].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(637, 168, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getApr_notees()[2].getNote())+" / 10", 637, 168, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getApr_notees()[2].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getApr_notees()[2].getNote()!=0){
+						g.drawImage(secondaire,587,70,width,height,null,null);
 					}
-					if(FenetreAccueil.etude.getS3().getApr_notees()[3].getNote()!=Integer.MAX_VALUE){
-						g.setColor(Color.white);
-						g.fillRoundRect(245, 443, 70, 36, 15, 15);
-						this.drawCenteredString(g, String.valueOf(FenetreAccueil.etude.getS3().getApr_notees()[3].getNote())+" / 10", 245, 443, 70, 36,Color.black);
+					if(FenetreAccueil.etude.getS3().getApr_notees()[3].getNote()!=Integer.MAX_VALUE && FenetreAccueil.etude.getS3().getApr_notees()[3].getNote()!=0){
+						g.drawImage(secondaire,195,345,width,height,null,null);
 					}
 				}
 			}catch(NullPointerException ex){}
