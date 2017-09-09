@@ -212,7 +212,7 @@ public class ApercuSchema2 extends ConteneurAvecImage{
 		g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alpha));
 		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 		Image repos=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema2"+File.separator+"Etude_2_repos.png");
-		Image secondaire=null;
+		Image secondaire=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema2"+File.separator+"Etude_2_secondaire.png");
 		Image actif=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema2"+File.separator+"Etude_2_actif.png");
 		int width=(int) ConteneurSchema.DIMENSION_BOUTON_SCHEMAS23.getWidth();
 		int height=(int) ConteneurSchema.DIMENSION_BOUTON_SCHEMAS23.getHeight();

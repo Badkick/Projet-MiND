@@ -104,10 +104,6 @@ public class PresenterEtude implements ActionListener {
 			//slide.removeShape(pic);
 			picture.setAnchor(anchor);
 			
-			Rectangle2D page_anchor=new Rectangle2D.Double(1849, 1022, 71, 58);
-			XSLFTextShape page=slide.getPlaceholder(1);
-			page.setAnchor(page_anchor);
-			page.setText(String.valueOf(i+1));
 		}
 
 

@@ -1012,7 +1012,7 @@ public class ImagesApercu extends Conteneur{
 			Image fond=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema2"+File.separator+"Etude_2_fond.png");
 			g.drawImage(Images.scaleImage(fond,1920, 1080),0,0,null);
 			Image repos=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema2"+File.separator+"Etude_2_repos.png");
-			Image secondaire=null;
+			Image secondaire=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema2"+File.separator+"Etude_2_secondaire.png");
 			Image actif=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema2"+File.separator+"Etude_2_actif.png");
 			int width=(int) ConteneurSchema.DIMENSION_BOUTON_SCHEMAS23.getWidth();
 			int height=(int) ConteneurSchema.DIMENSION_BOUTON_SCHEMAS23.getHeight();
@@ -1217,7 +1217,7 @@ public class ImagesApercu extends Conteneur{
 			Image fond=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema3"+File.separator+"Etude_3_fond.png");
 			g.drawImage(Images.scaleImage(fond,1920, 1080),0,0,null);
 			Image repos=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema3"+File.separator+"Etude_3_repos.png");
-			Image secondaire=null;
+			Image secondaire=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema3"+File.separator+"Etude_3_secondaire.png");
 			Image actif=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema3"+File.separator+"Etude_3_actif.png");
 			int width=(int) ConteneurSchema.DIMENSION_BOUTON_SCHEMAS23.getWidth();
 			int height=(int) ConteneurSchema.DIMENSION_BOUTON_SCHEMAS23.getHeight();
@@ -1987,7 +1987,7 @@ public class ImagesApercu extends Conteneur{
 			Image fond=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema6"+File.separator+"Etude_6_fond.png");
 			g.drawImage(Images.scaleImage(fond,1920, 1080),0,0,null);
 			Image repos=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema6"+File.separator+"Etude_6_repos.png");
-			Image secondaire=null;
+			Image secondaire=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema6"+File.separator+"Etude_6_secondaire.png");
 			Image actif=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"Apercu"+File.separator+"Schema6"+File.separator+"Etude_6_actif.png");
 			int width=(int) ConteneurSchema.DIMENSION_BOUTON_SCHEMA6.getWidth();
 			int height=(int) ConteneurSchema.DIMENSION_BOUTON_SCHEMA6.getHeight();
@@ -2255,7 +2255,7 @@ public class ImagesApercu extends Conteneur{
 		}else if(this.getPeriode()==18){
 			Image fond=Images.importerImage("themes"+File.separator+FenetreAccueil.theme.getNom()+File.separator+"fondppt.png");
 			g.drawImage(Images.scaleImage(fond,1920, 1080),0,0,null);
-			this.drawMainTitle(g, ConteneurNouvelleEtude.nom, 0, 0, 1920, 1080, Color.white);
+			this.drawMainTitle(g, ConteneurNouvelleEtude.nom, 0, 0, 1920, 1080, Color.black);
 			
 		}
 	}

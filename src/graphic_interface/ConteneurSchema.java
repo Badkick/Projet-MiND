@@ -1659,7 +1659,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 
 	public void initialiserLabelSchema2(JLabel label)
 	{
-		label.setForeground(Color.WHITE);
+		label.setForeground(Color.BLACK);
 		label.setPreferredSize(DIMENSION_LABEL_SCHEMA2);
 		label.setMaximumSize(DIMENSION_LABEL_SCHEMA2);
 		label.setMinimumSize(DIMENSION_LABEL_SCHEMA2);
@@ -1667,7 +1667,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 
 	public void initialiserLabelSchema3(JLabel label)
 	{
-		label.setForeground(Color.WHITE);
+		label.setForeground(Color.BLACK);
 		label.setPreferredSize(DIMENSION_LABEL_SCHEMA3);
 		label.setMaximumSize(DIMENSION_LABEL_SCHEMA3);
 		label.setMinimumSize(DIMENSION_LABEL_SCHEMA3);
@@ -1675,7 +1675,7 @@ public class ConteneurSchema extends ConteneurAvecImage {
 
 	public void initialiserLabelSchema6(JLabel label)
 	{
-		label.setForeground(Color.WHITE);
+		label.setForeground(Color.BLACK);
 		label.setPreferredSize(DIMENSION_LABEL_SCHEMA6);
 		label.setMaximumSize(DIMENSION_LABEL_SCHEMA6);
 		label.setMinimumSize(DIMENSION_LABEL_SCHEMA6);
