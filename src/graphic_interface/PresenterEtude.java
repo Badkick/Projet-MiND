@@ -58,7 +58,7 @@ public class PresenterEtude implements ActionListener {
 		ppt.setPageSize(new Dimension(1920,1080));
 		XSLFSlideMaster slideMaster = ppt.getSlideMasters().get(0);
 		XSLFSlideLayout titleLayout = slideMaster.getLayout(SlideLayout.TITLE_AND_CONTENT);
-		XSLFSlideLayout contentLayout = slideMaster.getLayout(SlideLayout.TITLE);
+		XSLFSlideLayout contentLayout = slideMaster.getLayout(SlideLayout.TITLE_ONLY);
 
 		XSLFSlide slidetitle = ppt.createSlide(titleLayout);
 		Rectangle2D anchor_main=slidetitle.getBackground().getAnchor();
